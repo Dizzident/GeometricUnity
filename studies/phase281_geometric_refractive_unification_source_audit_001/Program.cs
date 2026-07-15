@@ -580,6 +580,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase490_zero_mode_quotient_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase491_committed_bosonic_model_family_sensitivity_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase492_phase455_combined_robustness_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase493_phase456_stored_artifact_failure_decomposition_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase494_phase456_estimator_oracle_battery_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -666,9 +669,13 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P490.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P491.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P492.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P493.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P494.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P495.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
-    || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md";
+    || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"
+    || normalizedPath == "docs/Phases/PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

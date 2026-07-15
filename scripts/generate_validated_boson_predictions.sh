@@ -369,6 +369,9 @@ dotnet run --no-build -c Release --project studies/phase489_reduced_sampler_rest
 dotnet run --no-build -c Release --project studies/phase490_zero_mode_quotient_audit_001/Phase490ZeroModeQuotientAudit.csproj
 dotnet run --no-build -c Release --project studies/phase491_committed_bosonic_model_family_sensitivity_001/Phase491CommittedBosonicModelFamilySensitivity.csproj
 dotnet run --no-build -c Release --project studies/phase492_phase455_combined_robustness_adjudicator_001/Phase492Phase455CombinedRobustnessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase493_phase456_stored_artifact_failure_decomposition_001/Phase493Phase456StoredArtifactFailureDecomposition.csproj
+dotnet run --no-build -c Release --project studies/phase494_phase456_estimator_oracle_battery_001/Phase494Phase456EstimatorOracleBattery.csproj
+dotnet run --no-build -c Release --project studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/Phase495Phase456ProspectiveRepairReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -87,6 +87,9 @@ var excludedPathFragments = new[]
     "studies/phase490_zero_mode_quotient_audit_001/",
     "studies/phase491_committed_bosonic_model_family_sensitivity_001/",
     "studies/phase492_phase455_combined_robustness_adjudicator_001/",
+    "studies/phase493_phase456_stored_artifact_failure_decomposition_001/",
+    "studies/phase494_phase456_estimator_oracle_battery_001/",
+    "studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/",
     "docs/Phases/Implementation/IMPLEMENTATION_P477.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P478.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P479.md",
@@ -103,9 +106,13 @@ var excludedPathFragments = new[]
     "docs/Phases/Implementation/IMPLEMENTATION_P490.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P491.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P492.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P493.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P494.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P495.md",
     "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md",
     "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md",
     "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md",
+    "docs/Phases/PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15.md",
 };
 
 var dimension4Pattern = new Regex("""

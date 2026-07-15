@@ -1,0 +1,359 @@
+{
+  "phaseId": "phase494-phase456-estimator-oracle-battery",
+  "terminalStatus": "phase456-estimator-oracle-battery-mixed-estimator-outcome",
+  "verdictKind": "mixed-estimator-outcome",
+  "inputsValid": true,
+  "oracleClassification": "mixed-estimator-outcome",
+  "taxonomy": [
+    "original-estimator-identifiable",
+    "alternative-estimator-feasible",
+    "channel-nonidentifiable",
+    "mixed-estimator-outcome",
+    "invalid-oracle-battery"
+  ],
+  "decisionContractSha256": "da9ef99033769f39885b4ac75a09f787ee2103f9c9af7011b6472f5eaf403d1e",
+  "frozenBeforePhase493Consumption": true,
+  "frozenConfiguration": {
+    "extent": 4,
+    "originalEstimator": "Phase456 t=1 ratio C(1)/C(2), accepted only when finite and \u003E1, solved against cosh(m) at T=4",
+    "originalMassTolerance": 1E-10,
+    "fullCorrelatorReducedChiSquareCeiling": 3,
+    "exactAlternativeResidualCeiling": 1E-08,
+    "positivityTolerance": 1E-12,
+    "covariance": [
+      [
+        0.0001,
+        3E-05,
+        9E-06,
+        2.6999999999999996E-06
+      ],
+      [
+        3E-05,
+        0.0001,
+        3E-05,
+        9E-06
+      ],
+      [
+        9E-06,
+        3E-05,
+        0.0001,
+        3E-05
+      ],
+      [
+        2.6999999999999996E-06,
+        9E-06,
+        3E-05,
+        0.0001
+      ]
+    ],
+    "singleMassGrid": {
+      "min": 0.05,
+      "max": 2.5,
+      "step": 0.001
+    },
+    "alternativeMassGrid": [
+      0.2,
+      0.4,
+      0.6000000000000001,
+      0.8,
+      1,
+      1.2000000000000002,
+      1.4000000000000001,
+      1.6,
+      1.8,
+      2
+    ],
+    "invalidRowRule": "one invalid full estimate or aligned replicate withholds the family threshold; a missing threshold makes every family row invalid"
+  },
+  "phase493Binding": {
+    "valid": true,
+    "path": "studies/phase493_phase456_stored_artifact_failure_decomposition_001/output/phase456_stored_artifact_failure_decomposition_summary.json",
+    "byteSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+    "phaseId": "phase493-phase456-stored-artifact-failure-decomposition",
+    "failureClassification": "mixed-failure-supported",
+    "decisionContractSha256": "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130",
+    "status": "exact-bytes-and-schema-bound"
+  },
+  "batteries": [
+    {
+      "id": "B1",
+      "name": "original-cosh-domain-and-exact-single-pole-recovery",
+      "passed": true,
+      "metrics": {
+        "originalRatio": 1.3374349463048445,
+        "originalMass": 0.7999999999999999,
+        "expectedMass": 0.8,
+        "tolerance": 1E-10
+      }
+    },
+    {
+      "id": "B2",
+      "name": "T4-ratio-identifiability-versus-spectral-content",
+      "passed": true,
+      "metrics": {
+        "originalMass": 0.5030581790489823,
+        "singlePoleReducedChiSquare": 1.3775050745536035,
+        "positiveTwoPoleReducedChiSquare": 2.420762722889753E-26,
+        "singlePoleRejectedAtFrozenCovariance": false,
+        "interpretation": "the t=1 ratio returns one effective mass but cannot identify the positive two-pole content; the full-correlator residual reports whether the frozen covariance resolves the mismatch"
+      }
+    },
+    {
+      "id": "B3",
+      "name": "covariance-aware-full-correlator-single-pole-control",
+      "passed": true,
+      "metrics": {
+        "singlePoleMass": 0.8,
+        "singlePoleAmplitude": 1,
+        "singlePoleReducedChiSquare": 0,
+        "ceiling": 1E-08
+      }
+    },
+    {
+      "id": "B4",
+      "name": "target-blind-positive-two-pole-alternative",
+      "passed": true,
+      "metrics": {
+        "positiveTwoPoleMass1": 0.4,
+        "positiveTwoPoleMass2": 1.2000000000000002,
+        "positiveTwoPoleAmplitude1": 1.000000000000001,
+        "positiveTwoPoleAmplitude2": 0.3499999999999996,
+        "positiveTwoPoleReducedChiSquare": 2.420762722889753E-26,
+        "massGrid": [
+          0.2,
+          0.4,
+          0.6000000000000001,
+          0.8,
+          1,
+          1.2000000000000002,
+          1.4000000000000001,
+          1.6,
+          1.8,
+          2
+        ]
+      }
+    },
+    {
+      "id": "B5",
+      "name": "sign-and-positivity-assumption-tripwires",
+      "passed": true,
+      "metrics": {
+        "signedRatio": 0.9805103096681091,
+        "signedOriginalMass": null,
+        "signedTwoPoleFitFeasible": true,
+        "signedPositiveTwoPoleFitFeasible": false,
+        "negativeScaleOriginalMass": 0.7999999999999999,
+        "negativePositiveTwoPoleFitFeasible": false,
+        "masslessRatio": 1,
+        "masslessOriginalMass": null,
+        "interpretation": "the original ratio rejects ratio\u003C=1 but accepts an overall-negative correlator; positivity must therefore be an explicit channel precondition"
+      }
+    },
+    {
+      "id": "B6",
+      "name": "invalid-row-family-firewall-propagation",
+      "passed": true,
+      "metrics": {
+        "passed": true,
+        "rowCount": 5,
+        "allFullFinite": false,
+        "familyThreshold": null,
+        "terminals": [
+          "invalid",
+          "invalid",
+          "invalid",
+          "invalid",
+          "invalid"
+        ],
+        "rule": "one invalid row prevents calibration; absent threshold propagates invalid to every family row"
+      }
+    }
+  ],
+  "oracleCases": [
+    {
+      "id": "positive-single-pole",
+      "kind": "positive-single-pole",
+      "c": [
+        1.0407622039783662,
+        0.540046917406634,
+        0.40379303598931077,
+        0.540046917406634
+      ],
+      "originalRatio": 1.3374349463048445,
+      "originalMass": 0.7999999999999999,
+      "singlePoleMass": 0.8,
+      "singlePoleAmplitude": 1,
+      "singlePoleReducedChiSquare": 0,
+      "positiveTwoPoleFitFeasible": true,
+      "positiveTwoPoleMass1": 0.2,
+      "positiveTwoPoleMass2": 0.8,
+      "positiveTwoPoleAmplitude1": 0,
+      "positiveTwoPoleAmplitude2": 1,
+      "positiveTwoPoleReducedChiSquare": 0,
+      "signedTwoPoleFitFeasible": true,
+      "signedTwoPoleReducedChiSquare": 0,
+      "pointwisePositive": true,
+      "reflectionSymmetric": true,
+      "logConvex": true,
+      "positivitySatisfied": true
+    },
+    {
+      "id": "positive-two-pole",
+      "kind": "positive-mixture",
+      "c": [
+        1.5547769294618123,
+        1.0864955349736645,
+        0.9621604955370319,
+        1.0864955349736645
+      ],
+      "originalRatio": 1.1292248434781504,
+      "originalMass": 0.5030581790489823,
+      "singlePoleMass": 0.536,
+      "singlePoleAmplitude": 1.3899592920444521,
+      "singlePoleReducedChiSquare": 1.3775050745536035,
+      "positiveTwoPoleFitFeasible": true,
+      "positiveTwoPoleMass1": 0.4,
+      "positiveTwoPoleMass2": 1.2000000000000002,
+      "positiveTwoPoleAmplitude1": 1.000000000000001,
+      "positiveTwoPoleAmplitude2": 0.3499999999999996,
+      "positiveTwoPoleReducedChiSquare": 2.420762722889753E-26,
+      "signedTwoPoleFitFeasible": true,
+      "signedTwoPoleReducedChiSquare": 2.420762722889753E-26,
+      "pointwisePositive": true,
+      "reflectionSymmetric": true,
+      "logConvex": true,
+      "positivitySatisfied": true
+    },
+    {
+      "id": "signed-two-pole",
+      "kind": "sign-indefinite-mixture",
+      "c": [
+        0.5969586697652435,
+        0.7744034973321445,
+        0.7897963842871482,
+        0.7744034973321445
+      ],
+      "originalRatio": 0.9805103096681091,
+      "originalMass": null,
+      "singlePoleMass": 0.05,
+      "singlePoleAmplitude": 0.3998589285323177,
+      "singlePoleReducedChiSquare": 147.71816087400097,
+      "positiveTwoPoleFitFeasible": false,
+      "positiveTwoPoleMass1": null,
+      "positiveTwoPoleMass2": null,
+      "positiveTwoPoleAmplitude1": null,
+      "positiveTwoPoleAmplitude2": null,
+      "positiveTwoPoleReducedChiSquare": 1.7976931348623157E+308,
+      "signedTwoPoleFitFeasible": true,
+      "signedTwoPoleReducedChiSquare": 1.837379495076069E-26,
+      "pointwisePositive": true,
+      "reflectionSymmetric": true,
+      "logConvex": false,
+      "positivitySatisfied": false
+    },
+    {
+      "id": "negative-scale-single-pole",
+      "kind": "negative-scale",
+      "c": [
+        -1.0407622039783662,
+        -0.540046917406634,
+        -0.40379303598931077,
+        -0.540046917406634
+      ],
+      "originalRatio": 1.3374349463048445,
+      "originalMass": 0.7999999999999999,
+      "singlePoleMass": null,
+      "singlePoleAmplitude": null,
+      "singlePoleReducedChiSquare": 1.7976931348623157E+308,
+      "positiveTwoPoleFitFeasible": false,
+      "positiveTwoPoleMass1": null,
+      "positiveTwoPoleMass2": null,
+      "positiveTwoPoleAmplitude1": null,
+      "positiveTwoPoleAmplitude2": null,
+      "positiveTwoPoleReducedChiSquare": 1.7976931348623157E+308,
+      "signedTwoPoleFitFeasible": true,
+      "signedTwoPoleReducedChiSquare": 0,
+      "pointwisePositive": false,
+      "reflectionSymmetric": true,
+      "logConvex": true,
+      "positivitySatisfied": false
+    },
+    {
+      "id": "massless-boundary",
+      "kind": "massless-boundary",
+      "c": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "originalRatio": 1,
+      "originalMass": null,
+      "singlePoleMass": 0.05,
+      "singlePoleAmplitude": 1.1028517840812686,
+      "singlePoleReducedChiSquare": 0.30836287302304544,
+      "positiveTwoPoleFitFeasible": false,
+      "positiveTwoPoleMass1": null,
+      "positiveTwoPoleMass2": null,
+      "positiveTwoPoleAmplitude1": null,
+      "positiveTwoPoleAmplitude2": null,
+      "positiveTwoPoleReducedChiSquare": 1.7976931348623157E+308,
+      "signedTwoPoleFitFeasible": false,
+      "signedTwoPoleReducedChiSquare": 0.03535009372075257,
+      "pointwisePositive": true,
+      "reflectionSymmetric": true,
+      "logConvex": true,
+      "positivitySatisfied": true
+    }
+  ],
+  "invalidRowPropagation": {
+    "passed": true,
+    "rowCount": 5,
+    "allFullFinite": false,
+    "familyThreshold": null,
+    "terminals": [
+      "invalid",
+      "invalid",
+      "invalid",
+      "invalid",
+      "invalid"
+    ],
+    "rule": "one invalid row prevents calibration; absent threshold propagates invalid to every family row"
+  },
+  "originalEstimatorIdentifiableOnSinglePoleDomain": true,
+  "originalEstimatorStructurallyIdentifiable": false,
+  "t4OriginalRatioUnderdeterminesSpectralContent": true,
+  "alternativeEstimatorFeasible": true,
+  "covarianceAwareResidualsPassed": true,
+  "covarianceAwareFullCorrelatorDiscriminatesMixture": false,
+  "channelNonidentifiabilityObserved": true,
+  "positiveOracleChannelValid": true,
+  "allOracleChannelsValid": false,
+  "statisticsOrPowerLimitationSupported": false,
+  "invalidRowPropagationPassed": true,
+  "exactGaussianSyntheticInputsOnly": true,
+  "hmcRun": false,
+  "performanceBenchmarkRun": false,
+  "phase456ArtifactReadOrReinterpreted": false,
+  "phase456ArtifactMutated": false,
+  "phase456TerminalChanged": false,
+  "explorationOnly": true,
+  "confirmationEvidence": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458EvaluationAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "productionAuthorized": false,
+  "samplingAuthorized": false,
+  "phase481RepairPackConstructed": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The original estimator is exact on its positive single-pole domain, a frozen covariance-aware alternative resolves the positive mixture oracle, and sign-indefinite or negative-scale channels remain nonidentifiable without an explicit positivity premise. This exploration does not reinterpret Phase456 or authorize repair or sampling."
+}

@@ -267,6 +267,9 @@ const paths = {
   phase490: "studies/phase490_zero_mode_quotient_audit_001/output/zero_mode_quotient_audit_summary.json",
   phase491: "studies/phase491_committed_bosonic_model_family_sensitivity_001/output/committed_bosonic_model_family_sensitivity_summary.json",
   phase492: "studies/phase492_phase455_combined_robustness_adjudicator_001/output/phase455_combined_robustness_adjudicator_summary.json",
+  phase493: "studies/phase493_phase456_stored_artifact_failure_decomposition_001/output/phase456_stored_artifact_failure_decomposition_summary.json",
+  phase494: "studies/phase494_phase456_estimator_oracle_battery_001/output/phase456_estimator_oracle_battery_summary.json",
+  phase495: "studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/output/phase456_prospective_repair_readiness_adjudicator_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -596,6 +599,9 @@ const phase489 = requireFile(paths.phase489);
 const phase490 = requireFile(paths.phase490);
 const phase491 = requireFile(paths.phase491);
 const phase492 = requireFile(paths.phase492);
+const phase493 = requireFile(paths.phase493);
+const phase494 = requireFile(paths.phase494);
+const phase495 = requireFile(paths.phase495);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5879,6 +5885,24 @@ if (sourceLineageMissing) {
   }
   assert(phase492.a7BoundaryHeld === true && phase492.phase455TerminalMutated === false && phase492.phase455T1OrT2Emitted === false && phase492.upstreamMutationCount === 0, "Phase492 must preserve the A7 mutation and translation firewall.");
   assert(phase101Package?.exploratorySelfAudit?.zeroModeQuotientAudit?.quotientClassification === "quotient-underdetermined" && phase101Package?.exploratorySelfAudit?.committedBosonicModelFamilySensitivity?.sensitivityClassification === "model-convention-fragile" && phase101Package?.exploratorySelfAudit?.phase455CombinedRobustnessAdjudicator?.a7BoundaryHeld === true, "Phase101 must mirror the A7 convention-closure tranche.");
+  // Phases493-495 -- Amendment A8 read-only Phase456 forensic recovery.
+  assert(phase493.terminalStatus === "phase456-stored-artifact-failure-decomposition-mixed-failure-supported" && phase493.inputsValid === true && phase493.failureClassification === "mixed-failure-supported", "Phase493 must preserve the valid mixed-failure forensic terminal.");
+  assert(phase493.decisionContractSha256 === "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130" && phase493.frozenInputs?.artifactHashPinned === true && phase493.frozenInputs?.artifactTwinsExact === true && phase493.frozenInputs?.preregistrationPack?.packHashPinned === true, "Phase493 exact committed-input or decision-contract binding drifted.");
+  assert(phase493.componentFindings?.sampler?.samplerDefectSupported === false && phase493.componentFindings?.estimatorDomain?.estimatorDomainFailureSupported === true && phase493.componentFindings?.statistics?.statisticsLimitationSupported === true && phase493.componentFindings?.channelValidity?.underlyingObservableInvalidSupported === false && phase493.componentFindings?.familyFirewall?.familyFirewallPropagationVerified === true, "Phase493 failure decomposition drifted.");
+  assert(phase494.terminalStatus === "phase456-estimator-oracle-battery-mixed-estimator-outcome" && phase494.inputsValid === true && phase494.oracleClassification === "mixed-estimator-outcome", "Phase494 must preserve the valid mixed-estimator oracle terminal.");
+  assert(phase494.decisionContractSha256 === "da9ef99033769f39885b4ac75a09f787ee2103f9c9af7011b6472f5eaf403d1e" && phase494.phase493Binding?.valid === true && phase494.phase493Binding?.byteSha256 === "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85", "Phase494 exact Phase493 or decision-contract binding drifted.");
+  assert(Array.isArray(phase494.batteries) && phase494.batteries.length === 6 && phase494.batteries.every(row => row.passed === true) && phase494.originalEstimatorIdentifiableOnSinglePoleDomain === true && phase494.originalEstimatorStructurallyIdentifiable === false && phase494.alternativeEstimatorFeasible === true, "Phase494 estimator oracle battery drifted.");
+  assert(phase494.covarianceAwareFullCorrelatorDiscriminatesMixture === false && phase494.channelNonidentifiabilityObserved === true && phase494.allOracleChannelsValid === false && phase494.invalidRowPropagationPassed === true, "Phase494 must preserve its frozen negative discrimination and channel tripwires.");
+  assert(phase495.terminalStatus === "phase456-prospective-repair-readiness-adjudicator-estimator-structurally-unidentifiable" && phase495.inputsValid === true && phase495.readinessClassification === "estimator-structurally-unidentifiable", "Phase495 readiness adjudication drifted.");
+  assert(phase495.frozenContracts?.schemaContractSha256 === "8262869e07872ce0b305a6266126b47a13b35790fe4cc35b793e27aab856d5d3" && phase495.frozenContracts?.precedenceContractSha256 === "c463ca14f339d97a80edf357ec0e59ab3e72adcc05fc9297a1197ba3f12d2019" && phase495.precursorBindings?.bothExactBytesAndSchemasValid === true, "Phase495 frozen contracts or exact precursor bindings drifted.");
+  assert(phase495.supportedConditions?.samplerImplementationDefectSupported === false && phase495.supportedConditions?.estimatorStructurallyUnidentifiableSupported === true && phase495.supportedConditions?.insufficientStatisticsSupported === true && phase495.supportedConditions?.observableChannelInvalidSupported === false && phase495.supportedConditions?.prospectiveRepairPackEvidenceComplete === false, "Phase495 supported-condition ledger drifted.");
+  for (const phase of [phase493, phase494, phase495]) {
+    assert(phase.explorationOnly === true && phase.confirmationEvidence === false && phase.o4Discharged === false && phase.phase458G3Satisfied === false && phase.phase458G5Satisfied === false && phase.samplingAuthorized === false && phase.productionAuthorized === false && phase.sourceContractApplicationAllowed === false && phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, `${phase.phaseId} crossed the A8 authority or promotion firewall.`);
+  }
+  assert(phase493.a8BoundaryHeld === true && phase493.phase456ArtifactMutated === false && phase493.phase456TerminalReinterpreted === false && phase493.phase481PackConstructed === false, "Phase493 must preserve the immutable Phase456 and no-pack boundary.");
+  assert(phase494.phase456ArtifactMutated === false && phase494.phase456ArtifactReadOrReinterpreted === false && phase494.phase456TerminalChanged === false && phase494.phase481RepairPackConstructed === false && phase494.hmcRun === false && phase494.performanceBenchmarkRun === false, "Phase494 must remain a reduced oracle-only battery.");
+  assert(phase495.a8BoundaryHeld === true && phase495.phase456ArtifactMutated === false && phase495.phase456ArtifactReadOrReinterpreted === false && phase495.phase456TerminalChanged === false && phase495.phase481RepairPackConstructed === false && phase495.phase481PackCreated === false && phase495.phase481PackAuthorized === false, "Phase495 must not reinterpret Phase456 or construct/authorize Phase481.");
+  assert(phase101Package?.exploratorySelfAudit?.phase456StoredArtifactFailureDecomposition?.failureClassification === "mixed-failure-supported" && phase101Package?.exploratorySelfAudit?.phase456EstimatorOracleBattery?.oracleClassification === "mixed-estimator-outcome" && phase101Package?.exploratorySelfAudit?.phase456ProspectiveRepairReadiness?.readinessClassification === "estimator-structurally-unidentifiable", "Phase101 must mirror the A8 forensic-recovery tranche.");
   // Phase480 -- implemented fail-closed external human memo intake; no memo is present.
   assert(phase480.skeletonBuilt === false && phase480.zeroPhysicsCompute === true && phase480.intakeImplemented === true && phase480.awaitingImplementation === false, "Phase480 must be the implemented zero-compute external memo intake.");
   assert(phase480.applicationSubjectKind === "o4-physicist-adjudication-intake" && phase480.waveOrder === 4, "Phase480 identity or wave order drifted.");

@@ -355,6 +355,9 @@
     <PhaseProject Include="../studies/phase490_zero_mode_quotient_audit_001/Phase490ZeroModeQuotientAudit.csproj" />
     <PhaseProject Include="../studies/phase491_committed_bosonic_model_family_sensitivity_001/Phase491CommittedBosonicModelFamilySensitivity.csproj" />
     <PhaseProject Include="../studies/phase492_phase455_combined_robustness_adjudicator_001/Phase492Phase455CombinedRobustnessAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase493_phase456_stored_artifact_failure_decomposition_001/Phase493Phase456StoredArtifactFailureDecomposition.csproj" />
+    <PhaseProject Include="../studies/phase494_phase456_estimator_oracle_battery_001/Phase494Phase456EstimatorOracleBattery.csproj" />
+    <PhaseProject Include="../studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/Phase495Phase456ProspectiveRepairReadinessAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

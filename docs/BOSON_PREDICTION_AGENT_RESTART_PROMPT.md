@@ -128,9 +128,31 @@ source contract, or support a physical-unit claim. Gate-bearing reuse requires
 a new prospective confirmation checkpoint and the still-binding external
 interpretation. Binding plan:
 `docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md`. Registry 490-492
-is allocated; 493+ remains unassigned. Mandatory incremental validation passed
+is allocated; its former 493+ frontier is superseded by Amendment A8 below. Mandatory incremental validation passed
 with 87 steps run and 273 skipped; Phase202 is 280/3 and integrity preserves
 the 15/14 deficits and zero promoted claims.
+
+PHASE456 FORENSIC RECOVERY (2026-07-15, Amendment A8; Phases493-495):
+Phase493 binds the immutable Phase456 production artifact, analyzer, launch
+summary, authorization, and preregistration pack. It independently reproduces
+both a frozen-estimator domain failure and effective-sample-size limitations,
+while the retained primitive sampler and exact-Gaussian controls do not support
+a sampler implementation defect. Its terminal is `mixed-failure-supported`.
+Phase494's six reduced deterministic/exact-Gaussian oracle batteries pass as
+tests, but the result is `mixed-estimator-outcome`: the original estimator is
+exact on a positive single-pole domain, a fixed positive two-pole alternative
+is feasible on its grid-resolved oracle, and T=4 plus the frozen covariance do
+not identify general spectral content. Sign-indefinite channels retain an
+unresolved positivity premise. Phase495 exact-binds both outputs and records
+`estimator-structurally-unidentifiable`; insufficient statistics remains a
+supported lower-precedence condition. No underlying-observable invalidity is
+declared. A8 does not reinterpret Phase456, construct or authorize Phase481,
+authorize fresh sampling or production, satisfy Phase458 G3/G5, discharge O4,
+fill a source contract, or support a physical-unit claim. Binding plan:
+`docs/Phases/PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15.md`. Registry 493-495
+is allocated; 496+ remains unassigned. Mandatory incremental validation passed;
+Phase202 is 283/3 and integrity preserves the 15/14 source deficits and zero
+promoted claims.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6

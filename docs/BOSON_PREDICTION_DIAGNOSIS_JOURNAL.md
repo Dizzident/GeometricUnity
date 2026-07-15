@@ -20679,3 +20679,48 @@ and `promotedPhysicalMassClaimCount=0`. Amendment A7 does not rewrite
 Phase455, satisfy Phase458 G3/G5, discharge O4, authorize Binder/sampling/
 production, fill a source contract, or support any physical-unit claim. Any
 gate-bearing reuse requires a new prospective confirmation checkpoint.
+
+## 2026-07-15 - Amendment A8: Phase456 failure localized to estimator identifiability plus statistics
+
+The user authorized the next three blocker-resolution experiments as one
+agent-parallel checkpoint. Phase493 exact-bound the retained Phase456
+production artifact and twin summary (`9b7e965a...`), launch summary, analyzer,
+authorization, and preregistration pack. It independently reconstructed the
+T=4 cosh-estimator domain and found three non-domain production/control mass
+rows. It also reproduced the generic and k-min effective-sample-size failures
+(`N_eff=7.1549` and `16.6230` against the frozen floor of 100). Primitive
+sampler checks and the retained exact-Gaussian pipeline pass, so a sampler
+implementation defect is not supported. The family firewall correctly
+propagates one non-finite row into five invalid verdict rows. Phase493 therefore
+records `mixed-failure-supported` without declaring the observable invalid or
+rehabilitating Phase456.
+
+Phase494 ran six reduced deterministic and exact-Gaussian oracle batteries,
+with no HMC or benchmark. The original ratio estimator recovers a positive
+single-pole mass of 0.8 exactly, but a positive two-pole oracle maps to one
+effective ratio mass near 0.503 and therefore exposes structural
+non-identifiability. A frozen target-blind two-pole grid recovers its injected
+0.4/1.2 masses and 1/0.35 amplitudes. The predeclared covariance test is a
+preserved negative: its single-pole residual is only 1.3775 per degree of
+freedom, below the frozen rejection ceiling of 3, so the covariance does not
+discriminate the mixture. Sign and positivity tripwires also show that an
+overall-negative correlator can pass the ratio while signed content cannot be
+handled by the positive alternative. Phase494 records
+`mixed-estimator-outcome`; no threshold or covariance was tightened after the
+result.
+
+Phase495 rechecked the exact Phase493 and Phase494 bytes and applied the frozen
+A8 precedence. It selects `estimator-structurally-unidentifiable` before the
+also-supported `insufficient-statistics` condition. Sampler defect and
+underlying-observable invalidity remain unsupported, and the prospective
+repair evidence is incomplete because the frozen full-correlator test did not
+discriminate its mixture. No Phase481 pack was designed, created, or
+authorized. The entire tranche remains exploration-only and emits no O4,
+Phase458, sampling, production, source-contract, or physical-unit authority;
+`promotedPhysicalMassClaimCount=0` throughout.
+
+The mandatory incremental checkpoint passes. Phase101 remains physically
+blocked and Phase202 moves to 283 passed / 3 standing failures. O4 coverage
+remains 31/31, the synthetic-overturn battery remains 94/94, source deficits
+remain 15/14, and
+`promotedPhysicalMassClaimCount=0`.

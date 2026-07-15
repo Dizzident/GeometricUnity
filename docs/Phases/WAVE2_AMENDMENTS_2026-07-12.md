@@ -163,3 +163,22 @@ G3/G5, author O4 rulings, authorize sampling or production, fill source
 contracts, or support physical-unit claims. Any gate-bearing use requires a
 new prospective confirmation checkpoint and the still-binding Phase458/O4
 contracts. `promotedPhysicalMassClaimCount=0` on every branch.
+
+## A8 — Phase456 stored-artifact forensic recovery (phases 493–495)
+
+The completed Phase456 production artifact is preserved at its committed
+`production-analysis-invalid` terminal. Phase493 performs a read-only failure
+decomposition over the committed production summary, retained correlators,
+jackknife rows, exact controls, and analyzer source. Phase494 runs only reduced
+deterministic and exact-Gaussian oracle batteries to test estimator domain,
+finite-volume identifiability, covariance-aware correlator comparisons, and
+channel validity. Phase495 binds the exact two precursor artifacts and emits a
+prospective repair-readiness classification.
+
+No A8 phase may edit or reinterpret the Phase456 artifact, run HMC, launch a
+benchmark, satisfy Phase458 G3/G5, construct the Phase481 repair pack, or
+authorize fresh sampling. Existing data may be reused only as exploration-lane
+forensic evidence. A new prospective pack remains gated by Phase481 and new
+written sampling authorization (or applicable O4 coverage). Negative,
+non-finite, and unresolved branches are first-class outputs;
+`promotedPhysicalMassClaimCount=0` throughout.

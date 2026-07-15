@@ -1,0 +1,173 @@
+{
+  "phaseId": "phase495-phase456-prospective-repair-readiness-adjudicator",
+  "terminalStatus": "phase456-prospective-repair-readiness-adjudicator-estimator-structurally-unidentifiable",
+  "verdictKind": "estimator-structurally-unidentifiable",
+  "readinessClassification": "estimator-structurally-unidentifiable",
+  "readinessTaxonomy": [
+    "invalid-precursor",
+    "sampler-implementation-defect",
+    "estimator-structurally-unidentifiable",
+    "insufficient-statistics",
+    "observable-channel-invalid",
+    "prospective-repair-pack-justified",
+    "unresolved"
+  ],
+  "inputsValid": true,
+  "applicationSubjectKind": "phase456-prospective-repair-readiness-zero-physics-adjudicator",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A8; PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15 Phase495",
+  "explorationOnly": true,
+  "zeroPhysicsCompute": true,
+  "frozenBeforeFindingsConsumption": true,
+  "frozenContracts": {
+    "schemaContract": "phase495-a8-input-schema-v1|p493:phaseId:string,terminalStatus:string,verdictKind:string,inputsValid:boolean,failureClassification:string,decisionContractSha256:string,componentFindings.sampler.samplerDefectSupported:boolean,componentFindings.estimatorDomain.estimatorDomainFailureSupported:boolean,componentFindings.statistics.statisticsLimitationSupported:boolean,componentFindings.channelValidity.channelValidityFailureSupported:boolean,componentFindings.channelValidity.channelEstimatorCompatibilityFailureSupported:boolean,componentFindings.channelValidity.underlyingObservableInvalidSupported:boolean,componentFindings.familyFirewall.familyFirewallPropagationVerified:boolean,a8BoundaryHeld:boolean|p494:phaseId:string,terminalStatus:string,verdictKind:string,inputsValid:boolean,oracleClassification:string,decisionContractSha256:string,originalEstimatorIdentifiableOnSinglePoleDomain:boolean,originalEstimatorStructurallyIdentifiable:boolean,t4OriginalRatioUnderdeterminesSpectralContent:boolean,alternativeEstimatorFeasible:boolean,covarianceAwareResidualsPassed:boolean,covarianceAwareFullCorrelatorDiscriminatesMixture:boolean,channelNonidentifiabilityObserved:boolean,positiveOracleChannelValid:boolean,allOracleChannelsValid:boolean,statisticsOrPowerLimitationSupported:boolean,invalidRowPropagationPassed:boolean",
+    "schemaContractSha256": "8262869e07872ce0b305a6266126b47a13b35790fe4cc35b793e27aab856d5d3",
+    "precedenceContract": "phase495-a8-readiness-v1|precedence=invalid-precursor\u003Esampler-implementation-defect\u003Eestimator-structurally-unidentifiable\u003Einsufficient-statistics\u003Eobservable-channel-invalid\u003Eprospective-repair-pack-justified\u003Eunresolved|invalid=missing-or-byte-hash-schema-contract-taxonomy-or-input-validity-failure|sampler=p493-sampler-defect-supported|estimator=p493-estimator-domain-or-channel-compatibility-failure-and-p494-original-structurally-unidentifiable-and-t4-underdetermines-content|statistics=p493-statistics-limitation-supported|observable=p493-underlying-observable-invalid-supported|justified=no-earlier-condition-and-p494-alternative-feasible-positive-channel-valid-covariance-residuals-pass-full-correlator-discriminates-mixture-invalid-propagation-pass|zero-authority",
+    "precedenceContractSha256": "c463ca14f339d97a80edf357ec0e59ab3e72adcc05fc9297a1197ba3f12d2019",
+    "precedence": [
+      "invalid-precursor",
+      "sampler-implementation-defect",
+      "estimator-structurally-unidentifiable",
+      "insufficient-statistics",
+      "observable-channel-invalid",
+      "prospective-repair-pack-justified",
+      "unresolved"
+    ],
+    "expectedPhase493ByteSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+    "expectedPhase494ByteSha256": "e90f8e008c7d413275699f353603bb6dab9c4f3490ec5039ca6c9a50a6dbc25f",
+    "expectedPhase493DecisionContractSha256": "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130",
+    "expectedPhase494DecisionContractSha256": "da9ef99033769f39885b4ac75a09f787ee2103f9c9af7011b6472f5eaf403d1e"
+  },
+  "precursorBindings": {
+    "phase493": {
+      "path": "studies/phase493_phase456_stored_artifact_failure_decomposition_001/output/phase456_stored_artifact_failure_decomposition_summary.json",
+      "expectedByteSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+      "actualByteSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+      "byteHashMatches": true,
+      "phaseId": "phase493-phase456-stored-artifact-failure-decomposition",
+      "classification": "mixed-failure-supported",
+      "decisionContractSha256": "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130",
+      "schemaValid": true,
+      "precursorInputsValid": true,
+      "valid": true,
+      "status": "exact-byte-schema-contract-and-taxonomy-bound"
+    },
+    "phase494": {
+      "path": "studies/phase494_phase456_estimator_oracle_battery_001/output/phase456_estimator_oracle_battery_summary.json",
+      "expectedByteSha256": "e90f8e008c7d413275699f353603bb6dab9c4f3490ec5039ca6c9a50a6dbc25f",
+      "actualByteSha256": "e90f8e008c7d413275699f353603bb6dab9c4f3490ec5039ca6c9a50a6dbc25f",
+      "byteHashMatches": true,
+      "phaseId": "phase494-phase456-estimator-oracle-battery",
+      "classification": "mixed-estimator-outcome",
+      "decisionContractSha256": "da9ef99033769f39885b4ac75a09f787ee2103f9c9af7011b6472f5eaf403d1e",
+      "schemaValid": true,
+      "precursorInputsValid": true,
+      "valid": true,
+      "status": "exact-byte-schema-contract-and-taxonomy-bound"
+    },
+    "bothExactBytesAndSchemasValid": true
+  },
+  "precursorClassifications": {
+    "phase493": "mixed-failure-supported",
+    "phase494": "mixed-estimator-outcome"
+  },
+  "supportedConditions": {
+    "samplerImplementationDefectSupported": false,
+    "estimatorStructurallyUnidentifiableSupported": true,
+    "insufficientStatisticsSupported": true,
+    "observableChannelInvalidSupported": false,
+    "prospectiveRepairPackEvidenceComplete": false,
+    "phase493ChannelEstimatorCompatibilityFailureSupported": true,
+    "phase493UnderlyingObservableInvalidSupported": false,
+    "phase494AlternativeEstimatorFeasible": true,
+    "phase494FullCorrelatorDiscriminatesMixture": false,
+    "phase494PositiveOracleChannelValid": true,
+    "phase494AllOracleChannelsValid": false
+  },
+  "precedenceTrace": [
+    {
+      "order": 1,
+      "classification": "invalid-precursor",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 2,
+      "classification": "sampler-implementation-defect",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 3,
+      "classification": "estimator-structurally-unidentifiable",
+      "conditionSupported": true,
+      "selected": true
+    },
+    {
+      "order": 4,
+      "classification": "insufficient-statistics",
+      "conditionSupported": true,
+      "selected": false
+    },
+    {
+      "order": 5,
+      "classification": "observable-channel-invalid",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 6,
+      "classification": "prospective-repair-pack-justified",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 7,
+      "classification": "unresolved",
+      "conditionSupported": false,
+      "selected": false
+    }
+  ],
+  "lowerPrecedenceSupportedConditionsPreserved": [
+    {
+      "classification": "insufficient-statistics",
+      "supported": true
+    }
+  ],
+  "prospectiveRepairPackDesignMayBeConsidered": false,
+  "existingPhase481GatesRemainBinding": true,
+  "newWrittenSamplingAuthorizationOrApplicableO4CoverageStillRequired": true,
+  "phase456ArtifactReadOrReinterpreted": false,
+  "phase456ArtifactMutated": false,
+  "phase456TerminalChanged": false,
+  "phase456InvalidRowsReinterpreted": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase481PackAuthorized": false,
+  "phase481RepairPackConstructed": false,
+  "freshRepairPackCreated": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "zeroNewSampling": true,
+  "samplingRunOrAuthorized": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "confirmationEvidence": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458GateSatisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a8BoundaryHeld": true,
+  "decision": "The original T=4 ratio is structurally unable to identify the admitted spectral content and the retained artifact has channel-estimator compatibility failures. Statistics are also limited, but that lower-precedence condition does not override the estimator blocker. The underlying observable is not declared invalid, and no repair pack or rerun is authorized."
+}

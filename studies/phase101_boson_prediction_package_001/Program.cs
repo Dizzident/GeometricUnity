@@ -335,6 +335,9 @@ const string Phase489ReducedSamplerRestartEquivalencePath = "studies/phase489_re
 const string Phase490ZeroModeQuotientAuditPath = "studies/phase490_zero_mode_quotient_audit_001/output/zero_mode_quotient_audit_summary.json";
 const string Phase491CommittedBosonicModelFamilySensitivityPath = "studies/phase491_committed_bosonic_model_family_sensitivity_001/output/committed_bosonic_model_family_sensitivity_summary.json";
 const string Phase492Phase455CombinedRobustnessAdjudicatorPath = "studies/phase492_phase455_combined_robustness_adjudicator_001/output/phase455_combined_robustness_adjudicator_summary.json";
+const string Phase493Phase456StoredArtifactFailureDecompositionPath = "studies/phase493_phase456_stored_artifact_failure_decomposition_001/output/phase456_stored_artifact_failure_decomposition_summary.json";
+const string Phase494Phase456EstimatorOracleBatteryPath = "studies/phase494_phase456_estimator_oracle_battery_001/output/phase456_estimator_oracle_battery_summary.json";
+const string Phase495Phase456ProspectiveRepairReadinessAdjudicatorPath = "studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/output/phase456_prospective_repair_readiness_adjudicator_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -710,6 +713,9 @@ using var phase489 = TryParseJson(Phase489ReducedSamplerRestartEquivalencePath);
 using var phase490 = TryParseJson(Phase490ZeroModeQuotientAuditPath);
 using var phase491 = TryParseJson(Phase491CommittedBosonicModelFamilySensitivityPath);
 using var phase492 = TryParseJson(Phase492Phase455CombinedRobustnessAdjudicatorPath);
+using var phase493 = TryParseJson(Phase493Phase456StoredArtifactFailureDecompositionPath);
+using var phase494 = TryParseJson(Phase494Phase456EstimatorOracleBatteryPath);
+using var phase495 = TryParseJson(Phase495Phase456ProspectiveRepairReadinessAdjudicatorPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -8946,6 +8952,9 @@ var package = new
         zeroModeQuotientAudit = phase490 is null ? null : new { status = JsonString(phase490.RootElement, "terminalStatus"), inputsValid = JsonBool(phase490.RootElement, "inputsValid"), quotientClassification = JsonString(phase490.RootElement, "quotientClassification"), uniqueAdmissibleQuotient = JsonBool(phase490.RootElement, "uniqueAdmissibleQuotient"), o4Discharged = JsonBool(phase490.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase490.RootElement, "promotedPhysicalMassClaimCount") },
         committedBosonicModelFamilySensitivity = phase491 is null ? null : new { status = JsonString(phase491.RootElement, "terminalStatus"), inputsValid = JsonBool(phase491.RootElement, "inputsValid"), sensitivityClassification = JsonString(phase491.RootElement, "sensitivityClassification"), admissibleBranchCount = JsonInt(phase491.RootElement, "admissibleBranchCount"), o4Discharged = JsonBool(phase491.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase491.RootElement, "promotedPhysicalMassClaimCount") },
         phase455CombinedRobustnessAdjudicator = phase492 is null ? null : new { status = JsonString(phase492.RootElement, "terminalStatus"), verdictKind = JsonString(phase492.RootElement, "verdictKind"), a7BoundaryHeld = JsonBool(phase492.RootElement, "a7BoundaryHeld"), o4Discharged = JsonBool(phase492.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase492.RootElement, "promotedPhysicalMassClaimCount") },
+        phase456StoredArtifactFailureDecomposition = phase493 is null ? null : new { status = JsonString(phase493.RootElement, "terminalStatus"), inputsValid = JsonBool(phase493.RootElement, "inputsValid"), failureClassification = JsonString(phase493.RootElement, "failureClassification"), a8BoundaryHeld = JsonBool(phase493.RootElement, "a8BoundaryHeld"), promotedPhysicalMassClaimCount = JsonInt(phase493.RootElement, "promotedPhysicalMassClaimCount") },
+        phase456EstimatorOracleBattery = phase494 is null ? null : new { status = JsonString(phase494.RootElement, "terminalStatus"), inputsValid = JsonBool(phase494.RootElement, "inputsValid"), oracleClassification = JsonString(phase494.RootElement, "oracleClassification"), alternativeEstimatorFeasible = JsonBool(phase494.RootElement, "alternativeEstimatorFeasible"), promotedPhysicalMassClaimCount = JsonInt(phase494.RootElement, "promotedPhysicalMassClaimCount") },
+        phase456ProspectiveRepairReadiness = phase495 is null ? null : new { status = JsonString(phase495.RootElement, "terminalStatus"), inputsValid = JsonBool(phase495.RootElement, "inputsValid"), readinessClassification = JsonString(phase495.RootElement, "readinessClassification"), a8BoundaryHeld = JsonBool(phase495.RootElement, "a8BoundaryHeld"), promotedPhysicalMassClaimCount = JsonInt(phase495.RootElement, "promotedPhysicalMassClaimCount") },
     },
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new

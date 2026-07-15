@@ -1,0 +1,244 @@
+{
+  "phaseId": "phase493-phase456-stored-artifact-failure-decomposition",
+  "terminalStatus": "phase456-stored-artifact-failure-decomposition-mixed-failure-supported",
+  "verdictKind": "mixed-failure-supported",
+  "inputsValid": true,
+  "failureClassification": "mixed-failure-supported",
+  "decisionContractSha256": "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130",
+  "applicationSubjectKind": "phase456-stored-artifact-read-only-forensics",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A8; PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15 Phase493",
+  "explorationLane": true,
+  "explorationOnly": true,
+  "confirmationEvidence": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "decisionContract": {
+    "schemaId": "phase493-a8-failure-decomposition-v1",
+    "canonical": "phase493-a8-v1|precedence=invalid-committed-artifact\u003Emixed-failure-supported\u003Esampler-defect-supported\u003Eestimator-domain-failure-supported\u003Estatistics-limited-supported\u003Efailure-source-unresolved|sampler-defect=primitive-sampler-or-exact-control-defect-observed|estimator-domain=retained-full-or-jackknife-correlator-outside-frozen-cosh-domain|statistics-limited=verdict-row-neff-below-100|mixed=at-least-two-supported-components|read-only-no-rehabilitation-no-authority",
+    "sha256": "ccf3711817ec93a4a5ea1fdad80132ce9229ebfe05b4855fd5497f7548b0e130",
+    "taxonomy": [
+      "sampler-defect-supported",
+      "estimator-domain-failure-supported",
+      "statistics-limited-supported",
+      "mixed-failure-supported",
+      "failure-source-unresolved",
+      "invalid-committed-artifact"
+    ],
+    "taxonomyExact": true
+  },
+  "frozenInputs": {
+    "artifact": {
+      "path": "studies/phase456_consolidated_n4_launch_001/production/phase452_n4/scalar_channel_spectroscopy_probe.json",
+      "sha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "byteCount": 3784085,
+      "present": true
+    },
+    "artifactSummary": {
+      "path": "studies/phase456_consolidated_n4_launch_001/production/phase452_n4/scalar_channel_spectroscopy_probe_summary.json",
+      "sha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "byteCount": 3784085,
+      "present": true
+    },
+    "artifactTwinsExact": true,
+    "artifactHashPinned": true,
+    "phase456Output": {
+      "path": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "sha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "byteCount": 16234,
+      "present": true
+    },
+    "phase456Program": {
+      "path": "studies/phase456_consolidated_n4_launch_001/Program.cs",
+      "sha256": "56158984de45764aacdff225518ae8096a0672da0ad478e623add633401555ad",
+      "byteCount": 17869,
+      "present": true
+    },
+    "analyzerSource": {
+      "path": "studies/phase456_consolidated_n4_launch_001/ProductionAnalysis.cs",
+      "sha256": "6ab8f5efcf9c1fef705b263d7d9c0d70c1e94c1f99cb0ca7482aad0d2bafd02f",
+      "byteCount": 23391,
+      "present": true
+    },
+    "authorization": {
+      "path": "studies/phase456_consolidated_n4_launch_001/production_authorization.json",
+      "sha256": "b097b0504c6eafdf79523ef7913c69ab37fe086411334fea7e91c9fc9be70642",
+      "byteCount": 820,
+      "present": true
+    },
+    "authorizationHashPinned": true,
+    "preregistrationPack": {
+      "files": [
+        {
+          "path": "a4_symmetry_irrep_projectors.json",
+          "sha256": "3948fc8c4267a890db1f04cdb1931284a5a055f3d458d3ccbfd1f055fa41bb49",
+          "byteCount": 62034
+        },
+        {
+          "path": "a5_gaussian_domination_stage_a.json",
+          "sha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+          "byteCount": 1879
+        },
+        {
+          "path": "pack_manifest.json",
+          "sha256": "5320eb651898c120ede0bf652ec95327456326d7ca98e1371f836c93684ee7fb",
+          "byteCount": 4039
+        }
+      ],
+      "computedPackSha256": "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa",
+      "pinnedPackSha256": "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa",
+      "packHashPinned": true
+    },
+    "inputErrors": []
+  },
+  "componentFindings": {
+    "sampler": {
+      "samplerDefectSupported": false,
+      "primitiveSamplerGatesPassed": true,
+      "exactGaussianPipelinePassed": true,
+      "freeFieldGatePassed": false,
+      "interpretation": "Primitive energy/virial sampler gates and the exact-Gaussian pipeline pass. The observable-level free-field gate is red because its frozen mass estimator is non-finite; retained evidence therefore does not affirm a sampler implementation defect."
+    },
+    "estimatorDomain": {
+      "estimatorDomainFailureSupported": true,
+      "independentlyInvalidMassRows": 3,
+      "rowDomainFindings": [
+        {
+          "rowId": "a1-gevp-gap/production",
+          "c1": 0.8453938251646828,
+          "c2": 0.8365896729972532,
+          "ratio": 1.010523859487635,
+          "finite": true,
+          "strictlyGreaterThanOne": true,
+          "inFrozenCoshDomain": true
+        },
+        {
+          "rowId": "a1-gevp-gap/exact-gaussian",
+          "c1": 0.10337069002745974,
+          "c2": 0.03874743256762672,
+          "ratio": 2.667807469489615,
+          "finite": true,
+          "strictlyGreaterThanOne": true,
+          "inFrozenCoshDomain": true
+        },
+        {
+          "rowId": "a2-gap/production",
+          "c1": -0.1704711405731664,
+          "c2": 0.7887248180105677,
+          "ratio": -0.21613512936381615,
+          "finite": true,
+          "strictlyGreaterThanOne": false,
+          "inFrozenCoshDomain": false
+        },
+        {
+          "rowId": "a2-gap/exact-gaussian",
+          "c1": -1.5231929279991072,
+          "c2": -3.6042785596231033,
+          "ratio": 0.4226068831257,
+          "finite": true,
+          "strictlyGreaterThanOne": false,
+          "inFrozenCoshDomain": false
+        },
+        {
+          "rowId": "kmin-dispersion/production",
+          "c1": 17147.895435146303,
+          "c2": 4663.895728956912,
+          "ratio": 3.6767321637744805,
+          "finite": true,
+          "strictlyGreaterThanOne": true,
+          "inFrozenCoshDomain": true
+        },
+        {
+          "rowId": "kmin-dispersion/exact-gaussian",
+          "c1": 37126.90941846389,
+          "c2": -2653.011590196073,
+          "ratio": -13.994250743442848,
+          "finite": true,
+          "strictlyGreaterThanOne": false,
+          "inFrozenCoshDomain": false
+        }
+      ],
+      "frozenDomain": "At T=4 the Phase456 estimator uses C(1)/C(2) and requires a finite ratio strictly greater than one."
+    },
+    "statistics": {
+      "statisticsLimitationSupported": true,
+      "nEffFloor": 100,
+      "sd2GenericNEff": 7.154886811566248,
+      "sd2A2NEff": 7601.399332253126,
+      "sd2KMinNEff": 16.622963970666376,
+      "allColumnNEffGatePassed": false,
+      "affectedVerdictRows": [
+        "a1-gevp-gap",
+        "kmin-dispersion"
+      ]
+    },
+    "channelValidity": {
+      "channelValidityFailureSupported": false,
+      "channelEstimatorCompatibilityFailureSupported": true,
+      "underlyingObservableInvalidSupported": false,
+      "interpretation": "Retained sign/ratio patterns violate the single-cosh estimator domain in multiple production/control channels. This supports a channel/estimator compatibility problem, but Phase493 does not declare the underlying observable physically invalid."
+    },
+    "familyFirewall": {
+      "familyFirewallPropagationVerified": true,
+      "allFiveRowsTerminalInvalid": true,
+      "familyWiseThresholdWithheld": true,
+      "appliedThresholdWithheld": true,
+      "interpretation": "A non-finite mass row prevents aligned family calibration; the committed any-invalid-row rule consequently marks all five rows invalid without erasing finite retained estimates."
+    },
+    "supportedPrimaryComponentCount": 2
+  },
+  "controlGateRows": [
+    {
+      "member": "identity",
+      "analyticMeffO1": 4.905313073428985,
+      "measuredMeffO1": null,
+      "measuredMeffO1Sigma": null,
+      "gateO1": false,
+      "analyticFinite": true,
+      "measuredFinite": false
+    },
+    {
+      "member": "sd2-id0/c0.5",
+      "analyticMeffO1": 5.071052742291922,
+      "measuredMeffO1": null,
+      "measuredMeffO1Sigma": null,
+      "gateO1": false,
+      "analyticFinite": true,
+      "measuredFinite": false
+    }
+  ],
+  "failureSourceResolution": {
+    "classification": "mixed-failure-supported",
+    "samplerCorrectnessAtObservableLevelResolved": false,
+    "estimatorFailureResolved": true,
+    "statisticsFailureResolved": true,
+    "retainedArtifactCanDiagnoseWithoutRehabilitation": true
+  },
+  "phase456ArtifactMutated": false,
+  "phase456TerminalReinterpreted": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "zeroNewSampling": true,
+  "zeroPhysicsCompute": true,
+  "phase481PackConstructed": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458GateSatisfied": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "acceptedContractFieldCount": 0,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a8BoundaryHeld": true,
+  "decision": "The immutable Phase456 artifact supports both a frozen-estimator domain failure and independent effective-sample-size limitations. Primitive sampler checks do not support an implementation defect. Preserve the production-analysis-invalid terminal; use this decomposition only to design prospective oracle tests."
+}
