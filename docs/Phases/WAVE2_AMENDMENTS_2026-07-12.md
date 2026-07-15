@@ -252,3 +252,39 @@ All A10 phases remain in Phase484's exploration lane. They run no HMC or
 benchmark, mutate no committed artifact, author no O4 ruling, fill no source
 contract, and support no physical-unit claim;
 `promotedPhysicalMassClaimCount=0` throughout.
+
+## A11 — Phase456 acquisition-robustness tranche (phases 499–501)
+
+The Phase497 `T=16` / effective-sample-size-floor `2048` point is conditional
+on one frozen synthetic Toeplitz-noise model. Before any Phase481 pack may use
+that point, the program must separate empirical noise information retained by
+Phase456 from assumptions that the `T=4` bytes cannot support, and must test
+the acquisition design against a frozen adversarial family. No A11 output may
+be treated as a production power guarantee.
+
+Phase499 exact-binds the Phase456 retained summaries and Phase496 census. It
+audits which variance, covariance, autocorrelation, channel, momentum, and
+delete-block features are directly recoverable, transferable only within the
+stored `T=4` scope, or unavailable for a future `T=16` acquisition. It may
+construct conservative empirical envelopes only from retained finite values;
+unsupported temporal extrapolation is labeled rather than inferred.
+
+Phase500 freezes its oracle family, covariance envelopes, autocorrelation
+penalties, signed/invalid inputs, near-degenerate and weak-secondary spectral
+cases, acquisition grid, recovery and false-selection gates, and seeds before
+reading Phase499's terminal. It stress-tests the Phase497 point and neighboring
+temporal-extent/effective-sample-size choices. Robustness requires the complete
+menu to pass; conditional survival and full failure are first-class results.
+
+Phase501 exact-binds Phases499 and 500 plus the Phase456 measured operational
+cost and applies a frozen precedence across invalid precursor, insufficient
+retained calibration, robust specification identified, assumption-conditional
+specification, no viable specification within the audited budget, and
+unresolved. It records storage, chain/autocorrelation, cost, and refuse-to-run
+requirements that a later independently frozen Phase481 pack would need.
+
+A11 does not implement or mutate Phase481, authorize sampling, HMC, a
+benchmark, acceleration, or Phase458 evaluation, satisfy G3/G5, discharge O4,
+reinterpret Phase456, fill a source contract, or support a physical-unit
+claim. New written sampling authorization and every Phase481 prerequisite
+remain mandatory; `promotedPhysicalMassClaimCount=0` throughout.

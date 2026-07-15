@@ -375,6 +375,9 @@ dotnet run --no-build -c Release --project studies/phase495_phase456_prospective
 dotnet run --no-build -c Release --project studies/phase496_phase456_retained_data_information_census_001/Phase496Phase456RetainedDataInformationCensus.csproj
 dotnet run --no-build -c Release --project studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/Phase497Phase456ProspectiveEstimatorAcquisitionOracle.csproj
 dotnet run --no-build -c Release --project studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/Phase498Phase456AcquisitionRepairReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase499_phase456_retained_empirical_noise_information_audit_001/Phase499Phase456RetainedEmpiricalNoiseInformationAudit.csproj
+dotnet run --no-build -c Release --project studies/phase500_phase456_adversarial_prospective_acquisition_stress_test_001/Phase500Phase456AdversarialProspectiveAcquisitionStressTest.csproj
+dotnet run --no-build -c Release --project studies/phase501_phase456_robust_sampling_readiness_adjudicator_001/Phase501Phase456RobustSamplingReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

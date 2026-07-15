@@ -20804,3 +20804,40 @@ The tranche does not mutate or rehabilitate Phase456, satisfy Phase458 G3/G5,
 discharge O4, authorize HMC/sampling/benchmark work, fill a source contract, or
 support a physical-unit claim. External review remains required and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A11: synthetic robustness survives only beyond the uncalibrated retained-data boundary
+
+The user authorized the three acquisition-robustness tasks as one
+agent-parallel checkpoint. Registry 499-501 was allocated before any new phase
+directory was created; shared wiring and validation remained with the session
+lead.
+
+Phase499 exact-binds the Phase456 retained artifact and Phase496 census. It
+audits five columns, 340 stored correlator families, and 17,000 finite aligned
+delete-block rows. These bytes support descriptive `T=4` aggregate variance,
+covariance, and stored autocorrelation/effective-sample-size ranges. They do
+not identify a `T=16` covariance kernel, autocorrelation penalty,
+channel/momentum scaling law, or delete-block design. Phase499 performs no
+unsupported temporal extrapolation and records
+`retained-t4-noise-information-recoverable-t16-calibration-unavailable`.
+
+Phase500 freezes three covariance envelopes, three autocorrelation penalties,
+four positive spectral cases including near-degenerate and weak-secondary
+pairs, three rejected controls, 12 seeds, and 20 acquisition points before
+consuming Phase499. The Phase497 `T=16` / ESS-floor `2048` point passes only a
+nominal subset. Seventeen points are assumption-conditional; only `T=32` /
+ESS-floor `8192` passes the entire frozen synthetic menu, at synthetic cost
+metric `262144`. This result is not tuned from the retained envelope and is not
+an empirical power guarantee.
+
+Phase501 exact-binds both precursors and Phase456's measured operational cost.
+All eight precedence cases pass. Although Phase500 has one robust synthetic
+point, Phase499's retained-calibration insufficiency has higher precedence, so
+the terminal is `insufficient-retained-calibration`. It forwards only the
+storage, chain/autocorrelation, cost, and refuse-to-run requirements a later
+independently frozen Phase481 pack would need.
+
+No Phase481 pack was created or mutated, and no sampling, HMC, benchmark,
+Phase458 evaluation, O4 discharge, source-contract application, or physical-
+unit claim is authorized. Fresh written sampling authorization and every
+Phase481 prerequisite remain mandatory; `promotedPhysicalMassClaimCount=0`.

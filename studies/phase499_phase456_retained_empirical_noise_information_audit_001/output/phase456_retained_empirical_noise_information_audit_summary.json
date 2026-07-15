@@ -1,0 +1,252 @@
+{
+  "phaseId": "phase499-phase456-retained-empirical-noise-information-audit",
+  "terminalStatus": "phase456-retained-empirical-noise-information-audit-retained-t4-noise-information-recoverable-t16-calibration-unavailable",
+  "verdictKind": "retained-t4-noise-information-recoverable-t16-calibration-unavailable",
+  "inputsValid": true,
+  "classification": "retained-t4-noise-information-recoverable-t16-calibration-unavailable",
+  "retainedCalibrationSufficientForT16": false,
+  "applicationSubjectKind": "phase456-committed-retained-empirical-noise-information-read-only-audit",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A11; Phase499",
+  "taxonomy": [
+    "invalid-precursor",
+    "retained-t4-noise-information-recoverable-t16-calibration-unavailable",
+    "retained-calibration-sufficient-for-frozen-t16-envelope"
+  ],
+  "decisionContract": {
+    "schemaId": "phase499-a11-retained-empirical-noise-audit-v1",
+    "canonical": "phase499-a11-v1|precedence=invalid-precursor\u003Eretained-t4-noise-information-recoverable-t16-calibration-unavailable\u003Eretained-calibration-sufficient-for-frozen-t16-envelope|valid=exact-byte-schema-and-phase496-insufficient-terminal-and-five-columns-and-t4-and-fifty-aligned-finite-delete-block-rows|finite-envelope=jackknife-variance-and-absolute-correlation-extrema-over-retained-values-only|no-temporal-kernel-extrapolation-no-raw-configuration-reconstruction-no-t16-transfer-no-power-guarantee-no-sampling-no-authority",
+    "sha256": "d07b6c66785e3366001381339c2d15b99033d52d16bdebde7f6142f3afb5d572"
+  },
+  "precursorBindings": {
+    "phase456": {
+      "path": "studies/phase456_consolidated_n4_launch_001/production/phase452_n4/scalar_channel_spectroscopy_probe.json",
+      "expectedSha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "actualSha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "byteHashMatches": true,
+      "byteCount": 3784085,
+      "schemaReadable": true
+    },
+    "phase496": {
+      "path": "studies/phase496_phase456_retained_data_information_census_001/output/phase456_retained_data_information_census_summary.json",
+      "expectedSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "actualSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "byteHashMatches": true,
+      "byteCount": 10290,
+      "schemaReadable": true
+    },
+    "phase496SemanticBinding": true,
+    "errors": []
+  },
+  "retainedScope": {
+    "temporalExtent": 4,
+    "columnCount": 5,
+    "storedFamilyCount": 340,
+    "storedDeleteBlockRowCount": 17000,
+    "retainedScalarTauCount": 25,
+    "retainedScalarNEffCount": 15,
+    "fullSpatialMomentumModesPerColumn": 64,
+    "alignedDeleteBlockRowsPerFamily": 50,
+    "rawTrajectorySeriesRetained": false,
+    "configurationLevelSamplesRetained": false
+  },
+  "informationClassification": [
+    {
+      "feature": "aggregate variances",
+      "classification": "directly-recoverable-retained-t4",
+      "retainedEvidenceAvailable": true,
+      "evidence": "Finite aligned delete-block summaries reconstruct aggregate jackknife variances at the four stored separations."
+    },
+    {
+      "feature": "aggregate temporal covariance",
+      "classification": "t4-only-nontransferable-to-t16",
+      "retainedEvidenceAvailable": true,
+      "evidence": "The retained 4x4 covariance is descriptive at T=4; no additional temporal lags determine a T=16 kernel."
+    },
+    {
+      "feature": "channel and momentum aggregate covariance",
+      "classification": "t4-only-nontransferable-to-t16",
+      "retainedEvidenceAvailable": true,
+      "evidence": "Aligned delete-block labels support within-column aggregate cross-covariance, but not a prospective T=16 scale law."
+    },
+    {
+      "feature": "reported autocorrelation and effective-sample-size diagnostics",
+      "classification": "directly-recoverable-retained-t4",
+      "retainedEvidenceAvailable": true,
+      "evidence": "Stored scalar diagnostics are finite; their source trajectories are not retained for re-estimation."
+    },
+    {
+      "feature": "T=16 temporal covariance kernel",
+      "classification": "unavailable-for-t16",
+      "retainedEvidenceAvailable": false,
+      "evidence": "T=4 has only three periodic-independent values and does not identify twelve additional separations or a kernel family."
+    },
+    {
+      "feature": "T=16 autocorrelation penalty",
+      "classification": "unavailable-for-t16",
+      "retainedEvidenceAvailable": false,
+      "evidence": "No raw Markov-chain series permits a changed-volume or changed-observable autocorrelation estimate."
+    },
+    {
+      "feature": "T=16 channel/momentum covariance scale",
+      "classification": "unavailable-for-t16",
+      "retainedEvidenceAvailable": false,
+      "evidence": "Retained aggregate variation provides no frozen temporal-extent scaling law."
+    },
+    {
+      "feature": "T=16 delete-block design",
+      "classification": "unavailable-for-t16",
+      "retainedEvidenceAvailable": false,
+      "evidence": "Fifty stored delete-block aggregates do not recover raw blocking histories or establish a prospective block length."
+    }
+  ],
+  "finiteRetainedEmpiricalEnvelope": {
+    "scope": "descriptive extrema over finite committed T=4 aggregate summaries only",
+    "minimumJackknifeVariance": 0,
+    "maximumJackknifeVariance": 3287037613.2723403,
+    "minimumAbsoluteNontrivialTemporalCorrelation": 1.6696073524665415E-05,
+    "maximumAbsoluteNontrivialTemporalCorrelation": 1,
+    "minimumRetainedTau": 0.8197100516218137,
+    "maximumRetainedTau": 1118.1169193435153,
+    "minimumRetainedNEff": 5.858851417128422,
+    "maximumRetainedNEff": 9759.548494216742,
+    "isT16NoiseModel": false,
+    "isProductionPowerGuarantee": false,
+    "columnSummaries": [
+      {
+        "member": "identity",
+        "kind": "production",
+        "beta": 1,
+        "storedFamilyCount": 68,
+        "spatialModeCount": 64,
+        "deleteBlockRowsPerFamily": 50,
+        "finiteJackknifeVarianceMinimum": 0,
+        "finiteJackknifeVarianceMaximum": 1224.7715163186674,
+        "finiteAbsoluteTemporalCorrelationMaximum": 1,
+        "retainedTauRange": [
+          0.8197100516218137,
+          1.608377312926758
+        ],
+        "retainedNEffRange": [
+          4973.957252258446,
+          9759.548494216742
+        ]
+      },
+      {
+        "member": "identity",
+        "kind": "free-field-control",
+        "beta": 400,
+        "storedFamilyCount": 68,
+        "spatialModeCount": 64,
+        "deleteBlockRowsPerFamily": 50,
+        "finiteJackknifeVarianceMinimum": 0,
+        "finiteJackknifeVarianceMaximum": 11.760871445705892,
+        "finiteAbsoluteTemporalCorrelationMaximum": 1,
+        "retainedTauRange": [
+          0.8717261576093518,
+          2.567686742908873
+        ],
+        "retainedNEffRange": [
+          1947.2780368588167,
+          5735.746204647743
+        ]
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "kind": "production",
+        "beta": 1,
+        "storedFamilyCount": 68,
+        "spatialModeCount": 64,
+        "deleteBlockRowsPerFamily": 50,
+        "finiteJackknifeVarianceMinimum": 0,
+        "finiteJackknifeVarianceMaximum": 3287037613.2723403,
+        "finiteAbsoluteTemporalCorrelationMaximum": 1,
+        "retainedTauRange": [
+          1.0524378012947684,
+          1118.1169193435153
+        ],
+        "retainedNEffRange": [
+          7.154886811566248,
+          7601.399332253126
+        ]
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "kind": "higher-beta-control",
+        "beta": 4,
+        "storedFamilyCount": 68,
+        "spatialModeCount": 64,
+        "deleteBlockRowsPerFamily": 50,
+        "finiteJackknifeVarianceMinimum": 0,
+        "finiteJackknifeVarianceMaximum": 82821987.15304925,
+        "finiteAbsoluteTemporalCorrelationMaximum": 1,
+        "retainedTauRange": [
+          0.8612072223878061,
+          853.4095924300863
+        ],
+        "retainedNEffRange": [
+          5.858851417128422,
+          5805.803609190441
+        ]
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "kind": "free-field-control",
+        "beta": 400,
+        "storedFamilyCount": 68,
+        "spatialModeCount": 64,
+        "deleteBlockRowsPerFamily": 50,
+        "finiteJackknifeVarianceMinimum": 0,
+        "finiteJackknifeVarianceMaximum": 0.0009365410355202861,
+        "finiteAbsoluteTemporalCorrelationMaximum": 1,
+        "retainedTauRange": [
+          0.9891421120698509,
+          1.8577287009160905
+        ],
+        "retainedNEffRange": [
+          2691.4586599939917,
+          5054.8853789443265
+        ]
+      }
+    ]
+  },
+  "t16TransferAudit": {
+    "t16TemporalCovarianceKernelRecoverable": false,
+    "t16AutocorrelationPenaltyRecoverable": false,
+    "t16ChannelCovarianceScaleRecoverable": false,
+    "t16MomentumCovarianceScaleRecoverable": false,
+    "t16DeleteBlockDesignRecoverable": false,
+    "unsupportedTemporalExtrapolationPerformed": false,
+    "conclusion": "Retained T=4 summaries constrain descriptive adversarial envelopes only. They cannot calibrate or guarantee a T=16 acquisition without explicitly frozen additional assumptions."
+  },
+  "phase456ArtifactMutated": false,
+  "aggregateSummariesRelabeledAsRawSamples": false,
+  "empiricalEnvelopeUsedAsProductionPowerGuarantee": false,
+  "phase481PackCreated": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "zeroNewSampling": true,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "phase458GateSatisfied": false,
+  "confirmationEvidence": false,
+  "explorationOnly": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a11BoundaryHeld": true,
+  "decision": "Finite aligned Phase456 summaries recover descriptive T=4 aggregate variance, covariance, and stored autocorrelation diagnostics. They do not identify a T=16 covariance kernel, autocorrelation penalty, channel or momentum scaling, or delete-block design. Any prospective oracle must freeze those as assumptions and may not call them empirical calibration."
+}

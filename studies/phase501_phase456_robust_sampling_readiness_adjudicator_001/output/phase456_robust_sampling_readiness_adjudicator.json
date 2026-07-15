@@ -1,0 +1,206 @@
+{
+  "phaseId": "phase501-phase456-robust-sampling-readiness-adjudicator",
+  "terminalStatus": "phase456-robust-sampling-readiness-adjudicator-insufficient-retained-calibration",
+  "verdictKind": "insufficient-retained-calibration",
+  "readinessClassification": "insufficient-retained-calibration",
+  "readinessTaxonomy": [
+    "invalid-precursor",
+    "insufficient-retained-calibration",
+    "robust-specification-identified",
+    "assumption-conditional-specification",
+    "no-viable-specification-within-audited-budget",
+    "unresolved"
+  ],
+  "inputsValid": true,
+  "applicationSubjectKind": "phase456-a11-robust-sampling-readiness-planning-adjudicator",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A11",
+  "explorationOnly": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "zeroPhysicsCompute": true,
+  "noHmcRun": true,
+  "noBenchmarkRun": true,
+  "frozenBeforePrecursorConsumption": true,
+  "contractBinding": {
+    "path": "studies/phase501_phase456_robust_sampling_readiness_adjudicator_001/preregistration/phase501_robust_readiness_contract_v1.json",
+    "byteSha256": "12c53d06fef1997d5c8f5014787b3d0b90f9d0fa1e5a7c5e4ae083d132cd782f",
+    "valid": true
+  },
+  "precursorBindings": {
+    "phase499": {
+      "path": "studies/phase499_phase456_retained_empirical_noise_information_audit_001/output/phase456_retained_empirical_noise_information_audit_summary.json",
+      "byteSha256": "992a96c4f79b9975b2cb5de178522f813a1e4334ae8f58fcdf4fb96f795c6f57",
+      "valid": true,
+      "status": "exact",
+      "classification": "retained-t4-noise-information-recoverable-t16-calibration-unavailable"
+    },
+    "phase500": {
+      "path": "studies/phase500_phase456_adversarial_prospective_acquisition_stress_test_001/output/phase456_adversarial_prospective_acquisition_stress_test_summary.json",
+      "byteSha256": "d472bd7510be14d0a71e90128f0d98ccba965a6fcf4c1043bf24fd4f161885ab",
+      "valid": true,
+      "status": "exact",
+      "classification": "robust-specification-identified"
+    },
+    "phase456": {
+      "path": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "byteSha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "valid": true,
+      "measuredCpuWeeks": 0.11371015556660466
+    }
+  },
+  "precedenceBattery": {
+    "cases": [
+      {
+        "caseId": "invalid-dominates-all",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "contradictory-stress-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "insufficient-calibration-dominates-robust",
+        "expected": "insufficient-retained-calibration",
+        "actual": "insufficient-retained-calibration",
+        "passed": true
+      },
+      {
+        "caseId": "insufficient-calibration-dominates-conditional",
+        "expected": "insufficient-retained-calibration",
+        "actual": "insufficient-retained-calibration",
+        "passed": true
+      },
+      {
+        "caseId": "robust",
+        "expected": "robust-specification-identified",
+        "actual": "robust-specification-identified",
+        "passed": true
+      },
+      {
+        "caseId": "conditional",
+        "expected": "assumption-conditional-specification",
+        "actual": "assumption-conditional-specification",
+        "passed": true
+      },
+      {
+        "caseId": "budget-exhausted",
+        "expected": "no-viable-specification-within-audited-budget",
+        "actual": "no-viable-specification-within-audited-budget",
+        "passed": true
+      },
+      {
+        "caseId": "unresolved",
+        "expected": "unresolved",
+        "actual": "unresolved",
+        "passed": true
+      }
+    ],
+    "caseCount": 8,
+    "allCasesPassed": true,
+    "invalidPrecedencePassed": true,
+    "insufficientCalibrationPrecedencePassed": true
+  },
+  "evidence": {
+    "retainedCalibrationSufficient": false,
+    "robustSpecification": true,
+    "conditionalSpecification": false,
+    "noViableSpecificationWithinAuditedBudget": false,
+    "contradictoryStressState": false
+  },
+  "precedenceTrace": [
+    {
+      "order": 1,
+      "classification": "invalid-precursor",
+      "selected": false
+    },
+    {
+      "order": 2,
+      "classification": "insufficient-retained-calibration",
+      "selected": true
+    },
+    {
+      "order": 3,
+      "classification": "robust-specification-identified",
+      "selected": false
+    },
+    {
+      "order": 4,
+      "classification": "assumption-conditional-specification",
+      "selected": false
+    },
+    {
+      "order": 5,
+      "classification": "no-viable-specification-within-audited-budget",
+      "selected": false
+    },
+    {
+      "order": 6,
+      "classification": "unresolved",
+      "selected": false
+    }
+  ],
+  "phase456MeasuredOperationalCost": {
+    "measuredCpuWeeks": 0.11371015556660466,
+    "sourceIsExactBoundPhase456Summary": true,
+    "notAnExtrapolatedPhase481Cost": true
+  },
+  "forwardedRequirementsForLaterIndependentPhase481Pack": {
+    "storage": [
+      "per-site-unsummed-correlators",
+      "per-face-type-resolution",
+      "complete-temporal-separations",
+      "configuration-or-block-level-resampling-inputs"
+    ],
+    "chainsAndAutocorrelation": [
+      "independent-chain-count",
+      "chain-convergence-gate",
+      "frozen-autocorrelation-estimator",
+      "effective-sample-size-stop-and-refuse-rule"
+    ],
+    "cost": [
+      "trajectory-to-cpu-week-measurement",
+      "audited-cost-scaling-model",
+      "budget-ceiling",
+      "cost-overrun-refuse-rule"
+    ],
+    "refuseToRun": [
+      "exact-input-hashes",
+      "implementation-hash",
+      "default-configuration-hash",
+      "rng-and-seed-policy",
+      "execution-topology",
+      "output-schema"
+    ]
+  },
+  "forwardedRequirementsAreNotAPhase481Pack": true,
+  "planningEvidenceOnly": true,
+  "mayInformLaterIndependentPhase481PackDesign": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase481RepairPackConstructed": false,
+  "newWrittenSamplingAuthorizationStillRequired": true,
+  "samplingRun": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "o4Discharged": false,
+  "humanRulingAuthored": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a11BoundaryHeld": true,
+  "decision": "The retained Phase456 information cannot calibrate the prospective robustness claim. Synthetic survival cannot override this result."
+}

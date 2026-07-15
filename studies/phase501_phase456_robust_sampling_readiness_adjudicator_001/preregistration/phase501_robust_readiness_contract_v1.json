@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase501-a11-robust-sampling-readiness-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "precedence": [
+    "invalid-precursor",
+    "insufficient-retained-calibration",
+    "robust-specification-identified",
+    "assumption-conditional-specification",
+    "no-viable-specification-within-audited-budget",
+    "unresolved"
+  ],
+  "requiredExactBindings": [
+    "phase499-summary-bytes",
+    "phase500-summary-bytes",
+    "phase456-summary-bytes-and-measured-operational-cost"
+  ],
+  "laterPhase481MustIndependentlyFreeze": [
+    "storage-and-retention-layout",
+    "independent-chain-count-and-convergence-rules",
+    "autocorrelation-estimator-and-effective-sample-size-stop-rule",
+    "trajectory-to-cost-model-and-budget-ceiling",
+    "refuse-to-run-input-and-implementation-fingerprint"
+  ],
+  "readyResultIsPlanningEvidenceOnly": true,
+  "phase481PackCreationAllowed": false,
+  "samplingOrProductionAuthorizationAllowed": false,
+  "physicalClaimAllowed": false
+}

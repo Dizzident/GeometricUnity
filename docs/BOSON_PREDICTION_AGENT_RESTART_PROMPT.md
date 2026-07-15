@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 286/3 after the A10 checkpoint, the
+Phase101 stays blocked, Phase202 is 289/3 after the A11 checkpoint, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -171,7 +171,25 @@ it is not a production power guarantee, creates no pack, and authorizes no
 sampling. New written sampling authorization is still required. Phase456 is
 not reinterpreted, Phase458 G3/G5 and O4 remain closed, external review remains
 required, and no source-contract or physical-unit authority follows. Registry
-496-498 is allocated; 499+ remains unassigned. Phase202 is 286/3 and
+496-498 is allocated; its former 499+ frontier is superseded by Amendment A11 below. Phase202 is 286/3 and
+`promotedPhysicalMassClaimCount=0`.
+
+PHASE456 ACQUISITION ROBUSTNESS (2026-07-15, Amendment A11;
+Phases499-501): Phase499 exact-binds the retained Phase456 and Phase496 bytes
+and audits five columns, 340 stored correlator families, and 17,000 finite
+aligned delete-block rows. Aggregate `T=4` variance, covariance, and stored
+autocorrelation diagnostics are descriptively recoverable, but no `T=16`
+temporal covariance kernel, autocorrelation penalty, channel/momentum scaling
+law, or delete-block design is retained. Phase500 freezes a broader synthetic
+stress family before consuming Phase499. The Phase497 `T=16` / ESS-floor
+`2048` point is conditional only; 17/20 audited points are conditional and only
+`T=32` / ESS-floor `8192` passes the complete synthetic menu. Phase501 exact-
+binds both outputs and Phase456's measured cost, then selects
+`insufficient-retained-calibration`: favorable synthetic robustness cannot
+override missing empirical calibration. The selected synthetic point is not a
+production power guarantee. No Phase481 pack was created, no sampling was
+authorized, and Phase458 G3/G5 and O4 remain closed. Registry 499-501 is
+allocated; 502+ remains unassigned. Phase202 is 289/3 and
 `promotedPhysicalMassClaimCount=0`.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
@@ -190,7 +208,7 @@ reflection positivity by another construction. The terminal is
 `a5-theorem-scout-obstructions-survive-no-theorem`: L8 and Phase458 G1 remain
 open. Phase482 authorizes no Phase458 evaluation, Binder work, sampling,
 acceleration, production, O4 discharge, source-contract fill, or physical-unit
-claim. Registry 496+ remains unassigned.
+claim. Its former registry frontier is superseded by Amendments A10-A11.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
@@ -1034,7 +1052,7 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-498 is allocated; 499+ remains unassigned.
+Registry 477-501 is allocated; 502+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
