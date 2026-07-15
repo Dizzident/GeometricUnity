@@ -1,6 +1,6 @@
 {
   "phaseId": "phase478-phase458-gate-specification-closure",
-  "generatedAt": "2026-07-15T17:27:06.1028648+00:00",
+  "generatedAt": "2026-07-15T19:37:05.2517917+00:00",
   "terminalStatus": "phase458-gate-specification-closure-gate-specification-closed-phase458-inputs-incomplete",
   "interimTerminal": "gate-specification-closed-phase458-inputs-incomplete",
   "verdictKind": "gate-specification-closed-phase458-inputs-incomplete",
@@ -140,5 +140,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "The G1-G6 schemas, exact allowlists, fail-closed states, outcome precedence, and G6 projection are frozen. Phase458 is not evaluated: G3/G4/G5 remain incomplete, no human ruling is inferred, and no launch is authorized.",
-  "runtimeSeconds": 0.0265465
+  "runtimeSeconds": 0.0286344
 }

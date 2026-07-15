@@ -5814,10 +5814,9 @@ if (sourceLineageMissing) {
   assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
   assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
-  // Phases481-483 -- remaining Amendment A4 fail-closed skeletons.
+  // Phases481 and 483 -- remaining Amendment A4 fail-closed skeletons.
   const a4Skeletons = [
     [phase481, 481, 5, "phase456-prospective-repair-preregistration", "preregistration-skeleton-awaiting-implementation"],
-    [phase482, 482, 6, "a5-theorem-scout", "theorem-scout-skeleton-awaiting-implementation"],
     [phase483, 483, 7, "source-defined-reopening-intake", "intake-skeleton-awaiting-source-input"],
   ];
   for (const [phase, phaseNumber, waveOrder, subjectKind, terminal] of a4Skeletons) {
@@ -5831,6 +5830,30 @@ if (sourceLineageMissing) {
     assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
     assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
   }
+  // Phase482 -- Amendment A9 deterministic theorem scout: exact obstructions survive, no theorem or target counterexample.
+  assert(phase482.terminalStatus === "a5-theorem-scout-obstructions-survive-no-theorem" && phase482.verdictKind === "obstructions-survive-no-theorem", "Phase482 must preserve its exact obstruction-only terminal.");
+  assert(phase482.applicationSubjectKind === "a5-theorem-scout" && phase482.planSection === "WAVE2_AMENDMENTS_2026-07-12 A9" && phase482.waveOrder === 6, "Phase482 identity or Amendment A9 lineage drifted.");
+  assert(phase482.skeletonBuilt === false && phase482.zeroPhysicsCompute === false && phase482.deterministicProofComputeOnly === true && phase482.awaitingImplementation === false && phase482.inputsValid === true, "Phase482 must be an implemented, input-valid deterministic proof computation.");
+  assert(phase482.decisionContractSha256 === "9e06ee49411ca0bd66913540bfaa331547f877f515cb006c7a88d784dc428c9e", "Phase482 frozen decision contract drifted.");
+  assert(phase482.frozenInputs?.a5Binding?.valid === true && phase482.frozenInputs?.a5Binding?.byteSha256 === "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974", "Phase482 must bind the exact Phase456 A5 obstruction record.");
+  assert(phase482.frozenInputs?.phase478Binding?.valid === true && phase482.frozenInputs?.phase478Binding?.byteSha256 === "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0", "Phase482 must bind the exact Phase478 gate contract.");
+  assert(phase482.frozenInputs?.phase481Boundary?.valid === true && phase482.frozenInputs?.phase481Boundary?.packCreated === false && phase482.phase481SamplingBoundaryUnchanged === true, "Phase482 cannot bypass or construct the Phase481 repair pack.");
+  assert(phase482.compositeTransport?.inputsValid === true && phase482.compositeTransport?.genericTwoPointToConnectedCompositeTransportRefuted === true, "Phase482 exact composite-transport battery must pass.");
+  assert(JSON.stringify(phase482.compositeTransport?.commonTwoPointMatrix) === JSON.stringify([["5/2","0"],["0","5/2"]]), "Phase482 composite witnesses must share the exact pinned two-point matrix.");
+  assert(Array.isArray(phase482.compositeTransport?.counterexampleRows) && phase482.compositeTransport.counterexampleRows.map(r => r.connectedSquareCorrelation).join("|") === "9/4|0|-9/4", "Phase482 composite witnesses must retain positive, zero, and negative exact connected-square correlations.");
+  assert(phase482.compositeTransport?.committedActionRefuted === false && phase482.compositeTransport?.actionSpecificCompositeTheoremProved === false, "Phase482 generic transport witness cannot be relabeled as a committed-action refutation or theorem.");
+  assert(phase482.reflectionLocality?.inputsValid === true && phase482.reflectionBatteryValid === true, "Phase482 reflection/locality battery must remain input-valid.");
+  assert(phase482.reflectionLocality?.kuhnSimplexCountPerCube === 24 && phase482.reflectionLocality?.triangularFaceCountPerCube === 110 && phase482.reflectionLocality?.reflectedSimplexClosureCount === 0 && phase482.reflectionLocality?.reflectedFaceClosureCount === 36, "Phase482 local Kuhn reflection counts drifted.");
+  assert(phase482.reflectionLocality?.periodicExtent === 4 && phase482.reflectionLocality?.periodicSimplexCount === 6144 && phase482.reflectionLocality?.siteReflectedPeriodicSimplexClosureCount === 0 && phase482.reflectionLocality?.linkReflectedPeriodicSimplexClosureCount === 0, "Phase482 periodic reflection counts drifted.");
+  assert(phase482.reflectionLocality?.simplicialReflectionAutomorphism === false && phase482.reflectionLocality?.siteReflectionPeriodicAutomorphism === false && phase482.reflectionLocality?.linkReflectionPeriodicAutomorphism === false, "Phase482 committed triangulation must remain non-closed under registered reflections.");
+  assert(phase482.reflectionLocality?.reflectionPositivityEstablished === false && phase482.reflectionLocality?.reflectionPositivityRefuted === false, "Phase482 must neither claim nor refute reflection positivity itself.");
+  assert(phase482.reflectionLocality?.singleSiteInteractionHypothesisRefuted === true && phase482.reflectionLocality?.independentFaceVariableFactorizationRefuted === true && phase482.reflectionLocality?.proofGateCountImplemented === 10 && phase482.reflectionLocality?.proofGateCountPassed === 10, "Phase482 locality obstruction or exact gate battery drifted.");
+  assert(phase482.precedenceBatteryPassed === true && phase482.adjudication?.proofGateComplete === true && phase482.adjudication?.allThreeObstructionFamilyProofGatesGreen === false && phase482.adjudication?.validRefutingCounterexampleEstablished === false, "Phase482 fail-closed adjudication battery drifted.");
+  assert(phase482.theoremClaimed === false && phase482.closesLimbL8 === false && phase482.phase458G1Satisfied === false && phase482.a9BoundaryHeld === true, "Phase482 obstruction-only result must leave L8 and Phase458 G1 open.");
+  assert(phase482.phase458EvaluationAuthorized === false && phase482.samplingAuthorized === false && phase482.binderLaunchAuthorized === false && phase482.productionAuthorized === false && phase482.o4Discharged === false, "Phase482 cannot authorize Phase458, sampling, production, or discharge O4.");
+  assert(phase482.targetBlindConstruction === true && phase482.physicalTargetsConsultedForConstruction === false && phase482.noGevPromotion === true && phase482.promotedPhysicalMassClaimCount === 0, "Phase482 must preserve the target-blind zero-promotion boundary.");
+  assert(phase482.sourceContractApplicationAllowed === false && phase482.canFillPhase201WzContract === false && phase482.canFillPhase201HiggsContract === false && phase482.canFillPhase256ObservedFieldExtractionContract === false, "Phase482 cannot fill source contracts.");
+  assert(phase101Package?.a5TheoremScout?.status === "a5-theorem-scout-obstructions-survive-no-theorem" && phase101Package?.a5TheoremScout?.theoremClaimed === false && phase101Package?.a5TheoremScout?.closesLimbL8 === false && phase101Package?.a5TheoremScout?.phase458G1Satisfied === false && phase101Package?.a5TheoremScout?.a9BoundaryHeld === true, "Phase101 must mirror the exact Phase482 obstruction-only boundary.");
   // Phases484-486 -- Amendment A5 exploratory self-audit lane; never an O4 substitute.
   assert(phase484.verdictKind === "three-lane-firewall-closed" && phase484.planSection === "WAVE2_AMENDMENTS_2026-07-12 A5", "Phase484 governance firewall identity drifted.");
   assert(Array.isArray(phase484.lanes) && phase484.lanes.length === 3 && phase484.prospectiveCheckpointRequiredForLaneTransition === true && phase484.retrospectiveRelabelingAllowed === false, "Phase484 must enforce the three-lane prospective-only evidence flow.");

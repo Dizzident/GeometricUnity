@@ -1,6 +1,6 @@
 {
   "phaseId": "phase479-phase457-post-ruling-readiness",
-  "generatedAt": "2026-07-15T17:27:06.4152212+00:00",
+  "generatedAt": "2026-07-15T19:37:05.5696304+00:00",
   "terminalStatus": "phase457-post-ruling-readiness-post-ruling-readiness-contract-closed-hold-remains",
   "interimTerminal": "post-ruling-readiness-contract-closed-hold-remains",
   "verdictKind": "post-ruling-readiness-contract-closed-hold-remains",
@@ -102,5 +102,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "The Phase457 post-ruling interface is frozen and the unsafe legacy two-field parser is retired. Phase466 is exact, but no verified Phase480 C3 derivative, real Arm-Q ensemble, RNG/FRESH provenance, or motivation preregistration exists. The hold stays closed; no ruling is consumed and no Arm Q, Stage B, L7 closure, or claim is authorized.",
-  "runtimeSeconds": 0.0380445
+  "runtimeSeconds": 0.0377578
 }

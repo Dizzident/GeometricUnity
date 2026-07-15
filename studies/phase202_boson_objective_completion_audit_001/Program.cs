@@ -6910,12 +6910,14 @@ var phase456ProspectiveRepairPreregistrationPassed = phase456ProspectiveRepairPr
     && JsonBool(phase481.RootElement, "routeCompletesBosonPredictions") is false;
 var a5TheoremScoutMaterialized = phase482 is not null;
 var a5TheoremScoutPassed = a5TheoremScoutMaterialized
-    && JsonBool(phase482!.RootElement, "skeletonBuilt") is true
+    && JsonBool(phase482!.RootElement, "skeletonBuilt") is false
+    && JsonBool(phase482.RootElement, "awaitingImplementation") is false
+    && JsonBool(phase482.RootElement, "inputsValid") is true
     && JsonString(phase482.RootElement, "applicationSubjectKind") == "a5-theorem-scout"
-    && JsonString(phase482.RootElement, "interimTerminal") == "theorem-scout-skeleton-awaiting-implementation"
-    && JsonString(phase482.RootElement, "verdictKind") == "theorem-scout-skeleton-awaiting-implementation"
-    && JsonString(phase482.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonString(phase482.RootElement, "verdictKind") is "no-go-theorem-closed" or "counterexample-refutes-proposed-no-go" or "obstructions-survive-no-theorem"
+    && JsonString(phase482.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A9"
     && JsonInt(phase482.RootElement, "waveOrder") == 6
+    && JsonBool(phase482.RootElement, "a9BoundaryHeld") is true
     && JsonBool(phase482.RootElement, "targetBlindConstruction") is true
     && JsonBool(phase482.RootElement, "physicalTargetsConsultedForConstruction") is false
     && JsonBool(phase482.RootElement, "noGevPromotion") is true
@@ -9809,11 +9811,11 @@ var checklist = new[]
             : "Phase481 artifact not materialized",
         Phase481Path),
     new ObjectiveChecklistItem(
-        "a5-theorem-scout-skeleton-materialized",
-        "Wave-order item 6: materialize the target-blind A5 theorem-scout skeleton without treating an unproved theorem route as an analytic closure.",
+        "a5-theorem-scout-executed",
+        "Execute all three target-blind A5 proof and counterexample packages without treating surviving obstructions as analytic closure.",
         a5TheoremScoutPassed ? "passed" : "failed",
         a5TheoremScoutMaterialized
-            ? $"skeletonBuilt={JsonBool(phase482!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase482.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase482.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase482.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase482.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase482.RootElement, "decision")}"
+            ? $"inputsValid={JsonBool(phase482!.RootElement, "inputsValid")}; verdictKind={JsonString(phase482.RootElement, "verdictKind")}; theoremClaimed={JsonBool(phase482.RootElement, "theoremClaimed")}; closesLimbL8={JsonBool(phase482.RootElement, "closesLimbL8")}; promotedPhysicalMassClaimCount={JsonInt(phase482.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase482.RootElement, "decision")}"
             : "Phase482 artifact not materialized",
         Phase482Path),
     new ObjectiveChecklistItem(

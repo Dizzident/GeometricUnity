@@ -182,3 +182,31 @@ forensic evidence. A new prospective pack remains gated by Phase481 and new
 written sampling authorization (or applicable O4 coverage). Negative,
 non-finite, and unresolved branches are first-class outputs;
 `promotedPhysicalMassClaimCount=0` throughout.
+
+## A9 — Phase482 deterministic theorem-scout execution
+
+Phase482 may execute its deterministic theorem scout while Phase481 remains at
+its non-authorizing skeleton. This narrowly supersedes A4's execution-priority
+ordering for Phase482 because the scout performs no sampling, consumes no
+repair pack, and cannot authorize Phase481. Phase481's prerequisites and new
+written sampling-authorization requirement remain unchanged.
+
+Before evaluating the committed objects, Phase482 freezes four outcomes:
+`invalid-proof-package`, `no-go-theorem-closed`,
+`counterexample-refutes-proposed-no-go`, and
+`obstructions-survive-no-theorem`. Invalid inputs or incomplete batteries take
+precedence. The no-go terminal requires all three committed-scope proof gates:
+transport to the connected composite correlator, reflection positivity for the
+unchanged committed simplicial action, and an admissible face-local interaction
+hypothesis. A toy counterexample, a changed triangulation, a partial lemma, a
+finite-volume-only statement, or one coupling regime cannot close L8. The
+counterexample terminal requires an exact counterexample to the target
+inequality for the unchanged committed action and scope; a counterexample only
+to an attempted lemma records an obstruction instead.
+
+Only an exact `no-go-theorem-closed` result satisfying the already frozen
+Phase478 conjuncts may set `theoremClaimed=true` and `closesLimbL8=true`.
+Every other valid result leaves L8 open. Phase482 cannot satisfy G3-G5,
+authorize Binder work, sampling, acceleration, or production, discharge O4,
+fill a source contract, reinterpret Phase456, or support a physical-unit claim;
+`promotedPhysicalMassClaimCount=0` on every branch.

@@ -250,8 +250,12 @@
     {
       "phaseId": "phase482-a5-theorem-scout",
       "summaryPath": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
-      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
-      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "Theorem scout boundary; not a theorem."
+      "disposition": "pending-marker-no-direct-review", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/deterministicProofComputeOnly", "op": "equals", "value": true },
+        { "pointer": "/theoremClaimed", "op": "equals", "value": false },
+        { "pointer": "/closesLimbL8", "op": "equals", "value": false }
+      ], "note": "Deterministic theorem scout records exact proof-route obstructions but no theorem or direct O4 ruling."
     },
     {
       "phaseId": "phase483-source-defined-reopening-intake",

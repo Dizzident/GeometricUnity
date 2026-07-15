@@ -1,6 +1,6 @@
 {
   "phaseId": "phase477-o4-adjudication-infrastructure",
-  "generatedAt": "2026-07-15T16:43:53.3017572+00:00",
+  "generatedAt": "2026-07-15T19:37:04.950249+00:00",
   "terminalStatus": "o4-adjudication-infrastructure-infrastructure-ready-pending-human-ruling",
   "interimTerminal": "infrastructure-ready-pending-human-ruling",
   "verdictKind": "infrastructure-ready-pending-human-ruling",
@@ -17,16 +17,16 @@
   "unmappedPendingArtifactCount": 0,
   "ambiguousCoverageArtifactCount": 0,
   "dispositionCounts": {
-    "administrative-zero-compute": 8,
+    "administrative-zero-compute": 7,
     "dependent-output": 6,
     "direct-review": 13,
-    "pending-marker-no-direct-review": 4
+    "pending-marker-no-direct-review": 5
   },
   "mandatoryRulingIdCount": 13,
   "coverageSchemaTemplateRulingIdsEqual": true,
   "memoTemplateInertAndProductionInvalid": true,
   "humanRulingReadOrAuthored": false,
-  "coverageContractSha256": "8fcc4a42045ed343244dd79181bba3f48787d3eba93d1222fabae76aa3f7b480",
+  "coverageContractSha256": "c73835b58a6ba4a73e41b13e326218cc21ccb08a4f10867576944ab3c7ca9449",
   "dependencyMapSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
   "memoSchemaSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
   "memoTemplateSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
@@ -46,7 +46,7 @@
     "semanticCaseCount": 15,
     "failedSemanticCaseCount": 0,
     "canonicalArtifactCount": 19,
-    "canonicalSnapshotSha256": "cb57d0dd9ed08a64718fd0eaa7094dd7ec9ef37acc8e2471c4dfe09803734f53",
+    "canonicalSnapshotSha256": "8fac52ac537ee47a42bc7bc88373300b1ae59b5d136534c15dd6d472c307033e",
     "canonicalArtifactMutationCount": 0,
     "candidatePathCount": 3,
     "candidatePathMutationCount": 0,
@@ -495,13 +495,15 @@
     {
       "phaseId": "phase482-a5-theorem-scout",
       "summaryPath": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
-      "disposition": "administrative-zero-compute",
+      "disposition": "pending-marker-no-direct-review",
       "reviewItems": [],
       "pendingPointers": [
         "/physicistReviewPending"
       ],
       "evidencePointers": [
-        "/zeroPhysicsCompute"
+        "/deterministicProofComputeOnly",
+        "/theoremClaimed",
+        "/closesLimbL8"
       ]
     },
     {
@@ -541,5 +543,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "Exact O4 coverage, an inert 13-item human-memo schema/template, and the 94-edge synthetic-overturn protocol are machine-green. This is infrastructure readiness only: no human ruling exists or is inferred, every review-pending flag remains pending, and no downstream scientific terminal changes.",
-  "runtimeSeconds": 0.1001244
+  "runtimeSeconds": 0.1129879
 }

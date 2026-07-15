@@ -20724,3 +20724,43 @@ blocked and Phase202 moves to 283 passed / 3 standing failures. O4 coverage
 remains 31/31, the synthetic-overturn battery remains 94/94, source deficits
 remain 15/14, and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A9: Phase482 theorem scout finds exact proof-route obstructions, no theorem
+
+The user authorized continued blocker-resolution work with agent-parallel
+packages. Amendment A9 narrowly permits deterministic Phase482 proof work
+while Phase481 remains a non-authorizing skeleton. It does not relax the
+Phase481 preregistration or written sampling-authorization requirements.
+Phase482 exact-binds the Phase456 A5 obstruction record and Phase478 gate
+contract and applies a frozen four-outcome adjudication precedence.
+
+The composite-transport package constructs three exact independently
+sign-flip-symmetric finite ensembles with the same two-point covariance matrix
+`diag(5/2,5/2)` but connected square correlations `9/4`, `0`, and `-9/4`.
+This proves that two-point information alone cannot determine the sign or
+value of the connected composite channel. The witness embeds in a fixed
+matrix-generator direction and includes the Gaussian/Wick identity as a
+positive control. It does not refute the target inequality for the committed
+action or exclude a stronger action-specific Ward identity or four-point
+inequality.
+
+The reflection/locality package enumerates all 24 Kuhn simplices and 110
+triangular faces of a four-cube. Under the registered axis-0 reflection, zero
+simplices and 36 faces close. On the periodic n=4 complex, both the
+site-centered and link-centered maps are exact involutions but close zero of
+6144 committed simplices. Explicit simplex and face witnesses are retained.
+The primitive interaction is face-local, not single-site local; distinct
+faces share edge variables and the committed cell operator gathers ten faces,
+so an independent-face-variable factorization does not type-check. These
+facts block the standard geometry-preserving reflection-positivity proof
+route but neither establish nor refute reflection positivity by another
+construction.
+
+The integrated adjudicator records
+`a5-theorem-scout-obstructions-survive-no-theorem`. All proof and
+counterexample gates are implemented, but the three committed-scope theorem
+claims are not proved and no committed-action target counterexample exists.
+Consequently L8 and Phase458 G1 remain open. Phase482 does not evaluate or
+authorize Phase458, sampling, Binder work, acceleration, production, O4
+discharge, or a source-contract fill. It produces no physical-unit claim and
+preserves `promotedPhysicalMassClaimCount=0`.

@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 280/3 after targeted A7 validation, the
+Phase101 stays blocked, Phase202 is 283/3 after the A8 checkpoint, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -153,6 +153,24 @@ fill a source contract, or support a physical-unit claim. Binding plan:
 is allocated; 496+ remains unassigned. Mandatory incremental validation passed;
 Phase202 is 283/3 and integrity preserves the 15/14 source deficits and zero
 promoted claims.
+
+PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
+narrowly permits Phase482's proof computation while Phase481 stays at its
+non-authorizing skeleton; no Phase481 sampling prerequisite is relaxed. The
+scout exact-binds the Phase456 A5 obstruction record and Phase478 gate
+contract. Exact finite ensembles show that identical two-point data can have
+positive, zero, or negative connected-square correlations, so two-point data
+alone cannot transport the composite sign or value. Exact local and periodic
+n=4 enumeration shows that the committed Kuhn complex is not closed under the
+registered site- or link-centered time reflections, and its shared edge
+variables prevent single-site or independent-face-variable factorization.
+These results obstruct the standard proposed proof route; they do not refute
+the target inequality for the committed action and neither prove nor refute
+reflection positivity by another construction. The terminal is
+`a5-theorem-scout-obstructions-survive-no-theorem`: L8 and Phase458 G1 remain
+open. Phase482 authorizes no Phase458 evaluation, Binder work, sampling,
+acceleration, production, O4 discharge, source-contract fill, or physical-unit
+claim. Registry 496+ remains unassigned.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
@@ -972,17 +990,18 @@ new-directory C queue and C-LIFT are complete. Phase456 production completed
 under explicit written risk renewal. Phase458 must not execute until all G1-G6
 inputs exist; production supplies G2 but explicitly does not supply G3.
 
-WAVE-2 LABELED AMENDMENT A4 allocates phases 477-483 as a fail-closed
+WAVE-2 LABELED AMENDMENT A4 allocated phases 477-483 as a fail-closed
 blocker-resolution extension in strict execution-priority order: 477 O4
 adjudication infrastructure; 478 Phase458 gate-specification closure; 479
 Phase457 post-ruling readiness; 480 genuine external physicist-adjudication
 intake; 481 prospective Phase456 repair pre-registration; 482 A5 theorem
-scout; 483 source-defined reopening intake. Their initial skeletons perform
-zero physics computation and cannot satisfy a scientific gate. Phase480 is now
+scout; 483 source-defined reopening intake. Their initial skeletons performed
+zero physics computation and could not satisfy a scientific gate. Phase480 is now
 an implemented, exact-path, Ed25519-verified intake but stays human-input gated
 at `awaiting-external-physicist-ruling` because its memo path is absent and its
 pre-pinned reviewer registry is empty; Phase481 cannot sample or mutate/reinterpret Phase456;
-Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
+Phase482 has now executed under Amendment A9 and cannot claim a theorem from
+its obstruction-only result; Phase483 cannot invent
 source fields. Phase477 is now substantively complete at exact coverage 31/31,
 13 memo ruling IDs, and 94/94 synthetic dependency edges, while remaining
 human-ruling pending. Phase478 is substantively complete but Phase458 remains
@@ -995,7 +1014,7 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-483 is allocated; 484+ remains unassigned.
+Registry 477-495 is allocated; 496+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
