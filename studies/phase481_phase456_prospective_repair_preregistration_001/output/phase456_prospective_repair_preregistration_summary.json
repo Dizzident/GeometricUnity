@@ -1,6 +1,6 @@
 {
   "phaseId": "phase481-phase456-prospective-repair-preregistration",
-  "generatedAt": "2026-07-15T15:39:01.5017225+00:00",
+  "generatedAt": "2026-07-16T13:38:27.4442505+00:00",
   "terminalStatus": "phase456-prospective-repair-preregistration-preregistration-skeleton-awaiting-implementation",
   "interimTerminal": "preregistration-skeleton-awaiting-implementation",
   "verdictKind": "preregistration-skeleton-awaiting-implementation",
@@ -49,5 +49,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "A4 zero-compute pre-registration skeleton only. It does not mutate Phase456, reinterpret its invalid analysis, create a repair pack, sample, or authorize a rerun.",
-  "runtimeSeconds": 1.91E-05
+  "runtimeSeconds": 2.09E-05
 }

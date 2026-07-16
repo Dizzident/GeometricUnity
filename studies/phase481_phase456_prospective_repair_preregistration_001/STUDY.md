@@ -16,3 +16,9 @@ applicable O4 coverage.
 
 No measurement or source-contract field is emitted and
 `promotedPhysicalMassClaimCount=0`.
+
+The 2026-07-16 planning artifact records a construction-ready sequence and
+the exact requirements forwarded by Phases502, 506, and 507. It is not a
+pre-registration pack. It also records the unresolved geometry, RNG,
+implementation-backend, resource-envelope, and Phase480 authorization gates;
+therefore the skeleton terminal and every no-launch boundary remain unchanged.

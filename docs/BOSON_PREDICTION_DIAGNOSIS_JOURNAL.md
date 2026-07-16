@@ -20917,3 +20917,34 @@ Phase458 G3/G5, every source-contract boundary, and the external-review
 requirement remain unchanged. Phase101 remains physically blocked, Phase202
 moves to 295 passed / 3 standing failures, and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-16 - Phase481 construction planning completed; executable pack remains blocked
+
+The user directed the program to exercise Phase507's permission for independent
+Phase481 pack planning. A machine-readable construction plan now exact-binds
+the preserved Phase456 result, the Phase502 adaptive-calibration specification,
+the Phase506 selective-inference validation, the Phase507 readiness
+adjudication, and the current Phase480 intake state. It forwards the four fixed
+chains and seeds, T16 then conditional T32 sequence, configuration-level
+retention, covariance/autocorrelation/ESS and split-R-hat gates, two-checkpoint
+stability rule, two-CPU-week ceiling, no-imputation rule, and honest set-valued
+inference boundary.
+
+The planning audit found that protocol readiness is not yet executable-pack
+readiness. Phase452/456 constructs only isotropic `n^4` tori; the forwarded
+protocol names temporal extents 16 and 32 but never freezes whether spatial
+extent remains four or grows with time. No anisotropic implementation is
+committed. The four seeds are fixed but a portable RNG algorithm, serialized
+state, stream separation, and draw-order contract are not. Consequently a CPU
+reference implementation and meaningful runtime/storage refusal envelope also
+cannot be frozen yet. These four items are explicit blocking decisions, not
+defaults inferred after seeing data.
+
+The plan fixes the later order: revalidate exact inputs and Phase480, freeze
+geometry/RNG/backend/topology/storage, generate canonical pack files, run
+reduced deterministic controls, prove hash refusal by mutation injections,
+validate Phase481 at a no-sampling terminal, then request a separate launch
+ruling against the committed fingerprint. Phase480 remains awaiting a genuine
+signed external memo. Phase481 therefore stays at its non-authorizing skeleton;
+no pack bytes were created, no sampling or reprocessing ran, Phase456 remains
+unchanged, and `promotedPhysicalMassClaimCount=0`.

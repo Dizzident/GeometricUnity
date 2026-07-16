@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "planId": "phase481-pack-construction-plan-v1",
+  "planDate": "2026-07-16",
+  "planStatus": "planning-complete-construction-blocked-upstream-and-geometry",
+  "planOnly": true,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "samplingOrReprocessingLaunched": false,
+  "launchAuthorizedByThisPlan": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "exactInputBindings": [
+    {
+      "role": "phase456-preserved-negative",
+      "path": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "sha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b"
+    },
+    {
+      "role": "adaptive-calibration-specification",
+      "path": "studies/phase502_phase456_adaptive_calibration_protocol_specification_001/output/phase456_adaptive_calibration_protocol_specification_summary.json",
+      "sha256": "a53456b965c09814701f506d84e3cba9d785654e55143d518c9d281ec47d8b53"
+    },
+    {
+      "role": "selective-inference-validation",
+      "path": "studies/phase506_phase456_selective_inference_protocol_validation_001/output/phase456_selective_inference_protocol_validation_summary.json",
+      "sha256": "d2ac471d5ef36c1351d680bef6d00b34b4fa846144c7e0d7d42f3fb9801046cd"
+    },
+    {
+      "role": "pack-readiness-adjudication",
+      "path": "studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/output/phase456_selective_inference_pack_readiness_adjudicator_summary.json",
+      "sha256": "ab4916dd7078921b41eeaf99bbb78a442c3b7c12743f6cfef8295c11708849a7"
+    },
+    {
+      "role": "external-ruling-intake-state",
+      "path": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+      "sha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7"
+    }
+  ],
+  "authorityState": {
+    "phase507ProtocolPlanningReady": true,
+    "existingWrittenPermissionElementPresent": true,
+    "phase480GenuineSignedMemoAccepted": false,
+    "stillBindingUpstreamAuthorizationSatisfied": false,
+    "packConstructionAllowedNow": false,
+    "samplingAllowedNow": false
+  },
+  "frozenRequirementsForwardedForConstruction": {
+    "initialTemporalExtent": 16,
+    "conditionalTemporalExtent": 32,
+    "independentChains": 4,
+    "chainSeeds": [5021601, 5021602, 5021603, 5021604],
+    "seedDerivationAllowed": false,
+    "crossChainStateSharingAllowed": false,
+    "warmupTrajectoriesPerChain": 512,
+    "measurementStrideTrajectories": 1,
+    "retainedBatchSizePerChain": 256,
+    "checkpointBatchMultiplePerChain": 4,
+    "minimumPostWarmupBatchesPerChainBeforeDecision": 4,
+    "maximumT16RetainedConfigurationsPerChain": 8192,
+    "maximumT32RetainedConfigurationsPerChain": 16384,
+    "minimumT16TotalEss": 2048,
+    "minimumT16PerChainEss": 256,
+    "minimumT32TotalEss": 8192,
+    "minimumT32PerChainEss": 1024,
+    "maximumSplitRhat": 1.01,
+    "requiredConsecutiveStableCheckpoints": 2,
+    "maximumRelativeEssDrift": 0.1,
+    "maximumCovarianceFrobeniusDrift": 0.1,
+    "cpuWeekCeiling": 2,
+    "costForecastSafetyFactor": 1.25,
+    "covarianceRegularization": "none-for-gate-singular-or-nonfinite-is-invalid",
+    "missingNonfiniteOrDuplicateRowAction": "invalidate-stage-no-imputation",
+    "selectiveInference": {
+      "singleUpperScore": -0.75,
+      "doubleLowerScore": 0.75,
+      "unresolvedSet": ["single", "double"],
+      "identifiableCasesRequireDecisiveCalls": true,
+      "maximumWrongDecisiveCalls": 0,
+      "maximumSingleFalseSelections": 0,
+      "unresolvedCountsAsDecisiveSuccess": false
+    },
+    "requiredRetainedData": [
+      "configuration-level per-site unsummed correlators",
+      "per-face-type resolution",
+      "all temporal separations",
+      "all preregistered channel and momentum projections",
+      "acceptance and Hamiltonian control diagnostics",
+      "chain batch trajectory measurement and RNG-stream identities"
+    ]
+  },
+  "unresolvedConstructionDecisions": [
+    {
+      "id": "geometry",
+      "status": "blocking",
+      "finding": "The current Phase452/456 implementation accepts one isotropic torus extent n and constructs n^4. The A12/A13 protocol freezes temporal extents 16 and 32 but does not freeze whether the new acquisition is 4^3xT or T^4.",
+      "requiredResolution": "Prospectively freeze spatial and temporal extents and provide a matching lattice implementation before pack bytes exist. Do not silently interpret temporal extent as isotropic extent."
+    },
+    {
+      "id": "rng-algorithm",
+      "status": "blocking",
+      "finding": "Four seeds are frozen, but an explicit portable RNG algorithm, state serialization, stream separation, and restart contract are not yet frozen for production acquisition.",
+      "requiredResolution": "Name and version the RNG, seed expansion, state format, draw ordering, and independent-chain stream policy; bind their implementation hash."
+    },
+    {
+      "id": "implementation-backend",
+      "status": "blocking",
+      "finding": "The current production path is the isotropic Phase452 CPU implementation. No anisotropic T16/T32 implementation or production-equivalent deterministic parity battery is committed.",
+      "requiredResolution": "Implement the selected geometry on the CPU reference backend first and freeze reduced exact/parity controls before any acquisition. Hardware or backend changes require their own prospective compatibility ruling."
+    },
+    {
+      "id": "resource-envelope",
+      "status": "blocking",
+      "finding": "The two-CPU-week ceiling is frozen, but runtime and storage forecasts are not meaningful until geometry, retained fields, and backend are fixed.",
+      "requiredResolution": "Compute static memory/storage bounds and a noncontending reduced deterministic cost estimate, then freeze refusal thresholds."
+    }
+  ],
+  "constructionSequenceAfterAllBlockersClose": [
+    "P0 revalidate every exact input binding and the accepted Phase480 derivative",
+    "P1 freeze geometry RNG backend chain topology storage schema and default configuration",
+    "P2 implement a deterministic pack generator that emits canonical manifest configuration schema and implementation hashes",
+    "P3 run reduced exact free-field Gaussian geometry gauge-invariance serialization restart and CPU-reference agreement batteries",
+    "P4 prove hash refusal with pack configuration implementation RNG topology and output-schema mutation injections",
+    "P5 run Phase481 without environment overrides and require a pack-ready no-sampling terminal",
+    "P6 run the mandatory incremental cascade and a full pass before any promotion-relevant citation",
+    "P7 request a separately recorded launch ruling against the exact committed pack fingerprint",
+    "P8 launch only through a tracked environment-clean harness with atomic checkpoints progress records and cost refusal"
+  ],
+  "plannedPackFiles": [
+    "preregistration/repair_pack_manifest.json",
+    "preregistration/default_configuration.json",
+    "preregistration/retained_configuration_schema.json",
+    "preregistration/selective_inference_contract.json",
+    "preregistration/convergence_cost_and_escalation_contract.json",
+    "preregistration/pack_hash.json"
+  ],
+  "terminalTaxonomyToFreezeBeforeConstruction": [
+    "invalid-precursor-or-fingerprint",
+    "invalid-calibration-data",
+    "cost-overrun",
+    "convergence-failure",
+    "t16-calibration-ready",
+    "t32-calibration-ready",
+    "unresolved"
+  ],
+  "nonclaimBoundary": "This plan concerns prospective workbench-relative lattice-unit calibration only. It creates no executable pack, launches no sampling, and supports no physical mass or GeV claim."
+}

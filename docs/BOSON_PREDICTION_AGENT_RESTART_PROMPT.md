@@ -230,6 +230,21 @@ Phase458 G3/G5 remain closed, and still-binding upstream authorization prevents
 Phase481 implementation or launch. Registry 505-507 is allocated; 508+ remains
 unassigned. Phase202 is 295/3 and `promotedPhysicalMassClaimCount=0`.
 
+PHASE481 PACK-CONSTRUCTION PLANNING (2026-07-16): at the user's direction,
+Phase507's planning permission has been exercised without constructing the
+pack. The machine-checked plan is
+`studies/phase481_phase456_prospective_repair_preregistration_001/planning/phase481_pack_construction_plan_v1.json`.
+It exact-binds Phase456 and Phases502/506/507/480, forwards the four-chain
+T16/conditional-T32 storage, convergence, cost, and selective-inference rules,
+and fixes the post-gate construction sequence. Planning exposed four blockers:
+the Phase452/456 implementation is isotropic `n^4` while the forwarded design
+names temporal extents without selecting `4^3 x T` versus `T^4`; a portable
+RNG/restart contract is not frozen; a matching CPU reference implementation
+does not exist; and runtime/storage refusal bounds depend on those choices.
+Phase480 also remains unsatisfied. The Phase481 skeleton terminal is unchanged,
+no pre-registration pack bytes exist, no sampling or reprocessing is launched,
+and `promotedPhysicalMassClaimCount=0`.
+
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its
 non-authorizing skeleton; no Phase481 sampling prerequisite is relaxed. The

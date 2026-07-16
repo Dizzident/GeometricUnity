@@ -15,6 +15,7 @@ node studies/phase480_o4_physicist_adjudication_intake_001/verify_intake_test.js
 
 node <<'NODE'
 const fs = require("fs");
+const crypto = require("crypto");
 
 const paths = {
   phase101: "studies/phase101_boson_prediction_package_001/output/boson_prediction_package_summary.json",
@@ -256,6 +257,7 @@ const paths = {
   phase479: "studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json",
   phase480: "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
   phase481: "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json",
+  phase481Plan: "studies/phase481_phase456_prospective_repair_preregistration_001/planning/phase481_pack_construction_plan_v1.json",
   phase482: "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
   phase483: "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json",
   phase484: "studies/phase484_exploratory_lane_governance_firewall_001/output/exploratory_lane_governance_firewall_summary.json",
@@ -600,6 +602,7 @@ const phase478 = requireFile(paths.phase478);
 const phase479 = requireFile(paths.phase479);
 const phase480 = requireFile(paths.phase480);
 const phase481 = requireFile(paths.phase481);
+const phase481Plan = requireFile(paths.phase481Plan);
 const phase482 = requireFile(paths.phase482);
 const phase483 = requireFile(paths.phase483);
 const phase484 = requireFile(paths.phase484);
@@ -5854,6 +5857,16 @@ if (sourceLineageMissing) {
     assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
     assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
   }
+  // Phase481 planning may advance without silently becoming pack construction.
+  const sha256File = (path) => crypto.createHash("sha256").update(fs.readFileSync(path)).digest("hex");
+  assert(phase481Plan.schemaVersion === 1 && phase481Plan.planId === "phase481-pack-construction-plan-v1" && phase481Plan.planStatus === "planning-complete-construction-blocked-upstream-and-geometry", "Phase481 construction-plan identity or fail-closed status drifted.");
+  assert(phase481Plan.planOnly === true && phase481Plan.phase481PackCreated === false && phase481Plan.phase481PackMutated === false && phase481Plan.samplingOrReprocessingLaunched === false && phase481Plan.launchAuthorizedByThisPlan === false, "Phase481 planning must not become a pack or launch authority.");
+  assert(phase481Plan.authorityState?.phase507ProtocolPlanningReady === true && phase481Plan.authorityState?.existingWrittenPermissionElementPresent === true && phase481Plan.authorityState?.phase480GenuineSignedMemoAccepted === false && phase481Plan.authorityState?.stillBindingUpstreamAuthorizationSatisfied === false && phase481Plan.authorityState?.packConstructionAllowedNow === false && phase481Plan.authorityState?.samplingAllowedNow === false, "Phase481 planning authority state drifted.");
+  assert(Array.isArray(phase481Plan.exactInputBindings) && phase481Plan.exactInputBindings.length === 5 && phase481Plan.exactInputBindings.every(binding => fs.existsSync(binding.path) && sha256File(binding.path) === binding.sha256), "Phase481 construction plan must exact-bind all five current inputs.");
+  assert(phase481Plan.frozenRequirementsForwardedForConstruction?.initialTemporalExtent === 16 && phase481Plan.frozenRequirementsForwardedForConstruction?.conditionalTemporalExtent === 32 && phase481Plan.frozenRequirementsForwardedForConstruction?.independentChains === 4 && JSON.stringify(phase481Plan.frozenRequirementsForwardedForConstruction?.chainSeeds) === JSON.stringify([5021601,5021602,5021603,5021604]), "Phase481 forwarded acquisition topology drifted.");
+  assert(phase481Plan.frozenRequirementsForwardedForConstruction?.minimumT16TotalEss === 2048 && phase481Plan.frozenRequirementsForwardedForConstruction?.minimumT32TotalEss === 8192 && phase481Plan.frozenRequirementsForwardedForConstruction?.cpuWeekCeiling === 2 && phase481Plan.frozenRequirementsForwardedForConstruction?.selectiveInference?.maximumWrongDecisiveCalls === 0 && phase481Plan.frozenRequirementsForwardedForConstruction?.selectiveInference?.unresolvedCountsAsDecisiveSuccess === false, "Phase481 forwarded convergence, cost, or selective-inference gates drifted.");
+  assert(Array.isArray(phase481Plan.unresolvedConstructionDecisions) && phase481Plan.unresolvedConstructionDecisions.map(x => x.id).join("|") === "geometry|rng-algorithm|implementation-backend|resource-envelope" && phase481Plan.unresolvedConstructionDecisions.every(x => x.status === "blocking"), "Phase481 construction blockers must remain explicit and blocking.");
+  assert(Array.isArray(phase481Plan.constructionSequenceAfterAllBlockersClose) && phase481Plan.constructionSequenceAfterAllBlockersClose.length === 9 && Array.isArray(phase481Plan.plannedPackFiles) && phase481Plan.plannedPackFiles.length === 6 && phase481Plan.promotedPhysicalMassClaimCount === 0, "Phase481 construction sequence, planned file set, or claim boundary drifted.");
   // Phase482 -- Amendment A9 deterministic theorem scout: exact obstructions survive, no theorem or target counterexample.
   assert(phase482.terminalStatus === "a5-theorem-scout-obstructions-survive-no-theorem" && phase482.verdictKind === "obstructions-survive-no-theorem", "Phase482 must preserve its exact obstruction-only terminal.");
   assert(phase482.applicationSubjectKind === "a5-theorem-scout" && phase482.planSection === "WAVE2_AMENDMENTS_2026-07-12 A9" && phase482.waveOrder === 6, "Phase482 identity or Amendment A9 lineage drifted.");
