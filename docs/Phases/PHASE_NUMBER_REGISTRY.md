@@ -21,7 +21,8 @@ back, NO new phase directory may be created outside this table.
 | 502-504 | Shared Phase456 adaptive-calibration design extension (A12) | 502 adaptive calibration protocol specification; 503 prospective protocol validation; 504 calibration-repair pack-readiness adjudicator |
 | 505-507 | Shared Phase456 selective-inference repair extension (A13) | 505 frozen-failure localization; 506 prospective selective-inference protocol validation; 507 repair-pack readiness adjudicator |
 | 508-510 | Shared Phase481 preconstruction-closure extension (A14) | 508 acquisition-geometry closure; 509 anisotropic CPU-reference feasibility; 510 execution-readiness adjudicator |
-| 511+ | Unassigned - extend this registry before use | - |
+| 511-513 | Shared Phase481 workload-definition and throughput extension (A15) | 511 workload-definition completeness audit; 512 direct throughput evidence only if 511 closes; 513 reserved for dependent cost re-adjudication |
+| 514+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

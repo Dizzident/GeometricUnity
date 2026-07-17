@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase511-a15-throughput-benchmark-eligibility-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "expectedBindings": {
+    "phase481PlanSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084",
+    "phase502ContractSha256": "ea25abd58bb1d1be81231c8c532cf805310c716422eaa1da07e7f0bed209b536",
+    "phase509SummarySha256": "a2099af2a6aabb75036ad83a28591e4c6c7cdd1f379b6719a12847fa637f4dec",
+    "phase510SummarySha256": "d334325722a362bac8fccde4af34c337f4a994ce76e130d7893c38a8acea3470",
+    "phase510ContractSha256": "f1a6f98aeea5abe801f7ad4b6920c67fee6d21dabbb942cac18d1f0cab6b902e",
+    "phase452ProgramSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0"
+  },
+  "requiredWorkloadFields": [
+    { "id": "acquisition-geometry", "category": "prospective-design" },
+    { "id": "rng-stream-contract", "category": "prospective-design" },
+    { "id": "chain-retention-cadence", "category": "prospective-design" },
+    { "id": "cost-ceiling-arithmetic", "category": "cost" },
+    { "id": "production-default-artifact", "category": "executable-default" },
+    { "id": "implementation-fingerprint", "category": "executable-default" },
+    { "id": "time-axis-and-layout-map", "category": "executable-default" },
+    { "id": "action-member-beta-and-control-mix", "category": "operation-ledger" },
+    { "id": "integrator-algorithm-and-step-count", "category": "operation-ledger" },
+    { "id": "step-size-and-warmup-adaptation", "category": "operation-ledger" },
+    { "id": "force-call-and-rejection-branch-counts", "category": "operation-ledger" },
+    { "id": "zero-mode-and-projector-policy", "category": "operation-ledger" },
+    { "id": "theta-update-cadence", "category": "operation-ledger" },
+    { "id": "measurement-and-correlator-work", "category": "operation-ledger" },
+    { "id": "execution-thread-and-process-topology", "category": "operation-ledger" },
+    { "id": "state-dependence-and-worst-case-policy", "category": "benchmark-contract" },
+    { "id": "allocation-cache-and-gc-policy", "category": "benchmark-contract" },
+    { "id": "aggregate-process-cpu-accounting", "category": "benchmark-contract" },
+    { "id": "t16-t32-ceiling-scope", "category": "benchmark-contract" },
+    { "id": "single-state-allocation-legality", "category": "benchmark-contract" },
+    { "id": "fixed-overhead-io-and-checkpoint-cost", "category": "benchmark-contract" },
+    { "id": "repeat-variance-and-one-sided-bound", "category": "benchmark-contract" }
+  ],
+  "precedence": [
+    "invalid-precursor-or-contract",
+    "production-default-or-implementation-missing",
+    "workload-definition-incomplete",
+    "cpu-measurement-contract-incomplete",
+    "throughput-benchmark-eligible"
+  ],
+  "benchmarkMayRunOnlyIfEveryRequiredFieldFrozen": true,
+  "smallerExtentThroughputExtrapolationAllowed": false,
+  "phase456WallTimingAdmissibleAsAggregateProcessCpuEvidence": false,
+  "productionSizedT16OrT32AllocationAllowed": false,
+  "samplingHmcPackLoaderCheckpointOrLaunchAllowed": false,
+  "physicalClaimAllowed": false
+}

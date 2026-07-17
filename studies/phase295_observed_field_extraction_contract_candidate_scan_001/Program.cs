@@ -938,6 +938,7 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase508_phase481_acquisition_geometry_closure_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase510_phase481_execution_readiness_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
@@ -966,6 +967,7 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P508.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P509.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P510.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P511.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

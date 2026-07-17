@@ -415,3 +415,34 @@ phase runs a sampler, HMC, or performance benchmark, satisfies Phase458 G3/G5,
 authors an O4 ruling, fills a source contract, or supports a physical-unit
 claim. The Phase481 skeleton and `promotedPhysicalMassClaimCount=0` remain
 unchanged.
+
+## A15 — Phase481 workload-definition and throughput closure (phases 511–513)
+
+Phase510 records a cost-envelope failure because no admissible aggregate-
+process-CPU throughput evidence exists. Before timing any reduced deterministic
+workload, Phase511 must exact-bind the prospective Phase481 plan, applicable
+calibration and cost contracts, reduced anisotropic controls, and the
+historical Phase452 implementation source, then audit whether a unique future
+production default and complete operation ledger already exist.
+
+The Phase511 contract freezes the required field census and precedence before
+consuming those inputs. It must distinguish historical Phase452 defaults from
+the future Phase481 default; enumerate integrator, force/rejection, theta,
+measurement, topology, state-dependence, allocation, fixed-overhead, and CPU-
+accounting requirements; and refuse before timing if any required field is
+missing. Historical wall timing is not aggregate-process-CPU evidence, smaller-
+extent scaling cannot stand in for required-geometry evidence, and this phase
+may not construct a full T16/T32 fixture or benchmark.
+
+Phase512 is hard-gated on a Phase511 benchmark-eligible terminal. Only then may
+a separately frozen, non-sampling deterministic experiment consider direct
+T16 and conditional-T32 aggregate-process-CPU evidence, with exact ledger
+coverage, conservative branch treatment, allocation legality, and no
+extrapolation. Phase513 is reserved for a dependent cost re-adjudication; it
+cannot be built merely because a timing number exists.
+
+A15 cannot construct or mutate the Phase481 pack, implement its production
+loader or checkpoint codec, satisfy Phase480 or Phase458, discharge O4,
+authorize sampling/HMC/production/launch, fill a source contract, or support a
+physical-unit claim. External review remains required and
+`promotedPhysicalMassClaimCount=0` throughout.

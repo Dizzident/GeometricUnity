@@ -264,8 +264,28 @@ still requires admissible noncontending throughput evidence plus the later P4
 production loader/refusal and checkpoint integration. Phase480 remains
 unsatisfied. No Phase481 pack was created, no production-sized allocation,
 sampling, HMC, or benchmark ran, and no launch or physical-claim authority
-follows. Registry 508-510 is allocated; 511+ remains unassigned. Phase202 is
-298/3 and `promotedPhysicalMassClaimCount=0`.
+follows. Registry 508-510 is allocated; its former 511+ frontier is superseded
+by Amendment A15 below. Phase202 is 298/3 and
+`promotedPhysicalMassClaimCount=0`.
+
+PHASE481 WORKLOAD-DEFINITION AUDIT (2026-07-17, Amendment A15; Phase511):
+a fail-closed GPT-5.6 Sol/high and Claude Fable 5/high council ranked a static
+eligibility audit ahead of throughput timing. Phase511 exact-binds six current
+planning, contract, result, and historical-source artifacts and audits 22
+benchmark-defining fields. Four prospective geometry/RNG/cadence/cost fields
+are frozen; 18 executable-default, operation-ledger, allocation, and aggregate-
+CPU-accounting fields are missing. Phase481 P1 has not emitted its planned
+default configuration or implementation fingerprint, and the historical
+Phase452 path is not silently adopted. The authoritative terminal is
+`production-default-or-implementation-missing`; workload completeness and
+benchmark eligibility are false. No benchmark, full T16/T32 allocation,
+sampling, HMC, pack, loader, checkpoint integration, or launch ran. Phase510's
+cost envelope remains unresolved, Phase480/O4 and Phase458 G3/G4/G5 remain
+closed, and no source-contract or physical-unit authority follows. Registry
+511-513 is allocated for A15; Phase512 is hard-gated on a future Phase511
+eligible terminal, Phase513 is reserved for dependent cost re-adjudication,
+and 514+ remains unassigned. `promotedPhysicalMassClaimCount=0`.
+Phase202 is 299/3 after the Phase511 checklist addition.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its

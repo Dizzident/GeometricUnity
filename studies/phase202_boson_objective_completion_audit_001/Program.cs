@@ -262,6 +262,7 @@ const string Phase507Path = "studies/phase507_phase456_selective_inference_pack_
 const string Phase508Path = "studies/phase508_phase481_acquisition_geometry_closure_001/output/phase481_acquisition_geometry_closure_summary.json";
 const string Phase509Path = "studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/output/phase481_anisotropic_cpu_reference_feasibility_summary.json";
 const string Phase510Path = "studies/phase510_phase481_execution_readiness_adjudicator_001/output/phase481_execution_readiness_adjudicator_summary.json";
+const string Phase511Path = "studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/output/phase481_throughput_benchmark_eligibility_audit_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -575,6 +576,7 @@ using var phase507 = File.Exists(Phase507Path) ? JsonDocument.Parse(File.ReadAll
 using var phase508 = File.Exists(Phase508Path) ? JsonDocument.Parse(File.ReadAllText(Phase508Path)) : null;
 using var phase509 = File.Exists(Phase509Path) ? JsonDocument.Parse(File.ReadAllText(Phase509Path)) : null;
 using var phase510 = File.Exists(Phase510Path) ? JsonDocument.Parse(File.ReadAllText(Phase510Path)) : null;
+using var phase511 = File.Exists(Phase511Path) ? JsonDocument.Parse(File.ReadAllText(Phase511Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7189,6 +7191,16 @@ var phase481ExecutionReadinessAdjudicatorPassed = phase510 is not null
     && JsonBool(phase510.RootElement, "productionAuthorized") is false
     && JsonBool(phase510.RootElement, "a14BoundaryHeld") is true
     && JsonInt(phase510.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase481ThroughputBenchmarkEligibilityAuditPassed = phase511 is not null
+    && JsonBool(phase511.RootElement, "inputsValid") is true
+    && JsonString(phase511.RootElement, "verdictKind") == "production-default-or-implementation-missing"
+    && JsonBool(phase511.RootElement, "workloadDefinitionComplete") is false
+    && JsonBool(phase511.RootElement, "throughputBenchmarkEligible") is false
+    && JsonBool(phase511.RootElement, "benchmarkRun") is false
+    && JsonBool(phase511.RootElement, "phase481PackCreated") is false
+    && JsonBool(phase511.RootElement, "productionAuthorized") is false
+    && JsonBool(phase511.RootElement, "a15BoundaryHeld") is true
+    && JsonInt(phase511.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10016,6 +10028,7 @@ var checklist = new[]
     new ObjectiveChecklistItem("phase481-acquisition-geometry-closure", "Select the prospective temporal-extension geometry from exact target-blind repository semantics without creating a pack.", phase481AcquisitionGeometryClosurePassed ? "passed" : "failed", phase508 is null ? "Phase508 artifact not materialized" : JsonString(phase508.RootElement, "decision") ?? "missing decision", Phase508Path),
     new ObjectiveChecklistItem("phase481-anisotropic-cpu-reference-feasibility", "Validate reduced anisotropic topology and CPU-operator controls with exact backward parity and no production run.", phase481AnisotropicCpuReferenceFeasibilityPassed ? "passed" : "failed", phase509 is null ? "Phase509 artifact not materialized" : JsonString(phase509.RootElement, "decision") ?? "missing decision", Phase509Path),
     new ObjectiveChecklistItem("phase481-execution-readiness-adjudicator", "Freeze RNG, restart, retention, resource, cost, and mutation controls and fail closed when admissible throughput evidence is absent.", phase481ExecutionReadinessAdjudicatorPassed ? "passed" : "failed", phase510 is null ? "Phase510 artifact not materialized" : JsonString(phase510.RootElement, "decision") ?? "missing decision", Phase510Path),
+    new ObjectiveChecklistItem("phase481-throughput-benchmark-eligibility-audit", "Audit every production-equivalent workload and CPU-accounting definition and refuse timing while the Phase481 default or operation ledger is incomplete.", phase481ThroughputBenchmarkEligibilityAuditPassed ? "passed" : "failed", phase511 is null ? "Phase511 artifact not materialized" : JsonString(phase511.RootElement, "decision") ?? "missing decision", Phase511Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

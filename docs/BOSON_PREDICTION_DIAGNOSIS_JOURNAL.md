@@ -20998,3 +20998,46 @@ admissible noncontending throughput evidence for the frozen cost calculation,
 then implement and mutation-test the production pack loader/refusal surface and
 integrate the production checkpoint codec at the plan's later P4 boundary.
 External review remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-17 - Amendment A15 refuses throughput timing before an executable workload exists
+
+The user requested a cross-model blocker council and authorized implementation
+of the highest-ranked already-machine-executable recommendation. Three
+independent GPT-5.6 Sol/high roles and three independent Claude Fable 5/high
+roles analyzed exact-bound packets for the Phase510 throughput gap and the
+Phase482 action-specific theorem gap. Opposite-family blind reviews and one
+rebuttal round preserved the same strongest objections: fixed-state timing is
+not production-equivalent without a complete future operation ledger, while a
+local certificate failure is not a counterexample to the registered theorem
+unless necessity and exact embedding are proved.
+
+The adjudication ranked a zero-compute Phase481 workload-definition audit first
+by information gain and cost. Registry 511-513 was allocated before creating
+the Phase511 directory. Council transcripts remain outside scanned roots.
+
+Phase511 exact-binds the Phase481 construction plan, Phase502 contract,
+Phase509 reduced anisotropic result, Phase510 result and contract, and the
+historical Phase452 implementation source. Its contract freezes a 22-field
+census and a five-case precedence battery before consuming those inputs. Four
+prospective design/cost fields are exact-bound. Eighteen fields remain missing,
+including the planned default-configuration artifact, executable
+implementation fingerprint, integrator/step-size and accepted/rejected force
+ledger, theta and measurement work, execution topology, state-dependence
+policy, allocation/cache/GC policy, aggregate-process-CPU convention, T16/T32
+ceiling scope, and conservative repeat rule.
+
+The exact historical source records twelve leapfrog steps, two collective
+theta moves per trajectory, a site sweep every 50 trajectories, adaptive
+warmup, 14 accepted-trajectory force calls and 15 on rejection, five parallel
+columns, and wall-clock `Stopwatch` timing. Those are historical facts only,
+not a future Phase481 default or admissible aggregate-process-CPU evidence.
+
+The Phase511 terminal is
+`phase481-throughput-benchmark-eligibility-production-default-or-implementation-missing`.
+It runs no benchmark, constructs no full T16/T32 mesh or allocation, performs
+no sampling/HMC/reprocessing, and creates no pack, loader, checkpoint codec, or
+launch authority. Phase512 remains hard-gated on a future Phase511 eligible
+terminal. Phase510's cost envelope, Phase480/O4, Phase458 G3/G4/G5, external
+review, and every source-contract boundary remain unchanged;
+`promotedPhysicalMassClaimCount=0`. Phase202 moves to 299 passed / 3
+standing failures.
