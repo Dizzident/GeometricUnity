@@ -1,6 +1,6 @@
 {
   "phaseId": "phase452-scalar-channel-spectroscopy-probe",
-  "generatedAt": "2026-07-15T14:54:29.1707695+00:00",
+  "generatedAt": "2026-07-16T21:27:31.8237655+00:00",
   "phase456Run": null,
   "terminalStatus": "scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev",
   "scalarChannelSpectroscopyProbePassed": true,
@@ -294,7 +294,7 @@
             }
           ],
           "phase456": null,
-          "msPerTrajectory": 392.094079975
+          "msPerTrajectory": 254.1610470625
         },
         {
           "member": "identity",
@@ -362,7 +362,7 @@
             }
           ],
           "phase456": null,
-          "msPerTrajectory": 437.50140790999995
+          "msPerTrajectory": 284.17214134
         },
         {
           "member": "sd2-id0/c0.5",
@@ -430,7 +430,7 @@
             }
           ],
           "phase456": null,
-          "msPerTrajectory": 517.20525679375
+          "msPerTrajectory": 391.01420075000004
         },
         {
           "member": "sd2-id0/c0.5",
@@ -498,7 +498,7 @@
             }
           ],
           "phase456": null,
-          "msPerTrajectory": 579.21284409
+          "msPerTrajectory": 396.91558601
         },
         {
           "member": "sd2-id0/c0.5",
@@ -566,7 +566,7 @@
             }
           ],
           "phase456": null,
-          "msPerTrajectory": 437.98563343
+          "msPerTrajectory": 263.82576606
         }
       ],
       "freeFieldGates": [
@@ -645,7 +645,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 9638.6318722,
+  "runtimeSeconds": 7085.519092,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

@@ -52,7 +52,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     private readonly int _dimG;
     private readonly int _faceCount;
     private readonly double _kappa;
-    private readonly int _latticePeriod;
+    private readonly int[]? _latticePeriods;
 
     // Per-cell precomputed data (mesh- and member-fixed, omega-independent).
     private readonly int[][] _cellFaces;          // global face indices per cell
@@ -87,13 +87,20 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// the UNIQUE convention under which the contraction is well-defined and translation-invariant on
     /// a torus. Open meshes have no wrapping, so minimal-image == raw there. Physicist review of the
     /// periodic-mesh contraction semantics may be pending; the convention is documented and open-mesh-inert.</param>
+    /// <param name="latticePeriods">
+    /// Optional per-axis minimal-image periods for an anisotropic periodic base mesh.
+    /// Its length must cover the four contracted base axes, every value must be at
+    /// least 3, and <paramref name="latticePeriod"/> must remain zero. null preserves
+    /// the historical scalar/default execution path.
+    /// </param>
     public EinsteinianShiabOperator(
         SimplicialMesh mesh,
         LieAlgebra algebra,
         EinsteinianShiabFamilyMember member,
         double[]? backgroundEps = null,
         double omegaCouplingKappa = 1.0,
-        int latticePeriod = 0)
+        int latticePeriod = 0,
+        int[]? latticePeriods = null)
     {
         _mesh = mesh ?? throw new ArgumentNullException(nameof(mesh));
         _algebra = algebra ?? throw new ArgumentNullException(nameof(algebra));
@@ -101,7 +108,22 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         _dimG = algebra.Dimension;
         _faceCount = mesh.FaceCount;
         _kappa = omegaCouplingKappa;
-        _latticePeriod = latticePeriod;
+        if (latticePeriod < 0 || latticePeriod is 1 or 2)
+            throw new ArgumentOutOfRangeException(nameof(latticePeriod), "Minimal-image period must be zero or at least 3.");
+        if (latticePeriods is not null)
+        {
+            if (latticePeriod != 0)
+                throw new ArgumentException("Specify either latticePeriod or latticePeriods, not both.");
+            if (latticePeriods.Length != 4)
+                throw new ArgumentException("Exactly four per-axis lattice periods are required.", nameof(latticePeriods));
+            if (latticePeriods.Any(period => period < 3))
+                throw new ArgumentOutOfRangeException(nameof(latticePeriods), "Every contracted-axis period must be at least 3.");
+            _latticePeriods = (int[])latticePeriods.Clone();
+        }
+        else
+        {
+            _latticePeriods = latticePeriod > 0 ? Enumerable.Repeat(latticePeriod, 4).ToArray() : null;
+        }
 
         if (mesh.EmbeddingDimension < 4)
             throw new ArgumentException(
@@ -1011,13 +1033,14 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 {
                     u[d] = pb[d] - pa[d];
                     v[d] = pc[d] - pa[d];
-                    if (_latticePeriod > 0)
+                    if (_latticePeriods is not null)
                     {
                         // Minimal-image reduction for a periodic (torus) base: a wrapped edge's raw
                         // coordinate difference is period-1, not 1; reduce it to the nearest image so
                         // the bivector (hence the whole contraction) is translation-invariant.
-                        u[d] -= _latticePeriod * System.Math.Round(u[d] / _latticePeriod);
-                        v[d] -= _latticePeriod * System.Math.Round(v[d] / _latticePeriod);
+                        int period = _latticePeriods[d];
+                        u[d] -= period * System.Math.Round(u[d] / period);
+                        v[d] -= period * System.Math.Round(v[d] / period);
                     }
                 }
                 var biv = Lambda2Algebra.Wedge(u, v);

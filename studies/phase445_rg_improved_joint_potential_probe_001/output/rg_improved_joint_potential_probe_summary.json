@@ -1,6 +1,6 @@
 {
   "phaseId": "phase445-rg-improved-joint-potential-probe",
-  "generatedAt": "2026-07-12T03:04:34.6798618+00:00",
+  "generatedAt": "2026-07-16T15:29:04.1451241+00:00",
   "terminalStatus": "rg-improved-joint-potential-probe-passed-einsteinian-rg-saturation-candidate-scheme-dependent-recorded-no-gev",
   "rgImprovedJointPotentialProbePassed": true,
   "phase443PrecursorPassed": true,
@@ -1203,7 +1203,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 928.5320426,
+  "runtimeSeconds": 966.1255277,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

@@ -1,6 +1,6 @@
 {
   "phaseId": "phase486-committed-evidence-sensitivity-triage",
-  "generatedAt": "2026-07-15T17:31:14.3443964+00:00",
+  "generatedAt": "2026-07-16T22:43:49.2736166+00:00",
   "terminalStatus": "committed-evidence-sensitivity-triage-fragilities-exposed-next-tests-ranked",
   "verdictKind": "fragilities-exposed-next-tests-ranked",
   "applicationSubjectKind": "committed-evidence-sensitivity-triage",
@@ -45,5 +45,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "Existing artifacts already expose soft-floor and zero-mode fragility, record the ladder repair, and provide a scoped compact-form machine check. Reduced theta-measure, model-sensitivity, and restart-equivalence tests are next; no review gate is discharged.",
-  "runtimeSeconds": 0.0100304
+  "runtimeSeconds": 0.0106098
 }

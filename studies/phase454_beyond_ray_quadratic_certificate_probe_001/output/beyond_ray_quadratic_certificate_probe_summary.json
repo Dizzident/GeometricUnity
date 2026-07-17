@@ -1,6 +1,6 @@
 {
   "phaseId": "phase454-beyond-ray-quadratic-certificate-probe",
-  "generatedAt": "2026-07-12T10:23:15.7512107+00:00",
+  "generatedAt": "2026-07-16T22:43:47.745272+00:00",
   "terminalStatus": "beyond-ray-quadratic-certificate-probe-passed-beyond-ray-instability-candidate-found",
   "beyondRayQuadraticCertificateProbePassed": true,
   "phase448PrecursorPassed": true,
@@ -46352,7 +46352,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 49.2812655,
+  "runtimeSeconds": 49.0467449,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

@@ -374,3 +374,44 @@ RNG policy, convergence/ESS and cost refusal rules, and every still-binding
 upstream authorization. No A13 phase performs HMC or a benchmark, fills a
 source contract, or supports a physical-unit claim;
 `promotedPhysicalMassClaimCount=0` throughout.
+
+## A14 — Phase481 preconstruction closure (phases 508–510)
+
+Phase507 permits independent Phase481 pack planning, and the resulting
+machine-checked plan identifies four preconstruction gaps: acquisition
+geometry, portable RNG/restart semantics, an anisotropic CPU reference path,
+and a meaningful resource-refusal envelope. This tranche may close those
+engineering and prospective-control gaps. It cannot satisfy Phase480, create
+or mutate the Phase481 pre-registration pack, authorize sampling or
+reprocessing, or reinterpret Phase456.
+
+Phase508 exact-binds the Phase481 construction plan and the committed temporal
+acquisition evidence. Before evaluation it freezes the geometry candidates,
+evidence rules, count/cost comparisons, and terminal taxonomy. It must
+distinguish the existing isotropic `n^4` implementation from a spatial-four,
+temporal-extent design and may select a geometry only from target-blind
+repository semantics and exact topology/resource arithmetic. Ambiguity or
+drift is a valid blocked result; no empirical result may choose the geometry.
+
+Phase509 implements and tests only the CPU-reference geometry needed by the
+Phase508 result. Its prospective contract requires exact isotropic backward
+parity, vertex/simplex count identities, boundary-of-boundary closure,
+periodic translation covariance, minimal-image behavior, and reduced
+observable/operator controls on anisotropic fixtures. It performs no HMC,
+benchmark, production acquisition, or Phase481 pack generation. Any core
+geometry change must retain all existing tests and introduce no warning.
+
+Phase510 freezes a dependent adjudication contract before consuming the exact
+Phase508 and Phase509 outputs. It records an explicit portable RNG algorithm,
+four-stream seed/state serialization and restart rules, static memory/storage
+arithmetic, the two-CPU-week refusal boundary, required fingerprint-mutation
+tests, and frozen precedence across invalid input, geometry/backend failure,
+resource infeasibility, and preconstruction-controls-ready-pending-Phase480.
+It may declare only technical readiness for later pack construction; Phase480
+and a later exact pack fingerprint remain mandatory.
+
+A14 is confirmation-planning infrastructure, not production evidence. No A14
+phase runs a sampler, HMC, or performance benchmark, satisfies Phase458 G3/G5,
+authors an O4 ruling, fills a source contract, or supports a physical-unit
+claim. The Phase481 skeleton and `promotedPhysicalMassClaimCount=0` remain
+unchanged.

@@ -209,6 +209,36 @@ public static class SimplicialMeshGenerator
     }
 
     /// <summary>
+    /// Creates an anisotropic periodic 4D Coxeter–Freudenthal–Kuhn mesh with the
+    /// supplied lattice extents. Opposite faces are identified independently on
+    /// every axis. The lattice-canonical convention uses the corresponding per-axis
+    /// minimal-image periods and therefore remains translation-equivariant when the
+    /// extents differ.
+    /// </summary>
+    /// <param name="xExtent">Periodic extent on axis 0 (at least 3).</param>
+    /// <param name="yExtent">Periodic extent on axis 1 (at least 3).</param>
+    /// <param name="zExtent">Periodic extent on axis 2 (at least 3).</param>
+    /// <param name="temporalExtent">Periodic extent on axis 3 (at least 3).</param>
+    /// <param name="latticeCanonical">
+    /// false stores historical global-index-sorted tuples; true stores intrinsic
+    /// lattice-chain tuples using each axis's own period.
+    /// </param>
+    public static SimplicialMesh CreateUniform4DPeriodic(
+        int xExtent,
+        int yExtent,
+        int zExtent,
+        int temporalExtent,
+        bool latticeCanonical = false)
+    {
+        if (xExtent < 3) throw new ArgumentOutOfRangeException(nameof(xExtent), "Must be >= 3 for a well-formed 4-torus.");
+        if (yExtent < 3) throw new ArgumentOutOfRangeException(nameof(yExtent), "Must be >= 3 for a well-formed 4-torus.");
+        if (zExtent < 3) throw new ArgumentOutOfRangeException(nameof(zExtent), "Must be >= 3 for a well-formed 4-torus.");
+        if (temporalExtent < 3) throw new ArgumentOutOfRangeException(nameof(temporalExtent), "Must be >= 3 for a well-formed 4-torus.");
+        int[] extents = [xExtent, yExtent, zExtent, temporalExtent];
+        return BuildKuhn4DPeriodic(extents, latticeCanonical);
+    }
+
+    /// <summary>
     /// Shared Coxeter–Freudenthal–Kuhn 4-cube triangulation core. When
     /// <paramref name="periodic"/> is false this tiles the open block [0, n]^4
     /// ((n+1)^4 vertices); when true, opposite faces are identified (n^4 vertices,
@@ -289,6 +319,64 @@ public static class SimplicialMeshGenerator
             vertexCount: vertexCount,
             cellVertices: cells.ToArray(),
             latticePeriod: latticeCanonical && periodic ? n : 0);
+    }
+
+    private static SimplicialMesh BuildKuhn4DPeriodic(int[] extents, bool latticeCanonical)
+    {
+        int vertexCount = checked(extents[0] * extents[1] * extents[2] * extents[3]);
+        var coords = new double[checked(vertexCount * 4)];
+
+        int Idx(int x, int y, int z, int w)
+        {
+            x %= extents[0]; y %= extents[1]; z %= extents[2]; w %= extents[3];
+            return ((x * extents[1] + y) * extents[2] + z) * extents[3] + w;
+        }
+
+        for (int x = 0; x < extents[0]; x++)
+        for (int y = 0; y < extents[1]; y++)
+        for (int z = 0; z < extents[2]; z++)
+        for (int w = 0; w < extents[3]; w++)
+        {
+            int vertex = Idx(x, y, z, w);
+            coords[vertex * 4] = x;
+            coords[vertex * 4 + 1] = y;
+            coords[vertex * 4 + 2] = z;
+            coords[vertex * 4 + 3] = w;
+        }
+
+        int cellCount = checked(24 * vertexCount);
+        var cells = new List<int[]>(cellCount);
+        var corner = new int[4];
+        var point = new int[4];
+        int[][] permutations = Permutations4();
+
+        for (int x = 0; x < extents[0]; x++)
+        for (int y = 0; y < extents[1]; y++)
+        for (int z = 0; z < extents[2]; z++)
+        for (int w = 0; w < extents[3]; w++)
+        {
+            corner[0] = x; corner[1] = y; corner[2] = z; corner[3] = w;
+            foreach (int[] permutation in permutations)
+            {
+                var cellVertices = new int[5];
+                Array.Copy(corner, point, 4);
+                cellVertices[0] = Idx(point[0], point[1], point[2], point[3]);
+                for (int step = 0; step < 4; step++)
+                {
+                    point[permutation[step]]++;
+                    cellVertices[step + 1] = Idx(point[0], point[1], point[2], point[3]);
+                }
+                cells.Add(cellVertices);
+            }
+        }
+
+        return MeshTopologyBuilder.Build(
+            embeddingDimension: 4,
+            simplicialDimension: 4,
+            vertexCoordinates: coords,
+            vertexCount: vertexCount,
+            cellVertices: cells.ToArray(),
+            latticePeriods: latticeCanonical ? extents : null);
     }
 
     /// <summary>Returns all 24 permutations of {0,1,2,3}.</summary>

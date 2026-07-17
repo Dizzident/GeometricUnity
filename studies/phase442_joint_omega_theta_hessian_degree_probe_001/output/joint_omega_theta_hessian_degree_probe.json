@@ -1,6 +1,6 @@
 {
   "phaseId": "phase442-joint-omega-theta-hessian-degree-probe",
-  "generatedAt": "2026-07-12T01:59:02.9923946+00:00",
+  "generatedAt": "2026-07-16T14:25:31.7441233+00:00",
   "terminalStatus": "joint-omega-theta-hessian-degree-probe-passed-einsteinian-lift-above-degree-two-necessary-not-sufficient-no-scale",
   "jointOmegaThetaHessianDegreeProbePassed": true,
   "phase436PrecursorPassed": true,
@@ -356,7 +356,7 @@
     "treatmentVerdict": "every genuinely-rich Einsteinian member lifts the joint (omega,theta) Hessian above degree 2",
     "robustness": "the degree verdict AGREES under both vertex-\u003Eface rules (lowest-index and incident-average); the incident-average rule attenuates the lift MAGNITUDE by ~11.5x (it smooths theta over the face\u0027s three vertices) but the verdict is robust"
   },
-  "runtimeSeconds": 0.7273362,
+  "runtimeSeconds": 0.654214,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

@@ -29,13 +29,21 @@ public static class MeshTopologyBuilder
     /// and latticePeriod &gt;= 3 (minimal-image unambiguity); otherwise throws.
     /// The default path (0) is byte-identical to the historical behavior.
     /// </param>
+    /// <param name="latticePeriods">
+    /// Optional per-axis periods for anisotropic periodic lattices. When supplied,
+    /// its length must equal <paramref name="embeddingDimension"/>, every period
+    /// must be at least 3, and <paramref name="latticePeriod"/> must remain zero.
+    /// This is the anisotropic counterpart of <paramref name="latticePeriod"/>;
+    /// null preserves the historical scalar/default paths exactly.
+    /// </param>
     public static SimplicialMesh Build(
         int embeddingDimension,
         int simplicialDimension,
         double[] vertexCoordinates,
         int vertexCount,
         int[][] cellVertices,
-        int latticePeriod = 0)
+        int latticePeriod = 0,
+        int[]? latticePeriods = null)
     {
         if (embeddingDimension < 1)
             throw new ArgumentOutOfRangeException(nameof(embeddingDimension));
@@ -49,6 +57,19 @@ public static class MeshTopologyBuilder
             throw new ArgumentOutOfRangeException(
                 nameof(latticePeriod),
                 "Lattice-canonical mode requires period >= 3 (minimal-image displacements of unit-step subsimplices are ambiguous below 3).");
+        if (latticePeriods is not null)
+        {
+            if (latticePeriod != 0)
+                throw new ArgumentException("Specify either latticePeriod or latticePeriods, not both.");
+            if (latticePeriods.Length != embeddingDimension)
+                throw new ArgumentException("Per-axis lattice-period count must equal the embedding dimension.", nameof(latticePeriods));
+            if (latticePeriods.Any(period => period < 3))
+                throw new ArgumentOutOfRangeException(nameof(latticePeriods), "Every lattice-canonical period must be >= 3.");
+        }
+
+        int[]? canonicalPeriods = latticePeriods;
+        if (canonicalPeriods is null && latticePeriod > 0)
+            canonicalPeriods = Enumerable.Repeat(latticePeriod, embeddingDimension).ToArray();
 
         foreach (var cell in cellVertices)
         {
@@ -105,8 +126,8 @@ public static class MeshTopologyBuilder
                                 faceIdx = faceList.Count;
                                 faceMap[sorted] = faceIdx;
                                 var tuple = new[] { sorted.Item1, sorted.Item2, sorted.Item3 };
-                                if (latticePeriod > 0)
-                                    LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, latticePeriod);
+                                if (canonicalPeriods is not null)
+                                    LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, canonicalPeriods);
                                 faceList.Add(tuple);
                             }
                             cellFaces.Add(faceIdx);
@@ -179,8 +200,8 @@ public static class MeshTopologyBuilder
                                     volIdx = volumeList.Count;
                                     volumeMap[sorted] = volIdx;
                                     var tuple = new[] { sorted.Item1, sorted.Item2, sorted.Item3, sorted.Item4 };
-                                    if (latticePeriod > 0)
-                                        LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, latticePeriod);
+                                    if (canonicalPeriods is not null)
+                                        LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, canonicalPeriods);
                                     volumeList.Add(tuple);
                                 }
                                 cellVolumes.Add(volIdx);
@@ -313,13 +334,13 @@ public static class MeshTopologyBuilder
     /// The rule reads only relative displacements, never global indices, hence it
     /// commutes with every lattice translation.
     /// </summary>
-    private static void LatticeChainOrder(int[] tuple, double[] coords, int embeddingDimension, int period)
+    private static void LatticeChainOrder(int[] tuple, double[] coords, int embeddingDimension, int[] periods)
     {
         // Insertion sort (tuples have <= 4 entries).
         for (int i = 1; i < tuple.Length; i++)
         {
             int j = i;
-            while (j > 0 && !LatticeLeq(tuple[j - 1], tuple[j], coords, embeddingDimension, period))
+            while (j > 0 && !LatticeLeq(tuple[j - 1], tuple[j], coords, embeddingDimension, periods))
             {
                 (tuple[j - 1], tuple[j]) = (tuple[j], tuple[j - 1]);
                 j--;
@@ -334,12 +355,13 @@ public static class MeshTopologyBuilder
     /// axis — i.e. when the mesh is not a Kuhn-type lattice triangulation, for which
     /// the lattice-canonical convention is undefined.
     /// </summary>
-    private static bool LatticeLeq(int a, int b, double[] coords, int embeddingDimension, int period)
+    private static bool LatticeLeq(int a, int b, double[] coords, int embeddingDimension, int[] periods)
     {
         bool anyPositive = false, anyNegative = false;
 
         for (int d = 0; d < embeddingDimension; d++)
         {
+            int period = periods[d];
             double diff = coords[b * embeddingDimension + d] - coords[a * embeddingDimension + d];
             double reduced = diff - period * Math.Round(diff / period);
             int step = (int)Math.Round(reduced);

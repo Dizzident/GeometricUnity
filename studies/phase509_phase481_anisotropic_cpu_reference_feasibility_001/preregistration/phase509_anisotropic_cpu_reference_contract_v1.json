@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase509-a14-anisotropic-cpu-reference-feasibility-v1",
+  "frozenBeforeEvaluation": true,
+  "expectedPhase508": {
+    "path": "studies/phase508_phase481_acquisition_geometry_closure_001/output/phase481_acquisition_geometry_closure_summary.json",
+    "sha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+    "requiredVerdictKind": "spatial-four-temporal-design-selected",
+    "requiredT16Extents": [4, 4, 4, 16],
+    "requiredT32Extents": [4, 4, 4, 32]
+  },
+  "reducedFixtureExtents": [3, 3, 3, 4],
+  "requiredControls": [
+    "scalar-api-prechange-topology-hash",
+    "isotropic-vector-overload-topology-parity",
+    "anisotropic-exact-simplex-counts",
+    "anisotropic-closed-volume-stars",
+    "anisotropic-boundary-of-boundary",
+    "anisotropic-four-axis-tuple-translation-equivariance",
+    "scalar-versus-isotropic-vector-operator-map-parity",
+    "anisotropic-minimal-image-operator-map-activation",
+    "invalid-period-refusal"
+  ],
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-precursor-or-contract",
+    "anisotropic-cpu-reference-controls-failed",
+    "anisotropic-cpu-reference-controls-ready"
+  ],
+  "fullT16OrT32MeshConstructionAllowed": false,
+  "phase481PackCreationAllowed": false,
+  "samplingOrReprocessingAllowed": false,
+  "benchmarkAllowed": false,
+  "hmcAllowed": false,
+  "phase480SatisfiedByThisPhase": false,
+  "physicalClaimAllowed": false
+}

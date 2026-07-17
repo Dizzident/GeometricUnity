@@ -227,8 +227,9 @@ This is planning evidence only. The user's existing permission element is
 present, but no Phase481 pack is created and no sampling or reprocessing is
 launched. Phase480 remains awaiting a genuine signed external memo, O4 and
 Phase458 G3/G5 remain closed, and still-binding upstream authorization prevents
-Phase481 implementation or launch. Registry 505-507 is allocated; 508+ remains
-unassigned. Phase202 is 295/3 and `promotedPhysicalMassClaimCount=0`.
+Phase481 implementation or launch. Registry 505-507 is allocated; its former
+508+ frontier is superseded by Amendment A14 below. Phase202 is 295/3 and
+`promotedPhysicalMassClaimCount=0`.
 
 PHASE481 PACK-CONSTRUCTION PLANNING (2026-07-16): at the user's direction,
 Phase507's planning permission has been exercised without constructing the
@@ -244,6 +245,27 @@ does not exist; and runtime/storage refusal bounds depend on those choices.
 Phase480 also remains unsatisfied. The Phase481 skeleton terminal is unchanged,
 no pre-registration pack bytes exist, no sampling or reprocessing is launched,
 and `promotedPhysicalMassClaimCount=0`.
+
+PHASE481 PRECONSTRUCTION CLOSURE (2026-07-16, Amendment A14;
+Phases508-510): Phase508 resolves the geometry question from exact-bound
+repository semantics, selecting spatial-four temporal lattices `[4,4,4,16]`
+and `[4,4,4,32]`. Phase509 adds per-axis periodic extents to the canonical
+mesh and reference-CPU operator while preserving scalar/isotropic behavior;
+all nine reduced deterministic topology/operator controls pass. Phase510
+freezes the portable xoshiro256** chain/RNG design, exact resource arithmetic,
+cost-refusal rule, and prospective fingerprint-mutation surface. Adversarial
+review rejected its initial premature ready branch. The corrected authoritative
+terminal is `cost-envelope-failure`: no admissible production-throughput
+evidence exists, so the two-CPU-week envelope refuses readiness. The reduced
+RNG restart control is not a production HMC checkpoint codec, and prospective
+fingerprint distinguishability is not a production pack-loader refusal proof.
+Thus geometry and anisotropic CPU feasibility are closed, but pack construction
+still requires admissible noncontending throughput evidence plus the later P4
+production loader/refusal and checkpoint integration. Phase480 remains
+unsatisfied. No Phase481 pack was created, no production-sized allocation,
+sampling, HMC, or benchmark ran, and no launch or physical-claim authority
+follows. Registry 508-510 is allocated; 511+ remains unassigned. Phase202 is
+298/3 and `promotedPhysicalMassClaimCount=0`.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its

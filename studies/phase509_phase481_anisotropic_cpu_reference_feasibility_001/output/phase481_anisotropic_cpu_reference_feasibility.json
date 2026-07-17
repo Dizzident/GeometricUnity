@@ -1,0 +1,119 @@
+{
+  "phaseId": "phase509-phase481-anisotropic-cpu-reference-feasibility",
+  "terminalStatus": "phase481-anisotropic-cpu-reference-feasibility-anisotropic-cpu-reference-controls-ready",
+  "verdictKind": "anisotropic-cpu-reference-controls-ready",
+  "inputsValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A14",
+  "contract": {
+    "path": "studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/preregistration/phase509_anisotropic_cpu_reference_contract_v1.json",
+    "byteSha256": "241d4ae8bdb84c3023baa14000ffc4235c7b27493cb7bb89d7ae4327ecaa9986",
+    "valid": true,
+    "frozenBeforeEvaluation": true,
+    "taxonomy": [
+      "invalid-precursor-or-contract",
+      "anisotropic-cpu-reference-controls-failed",
+      "anisotropic-cpu-reference-controls-ready"
+    ]
+  },
+  "phase508Binding": {
+    "path": "studies/phase508_phase481_acquisition_geometry_closure_001/output/phase481_acquisition_geometry_closure_summary.json",
+    "expectedSha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+    "actualSha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+    "exactHashMatch": true,
+    "valid": true
+  },
+  "selectedGeometry": {
+    "t16": [
+      4,
+      4,
+      4,
+      16
+    ],
+    "t32": [
+      4,
+      4,
+      4,
+      32
+    ]
+  },
+  "reducedFixtureExtents": [
+    3,
+    3,
+    3,
+    4
+  ],
+  "controls": [
+    {
+      "id": "scalar-api-prechange-topology-hash",
+      "passed": true,
+      "detail": "c5de1e32d34c4e7b8b2af61f30d150d8847165658e7d66890772934712dd6722"
+    },
+    {
+      "id": "isotropic-vector-overload-topology-parity",
+      "passed": true,
+      "detail": "scalar=2dc667daeb606d8002accf788972b2047edd753d42014605aee58e3869df2ab6;vector=2dc667daeb606d8002accf788972b2047edd753d42014605aee58e3869df2ab6"
+    },
+    {
+      "id": "anisotropic-exact-simplex-counts",
+      "passed": true,
+      "detail": "V=108;E=1620;F=5400;W=6480;C=2592"
+    },
+    {
+      "id": "anisotropic-closed-volume-stars",
+      "passed": true,
+      "detail": "violations=0"
+    },
+    {
+      "id": "anisotropic-boundary-of-boundary",
+      "passed": true,
+      "detail": "nonzeroEdgeCoefficients=0"
+    },
+    {
+      "id": "anisotropic-four-axis-tuple-translation-equivariance",
+      "passed": true,
+      "detail": "tupleViolations=0"
+    },
+    {
+      "id": "scalar-versus-isotropic-vector-operator-map-parity",
+      "passed": true,
+      "detail": "scalar=4530448c6606237683b10795f73ee50ac38bf0386870300c4d0e98c52f4b668e;vector=4530448c6606237683b10795f73ee50ac38bf0386870300c4d0e98c52f4b668e"
+    },
+    {
+      "id": "anisotropic-minimal-image-operator-map-activation",
+      "passed": true,
+      "detail": "raw=2127548f58be9d435527d3bac8d4bfedfc6d7455336f3571be3561cbe273a859;minimal=f51a102e9380e689d625231a52a92e1c64e038f1bd2514b6482fdf0ece28e6a5"
+    },
+    {
+      "id": "invalid-period-refusal",
+      "passed": true,
+      "detail": "generator=True;operator=True"
+    }
+  ],
+  "passedControlCount": 9,
+  "requiredControlCount": 9,
+  "allControlsPassed": true,
+  "scalarApiBackwardParityHeld": true,
+  "anisotropicTopologyReady": true,
+  "anisotropicOperatorMinimalImageReady": true,
+  "targetBlindConstruction": true,
+  "deterministicReducedControlsOnly": true,
+  "fullT16OrT32MeshConstructed": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "phase480Satisfied": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a14BoundaryHeld": true,
+  "decision": "Reduced anisotropic topology and CPU-reference minimal-image controls pass with exact scalar-path parity. This is technical feasibility evidence only; it creates no pack or launch authority."
+}

@@ -1,6 +1,6 @@
 {
   "phaseId": "phase447-two-loop-saturation-probe",
-  "generatedAt": "2026-07-12T04:02:18.847125+00:00",
+  "generatedAt": "2026-07-16T16:28:00.151459+00:00",
   "terminalStatus": "two-loop-saturation-probe-passed-two-loop-lever-non-perturbative-convention-bound-at-minimal-scope-frontier-sharpened",
   "twoLoopSaturationProbePassed": true,
   "phase443PrecursorPassed": true,
@@ -1877,7 +1877,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 2554.3340521,
+  "runtimeSeconds": 2606.7191866,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

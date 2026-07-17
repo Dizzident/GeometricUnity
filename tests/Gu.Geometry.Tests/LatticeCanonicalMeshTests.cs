@@ -39,6 +39,121 @@ public class LatticeCanonicalMeshTests
             TopologyHash(SimplicialMeshGenerator.CreateUniform4DPeriodic(3, latticeCanonical: false)));
     }
 
+    [Fact]
+    public void AnisotropicOverload_IsotropicArguments_ExactlyMatchScalarCanonicalApi()
+    {
+        var scalar = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, latticeCanonical: true);
+        var vector = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 3, latticeCanonical: true);
+
+        Assert.Equal(TopologyHash(scalar), TopologyHash(vector));
+    }
+
+    [Fact]
+    public void AnisotropicCanonicalTorus_HasDerivedCountsAndNoBoundary()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 4, latticeCanonical: true);
+        const int sites = 3 * 3 * 3 * 4;
+
+        Assert.Equal(sites, mesh.VertexCount);
+        Assert.Equal(15 * sites, mesh.EdgeCount);
+        Assert.Equal(50 * sites, mesh.FaceCount);
+        Assert.Equal(60 * sites, mesh.VolumeCount);
+        Assert.Equal(24 * sites, mesh.CellCount);
+        Assert.Equal(0, mesh.VertexCount - mesh.EdgeCount + mesh.FaceCount - mesh.VolumeCount + mesh.CellCount);
+
+        var multiplicity = new int[mesh.VolumeCount];
+        foreach (int[] volumes in mesh.CellVolumes)
+            foreach (int volume in volumes)
+                multiplicity[volume]++;
+        Assert.All(multiplicity, count => Assert.Equal(2, count));
+    }
+
+    [Fact]
+    public void AnisotropicCanonicalTorus_BoundaryOfBoundary_IsExactlyZero()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 4, latticeCanonical: true);
+
+        for (int volume = 0; volume < mesh.VolumeCount; volume++)
+        {
+            var edgeChain = new Dictionary<int, int>();
+            for (int facePosition = 0; facePosition < 4; facePosition++)
+            {
+                int face = mesh.VolumeBoundaryFaces[volume][facePosition];
+                int faceSign = mesh.VolumeBoundaryOrientations[volume][facePosition];
+                for (int edgePosition = 0; edgePosition < 3; edgePosition++)
+                {
+                    int edge = mesh.FaceBoundaryEdges[face][edgePosition];
+                    int edgeSign = mesh.FaceBoundaryOrientations[face][edgePosition];
+                    edgeChain[edge] = edgeChain.GetValueOrDefault(edge) + faceSign * edgeSign;
+                }
+            }
+            Assert.All(edgeChain.Values, coefficient => Assert.Equal(0, coefficient));
+        }
+    }
+
+    [Fact]
+    public void AnisotropicCanonicalTorus_TuplesCommuteWithEveryAxisTranslation()
+    {
+        int[] extents = [3, 3, 3, 4];
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 4, latticeCanonical: true);
+        var coordinates = new Dictionary<(int, int, int, int), int>();
+        var faceLookup = new Dictionary<(int, int, int), int>();
+        var volumeLookup = new Dictionary<(int, int, int, int), int>();
+
+        for (int vertex = 0; vertex < mesh.VertexCount; vertex++)
+        {
+            ReadOnlySpan<double> c = mesh.GetVertexCoordinates(vertex);
+            coordinates[((int)c[0], (int)c[1], (int)c[2], (int)c[3])] = vertex;
+        }
+        for (int face = 0; face < mesh.FaceCount; face++)
+        {
+            int[] sorted = (int[])mesh.Faces[face].Clone();
+            Array.Sort(sorted);
+            faceLookup[(sorted[0], sorted[1], sorted[2])] = face;
+        }
+        for (int volume = 0; volume < mesh.VolumeCount; volume++)
+        {
+            int[] sorted = (int[])mesh.Volumes[volume].Clone();
+            Array.Sort(sorted);
+            volumeLookup[(sorted[0], sorted[1], sorted[2], sorted[3])] = volume;
+        }
+
+        int Translate(int vertex, int axis)
+        {
+            ReadOnlySpan<double> c = mesh.GetVertexCoordinates(vertex);
+            var p = new[] { (int)c[0], (int)c[1], (int)c[2], (int)c[3] };
+            p[axis] = (p[axis] + 1) % extents[axis];
+            return coordinates[(p[0], p[1], p[2], p[3])];
+        }
+
+        for (int axis = 0; axis < 4; axis++)
+        {
+            for (int face = 0; face < mesh.FaceCount; face++)
+            {
+                int[] image = mesh.Faces[face].Select(vertex => Translate(vertex, axis)).ToArray();
+                int[] sorted = (int[])image.Clone();
+                Array.Sort(sorted);
+                int target = faceLookup[(sorted[0], sorted[1], sorted[2])];
+                Assert.Equal(image, mesh.Faces[target]);
+            }
+            for (int volume = 0; volume < mesh.VolumeCount; volume++)
+            {
+                int[] image = mesh.Volumes[volume].Select(vertex => Translate(vertex, axis)).ToArray();
+                int[] sorted = (int[])image.Clone();
+                Array.Sort(sorted);
+                int target = volumeLookup[(sorted[0], sorted[1], sorted[2], sorted[3])];
+                Assert.Equal(image, mesh.Volumes[target]);
+            }
+        }
+    }
+
+    [Fact]
+    public void AnisotropicPeriodic_ExtentBelowThree_Throws()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 2, latticeCanonical: true));
+    }
+
     // ---- Canonical torus: same simplices, same indices, only tuples/signs differ ----
 
     [Fact]

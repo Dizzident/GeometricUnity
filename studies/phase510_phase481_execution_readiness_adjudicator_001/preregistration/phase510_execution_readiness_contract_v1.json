@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase510-a14-execution-readiness-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "expectedBindings": {
+    "phase508Sha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+    "phase509Sha256": "a2099af2a6aabb75036ad83a28591e4c6c7cdd1f379b6719a12847fa637f4dec",
+    "phase489Sha256": "199b0d133969e41c51a5fdab5dea7536545d28aba3e50de49837aaefa8e59d19",
+    "phase481PlanSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084"
+  },
+  "rngContract": {
+    "algorithm": "xoshiro256**-v1",
+    "seedExpansion": "splitmix64-four-sequential-outputs",
+    "chainSeeds": [5021601, 5021602, 5021603, 5021604],
+    "oneRngPerChain": true,
+    "crossChainStateSharingAllowed": false,
+    "checkpointEncoding": "versioned-canonical-little-endian-binary-ieee754-sha256",
+    "atomicWrite": "temporary-file-fsync-rename",
+    "normalGeneration": "box-muller-two-uniforms-no-spare-cache",
+    "uniformGeneration": "((next-u64-right-shift-11)+0.5)/2^53",
+    "acceptanceDrawRule": "always-consume-one-uniform-per-proposal",
+    "allZeroStateRejected": true
+  },
+  "retentionContract": {
+    "rawTensor": "one-lossless-double-per-configuration-site-face-type-channel",
+    "faceTypes": 50,
+    "channels": 2,
+    "allTemporalSeparations": "deterministically-reconstructed-from-raw-site-tensor-not-duplicated-cartesian-product",
+    "t16MaximumConfigurationsAllChains": 32768,
+    "t32MaximumConfigurationsAllChains": 65536,
+    "t16MaximumRawBytes": 26843545600,
+    "t32MaximumRawBytes": 107374182400,
+    "prelaunchFreeSpaceFactor": 1.25,
+    "compressionMayReduceRefusalBound": false
+  },
+  "costContract": {
+    "cpuWeekCeiling": 2,
+    "aggregateProcessCpuSecondCeiling": 1209600,
+    "forecastSafetyFactor": 1.25,
+    "checkpointConfigurations": 4096,
+    "nextCheckpointIndivisible": true,
+    "wallClockSubstitutionAllowed": false,
+    "missingOrNonpositiveThroughputAction": "refuse",
+    "admissibleThroughputEvidencePresentAtFreeze": false
+  },
+  "mutationContractBoundary": {
+    "prospectiveDesignOnly": true,
+    "productionPackLoaderExists": false,
+    "productionRefusalProofDeferredUntilPackConstructionStepP4": true,
+    "requiredFutureCases": [
+      "precursor-hash-or-membership", "implementation-binary-or-hash", "t16-or-t32-geometry",
+      "rng-version-seed-state-or-draw-order", "chain-topology", "precision-backend-or-floating-order",
+      "warmup-stride-batch-or-integrator", "retained-checkpoint-or-output-schema",
+      "covariance-convergence-or-selective-inference-rule", "cost-ceiling-or-forecast-factor",
+      "environment-override", "manifest-missing-extra-reordered-or-byte-flipped",
+      "checkpoint-corruption-truncation-replay-or-chain-swap", "missing-duplicate-or-nonfinite-output"
+    ]
+  },
+  "precedence": [
+    "invalid-precursor-or-fingerprint",
+    "invalid-rng-restart-or-parity",
+    "invalid-retained-schema-or-resource-arithmetic",
+    "mutation-refusal-failure",
+    "cost-envelope-failure",
+    "preconstruction-controls-ready-pending-phase480"
+  ],
+  "runtimeTaxonomyPreserved": [
+    "invalid-precursor-or-fingerprint",
+    "invalid-calibration-data",
+    "cost-overrun",
+    "convergence-failure",
+    "t16-calibration-ready",
+    "t32-calibration-ready",
+    "unresolved"
+  ]
+}

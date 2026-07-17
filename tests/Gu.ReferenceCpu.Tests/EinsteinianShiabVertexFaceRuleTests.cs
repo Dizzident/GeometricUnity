@@ -256,6 +256,43 @@ public class EinsteinianShiabVertexFaceRuleTests
         Assert.True(MaxDiff(sRaw, sMin) > 1e-6, "latticePeriod>0 must change the periodic-mesh contraction (minimal-image is active).");
     }
 
+    [Fact]
+    public void PerAxisLatticePeriods_IsotropicVectorExactlyMatchesScalarOperator()
+    {
+        const int n = 3;
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(n, latticeCanonical: true);
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var member = Member(InvariantElementSpec.Sd2, 0.5, VertexFaceRule.IncidentAverage);
+        var omega = new ConnectionField(mesh, algebra, RandomVector(mesh.EdgeCount * algebra.Dimension, 510, 0.2));
+        var curvature = CurvatureAssembler.Assemble(omega).ToFieldTensor();
+        var theta = new double[mesh.VertexCount * algebra.Dimension];
+
+        var scalar = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriod: n);
+        var vector = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriods: [n, n, n, n]);
+        double[] scalarResult = scalar.EvaluateWithTheta(curvature, omega.ToFieldTensor(), theta, Manifest(), Geometry()).Coefficients;
+        double[] vectorResult = vector.EvaluateWithTheta(curvature, omega.ToFieldTensor(), theta, Manifest(), Geometry()).Coefficients;
+
+        Assert.Equal(scalarResult, vectorResult);
+    }
+
+    [Fact]
+    public void PerAxisLatticePeriods_ChangeAnisotropicSeamContraction()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3, 3, 3, 4, latticeCanonical: true);
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var member = Member(InvariantElementSpec.Sd2, 0.5, VertexFaceRule.IncidentAverage);
+        var omega = new ConnectionField(mesh, algebra, RandomVector(mesh.EdgeCount * algebra.Dimension, 511, 0.2));
+        var curvature = CurvatureAssembler.Assemble(omega).ToFieldTensor();
+        var theta = new double[mesh.VertexCount * algebra.Dimension];
+
+        var raw = new EinsteinianShiabOperator(mesh, algebra, member);
+        var minimal = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriods: [3, 3, 3, 4]);
+        double[] rawResult = raw.EvaluateWithTheta(curvature, omega.ToFieldTensor(), theta, Manifest(), Geometry()).Coefficients;
+        double[] minimalResult = minimal.EvaluateWithTheta(curvature, omega.ToFieldTensor(), theta, Manifest(), Geometry()).Coefficients;
+
+        Assert.True(MaxDiff(rawResult, minimalResult) > 1e-6, "Per-axis minimal-image reduction must affect an anisotropic seam contraction.");
+    }
+
     // ===== (4) RECORDED LIMITATION: not translation-covariant on the torus =====
 
     [Fact]

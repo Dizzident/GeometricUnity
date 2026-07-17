@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase508-a14-acquisition-geometry-closure-v1",
+  "frozenBeforeEvidenceConsumption": true,
+  "expectedInputs": [
+    {
+      "role": "phase481-construction-plan",
+      "path": "studies/phase481_phase456_prospective_repair_preregistration_001/planning/phase481_pack_construction_plan_v1.json",
+      "sha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084"
+    },
+    {
+      "role": "phase496-retained-support",
+      "path": "studies/phase496_phase456_retained_data_information_census_001/output/phase456_retained_data_information_census_summary.json",
+      "sha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9"
+    },
+    {
+      "role": "phase497-temporal-acquisition-oracle",
+      "path": "studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/output/phase456_prospective_estimator_acquisition_oracle_summary.json",
+      "sha256": "c5594d5db2b89a8c9bdce0cde2a7090c162a15ca3471cdca5f711af811f7259c"
+    },
+    {
+      "role": "phase502-adaptive-calibration-specification",
+      "path": "studies/phase502_phase456_adaptive_calibration_protocol_specification_001/output/phase456_adaptive_calibration_protocol_specification_summary.json",
+      "sha256": "a53456b965c09814701f506d84e3cba9d785654e55143d518c9d281ec47d8b53"
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "id": "spatial-four-temporal",
+      "t16Extents": [4, 4, 4, 16],
+      "t32Extents": [4, 4, 4, 32]
+    },
+    {
+      "id": "isotropic-temporal",
+      "t16Extents": [16, 16, 16, 16],
+      "t32Extents": [32, 32, 32, 32]
+    }
+  ],
+  "evidenceRules": {
+    "targetValuesMayChooseGeometry": false,
+    "empiricalResultsMayChooseGeometry": false,
+    "unmentionedAxesMayBeChanged": false,
+    "spatialFourSelectionRequires": [
+      "phase496-explicit-spatial-linear-extent-four-in-three-dimensions",
+      "phase497-varies-temporal-extent-only-and-defines-cost-as-temporal-extent-times-ess",
+      "phase502-names-t16-and-t32-as-temporal-extents-only"
+    ],
+    "isotropicSelectionRequires": "an-exact-bound-input-explicitly-requires-equal-spatial-and-temporal-extents",
+    "ambiguityAction": "geometry-ambiguous-no-selection"
+  },
+  "exactCountRules": {
+    "periodicKuhnFourTorus": "N=product(extents); vertices=N; edges=15N; triangles=50N; tetrahedra=60N; fourSimplices=24N",
+    "relativeWorkProxy": "site-count-times-required-effective-sample-size",
+    "overflowAction": "invalid-precursor-or-contract"
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-precursor-or-contract",
+    "geometry-ambiguous",
+    "spatial-four-temporal-design-selected",
+    "isotropic-temporal-design-selected"
+  ],
+  "phase481PackCreationAllowed": false,
+  "samplingOrReprocessingAllowed": false,
+  "benchmarkAllowed": false,
+  "hmcAllowed": false,
+  "phase480SatisfiedByThisPhase": false,
+  "physicalClaimAllowed": false
+}

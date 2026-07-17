@@ -20948,3 +20948,53 @@ ruling against the committed fingerprint. Phase480 remains awaiting a genuine
 signed external memo. Phase481 therefore stays at its non-authorizing skeleton;
 no pack bytes were created, no sampling or reprocessing ran, Phase456 remains
 unchanged, and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-16 - Amendment A14 closes geometry and CPU feasibility; cost evidence still refuses pack readiness
+
+The user authorized the recommended Phase481 preconstruction work with agent
+parallelism. Registry 508-510 was allocated before any new phase directory was
+created. Two agents independently implemented the geometry and anisotropic CPU
+controls while a third audited RNG, resource, storage, and cost requirements;
+the session lead retained shared wiring, adjudication, and validation.
+
+Phase508 exact-binds the Phase481 construction plan and Phases496, 497, and
+502. Their repository semantics keep three spatial axes at extent four while
+varying the temporal axis. It therefore selects `[4,4,4,16]` and
+`[4,4,4,32]`, with 1024 and 2048 sites. The isotropic alternatives are 64 and
+512 times larger at the respective temporal extents. This is deterministic
+geometry closure, not an empirical or physical-mass result.
+
+Phase509 implements optional per-axis periods in the canonical mesh and
+reference-CPU minimal-image operator. Its reduced `[3,3,3,4]` battery passes
+9/9 controls: the pre-change scalar topology hash, isotropic vector-overload
+parity, exact simplex counts, closed volume stars, boundary-squared-zero,
+four-axis translation equivariance, scalar/vector operator parity,
+anisotropic minimal-image activation, and invalid-period refusal. The existing
+scalar API remains backward-compatible. No full T16/T32 mesh or benchmark is
+constructed.
+
+Phase510 exact-binds Phases508, 509, and 489 plus the Phase481 plan. It freezes
+four independent xoshiro256** streams with SplitMix64 expansion and known-answer
+states, a canonical prospective checkpoint encoding, one raw retained tensor
+without duplicated temporal-separation storage, exact 25 GiB T16 and 100 GiB
+T32 maximum raw-storage arithmetic, a 1,209,600 aggregate-process-CPU-second
+ceiling, and eleven prospective fingerprint mutation dimensions.
+
+An adversarial review caught an initial unsound ready terminal: the first
+implementation treated fingerprint inequality as production refusal evidence,
+had no admissible throughput measurement, and overstated reduced RNG restart
+checks as production checkpoint integration. That result was rejected before
+checkpoint validation. The corrected output explicitly records that the
+production pack loader, refusal proof, and HMC checkpoint codec do not yet
+exist. Missing throughput evidence now triggers the frozen fail-closed branch,
+so the authoritative terminal is `cost-envelope-failure` and
+`technicalReadyForLaterPackConstruction=false`.
+
+The tranche closes the geometry choice and reduced anisotropic CPU-reference
+feasibility. It does not construct or mutate a Phase481 pack, run a production-
+sized allocation, sampler, HMC, reprocessor, or benchmark, satisfy Phase480,
+or authorize launch. Remaining executable preconstruction work is to obtain
+admissible noncontending throughput evidence for the frozen cost calculation,
+then implement and mutation-test the production pack loader/refusal surface and
+integrate the production checkpoint codec at the plan's later P4 boundary.
+External review remains pending and `promotedPhysicalMassClaimCount=0`.

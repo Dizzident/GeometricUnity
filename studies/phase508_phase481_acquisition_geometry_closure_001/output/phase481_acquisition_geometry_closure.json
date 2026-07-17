@@ -1,0 +1,184 @@
+{
+  "phaseId": "phase508-phase481-acquisition-geometry-closure",
+  "terminalStatus": "phase481-acquisition-geometry-closure-spatial-four-temporal-design-selected",
+  "verdictKind": "spatial-four-temporal-design-selected",
+  "geometryClassification": "spatial-four-temporal-design-selected",
+  "inputsValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A14",
+  "contract": {
+    "path": "studies/phase508_phase481_acquisition_geometry_closure_001/preregistration/phase508_acquisition_geometry_contract_v1.json",
+    "byteSha256": "a6ff7dfec87c33958f132e88810cf6211490adc49c8cd296eae7137f7a2749d4",
+    "valid": true,
+    "frozenBeforeEvidenceConsumption": true,
+    "taxonomy": [
+      "invalid-precursor-or-contract",
+      "geometry-ambiguous",
+      "spatial-four-temporal-design-selected",
+      "isotropic-temporal-design-selected"
+    ]
+  },
+  "exactInputBindings": [
+    {
+      "role": "phase481-construction-plan",
+      "path": "studies/phase481_phase456_prospective_repair_preregistration_001/planning/phase481_pack_construction_plan_v1.json",
+      "expectedSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084",
+      "actualSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084",
+      "exactHashMatch": true
+    },
+    {
+      "role": "phase496-retained-support",
+      "path": "studies/phase496_phase456_retained_data_information_census_001/output/phase456_retained_data_information_census_summary.json",
+      "expectedSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "actualSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "exactHashMatch": true
+    },
+    {
+      "role": "phase497-temporal-acquisition-oracle",
+      "path": "studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/output/phase456_prospective_estimator_acquisition_oracle_summary.json",
+      "expectedSha256": "c5594d5db2b89a8c9bdce0cde2a7090c162a15ca3471cdca5f711af811f7259c",
+      "actualSha256": "c5594d5db2b89a8c9bdce0cde2a7090c162a15ca3471cdca5f711af811f7259c",
+      "exactHashMatch": true
+    },
+    {
+      "role": "phase502-adaptive-calibration-specification",
+      "path": "studies/phase502_phase456_adaptive_calibration_protocol_specification_001/output/phase456_adaptive_calibration_protocol_specification_summary.json",
+      "expectedSha256": "a53456b965c09814701f506d84e3cba9d785654e55143d518c9d281ec47d8b53",
+      "actualSha256": "a53456b965c09814701f506d84e3cba9d785654e55143d518c9d281ec47d8b53",
+      "exactHashMatch": true
+    }
+  ],
+  "evidence": {
+    "phase481GeometryGapPresent": true,
+    "phase496SpatialLinearExtent": 4,
+    "phase496SpatialDimensions": 3,
+    "phase496TemporalExtent": 4,
+    "phase497VariedAxis": "temporal-only",
+    "phase497CostMetric": "temporalExtent*effectiveSampleSize",
+    "phase502InitialTemporalExtent": 16,
+    "phase502ConditionalTemporalExtent": 32,
+    "exactBoundInputExplicitlyRequiresIsotropy": false,
+    "unmentionedSpatialAxesChanged": false
+  },
+  "decisionRules": {
+    "spatialFourEvidenceComplete": true,
+    "isotropicExplicitlyRequired": false,
+    "ambiguous": false,
+    "targetValuesConsulted": false,
+    "empiricalResultsConsulted": false,
+    "selectionPrinciple": "preserve-explicit-spatial-support-when-only-temporal-extent-is-varied"
+  },
+  "selectedCandidate": "spatial-four-temporal",
+  "selectedExtents": {
+    "t16": [
+      4,
+      4,
+      4,
+      16
+    ],
+    "t32": [
+      4,
+      4,
+      4,
+      32
+    ]
+  },
+  "exactTopologyAndCostComparisons": [
+    {
+      "id": "spatial-four-temporal",
+      "t16": {
+        "extents": [
+          4,
+          4,
+          4,
+          16
+        ],
+        "vertices": 1024,
+        "edges": 15360,
+        "triangles": 51200,
+        "tetrahedra": 61440,
+        "fourSimplices": 24576,
+        "requiredEffectiveSampleSize": 2048,
+        "siteEssWorkProxy": 2097152
+      },
+      "t32": {
+        "extents": [
+          4,
+          4,
+          4,
+          32
+        ],
+        "vertices": 2048,
+        "edges": 30720,
+        "triangles": 102400,
+        "tetrahedra": 122880,
+        "fourSimplices": 49152,
+        "requiredEffectiveSampleSize": 8192,
+        "siteEssWorkProxy": 16777216
+      }
+    },
+    {
+      "id": "isotropic-temporal",
+      "t16": {
+        "extents": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "vertices": 65536,
+        "edges": 983040,
+        "triangles": 3276800,
+        "tetrahedra": 3932160,
+        "fourSimplices": 1572864,
+        "requiredEffectiveSampleSize": 2048,
+        "siteEssWorkProxy": 134217728
+      },
+      "t32": {
+        "extents": [
+          32,
+          32,
+          32,
+          32
+        ],
+        "vertices": 1048576,
+        "edges": 15728640,
+        "triangles": 52428800,
+        "tetrahedra": 62914560,
+        "fourSimplices": 25165824,
+        "requiredEffectiveSampleSize": 8192,
+        "siteEssWorkProxy": 8589934592
+      }
+    }
+  ],
+  "baselineN4Sites": 256,
+  "exactSiteRatios": {
+    "spatialFourT16OverN4": 4,
+    "spatialFourT32OverN4": 8,
+    "isotropicT16OverN4": 256,
+    "isotropicT32OverN4": 4096,
+    "isotropicOverSpatialFourAtT16": 64,
+    "isotropicOverSpatialFourAtT32": 512
+  },
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "deterministicArithmeticOnly": true,
+  "geometryImplemented": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "phase480Satisfied": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a14BoundaryHeld": true,
+  "decision": "The exact-bound evidence changes temporal support while retaining an explicit three-axis spatial extent of four. Freeze 4^3 x T for the later CPU-reference implementation; this phase grants no pack or launch authority."
+}

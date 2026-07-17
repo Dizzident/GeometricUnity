@@ -384,6 +384,9 @@ dotnet run --no-build -c Release --project studies/phase504_phase456_calibration
 dotnet run --no-build -c Release --project studies/phase505_phase503_frozen_failure_localization_001/Phase505Phase503FrozenFailureLocalization.csproj
 dotnet run --no-build -c Release --project studies/phase506_phase456_selective_inference_protocol_validation_001/Phase506Phase456SelectiveInferenceProtocolValidation.csproj
 dotnet run --no-build -c Release --project studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/Phase507Phase456SelectiveInferencePackReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase508_phase481_acquisition_geometry_closure_001/Phase508Phase481AcquisitionGeometryClosure.csproj
+dotnet run --no-build -c Release --project studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/Phase509Phase481AnisotropicCpuReferenceFeasibility.csproj
+dotnet run --no-build -c Release --project studies/phase510_phase481_execution_readiness_adjudicator_001/Phase510Phase481ExecutionReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -1,0 +1,350 @@
+{
+  "phaseId": "phase510-phase481-execution-readiness-adjudicator",
+  "terminalStatus": "phase481-execution-readiness-adjudicator-cost-envelope-failure",
+  "verdictKind": "cost-envelope-failure",
+  "inputsValid": true,
+  "technicalReadyForLaterPackConstruction": false,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A14",
+  "contract": {
+    "path": "studies/phase510_phase481_execution_readiness_adjudicator_001/preregistration/phase510_execution_readiness_contract_v1.json",
+    "sha256": "f1a6f98aeea5abe801f7ad4b6920c67fee6d21dabbb942cac18d1f0cab6b902e",
+    "frozenBeforePrecursorConsumption": true
+  },
+  "exactInputBindings": [
+    {
+      "id": "phase508",
+      "path": "studies/phase508_phase481_acquisition_geometry_closure_001/output/phase481_acquisition_geometry_closure_summary.json",
+      "expectedSha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+      "actualSha256": "007add940774309cd61c4773841e5e5327948eea85af97fb5b1dc53a6b0a3765",
+      "hashMatches": true
+    },
+    {
+      "id": "phase509",
+      "path": "studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/output/phase481_anisotropic_cpu_reference_feasibility_summary.json",
+      "expectedSha256": "a2099af2a6aabb75036ad83a28591e4c6c7cdd1f379b6719a12847fa637f4dec",
+      "actualSha256": "a2099af2a6aabb75036ad83a28591e4c6c7cdd1f379b6719a12847fa637f4dec",
+      "hashMatches": true
+    },
+    {
+      "id": "phase489",
+      "path": "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json",
+      "expectedSha256": "199b0d133969e41c51a5fdab5dea7536545d28aba3e50de49837aaefa8e59d19",
+      "actualSha256": "199b0d133969e41c51a5fdab5dea7536545d28aba3e50de49837aaefa8e59d19",
+      "hashMatches": true
+    },
+    {
+      "id": "phase481-plan",
+      "path": "studies/phase481_phase456_prospective_repair_preregistration_001/planning/phase481_pack_construction_plan_v1.json",
+      "expectedSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084",
+      "actualSha256": "0b826ede98c2c7b8d02438557bf7014e4e2e4789fca8a9e1455e816045f44084",
+      "hashMatches": true
+    }
+  ],
+  "rngContract": {
+    "algorithm": "xoshiro256**-v1",
+    "seedExpansion": "splitmix64-four-sequential-outputs",
+    "chainSeeds": [
+      5021601,
+      5021602,
+      5021603,
+      5021604
+    ],
+    "oneRngPerChain": true,
+    "crossChainStateSharingAllowed": false,
+    "checkpointEncoding": "versioned-canonical-little-endian-binary-ieee754-sha256",
+    "uniformGeneration": "((next-u64-right-shift-11)\u002B0.5)/2^53",
+    "normalGeneration": "box-muller-two-uniforms-no-spare-cache",
+    "acceptanceDrawRule": "always-consume-one-uniform-per-proposal",
+    "rngKnownAnswers": [
+      {
+        "chainId": 0,
+        "seed": 5021601,
+        "expected": [
+          "149bc7cb02b09168",
+          "078b33f76afbbfd8",
+          "e03b00a74da3adac",
+          "3889d1f9d2ecb045"
+        ],
+        "actual": [
+          "149bc7cb02b09168",
+          "078b33f76afbbfd8",
+          "e03b00a74da3adac",
+          "3889d1f9d2ecb045"
+        ],
+        "passed": true
+      },
+      {
+        "chainId": 1,
+        "seed": 5021602,
+        "expected": [
+          "33597891ce6329d6",
+          "e10951d8a96c8c6e",
+          "014ca3b1f9266cfe",
+          "7c23b5efa86f9f42"
+        ],
+        "actual": [
+          "33597891ce6329d6",
+          "e10951d8a96c8c6e",
+          "014ca3b1f9266cfe",
+          "7c23b5efa86f9f42"
+        ],
+        "passed": true
+      },
+      {
+        "chainId": 2,
+        "seed": 5021603,
+        "expected": [
+          "8dfd97ef2eb0a62c",
+          "c3bf3b1d8c92e782",
+          "2d24e38f44685270",
+          "d0bb382501db174a"
+        ],
+        "actual": [
+          "8dfd97ef2eb0a62c",
+          "c3bf3b1d8c92e782",
+          "2d24e38f44685270",
+          "d0bb382501db174a"
+        ],
+        "passed": true
+      },
+      {
+        "chainId": 3,
+        "seed": 5021604,
+        "expected": [
+          "860d58d7cc698d52",
+          "82caa059b350d832",
+          "76a828107acd1e65",
+          "ab401bc46ecd4a52"
+        ],
+        "actual": [
+          "860d58d7cc698d52",
+          "82caa059b350d832",
+          "76a828107acd1e65",
+          "ab401bc46ecd4a52"
+        ],
+        "passed": true
+      }
+    ],
+    "restartTests": [
+      {
+        "chainId": 0,
+        "checkpointSha256": "0aca3458145116c81670a2699fa763d72efeb8c6b6fcd6be2d738ed9517a26a0",
+        "passed": true
+      },
+      {
+        "chainId": 1,
+        "checkpointSha256": "fb899256a7b422b689a272ba1263517de7f9572d19073391cfe7815ec7582f46",
+        "passed": true
+      },
+      {
+        "chainId": 2,
+        "checkpointSha256": "eb6210e9ab11f85531daaa9ba724e982590febcb91807f31aa93fc5c6b76f565",
+        "passed": true
+      },
+      {
+        "chainId": 3,
+        "checkpointSha256": "1b7b5a2b96cca23a60b96e408583196bc4174d834aeac209afc14880875728c6",
+        "passed": true
+      }
+    ],
+    "knownAnswerPassed": true,
+    "reducedRngStateRestartExact": true,
+    "reducedControlOnly": true,
+    "productionHmcCheckpointCodecImplemented": false
+  },
+  "retentionAndResources": {
+    "schema": "one-lossless-double-per-configuration-site-face-type-channel",
+    "temporalSeparationsReconstructedNotDuplicated": true,
+    "faceTypes": 50,
+    "channels": 2,
+    "resources": [
+      {
+        "temporalExtent": 16,
+        "sites": 1024,
+        "edges": 15360,
+        "faces": 51200,
+        "omegaDoubles": 46080,
+        "thetaDoubles": 3072,
+        "maximumConfigurationsAllChains": 32768,
+        "maximumRawBytes": 26843545600,
+        "liveArrayLowerBoundBytes": 4349952
+      },
+      {
+        "temporalExtent": 32,
+        "sites": 2048,
+        "edges": 30720,
+        "faces": 102400,
+        "omegaDoubles": 92160,
+        "thetaDoubles": 6144,
+        "maximumConfigurationsAllChains": 65536,
+        "maximumRawBytes": 107374182400,
+        "liveArrayLowerBoundBytes": 8699904
+      }
+    ],
+    "resourceArithmeticValid": true,
+    "compressionMayReduceRefusalBound": false,
+    "prelaunchFreeSpaceFactor": 1.25,
+    "fullT16OrT32AllocationPerformed": false
+  },
+  "costRefusal": {
+    "cpuWeekCeiling": 2,
+    "aggregateProcessCpuSecondCeiling": 1209600,
+    "forecastSafetyFactor": 1.25,
+    "checkpointConfigurations": 4096,
+    "nextCheckpointIndivisible": true,
+    "refusalFormula": "measuredCpuSeconds \u002B 1.25 * nextCheckpointCpuForecast \u003E 1209600",
+    "wallClockSubstitutionAllowed": false,
+    "missingOrNonpositiveThroughputAction": "refuse",
+    "admissibleThroughputEvidencePresent": false,
+    "costEnvelopeReady": false
+  },
+  "prospectiveFingerprintMutationDesign": {
+    "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+    "cases": [
+      {
+        "id": "geometry",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "993dce9593250c6fffa3e07a8923191b66e3ad14e570cc34210cbca1e4131fba",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "rng-algorithm",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "cf6a639f7ac29715b338becce77dcf63e446721b45616c1fbe5b31dc6acf37c1",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "seed",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "aa790a0368fbe52ff521992a69742edec4e758f2c67f428bfb1f7bf733de0d14",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "chain-count",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "c63727cbbeae364d2eb8025dcb76f299be6096af02290be7ec3471678f754a2b",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "precision-backend",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "85736a101be780902035011c34c0c56dd59beeac1e5ef382d3ae2aa17c400156",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "retained-schema",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "323452d5a1d65ca7126b3c1fe7422172ed9df83d98a4775057bbbb57052ba8db",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "split-rhat",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "c23df2582adab9385fafe548c7f770ef9ea19400c36dbd1c06abd8dde6d7f152",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "ess",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "66ac2ff3db0f9b1dd9356523d42cfb87150025f2de8f530010522a769619df93",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "cost-ceiling",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "8dd371e461841060c4d7c767dea6f04fba1a8dcf61ac97429d9bf6f466fcc100",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "forecast-factor",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "374679cbe434334fd7b04dce03253beb419a24058179a59edc360e2e2f692681",
+        "fingerprintMismatchDetected": true
+      },
+      {
+        "id": "precursor-membership",
+        "baselineSha256": "774c0d20af5c46bb37bc09ed3a570c5e4620bbc454296089b4882a7aa2f20984",
+        "mutatedSha256": "5bacbbb19cbde055febd87a2645d2e4b93fab6cd79f41eeb32e62f9bedca5f07",
+        "fingerprintMismatchDetected": true
+      }
+    ],
+    "caseCount": 11,
+    "declaredCasesDistinguishable": true,
+    "productionPackLoaderExists": false,
+    "productionRefusalProved": false,
+    "productionRefusalProofDeferredUntilPackConstructionStepP4": true
+  },
+  "precedenceBattery": {
+    "cases": [
+      {
+        "id": "invalid-dominates",
+        "actual": "invalid-precursor-or-fingerprint",
+        "expected": "invalid-precursor-or-fingerprint",
+        "passed": true
+      },
+      {
+        "id": "rng-dominates-lower",
+        "actual": "invalid-rng-restart-or-parity",
+        "expected": "invalid-rng-restart-or-parity",
+        "passed": true
+      },
+      {
+        "id": "resource-dominates-lower",
+        "actual": "invalid-retained-schema-or-resource-arithmetic",
+        "expected": "invalid-retained-schema-or-resource-arithmetic",
+        "passed": true
+      },
+      {
+        "id": "mutation-dominates-cost",
+        "actual": "mutation-refusal-failure",
+        "expected": "mutation-refusal-failure",
+        "passed": true
+      },
+      {
+        "id": "cost-failure",
+        "actual": "cost-envelope-failure",
+        "expected": "cost-envelope-failure",
+        "passed": true
+      },
+      {
+        "id": "ready",
+        "actual": "preconstruction-controls-ready-pending-phase480",
+        "expected": "preconstruction-controls-ready-pending-phase480",
+        "passed": true
+      }
+    ],
+    "caseCount": 6,
+    "passed": true
+  },
+  "runtimeTaxonomyPreserved": [
+    "invalid-precursor-or-fingerprint",
+    "invalid-calibration-data",
+    "cost-overrun",
+    "convergence-failure",
+    "t16-calibration-ready",
+    "t32-calibration-ready",
+    "unresolved"
+  ],
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "phase480Satisfied": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a14BoundaryHeld": true,
+  "adversarialReviewAccepted": true,
+  "initialPrematureReadyTerminalRejected": true,
+  "decision": "Geometry and reduced anisotropic controls are ready, and the RNG, retention, cost, and future mutation contracts are frozen. No admissible production-throughput evidence exists, so the cost envelope fails closed before pack construction; Phase480 and every launch gate also remain closed."
+}

@@ -448,6 +448,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase505_phase503_frozen_failure_localization_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase506_phase456_selective_inference_protocol_validation_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase508_phase481_acquisition_geometry_closure_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase510_phase481_execution_readiness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -469,7 +472,10 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P504.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P505.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P506.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P507.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P507.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P508.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P509.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P510.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)
