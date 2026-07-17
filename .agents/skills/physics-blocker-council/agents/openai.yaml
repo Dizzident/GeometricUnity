@@ -1,0 +1,6 @@
+interface:
+  display_name: "Physics Blocker Council"
+  short_description: "Cross-model scientific blocker council"
+  default_prompt: "Use $physics-blocker-council to challenge a persistent scientific blocker and identify the cheapest decisive next experiment."
+policy:
+  allow_implicit_invocation: true

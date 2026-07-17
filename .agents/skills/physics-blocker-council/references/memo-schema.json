@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Physics blocker council memo",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "blockerId",
+    "role",
+    "currentTerminal",
+    "evidenceBindings",
+    "proposedMechanism",
+    "derivationOutline",
+    "assumptions",
+    "conventionDependencies",
+    "decisiveTest",
+    "successOutcome",
+    "failureOutcome",
+    "counterexamples",
+    "runtimeAndStorageEstimate",
+    "gateImpact",
+    "claimBoundary",
+    "promotedPhysicalMassClaimCount",
+    "humanRulingAuthoredOrInferred",
+    "repositoryWritePerformed",
+    "confidence",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "blockerId": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "minLength": 1 },
+    "currentTerminal": { "type": "string", "minLength": 1 },
+    "evidenceBindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "proposedMechanism": { "type": "string", "minLength": 1 },
+    "derivationOutline": { "$ref": "#/$defs/nonEmptyStrings" },
+    "assumptions": { "$ref": "#/$defs/strings" },
+    "conventionDependencies": { "$ref": "#/$defs/strings" },
+    "decisiveTest": { "type": "string", "minLength": 1 },
+    "successOutcome": { "type": "string", "minLength": 1 },
+    "failureOutcome": { "type": "string", "minLength": 1 },
+    "counterexamples": { "$ref": "#/$defs/nonEmptyStrings" },
+    "runtimeAndStorageEstimate": { "type": "string", "minLength": 1 },
+    "gateImpact": { "type": "string", "minLength": 1 },
+    "claimBoundary": { "type": "string", "minLength": 1 },
+    "promotedPhysicalMassClaimCount": { "const": 0 },
+    "humanRulingAuthoredOrInferred": { "const": false },
+    "repositoryWritePerformed": { "const": false },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "model", "team", "sessionId"],
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 },
+        "team": { "type": "string", "minLength": 1 },
+        "sessionId": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "nonEmptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
