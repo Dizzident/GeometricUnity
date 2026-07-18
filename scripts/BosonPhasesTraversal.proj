@@ -375,6 +375,9 @@
     <PhaseProject Include="../studies/phase510_phase481_execution_readiness_adjudicator_001/Phase510Phase481ExecutionReadinessAdjudicator.csproj" />
     <PhaseProject Include="../studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/Phase511Phase481ThroughputBenchmarkEligibilityAudit.csproj" />
     <PhaseProject Include="../studies/phase514_a5_registered_reflection_foundation_audit_001/Phase514A5RegisteredReflectionFoundationAudit.csproj" />
+    <PhaseProject Include="../studies/phase517_a5_dual_reflection_candidate_foundation_001/Phase517A5DualReflectionCandidateFoundation.csproj" />
+    <PhaseProject Include="../studies/phase518_a5_dual_reflection_exact_consistency_001/Phase518A5DualReflectionExactConsistency.csproj" />
+    <PhaseProject Include="../studies/phase519_a5_candidate_foundation_readiness_001/Phase519A5CandidateFoundationReadiness.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

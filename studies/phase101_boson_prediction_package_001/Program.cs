@@ -355,6 +355,9 @@ const string Phase509Phase481AnisotropicCpuReferenceFeasibilityPath = "studies/p
 const string Phase510Phase481ExecutionReadinessAdjudicatorPath = "studies/phase510_phase481_execution_readiness_adjudicator_001/output/phase481_execution_readiness_adjudicator_summary.json";
 const string Phase511Phase481ThroughputBenchmarkEligibilityAuditPath = "studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/output/phase481_throughput_benchmark_eligibility_audit_summary.json";
 const string Phase514A5RegisteredReflectionFoundationAuditPath = "studies/phase514_a5_registered_reflection_foundation_audit_001/output/a5_registered_reflection_foundation_audit_summary.json";
+const string Phase517A5DualReflectionCandidateFoundationPath = "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json";
+const string Phase518A5DualReflectionExactConsistencyPath = "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json";
+const string Phase519A5CandidateFoundationReadinessPath = "studies/phase519_a5_candidate_foundation_readiness_001/output/a5_candidate_foundation_readiness_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -750,6 +753,9 @@ using var phase509 = TryParseJson(Phase509Phase481AnisotropicCpuReferenceFeasibi
 using var phase510 = TryParseJson(Phase510Phase481ExecutionReadinessAdjudicatorPath);
 using var phase511 = TryParseJson(Phase511Phase481ThroughputBenchmarkEligibilityAuditPath);
 using var phase514 = TryParseJson(Phase514A5RegisteredReflectionFoundationAuditPath);
+using var phase517 = TryParseJson(Phase517A5DualReflectionCandidateFoundationPath);
+using var phase518 = TryParseJson(Phase518A5DualReflectionExactConsistencyPath);
+using var phase519 = TryParseJson(Phase519A5CandidateFoundationReadinessPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9010,6 +9016,85 @@ var package = new
         phase481ExecutionReadinessAdjudicator = phase510 is null ? null : new { status = JsonString(phase510.RootElement, "terminalStatus"), inputsValid = JsonBool(phase510.RootElement, "inputsValid"), technicalReadyForLaterPackConstruction = JsonBool(phase510.RootElement, "technicalReadyForLaterPackConstruction"), phase480Satisfied = JsonBool(phase510.RootElement, "phase480Satisfied"), phase481PackCreated = JsonBool(phase510.RootElement, "phase481PackCreated"), productionAuthorized = JsonBool(phase510.RootElement, "productionAuthorized"), a14BoundaryHeld = JsonBool(phase510.RootElement, "a14BoundaryHeld"), promotedPhysicalMassClaimCount = JsonInt(phase510.RootElement, "promotedPhysicalMassClaimCount") },
         phase481ThroughputBenchmarkEligibilityAudit = phase511 is null ? null : new { status = JsonString(phase511.RootElement, "terminalStatus"), inputsValid = JsonBool(phase511.RootElement, "inputsValid"), workloadDefinitionComplete = JsonBool(phase511.RootElement, "workloadDefinitionComplete"), throughputBenchmarkEligible = JsonBool(phase511.RootElement, "throughputBenchmarkEligible"), benchmarkRun = JsonBool(phase511.RootElement, "benchmarkRun"), phase481PackCreated = JsonBool(phase511.RootElement, "phase481PackCreated"), productionAuthorized = JsonBool(phase511.RootElement, "productionAuthorized"), a15BoundaryHeld = JsonBool(phase511.RootElement, "a15BoundaryHeld"), promotedPhysicalMassClaimCount = JsonInt(phase511.RootElement, "promotedPhysicalMassClaimCount") },
         a5RegisteredReflectionFoundationAudit = phase514 is null ? null : new { status = JsonString(phase514.RootElement, "terminalStatus"), inputsValid = JsonBool(phase514.RootElement, "inputsValid"), registeredFoundationComplete = JsonBool(phase514.RootElement, "registeredFoundationComplete"), phase515MayBeCreated = JsonBool(phase514.RootElement, "phase515MayBeCreated"), theoremClaimed = JsonBool(phase514.RootElement, "theoremClaimed"), closesLimbL8 = JsonBool(phase514.RootElement, "closesLimbL8"), a16BoundaryHeld = JsonBool(phase514.RootElement, "a16BoundaryHeld"), promotedPhysicalMassClaimCount = JsonInt(phase514.RootElement, "promotedPhysicalMassClaimCount") },
+        a5DualReflectionCandidateFoundation = phase517 is null ? null : new
+        {
+            status = JsonString(phase517.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase517.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase517.RootElement, "contractValid"),
+            candidateSchemaValid = JsonNestedBool(phase517.RootElement, "inputAudit", "candidateSchemaValid"),
+            actionMemberOrOmegaParityAmbiguous = JsonString(phase517.RootElement, "verdictKind") == "action-member-or-omega-parity-ambiguous",
+            formalCandidateCount = phase517.RootElement.TryGetProperty("formalCandidateFoundation", out var p517Foundation)
+                && p517Foundation.TryGetProperty("candidates", out var p517Candidates) && p517Candidates.ValueKind == JsonValueKind.Array
+                ? (int?)p517Candidates.GetArrayLength() : null,
+            allFormalCandidatesUnregistered = phase517.RootElement.TryGetProperty("formalCandidateFoundation", out p517Foundation)
+                && p517Foundation.TryGetProperty("candidates", out p517Candidates) && p517Candidates.ValueKind == JsonValueKind.Array
+                ? (bool?)p517Candidates.EnumerateArray().All(candidate => JsonBool(candidate, "registered") == false) : null,
+            candidateRegistrationPerformed = JsonNestedBool(phase517.RootElement, "formalCandidateFoundation", "candidateRegistrationPerformed"),
+            candidateSelectionPerformed = JsonNestedBool(phase517.RootElement, "formalCandidateFoundation", "candidateSelectionPerformed"),
+            candidateRankingPerformed = JsonNestedBool(phase517.RootElement, "formalCandidateFoundation", "candidateRankingPerformed"),
+            candidatesCombined = JsonNestedBool(phase517.RootElement, "formalCandidateFoundation", "candidatesCombined"),
+            theoremClaimed = JsonNestedBool(phase517.RootElement, "firewalls", "theoremClaimed"),
+            reflectionPositivityEstablished = JsonNestedBool(phase517.RootElement, "firewalls", "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonNestedBool(phase517.RootElement, "firewalls", "reflectionPositivityRefuted"),
+            targetCounterexampleClaimed = JsonNestedBool(phase517.RootElement, "firewalls", "targetCounterexampleClaimed"),
+            phase458G1Satisfied = JsonNestedBool(phase517.RootElement, "firewalls", "phase458G1Satisfied"),
+            closesLimbL8 = JsonNestedBool(phase517.RootElement, "firewalls", "closesLimbL8"),
+            routePromotesWzMasses = JsonNestedBool(phase517.RootElement, "firewalls", "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonNestedBool(phase517.RootElement, "firewalls", "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonNestedBool(phase517.RootElement, "firewalls", "routeCompletesBosonPredictions"),
+            sourceContractApplicationAllowed = JsonNestedBool(phase517.RootElement, "firewalls", "sourceContractApplicationAllowed"),
+            physicalUnitOrGevClaimMade = JsonNestedBool(phase517.RootElement, "firewalls", "physicalUnitOrGevClaimMade"),
+            promotedPhysicalMassClaimCount = JsonNestedInt(phase517.RootElement, "firewalls", "promotedPhysicalMassClaimCount"),
+        },
+        a5DualReflectionExactConsistency = phase518 is null ? null : new
+        {
+            status = JsonString(phase518.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase518.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase518.RootElement, "contractValid"),
+            candidateLineageValid = JsonBool(phase518.RootElement, "candidateLineageValid"),
+            restrictedControlsValid = JsonBool(phase518.RootElement, "restrictedControlsValid"),
+            mutationControlsPassed = JsonBool(phase518.RootElement, "mutationControlsPassed"),
+            underlyingSetNonclosureSufficesForOrientedComplexNonclosure = JsonBool(phase518.RootElement, "underlyingSetNonclosureSufficesForOrientedComplexNonclosure"),
+            dualCandidateOrientedComplexNonclosure = JsonBool(phase518.RootElement, "dualCandidateOrientedComplexNonclosure"),
+            finiteControlSupportsAllVolumeInference = JsonBool(phase518.RootElement, "finiteControlSupportsAllVolumeInference"),
+            candidatesRemainUnregistered = JsonBool(phase518.RootElement, "candidatesRemainUnregistered"),
+            registeredTheoremReflectionEstablished = JsonBool(phase518.RootElement, "registeredTheoremReflectionEstablished"),
+            theoremClaimed = JsonBool(phase518.RootElement, "theoremClaimed"),
+            reflectionPositivityEstablished = JsonBool(phase518.RootElement, "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonBool(phase518.RootElement, "reflectionPositivityRefuted"),
+            targetCounterexampleEstablished = JsonBool(phase518.RootElement, "targetCounterexampleEstablished"),
+            phase458G1Satisfied = JsonBool(phase518.RootElement, "phase458G1Satisfied"),
+            closesLimbL8 = JsonBool(phase518.RootElement, "closesLimbL8"),
+            routePromotesWzMasses = JsonBool(phase518.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase518.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase518.RootElement, "routeCompletesBosonPredictions"),
+            sourceContractApplicationAllowed = JsonBool(phase518.RootElement, "sourceContractApplicationAllowed"),
+            noGevPromotion = JsonBool(phase518.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase518.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        a5CandidateFoundationReadiness = phase519 is null ? null : new
+        {
+            status = JsonString(phase519.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase519.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase519.RootElement, "contractValid"),
+            earliestBlocker = JsonString(phase519.RootElement, "verdictKind"),
+            candidatePackageIndependentMathReviewReady = JsonBool(phase519.RootElement, "candidatePackageIndependentMathReviewReady"),
+            externalReviewPending = JsonBool(phase519.RootElement, "externalReviewPending"),
+            phase515Locked = JsonBool(phase519.RootElement, "phase515Locked"),
+            phase516Locked = JsonBool(phase519.RootElement, "phase516Locked"),
+            theoremClaimed = JsonNestedBool(phase519.RootElement, "firewalls", "theoremClaimed"),
+            reflectionPositivityEstablished = JsonNestedBool(phase519.RootElement, "firewalls", "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonNestedBool(phase519.RootElement, "firewalls", "reflectionPositivityRefuted"),
+            targetCounterexampleClaimed = JsonNestedBool(phase519.RootElement, "firewalls", "targetCounterexampleClaimed"),
+            phase458G1Satisfied = JsonNestedBool(phase519.RootElement, "firewalls", "phase458G1Satisfied"),
+            closesLimbL8 = JsonNestedBool(phase519.RootElement, "firewalls", "closesLimbL8"),
+            routePromotesWzMasses = JsonNestedBool(phase519.RootElement, "firewalls", "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonNestedBool(phase519.RootElement, "firewalls", "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonNestedBool(phase519.RootElement, "firewalls", "routeCompletesBosonPredictions"),
+            sourceContractApplicationAllowed = JsonNestedBool(phase519.RootElement, "firewalls", "sourceContractApplicationAllowed"),
+            physicalUnitOrGevClaimMade = JsonNestedBool(phase519.RootElement, "firewalls", "physicalUnitOrGevClaimMade"),
+            promotedPhysicalMassClaimCount = JsonNestedInt(phase519.RootElement, "firewalls", "promotedPhysicalMassClaimCount"),
+        },
     },
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new

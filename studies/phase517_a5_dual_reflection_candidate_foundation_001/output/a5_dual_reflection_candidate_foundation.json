@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "phase": 517,
+  "terminalStatus": "action-member-or-omega-parity-ambiguous",
+  "inputsValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A17",
+  "contract": {
+    "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+    "sha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+    "frozenBeforePrecursorConsumption": true
+  },
+  "contractId": "phase517-a17-dual-reflection-candidate-foundation-v1",
+  "contractValid": true,
+  "verdictKind": "action-member-or-omega-parity-ambiguous",
+  "decision": "Both formal reflection rows are frozen coequally for diagnosis, but neither can be A5-validated because the executable action member and omega-parity are not established by the exact-bound sources.",
+  "exactInputBindings": [
+    {
+      "id": "phase514-summary",
+      "path": "studies/phase514_a5_registered_reflection_foundation_audit_001/output/a5_registered_reflection_foundation_audit_summary.json",
+      "expectedSha256": "c3a53c93f65eb4396bf56eeb7ce0407ec5984e4280e152a6d4eb769ba421e81e",
+      "actualSha256": "c3a53c93f65eb4396bf56eeb7ce0407ec5984e4280e152a6d4eb769ba421e81e",
+      "matches": true
+    },
+    {
+      "id": "phase514-contract",
+      "path": "studies/phase514_a5_registered_reflection_foundation_audit_001/preregistration/phase514_registered_reflection_foundation_contract_v1.json",
+      "expectedSha256": "191586662c78d45005aa19a7312d31b2620a52e2e77a0025b229d055b070c65e",
+      "actualSha256": "191586662c78d45005aa19a7312d31b2620a52e2e77a0025b229d055b070c65e",
+      "matches": true
+    },
+    {
+      "id": "phase514-program",
+      "path": "studies/phase514_a5_registered_reflection_foundation_audit_001/Program.cs",
+      "expectedSha256": "8455715444d743d4815a6fbf7ec26528262ab2d088e08c451560924d09269de5",
+      "actualSha256": "8455715444d743d4815a6fbf7ec26528262ab2d088e08c451560924d09269de5",
+      "matches": true
+    },
+    {
+      "id": "phase452-program",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "matches": true
+    },
+    {
+      "id": "phase456-a5",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "expectedSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "actualSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "matches": true
+    },
+    {
+      "id": "phase456-a4",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4_symmetry_irrep_projectors.json",
+      "expectedSha256": "3948fc8c4267a890db1f04cdb1931284a5a055f3d458d3ccbfd1f055fa41bb49",
+      "actualSha256": "3948fc8c4267a890db1f04cdb1931284a5a055f3d458d3ccbfd1f055fa41bb49",
+      "matches": true
+    },
+    {
+      "id": "phase456-generator",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs",
+      "expectedSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "actualSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "matches": true
+    },
+    {
+      "id": "phase456-manifest",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/pack_manifest.json",
+      "expectedSha256": "5320eb651898c120ede0bf652ec95327456326d7ca98e1371f836c93684ee7fb",
+      "actualSha256": "5320eb651898c120ede0bf652ec95327456326d7ca98e1371f836c93684ee7fb",
+      "matches": true
+    },
+    {
+      "id": "phase478-contract",
+      "path": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json",
+      "expectedSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "actualSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "matches": true
+    },
+    {
+      "id": "phase482-summary",
+      "path": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
+      "expectedSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "actualSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "matches": true
+    },
+    {
+      "id": "phase482-program",
+      "path": "studies/phase482_a5_theorem_scout_001/Program.cs",
+      "expectedSha256": "8812ea2f4b2b5c994347a2f8d44b2f7841865dda5a149ba1f609f1d505aa3ef9",
+      "actualSha256": "8812ea2f4b2b5c994347a2f8d44b2f7841865dda5a149ba1f609f1d505aa3ef9",
+      "matches": true
+    },
+    {
+      "id": "phase482-reflection",
+      "path": "studies/phase482_a5_theorem_scout_001/ReflectionLocalityAnalysis.cs",
+      "expectedSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "actualSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "matches": true
+    },
+    {
+      "id": "phase482-composite",
+      "path": "studies/phase482_a5_theorem_scout_001/CompositeTransportAnalysis.cs",
+      "expectedSha256": "fd03890b271d3dceade408708fa30a182b55291b7501e74d04e68f0419b46681",
+      "actualSha256": "fd03890b271d3dceade408708fa30a182b55291b7501e74d04e68f0419b46681",
+      "matches": true
+    },
+    {
+      "id": "phase482-adjudication",
+      "path": "studies/phase482_a5_theorem_scout_001/TheoremScoutAdjudication.cs",
+      "expectedSha256": "70d6af047146ad6bc965ad73b8ffc07bdff452a7bebf3de4dba585dce0044ac9",
+      "actualSha256": "70d6af047146ad6bc965ad73b8ffc07bdff452a7bebf3de4dba585dce0044ac9",
+      "matches": true
+    },
+    {
+      "id": "shiab-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "matches": true
+    },
+    {
+      "id": "shiab-family-spec",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "expectedSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "actualSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "matches": true
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "matches": true
+    },
+    {
+      "id": "cpu-mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "expectedSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "actualSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "matches": true
+    },
+    {
+      "id": "connection-field",
+      "path": "src/Gu.ReferenceCpu/ConnectionField.cs",
+      "expectedSha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72",
+      "actualSha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72",
+      "matches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "matches": true
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "expectedSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "matches": true
+    }
+  ],
+  "inputAudit": {
+    "contractValid": true,
+    "exactBindingsValid": true,
+    "precursorSemanticsValid": true,
+    "candidateSchemaValid": true
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "action-member-or-omega-parity-ambiguous",
+    "measure-domain-underdefined",
+    "candidate-specification-invalid",
+    "dual-candidates-frozen-unregistered"
+  ],
+  "blockerAudit": {
+    "invalidOrDrifted": false,
+    "actionMemberOrOmegaParityAmbiguous": true,
+    "measureDomainUnderdefined": true,
+    "candidateSpecificationInvalid": false
+  },
+  "actionSubjectAudit": {
+    "uniqueExecutableA5MemberFrozen": false,
+    "generatorCallsSubjectToyControlBranch": true,
+    "serializedArtifactPreservesToyQualifier": false,
+    "executableCurvatureStructure": "F=L(omega)\u002BQ(omega)",
+    "fixedThetaDegree": "at-most-quartic",
+    "cubicSignOddCrossTermExcludedByExactBoundIdentity": false,
+    "omegaParityEstablished": false,
+    "sd2ThetaDependence": "transcendental",
+    "status": "action-member-or-omega-parity-ambiguous",
+    "frozenSourceAssertions": [
+      "The exact-bound generator labels the prose subject a committed toy control branch; the serialized A5 artifact omits the toy qualifier.",
+      "The exact-bound executable curvature has linear and quadratic omega parts, so fixed-theta curvature-squared is at most quartic with an unexcluded cubic sign-odd cross term.",
+      "No exact-bound cubic-cancellation identity is registered; the sd2 member is transcendental in theta."
+    ]
+  },
+  "formalCandidateFoundation": {
+    "lattice": {
+      "extent": 4,
+      "vertexCount": 256,
+      "edgeCount": 3840,
+      "faceCount": 12800,
+      "algebraDimension": 3,
+      "configurationDimension": 11520
+    },
+    "configurationSpace": "Omega_4=R^11520 before any gauge quotient",
+    "density": "exp(-beta*S_B(omega))*domega (unnormalized)",
+    "probabilityMeasure": "mu_beta=Z_beta^-1 exp(-beta*S_B)domega only if 0\u003CZ_beta\u003Cinfinity",
+    "orientedEdgePullback": "on a reflected stored edge, coefficient sign is \u002B when stored orientation is preserved and - when reversed; edge closure is not checked here",
+    "conjugation": "Theta_c F(omega)=conj(F(R_c omega))",
+    "positiveTimeAlgebra": "candidate complex polynomial cylinder star-algebra generated by positive/boundary edge coordinates",
+    "observables": "unchanged O1=Tr(F^2), O2=Tr(Upsilon^2), with membership conditional on an exact dependency audit",
+    "connectedSubtraction": "O_tilde=O-mu(O), conditional on mu; C_ab(s)=L^-1 sum_tau mu(O_tilde_a(tau\u002Bs) O_tilde_b(tau))",
+    "osBilinear": "B_c(F,G)=mu((Theta_c F)G), conditional on all domains and finiteness",
+    "candidates": [
+      {
+        "candidateId": "site-centered-axis0",
+        "centering": "site-centered",
+        "vertexMap": "r0(t,x)=(-t mod 4,x)",
+        "positiveVertexSlices": [
+          1
+        ],
+        "boundaryVertexSlices": [
+          0,
+          2
+        ],
+        "negativeVertexSlices": [
+          3
+        ],
+        "boundaryRule": "vertices on slices 0 and 2; incident boundary-edge treatment remains candidate-only",
+        "status": "audit-authored-candidate-not-registered-theorem-reflection",
+        "actionMember": "ambiguous-not-frozen-by-a5",
+        "actionFunctional": "family S_B=0.5*\u003CUpsilon,M*Upsilon\u003E; exact executable member unresolved",
+        "configurationSpace": "Omega_4=R^11520 before quotient",
+        "gaugeStatus": "gauge quotient not defined or proved",
+        "measure": "mu_beta=Z_beta^-1 exp(-beta*S_B)domega, conditional",
+        "measureDomain": "only if 0\u003CZ_beta\u003Cinfinity; normalization not proved",
+        "couplingDomain": "beta domain not frozen for an A5 theorem subject",
+        "volumeDomain": "formal L=4 row only; allowed-volume theorem domain not proved",
+        "reflectionPlane": "fixed vertex planes t=0,2",
+        "orientedEdgePullback": "conditional on reflected stored-edge closure: \u002B for preserved stored orientation, - for reversal",
+        "conjugationRule": "Theta_c F(omega)=conj(F(R_c omega))",
+        "positiveTimeAlgebra": "candidate complex polynomial cylinder star-algebra on positive/boundary edge coordinates",
+        "unchangedObservableMembership": "O1=Tr(F^2), O2=Tr(Upsilon^2); membership conditional on exact dependency audit",
+        "connectedSubtraction": "O_tilde=O-mu(O); C_ab(s)=L^-1 sum_tau mu(O_tilde_a(tau\u002Bs)O_tilde_b(tau)), conditional on mu",
+        "proposedOsBilinear": "B_c(F,G)=mu((Theta_c F)G), conditional on domains, membership, and finiteness",
+        "registered": false,
+        "a5Validated": false,
+        "candidateRole": "formal-diagnostic-row-only"
+      },
+      {
+        "candidateId": "link-centered-axis0",
+        "centering": "link-centered",
+        "vertexMap": "r1(t,x)=(1-t mod 4,x)",
+        "positiveVertexSlices": [
+          1,
+          2
+        ],
+        "boundaryVertexSlices": [],
+        "negativeVertexSlices": [
+          0,
+          3
+        ],
+        "boundaryRule": "no fixed vertices; setwise-fixed plane-crossing links are candidate boundary objects",
+        "status": "audit-authored-candidate-not-registered-theorem-reflection",
+        "actionMember": "ambiguous-not-frozen-by-a5",
+        "actionFunctional": "family S_B=0.5*\u003CUpsilon,M*Upsilon\u003E; exact executable member unresolved",
+        "configurationSpace": "Omega_4=R^11520 before quotient",
+        "gaugeStatus": "gauge quotient not defined or proved",
+        "measure": "mu_beta=Z_beta^-1 exp(-beta*S_B)domega, conditional",
+        "measureDomain": "only if 0\u003CZ_beta\u003Cinfinity; normalization not proved",
+        "couplingDomain": "beta domain not frozen for an A5 theorem subject",
+        "volumeDomain": "formal L=4 row only; allowed-volume theorem domain not proved",
+        "reflectionPlane": "link-centered planes between t=0/1 and t=2/3",
+        "orientedEdgePullback": "conditional on reflected stored-edge closure: \u002B for preserved stored orientation, - for reversal",
+        "conjugationRule": "Theta_c F(omega)=conj(F(R_c omega))",
+        "positiveTimeAlgebra": "candidate complex polynomial cylinder star-algebra on positive/boundary edge coordinates",
+        "unchangedObservableMembership": "O1=Tr(F^2), O2=Tr(Upsilon^2); membership conditional on exact dependency audit",
+        "connectedSubtraction": "O_tilde=O-mu(O); C_ab(s)=L^-1 sum_tau mu(O_tilde_a(tau\u002Bs)O_tilde_b(tau)), conditional on mu",
+        "proposedOsBilinear": "B_c(F,G)=mu((Theta_c F)G), conditional on domains, membership, and finiteness",
+        "registered": false,
+        "a5Validated": false,
+        "candidateRole": "formal-diagnostic-row-only"
+      }
+    ],
+    "candidateArtifacts": [
+      {
+        "candidateId": "site-centered-axis0",
+        "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/site_centered_reflection_candidate.json",
+        "sha256": "347ee75fb994b4a8bc05b1a3e589201191cafa15d0fd16cb21f5978095f1841d"
+      },
+      {
+        "candidateId": "link-centered-axis0",
+        "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/link_centered_reflection_candidate.json",
+        "sha256": "4f8dc4e56e3537a505b816df6c9b7eb086dce27c27c474b1e833118691e38f46"
+      }
+    ],
+    "candidateSelectionPerformed": false,
+    "candidateRankingPerformed": false,
+    "candidatesCombined": false,
+    "candidateRegistrationPerformed": false,
+    "phase518ChecksExecuted": false
+  },
+  "unresolved": {
+    "edgeClosure": "not-checked-phase518-only",
+    "observableMembership": "not-checked-phase518-only",
+    "measureNormalization": "not-proved",
+    "hermiticity": "not-proved",
+    "reflectionPositivity": "not-established-or-refuted",
+    "targetEquality": "not-proved",
+    "necessityAndEmbedding": "not-proved"
+  },
+  "firewalls": {
+    "targetBlind": true,
+    "targetBlindConstruction": true,
+    "externalReviewPending": true,
+    "phase515Unlocked": false,
+    "phase516Unlocked": false,
+    "phase518Executed": false,
+    "theoremClaimed": false,
+    "targetCounterexampleClaimed": false,
+    "reflectionPositivityEstablished": false,
+    "reflectionPositivityRefuted": false,
+    "phase458G1Satisfied": false,
+    "closesLimbL8": false,
+    "phase458EvaluationOrG3G4G5Performed": false,
+    "phase480OrPhase481WorkPerformed": false,
+    "precursorArtifactsMutated": false,
+    "samplingHmcBenchmarkOrPhysicsComputePerformed": false,
+    "productionAllocationLaunchBinderOrAccelerationAuthorized": false,
+    "o4Discharged": false,
+    "humanRulingPerformed": false,
+    "sourceContractApplicationAllowed": false,
+    "routePromotesWzMasses": false,
+    "routePromotesHiggsMass": false,
+    "routeCompletesBosonPredictions": false,
+    "sourceContractOrWzHiggsRouteApplied": false,
+    "physicalUnitOrGevClaimMade": false,
+    "promotedPhysicalMassClaimCount": 0
+  }
+}

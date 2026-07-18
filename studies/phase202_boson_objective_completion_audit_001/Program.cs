@@ -264,6 +264,9 @@ const string Phase509Path = "studies/phase509_phase481_anisotropic_cpu_reference
 const string Phase510Path = "studies/phase510_phase481_execution_readiness_adjudicator_001/output/phase481_execution_readiness_adjudicator_summary.json";
 const string Phase511Path = "studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/output/phase481_throughput_benchmark_eligibility_audit_summary.json";
 const string Phase514Path = "studies/phase514_a5_registered_reflection_foundation_audit_001/output/a5_registered_reflection_foundation_audit_summary.json";
+const string Phase517Path = "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json";
+const string Phase518Path = "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json";
+const string Phase519Path = "studies/phase519_a5_candidate_foundation_readiness_001/output/a5_candidate_foundation_readiness_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -579,6 +582,9 @@ using var phase509 = File.Exists(Phase509Path) ? JsonDocument.Parse(File.ReadAll
 using var phase510 = File.Exists(Phase510Path) ? JsonDocument.Parse(File.ReadAllText(Phase510Path)) : null;
 using var phase511 = File.Exists(Phase511Path) ? JsonDocument.Parse(File.ReadAllText(Phase511Path)) : null;
 using var phase514 = File.Exists(Phase514Path) ? JsonDocument.Parse(File.ReadAllText(Phase514Path)) : null;
+using var phase517 = File.Exists(Phase517Path) ? JsonDocument.Parse(File.ReadAllText(Phase517Path)) : null;
+using var phase518 = File.Exists(Phase518Path) ? JsonDocument.Parse(File.ReadAllText(Phase518Path)) : null;
+using var phase519 = File.Exists(Phase519Path) ? JsonDocument.Parse(File.ReadAllText(Phase519Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7212,6 +7218,89 @@ var a5RegisteredReflectionFoundationAuditPassed = phase514 is not null
     && JsonBool(phase514.RootElement, "closesLimbL8") is false
     && JsonBool(phase514.RootElement, "a16BoundaryHeld") is true
     && JsonInt(phase514.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5DualReflectionCandidateFoundationAuditPassed = phase517 is not null
+    && JsonBool(phase517.RootElement, "inputsValid") is true
+    && JsonBool(phase517.RootElement, "contractValid") is true
+    && JsonNestedBool(phase517.RootElement, "inputAudit", "candidateSchemaValid") is true
+    && JsonString(phase517.RootElement, "verdictKind") == "action-member-or-omega-parity-ambiguous"
+    && phase517.RootElement.TryGetProperty("formalCandidateFoundation", out var p517Foundation)
+    && p517Foundation.TryGetProperty("candidates", out var p517Candidates)
+    && p517Candidates.GetArrayLength() == 2
+    && p517Candidates.EnumerateArray().Select(x => JsonString(x, "candidateId")).SequenceEqual(
+        new[] { "site-centered-axis0", "link-centered-axis0" }, StringComparer.Ordinal)
+    && p517Candidates.EnumerateArray().All(x => JsonBool(x, "registered") is false && JsonBool(x, "a5Validated") is false)
+    && JsonBool(p517Foundation, "candidateSelectionPerformed") is false
+    && JsonBool(p517Foundation, "candidateRankingPerformed") is false
+    && JsonBool(p517Foundation, "candidatesCombined") is false
+    && JsonBool(p517Foundation, "candidateRegistrationPerformed") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "theoremClaimed") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "targetCounterexampleClaimed") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "reflectionPositivityEstablished") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "reflectionPositivityRefuted") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "phase458G1Satisfied") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "closesLimbL8") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "sourceContractOrWzHiggsRouteApplied") is false
+    && JsonNestedBool(phase517.RootElement, "firewalls", "physicalUnitOrGevClaimMade") is false
+    && JsonNestedInt(phase517.RootElement, "firewalls", "promotedPhysicalMassClaimCount") == 0;
+var a5DualReflectionExactConsistencyAuditPassed = phase518 is not null
+    && JsonBool(phase518.RootElement, "inputsValid") is true
+    && JsonBool(phase518.RootElement, "contractValid") is true
+    && JsonString(phase518.RootElement, "verdictKind") == "dual-candidate-oriented-complex-nonclosure"
+    && JsonBool(phase518.RootElement, "restrictedControlsValid") is true
+    && JsonBool(phase518.RootElement, "mutationControlsPassed") is true
+    && JsonBool(phase518.RootElement, "dualCandidateOrientedComplexNonclosure") is true
+    && JsonBool(phase518.RootElement, "underlyingSetNonclosureSufficesForOrientedComplexNonclosure") is true
+    && JsonBool(phase518.RootElement, "exactIntegerCombinatorialControlsOnly") is true
+    && JsonBool(phase518.RootElement, "missingImagesSilentlyZeroFilled") is false
+    && JsonBool(phase518.RootElement, "restrictedClosurePromotedToFullClosure") is false
+    && JsonBool(phase518.RootElement, "theoremClaimed") is false
+    && JsonBool(phase518.RootElement, "targetCounterexampleEstablished") is false
+    && JsonBool(phase518.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase518.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase518.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase518.RootElement, "closesLimbL8") is false
+    && JsonBool(phase518.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase518.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase518.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase518.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase518.RootElement, "noGevPromotion") is true
+    && JsonInt(phase518.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5CandidateFoundationReadinessAdjudicatorPassed = phase519 is not null
+    && JsonBool(phase519.RootElement, "inputsValid") is true
+    && JsonString(phase519.RootElement, "verdictKind") == "action-or-observable-subject-ambiguous"
+    && JsonBool(phase519.RootElement, "candidatePackageIndependentMathReviewReady") is false
+    && JsonBool(phase519.RootElement, "externalReviewPending") is true
+    && JsonBool(phase519.RootElement, "phase515Locked") is true
+    && JsonBool(phase519.RootElement, "phase516Locked") is true
+    && JsonBool(phase519.RootElement, "candidateDefinitionRegistered") is false
+    && JsonBool(phase519.RootElement, "registeredFoundationEstablished") is false
+    && JsonBool(phase519.RootElement, "phase515MayBeCreated") is false
+    && JsonBool(phase519.RootElement, "phase516MayBeCreated") is false
+    && JsonBool(phase519.RootElement, "theoremClaimed") is false
+    && JsonBool(phase519.RootElement, "targetCounterexampleClaimed") is false
+    && JsonBool(phase519.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase519.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase519.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase519.RootElement, "closesLimbL8") is false
+    && JsonBool(phase519.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase519.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase519.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase519.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase519.RootElement, "physicalUnitOrGevClaimMade") is false
+    && JsonBool(phase519.RootElement, "noGevPromotion") is true
+    && JsonNestedBool(phase519.RootElement, "firewalls", "theoremClaimed") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "targetCounterexampleClaimed") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "reflectionPositivityEstablished") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "reflectionPositivityRefuted") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "phase458G1Satisfied") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "closesLimbL8") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "sourceContractApplicationAllowed") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "routePromotesWzMasses") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "routePromotesHiggsMass") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "routeCompletesBosonPredictions") is false
+    && JsonNestedBool(phase519.RootElement, "firewalls", "physicalUnitOrGevClaimMade") is false
+    && JsonNestedInt(phase519.RootElement, "firewalls", "promotedPhysicalMassClaimCount") == 0
+    && JsonInt(phase519.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10041,6 +10130,24 @@ var checklist = new[]
     new ObjectiveChecklistItem("phase481-execution-readiness-adjudicator", "Freeze RNG, restart, retention, resource, cost, and mutation controls and fail closed when admissible throughput evidence is absent.", phase481ExecutionReadinessAdjudicatorPassed ? "passed" : "failed", phase510 is null ? "Phase510 artifact not materialized" : JsonString(phase510.RootElement, "decision") ?? "missing decision", Phase510Path),
     new ObjectiveChecklistItem("phase481-throughput-benchmark-eligibility-audit", "Audit every production-equivalent workload and CPU-accounting definition and refuse timing while the Phase481 default or operation ledger is incomplete.", phase481ThroughputBenchmarkEligibilityAuditPassed ? "passed" : "failed", phase511 is null ? "Phase511 artifact not materialized" : JsonString(phase511.RootElement, "decision") ?? "missing decision", Phase511Path),
     new ObjectiveChecklistItem("a5-registered-reflection-foundation-audit", "Audit the exact-bound repository for a registered reflection, positive-time algebra, OS measure/bilinear, Hermiticity, necessity, and witness-embedding foundation before any theorem falsifier.", a5RegisteredReflectionFoundationAuditPassed ? "passed" : "failed", phase514 is null ? "Phase514 artifact not materialized" : JsonString(phase514.RootElement, "decision") ?? "missing decision", Phase514Path),
+    new ObjectiveChecklistItem(
+        "a5-dual-reflection-candidate-foundation-audit",
+        "Execute the A17 coequal site/link candidate-definition audit; checklist passage records a valid negative audit terminal, not reflection positivity or physics success.",
+        a5DualReflectionCandidateFoundationAuditPassed ? "passed" : "failed",
+        phase517 is null ? "Phase517 artifact not materialized" : $"inputsValid={JsonBool(phase517.RootElement, "inputsValid")}; contractValid={JsonBool(phase517.RootElement, "contractValid")}; candidateSchemaValid={JsonNestedBool(phase517.RootElement, "inputAudit", "candidateSchemaValid")}; verdictKind={JsonString(phase517.RootElement, "verdictKind")}; theoremClaimed={JsonNestedBool(phase517.RootElement, "firewalls", "theoremClaimed")}; phase458G1Satisfied={JsonNestedBool(phase517.RootElement, "firewalls", "phase458G1Satisfied")}; closesLimbL8={JsonNestedBool(phase517.RootElement, "firewalls", "closesLimbL8")}; promotedPhysicalMassClaimCount={JsonNestedInt(phase517.RootElement, "firewalls", "promotedPhysicalMassClaimCount")}",
+        Phase517Path),
+    new ObjectiveChecklistItem(
+        "a5-dual-reflection-exact-consistency-audit",
+        "Execute the A17 exact finite dual-candidate closure controls; checklist passage records the expected nonclosure audit, not theorem evidence or physics success.",
+        a5DualReflectionExactConsistencyAuditPassed ? "passed" : "failed",
+        phase518 is null ? "Phase518 artifact not materialized" : $"inputsValid={JsonBool(phase518.RootElement, "inputsValid")}; contractValid={JsonBool(phase518.RootElement, "contractValid")}; verdictKind={JsonString(phase518.RootElement, "verdictKind")}; dualNonclosure={JsonBool(phase518.RootElement, "dualCandidateOrientedComplexNonclosure")}; underlyingSetImplication={JsonBool(phase518.RootElement, "underlyingSetNonclosureSufficesForOrientedComplexNonclosure")}; restrictedControlsValid={JsonBool(phase518.RootElement, "restrictedControlsValid")}; mutationControlsPassed={JsonBool(phase518.RootElement, "mutationControlsPassed")}; theoremClaimed={JsonBool(phase518.RootElement, "theoremClaimed")}; promotedPhysicalMassClaimCount={JsonInt(phase518.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase518Path),
+    new ObjectiveChecklistItem(
+        "a5-candidate-foundation-readiness-adjudicator",
+        "Apply A17 fail-closed readiness precedence; checklist passage preserves the expected ambiguity and pending external review, not package review-readiness or physics success.",
+        a5CandidateFoundationReadinessAdjudicatorPassed ? "passed" : "failed",
+        phase519 is null ? "Phase519 artifact not materialized" : $"inputsValid={JsonBool(phase519.RootElement, "inputsValid")}; verdictKind={JsonString(phase519.RootElement, "verdictKind")}; reviewReady={JsonBool(phase519.RootElement, "candidatePackageIndependentMathReviewReady")}; externalReviewPending={JsonBool(phase519.RootElement, "externalReviewPending")}; phase515Locked={JsonBool(phase519.RootElement, "phase515Locked")}; phase516Locked={JsonBool(phase519.RootElement, "phase516Locked")}; promotedPhysicalMassClaimCount={JsonInt(phase519.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase519Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

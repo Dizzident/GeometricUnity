@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase518-a5-dual-reflection-exact-consistency-contract-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A17",
+  "contractStatus": "frozen-final-before-phase517-consumption",
+  "frozenBeforePrecursorConsumption": true,
+  "phase517Bindings": {
+    "summary": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "sha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "requiredVerdictKind": "action-member-or-omega-parity-ambiguous"
+    },
+    "contract": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "sha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "requiredContractId": "phase517-a17-dual-reflection-candidate-foundation-v1"
+    },
+    "program": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "sha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c"
+    },
+    "siteCandidate": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/site_centered_reflection_candidate.json",
+      "sha256": "347ee75fb994b4a8bc05b1a3e589201191cafa15d0fd16cb21f5978095f1841d",
+      "requiredCandidateId": "site-centered-axis0",
+      "requiredStatus": "audit-authored-candidate-not-registered-theorem-reflection"
+    },
+    "linkCandidate": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/link_centered_reflection_candidate.json",
+      "sha256": "4f8dc4e56e3537a505b816df6c9b7eb086dce27c27c474b1e833118691e38f46",
+      "requiredCandidateId": "link-centered-axis0",
+      "requiredStatus": "audit-authored-candidate-not-registered-theorem-reflection"
+    }
+  },
+  "expectedBindings": {
+    "phase514SummarySha256": "c3a53c93f65eb4396bf56eeb7ce0407ec5984e4280e152a6d4eb769ba421e81e",
+    "phase482SummarySha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+    "phase482ReflectionSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+    "phase452ProgramSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+    "meshGeneratorSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+    "simplicialMeshSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+    "topologyBuilderSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+  },
+  "geometry": {
+    "extent": 4,
+    "dimension": 4,
+    "timeAxis": 0,
+    "latticeCanonical": true,
+    "expectedVertices": 256,
+    "expectedEdges": 3840,
+    "expectedFaces": 12800,
+    "expectedFourSimplices": 6144
+  },
+  "candidateMaps": [
+    { "id": "site-centered", "timeMap": "t -> -t mod 4" },
+    { "id": "link-centered", "timeMap": "t -> 1-t mod 4" }
+  ],
+  "precedence": [
+    "invalid-or-drifted-input",
+    "dual-candidate-oriented-complex-nonclosure",
+    "candidate-closure-outcome-unexpected",
+    "reduced-dual-candidate-full-closure"
+  ],
+  "expectedCurrentVerdict": "dual-candidate-oriented-complex-nonclosure",
+  "missingImageMayBeSilentlyZeroFilled": false,
+  "restrictedClosureMayBePromotedToFullClosure": false,
+  "finiteControlMaySupportAllVolumeInference": false,
+  "phase515Or516Authorized": false,
+  "theoremClaimAllowed": false,
+  "samplingOrProductionAllowed": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

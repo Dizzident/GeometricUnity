@@ -1,0 +1,34 @@
+{
+  "candidateId": "link-centered-axis0",
+  "centering": "link-centered",
+  "vertexMap": "r1(t,x)=(1-t mod 4,x)",
+  "positiveVertexSlices": [
+    1,
+    2
+  ],
+  "boundaryVertexSlices": [],
+  "negativeVertexSlices": [
+    0,
+    3
+  ],
+  "boundaryRule": "no fixed vertices; setwise-fixed plane-crossing links are candidate boundary objects",
+  "status": "audit-authored-candidate-not-registered-theorem-reflection",
+  "actionMember": "ambiguous-not-frozen-by-a5",
+  "actionFunctional": "family S_B=0.5*\u003CUpsilon,M*Upsilon\u003E; exact executable member unresolved",
+  "configurationSpace": "Omega_4=R^11520 before quotient",
+  "gaugeStatus": "gauge quotient not defined or proved",
+  "measure": "mu_beta=Z_beta^-1 exp(-beta*S_B)domega, conditional",
+  "measureDomain": "only if 0\u003CZ_beta\u003Cinfinity; normalization not proved",
+  "couplingDomain": "beta domain not frozen for an A5 theorem subject",
+  "volumeDomain": "formal L=4 row only; allowed-volume theorem domain not proved",
+  "reflectionPlane": "link-centered planes between t=0/1 and t=2/3",
+  "orientedEdgePullback": "conditional on reflected stored-edge closure: \u002B for preserved stored orientation, - for reversal",
+  "conjugationRule": "Theta_c F(omega)=conj(F(R_c omega))",
+  "positiveTimeAlgebra": "candidate complex polynomial cylinder star-algebra on positive/boundary edge coordinates",
+  "unchangedObservableMembership": "O1=Tr(F^2), O2=Tr(Upsilon^2); membership conditional on exact dependency audit",
+  "connectedSubtraction": "O_tilde=O-mu(O); C_ab(s)=L^-1 sum_tau mu(O_tilde_a(tau\u002Bs)O_tilde_b(tau)), conditional on mu",
+  "proposedOsBilinear": "B_c(F,G)=mu((Theta_c F)G), conditional on domains, membership, and finiteness",
+  "registered": false,
+  "a5Validated": false,
+  "candidateRole": "formal-diagnostic-row-only"
+}

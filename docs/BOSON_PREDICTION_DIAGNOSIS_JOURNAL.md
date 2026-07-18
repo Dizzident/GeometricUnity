@@ -21090,3 +21090,59 @@ No symbolic falsifier, sampling, HMC, benchmark, reprocessing, production
 allocation, Phase481 pack work, O4 ruling, source-contract application, or
 physical-unit claim occurred. Phase202 moves to 300 passed / 3 standing
 failures and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-18 - Amendment A17 freezes two A5 reflection candidates and refuses review readiness
+
+The user directed the next A5 foundation work with parallel implementation and
+adversarial review. Registry 517-519 and Amendment A17 were allocated before
+the new study directories were finalized. Phase517 exact-binds the registered-
+foundation census and its action, geometry, and theorem-scout sources. Its
+valid terminal is `action-member-or-omega-parity-ambiguous`.
+
+The audit identifies a concrete subject-lineage ambiguity. The exact-bound A5
+generator labels the subject a toy-control branch, while the serialized A5
+artifact does not preserve that qualifier. The executable curvature is
+`F=L(omega)+Q(omega)`, so fixed-theta curvature-squared is at most quartic and
+contains a potentially cubic sign-odd cross term. No exact-bound cancellation
+identity excludes that term, and omega parity is not established. Phase517
+therefore records site-centered and link-centered axis-0 reflection rows as
+coequal formal diagnostic candidates only. Neither candidate is selected,
+ranked, combined, A5-validated, or registered as a theorem reflection.
+
+Phase518 exact-binds the Phase517 summary, contract, program, and both
+standalone candidate artifacts. It derives the reflection offsets only after
+checking each artifact against its summary row and artifact binding, including
+the map, axis, slice partition, boundary rule, role, status, and
+non-registration flags. Exact coordinate-domain, uniqueness, mesh-count,
+canonical-edge, and simplex-key controls pass on the lattice-canonical periodic
+n=4 complex. Both candidate vertex maps are bijective involutions. For each,
+2,048 of 3,840 edges and 3,072 of 12,800 faces map back into the complex, and
+none of the 6,144 four-simplices maps. The mapped restrictions pass their exact
+twice-identity controls, but restricted closure is not promoted to full
+closure. Because an oriented-complex automorphism must first map every
+underlying simplex to another simplex, the underlying-set failures suffice for
+the terminal `dual-candidate-oriented-complex-nonclosure`; no face or
+four-simplex orientation-parity result is claimed.
+
+Phase519 exact-binds the completed Phase517 and Phase518 packages and records
+the valid terminal `action-or-observable-subject-ambiguous`. The package is not
+independent-mathematical-review-ready. The action member/parity is unresolved,
+and the exact observable dependency, positive-time-algebra membership,
+normalized measure/domain, and OS-bilinear Hermiticity prerequisites remain
+unproved. Phase515 and Phase516 remain locked and may not be created. Nothing
+establishes or refutes reflection positivity, proves a target counterexample,
+satisfies Phase458 G1, closes limb L8, authorizes sampling or production, or
+supports a physical-unit claim. Construction remains target-blind, external
+review remains pending, and `promotedPhysicalMassClaimCount=0`.
+
+Adversarial review caught and repaired fail-open candidate-schema precedence,
+standalone-to-summary lineage, independently hardcoded map offsets, coordinate
+and simplex integrity assumptions, incomplete candidate/theorem-scope
+firewalls, and stale scaffold wording before the final Phase517 -> Phase518 ->
+Phase519 downstream run. Scanner exclusions, registry/A17 plan text, traversal,
+and integrity-verifier wiring were completed in the same checkpoint. Phase202
+is 303 passed / 3 standing failures. The mandatory incremental pass ran 85
+steps, skipped 298, and ended at `boson-claim-integrity-verified`; O4 coverage
+remained 31/31, the synthetic-overturn battery remained 94/94, the source
+deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`.

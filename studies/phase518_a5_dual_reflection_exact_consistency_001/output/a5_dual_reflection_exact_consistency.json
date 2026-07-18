@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "phase": 518,
+  "phaseId": "phase518-a5-dual-reflection-exact-consistency",
+  "contractId": "phase518-a5-dual-reflection-exact-consistency-contract-v1",
+  "terminalStatus": "a5-dual-reflection-exact-consistency-dual-candidate-oriented-complex-nonclosure",
+  "verdictKind": "dual-candidate-oriented-complex-nonclosure",
+  "inputsValid": true,
+  "contractValid": true,
+  "precursorSemanticsValid": true,
+  "candidateLineageValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A17",
+  "contract": {
+    "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/preregistration/phase518_dual_reflection_exact_consistency_contract_v1.json",
+    "sha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119",
+    "frozenBeforePrecursorConsumption": true
+  },
+  "exactInputBindings": [
+    {
+      "id": "phase517-summary",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "expectedSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "actualSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-contract",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "expectedSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "actualSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-program",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "expectedSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "actualSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-site-candidate",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/site_centered_reflection_candidate.json",
+      "expectedSha256": "347ee75fb994b4a8bc05b1a3e589201191cafa15d0fd16cb21f5978095f1841d",
+      "actualSha256": "347ee75fb994b4a8bc05b1a3e589201191cafa15d0fd16cb21f5978095f1841d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-link-candidate",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/link_centered_reflection_candidate.json",
+      "expectedSha256": "4f8dc4e56e3537a505b816df6c9b7eb086dce27c27c474b1e833118691e38f46",
+      "actualSha256": "4f8dc4e56e3537a505b816df6c9b7eb086dce27c27c474b1e833118691e38f46",
+      "hashMatches": true
+    },
+    {
+      "id": "phase514-summary",
+      "path": "studies/phase514_a5_registered_reflection_foundation_audit_001/output/a5_registered_reflection_foundation_audit_summary.json",
+      "expectedSha256": "c3a53c93f65eb4396bf56eeb7ce0407ec5984e4280e152a6d4eb769ba421e81e",
+      "actualSha256": "c3a53c93f65eb4396bf56eeb7ce0407ec5984e4280e152a6d4eb769ba421e81e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-summary",
+      "path": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
+      "expectedSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "actualSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-reflection-analysis",
+      "path": "studies/phase482_a5_theorem_scout_001/ReflectionLocalityAnalysis.cs",
+      "expectedSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "actualSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase452-action-observable-source",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator-source",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "simplicial-mesh-source",
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "expectedSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "actualSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "hashMatches": true
+    },
+    {
+      "id": "topology-builder-source",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "expectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    }
+  ],
+  "geometry": {
+    "extent": 4,
+    "dimension": 4,
+    "timeAxis": 0,
+    "latticeCanonical": true,
+    "vertices": 256,
+    "edges": 3840,
+    "faces": 12800,
+    "fourSimplices": 6144,
+    "exactGeometryCounts": true,
+    "coordinateDomainValid": true,
+    "coordinateKeysUnique": true,
+    "canonicalEdgesValid": true,
+    "simplexKeysUnique": true
+  },
+  "candidates": [
+    {
+      "sourceCandidateId": "site-centered-axis0",
+      "centering": "site-centered",
+      "axis": 0,
+      "offset": 0,
+      "vertexMap": "r0(t,x)=(-t mod 4,x)",
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "edgeCount": 3840,
+      "edgeMappedCount": 2048,
+      "edgeReversalCount": 128,
+      "edgeRestrictedTwiceIdentityCount": 2048,
+      "edgeMissingWitness": {
+        "sourceIndex": 1,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,1,0,0"
+        ],
+        "reflectedVertices": [
+          "0,0,0,0",
+          "3,1,0,0"
+        ]
+      },
+      "faceCount": 12800,
+      "faceMappedCount": 3072,
+      "faceRestrictedTwiceIdentityCount": 3072,
+      "faceMissingWitness": {
+        "sourceIndex": 0,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,0,0,0",
+          "1,1,0,0"
+        ],
+        "reflectedVertices": [
+          "0,0,0,0",
+          "3,0,0,0",
+          "3,1,0,0"
+        ]
+      },
+      "cellCount": 6144,
+      "cellMappedCount": 0,
+      "cellRestrictedTwiceIdentityCount": 0,
+      "cellMissingWitness": {
+        "sourceIndex": 0,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,0,0,0",
+          "1,1,0,0",
+          "1,1,1,0",
+          "1,1,1,1"
+        ],
+        "reflectedVertices": [
+          "0,0,0,0",
+          "3,0,0,0",
+          "3,1,0,0",
+          "3,1,1,0",
+          "3,1,1,1"
+        ]
+      },
+      "edgeMissingCount": 1792,
+      "faceMissingCount": 9728,
+      "cellMissingCount": 6144,
+      "fullEdgeClosure": false,
+      "fullFaceClosure": false,
+      "fullCellClosure": false,
+      "restrictedClosureNotPromotedToFull": true
+    },
+    {
+      "sourceCandidateId": "link-centered-axis0",
+      "centering": "link-centered",
+      "axis": 0,
+      "offset": 1,
+      "vertexMap": "r1(t,x)=(1-t mod 4,x)",
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "edgeCount": 3840,
+      "edgeMappedCount": 2048,
+      "edgeReversalCount": 128,
+      "edgeRestrictedTwiceIdentityCount": 2048,
+      "edgeMissingWitness": {
+        "sourceIndex": 1,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,1,0,0"
+        ],
+        "reflectedVertices": [
+          "1,0,0,0",
+          "0,1,0,0"
+        ]
+      },
+      "faceCount": 12800,
+      "faceMappedCount": 3072,
+      "faceRestrictedTwiceIdentityCount": 3072,
+      "faceMissingWitness": {
+        "sourceIndex": 0,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,0,0,0",
+          "1,1,0,0"
+        ],
+        "reflectedVertices": [
+          "1,0,0,0",
+          "0,0,0,0",
+          "0,1,0,0"
+        ]
+      },
+      "cellCount": 6144,
+      "cellMappedCount": 0,
+      "cellRestrictedTwiceIdentityCount": 0,
+      "cellMissingWitness": {
+        "sourceIndex": 0,
+        "sourceVertices": [
+          "0,0,0,0",
+          "1,0,0,0",
+          "1,1,0,0",
+          "1,1,1,0",
+          "1,1,1,1"
+        ],
+        "reflectedVertices": [
+          "1,0,0,0",
+          "0,0,0,0",
+          "0,1,0,0",
+          "0,1,1,0",
+          "0,1,1,1"
+        ]
+      },
+      "edgeMissingCount": 1792,
+      "faceMissingCount": 9728,
+      "cellMissingCount": 6144,
+      "fullEdgeClosure": false,
+      "fullFaceClosure": false,
+      "fullCellClosure": false,
+      "restrictedClosureNotPromotedToFull": true
+    }
+  ],
+  "exactIntegerCombinatorialControlsOnly": true,
+  "floatingPointGeometryOrToleranceUsedForClosure": false,
+  "missingImagesSilentlyZeroFilled": false,
+  "restrictedClosurePromotedToFullClosure": false,
+  "restrictedControlsValid": true,
+  "mutationControlsPassed": true,
+  "dualCandidateOrientedComplexNonclosure": true,
+  "underlyingSetNonclosureSufficesForOrientedComplexNonclosure": true,
+  "candidateSelectionPerformed": false,
+  "candidateRankingPerformed": false,
+  "candidatesCombined": false,
+  "candidateRegistrationPerformed": false,
+  "candidatesRemainUnregistered": true,
+  "observableMembershipEvaluated": false,
+  "measureNormalizationEvaluated": false,
+  "allCouplingAllVolumeClaim": false,
+  "fullCandidateActionCovarianceEvaluated": false,
+  "osBilinearHermiticityEvaluated": false,
+  "finiteControlSupportsAllVolumeInference": false,
+  "registeredTheoremReflectionEstablished": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "targetCounterexampleEstablished": false,
+  "theoremClaimed": false,
+  "closesLimbL8": false,
+  "phase458G1Satisfied": false,
+  "phase458Evaluated": false,
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase482ArtifactMutated": false,
+  "zeroPhysicsCompute": true,
+  "symbolicFalsifierRun": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "accelerationAuthorized": false,
+  "phase480Satisfied": false,
+  "o4Discharged": false,
+  "humanRulingAuthoredOrInferred": false,
+  "targetBlindConstruction": true,
+  "externalReviewPending": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a17BoundaryHeld": true,
+  "a16Unchanged": true,
+  "decision": "Both finite n=4 candidate vertex maps are exact involutive bijections, but each fails closure already on the underlying simplex sets. Because every oriented-complex automorphism must first be a total automorphism of the underlying simplex sets, this is sufficient for oriented-complex nonclosure without claiming face or four-simplex orientation-parity results. Restricted twice-identity controls are recorded separately and cannot be promoted to full closure. No action, OS bilinear, theorem, or counterexample conclusion follows."
+}

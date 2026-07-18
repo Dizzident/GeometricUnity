@@ -481,3 +481,56 @@ Binder work, sampling, HMC, acceleration, production, or launch, discharge O4,
 fill a source contract, or support a physical-unit claim. Phases515–516 must
 not be created merely because their numbers are reserved. External review
 remains pending and `promotedPhysicalMassClaimCount=0` throughout.
+
+## A17 — Phase482 parallel-candidate foundation review (phases 517–519)
+
+The user authorizes a new deterministic candidate-definition tranche without
+altering Amendment A16 or unlocking its reserved Phases515–516. Phase517 may
+exact-bind the committed action-family, observable, triangulation, A5, G1, and
+Phase482 records and emit two parallel audit-authored candidate specifications:
+one using the site-centered reflection and one using the link-centered
+reflection. It must not select between them, combine them, tune either from a
+test outcome, or describe either as the registered theorem reflection. Each
+candidate must separately state its action member and functional,
+configuration space or gauge quotient, measure/domain, coupling and volume
+scope, reflection plane and vertex map, oriented-edge pullback and reversal,
+boundary treatment, complex conjugation, positive-time observable algebra,
+connected subtraction, and proposed bilinear or crossing kernel. Ambiguity or
+missing definitions are valid fail-closed outputs; the phase cannot silently
+adopt a convenient action, control branch, measure, reflection, or observable.
+
+Phase518 is hard-gated on valid frozen Phase517 candidate artifacts and must
+exact-bind their byte hashes before running deterministic checks of both. It
+may check algebraic well-typedness, candidate-to-source consistency,
+sesquilinearity, non-tautological Hermiticity identities, incidence retention,
+shared-edge and mixed-face terms, and exact finite witnesses. It may not make a
+kernel Hermitian by construction and then count `K=K†` as evidence. A finite
+configuration set, finite volume, truncated field menu, or coupling battery is
+only a candidate falsifier or lemma check: survival does not establish measure
+normalization, reflection positivity, target equality, necessity, an
+allowed-volume embedding theorem, or all-coupling/all-volume scope. Candidate
+failure refutes only that candidate unless an independently exact necessity
+and target-embedding proof is present.
+
+Phase519 is a dependent fail-closed review-readiness adjudicator. Its contract
+must freeze exact Phase517/518 bindings and precedence before consuming them.
+Invalid or drifted input takes precedence, followed by action or observable
+ambiguity, incomplete configuration space or normalized measure, incomplete
+reflection/pullback rules, unproved candidate-to-target equality, undefined
+bilinear domain or non-tautological Hermiticity, finite-truncation-only
+evidence, unproved necessity, missing allowed-volume/shared-edge gluing, and
+incomplete all-coupling/all-volume scope. Its strongest positive terminal may
+say only that an audit-authored candidate package is ready for independent
+mathematical review. It cannot register either candidate, choose a reflection,
+establish or refute reflection positivity, claim a theorem or target
+counterexample, or infer G1/L8 closure.
+
+A17 does not create, modify, or unlock Phases515–516; alter Phase482 or
+Phase514; create or mutate a Phase481 pack; evaluate Phase458; satisfy G1 or
+G3–G5; close L8; satisfy Phase480; authorize Binder work, sampling, HMC,
+benchmarking, acceleration, production, or launch; discharge O4; author or
+infer a human ruling; fill a source contract; or support a physical-unit claim.
+All Phase517–519 outputs must keep the site/link artifacts distinct, remain
+target-blind, record external review as pending, set every downstream authority
+and W/Z/Higgs-promotion flag false, and preserve
+`promotedPhysicalMassClaimCount=0`.

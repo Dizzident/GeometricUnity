@@ -318,10 +318,48 @@ witness embedding. The terminal is
 `a5-registered-reflection-foundation-registered-foundation-definition-missing`.
 This is an epistemic repository result, not a mathematical nonexistence claim,
 reflection-positivity counterexample, or theorem. Phase515 and Phase516 remain
-reserved and hard-gated. Registry 514-516 is allocated; 517+ remains
-unassigned. Phase458 G1 and L8 remain open, no Phase458/Phase481/sampling/O4 or
+reserved and hard-gated. Registry 514-516 is allocated; the later A17 section
+supersedes the former 517+ allocation state. Phase458 G1 and L8 remain open,
+and no Phase458/Phase481/sampling/O4 or
 physical-unit authority follows, and `promotedPhysicalMassClaimCount=0`.
 Phase202 is 300/3 after the Phase514 checklist addition.
+
+A5 DUAL-REFLECTION FOUNDATION AND READINESS (2026-07-18, Amendment A17;
+Phases517-519): registry entries 517-519 and the A17 plan are allocated and
+implemented. Phase517 is a valid audit with terminal
+`action-member-or-omega-parity-ambiguous`. The exact-bound A5 generator calls
+its subject a toy-control branch, but the serialized artifact loses that
+qualifier. The executable curvature has the form `F=L(omega)+Q(omega)`, while
+no exact-bound identity excludes the resulting cubic sign-odd cross term or
+establishes omega parity. Phase517 therefore freezes the site-centered and
+link-centered axis-0 rows coequally as formal diagnostic candidates; neither
+is selected, combined, A5-validated, or registered as a theorem reflection.
+
+Phase518 exact-binds both candidate artifacts and derives their maps after
+cross-checking the Phase517 summary rows, paths, hashes, statuses, slices, and
+roles. On the exact lattice-canonical periodic n=4 complex, both vertex maps
+are bijective involutions. For each candidate, 2,048 of 3,840 edges and 3,072
+of 12,800 faces map back into the complex, while 0 of 6,144 four-simplices
+does. Failure already on the underlying simplex sets is sufficient to rule out
+a total oriented-complex automorphism; no face or four-simplex orientation-
+parity result is inferred. The terminal is
+`dual-candidate-oriented-complex-nonclosure`.
+
+Phase519 is a valid downstream readiness adjudicator with terminal
+`action-or-observable-subject-ambiguous`. The package is not ready for
+independent mathematical review: the action member/parity remains ambiguous,
+and exact observable dependency, positive-time-algebra membership, measure
+normalization/domain, and OS-bilinear Hermiticity remain unproved. Phase515 and
+Phase516 stay locked and may not be created. No reflection-positivity theorem
+or counterexample follows; Phase458 G1 and limb L8 are unchanged, external
+review remains pending, and `promotedPhysicalMassClaimCount=0`. Adversarial
+review found fail-open candidate-schema, lineage, map-derivation, coordinate,
+scope, and documentation gaps; all were repaired before the final Phase517 ->
+Phase518 -> Phase519 downstream run. Phase101 remains physically blocked.
+Phase202 is 303 passed / 3 standing failures after the three A17 checklist
+rows. The mandatory incremental checkpoint ran 85 steps, skipped 298, and
+ended at `boson-claim-integrity-verified` with zero promoted physical-mass
+claims.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6

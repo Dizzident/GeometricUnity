@@ -1,7 +1,7 @@
 {
   "phaseId": "phase460-source-corpus-units-equivariance-kernel",
   "terminalStatus": "source-corpus-units-equivariance-kernel-breaking-relation-found-under-prescribed-reading",
-  "generatedAt": "2026-07-17T21:16:41.2715595+00:00",
+  "generatedAt": "2026-07-18T15:41:10.7415388+00:00",
   "unitsEquivarianceKernelAuditPassed": true,
   "targetBlindConstruction": true,
   "applicationSubjectKind": "source-corpus-units-equivariance-kernel",

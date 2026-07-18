@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase519-a17-a5-candidate-foundation-readiness-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A17",
+  "contractStatus": "final-frozen-before-first-runnable-invocation",
+  "frozenBeforePrecursorConsumption": true,
+  "precursorBindings": {
+    "phase517Summary": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "sha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "requiredVerdictKind": "action-member-or-omega-parity-ambiguous"
+    },
+    "phase517Contract": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "sha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2"
+    },
+    "phase517Program": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "sha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c"
+    },
+    "phase517SiteCandidate": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/site_centered_reflection_candidate.json",
+      "sha256": "347ee75fb994b4a8bc05b1a3e589201191cafa15d0fd16cb21f5978095f1841d"
+    },
+    "phase517LinkCandidate": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/link_centered_reflection_candidate.json",
+      "sha256": "4f8dc4e56e3537a505b816df6c9b7eb086dce27c27c474b1e833118691e38f46"
+    },
+    "phase518Summary": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json",
+      "sha256": "5c8b05647bb0050bae252e40bcae526d3a6188bfa64b5f6d2fb491fa46db2052",
+      "requiredVerdictKind": "dual-candidate-oriented-complex-nonclosure"
+    },
+    "phase518Contract": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/preregistration/phase518_dual_reflection_exact_consistency_contract_v1.json",
+      "sha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119"
+    },
+    "phase518Program": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/Program.cs",
+      "sha256": "28f85c7ee58fcae7eeb931f458eb1da8eafd6663677aed2180719d7d5076e990"
+    }
+  },
+  "precedence": [
+    "invalid-or-drifted-input",
+    "action-or-observable-subject-ambiguous",
+    "configuration-or-normalized-measure-incomplete",
+    "reflection-or-pullback-incomplete",
+    "candidate-target-equality-unproved",
+    "bilinear-finiteness-or-hermiticity-unproved",
+    "finite-only",
+    "necessity-unproved",
+    "embedding-or-gluing-unproved",
+    "all-scope-unproved",
+    "candidate-package-review-ready"
+  ],
+  "expectedCurrentVerdict": "action-or-observable-subject-ambiguous",
+  "strongestPermittedTerminal": "candidate-package-review-ready",
+  "strongestPermittedClaim": "independent-math-review-readiness-only",
+  "phase515Or516Unlocked": false,
+  "externalReviewPending": true,
+  "theoremClaimAllowed": false,
+  "samplingOrProductionAllowed": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

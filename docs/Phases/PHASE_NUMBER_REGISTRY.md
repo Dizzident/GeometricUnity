@@ -23,7 +23,8 @@ back, NO new phase directory may be created outside this table.
 | 508-510 | Shared Phase481 preconstruction-closure extension (A14) | 508 acquisition-geometry closure; 509 anisotropic CPU-reference feasibility; 510 execution-readiness adjudicator |
 | 511-513 | Shared Phase481 workload-definition and throughput extension (A15) | 511 workload-definition completeness audit; 512 direct throughput evidence only if 511 closes; 513 reserved for dependent cost re-adjudication |
 | 514-516 | Shared Phase482 action-specific theorem-definition extension (A16) | 514 registered-reflection kernel and observable-algebra existence audit; 515 exact incidence/gluing analysis only if 514 closes; 516 full-scope theorem/counterexample adjudication only if 515 closes |
-| 517+ | Unassigned - extend this registry before use | - |
+| 517-519 | Shared Phase482 parallel-candidate foundation extension (A17) | 517 parallel site/link candidate specifications without selection; 518 deterministic exact checks of both candidates; 519 dependent candidate review-readiness adjudication |
+| 520+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

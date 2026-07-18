@@ -389,6 +389,9 @@ dotnet run --no-build -c Release --project studies/phase509_phase481_anisotropic
 dotnet run --no-build -c Release --project studies/phase510_phase481_execution_readiness_adjudicator_001/Phase510Phase481ExecutionReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/Phase511Phase481ThroughputBenchmarkEligibilityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase514_a5_registered_reflection_foundation_audit_001/Phase514A5RegisteredReflectionFoundationAudit.csproj
+dotnet run --no-build -c Release --project studies/phase517_a5_dual_reflection_candidate_foundation_001/Phase517A5DualReflectionCandidateFoundation.csproj
+dotnet run --no-build -c Release --project studies/phase518_a5_dual_reflection_exact_consistency_001/Phase518A5DualReflectionExactConsistency.csproj
+dotnet run --no-build -c Release --project studies/phase519_a5_candidate_foundation_readiness_001/Phase519A5CandidateFoundationReadiness.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
