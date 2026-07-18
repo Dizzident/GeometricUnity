@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase521-a18-frozen-reflection-compatible-triangulation-census-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A18",
+  "contractStatus": "frozen-final-before-candidate-scoring",
+  "menuFrozenBeforeScoring": true,
+  "exactInputBindings": [
+    {
+      "id": "phase518-summary",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json",
+      "sha256": "5c8b05647bb0050bae252e40bcae526d3a6188bfa64b5f6d2fb491fa46db2052"
+    },
+    {
+      "id": "phase518-contract",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/preregistration/phase518_dual_reflection_exact_consistency_contract_v1.json",
+      "sha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119"
+    },
+    {
+      "id": "phase518-program",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/Program.cs",
+      "sha256": "28f85c7ee58fcae7eeb931f458eb1da8eafd6663677aed2180719d7d5076e990"
+    },
+    {
+      "id": "mesh-generator-source",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "simplicial-mesh-source",
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "sha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871"
+    },
+    {
+      "id": "topology-builder-source",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    }
+  ],
+  "geometryMenu": [
+    {
+      "id": "lattice-canonical-kuhn-negative-control",
+      "role": "required-negative-control",
+      "construction": "committed-lattice-canonical-periodic-cfk-decomposition"
+    },
+    {
+      "id": "periodic-cubical-cell-poset-barycentric",
+      "role": "audit-authored-candidate",
+      "construction": "order-complex-of-nonempty-periodic-cubical-cell-poset"
+    }
+  ],
+  "extentMenu": [3, 4],
+  "dimension": 4,
+  "cubicalCellRepresentation": "canonical-base-coordinate-in-Zn4-plus-active-axis-mask-0-through-15",
+  "expectedCubicalCellRankCoefficients": [1, 4, 6, 4, 1],
+  "expectedBarycentricSimplexCoefficients": [16, 240, 800, 960, 384],
+  "expectedMaximalChainCoefficient": 384,
+  "reflectionMenu": [
+    {
+      "id": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "inactiveAxis0BaseMap": "b0 -> -b0 mod n",
+      "activeAxis0BaseMap": "b0 -> -b0-1 mod n"
+    },
+    {
+      "id": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "inactiveAxis0BaseMap": "b0 -> 1-b0 mod n",
+      "activeAxis0BaseMap": "b0 -> -b0 mod n"
+    }
+  ],
+  "precedence": [
+    "invalid-or-drifted-input",
+    "no-total-reflection-compatible-candidate",
+    "finite-dual-reflection-compatible-candidate-survives"
+  ],
+  "expectedCurrentVerdict": "finite-dual-reflection-compatible-candidate-survives",
+  "candidateSelectionAllowed": false,
+  "candidateRegistrationAllowed": false,
+  "finiteSurvivalSupportsAllVolumeInference": false,
+  "orientationTheoremAllowed": false,
+  "reflectionPositivityClaimAllowed": false,
+  "samplingOrProductionAllowed": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

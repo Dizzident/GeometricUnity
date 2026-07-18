@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "phase": 521,
+  "phaseId": "phase521-a5-frozen-reflection-compatible-triangulation-census",
+  "contractId": "phase521-a18-frozen-reflection-compatible-triangulation-census-v1",
+  "terminalStatus": "a5-frozen-reflection-compatible-triangulation-census-finite-dual-reflection-compatible-candidate-survives",
+  "verdictKind": "finite-dual-reflection-compatible-candidate-survives",
+  "inputsValid": true,
+  "contractValid": true,
+  "precursorSemanticsValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A18",
+  "contract": {
+    "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/preregistration/phase521_frozen_reflection_compatible_triangulation_census_contract_v1.json",
+    "sha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3",
+    "menuFrozenBeforeScoring": true
+  },
+  "exactInputBindings": [
+    {
+      "id": "phase518-summary",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json",
+      "expectedSha256": "5c8b05647bb0050bae252e40bcae526d3a6188bfa64b5f6d2fb491fa46db2052",
+      "actualSha256": "5c8b05647bb0050bae252e40bcae526d3a6188bfa64b5f6d2fb491fa46db2052",
+      "hashMatches": true
+    },
+    {
+      "id": "phase518-contract",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/preregistration/phase518_dual_reflection_exact_consistency_contract_v1.json",
+      "expectedSha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119",
+      "actualSha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119",
+      "hashMatches": true
+    },
+    {
+      "id": "phase518-program",
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/Program.cs",
+      "expectedSha256": "28f85c7ee58fcae7eeb931f458eb1da8eafd6663677aed2180719d7d5076e990",
+      "actualSha256": "28f85c7ee58fcae7eeb931f458eb1da8eafd6663677aed2180719d7d5076e990",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator-source",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "simplicial-mesh-source",
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "expectedSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "actualSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "hashMatches": true
+    },
+    {
+      "id": "topology-builder-source",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "expectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    }
+  ],
+  "frozenMenu": {
+    "geometryIds": [
+      "lattice-canonical-kuhn-negative-control",
+      "periodic-cubical-cell-poset-barycentric"
+    ],
+    "extentMenu": [
+      3,
+      4
+    ],
+    "reflectionIds": [
+      "site-centered-axis0",
+      "link-centered-axis0"
+    ],
+    "menuFrozenBeforeScoring": true,
+    "physicalTargetsConsultedForConstruction": false,
+    "resultBasedTuningPerformed": false
+  },
+  "negativeControls": [
+    {
+      "geometryId": "lattice-canonical-kuhn-negative-control",
+      "role": "required-negative-control",
+      "extent": 3,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "vertexCount": 81,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 43740,
+      "incidenceValid": true,
+      "simplexCounts": [
+        81,
+        1215,
+        4050,
+        4860,
+        1944
+      ],
+      "mappedSimplexCounts": [
+        81,
+        648,
+        972,
+        486,
+        0
+      ],
+      "restrictedTwiceIdentityCounts": [
+        81,
+        648,
+        972,
+        486,
+        0
+      ],
+      "firstMissingWitness": {
+        "dimension": 1,
+        "sourceSimplex": "0,36",
+        "reflectedSimplex": "0,63"
+      },
+      "reflectedIncidencePreserved": false,
+      "totalSimplexClosure": false
+    },
+    {
+      "geometryId": "lattice-canonical-kuhn-negative-control",
+      "role": "required-negative-control",
+      "extent": 3,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "vertexCount": 81,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 43740,
+      "incidenceValid": true,
+      "simplexCounts": [
+        81,
+        1215,
+        4050,
+        4860,
+        1944
+      ],
+      "mappedSimplexCounts": [
+        81,
+        648,
+        972,
+        486,
+        0
+      ],
+      "restrictedTwiceIdentityCounts": [
+        81,
+        648,
+        972,
+        486,
+        0
+      ],
+      "firstMissingWitness": {
+        "dimension": 1,
+        "sourceSimplex": "0,36",
+        "reflectedSimplex": "9,27"
+      },
+      "reflectedIncidencePreserved": false,
+      "totalSimplexClosure": false
+    },
+    {
+      "geometryId": "lattice-canonical-kuhn-negative-control",
+      "role": "required-negative-control",
+      "extent": 4,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "vertexCount": 256,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 138240,
+      "incidenceValid": true,
+      "simplexCounts": [
+        256,
+        3840,
+        12800,
+        15360,
+        6144
+      ],
+      "mappedSimplexCounts": [
+        256,
+        2048,
+        3072,
+        1536,
+        0
+      ],
+      "restrictedTwiceIdentityCounts": [
+        256,
+        2048,
+        3072,
+        1536,
+        0
+      ],
+      "firstMissingWitness": {
+        "dimension": 1,
+        "sourceSimplex": "0,80",
+        "reflectedSimplex": "0,208"
+      },
+      "reflectedIncidencePreserved": false,
+      "totalSimplexClosure": false
+    },
+    {
+      "geometryId": "lattice-canonical-kuhn-negative-control",
+      "role": "required-negative-control",
+      "extent": 4,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "vertexCount": 256,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 138240,
+      "incidenceValid": true,
+      "simplexCounts": [
+        256,
+        3840,
+        12800,
+        15360,
+        6144
+      ],
+      "mappedSimplexCounts": [
+        256,
+        2048,
+        3072,
+        1536,
+        0
+      ],
+      "restrictedTwiceIdentityCounts": [
+        256,
+        2048,
+        3072,
+        1536,
+        0
+      ],
+      "firstMissingWitness": {
+        "dimension": 1,
+        "sourceSimplex": "0,80",
+        "reflectedSimplex": "16,64"
+      },
+      "reflectedIncidencePreserved": false,
+      "totalSimplexClosure": false
+    }
+  ],
+  "meshCoordinateControls": [
+    {
+      "extent": 3,
+      "vertexCount": 81,
+      "finiteIntegralInRangeUniqueCoordinates": true
+    },
+    {
+      "extent": 4,
+      "vertexCount": 256,
+      "finiteIntegralInRangeUniqueCoordinates": true
+    }
+  ],
+  "constructionControls": [
+    {
+      "extent": 3,
+      "cellRepresentation": "canonical-base-coordinate-in-Zn4-plus-active-axis-mask-0-through-15",
+      "canonicalRepresentationValid": true,
+      "cellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "expectedCellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "barycentricSimplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "expectedBarycentricSimplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "maximalChainGenerationCount": 31104,
+      "maximalChainCount": 31104,
+      "expectedMaximalChainCount": 31104,
+      "allCellsCoveredByMaximalChains": true,
+      "maximalChainCoverIncidenceCheckCount": 124416,
+      "maximalChainCoverIncidenceValid": true
+    },
+    {
+      "extent": 4,
+      "cellRepresentation": "canonical-base-coordinate-in-Zn4-plus-active-axis-mask-0-through-15",
+      "canonicalRepresentationValid": true,
+      "cellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "expectedCellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "barycentricSimplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "expectedBarycentricSimplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "maximalChainGenerationCount": 98304,
+      "maximalChainCount": 98304,
+      "expectedMaximalChainCount": 98304,
+      "allCellsCoveredByMaximalChains": true,
+      "maximalChainCoverIncidenceCheckCount": 393216,
+      "maximalChainCoverIncidenceValid": true
+    }
+  ],
+  "auditAuthoredCandidates": [
+    {
+      "geometryId": "periodic-cubical-cell-poset-barycentric",
+      "role": "audit-authored-candidate",
+      "extent": 3,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "vertexCount": 1296,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 699840,
+      "incidenceValid": true,
+      "simplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "mappedSimplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "restrictedTwiceIdentityCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "firstMissingWitness": null,
+      "reflectedIncidencePreserved": true,
+      "totalSimplexClosure": true
+    },
+    {
+      "geometryId": "periodic-cubical-cell-poset-barycentric",
+      "role": "audit-authored-candidate",
+      "extent": 3,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "vertexCount": 1296,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 699840,
+      "incidenceValid": true,
+      "simplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "mappedSimplexCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "restrictedTwiceIdentityCounts": [
+        1296,
+        19440,
+        64800,
+        77760,
+        31104
+      ],
+      "firstMissingWitness": null,
+      "reflectedIncidencePreserved": true,
+      "totalSimplexClosure": true
+    },
+    {
+      "geometryId": "periodic-cubical-cell-poset-barycentric",
+      "role": "audit-authored-candidate",
+      "extent": 4,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "vertexCount": 4096,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 2211840,
+      "incidenceValid": true,
+      "simplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "mappedSimplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "restrictedTwiceIdentityCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "firstMissingWitness": null,
+      "reflectedIncidencePreserved": true,
+      "totalSimplexClosure": true
+    },
+    {
+      "geometryId": "periodic-cubical-cell-poset-barycentric",
+      "role": "audit-authored-candidate",
+      "extent": 4,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "vertexCount": 4096,
+      "vertexBijection": true,
+      "vertexInvolution": true,
+      "incidenceCheckCount": 2211840,
+      "incidenceValid": true,
+      "simplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "mappedSimplexCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "restrictedTwiceIdentityCounts": [
+        4096,
+        61440,
+        204800,
+        245760,
+        98304
+      ],
+      "firstMissingWitness": null,
+      "reflectedIncidencePreserved": true,
+      "totalSimplexClosure": true
+    }
+  ],
+  "reflectionCellControls": [
+    {
+      "extent": 3,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "inactiveAxis0BaseMap": "b0 -\u003E -b0 mod n",
+      "activeAxis0BaseMap": "b0 -\u003E -b0-1 mod n",
+      "cellCount": 1296,
+      "allMappedCellsCanonical": true,
+      "activeMaskPreserved": true,
+      "cellMapBijection": true,
+      "cellMapInvolution": true,
+      "sourceCellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "mappedCellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "cellRankCountsPreserved": true
+    },
+    {
+      "extent": 3,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "inactiveAxis0BaseMap": "b0 -\u003E 1-b0 mod n",
+      "activeAxis0BaseMap": "b0 -\u003E -b0 mod n",
+      "cellCount": 1296,
+      "allMappedCellsCanonical": true,
+      "activeMaskPreserved": true,
+      "cellMapBijection": true,
+      "cellMapInvolution": true,
+      "sourceCellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "mappedCellRankCounts": [
+        81,
+        324,
+        486,
+        324,
+        81
+      ],
+      "cellRankCountsPreserved": true
+    },
+    {
+      "extent": 4,
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "inactiveAxis0BaseMap": "b0 -\u003E -b0 mod n",
+      "activeAxis0BaseMap": "b0 -\u003E -b0-1 mod n",
+      "cellCount": 4096,
+      "allMappedCellsCanonical": true,
+      "activeMaskPreserved": true,
+      "cellMapBijection": true,
+      "cellMapInvolution": true,
+      "sourceCellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "mappedCellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "cellRankCountsPreserved": true
+    },
+    {
+      "extent": 4,
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "inactiveAxis0BaseMap": "b0 -\u003E 1-b0 mod n",
+      "activeAxis0BaseMap": "b0 -\u003E -b0 mod n",
+      "cellCount": 4096,
+      "allMappedCellsCanonical": true,
+      "activeMaskPreserved": true,
+      "cellMapBijection": true,
+      "cellMapInvolution": true,
+      "sourceCellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "mappedCellRankCounts": [
+        256,
+        1024,
+        1536,
+        1024,
+        256
+      ],
+      "cellRankCountsPreserved": true
+    }
+  ],
+  "exactNegativeControlReproduced": true,
+  "committedMeshCoordinatesValid": true,
+  "negativeControlsReject": true,
+  "candidateIncidenceValid": true,
+  "independentBarycentricFormulasValid": true,
+  "reflectionRepresentationControlsValid": true,
+  "finiteCandidateSurvives": true,
+  "survivingGeometryIds": [
+    "periodic-cubical-cell-poset-barycentric"
+  ],
+  "survivingReflectionIds": [
+    "site-centered-axis0",
+    "link-centered-axis0"
+  ],
+  "exactIntegerCombinatorialControlsOnly": true,
+  "floatingPointGeometryOrToleranceUsedForClosure": false,
+  "missingImagesSilentlyZeroFilled": false,
+  "restrictedClosurePromotedToTotalClosure": false,
+  "currentCommittedMeshMutated": false,
+  "candidateSelectedForProduction": false,
+  "candidateRegistrationPerformed": false,
+  "candidatesRemainUnregistered": true,
+  "finiteSurvivalSupportsAllVolumeInference": false,
+  "allVolumeEmbeddingTheoremEstablished": false,
+  "orientationTheoremEstablished": false,
+  "boundaryOrPullbackRulesRegistered": false,
+  "actionOrObservableEvaluated": false,
+  "normalizedMeasureEvaluated": false,
+  "candidateToTargetEqualityEstablished": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "theoremClaimed": false,
+  "targetCounterexampleEstablished": false,
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "closesLimbL8": false,
+  "phase458G1Satisfied": false,
+  "phase458Evaluated": false,
+  "zeroPhysicsCompute": true,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "accelerationAuthorized": false,
+  "phase481PackCreatedOrMutated": false,
+  "phase482ArtifactMutated": false,
+  "o4Discharged": false,
+  "humanRulingAuthoredOrInferred": false,
+  "targetBlindConstruction": true,
+  "externalReviewPending": true,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a18BoundaryHeld": true,
+  "decision": "On the frozen extents 3 and 4, both axis-zero reflections reproduce the expected total-simplex failure of the committed negative control and preserve every simplex of the audit-authored periodic cubical cell-poset order complex. This is finite exact candidate survival only: it neither selects nor registers a geometry or reflection and supplies no all-volume, orientation, target-equality, measure, or reflection-positivity result."
+}

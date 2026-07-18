@@ -534,3 +534,49 @@ All Phase517–519 outputs must keep the site/link artifacts distinct, remain
 target-blind, record external review as pending, set every downstream authority
 and W/Z/Higgs-promotion flag false, and preserve
 `promotedPhysicalMassClaimCount=0`.
+
+## A18 — Phase482 foundation refinement (phases 520–522)
+
+The user authorizes the next deterministic, zero-sampling refinement tranche
+after Amendment A17. It does not alter the Phase517–519 terminals or unlock
+reserved Phases515–516. Phase520 must exact-bind the committed A5 generator,
+serialized A5 artifact, executable action-family sources, Phase452 subject
+record, and Phase517/519 findings. It audits whether a dedicated qualifier,
+control, or member field exists and whether any committed serialized string
+value preserves the toy/control qualifier; this census cannot establish a
+serialization-only cause. It also audits whether one executable A5 action
+member is uniquely selected by committed evidence and whether an exact-bound
+identity removes every omega-sign-odd contribution. Missing or conflicting
+lineage and an absent cancellation identity are valid terminal evidence. It
+must not repair serialization, select an action by convenience, infer a human
+ruling, or treat a numerical parity sample as an identity proof.
+
+Phase521 freezes its geometry menu before scoring. The menu contains the
+current lattice-canonical simplicial decomposition as a required negative
+control and a symmetry-derived barycentric subdivision of the periodic cubical
+cell poset as an audit-authored candidate. It evaluates site- and link-centered
+axis-zero reflections with exact vertex/cell incidence, involution, simplex
+closure, and restricted-versus-total-closure accounting on prospectively fixed
+small volumes. A candidate survives only the checks actually executed. Finite
+survival does not register a theorem reflection, establish an all-volume
+embedding or orientation theorem, choose a production geometry, mutate the
+committed mesh, or establish reflection positivity. Candidate failure refutes
+only that frozen candidate.
+
+Phase522 exact-binds Phases520–521 and the unchanged Phase517–519 package and
+applies frozen fail-closed precedence: invalid/drifted input; unresolved action
+member or omega parity; no total reflection-compatible candidate; incomplete
+reflection/pullback or boundary rules; unresolved O1/O2 dependency and
+positive-time-algebra membership; incomplete normalized measure/domain;
+unproved candidate-to-target equality and Hermiticity; finite-only evidence;
+unproved necessity, gluing, or all-scope claims; then candidate package ready
+for independent mathematical review. It may reduce the surviving candidate
+menu and name the next exact missing certificates, but cannot register a
+candidate, establish or refute reflection positivity, claim a theorem or
+counterexample, or create/unlock Phases515–516.
+
+A18 performs no sampling, HMC, reprocessing, benchmark, production allocation,
+Phase481 pack work, Phase458 evaluation, source-contract application, O4 or
+human ruling, physical-target tuning, or physical-unit promotion. Every output
+keeps external review pending, every execution and promotion authority false,
+and `promotedPhysicalMassClaimCount=0`.

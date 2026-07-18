@@ -392,6 +392,9 @@ dotnet run --no-build -c Release --project studies/phase514_a5_registered_reflec
 dotnet run --no-build -c Release --project studies/phase517_a5_dual_reflection_candidate_foundation_001/Phase517A5DualReflectionCandidateFoundation.csproj
 dotnet run --no-build -c Release --project studies/phase518_a5_dual_reflection_exact_consistency_001/Phase518A5DualReflectionExactConsistency.csproj
 dotnet run --no-build -c Release --project studies/phase519_a5_candidate_foundation_readiness_001/Phase519A5CandidateFoundationReadiness.csproj
+dotnet run --no-build -c Release --project studies/phase520_a5_action_subject_lineage_parity_audit_001/Phase520A5ActionSubjectLineageParityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Phase521A5FrozenReflectionCompatibleTriangulationCensus.csproj
+dotnet run --no-build -c Release --project studies/phase522_a5_foundation_candidate_reduction_001/Phase522A5FoundationCandidateReduction.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

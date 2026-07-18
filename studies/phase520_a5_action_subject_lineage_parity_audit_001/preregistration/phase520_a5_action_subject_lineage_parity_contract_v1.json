@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase520-a18-action-subject-lineage-parity-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A18",
+  "frozenBeforePrecursorConsumption": true,
+  "expectedBindings": {
+    "phase456GeneratorSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+    "phase456SerializedA5Sha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+    "phase452SubjectRecordSha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009",
+    "phase452ProgramSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+    "shiabOperatorSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+    "shiabFamilySpecSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+    "curvatureAssemblerSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+    "cpuMassMatrixSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+    "identityShiabSha256": "09c5baf57b312b40b3a9a3e80f8b32d6c028d2358ee44b7257676125eaea3328",
+    "lieAlgebraFactorySha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+    "phase517SummarySha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+    "phase517ContractSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+    "phase517ProgramSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+    "phase519SummarySha256": "83649b2cecabacae57b95b03a5d75063f6130514cfeaa1767e332dc222aa33a2"
+  },
+  "lineageQuestions": [
+    "does-the-frozen-a5-result-have-a-dedicated-qualifier-or-member-field-and-do-its-serialized-values-preserve-the-toy-control-qualifier",
+    "does-committed-evidence-uniquely-select-one-executable-a5-action-member",
+    "does-an-exact-bound-identity-cancel-every-omega-sign-odd-action-term"
+  ],
+  "expectedA5ResultFields": [
+    "packItem",
+    "sector",
+    "target",
+    "sbStructure",
+    "provable",
+    "verdict",
+    "obstructions",
+    "whatItWouldHaveCancelled",
+    "consumes",
+    "mandatoryFraming"
+  ],
+  "registeredExecutableActionMemberInventory": [
+    {
+      "memberId": "identity",
+      "declarationAnchor": "var controlSpec = new EinsteinianShiabFamilyMember",
+      "useAnchor": "isControl ? controlSpec : sd2Spec"
+    },
+    {
+      "memberId": "sd2-id0/c0.5",
+      "declarationAnchor": "var sd2Spec = new EinsteinianShiabFamilyMember",
+      "useAnchor": "isControl ? controlSpec : sd2Spec"
+    }
+  ],
+  "identityProofPolicy": {
+    "accepted": "an explicit exact-bound algebraic identity covering every action contribution",
+    "rejected": [
+      "finite numerical parity samples",
+      "comments or serialized assertions contradicted by executable structure",
+      "choosing an action member for convenience",
+      "assuming cross-face cancellation without an exact identity"
+    ]
+  },
+  "registeredOmegaParityEvidenceInventory": [
+    {
+      "evidenceId": "generator-z2-comment",
+      "bindingId": "phase456-generator",
+      "evidenceKind": "source-comment-assertion",
+      "requiredText": "exact Z_2 symmetry omega -> -omega"
+    },
+    {
+      "evidenceId": "serialized-a5-even-assertion",
+      "bindingId": "phase456-serialized-a5",
+      "evidenceKind": "serialized-prose-assertion",
+      "requiredText": "S_B(omega) quartic, even under omega -> -omega"
+    }
+  ],
+  "inventoryScope": "The finite inventory is frozen to explicit omega-sign-parity assertions in the exact-bound A5 generator and serialized A5 record. It does not claim that no differently written mathematical identity exists outside this registered inventory.",
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "action-member-unresolved"
+  ],
+  "auditMode": "frozen-negative-current-evidence-census",
+  "futureSelectedMemberArtifactRequiresNewContractAndImplementation": true,
+  "expectedCurrentVerdict": "action-member-unresolved",
+  "expectedCurrentTerminalStatus": "a5-action-subject-lineage-parity-audit-action-member-unresolved",
+  "phase515Or516Unlocked": false,
+  "phase458G1Satisfied": false,
+  "theoremOrCounterexampleAllowed": false,
+  "samplingOrProductionAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

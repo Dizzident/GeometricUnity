@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase522-a18-a5-foundation-candidate-reduction-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A18",
+  "contractStatus": "final-frozen-before-first-runnable-invocation",
+  "frozenBeforePrecursorConsumption": true,
+  "precursorBindings": {
+    "phase517Summary": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "sha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "requiredVerdictKind": "action-member-or-omega-parity-ambiguous"
+    },
+    "phase517Contract": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "sha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2"
+    },
+    "phase517Program": {
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "sha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c"
+    },
+    "phase518Summary": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/output/a5_dual_reflection_exact_consistency_summary.json",
+      "sha256": "5c8b05647bb0050bae252e40bcae526d3a6188bfa64b5f6d2fb491fa46db2052",
+      "requiredVerdictKind": "dual-candidate-oriented-complex-nonclosure"
+    },
+    "phase518Contract": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/preregistration/phase518_dual_reflection_exact_consistency_contract_v1.json",
+      "sha256": "6733ea054174836fbe39859cad9ccd1fb5c8c41d85e391d9b813145f207f5119"
+    },
+    "phase518Program": {
+      "path": "studies/phase518_a5_dual_reflection_exact_consistency_001/Program.cs",
+      "sha256": "28f85c7ee58fcae7eeb931f458eb1da8eafd6663677aed2180719d7d5076e990"
+    },
+    "phase519Summary": {
+      "path": "studies/phase519_a5_candidate_foundation_readiness_001/output/a5_candidate_foundation_readiness_summary.json",
+      "sha256": "83649b2cecabacae57b95b03a5d75063f6130514cfeaa1767e332dc222aa33a2",
+      "requiredVerdictKind": "action-or-observable-subject-ambiguous"
+    },
+    "phase519Contract": {
+      "path": "studies/phase519_a5_candidate_foundation_readiness_001/preregistration/phase519_a5_candidate_foundation_readiness_contract_v1.json",
+      "sha256": "695252581908125af2221bfed1aff01efee677b03b1496fe8bfcbc6c4d0333cb"
+    },
+    "phase519Program": {
+      "path": "studies/phase519_a5_candidate_foundation_readiness_001/Program.cs",
+      "sha256": "7a3b1e56ee96d84c46ae6b15dc0a14ce76f535df2ddd15071d9631d005298cbd"
+    },
+    "phase520Summary": {
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json",
+      "sha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "requiredVerdictKind": "action-member-unresolved"
+    },
+    "phase520Contract": {
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json",
+      "sha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd"
+    },
+    "phase520Program": {
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs",
+      "sha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799"
+    },
+    "phase521Summary": {
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json",
+      "sha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "requiredVerdictKind": "finite-dual-reflection-compatible-candidate-survives"
+    },
+    "phase521Contract": {
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/preregistration/phase521_frozen_reflection_compatible_triangulation_census_contract_v1.json",
+      "sha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3"
+    },
+    "phase521Program": {
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Program.cs",
+      "sha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615"
+    }
+  },
+  "precedence": [
+    "invalid-or-drifted-input",
+    "action-member-or-omega-parity-unresolved",
+    "no-total-reflection-compatible-candidate",
+    "reflection-pullback-or-boundary-incomplete",
+    "o1-o2-dependency-or-positive-time-algebra-unresolved",
+    "normalized-measure-or-domain-incomplete",
+    "candidate-target-equality-or-hermiticity-unproved",
+    "finite-only",
+    "necessity-gluing-or-all-scope-unproved",
+    "candidate-package-ready-for-independent-mathematical-review"
+  ],
+  "expectedCurrentVerdict": "action-member-or-omega-parity-unresolved",
+  "strongestPermittedTerminal": "candidate-package-ready-for-independent-mathematical-review",
+  "strongestPermittedClaim": "independent-mathematical-review-readiness-only",
+  "mayReduceSurvivorMenu": true,
+  "candidateRegistrationAllowed": false,
+  "phase515Or516CreationOrUnlockAllowed": false,
+  "theoremOrCounterexampleClaimAllowed": false,
+  "reflectionPositivityClaimAllowed": false,
+  "samplingReprocessingOrProductionAllowed": false,
+  "phase481OrPhase458WorkAllowed": false,
+  "externalReviewPending": true,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -283,8 +283,9 @@ sampling, HMC, pack, loader, checkpoint integration, or launch ran. Phase510's
 cost envelope remains unresolved, Phase480/O4 and Phase458 G3/G4/G5 remain
 closed, and no source-contract or physical-unit authority follows. Registry
 511-513 is allocated for A15; Phase512 is hard-gated on a future Phase511
-eligible terminal, Phase513 is reserved for dependent cost re-adjudication,
-and 514+ remains unassigned. `promotedPhysicalMassClaimCount=0`.
+eligible terminal and Phase513 is reserved for dependent cost re-adjudication.
+The later A16-A18 sections supersede the former 514+ allocation frontier.
+`promotedPhysicalMassClaimCount=0`.
 Phase202 is 299/3 after the Phase511 checklist addition.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
@@ -360,6 +361,46 @@ Phase202 is 303 passed / 3 standing failures after the three A17 checklist
 rows. The mandatory incremental checkpoint ran 85 steps, skipped 298, and
 ended at `boson-claim-integrity-verified` with zero promoted physical-mass
 claims.
+
+A5 FOUNDATION REFINEMENT (2026-07-18, Amendment A18; Phases520-522): registry
+entries 520-522 and the A18 plan are allocated and implemented. Phase520
+exact-binds the generator, serialized A5 record, executable action-family
+sources, and Phase517/519 findings. Its complete frozen `A5Result` field
+inventory has no dedicated qualifier, control, or member field, and none of
+the eleven committed serialized string values preserves the generator's
+toy/control qualifier. It does not claim generic schema non-representability
+or infer a serialization cause or semantic applicability. The
+executable subject contains two action members, the family declares no
+canonical member, and the A5 routine binds neither. Two registered parity
+assertions remain prose/comment evidence rather than exact derivations; no
+exhaustive mathematical-absence claim is made. The terminal is
+`action-member-unresolved`.
+
+Phase521 freezes the committed Kuhn decomposition as a negative control and a
+periodic cubical-cell-poset barycentric subdivision as an audit-authored
+candidate before scoring. Independent cell-rank, barycentric f-vector,
+maximal-chain, incidence, coordinate-integrality, and reflection-
+representation controls pass at extents 3 and 4. The n=4 negative control
+reproduces 2,048 mapped edges, 3,072 mapped faces, and zero mapped
+four-simplices for both reflections. On the barycentric candidate, both the
+site- and link-centered reflections preserve every tested simplex. The
+terminal `finite-dual-reflection-compatible-candidate-survives` is finite-only:
+neither geometry nor reflection is selected, registered, installed as the
+committed mesh, or promoted to an orientation/all-volume theorem.
+
+Phase522 exact-binds the complete Phase517-521 chain and reduces the frozen
+menu without taking a Cartesian product of summary labels. The two actual
+barycentric site/link pairs survive as unregistered diagnostics. Its earliest
+blocker remains `action-member-or-omega-parity-unresolved`; reflection
+pullback/boundary, O1/O2 positive-time membership, normalized measure/domain,
+target equality, Hermiticity, finite-scope, necessity, gluing, and all-scope
+certificates remain open. The package is not independent-review-ready,
+Phases515-516 remain locked, Phase458 G1 and L8 remain open, external review
+remains pending, and `promotedPhysicalMassClaimCount=0`. Registry 523+ is
+unassigned. Phase202 is now 306 passed / 3 standing failures after the three
+A18 checklist rows. The mandatory incremental checkpoint ran 83 steps, skipped
+303, and ended at `boson-claim-integrity-verified` with zero promoted physical-
+mass claims.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
@@ -1203,7 +1244,8 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-507 is allocated; 508+ remains unassigned.
+At that checkpoint registry 477-507 was allocated; the later A14-A18 sections
+supersede its former 508+ frontier, and the current registry frontier is 523+.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

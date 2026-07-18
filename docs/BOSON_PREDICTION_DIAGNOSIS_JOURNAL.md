@@ -21146,3 +21146,62 @@ steps, skipped 298, and ended at `boson-claim-integrity-verified`; O4 coverage
 remained 31/31, the synthetic-overturn battery remained 94/94, the source
 deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-18 - Amendment A18 isolates action lineage while finding a finite reflection-compatible geometry
+
+The user directed the next three foundation refinements with maximum agent
+parallelism. Registry 520-522 and Amendment A18 were frozen before the new
+phase directories were created. Independent action-lineage, exact-geometry,
+and downstream-adjudication tracks ran in parallel, followed by cross-review.
+
+Phase520 exact-binds fourteen committed generator, serialized-record,
+action-family, and Phase517/519 inputs. A complete ten-field `A5Result` census
+finds no dedicated qualifier, control, or member field, while a recursive
+census of all eleven committed serialized string values finds no preserved
+toy/control qualifier. The phase does not claim generic schema non-
+representability and refuses to infer a serialization cause or semantic
+applicability. The executable Phase452 subject has
+two fully traced members, the family source states that no canonical member
+exists, and the A5 routine has no exact member binding. Its frozen parity-
+evidence inventory contains two assertions, neither an executable derivation
+covering every odd contribution. The terminal is `action-member-unresolved`;
+no exhaustive mathematical absence is claimed.
+
+Phase521 freezes two geometries, extents three and four, and the site- and
+link-centered axis-zero reflections before scoring. The committed Kuhn
+decomposition is the required negative control. A periodic cubical-cell-poset
+barycentric subdivision is the audit-authored candidate. Independent cell-rank
+and barycentric f-vector formulas, maximal-chain completeness, coordinate
+integrality, reflection representation, cover incidence, and simplicial
+incidence controls pass. At n=4 the negative control exactly reproduces the
+Phase518 2,048-edge, 3,072-face, zero-four-simplex mapped counts. Every tested
+barycentric simplex closes under both reflections at n=3 and n=4. The terminal
+is `finite-dual-reflection-compatible-candidate-survives`; this is finite exact
+candidate evidence only, not a registered geometry, orientation theorem,
+all-volume result, or reflection-positivity claim.
+
+Phase522 exact-binds fifteen Phase517-521 artifacts and derives survivors from
+the actual candidate rows across every frozen extent. Two barycentric
+geometry/reflection pairs survive; neither is selected, ranked, or registered.
+The earliest terminal remains `action-member-or-omega-parity-unresolved`, and
+the later pullback, boundary, observable-algebra, measure, target-equality,
+Hermiticity, finite-scope, necessity, gluing, and all-scope blockers remain
+explicit. Phases515-516 stay locked and external review remains pending.
+
+Cross-review rejected several initially fail-open implementations before the
+checkpoint: contract-supplied booleans could manufacture a parity proof; a
+literal string search overstated identity absence; geometry closure lacked an
+independent completeness formula; the negative control underchecked mapped
+edges/faces; and the reducer formed a Cartesian product that could invent
+untested survivor pairs. These were replaced by exact inventories,
+independent formulas, complete negative-control counts, row-local survivor
+derivation, and candidate-specific missing-certificate guards. No sampling,
+HMC, production, Phase458 evaluation, source-contract application, theorem,
+counterexample, or physical-unit claim occurred. Phase458 G1 and L8 remain
+open and `promotedPhysicalMassClaimCount=0`.
+
+The mandatory incremental checkpoint ran 83 steps and skipped 303. Phase202
+reported 306 passed / 3 standing failures; O4 coverage remained 31/31, the
+synthetic-overturn battery remained 94/94, the source deficits remained 15 W/Z
+and 14 Higgs fields, and the pass ended at
+`boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.
