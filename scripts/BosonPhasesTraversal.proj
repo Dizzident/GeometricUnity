@@ -374,6 +374,7 @@
     <PhaseProject Include="../studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/Phase509Phase481AnisotropicCpuReferenceFeasibility.csproj" />
     <PhaseProject Include="../studies/phase510_phase481_execution_readiness_adjudicator_001/Phase510Phase481ExecutionReadinessAdjudicator.csproj" />
     <PhaseProject Include="../studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/Phase511Phase481ThroughputBenchmarkEligibilityAudit.csproj" />
+    <PhaseProject Include="../studies/phase514_a5_registered_reflection_foundation_audit_001/Phase514A5RegisteredReflectionFoundationAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

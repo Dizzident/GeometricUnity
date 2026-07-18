@@ -21041,3 +21041,52 @@ terminal. Phase510's cost envelope, Phase480/O4, Phase458 G3/G4/G5, external
 review, and every source-contract boundary remain unchanged;
 `promotedPhysicalMassClaimCount=0`. Phase202 moves to 299 passed / 3
 standing failures.
+
+## 2026-07-17 - Amendment A16 audits the registered theorem foundation and stops before symbolic work
+
+The user directed implementation of the next identified phases with agent
+parallelism. Independent theory, numerics, and adversarial tracks first audited
+the Phase481 and Phase482 routes. They agreed that Amendment A15 hard-gates
+Phase512 on a future eligible Phase511 terminal and reserves Phase513 for
+dependent cost re-adjudication. Creating the Phase481 default or implementation
+fingerprint now would bypass the still-closed Phase480/P0 pack boundary, so
+neither phase was created or repurposed.
+
+Registry 514-516 was allocated under Amendment A16 before creating Phase514.
+Phases515-516 were reserved but not materialized. The first Phase514 draft was
+rejected during parallel review because it treated invented certificate paths
+as proof of absence, undercounted partial source definitions, and exposed
+unreachable adjudication branches. That negative implementation review was
+preserved in-session and the phase was rewritten as a frozen snapshot census.
+
+The corrected Phase514 exact-binds sixteen current artifacts, including the
+Phase456 A4/A5 records and pack manifest, Phase478 G1 contract, Phase482 result
+and analyses, Phase452 action/observable source, the action-family definition,
+geometry, and CPU-reference operators. Its twenty-field census credits nine
+source-defined or partial candidates: action-family and configuration-space
+material, qualitative coupling/volume requirements, both exact reflection-map
+candidates, O1/O2 descriptions, connected subtraction, and uniform-scope
+requirements. Eleven registered certificates remain absent, and no field is
+registered for theorem use.
+
+The first mandatory incremental attempt was intentionally interrupted while
+the final theory review was still in flight. That review caught one remaining
+overstatement: a boolean had classified candidate-kernel failure as not
+refuting the target, although necessity and embedding were merely
+unadjudicated. The output now records
+`candidateKernelFailureRefutesTargetStatus=not-proved-or-adjudicated`; the
+aborted pass is not treated as validation evidence.
+
+The terminal is
+`a5-registered-reflection-foundation-registered-foundation-definition-missing`.
+It states only that no exact-bound repository artifact currently registers one
+OS reflection, positive-time algebra, normalized measure/domain, exact
+bilinear, Hermiticity proof, necessity classification, or allowed-volume
+witness embedding. It does not adjudicate whether those objects exist
+mathematically, refute reflection positivity, or prove/refute the A5 target.
+Phase515 and Phase516 remain hard-gated; Phase458 G1 and L8 are unchanged.
+
+No symbolic falsifier, sampling, HMC, benchmark, reprocessing, production
+allocation, Phase481 pack work, O4 ruling, source-contract application, or
+physical-unit claim occurred. Phase202 moves to 300 passed / 3 standing
+failures and `promotedPhysicalMassClaimCount=0`.

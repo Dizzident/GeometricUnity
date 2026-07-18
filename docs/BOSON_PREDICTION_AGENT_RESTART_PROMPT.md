@@ -305,6 +305,24 @@ open. Phase482 authorizes no Phase458 evaluation, Binder work, sampling,
 acceleration, production, O4 discharge, source-contract fill, or physical-unit
 claim. Its former registry frontier is superseded by Amendments A10-A11.
 
+PHASE482 THEOREM-FOUNDATION SNAPSHOT (2026-07-17, Amendment A16; Phase514):
+the council's second-ranked machine route was narrowed to a zero-physics-
+compute registered-definition census before any symbolic falsifier. Phase514
+exact-binds sixteen current action-family, geometry, A5, G1-contract, and
+Phase482 artifacts and audits twenty required OS-foundation fields. Nine have
+source-defined or partial candidates; eleven registered certificates are
+absent; zero are registered for theorem use. No exact-bound artifact registers
+one OS reflection, positive-time algebra, normalized measure/domain, exact
+bilinear, Hermiticity proof, necessity classification, or allowed-volume
+witness embedding. The terminal is
+`a5-registered-reflection-foundation-registered-foundation-definition-missing`.
+This is an epistemic repository result, not a mathematical nonexistence claim,
+reflection-positivity counterexample, or theorem. Phase515 and Phase516 remain
+reserved and hard-gated. Registry 514-516 is allocated; 517+ remains
+unassigned. Phase458 G1 and L8 remain open, no Phase458/Phase481/sampling/O4 or
+physical-unit authority follows, and `promotedPhysicalMassClaimCount=0`.
+Phase202 is 300/3 after the Phase514 checklist addition.
+
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
 projection are committed and machine-checked. The projection uses one

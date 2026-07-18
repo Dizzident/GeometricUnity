@@ -1,0 +1,337 @@
+{
+  "phaseId": "phase514-a5-registered-reflection-foundation-audit",
+  "terminalStatus": "a5-registered-reflection-foundation-registered-foundation-definition-missing",
+  "verdictKind": "registered-foundation-definition-missing",
+  "inputsValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A16",
+  "contract": {
+    "path": "studies/phase514_a5_registered_reflection_foundation_audit_001/preregistration/phase514_registered_reflection_foundation_contract_v1.json",
+    "sha256": "191586662c78d45005aa19a7312d31b2620a52e2e77a0025b229d055b070c65e",
+    "frozenBeforePrecursorConsumption": true
+  },
+  "exactInputBindings": [
+    {
+      "id": "phase482-summary",
+      "path": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
+      "expectedSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "actualSha256": "45ce5ef121263ce4f0b506601a945b329d2fb1619a6fabf6ae810b4e6ddf2369",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-program",
+      "path": "studies/phase482_a5_theorem_scout_001/Program.cs",
+      "expectedSha256": "8812ea2f4b2b5c994347a2f8d44b2f7841865dda5a149ba1f609f1d505aa3ef9",
+      "actualSha256": "8812ea2f4b2b5c994347a2f8d44b2f7841865dda5a149ba1f609f1d505aa3ef9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-reflection-analysis",
+      "path": "studies/phase482_a5_theorem_scout_001/ReflectionLocalityAnalysis.cs",
+      "expectedSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "actualSha256": "434467d97a4e034dd66c01e6e0cfab2c0bc9f77737d8a9a0c00a58f8df7a199e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-composite-analysis",
+      "path": "studies/phase482_a5_theorem_scout_001/CompositeTransportAnalysis.cs",
+      "expectedSha256": "fd03890b271d3dceade408708fa30a182b55291b7501e74d04e68f0419b46681",
+      "actualSha256": "fd03890b271d3dceade408708fa30a182b55291b7501e74d04e68f0419b46681",
+      "hashMatches": true
+    },
+    {
+      "id": "phase482-adjudication",
+      "path": "studies/phase482_a5_theorem_scout_001/TheoremScoutAdjudication.cs",
+      "expectedSha256": "70d6af047146ad6bc965ad73b8ffc07bdff452a7bebf3de4dba585dce0044ac9",
+      "actualSha256": "70d6af047146ad6bc965ad73b8ffc07bdff452a7bebf3de4dba585dce0044ac9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase456-a5-record",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "expectedSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "actualSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "hashMatches": true
+    },
+    {
+      "id": "phase456-a4-record",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4_symmetry_irrep_projectors.json",
+      "expectedSha256": "3948fc8c4267a890db1f04cdb1931284a5a055f3d458d3ccbfd1f055fa41bb49",
+      "actualSha256": "3948fc8c4267a890db1f04cdb1931284a5a055f3d458d3ccbfd1f055fa41bb49",
+      "hashMatches": true
+    },
+    {
+      "id": "phase456-a4a5-generator",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs",
+      "expectedSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "actualSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase478-g1-contract",
+      "path": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json",
+      "expectedSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "actualSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase452-action-observable-source",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-operator-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-assembler-source",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "cpu-mass-matrix-source",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "expectedSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "actualSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator-source",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-family-spec-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "expectedSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "actualSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "hashMatches": true
+    },
+    {
+      "id": "phase456-pack-manifest",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/pack_manifest.json",
+      "expectedSha256": "5320eb651898c120ede0bf652ec95327456326d7ca98e1371f836c93684ee7fb",
+      "actualSha256": "5320eb651898c120ede0bf652ec95327456326d7ca98e1371f836c93684ee7fb",
+      "hashMatches": true
+    }
+  ],
+  "sourceFacts": {
+    "phase482ObstructionsSurvive": true,
+    "siteReflectionCandidatePresent": true,
+    "linkReflectionCandidatePresent": true,
+    "neitherCandidateRegisteredAsUniqueTheoremReflection": true,
+    "a4RealizedTimeReversalIsNotTreatedAsTheRegisteredOsReflection": true,
+    "a5ActionAndObservableDescriptionPresent": true,
+    "executableSourceContainsMultipleActionMembers": true,
+    "standardReflectionRouteObstructedButReflectionPositivityNotRefuted": true,
+    "sourceCensusExhaustive": false
+  },
+  "definitionAudit": {
+    "requiredFieldCount": 20,
+    "theoremRegisteredFieldCount": 0,
+    "sourceDefinedOrPartialCandidateCount": 9,
+    "registeredCertificateAbsentCount": 11,
+    "fields": [
+      {
+        "id": "unique-action-member-and-functional",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "The sources define action-family members and describe a quartic control branch, but no exact-bound artifact registers one unique theorem subject."
+      },
+      {
+        "id": "configuration-space-or-gauge-quotient",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "Executable field arrays are source-defined, but no theorem configuration space, gauge quotient, or measure domain is registered."
+      },
+      {
+        "id": "normalized-integrable-measure",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "coupling-domain",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "The A5 prose refers to beta but freezes no exact all-required-coupling domain."
+      },
+      {
+        "id": "allowed-volume-domain",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "Phase482 enumerates local and n=4 complexes but freezes no theorem volume domain."
+      },
+      {
+        "id": "unique-site-or-link-reflection",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "Phase482 tests both site- and link-centered candidates; neither is registered as the theorem reflection."
+      },
+      {
+        "id": "reflection-plane-and-vertex-map",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "Exact candidate vertex maps are implemented for both reflection choices, but no unique theorem map is registered."
+      },
+      {
+        "id": "oriented-edge-pullback-and-reversal-sign",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "boundary-edge-treatment",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "complex-conjugation-rule",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "positive-time-observable-algebra",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "unchanged-o1-o2-membership",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "O1 and O2 are described, but no positive-time algebra or exact membership certificate is registered."
+      },
+      {
+        "id": "connected-composite-subtraction-rule",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "The executable source defines connected subtraction, but no registered positive-time algebra ties it to an OS form."
+      },
+      {
+        "id": "exact-os-bilinear-or-crossing-kernel",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact OS form or full shared-edge crossing kernel artifact exists."
+      },
+      {
+        "id": "bilinear-finiteness-domain",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "hermiticity-identity",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "Hermiticity cannot be tested before a bilinear, domain, conjugation, and reflection are defined."
+      },
+      {
+        "id": "candidate-equals-registered-target-proof",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No exact-bound repository artifact registers this required theorem field."
+      },
+      {
+        "id": "necessary-versus-sufficient-classification",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No certificate proves which candidate lemmas are necessary for the registered target inequality."
+      },
+      {
+        "id": "allowed-volume-witness-embedding",
+        "status": "registered-certificate-absent",
+        "theoremRegistered": false,
+        "reason": "No rule embeds a local witness into an allowed committed volume and the registered target."
+      },
+      {
+        "id": "all-required-coupling-and-volume-scope",
+        "status": "source-defined-or-partial-candidate",
+        "theoremRegistered": false,
+        "reason": "The adjudication requires uniform volume and coupling coverage, but the exact allowed domain is not enumerated."
+      }
+    ],
+    "expectedDedicatedCertificateArtifactCount": 4,
+    "presentDedicatedCertificateArtifactCount": 0,
+    "dedicatedCertificateArtifacts": [
+      {
+        "path": "studies/phase482_a5_theorem_scout_001/preregistration/registered_reflection_kernel_v1.json",
+        "present": false,
+        "status": "not-present-at-snapshot"
+      },
+      {
+        "path": "studies/phase482_a5_theorem_scout_001/preregistration/positive_time_observable_algebra_v1.json",
+        "present": false,
+        "status": "not-present-at-snapshot"
+      },
+      {
+        "path": "studies/phase482_a5_theorem_scout_001/preregistration/os_bilinear_domain_v1.json",
+        "present": false,
+        "status": "not-present-at-snapshot"
+      },
+      {
+        "path": "studies/phase482_a5_theorem_scout_001/preregistration/necessity_and_embedding_certificate_v1.json",
+        "present": false,
+        "status": "not-present-at-snapshot"
+      }
+    ]
+  },
+  "registeredFoundationComplete": false,
+  "registeredExactOsBilinearFound": false,
+  "hermiticityEvaluableFromBoundRegisteredArtifacts": false,
+  "nonHermitianWitnessEstablished": false,
+  "registeredNecessityAndEmbeddingCertificateFound": false,
+  "candidateKernelStatus": "not-evaluated-no-registered-definition",
+  "candidateKernelFailureRefutesTargetStatus": "not-proved-or-adjudicated",
+  "finiteSurvivalWouldProveTheorem": false,
+  "decisionPrecedence": [
+    "invalid-or-drifted-input",
+    "registered-foundation-definition-missing"
+  ],
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "theoremClaimed": false,
+  "targetCounterexampleEstablished": false,
+  "closesLimbL8": false,
+  "phase458G1Satisfied": false,
+  "phase458Evaluated": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase480Satisfied": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase482ArtifactMutated": false,
+  "zeroPhysicsCompute": true,
+  "symbolicFalsifierRun": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "accelerationAuthorized": false,
+  "o4Discharged": false,
+  "humanRulingAuthoredOrInferred": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "externalReviewPending": true,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a16BoundaryHeld": true,
+  "decision": "No exact-bound repository artifact registers a unique OS reflection, positive-time algebra, measure/domain, bilinear, Hermiticity proof, necessity classification, or witness embedding. Their mathematical existence or nonexistence was not adjudicated. Phase515 remains hard-gated."
+}

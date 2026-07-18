@@ -446,3 +446,38 @@ loader or checkpoint codec, satisfy Phase480 or Phase458, discharge O4,
 authorize sampling/HMC/production/launch, fill a source contract, or support a
 physical-unit claim. External review remains required and
 `promotedPhysicalMassClaimCount=0` throughout.
+
+## A16 — Phase482 action-specific theorem-definition closure (phases 514–516)
+
+The Phase511 council's second-ranked machine route may proceed as a strictly
+deterministic extension of Phase482. Phase514 must exact-bind the committed A5
+obstruction, Phase482 result and implementation, Phase478 G1 contract, the
+registered reflection data, and every repository artifact claimed to define
+the unchanged action and composite observable. Before any symbolic falsifier,
+it audits whether an exact reflection bilinear or crossing kernel, its
+positive-time observable algebra, Hermiticity rule, coupling domain, volume
+scope, and equality to the registered target inequality are actually defined.
+
+Phase514 is a frozen snapshot census, not a kernel constructor. It must credit
+source-defined or partial candidates while distinguishing them from theorem-
+registered fields, and it must report invalid input separately from a missing
+registered foundation. A convenient local kernel, changed reflection,
+reflected completion of the triangulation, substituted observable, floating-
+point matrix, or finite-volume survival cannot satisfy the audit. Missing
+source definitions are a terminal result, not permission to invent them; the
+audit does not adjudicate their mathematical existence or nonexistence.
+
+Phase515 is hard-gated on a separately exact-bound registered foundation and
+cannot be unlocked by Phase514's current snapshot. Only then may it test
+incidence completeness, allowed-volume embedding, full shared-edge boundary
+retention, mixed-face terms, and spatial gluing using exact arithmetic.
+Phase516 is hard-gated on Phase515 closure and may adjudicate an
+all-required-volume, all-required-coupling theorem or an exact in-scope target
+counterexample. Candidate-certificate failure kills only that candidate unless
+necessity is proved; finite success is never theorem evidence.
+
+A16 does not alter Phase482, evaluate Phase458, set G1, close L8, authorize
+Binder work, sampling, HMC, acceleration, production, or launch, discharge O4,
+fill a source contract, or support a physical-unit claim. Phases515–516 must
+not be created merely because their numbers are reserved. External review
+remains pending and `promotedPhysicalMassClaimCount=0` throughout.
