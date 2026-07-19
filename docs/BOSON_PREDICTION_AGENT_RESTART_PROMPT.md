@@ -396,11 +396,59 @@ pullback/boundary, O1/O2 positive-time membership, normalized measure/domain,
 target equality, Hermiticity, finite-scope, necessity, gluing, and all-scope
 certificates remain open. The package is not independent-review-ready,
 Phases515-516 remain locked, Phase458 G1 and L8 remain open, external review
-remains pending, and `promotedPhysicalMassClaimCount=0`. Registry 523+ is
-unassigned. Phase202 is now 306 passed / 3 standing failures after the three
+remains pending, and `promotedPhysicalMassClaimCount=0`. The later A19 section
+supersedes the former 523+ allocation frontier. Phase202 was 306 passed / 3 standing failures after the three
 A18 checklist rows. The mandatory incremental checkpoint ran 83 steps, skipped
 303, and ended at `boson-claim-integrity-verified` with zero promoted physical-
 mass claims.
+
+A5 ACTION/PARITY/PULLBACK CLOSURE (2026-07-18, Amendment A19;
+Phases523-526): registry entries 523-526 are allocated and implemented.
+Phase523 exact-binds fifteen executable/source and Phase517/520/522 artifacts.
+Its ten-row registered finite prerequisite inventory is grounded by exact
+anchors and per-member semantic fingerprints. One shared carrier/domain scope
+is member-invariant; nine action-sensitive scopes remain member-dependent.
+Universalization therefore removes member choice only for the shared scope
+and does not establish action-wide equivalence. The inventory is not claimed
+mathematically exhaustive. The terminal is
+`universalization-partial-member-dependence-remains`.
+
+Phase524 exact-binds twenty-one formula and precursor artifacts and refutes the
+serialized A5 even-action assertion for the identity member in an exact finite
+scope. From the bound identity-member formulas,
+`F(t omega)=t L+(t^2/2)W`. A signed-integer `n=3` witness includes all 4,050
+faces and gives `sum L dot W=1`, cubic coefficient `1/2`, and
+`S(+omega)-S(-omega)=1`. The SD2 member remains unresolved because its bound
+contraction/theta paths contain non-exact binary64 inverse/exponential
+coefficients and no exact global cancellation identity. No action member is
+selected and the finite identity result is not promoted beyond its scope.
+
+Phase525 exact-binds the Phase521/522 program/contract/output chain and both
+barycentric site/link survivor rows. At extents 3 and 4, both pass exact
+involution, order-complex chain, boundary-commutation, shared-incidence,
+slice, and independently derived carrier-orientation controls. This establishes
+finite combinatorial chain-and-carrier closure only. No action or observable
+is evaluated; action covariance and an action-carrier transformation remain
+unestablished.
+
+Phase526 exact-binds twenty-four Phase520-525 artifacts and applies a ten-level
+precedence with a 10/10 battery plus a 6/6 Phase525 consistency mutation
+battery. It retains the identity-member parity refutation, the unresolved SD2
+member, and both finite combinatorial survivors without inventing cross-product
+rows. Its earliest terminal remains
+`unresolved-member-dependence-for-named-a5-prerequisites`. O1/O2 positive-time
+membership, normalized measure/domain, target equality, Hermiticity,
+finite-to-general embedding, necessity, gluing, and all-scope certificates
+remain open. The package is not independent-review-ready; Phases515-516 remain
+locked, Phase458 G1 and L8 remain open, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`. Phase202 is 310 passed / 3 standing
+failures. Registry 527+ is unassigned.
+
+The mandatory A19 incremental checkpoint ran 84 steps and skipped 306. It
+ended at `boson-claim-integrity-verified`: O4 coverage was 31/31, the
+synthetic-overturn battery was 94/94, source deficits remained 15 W/Z and 14
+Higgs fields, Phase202 remained 310 passed / 3 standing failures, and
+`promotedPhysicalMassClaimCount=0`.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
@@ -1244,8 +1292,8 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-At that checkpoint registry 477-507 was allocated; the later A14-A18 sections
-supersede its former 508+ frontier, and the current registry frontier is 523+.
+At that checkpoint registry 477-507 was allocated; the later A14-A19 sections
+supersede its former 508+ frontier, and the current registry frontier is 527+.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

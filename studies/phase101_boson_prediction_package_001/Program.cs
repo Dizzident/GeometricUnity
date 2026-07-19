@@ -361,6 +361,10 @@ const string Phase519A5CandidateFoundationReadinessPath = "studies/phase519_a5_c
 const string Phase520A5ActionSubjectLineageParityAuditPath = "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json";
 const string Phase521A5FrozenReflectionCompatibleTriangulationCensusPath = "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json";
 const string Phase522A5FoundationCandidateReductionPath = "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json";
+const string Phase523A5ActionMemberUniversalizationAuditPath = "studies/phase523_a5_action_member_universalization_audit_001/output/a5_action_member_universalization_audit_summary.json";
+const string Phase524A5ExactOmegaParityDecompositionPath = "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition_summary.json";
+const string Phase525A5SurvivorReflectionPullbackBoundaryAuditPath = "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit_summary.json";
+const string Phase526A5CertificateReducerPath = "studies/phase526_a5_certificate_reducer_001/output/a5_certificate_reducer_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -762,6 +766,10 @@ using var phase519 = TryParseJson(Phase519A5CandidateFoundationReadinessPath);
 using var phase520 = TryParseJson(Phase520A5ActionSubjectLineageParityAuditPath);
 using var phase521 = TryParseJson(Phase521A5FrozenReflectionCompatibleTriangulationCensusPath);
 using var phase522 = TryParseJson(Phase522A5FoundationCandidateReductionPath);
+using var phase523 = TryParseJson(Phase523A5ActionMemberUniversalizationAuditPath);
+using var phase524 = TryParseJson(Phase524A5ExactOmegaParityDecompositionPath);
+using var phase525 = TryParseJson(Phase525A5SurvivorReflectionPullbackBoundaryAuditPath);
+using var phase526 = TryParseJson(Phase526A5CertificateReducerPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9172,6 +9180,95 @@ var package = new
             closesLimbL8 = JsonBool(phase522.RootElement, "closesLimbL8"),
             promotedPhysicalMassClaimCount = JsonInt(phase522.RootElement, "promotedPhysicalMassClaimCount"),
         },
+        a5ActionMemberUniversalizationAudit = phase523 is null ? null : new
+        {
+            status = JsonString(phase523.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase523.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase523.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase523.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase523.RootElement, "verdictKind"),
+            invariantPrerequisiteCount = JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "invariantCount"),
+            memberDependentPrerequisiteCount = JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "memberDependentCount"),
+            exhaustiveMathematicalCompletenessClaimed = JsonNestedBool(phase523.RootElement, "prerequisiteInventory", "exhaustiveMathematicalCompletenessClaimed"),
+            fullActionWideEquivalenceEstablished = JsonNestedBool(phase523.RootElement, "universalizationAudit", "fullActionWideEquivalenceEstablished"),
+            prerequisiteSatisfactionEstablished = JsonNestedBool(phase523.RootElement, "universalizationAudit", "prerequisiteSatisfactionEstablished"),
+            actionMemberSelected = JsonNestedBool(phase523.RootElement, "memberDomainAudit", "actionMemberSelected"),
+            externalReviewPending = JsonBool(phase523.RootElement, "externalReviewPending"),
+            theoremClaimed = JsonBool(phase523.RootElement, "theoremClaimed"),
+            reflectionPositivityEstablished = JsonBool(phase523.RootElement, "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonBool(phase523.RootElement, "reflectionPositivityRefuted"),
+            promotedPhysicalMassClaimCount = JsonInt(phase523.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        a5ExactOmegaParityDecomposition = phase524 is null ? null : new
+        {
+            status = JsonString(phase524.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase524.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase524.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase524.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase524.RootElement, "verdictKind"),
+            exactIdentityReductionCertified = JsonBool(phase524.RootElement, "exactIdentityReductionCertified"),
+            identityTotalLdotW = JsonNestedInt(phase524.RootElement, "identityExactWitness", "totalLdotW"),
+            identityOddTermSurvives = JsonNestedBool(phase524.RootElement, "identityExactWitness", "identityOddTermSurvives"),
+            sd2OmegaParityStatus = JsonArrayObjectString(phase524.RootElement, "memberDecompositions", "memberId", "sd2-id0/c0.5", "omegaParityStatus"),
+            actionMemberSelected = JsonBool(phase524.RootElement, "actionMemberSelected"),
+            externalReviewPending = JsonBool(phase524.RootElement, "externalReviewPending"),
+            theoremClaimed = JsonBool(phase524.RootElement, "theoremClaimed"),
+            targetCounterexampleClaimed = JsonBool(phase524.RootElement, "targetCounterexampleClaimed"),
+            reflectionPositivityEstablished = JsonBool(phase524.RootElement, "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonBool(phase524.RootElement, "reflectionPositivityRefuted"),
+            promotedPhysicalMassClaimCount = JsonInt(phase524.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        a5SurvivorReflectionPullbackBoundaryAudit = phase525 is null ? null : new
+        {
+            status = JsonString(phase525.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase525.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase525.RootElement, "contractValid"),
+            exactBindingInventoryValid = JsonBool(phase525.RootElement, "exactBindingInventoryValid"),
+            verdictKind = JsonString(phase525.RootElement, "verdictKind"),
+            completePairCount = JsonInt(phase525.RootElement, "completePairCount"),
+            finiteCombinatorialChainAndCarrierClosure = JsonBool(phase525.RootElement, "finiteCombinatorialChainAndCarrierClosure"),
+            positiveResultScope = JsonString(phase525.RootElement, "positiveResultScope"),
+            actionCovarianceEvaluated = JsonBool(phase525.RootElement, "actionCovarianceEvaluated"),
+            actionCarrierTransformationEstablished = JsonBool(phase525.RootElement, "actionCarrierTransformationEstablished"),
+            candidateSelected = JsonBool(phase525.RootElement, "candidateSelected"),
+            candidateGeometryRegistered = JsonBool(phase525.RootElement, "candidateGeometryRegistered"),
+            authorityFirewallsAllFalse = JsonObjectAllFalse(phase525.RootElement, "authorityFirewalls", 24),
+            externalReviewPending = JsonBool(phase525.RootElement, "externalReviewPending"),
+            theoremClaimed = JsonBool(phase525.RootElement, "theoremClaimed"),
+            reflectionPositivityEstablished = JsonBool(phase525.RootElement, "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonBool(phase525.RootElement, "reflectionPositivityRefuted"),
+            promotedPhysicalMassClaimCount = JsonInt(phase525.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        a5CertificateReducer = phase526 is null ? null : new
+        {
+            status = JsonString(phase526.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase526.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase526.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase526.RootElement, "exactBindingsValid"),
+            exactBindingInventoryValid = JsonBool(phase526.RootElement, "exactBindingInventoryValid"),
+            expectedCurrentVerdictMatched = JsonBool(phase526.RootElement, "expectedCurrentVerdictMatched"),
+            phase525ConsistencyBatteryPassed = JsonBool(phase526.RootElement, "phase525ConsistencyBatteryPassed"),
+            verdictKind = JsonString(phase526.RootElement, "verdictKind"),
+            memberDependentPrerequisiteCount = JsonNestedInt(phase526.RootElement, "memberDependenceReduction", "memberDependentPrerequisiteCount"),
+            completeFinitePairCount = JsonNestedInt(phase526.RootElement, "finitePullbackBoundaryReduction", "completeFinitePairCount"),
+            identityParityDecisivelyRefuted = JsonNestedNestedBool(phase526.RootElement, "omegaParityReduction", "identityMember", "decisiveExactRefutation"),
+            sd2ParityUnresolved = JsonNestedNestedBool(phase526.RootElement, "omegaParityReduction", "sd2Member", "unresolved"),
+            candidatePackageIndependentMathematicalReviewReady = JsonBool(phase526.RootElement, "candidatePackageIndependentMathematicalReviewReady"),
+            actionMemberSelected = JsonBool(phase526.RootElement, "actionMemberSelected"),
+            candidateSelected = JsonBool(phase526.RootElement, "candidateSelected"),
+            actionOrGeometryRegistered = JsonBool(phase526.RootElement, "actionOrGeometryRegistered"),
+            phase515MayBeCreated = JsonBool(phase526.RootElement, "phase515MayBeCreated"),
+            phase516MayBeCreated = JsonBool(phase526.RootElement, "phase516MayBeCreated"),
+            phase458G1Satisfied = JsonBool(phase526.RootElement, "phase458G1Satisfied"),
+            closesLimbL8 = JsonBool(phase526.RootElement, "closesLimbL8"),
+            externalReviewPending = JsonBool(phase526.RootElement, "externalReviewPending"),
+            theoremClaimed = JsonBool(phase526.RootElement, "theoremClaimed"),
+            targetCounterexampleClaimed = JsonBool(phase526.RootElement, "targetCounterexampleClaimed"),
+            reflectionPositivityEstablished = JsonBool(phase526.RootElement, "reflectionPositivityEstablished"),
+            reflectionPositivityRefuted = JsonBool(phase526.RootElement, "reflectionPositivityRefuted"),
+            allExecutionAndPromotionAuthorities = JsonBool(phase526.RootElement, "allExecutionAndPromotionAuthorities"),
+            promotedPhysicalMassClaimCount = JsonInt(phase526.RootElement, "promotedPhysicalMassClaimCount"),
+        },
     },
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new
@@ -12439,6 +12536,34 @@ static string? JsonNestedNestedString(JsonElement element, string objectName, st
         && nested.ValueKind == JsonValueKind.Object
         ? JsonString(nested, propertyName)
         : null;
+
+static string? JsonArrayObjectString(
+    JsonElement element,
+    string arrayName,
+    string keyName,
+    string keyValue,
+    string propertyName)
+{
+    if (!element.TryGetProperty(arrayName, out var array) || array.ValueKind != JsonValueKind.Array)
+        return null;
+
+    foreach (var row in array.EnumerateArray())
+    {
+        if (JsonString(row, keyName) == keyValue)
+            return JsonString(row, propertyName);
+    }
+
+    return null;
+}
+
+static bool? JsonObjectAllFalse(JsonElement element, string objectName, int expectedPropertyCount)
+{
+    if (!element.TryGetProperty(objectName, out var value) || value.ValueKind != JsonValueKind.Object)
+        return null;
+
+    var properties = value.EnumerateObject().ToArray();
+    return properties.Length == expectedPropertyCount && properties.All(property => property.Value.ValueKind == JsonValueKind.False);
+}
 
 static JsonDocument? TryParseJson(string path) =>
     File.Exists(path) ? JsonDocument.Parse(File.ReadAllText(path)) : null;

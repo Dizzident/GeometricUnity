@@ -270,6 +270,10 @@ const string Phase519Path = "studies/phase519_a5_candidate_foundation_readiness_
 const string Phase520Path = "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json";
 const string Phase521Path = "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json";
 const string Phase522Path = "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json";
+const string Phase523Path = "studies/phase523_a5_action_member_universalization_audit_001/output/a5_action_member_universalization_audit_summary.json";
+const string Phase524Path = "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition_summary.json";
+const string Phase525Path = "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit_summary.json";
+const string Phase526Path = "studies/phase526_a5_certificate_reducer_001/output/a5_certificate_reducer_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -591,6 +595,10 @@ using var phase519 = File.Exists(Phase519Path) ? JsonDocument.Parse(File.ReadAll
 using var phase520 = File.Exists(Phase520Path) ? JsonDocument.Parse(File.ReadAllText(Phase520Path)) : null;
 using var phase521 = File.Exists(Phase521Path) ? JsonDocument.Parse(File.ReadAllText(Phase521Path)) : null;
 using var phase522 = File.Exists(Phase522Path) ? JsonDocument.Parse(File.ReadAllText(Phase522Path)) : null;
+using var phase523 = File.Exists(Phase523Path) ? JsonDocument.Parse(File.ReadAllText(Phase523Path)) : null;
+using var phase524 = File.Exists(Phase524Path) ? JsonDocument.Parse(File.ReadAllText(Phase524Path)) : null;
+using var phase525 = File.Exists(Phase525Path) ? JsonDocument.Parse(File.ReadAllText(Phase525Path)) : null;
+using var phase526 = File.Exists(Phase526Path) ? JsonDocument.Parse(File.ReadAllText(Phase526Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7388,6 +7396,121 @@ var a5FoundationCandidateReductionPassed = phase522 is not null
     && JsonBool(phase522.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase522.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase522.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5ActionMemberUniversalizationAuditPassed = phase523 is not null
+    && JsonBool(phase523.RootElement, "inputsValid") is true
+    && JsonBool(phase523.RootElement, "contractValid") is true
+    && JsonBool(phase523.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase523.RootElement, "lineageInputsValid") is true
+    && JsonString(phase523.RootElement, "verdictKind") == "universalization-partial-member-dependence-remains"
+    && JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "count") == 10
+    && JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "invariantCount") == 1
+    && JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "memberDependentCount") == 9
+    && JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "unresolvedCount") == 0
+    && JsonNestedBool(phase523.RootElement, "prerequisiteInventory", "registeredInventoryCoverageComplete") is true
+    && JsonNestedBool(phase523.RootElement, "prerequisiteInventory", "exhaustiveMathematicalCompletenessClaimed") is false
+    && JsonNestedBool(phase523.RootElement, "prerequisiteInventory", "classificationsDerivedFromContractDependencyDimensions") is false
+    && JsonNestedBool(phase523.RootElement, "universalizationAudit", "partialUniversalization") is true
+    && JsonNestedBool(phase523.RootElement, "universalizationAudit", "fullActionWideEquivalenceEstablished") is false
+    && JsonNestedBool(phase523.RootElement, "universalizationAudit", "prerequisiteSatisfactionEstablished") is false
+    && JsonNestedBool(phase523.RootElement, "memberDomainAudit", "actionMemberSelected") is false
+    && JsonBool(phase523.RootElement, "externalReviewPending") is true
+    && JsonBool(phase523.RootElement, "theoremClaimed") is false
+    && JsonBool(phase523.RootElement, "targetCounterexampleClaimed") is false
+    && JsonBool(phase523.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase523.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase523.RootElement, "allExecutionAndPromotionAuthorities") is false
+    && JsonBool(phase523.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase523.RootElement, "closesLimbL8") is false
+    && JsonInt(phase523.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5ExactOmegaParityDecompositionPassed = phase524 is not null
+    && JsonBool(phase524.RootElement, "inputsValid") is true
+    && JsonBool(phase524.RootElement, "contractValid") is true
+    && JsonBool(phase524.RootElement, "exactBindingsValid") is true
+    && JsonString(phase524.RootElement, "verdictKind") == "exact-omega-parity-refuted-identity-member"
+    && JsonBool(phase524.RootElement, "sourceFormulaCoverageLedgerComplete") is true
+    && JsonBool(phase524.RootElement, "termRequirementsFrozenAndComplete") is true
+    && JsonBool(phase524.RootElement, "emittedTermMappingsMatchContract") is true
+    && JsonBool(phase524.RootElement, "exactIdentityReductionCertified") is true
+    && JsonBool(phase524.RootElement, "precedenceBatteryPassed") is true
+    && JsonNestedInt(phase524.RootElement, "identityExactWitness", "totalLdotW") == 1
+    && JsonNestedInt(phase524.RootElement, "identityExactWitness", "actionAtPlusMinusDifferenceNumerator") == 1
+    && JsonNestedInt(phase524.RootElement, "identityExactWitness", "actionAtPlusMinusDifferenceDenominator") == 1
+    && JsonNestedBool(phase524.RootElement, "identityExactWitness", "identityOddTermSurvives") is true
+    && JsonArrayObjectString(phase524.RootElement, "memberDecompositions", "memberId", "sd2-id0/c0.5", "omegaParityStatus")
+        == "unresolved-non-exact-coefficients-and-no-global-cancellation-identity"
+    && JsonBool(phase524.RootElement, "actionMemberSelected") is false
+    && JsonBool(phase524.RootElement, "externalReviewPending") is true
+    && JsonBool(phase524.RootElement, "theoremClaimed") is false
+    && JsonBool(phase524.RootElement, "targetCounterexampleClaimed") is false
+    && JsonBool(phase524.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase524.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase524.RootElement, "productionActionOrGeometryRegistered") is false
+    && JsonBool(phase524.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase524.RootElement, "closesLimbL8") is false
+    && JsonInt(phase524.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5SurvivorReflectionPullbackBoundaryAuditPassed = phase525 is not null
+    && JsonBool(phase525.RootElement, "inputsValid") is true
+    && JsonBool(phase525.RootElement, "contractValid") is true
+    && JsonBool(phase525.RootElement, "exactBindingInventoryValid") is true
+    && JsonBool(phase525.RootElement, "precursorSemanticsValid") is true
+    && JsonString(phase525.RootElement, "verdictKind") == "finite-dual-survivor-pullback-boundary-closed"
+    && JsonInt(phase525.RootElement, "completePairCount") == 2
+    && JsonBool(phase525.RootElement, "finiteCombinatorialChainAndCarrierClosure") is true
+    && JsonString(phase525.RootElement, "positiveResultScope") == "finite-combinatorial-chain-and-carrier-closure-only"
+    && JsonBool(phase525.RootElement, "actionCovarianceEvaluated") is false
+    && JsonBool(phase525.RootElement, "actionCarrierTransformationEstablished") is false
+    && JsonBool(phase525.RootElement, "precedenceBatteryPassed") is true
+    && JsonBool(phase525.RootElement, "candidateSelected") is false
+    && JsonBool(phase525.RootElement, "candidateGeometryRegistered") is false
+    && JsonObjectAllFalse(phase525.RootElement, "authorityFirewalls", 24) is true
+    && JsonBool(phase525.RootElement, "externalReviewPending") is true
+    && JsonBool(phase525.RootElement, "theoremClaimed") is false
+    && JsonBool(phase525.RootElement, "targetCounterexampleClaimed") is false
+    && JsonBool(phase525.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase525.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase525.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase525.RootElement, "closesLimbL8") is false
+    && JsonInt(phase525.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var a5CertificateReducerPassed = phase526 is not null
+    && JsonBool(phase526.RootElement, "inputsValid") is true
+    && JsonBool(phase526.RootElement, "contractValid") is true
+    && JsonBool(phase526.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase526.RootElement, "exactBindingInventoryValid") is true
+    && JsonBool(phase526.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase526.RootElement, "expectedCurrentVerdictMatched") is true
+    && JsonString(phase526.RootElement, "verdictKind") == "unresolved-member-dependence-for-named-a5-prerequisites"
+    && JsonNestedInt(phase526.RootElement, "memberDependenceReduction", "namedPrerequisiteCount") == 10
+    && JsonNestedInt(phase526.RootElement, "memberDependenceReduction", "invariantPrerequisiteCount") == 1
+    && JsonNestedInt(phase526.RootElement, "memberDependenceReduction", "memberDependentPrerequisiteCount") == 9
+    && JsonNestedBool(phase526.RootElement, "memberDependenceReduction", "actionWideEquivalenceEstablished") is false
+    && phase526.RootElement.TryGetProperty("omegaParityReduction", out var p526Parity)
+    && p526Parity.TryGetProperty("identityMember", out var p526Identity)
+    && JsonBool(p526Identity, "decisiveExactRefutation") is true
+    && JsonInt(p526Identity, "actionPlusMinusDifferenceNumerator") == 1
+    && JsonInt(p526Identity, "actionPlusMinusDifferenceDenominator") == 1
+    && p526Parity.TryGetProperty("sd2Member", out var p526Sd2)
+    && JsonBool(p526Sd2, "unresolved") is true
+    && phase526.RootElement.TryGetProperty("finitePullbackBoundaryReduction", out var p526Finite)
+    && JsonInt(p526Finite, "completeFinitePairCount") == 2
+    && JsonBool(p526Finite, "pairMenuLineageExact") is true
+    && JsonBool(p526Finite, "noCompleteFiniteSurvivor") is false
+    && JsonBool(phase526.RootElement, "precedenceBatteryPassed") is true
+    && JsonBool(phase526.RootElement, "phase525ConsistencyBatteryPassed") is true
+    && JsonBool(phase526.RootElement, "candidatePackageIndependentMathematicalReviewReady") is false
+    && JsonBool(phase526.RootElement, "externalReviewPending") is true
+    && JsonBool(phase526.RootElement, "actionMemberSelected") is false
+    && JsonBool(phase526.RootElement, "candidateSelected") is false
+    && JsonBool(phase526.RootElement, "actionOrGeometryRegistered") is false
+    && JsonBool(phase526.RootElement, "phase515MayBeCreated") is false
+    && JsonBool(phase526.RootElement, "phase516MayBeCreated") is false
+    && JsonBool(phase526.RootElement, "theoremClaimed") is false
+    && JsonBool(phase526.RootElement, "targetCounterexampleClaimed") is false
+    && JsonBool(phase526.RootElement, "reflectionPositivityEstablished") is false
+    && JsonBool(phase526.RootElement, "reflectionPositivityRefuted") is false
+    && JsonBool(phase526.RootElement, "allExecutionAndPromotionAuthorities") is false
+    && JsonBool(phase526.RootElement, "phase458G1Satisfied") is false
+    && JsonBool(phase526.RootElement, "closesLimbL8") is false
+    && JsonInt(phase526.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10254,6 +10377,30 @@ var checklist = new[]
         phase522 is null ? "Phase522 artifact not materialized" : $"inputsValid={JsonBool(phase522.RootElement, "inputsValid")}; verdictKind={JsonString(phase522.RootElement, "verdictKind")}; actionOrParityUnresolved={JsonNestedBool(phase522.RootElement, "blockers", "actionMemberOrOmegaParityUnresolved")}; survivorCount={JsonNestedInt(phase522.RootElement, "candidateReduction", "survivorCount")}; candidateRegistered={JsonNestedBool(phase522.RootElement, "candidateReduction", "candidateRegistered")}; reviewReady={JsonBool(phase522.RootElement, "reviewReady")}; phase515Locked={JsonBool(phase522.RootElement, "phase515Locked")}; phase516Locked={JsonBool(phase522.RootElement, "phase516Locked")}; promotedPhysicalMassClaimCount={JsonInt(phase522.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase522Path),
     new ObjectiveChecklistItem(
+        "a5-action-member-universalization-audit",
+        "Classify the frozen A5 prerequisite inventory across both executable action members without selecting a member or promoting subset agreement.",
+        a5ActionMemberUniversalizationAuditPassed ? "passed" : "failed",
+        phase523 is null ? "Phase523 artifact not materialized" : $"inputsValid={JsonBool(phase523.RootElement, "inputsValid")}; verdictKind={JsonString(phase523.RootElement, "verdictKind")}; invariant={JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "invariantCount")}; dependent={JsonNestedInt(phase523.RootElement, "prerequisiteInventory", "memberDependentCount")}; exhaustive={JsonNestedBool(phase523.RootElement, "prerequisiteInventory", "exhaustiveMathematicalCompletenessClaimed")}; prerequisiteEstablished={JsonNestedBool(phase523.RootElement, "universalizationAudit", "prerequisiteSatisfactionEstablished")}; selected={JsonNestedBool(phase523.RootElement, "memberDomainAudit", "actionMemberSelected")}; promotedPhysicalMassClaimCount={JsonInt(phase523.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase523Path),
+    new ObjectiveChecklistItem(
+        "a5-exact-omega-parity-decomposition",
+        "Decompose both executable members under omega sign reversal and preserve the exact identity-member finite refutation without extending it to SD2.",
+        a5ExactOmegaParityDecompositionPassed ? "passed" : "failed",
+        phase524 is null ? "Phase524 artifact not materialized" : $"inputsValid={JsonBool(phase524.RootElement, "inputsValid")}; verdictKind={JsonString(phase524.RootElement, "verdictKind")}; totalLdotW={JsonNestedInt(phase524.RootElement, "identityExactWitness", "totalLdotW")}; exactReduction={JsonBool(phase524.RootElement, "exactIdentityReductionCertified")}; sd2Status={JsonArrayObjectString(phase524.RootElement, "memberDecompositions", "memberId", "sd2-id0/c0.5", "omegaParityStatus")}; selected={JsonBool(phase524.RootElement, "actionMemberSelected")}; promotedPhysicalMassClaimCount={JsonInt(phase524.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase524Path),
+    new ObjectiveChecklistItem(
+        "a5-survivor-reflection-pullback-boundary-audit",
+        "Check exact finite combinatorial chain, carrier, boundary, and slice closure for both surviving barycentric reflection pairs without asserting action covariance.",
+        a5SurvivorReflectionPullbackBoundaryAuditPassed ? "passed" : "failed",
+        phase525 is null ? "Phase525 artifact not materialized" : $"inputsValid={JsonBool(phase525.RootElement, "inputsValid")}; verdictKind={JsonString(phase525.RootElement, "verdictKind")}; exactInventory={JsonBool(phase525.RootElement, "exactBindingInventoryValid")}; completePairs={JsonInt(phase525.RootElement, "completePairCount")}; actionCovariance={JsonBool(phase525.RootElement, "actionCovarianceEvaluated")}; actionCarrier={JsonBool(phase525.RootElement, "actionCarrierTransformationEstablished")}; authorityFirewalls={JsonObjectAllFalse(phase525.RootElement, "authorityFirewalls", 24)}; promotedPhysicalMassClaimCount={JsonInt(phase525.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase525Path),
+    new ObjectiveChecklistItem(
+        "a5-certificate-reducer",
+        "Apply A19 precedence to exact member, parity, and finite combinatorial evidence while retaining row-local survivors and all later theorem obligations.",
+        a5CertificateReducerPassed ? "passed" : "failed",
+        phase526 is null ? "Phase526 artifact not materialized" : $"inputsValid={JsonBool(phase526.RootElement, "inputsValid")}; verdictKind={JsonString(phase526.RootElement, "verdictKind")}; exactInventory={JsonBool(phase526.RootElement, "exactBindingInventoryValid")}; currentVerdictMatched={JsonBool(phase526.RootElement, "expectedCurrentVerdictMatched")}; phase525Consistency={JsonBool(phase526.RootElement, "phase525ConsistencyBatteryPassed")}; dependent={JsonNestedInt(phase526.RootElement, "memberDependenceReduction", "memberDependentPrerequisiteCount")}; finitePairs={JsonNestedInt(phase526.RootElement, "finitePullbackBoundaryReduction", "completeFinitePairCount")}; reviewReady={JsonBool(phase526.RootElement, "candidatePackageIndependentMathematicalReviewReady")}; promotedPhysicalMassClaimCount={JsonInt(phase526.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase526Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -10853,6 +11000,34 @@ static int? JsonNestedNestedInt(JsonElement element, string objectName, string n
         && nestedProperty.ValueKind == JsonValueKind.Object
         ? JsonInt(nestedProperty, propertyName)
         : null;
+
+static string? JsonArrayObjectString(
+    JsonElement element,
+    string arrayName,
+    string keyName,
+    string keyValue,
+    string propertyName)
+{
+    if (!element.TryGetProperty(arrayName, out var array) || array.ValueKind != JsonValueKind.Array)
+        return null;
+
+    foreach (var row in array.EnumerateArray())
+    {
+        if (JsonString(row, keyName) == keyValue)
+            return JsonString(row, propertyName);
+    }
+
+    return null;
+}
+
+static bool? JsonObjectAllFalse(JsonElement element, string objectName, int expectedPropertyCount)
+{
+    if (!element.TryGetProperty(objectName, out var value) || value.ValueKind != JsonValueKind.Object)
+        return null;
+
+    var properties = value.EnumerateObject().ToArray();
+    return properties.Length == expectedPropertyCount && properties.All(property => property.Value.ValueKind == JsonValueKind.False);
+}
 
 static IReadOnlyList<int> JsonIntArray(JsonElement element, string propertyName)
 {

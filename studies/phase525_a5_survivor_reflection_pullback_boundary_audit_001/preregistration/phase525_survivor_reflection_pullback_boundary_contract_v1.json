@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase525-a19-survivor-reflection-pullback-boundary-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "contractStatus": "frozen-final-before-survivor-scoring",
+  "menuFrozenBeforeScoring": true,
+  "exactInputBindings": [
+    {
+      "id": "phase521-summary",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json",
+      "sha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11"
+    },
+    {
+      "id": "phase521-contract",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/preregistration/phase521_frozen_reflection_compatible_triangulation_census_contract_v1.json",
+      "sha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3"
+    },
+    {
+      "id": "phase521-program",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Program.cs",
+      "sha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615"
+    },
+    {
+      "id": "phase522-summary",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json",
+      "sha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b"
+    },
+    {
+      "id": "phase522-contract",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json",
+      "sha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad"
+    },
+    {
+      "id": "phase522-program",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs",
+      "sha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7"
+    }
+  ],
+  "geometryId": "periodic-cubical-cell-poset-barycentric",
+  "extentMenu": [3, 4],
+  "survivorPairMenu": [
+    {
+      "candidateId": "periodic-cubical-cell-poset-barycentric::site-centered-axis0",
+      "reflectionId": "site-centered-axis0",
+      "axis": 0,
+      "offset": 0,
+      "inactiveAxis0BaseMap": "b0 -> -b0 mod n",
+      "activeAxis0BaseMap": "b0 -> -b0-1 mod n"
+    },
+    {
+      "candidateId": "periodic-cubical-cell-poset-barycentric::link-centered-axis0",
+      "reflectionId": "link-centered-axis0",
+      "axis": 0,
+      "offset": 1,
+      "inactiveAxis0BaseMap": "b0 -> 1-b0 mod n",
+      "activeAxis0BaseMap": "b0 -> -b0 mod n"
+    }
+  ],
+  "cellRepresentation": "canonical-base-coordinate-in-Zn4-plus-active-axis-mask-0-through-15",
+  "orientedSimplexRule": "strictly-increasing-cell-rank-order",
+  "boundaryRule": "d[v0,...,vk]=sum_i(-1)^i[v0,...,omit(vi),...,vk]",
+  "cubicalCarrierOrientationRule": "reflection-sign-minus-iff-axis0-is-active",
+  "doubledSliceRule": "tau2=(2*base0+axis0-active-bit)-offset mod 2n",
+  "precedence": [
+    "invalid-or-drifted-input",
+    "no-survivor-complete-finite-pullback-boundary",
+    "partial-survivor-finite-pullback-boundary",
+    "finite-dual-survivor-pullback-boundary-closed"
+  ],
+  "expectedCurrentVerdict": "finite-dual-survivor-pullback-boundary-closed",
+  "candidateRegistrationAllowed": false,
+  "productionGeometrySelectionAllowed": false,
+  "allVolumeEmbeddingOrGluingClaimAllowed": false,
+  "positiveTimeAlgebraClaimAllowed": false,
+  "reflectionPositivityClaimAllowed": false,
+  "samplingOrProductionAllowed": false,
+  "phase515Or516CreationOrUnlockAllowed": false,
+  "externalReviewPending": true,
+  "physicalClaimAllowed": false,
+  "positiveResultScope": "finite-combinatorial-chain-and-carrier-closure-only",
+  "actionCovarianceEvaluated": false,
+  "actionCarrierTransformationClaimAllowed": false,
+  "authorityFirewalls": {
+    "candidateSelectionAllowed": false,
+    "candidateRegistrationAllowed": false,
+    "productionGeometrySelectionAllowed": false,
+    "allVolumeEmbeddingOrGluingClaimAllowed": false,
+    "positiveTimeAlgebraClaimAllowed": false,
+    "reflectionPositivityRulingAllowed": false,
+    "theoremOrCounterexampleAllowed": false,
+    "phase515CreationOrUnlockAllowed": false,
+    "phase516CreationOrUnlockAllowed": false,
+    "phase458G1SatisfactionAllowed": false,
+    "limbL8ClosureAllowed": false,
+    "phase458EvaluationAllowed": false,
+    "phase481PackWorkAllowed": false,
+    "actionOrObservableEvaluationAllowed": false,
+    "normalizedMeasureEvaluationAllowed": false,
+    "samplingOrReprocessingAllowed": false,
+    "hmcAllowed": false,
+    "benchmarkAllowed": false,
+    "productionAllowed": false,
+    "launchAllowed": false,
+    "accelerationAllowed": false,
+    "o4OrHumanRulingAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false
+  },
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "contractId": "phase523-a19-action-member-universalization-v2",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "frozenBeforeClassification": true,
+  "expectedBindings": [
+    { "id": "phase452-program", "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs", "sha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0" },
+    { "id": "phase452-summary", "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json", "sha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009" },
+    { "id": "shiab-operator", "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs", "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112" },
+    { "id": "shiab-family-spec", "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs", "sha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef" },
+    { "id": "phase456-generator", "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs", "sha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5" },
+    { "id": "phase456-a5", "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json", "sha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974" },
+    { "id": "phase517-program", "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs", "sha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c" },
+    { "id": "phase517-contract", "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json", "sha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2" },
+    { "id": "phase517-summary", "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json", "sha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623" },
+    { "id": "phase520-program", "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs", "sha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799" },
+    { "id": "phase520-contract", "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json", "sha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd" },
+    { "id": "phase520-summary", "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json", "sha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f" },
+    { "id": "phase522-program", "path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs", "sha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7" },
+    { "id": "phase522-contract", "path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json", "sha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad" },
+    { "id": "phase522-summary", "path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json", "sha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b" }
+  ],
+  "executableMemberDomain": [
+    { "memberId": "identity", "phi1": "id0", "phi2": "none", "epsilonMode": "trivial" },
+    { "memberId": "sd2-id0/c0.5", "phi1": "sd2", "phi2": "id0", "epsilonMode": "independent-theta" }
+  ],
+  "registeredA5PrerequisiteInventory": [
+    {
+      "id": "kinematic-carrier-and-complete-family-domain",
+      "scope": "the shared executable algebra, mesh carrier, action objective form, and complete two-member execution domain",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": [],
+      "requirementEvidence": [
+        { "bindingId": "phase452-program", "anchor": "var memberNames = new[] { \"identity\", \"sd2-id0/c0.5\" }" },
+        { "bindingId": "phase452-program", "anchor": "LieAlgebraFactory.CreateSu2WithTracePairing()" },
+        { "bindingId": "shiab-operator", "anchor": "objective *= 0.5" }
+      ]
+    },
+    {
+      "id": "executable-action-subject-binding",
+      "scope": "an exact executable binding from the A5 proposition to each action subject under consideration",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": ["member-id"],
+      "requirementEvidence": [
+        { "bindingId": "phase456-generator", "anchor": "A5Result AttemptA5GaussianDomination()" }
+      ]
+    },
+    {
+      "id": "complete-action-functional-coverage",
+      "scope": "the complete executable action formula and every member-specific contraction and dressing",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": ["phi1", "phi2", "epsilon-mode", "theta-dependence"],
+      "requirementEvidence": [
+        { "bindingId": "shiab-operator", "anchor": "public FieldTensor EvaluateWithTheta" }
+      ]
+    },
+    {
+      "id": "exact-omega-parity",
+      "scope": "an exact derivation cancelling every omega-sign-odd action contribution",
+      "origin": "a5-explicit",
+      "dependencyDimensions": ["complete-action-functional"],
+      "requirementEvidence": [
+        { "bindingId": "phase456-generator", "anchor": "exact Z_2 symmetry omega -> -omega" }
+      ]
+    },
+    {
+      "id": "composite-correlation-transport",
+      "scope": "the action-specific implication from controlled lower correlations to the connected O2 channel",
+      "origin": "a5-explicit",
+      "dependencyDimensions": ["action-functional", "o2-definition"],
+      "requirementEvidence": [
+        { "bindingId": "phase456-generator", "anchor": "O-A compositeness: field-level infrared/Gaussian-domination bounds control" }
+      ]
+    },
+    {
+      "id": "reflection-positivity-for-unchanged-action",
+      "scope": "reflection positivity for the unchanged member action, measure, geometry, and observable algebra",
+      "origin": "a5-explicit",
+      "dependencyDimensions": ["action-functional", "measure", "observable-algebra"],
+      "requirementEvidence": [
+        { "bindingId": "phase456-generator", "anchor": "O-B reflection positivity: Gaussian domination presupposes reflection positivity" }
+      ]
+    },
+    {
+      "id": "face-local-interaction-factorization",
+      "scope": "the interaction and factorization hypothesis for the member's dressed curvature carrier",
+      "origin": "a5-explicit",
+      "dependencyDimensions": ["member-contraction", "theta-dressing"],
+      "requirementEvidence": [
+        { "bindingId": "phase456-generator", "anchor": "non-locality: the quartic coupling is plaquette/face-local, not single-site" }
+      ]
+    },
+    {
+      "id": "o1-o2-dependency-and-positive-time-membership",
+      "scope": "exact O1/O2 dependency and positive-time-algebra membership",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": ["action-functional", "o2-definition", "reflection"],
+      "requirementEvidence": [
+        { "bindingId": "phase522-program", "anchor": "exact O1/O2 dependency and positive-time-algebra membership certificate" }
+      ]
+    },
+    {
+      "id": "normalized-measure-domain-target-equality-hermiticity",
+      "scope": "normalized measure and domain, candidate-to-target equality, and Hermiticity",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": ["action-functional", "theta-domain", "candidate"],
+      "requirementEvidence": [
+        { "bindingId": "phase522-program", "anchor": "normalized measure/domain, target-equality, and Hermiticity certificates" }
+      ]
+    },
+    {
+      "id": "necessity-gluing-and-all-scope",
+      "scope": "necessity, shared-edge gluing, and all-coupling/all-volume closure",
+      "origin": "audit-authored-lineage-refinement",
+      "dependencyDimensions": ["action-functional", "carrier", "volume", "coupling"],
+      "requirementEvidence": [
+        { "bindingId": "phase522-program", "anchor": "necessity, shared-edge gluing, and all-coupling/all-volume certificates" }
+      ]
+    }
+  ],
+  "registeredInventoryScope": "This finite inventory covers the explicit A5 obstructions and exact-bound lineage refinements registered above. It is complete for this frozen registered source-anchor menu only and does not claim exhaustive mathematical completeness outside it.",
+  "exhaustiveMathematicalInventoryCompletenessClaimed": false,
+  "classificationRule": "For every registered row, independently constructed identity and sd2 executable/source semantic fingerprints are compared. Contract dependencyDimensions are recorded metadata only and never determine classification. Universal quantification removes member selection only when the full semantic fingerprints are identical.",
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "prerequisite-inventory-incomplete",
+    "universalization-partial-member-dependence-remains",
+    "universalization-removes-member-selection-dependence-only"
+  ],
+  "expectedCurrentVerdict": "universalization-partial-member-dependence-remains",
+  "selectionPolicy": "No member is selected, ranked, canonicalized, or inferred from A5 prose.",
+  "properSubsetAgreementIsActionWideEquivalence": false,
+  "externalReviewPending": true,
+  "allExecutionAndPromotionAuthorities": false,
+  "phase481WorkAllowed": false,
+  "phase458EvaluationAllowed": false,
+  "sourceContractApplicationAllowed": false,
+  "o4OrHumanRulingAllowed": false,
+  "physicalTargetTuningAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "samplingAllowed": false,
+  "hmcAllowed": false,
+  "reprocessingAllowed": false,
+  "benchmarkAllowed": false,
+  "productionAllocationAllowed": false,
+  "productionAllowed": false,
+  "launchAllowed": false,
+  "accelerationAllowed": false,
+  "theoremOrCounterexampleAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

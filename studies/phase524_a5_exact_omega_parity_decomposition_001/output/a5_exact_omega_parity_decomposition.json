@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "phase": 524,
+  "phaseId": "phase524-a5-exact-omega-parity-decomposition",
+  "contractId": "phase524-a19-exact-omega-parity-decomposition-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "inputsValid": true,
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "precursorFindingsValid": true,
+  "sourceFormulaCoverageComplete": true,
+  "sourceFormulaCoverageLedgerComplete": true,
+  "exactIdentityReductionCertified": true,
+  "incidenceAveragingIdentityCertified": true,
+  "a5ParityAssertionsExactBound": true,
+  "termRequirementsFrozenAndComplete": true,
+  "emittedTermMappingsMatchContract": true,
+  "precedenceBatteryPassed": true,
+  "precedenceBattery": [
+    {
+      "caseId": "invalid",
+      "expectedVerdict": "invalid-or-drifted-input",
+      "actualVerdict": "invalid-or-drifted-input",
+      "passed": true
+    },
+    {
+      "caseId": "identity-refuted",
+      "expectedVerdict": "exact-omega-parity-refuted-identity-member",
+      "actualVerdict": "exact-omega-parity-refuted-identity-member",
+      "passed": true
+    },
+    {
+      "caseId": "coverage-incomplete",
+      "expectedVerdict": "executable-formula-coverage-incomplete",
+      "actualVerdict": "executable-formula-coverage-incomplete",
+      "passed": true
+    },
+    {
+      "caseId": "coefficients-nonexact",
+      "expectedVerdict": "non-exact-coefficients-block-exact-parity",
+      "actualVerdict": "non-exact-coefficients-block-exact-parity",
+      "passed": true
+    },
+    {
+      "caseId": "cancellation-unresolved",
+      "expectedVerdict": "odd-cancellation-unresolved",
+      "actualVerdict": "odd-cancellation-unresolved",
+      "passed": true
+    },
+    {
+      "caseId": "both-even",
+      "expectedVerdict": "both-members-exactly-even",
+      "actualVerdict": "both-members-exactly-even",
+      "passed": true
+    }
+  ],
+  "verdictKind": "exact-omega-parity-refuted-identity-member",
+  "terminalStatus": "a5-exact-omega-parity-decomposition-exact-omega-parity-refuted-identity-member",
+  "decision": "The exact rational action implied by the exact-bound identity-member formulas on the full n=3 lattice has a surviving degree-three omega term. For the frozen integer direction, sum_f L_f dot W_f = 1, hence the coefficient of t^3 in S_B(t omega) is 1/2 and S_B(omega)-S_B(-omega)=1. Omega-sign evenness is therefore refuted for the identity member in this finite formula-bound scope. The sd2 member remains unresolved and no action member is selected.",
+  "sourceFormulaCoverageLedger": [
+    {
+      "formulaId": "phase452-member-inventory",
+      "bindingId": "phase452-program",
+      "requiredAnchors": [
+        "var memberNames = new[] { \u0022identity\u0022, \u0022sd2-id0/c0.5\u0022 }",
+        "isControl ? controlSpec : sd2Spec"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "identity-member-definition",
+      "bindingId": "phase452-program",
+      "requiredAnchors": [
+        "Phi1 = InvariantElementSpec.Id0, Phi2 = InvariantElementSpec.None",
+        "EpsilonMode = \u0022trivial\u0022"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "sd2-member-definition",
+      "bindingId": "phase452-program",
+      "requiredAnchors": [
+        "Phi1 = InvariantElementSpec.Sd2, Phi2 = InvariantElementSpec.Id0",
+        "EinsteinCoefficient = 0.5, EpsilonMode = \u0022independent-theta\u0022"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "phase452-execution-path",
+      "bindingId": "phase452-program",
+      "requiredAnchors": [
+        "CurvatureAssembler.Assemble(conn)",
+        "op.EvaluateWithTheta",
+        "LieAlgebraFactory.CreateSu2WithTracePairing()"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "curvature-linear",
+      "bindingId": "curvature-assembler",
+      "requiredAnchors": [
+        "dOmega[a] \u002B= sign * omega.Coefficients[edgeIdx * dimG \u002B a]"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "curvature-quadratic",
+      "bindingId": "curvature-assembler",
+      "requiredAnchors": [
+        "var bracket = algebra.Bracket(omegaI, omegaJ)",
+        "wedgeTerm[a] \u002B= bracket[a]",
+        "dOmega[a] \u002B 0.5 * wedgeTerm[a]"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "fixed-theta-linear-contraction",
+      "bindingId": "shiab-operator",
+      "requiredAnchors": [
+        "s \u002B= ad[a, b] * fCoeffs",
+        "s \u002B= faceMap[j, k] * fa[k][a]",
+        "acc[f * _dimG \u002B a] *= inv"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "independent-theta-path",
+      "bindingId": "shiab-operator",
+      "requiredAnchors": [
+        "public FieldTensor EvaluateWithTheta",
+        "var adPerFace = BuildPerFaceAd(theta)"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "quadratic-action",
+      "bindingId": "shiab-operator",
+      "requiredAnchors": [
+        "var mUpsilon = massMatrix.Apply",
+        "objective \u002B= upsilon[i] * mUpsilon[i]",
+        "objective *= 0.5"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "uniform-trace-pairing",
+      "bindingId": "cpu-mass-matrix",
+      "requiredAnchors": [
+        "CreateUniformWeights(mesh.FaceCount)",
+        "sum \u002B= _algebra.InvariantMetric",
+        "return 0.5 * InnerProduct(upsilon, upsilon)"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "identity-endomorphism",
+      "bindingId": "lambda2-algebra",
+      "requiredAnchors": [
+        "\u0022id0\u0022 =\u003E Identity(Dim)",
+        "if (member.Phi2.InvariantElement == \u0022none\u0022)",
+        "return a1"
+      ],
+      "allAnchorsPresent": true
+    },
+    {
+      "formulaId": "su2-exact-bracket-and-trace-metric",
+      "bindingId": "lie-algebra-factory",
+      "requiredAnchors": [
+        "f^c_{ab} = epsilon_{abc}",
+        "CreateSu2WithTracePairing()",
+        "metric[0] = 1.0",
+        "metric[4] = 1.0",
+        "metric[8] = 1.0"
+      ],
+      "allAnchorsPresent": true
+    }
+  ],
+  "a5ParityAssertionLedger": [
+    {
+      "evidenceId": "generator-z2-comment",
+      "bindingId": "a5-generator",
+      "evidenceKind": "source-comment-control-only",
+      "requiredAnchor": "exact Z_2 symmetry omega -\u003E -omega",
+      "assertionPresent": true,
+      "acceptedAsIdentityProof": false
+    },
+    {
+      "evidenceId": "serialized-a5-even-prose",
+      "bindingId": "serialized-a5",
+      "evidenceKind": "serialized-prose-control-only",
+      "requiredAnchor": "S_B(omega) quartic, even under omega -\\u003E -omega",
+      "assertionPresent": true,
+      "acceptedAsIdentityProof": false
+    }
+  ],
+  "memberDecompositions": [
+    {
+      "memberId": "identity",
+      "fixedParameters": "theta-absent; R=I; uniform positive trace pairing",
+      "residual": "Upsilon(t omega)=t L(omega)\u002B(t^2/2) W(omega)",
+      "actionTerms": [
+        {
+          "termId": "action-degree-2",
+          "omegaDegree": 2,
+          "parity": "even",
+          "formula": "(1/2)t^2\u003CL,L\u003E",
+          "exact": true
+        },
+        {
+          "termId": "action-degree-3",
+          "omegaDegree": 3,
+          "parity": "odd",
+          "formula": "(1/2)t^3\u003CL,W\u003E",
+          "exact": true
+        },
+        {
+          "termId": "action-degree-4",
+          "omegaDegree": 4,
+          "parity": "even",
+          "formula": "(1/8)t^4\u003CW,W\u003E",
+          "exact": true
+        }
+      ],
+      "completeExecutableFormulaCoverage": true,
+      "exactOddCancellationResolved": true,
+      "identityExactlyEven": false,
+      "omegaParityStatus": "refuted-by-full-finite-action-exact-witness"
+    },
+    {
+      "memberId": "sd2-id0/c0.5",
+      "fixedParameters": "independent theta held fixed under omega sign flip",
+      "residual": "Upsilon(t omega,theta)=t C_theta L(omega)\u002B(t^2/2) C_theta W(omega)",
+      "actionTerms": [
+        {
+          "termId": "action-degree-2",
+          "omegaDegree": 2,
+          "parity": "even",
+          "formula": "(1/2)t^2\u003CC_theta L,M C_theta L\u003E",
+          "exact": false
+        },
+        {
+          "termId": "action-degree-3",
+          "omegaDegree": 3,
+          "parity": "odd",
+          "formula": "(1/2)t^3(\u003CC_theta L,M C_theta W\u003E\u002B\u003CC_theta W,M C_theta L\u003E)/2",
+          "exact": false
+        },
+        {
+          "termId": "action-degree-4",
+          "omegaDegree": 4,
+          "parity": "even",
+          "formula": "(1/8)t^4\u003CC_theta W,M C_theta W\u003E",
+          "exact": false
+        }
+      ],
+      "completeExecutableFormulaCoverage": true,
+      "exactExecutableCoefficients": false,
+      "exactOddCancellationResolved": false,
+      "omegaParityStatus": "unresolved-non-exact-coefficients-and-no-global-cancellation-identity"
+    }
+  ],
+  "identityExactWitness": {
+    "arithmetic": "signed-int64-only",
+    "extent": 3,
+    "latticeCanonical": true,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "faceCount": 4050,
+    "seedFaceIndex": 0,
+    "witnessEdges": [
+      0,
+      1,
+      4
+    ],
+    "witnessSigns": [
+      1,
+      -1,
+      1
+    ],
+    "orientedBoundaryValues": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "everyFaceIncluded": true,
+    "nonzeroFaceContributionCount": 1,
+    "totalL2": 36,
+    "totalLdotW": 1,
+    "totalW2": 3,
+    "cubicCoefficientNumerator": 1,
+    "cubicCoefficientDenominator": 2,
+    "actionAtPlusMinusDifferenceNumerator": 1,
+    "actionAtPlusMinusDifferenceDenominator": 1,
+    "identityOddTermSurvives": true,
+    "memberId": "identity",
+    "scope": "exact rational action implied by the exact-bound Phase452 identity-member formulas; lattice-canonical n=3, uniform trace pairing, all 4050 faces",
+    "semanticReductionDependency": "The signed-integer witness is combined with exact-bound source formulas establishing R=I, zero face-map correction, incidence averaging of identical face values, uniform unit face weights, the positive trace metric, and F=L\u002BW/2."
+  },
+  "proofPolicy": {
+    "commentsOrProseUsedAsIdentityProof": false,
+    "contractTruthValuesUsedAsIdentityProof": false,
+    "randomProbeUsed": false,
+    "floatingPointProbeUsed": false,
+    "globalCancellationAssumed": false,
+    "everyFaceContributionIncluded": true
+  },
+  "bindings": [
+    {
+      "id": "phase452-program",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase452-summary",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
+      "expectedSha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009",
+      "actualSha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-family-spec",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "expectedSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "actualSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "hashMatches": true
+    },
+    {
+      "id": "lambda2-algebra",
+      "path": "src/Gu.ReferenceCpu/Lambda2Algebra.cs",
+      "expectedSha256": "ddd48fd984717aa8c9731272df969ab713b2997490bc2001d76231f164d0133d",
+      "actualSha256": "ddd48fd984717aa8c9731272df969ab713b2997490bc2001d76231f164d0133d",
+      "hashMatches": true
+    },
+    {
+      "id": "cpu-mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "expectedSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "actualSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "expectedSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "expectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    },
+    {
+      "id": "a5-generator",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs",
+      "expectedSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "actualSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "hashMatches": true
+    },
+    {
+      "id": "serialized-a5",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "expectedSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "actualSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-program",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "expectedSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "actualSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-contract",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "expectedSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "actualSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "hashMatches": true
+    },
+    {
+      "id": "phase517-summary",
+      "path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "expectedSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "actualSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-program",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs",
+      "expectedSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "actualSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-contract",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json",
+      "expectedSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "actualSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-summary",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json",
+      "expectedSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "actualSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-program",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs",
+      "expectedSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "actualSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-contract",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json",
+      "expectedSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "actualSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-summary",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json",
+      "expectedSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "actualSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "hashMatches": true
+    }
+  ],
+  "deterministicZeroSampling": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "externalReviewPending": true,
+  "actionMemberSelected": false,
+  "productionActionOrGeometryRegistered": false,
+  "phase515Unlocked": false,
+  "phase516Unlocked": false,
+  "phase458G1Satisfied": false,
+  "closesLimbL8": false,
+  "theoremClaimed": false,
+  "targetCounterexampleClaimed": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "samplingAuthorized": false,
+  "hmcAuthorized": false,
+  "benchmarkAuthorized": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

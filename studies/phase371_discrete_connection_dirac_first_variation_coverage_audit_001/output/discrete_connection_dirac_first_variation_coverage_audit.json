@@ -1,6 +1,6 @@
 {
   "phaseId": "phase371-discrete-connection-dirac-first-variation-coverage-audit",
-  "generatedAt": "2026-07-18T19:51:18.2404885+00:00",
+  "generatedAt": "2026-07-19T00:15:23.8902953+00:00",
   "terminalStatus": "discrete-connection-dirac-first-variation-coverage-audit-analytic-parity-only-not-coupled-hessian",
   "discreteConnectionDiracFirstVariationCoverageAuditPassed": true,
   "phase120SelectedModeParityPresent": true,

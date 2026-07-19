@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "phase": 526,
+  "phaseId": "phase526-a5-certificate-reducer",
+  "terminalStatus": "a5-certificate-reducer-unresolved-member-dependence-for-named-a5-prerequisites",
+  "verdictKind": "unresolved-member-dependence-for-named-a5-prerequisites",
+  "inputsValid": true,
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "applicationSubjectKind": "dependent-a5-certificate-reducer",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "deterministicZeroSampling": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "contract": {
+    "path": "studies/phase526_a5_certificate_reducer_001/preregistration/phase526_a5_certificate_reducer_contract_v1.json",
+    "sha256": "6c8bdb9367d058e07849208ebab996afaf8364877649c84deaeb31be08be6e5c",
+    "frozenBeforePrecursorConsumption": true
+  },
+  "exactInputBindings": [
+    {
+      "Id": "phase520-summary",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json",
+      "ExpectedSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "ActualSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-full",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit.json",
+      "ExpectedSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "ActualSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-contract",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json",
+      "ExpectedSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "ActualSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-program",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs",
+      "ExpectedSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "ActualSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase521-summary",
+      "Path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json",
+      "ExpectedSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "ActualSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase521-full",
+      "Path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census.json",
+      "ExpectedSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "ActualSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase521-contract",
+      "Path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/preregistration/phase521_frozen_reflection_compatible_triangulation_census_contract_v1.json",
+      "ExpectedSha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3",
+      "ActualSha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase521-program",
+      "Path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Program.cs",
+      "ExpectedSha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615",
+      "ActualSha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-summary",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json",
+      "ExpectedSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "ActualSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-full",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction.json",
+      "ExpectedSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "ActualSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-contract",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json",
+      "ExpectedSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "ActualSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-program",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs",
+      "ExpectedSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "ActualSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase523-summary",
+      "Path": "studies/phase523_a5_action_member_universalization_audit_001/output/a5_action_member_universalization_audit_summary.json",
+      "ExpectedSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "ActualSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase523-full",
+      "Path": "studies/phase523_a5_action_member_universalization_audit_001/output/a5_action_member_universalization_audit.json",
+      "ExpectedSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "ActualSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase523-contract",
+      "Path": "studies/phase523_a5_action_member_universalization_audit_001/preregistration/phase523_a5_action_member_universalization_contract_v1.json",
+      "ExpectedSha256": "55b8e9d39b6c0cffe26cfb223dbe02df2e58211085e60cfd009b243423af026a",
+      "ActualSha256": "55b8e9d39b6c0cffe26cfb223dbe02df2e58211085e60cfd009b243423af026a",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase523-program",
+      "Path": "studies/phase523_a5_action_member_universalization_audit_001/Program.cs",
+      "ExpectedSha256": "0161d95506ad76af277b0037afbdb7d1b8f194f5b3e4d8e1905276e53be33ae7",
+      "ActualSha256": "0161d95506ad76af277b0037afbdb7d1b8f194f5b3e4d8e1905276e53be33ae7",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase524-summary",
+      "Path": "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition_summary.json",
+      "ExpectedSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "ActualSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase524-full",
+      "Path": "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition.json",
+      "ExpectedSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "ActualSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase524-contract",
+      "Path": "studies/phase524_a5_exact_omega_parity_decomposition_001/preregistration/phase524_a5_exact_omega_parity_decomposition_contract_v1.json",
+      "ExpectedSha256": "c02cc45ab049bb6cf9a7215c13617c43674e14f4130b75be6919fe256e487116",
+      "ActualSha256": "c02cc45ab049bb6cf9a7215c13617c43674e14f4130b75be6919fe256e487116",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase524-program",
+      "Path": "studies/phase524_a5_exact_omega_parity_decomposition_001/Program.cs",
+      "ExpectedSha256": "f2a1a7d2d46b027b77751515e825a07cc4e5bf1e454cf54a3e0c3bf9c80e6b2d",
+      "ActualSha256": "f2a1a7d2d46b027b77751515e825a07cc4e5bf1e454cf54a3e0c3bf9c80e6b2d",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase525-summary",
+      "Path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit_summary.json",
+      "ExpectedSha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455",
+      "ActualSha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase525-full",
+      "Path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit.json",
+      "ExpectedSha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455",
+      "ActualSha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase525-contract",
+      "Path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/preregistration/phase525_survivor_reflection_pullback_boundary_contract_v1.json",
+      "ExpectedSha256": "21df90c5b393ba28c69e713a28f06a94ec3af9f23c622221b020930f01def3a3",
+      "ActualSha256": "21df90c5b393ba28c69e713a28f06a94ec3af9f23c622221b020930f01def3a3",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase525-program",
+      "Path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Program.cs",
+      "ExpectedSha256": "8b93feb53b4d82286f4e82f0445b67be3fe94b6d1d1674fcd267522cc56edc14",
+      "ActualSha256": "8b93feb53b4d82286f4e82f0445b67be3fe94b6d1d1674fcd267522cc56edc14",
+      "HashMatches": true
+    }
+  ],
+  "exactBindingInventoryValid": true,
+  "fullSummaryPairsIdentical": true,
+  "precedence": [
+    "invalid-or-drifted-input",
+    "unresolved-member-dependence-for-named-a5-prerequisites",
+    "exact-omega-parity-refuted-or-unresolved",
+    "no-survivor-with-complete-finite-pullback-boundary-closure",
+    "o1-o2-dependency-or-positive-time-algebra-unresolved",
+    "normalized-measure-or-domain-incomplete",
+    "candidate-to-target-equality-or-hermiticity-unproved",
+    "finite-only",
+    "necessity-gluing-or-all-scope-unproved",
+    "candidate-package-ready-for-independent-mathematical-review"
+  ],
+  "precedenceBattery": [
+    {
+      "Index": 0,
+      "Expected": "invalid-or-drifted-input",
+      "Actual": "invalid-or-drifted-input",
+      "Passed": true
+    },
+    {
+      "Index": 1,
+      "Expected": "unresolved-member-dependence-for-named-a5-prerequisites",
+      "Actual": "unresolved-member-dependence-for-named-a5-prerequisites",
+      "Passed": true
+    },
+    {
+      "Index": 2,
+      "Expected": "exact-omega-parity-refuted-or-unresolved",
+      "Actual": "exact-omega-parity-refuted-or-unresolved",
+      "Passed": true
+    },
+    {
+      "Index": 3,
+      "Expected": "no-survivor-with-complete-finite-pullback-boundary-closure",
+      "Actual": "no-survivor-with-complete-finite-pullback-boundary-closure",
+      "Passed": true
+    },
+    {
+      "Index": 4,
+      "Expected": "o1-o2-dependency-or-positive-time-algebra-unresolved",
+      "Actual": "o1-o2-dependency-or-positive-time-algebra-unresolved",
+      "Passed": true
+    },
+    {
+      "Index": 5,
+      "Expected": "normalized-measure-or-domain-incomplete",
+      "Actual": "normalized-measure-or-domain-incomplete",
+      "Passed": true
+    },
+    {
+      "Index": 6,
+      "Expected": "candidate-to-target-equality-or-hermiticity-unproved",
+      "Actual": "candidate-to-target-equality-or-hermiticity-unproved",
+      "Passed": true
+    },
+    {
+      "Index": 7,
+      "Expected": "finite-only",
+      "Actual": "finite-only",
+      "Passed": true
+    },
+    {
+      "Index": 8,
+      "Expected": "necessity-gluing-or-all-scope-unproved",
+      "Actual": "necessity-gluing-or-all-scope-unproved",
+      "Passed": true
+    },
+    {
+      "Index": 9,
+      "Expected": "candidate-package-ready-for-independent-mathematical-review",
+      "Actual": "candidate-package-ready-for-independent-mathematical-review",
+      "Passed": true
+    }
+  ],
+  "precedenceBatteryPassed": true,
+  "expectedCurrentVerdictMatched": true,
+  "phase525ConsistencyBattery": [
+    {
+      "CaseId": "consistent-zero",
+      "ExpectedConsistent": true,
+      "ActualConsistent": true,
+      "Passed": true
+    },
+    {
+      "CaseId": "consistent-partial",
+      "ExpectedConsistent": true,
+      "ActualConsistent": true,
+      "Passed": true
+    },
+    {
+      "CaseId": "consistent-all",
+      "ExpectedConsistent": true,
+      "ActualConsistent": true,
+      "Passed": true
+    },
+    {
+      "CaseId": "mutated-verdict",
+      "ExpectedConsistent": false,
+      "ActualConsistent": false,
+      "Passed": true
+    },
+    {
+      "CaseId": "mutated-count",
+      "ExpectedConsistent": false,
+      "ActualConsistent": false,
+      "Passed": true
+    },
+    {
+      "CaseId": "mutated-positive-flag",
+      "ExpectedConsistent": false,
+      "ActualConsistent": false,
+      "Passed": true
+    }
+  ],
+  "phase525ConsistencyBatteryPassed": true,
+  "blockerAudit": {
+    "invalidOrDrifted": false,
+    "unresolvedMemberDependenceForNamedA5Prerequisites": true,
+    "exactOmegaParityRefutedOrUnresolved": true,
+    "noSurvivorWithCompleteFinitePullbackBoundaryClosure": false,
+    "o1O2DependencyOrPositiveTimeAlgebraUnresolved": true,
+    "normalizedMeasureOrDomainIncomplete": true,
+    "candidateToTargetEqualityOrHermiticityUnproved": true,
+    "finiteOnly": true,
+    "necessityGluingOrAllScopeUnproved": true
+  },
+  "memberDependenceReduction": {
+    "namedPrerequisiteCount": 10,
+    "invariantPrerequisiteCount": 1,
+    "memberDependentPrerequisiteCount": 9,
+    "universalizationRemovesSelectionForSharedScopeOnly": true,
+    "memberSensitiveObligationsSeparatelyDischarged": false,
+    "actionWideEquivalenceEstablished": false,
+    "finding": "Phase523 leaves nine of ten named A5 prerequisites member-dependent. The reducer therefore preserves the earliest member-dependence terminal."
+  },
+  "omegaParityReduction": {
+    "identityMember": {
+      "status": "refuted-by-full-finite-action-exact-witness",
+      "decisiveExactRefutation": true,
+      "witnessScope": "exact rational action implied by the exact-bound Phase452 identity-member formulas; lattice-canonical n=3, uniform trace pairing, all 4050 faces",
+      "totalLdotW": 1,
+      "actionPlusMinusDifference": "1",
+      "actionPlusMinusDifferenceNumerator": 1,
+      "actionPlusMinusDifferenceDenominator": 1
+    },
+    "sd2Member": {
+      "status": "unresolved-non-exact-coefficients-and-no-global-cancellation-identity",
+      "unresolved": true
+    },
+    "actionMemberSelected": false,
+    "refutationScopePromotedBeyondIdentityMember": false
+  },
+  "finitePullbackBoundaryReduction": {
+    "sourceSurvivorPairCount": 2,
+    "sourceSurvivorKeys": [
+      "periodic-cubical-cell-poset-barycentric::link-centered-axis0",
+      "periodic-cubical-cell-poset-barycentric::site-centered-axis0"
+    ],
+    "auditedPairCount": 2,
+    "pairMenuLineageExact": true,
+    "derivedPhase525Verdict": "finite-dual-survivor-pullback-boundary-closed",
+    "reportedPhase525Verdict": "finite-dual-survivor-pullback-boundary-closed",
+    "phase525ReportedStateConsistent": true,
+    "completeFinitePairCount": 2,
+    "failedPairCount": 0,
+    "twoOfTwoFiniteClosure": true,
+    "partialFiniteClosure": false,
+    "noCompleteFiniteSurvivor": false,
+    "derivedPositiveClosure": true,
+    "reportedFiniteDualSurvivorPullbackBoundaryClosed": true,
+    "reportedFiniteCombinatorialChainAndCarrierClosure": true,
+    "finiteOnly": true,
+    "survivingCandidateIds": [
+      "periodic-cubical-cell-poset-barycentric::site-centered-axis0",
+      "periodic-cubical-cell-poset-barycentric::link-centered-axis0"
+    ],
+    "survivingRows": [
+      {
+        "candidateId": "periodic-cubical-cell-poset-barycentric::site-centered-axis0",
+        "reflectionId": "site-centered-axis0",
+        "extentMenu": [
+          3,
+          4
+        ],
+        "completeFinitePullbackBoundary": true
+      },
+      {
+        "candidateId": "periodic-cubical-cell-poset-barycentric::link-centered-axis0",
+        "reflectionId": "link-centered-axis0",
+        "extentMenu": [
+          3,
+          4
+        ],
+        "completeFinitePullbackBoundary": true
+      }
+    ],
+    "failedCandidateIds": [],
+    "candidateSelected": false,
+    "candidateRegistered": false,
+    "geometryInstalled": false,
+    "allVolumeEmbeddingOrGluingEstablished": false
+  },
+  "nextExactMissingCertificates": [
+    "separate discharge or authorized selection for each member-dependent A5 prerequisite",
+    "exact sd2 omega-parity resolution, while retaining the identity-member refutation",
+    "exact O1/O2 dependency and positive-time-algebra membership",
+    "normalized measure/domain and candidate-to-target equality/Hermiticity",
+    "allowed-volume embedding, necessity, shared-edge gluing, and all-coupling/all-volume closure"
+  ],
+  "strongestPermittedTerminal": "candidate-package-ready-for-independent-mathematical-review",
+  "strongestPermittedClaim": "independent-mathematical-review-readiness-only",
+  "candidatePackageIndependentMathematicalReviewReady": false,
+  "externalReviewPending": true,
+  "actionMemberSelected": false,
+  "candidateSelected": false,
+  "actionOrGeometryRegistered": false,
+  "theoremClaimed": false,
+  "targetCounterexampleClaimed": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "phase458G1Satisfied": false,
+  "closesLimbL8": false,
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "phase515Unlocked": false,
+  "phase516Unlocked": false,
+  "phase481WorkPerformed": false,
+  "phase458EvaluationPerformed": false,
+  "samplingPerformed": false,
+  "samplingOrReprocessingRun": false,
+  "hmcPerformed": false,
+  "hmcRun": false,
+  "reprocessingPerformed": false,
+  "benchmarkPerformed": false,
+  "benchmarkRun": false,
+  "productionAllocationAuthorized": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "accelerationAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "sourceContractApplicationPerformed": false,
+  "o4OrHumanRulingAuthoredOrInferred": false,
+  "physicalTargetTuningPerformed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "precursorArtifactsMutated": false,
+  "allExecutionAndPromotionAuthorities": false,
+  "promotedPhysicalMassClaimCount": 0
+}

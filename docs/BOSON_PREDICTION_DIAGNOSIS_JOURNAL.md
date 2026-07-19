@@ -21205,3 +21205,76 @@ reported 306 passed / 3 standing failures; O4 coverage remained 31/31, the
 synthetic-overturn battery remained 94/94, the source deficits remained 15 W/Z
 and 14 Higgs fields, and the pass ended at
 `boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-18 - Amendment A19 refutes identity-member omega parity and closes finite combinatorial pullback
+
+The user directed implementation of the next four A5 certificate phases with
+maximum safe parallelism. Registry 523-526 and Amendment A19 were frozen
+before the three independent phase directories were created. Phases523-525
+then ran in parallel; Phase526 was frozen only after their repaired hashes and
+schemas stabilized.
+
+Phase523 exact-binds fifteen executable/source and Phase517/520/522 artifacts.
+Its registered finite inventory contains ten named A5 prerequisite scopes,
+grounded by twelve exact source anchors and per-member semantic fingerprints.
+One shared carrier/domain scope is member-invariant and nine action-sensitive
+scopes are member-dependent. Universal quantification therefore removes
+member choice only for the one shared scope; it creates two separately
+undischarged obligations for each other scope. The result is not an exhaustive
+mathematical prerequisite inventory and does not select an action member. The
+terminal is `universalization-partial-member-dependence-remains`.
+
+Phase524 exact-binds twenty-one formula and precursor artifacts. For the
+identity member, the bound formulas reduce exactly to
+`F(t omega)=t L+(t^2/2)W` with uniform trace pairing. A target-blind signed-
+integer witness on the complete lattice-canonical `n=3` finite action includes
+all 4,050 faces and yields `sum_f L_f dot W_f=1`. The cubic coefficient is
+exactly `1/2`, so `S(+omega)-S(-omega)=1`. The A5 prose/serialized assertion
+that the action is even is therefore refuted for the identity member in this
+exact finite formula-implied scope. The SD2 member remains unresolved because
+its contraction/theta implementation uses binary64 inverse and exponential
+coefficients and has no registered exact global cancellation identity. No
+member is selected and no general theorem follows.
+
+Phase525 exact-binds the Phase521/522 program, contract, and output chain. Both
+barycentric site/link survivors pass at extents 3 and 4. Exact checks cover
+cell-map involution, order-complex pullback, boundary commutation, shared cover
+incidence, doubled-slice covariance, and carrier orientation derived from the
+restricted reflection Jacobian. Each `n=3` row executes 699,840 boundary
+checks and each `n=4` row executes 2,211,840. The positive result is finite
+combinatorial chain-and-carrier closure only. No action or observable is
+evaluated, and action covariance remains unestablished.
+
+Phase526 exact-binds the summary, full output, contract, and program for every
+Phase520-525 precursor. It non-vacuously recounts the ten Phase523 rows, carries
+the exact identity refutation without extending it to SD2, and retains the two
+Phase525 survivors by row-local candidate/reflection/extent keys. A 10/10
+precedence battery reaches every terminal. A separate 6/6 mutation battery
+requires Phase525's row-local zero/partial/all state to agree with its verdict,
+aggregate counts, and positive flags. The earliest terminal is
+`unresolved-member-dependence-for-named-a5-prerequisites`. The package is not
+independent-review-ready; Phases515-516 stay locked and Phase458 G1/L8 remain
+open.
+
+Adversarial cross-review rejected multiple fail-open implementations before
+the checkpoint: contract-manufactured member classifications; tautological
+inventory completeness; unreachable precedence branches; prose used as
+executable evidence; circular carrier-orientation signs; incomplete binding
+ID/path schemas; vacuous prerequisite arrays; invented/duplicate survivor-row
+acceptance; zero-versus-partial survivor conflation; hardcoded review readiness;
+and inconsistent aggregate verdict acceptance. All were replaced with exact
+source grounding, independently derived controls, complete unique binding
+schemas, row-local reductions, reachable precedence batteries, explicit
+authority firewalls, and mutation tests.
+
+No sampling, HMC, reprocessing, benchmark, production, Phase458 evaluation,
+source-contract application, O4/human ruling, theorem, reflection-positivity
+result, or physical-unit claim occurred. Phase202 reports 310 passed / 3
+standing failures; external review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A19 incremental checkpoint ran 84 steps and skipped 306. O4
+coverage remained 31/31, the synthetic-overturn battery remained 94/94, the
+source deficits remained 15 W/Z and 14 Higgs fields, and Phase202 remained
+310 passed / 3 standing failures. The pass ended at
+`boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.

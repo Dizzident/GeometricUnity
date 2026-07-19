@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 2,
+  "phase": 523,
+  "phaseId": "phase523-a5-action-member-universalization-audit",
+  "terminalStatus": "a5-action-member-universalization-audit-universalization-partial-member-dependence-remains",
+  "verdictKind": "universalization-partial-member-dependence-remains",
+  "inputsValid": true,
+  "contractValid": true,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "deterministicZeroSampling": true,
+  "contract": {
+    "path": "studies/phase523_a5_action_member_universalization_audit_001/preregistration/phase523_a5_action_member_universalization_contract_v1.json",
+    "sha256": "55b8e9d39b6c0cffe26cfb223dbe02df2e58211085e60cfd009b243423af026a",
+    "frozenBeforeClassification": true
+  },
+  "exactInputBindings": [
+    {
+      "Id": "phase452-program",
+      "Path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "ExpectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "ActualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase452-summary",
+      "Path": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
+      "ExpectedSha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009",
+      "ActualSha256": "2fc98899597addb3912ab1dca28e3bc6084ee69ef023b27baf2fc2fa29b6c009",
+      "HashMatches": true
+    },
+    {
+      "Id": "shiab-operator",
+      "Path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "ExpectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "ActualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "HashMatches": true
+    },
+    {
+      "Id": "shiab-family-spec",
+      "Path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "ExpectedSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "ActualSha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase456-generator",
+      "Path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs",
+      "ExpectedSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "ActualSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase456-a5",
+      "Path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "ExpectedSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "ActualSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase517-program",
+      "Path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/Program.cs",
+      "ExpectedSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "ActualSha256": "bbac95de11a98a36b635d93b34475934c0e8b5df4f5195f14c13a7281ee6f92c",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase517-contract",
+      "Path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/preregistration/phase517_dual_reflection_candidate_foundation_contract_v1.json",
+      "ExpectedSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "ActualSha256": "25aaa5d9b7b0c6a41c9bf2fbec3fbb84180b2c04a9098ca355a2895cdabf6ea2",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase517-summary",
+      "Path": "studies/phase517_a5_dual_reflection_candidate_foundation_001/output/a5_dual_reflection_candidate_foundation_summary.json",
+      "ExpectedSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "ActualSha256": "80786ebc77d4accece3b23f35595255aa35ccbfe393d86561792547257bc2623",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-program",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs",
+      "ExpectedSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "ActualSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-contract",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json",
+      "ExpectedSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "ActualSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase520-summary",
+      "Path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json",
+      "ExpectedSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "ActualSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-program",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs",
+      "ExpectedSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "ActualSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-contract",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json",
+      "ExpectedSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "ActualSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase522-summary",
+      "Path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json",
+      "ExpectedSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "ActualSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "HashMatches": true
+    }
+  ],
+  "exactBindingsValid": true,
+  "lineageInputsValid": true,
+  "memberDomainAudit": {
+    "registeredMemberCount": 2,
+    "members": [
+      {
+        "memberId": "identity",
+        "phi1": "id0",
+        "phi2": "none",
+        "epsilonMode": "trivial"
+      },
+      {
+        "memberId": "sd2-id0/c0.5",
+        "phi1": "sd2",
+        "phi2": "id0",
+        "epsilonMode": "independent-theta"
+      }
+    ],
+    "identityDefinitionPresent": true,
+    "sd2DefinitionPresent": true,
+    "memberExecutionSelectorPresent": true,
+    "memberExecutionDomainPresent": true,
+    "summaryExecutionDomainExact": true,
+    "sharedExecutableCarrierPresent": true,
+    "sharedExecutableObjectivePresent": true,
+    "familyExecutableStructurePresent": true,
+    "noCanonicalMemberProseEvidencePresent": true,
+    "proseEvidenceUsedAsExecutableBinding": false,
+    "completeTwoMemberDomainEstablished": true,
+    "actionMemberSelected": false,
+    "actionMemberRanked": false,
+    "canonicalMemberInvented": false
+  },
+  "a5BindingAudit": {
+    "a5ParameterizedByMember": false,
+    "a5SerializedRecordHasMemberField": false,
+    "a5BindsEitherExecutableMember": false,
+    "proseTreatedAsExecutableBinding": false
+  },
+  "prerequisiteInventory": {
+    "frozenBeforeClassification": true,
+    "registeredFiniteInventory": true,
+    "registeredInventorySchemaValid": true,
+    "registeredInventoryCoverageComplete": true,
+    "exhaustiveMathematicalCompletenessClaimed": false,
+    "inventoryEvidence": [
+      {
+        "prerequisiteId": "kinematic-carrier-and-complete-family-domain",
+        "bindingId": "phase452-program",
+        "anchor": "var memberNames = new[] { \u0022identity\u0022, \u0022sd2-id0/c0.5\u0022 }",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "kinematic-carrier-and-complete-family-domain",
+        "bindingId": "phase452-program",
+        "anchor": "LieAlgebraFactory.CreateSu2WithTracePairing()",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "kinematic-carrier-and-complete-family-domain",
+        "bindingId": "shiab-operator",
+        "anchor": "objective *= 0.5",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "executable-action-subject-binding",
+        "bindingId": "phase456-generator",
+        "anchor": "A5Result AttemptA5GaussianDomination()",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "complete-action-functional-coverage",
+        "bindingId": "shiab-operator",
+        "anchor": "public FieldTensor EvaluateWithTheta",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "exact-omega-parity",
+        "bindingId": "phase456-generator",
+        "anchor": "exact Z_2 symmetry omega -\u003E -omega",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "composite-correlation-transport",
+        "bindingId": "phase456-generator",
+        "anchor": "O-A compositeness: field-level infrared/Gaussian-domination bounds control",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "reflection-positivity-for-unchanged-action",
+        "bindingId": "phase456-generator",
+        "anchor": "O-B reflection positivity: Gaussian domination presupposes reflection positivity",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "face-local-interaction-factorization",
+        "bindingId": "phase456-generator",
+        "anchor": "non-locality: the quartic coupling is plaquette/face-local, not single-site",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "o1-o2-dependency-and-positive-time-membership",
+        "bindingId": "phase522-program",
+        "anchor": "exact O1/O2 dependency and positive-time-algebra membership certificate",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "normalized-measure-domain-target-equality-hermiticity",
+        "bindingId": "phase522-program",
+        "anchor": "normalized measure/domain, target-equality, and Hermiticity certificates",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      },
+      {
+        "prerequisiteId": "necessity-gluing-and-all-scope",
+        "bindingId": "phase522-program",
+        "anchor": "necessity, shared-edge gluing, and all-coupling/all-volume certificates",
+        "bindingRegistered": true,
+        "anchorPresent": true
+      }
+    ],
+    "count": 10,
+    "invariantCount": 1,
+    "memberDependentCount": 9,
+    "unresolvedCount": 0,
+    "classificationsDerivedFromContractDependencyDimensions": false,
+    "rows": [
+      {
+        "PrerequisiteId": "kinematic-carrier-and-complete-family-domain",
+        "Scope": "the shared executable algebra, mesh carrier, action objective form, and complete two-member execution domain",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [],
+        "IdentitySemanticFingerprint": "shared:su2-trace:lattice-canonical:quadratic-objective:two-member-domain",
+        "Sd2SemanticFingerprint": "shared:su2-trace:lattice-canonical:quadratic-objective:two-member-domain",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": true,
+        "Classification": "member-invariant",
+        "UniversalizationRemovesMemberSelectionDependency": true,
+        "PrerequisiteEstablished": false,
+        "Consequence": "Universal quantification removes selection for this exact shared scope only."
+      },
+      {
+        "PrerequisiteId": "executable-action-subject-binding",
+        "Scope": "an exact executable binding from the A5 proposition to each action subject under consideration",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [
+          "member-id"
+        ],
+        "IdentitySemanticFingerprint": "required-binding:identity:absent",
+        "Sd2SemanticFingerprint": "required-binding:sd2-id0/c0.5:absent",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "complete-action-functional-coverage",
+        "Scope": "the complete executable action formula and every member-specific contraction and dressing",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [
+          "phi1",
+          "phi2",
+          "epsilon-mode",
+          "theta-dependence"
+        ],
+        "IdentitySemanticFingerprint": "identity:R=id0:none:epsilon=trivial",
+        "Sd2SemanticFingerprint": "sd2:R=sd2-id0:c=0.5:epsilon=independent-theta",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "exact-omega-parity",
+        "Scope": "an exact derivation cancelling every omega-sign-odd action contribution",
+        "Origin": "a5-explicit",
+        "RecordedDependencyDimensions": [
+          "complete-action-functional"
+        ],
+        "IdentitySemanticFingerprint": "identity-action:exact-odd-cancellation-obligation",
+        "Sd2SemanticFingerprint": "sd2-action:fixed-theta-exact-odd-cancellation-obligation",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "composite-correlation-transport",
+        "Scope": "the action-specific implication from controlled lower correlations to the connected O2 channel",
+        "Origin": "a5-explicit",
+        "RecordedDependencyDimensions": [
+          "action-functional",
+          "o2-definition"
+        ],
+        "IdentitySemanticFingerprint": "identity:O2=norm(identity(F)):transport-obligation",
+        "Sd2SemanticFingerprint": "sd2:O2=norm(M(Ad_theta(F))):transport-obligation",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "reflection-positivity-for-unchanged-action",
+        "Scope": "reflection positivity for the unchanged member action, measure, geometry, and observable algebra",
+        "Origin": "a5-explicit",
+        "RecordedDependencyDimensions": [
+          "action-functional",
+          "measure",
+          "observable-algebra"
+        ],
+        "IdentitySemanticFingerprint": "identity:unchanged-action-measure-algebra",
+        "Sd2SemanticFingerprint": "sd2:unchanged-joint-omega-theta-action-measure-algebra",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "face-local-interaction-factorization",
+        "Scope": "the interaction and factorization hypothesis for the member\u0027s dressed curvature carrier",
+        "Origin": "a5-explicit",
+        "RecordedDependencyDimensions": [
+          "member-contraction",
+          "theta-dressing"
+        ],
+        "IdentitySemanticFingerprint": "identity:undressed-curvature-carrier",
+        "Sd2SemanticFingerprint": "sd2:contracted-independent-theta-dressed-curvature-carrier",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "o1-o2-dependency-and-positive-time-membership",
+        "Scope": "exact O1/O2 dependency and positive-time-algebra membership",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [
+          "action-functional",
+          "o2-definition",
+          "reflection"
+        ],
+        "IdentitySemanticFingerprint": "identity:O1=F2:O2=F2:membership-obligation",
+        "Sd2SemanticFingerprint": "sd2:O1=F2:O2=dressed-residual2:membership-obligation",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "normalized-measure-domain-target-equality-hermiticity",
+        "Scope": "normalized measure and domain, candidate-to-target equality, and Hermiticity",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [
+          "action-functional",
+          "theta-domain",
+          "candidate"
+        ],
+        "IdentitySemanticFingerprint": "identity:omega-domain:no-theta:target-hermiticity-obligation",
+        "Sd2SemanticFingerprint": "sd2:joint-omega-theta-domain:target-hermiticity-obligation",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      },
+      {
+        "PrerequisiteId": "necessity-gluing-and-all-scope",
+        "Scope": "necessity, shared-edge gluing, and all-coupling/all-volume closure",
+        "Origin": "audit-authored-lineage-refinement",
+        "RecordedDependencyDimensions": [
+          "action-functional",
+          "carrier",
+          "volume",
+          "coupling"
+        ],
+        "IdentitySemanticFingerprint": "identity:action-carrier:all-volume-coupling-obligation",
+        "Sd2SemanticFingerprint": "sd2:dressed-action-carrier:all-volume-coupling-obligation",
+        "SemanticEvidenceResolved": true,
+        "FullScopeIdentical": false,
+        "Classification": "member-dependent",
+        "UniversalizationRemovesMemberSelectionDependency": false,
+        "PrerequisiteEstablished": false,
+        "Consequence": "The exact-bound member semantics differ, so universal quantification creates two separately undischarged obligations."
+      }
+    ]
+  },
+  "universalizationAudit": {
+    "quantifierDomain": "both exact-bound executable Phase452 members",
+    "removesSelectionForInvariantPrerequisiteCount": 1,
+    "leavesSeparateMemberObligationCount": 9,
+    "partialUniversalization": true,
+    "fullActionWideEquivalenceEstablished": false,
+    "prerequisiteSatisfactionEstablished": false,
+    "memberSelectionStillRequiredForSingleMemberActionClaim": true,
+    "alternativeUniversalFamilyClaimRequiresEveryMemberDependentObligationSeparatelyDischarged": true,
+    "finding": "Universal quantification removes member choice only for the exact shared carrier/domain scope. Per-row executable/source semantic fingerprints differ for each action-sensitive registered prerequisite, leaving two separately undischarged obligations. No exhaustive mathematical inventory claim is made."
+  },
+  "terminalPrecedence": {
+    "precedenceBatteryPassed": true,
+    "cases": [
+      {
+        "caseId": "invalid",
+        "actual": "invalid-or-drifted-input",
+        "expected": "invalid-or-drifted-input"
+      },
+      {
+        "caseId": "inventory-incomplete",
+        "actual": "prerequisite-inventory-incomplete",
+        "expected": "prerequisite-inventory-incomplete"
+      },
+      {
+        "caseId": "partial",
+        "actual": "universalization-partial-member-dependence-remains",
+        "expected": "universalization-partial-member-dependence-remains"
+      },
+      {
+        "caseId": "all-invariant",
+        "actual": "universalization-removes-member-selection-dependence-only",
+        "expected": "universalization-removes-member-selection-dependence-only"
+      }
+    ]
+  },
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "externalReviewPending": true,
+  "theoremClaimed": false,
+  "targetCounterexampleClaimed": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "phase458G1Satisfied": false,
+  "phase458EvaluationPerformed": false,
+  "closesLimbL8": false,
+  "phase515Or516Unlocked": false,
+  "phase481WorkPerformed": false,
+  "sourceContractApplicationPerformed": false,
+  "o4OrHumanRulingAuthoredOrInferred": false,
+  "physicalTargetTuningPerformed": false,
+  "samplingPerformed": false,
+  "hmcPerformed": false,
+  "reprocessingPerformed": false,
+  "benchmarkPerformed": false,
+  "productionAllocationAuthorized": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "accelerationAuthorized": false,
+  "allExecutionAndPromotionAuthorities": false,
+  "precursorArtifactsMutated": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "promotedPhysicalMassClaimCount": 0
+}

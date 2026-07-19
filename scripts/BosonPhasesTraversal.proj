@@ -381,6 +381,10 @@
     <PhaseProject Include="../studies/phase520_a5_action_subject_lineage_parity_audit_001/Phase520A5ActionSubjectLineageParityAudit.csproj" />
     <PhaseProject Include="../studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Phase521A5FrozenReflectionCompatibleTriangulationCensus.csproj" />
     <PhaseProject Include="../studies/phase522_a5_foundation_candidate_reduction_001/Phase522A5FoundationCandidateReduction.csproj" />
+    <PhaseProject Include="../studies/phase523_a5_action_member_universalization_audit_001/Phase523A5ActionMemberUniversalizationAudit.csproj" />
+    <PhaseProject Include="../studies/phase524_a5_exact_omega_parity_decomposition_001/Phase524A5ExactOmegaParityDecomposition.csproj" />
+    <PhaseProject Include="../studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Phase525A5SurvivorReflectionPullbackBoundaryAudit.csproj" />
+    <PhaseProject Include="../studies/phase526_a5_certificate_reducer_001/Phase526A5CertificateReducer.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

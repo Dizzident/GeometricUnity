@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "phase": 525,
+  "phaseId": "phase525-a5-survivor-reflection-pullback-boundary-audit",
+  "terminalStatus": "a5-survivor-reflection-pullback-boundary-audit-finite-dual-survivor-pullback-boundary-closed",
+  "verdictKind": "finite-dual-survivor-pullback-boundary-closed",
+  "inputsValid": true,
+  "contractValid": true,
+  "precursorSemanticsValid": true,
+  "exactBindingInventoryValid": true,
+  "precedenceBatteryPassed": true,
+  "precedenceBattery": [
+    {
+      "caseId": "invalid",
+      "expectedVerdict": "invalid-or-drifted-input",
+      "actualVerdict": "invalid-or-drifted-input",
+      "passed": true
+    },
+    {
+      "caseId": "none-complete",
+      "expectedVerdict": "no-survivor-complete-finite-pullback-boundary",
+      "actualVerdict": "no-survivor-complete-finite-pullback-boundary",
+      "passed": true
+    },
+    {
+      "caseId": "partial-complete",
+      "expectedVerdict": "partial-survivor-finite-pullback-boundary",
+      "actualVerdict": "partial-survivor-finite-pullback-boundary",
+      "passed": true
+    },
+    {
+      "caseId": "all-complete",
+      "expectedVerdict": "finite-dual-survivor-pullback-boundary-closed",
+      "actualVerdict": "finite-dual-survivor-pullback-boundary-closed",
+      "passed": true
+    }
+  ],
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A19",
+  "contract": {
+    "path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/preregistration/phase525_survivor_reflection_pullback_boundary_contract_v1.json",
+    "sha256": "21df90c5b393ba28c69e713a28f06a94ec3af9f23c622221b020930f01def3a3",
+    "menuFrozenBeforeScoring": true
+  },
+  "exactInputBindings": [
+    {
+      "id": "phase521-summary",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/output/a5_frozen_reflection_compatible_triangulation_census_summary.json",
+      "expectedSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "actualSha256": "474269ef2edc0fd6470cb1c7bb2e3fa7084ec0db67fc4dee6e6d60ffbc8b7f11",
+      "hashMatches": true
+    },
+    {
+      "id": "phase521-contract",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/preregistration/phase521_frozen_reflection_compatible_triangulation_census_contract_v1.json",
+      "expectedSha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3",
+      "actualSha256": "0d2948b25e8fd10e02f9cd3adf115ed3016c1330a098cbd0de006c7d552d2eb3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase521-program",
+      "path": "studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Program.cs",
+      "expectedSha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615",
+      "actualSha256": "a6f30ce1ee9c2fbfc0748ea658e63ca999e00107367ba11e6bbd4461c5f8a615",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-summary",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/output/a5_foundation_candidate_reduction_summary.json",
+      "expectedSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "actualSha256": "ae534c59e3b728519a691fa5d2766c28e629ff674179d9dc1e62c2ed0b488b7b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-contract",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/preregistration/phase522_a5_foundation_candidate_reduction_contract_v1.json",
+      "expectedSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "actualSha256": "5263db8a99aa516f6698bf8d6038f7d8371b030b89f9d10c0053ea495e0a47ad",
+      "hashMatches": true
+    },
+    {
+      "id": "phase522-program",
+      "path": "studies/phase522_a5_foundation_candidate_reduction_001/Program.cs",
+      "expectedSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "actualSha256": "8512132c28bf40562f8598189fc39cb452dd64792a1fa3e0b19ea2291627b2a7",
+      "hashMatches": true
+    }
+  ],
+  "frozenMenu": {
+    "geometryId": "periodic-cubical-cell-poset-barycentric",
+    "extentMenu": [
+      3,
+      4
+    ],
+    "survivorPairIds": [
+      "periodic-cubical-cell-poset-barycentric::site-centered-axis0",
+      "periodic-cubical-cell-poset-barycentric::link-centered-axis0"
+    ],
+    "menuFrozenBeforeScoring": true,
+    "targetBlindConstruction": true,
+    "resultBasedTuningPerformed": false
+  },
+  "rules": {
+    "cellRepresentation": "canonical-base-coordinate-in-Zn4-plus-active-axis-mask-0-through-15",
+    "orientedSimplexRule": "strictly-increasing-cell-rank-order",
+    "boundaryRule": "d[v0,...,vk]=sum_i(-1)^i[v0,...,omit(vi),...,vk]",
+    "combinatorialCubicalCarrierOrientationRule": "reflection-sign-minus-iff-axis0-is-active",
+    "doubledSliceRule": "tau2=(2*base0\u002Baxis0-active-bit)-offset mod 2n",
+    "orderComplexPullbackCoefficient": "\u002B1 because reflection preserves strict cell-rank order",
+    "combinatorialCubicalCarrierPullbackCoefficient": "independently derived from the restricted diagonal reflection Jacobian and compared with the frozen axis-zero rule"
+  },
+  "pairAudits": [
+    {
+      "candidateId": "periodic-cubical-cell-poset-barycentric::site-centered-axis0",
+      "reflectionId": "site-centered-axis0",
+      "extentAudits": [
+        {
+          "extent": 3,
+          "cellCount": 1296,
+          "simplexCounts": [
+            1296,
+            19440,
+            64800,
+            77760,
+            31104
+          ],
+          "mappedSimplexCounts": [
+            1296,
+            19440,
+            64800,
+            77760,
+            31104
+          ],
+          "sharedCellIncidenceCount": 5184,
+          "sharedCellIncidenceCheckCount": 5184,
+          "sharedCellIncidenceRetained": true,
+          "mappedSimplexCount": 194400,
+          "simplexInvolutionCheckCount": 194400,
+          "orientedChainPullbackClosed": true,
+          "chainInvolution": true,
+          "boundaryCommutationCheckCount": 699840,
+          "expectedBoundaryCommutationCheckCount": 699840,
+          "boundaryCommutation": true,
+          "faceOrientationPreserved": true,
+          "vertexBijection": true,
+          "vertexInvolution": true,
+          "activeMasksPreserved": true,
+          "mappedCellsCanonical": true,
+          "orderComplexEdgeOrientationReversalCount": 0,
+          "orderComplexFaceOrientationReversalCount": 0,
+          "cubicalRankOneCarrierReversalCount": 81,
+          "cubicalRankTwoFaceOrientationReversalCount": 243,
+          "sliceAssignmentCheckCount": 1296,
+          "sliceAssignmentCovariant": true,
+          "boundaryCarrierCount": 432,
+          "positiveCarrierCount": 432,
+          "negativeCarrierCount": 432,
+          "positiveToNegativeCount": 432,
+          "negativeToPositiveCount": 432,
+          "carrierRankAudits": [
+            {
+              "rank": 0,
+              "carrierCount": 81,
+              "reversedCount": 0,
+              "preservedCount": 81,
+              "expectedReversedCount": 0,
+              "expectedPreservedCount": 81,
+              "controlsPassed": true
+            },
+            {
+              "rank": 1,
+              "carrierCount": 324,
+              "reversedCount": 81,
+              "preservedCount": 243,
+              "expectedReversedCount": 81,
+              "expectedPreservedCount": 243,
+              "controlsPassed": true
+            },
+            {
+              "rank": 2,
+              "carrierCount": 486,
+              "reversedCount": 243,
+              "preservedCount": 243,
+              "expectedReversedCount": 243,
+              "expectedPreservedCount": 243,
+              "controlsPassed": true
+            },
+            {
+              "rank": 3,
+              "carrierCount": 324,
+              "reversedCount": 243,
+              "preservedCount": 81,
+              "expectedReversedCount": 243,
+              "expectedPreservedCount": 81,
+              "controlsPassed": true
+            },
+            {
+              "rank": 4,
+              "carrierCount": 81,
+              "reversedCount": 81,
+              "preservedCount": 0,
+              "expectedReversedCount": 81,
+              "expectedPreservedCount": 0,
+              "controlsPassed": true
+            }
+          ],
+          "exactCountsValid": true,
+          "completeFinitePullbackBoundary": true
+        },
+        {
+          "extent": 4,
+          "cellCount": 4096,
+          "simplexCounts": [
+            4096,
+            61440,
+            204800,
+            245760,
+            98304
+          ],
+          "mappedSimplexCounts": [
+            4096,
+            61440,
+            204800,
+            245760,
+            98304
+          ],
+          "sharedCellIncidenceCount": 16384,
+          "sharedCellIncidenceCheckCount": 16384,
+          "sharedCellIncidenceRetained": true,
+          "mappedSimplexCount": 614400,
+          "simplexInvolutionCheckCount": 614400,
+          "orientedChainPullbackClosed": true,
+          "chainInvolution": true,
+          "boundaryCommutationCheckCount": 2211840,
+          "expectedBoundaryCommutationCheckCount": 2211840,
+          "boundaryCommutation": true,
+          "faceOrientationPreserved": true,
+          "vertexBijection": true,
+          "vertexInvolution": true,
+          "activeMasksPreserved": true,
+          "mappedCellsCanonical": true,
+          "orderComplexEdgeOrientationReversalCount": 0,
+          "orderComplexFaceOrientationReversalCount": 0,
+          "cubicalRankOneCarrierReversalCount": 256,
+          "cubicalRankTwoFaceOrientationReversalCount": 768,
+          "sliceAssignmentCheckCount": 4096,
+          "sliceAssignmentCovariant": true,
+          "boundaryCarrierCount": 1024,
+          "positiveCarrierCount": 1536,
+          "negativeCarrierCount": 1536,
+          "positiveToNegativeCount": 1536,
+          "negativeToPositiveCount": 1536,
+          "carrierRankAudits": [
+            {
+              "rank": 0,
+              "carrierCount": 256,
+              "reversedCount": 0,
+              "preservedCount": 256,
+              "expectedReversedCount": 0,
+              "expectedPreservedCount": 256,
+              "controlsPassed": true
+            },
+            {
+              "rank": 1,
+              "carrierCount": 1024,
+              "reversedCount": 256,
+              "preservedCount": 768,
+              "expectedReversedCount": 256,
+              "expectedPreservedCount": 768,
+              "controlsPassed": true
+            },
+            {
+              "rank": 2,
+              "carrierCount": 1536,
+              "reversedCount": 768,
+              "preservedCount": 768,
+              "expectedReversedCount": 768,
+              "expectedPreservedCount": 768,
+              "controlsPassed": true
+            },
+            {
+              "rank": 3,
+              "carrierCount": 1024,
+              "reversedCount": 768,
+              "preservedCount": 256,
+              "expectedReversedCount": 768,
+              "expectedPreservedCount": 256,
+              "controlsPassed": true
+            },
+            {
+              "rank": 4,
+              "carrierCount": 256,
+              "reversedCount": 256,
+              "preservedCount": 0,
+              "expectedReversedCount": 256,
+              "expectedPreservedCount": 0,
+              "controlsPassed": true
+            }
+          ],
+          "exactCountsValid": true,
+          "completeFinitePullbackBoundary": true
+        }
+      ],
+      "completeFinitePullbackBoundary": true
+    },
+    {
+      "candidateId": "periodic-cubical-cell-poset-barycentric::link-centered-axis0",
+      "reflectionId": "link-centered-axis0",
+      "extentAudits": [
+        {
+          "extent": 3,
+          "cellCount": 1296,
+          "simplexCounts": [
+            1296,
+            19440,
+            64800,
+            77760,
+            31104
+          ],
+          "mappedSimplexCounts": [
+            1296,
+            19440,
+            64800,
+            77760,
+            31104
+          ],
+          "sharedCellIncidenceCount": 5184,
+          "sharedCellIncidenceCheckCount": 5184,
+          "sharedCellIncidenceRetained": true,
+          "mappedSimplexCount": 194400,
+          "simplexInvolutionCheckCount": 194400,
+          "orientedChainPullbackClosed": true,
+          "chainInvolution": true,
+          "boundaryCommutationCheckCount": 699840,
+          "expectedBoundaryCommutationCheckCount": 699840,
+          "boundaryCommutation": true,
+          "faceOrientationPreserved": true,
+          "vertexBijection": true,
+          "vertexInvolution": true,
+          "activeMasksPreserved": true,
+          "mappedCellsCanonical": true,
+          "orderComplexEdgeOrientationReversalCount": 0,
+          "orderComplexFaceOrientationReversalCount": 0,
+          "cubicalRankOneCarrierReversalCount": 81,
+          "cubicalRankTwoFaceOrientationReversalCount": 243,
+          "sliceAssignmentCheckCount": 1296,
+          "sliceAssignmentCovariant": true,
+          "boundaryCarrierCount": 432,
+          "positiveCarrierCount": 432,
+          "negativeCarrierCount": 432,
+          "positiveToNegativeCount": 432,
+          "negativeToPositiveCount": 432,
+          "carrierRankAudits": [
+            {
+              "rank": 0,
+              "carrierCount": 81,
+              "reversedCount": 0,
+              "preservedCount": 81,
+              "expectedReversedCount": 0,
+              "expectedPreservedCount": 81,
+              "controlsPassed": true
+            },
+            {
+              "rank": 1,
+              "carrierCount": 324,
+              "reversedCount": 81,
+              "preservedCount": 243,
+              "expectedReversedCount": 81,
+              "expectedPreservedCount": 243,
+              "controlsPassed": true
+            },
+            {
+              "rank": 2,
+              "carrierCount": 486,
+              "reversedCount": 243,
+              "preservedCount": 243,
+              "expectedReversedCount": 243,
+              "expectedPreservedCount": 243,
+              "controlsPassed": true
+            },
+            {
+              "rank": 3,
+              "carrierCount": 324,
+              "reversedCount": 243,
+              "preservedCount": 81,
+              "expectedReversedCount": 243,
+              "expectedPreservedCount": 81,
+              "controlsPassed": true
+            },
+            {
+              "rank": 4,
+              "carrierCount": 81,
+              "reversedCount": 81,
+              "preservedCount": 0,
+              "expectedReversedCount": 81,
+              "expectedPreservedCount": 0,
+              "controlsPassed": true
+            }
+          ],
+          "exactCountsValid": true,
+          "completeFinitePullbackBoundary": true
+        },
+        {
+          "extent": 4,
+          "cellCount": 4096,
+          "simplexCounts": [
+            4096,
+            61440,
+            204800,
+            245760,
+            98304
+          ],
+          "mappedSimplexCounts": [
+            4096,
+            61440,
+            204800,
+            245760,
+            98304
+          ],
+          "sharedCellIncidenceCount": 16384,
+          "sharedCellIncidenceCheckCount": 16384,
+          "sharedCellIncidenceRetained": true,
+          "mappedSimplexCount": 614400,
+          "simplexInvolutionCheckCount": 614400,
+          "orientedChainPullbackClosed": true,
+          "chainInvolution": true,
+          "boundaryCommutationCheckCount": 2211840,
+          "expectedBoundaryCommutationCheckCount": 2211840,
+          "boundaryCommutation": true,
+          "faceOrientationPreserved": true,
+          "vertexBijection": true,
+          "vertexInvolution": true,
+          "activeMasksPreserved": true,
+          "mappedCellsCanonical": true,
+          "orderComplexEdgeOrientationReversalCount": 0,
+          "orderComplexFaceOrientationReversalCount": 0,
+          "cubicalRankOneCarrierReversalCount": 256,
+          "cubicalRankTwoFaceOrientationReversalCount": 768,
+          "sliceAssignmentCheckCount": 4096,
+          "sliceAssignmentCovariant": true,
+          "boundaryCarrierCount": 1024,
+          "positiveCarrierCount": 1536,
+          "negativeCarrierCount": 1536,
+          "positiveToNegativeCount": 1536,
+          "negativeToPositiveCount": 1536,
+          "carrierRankAudits": [
+            {
+              "rank": 0,
+              "carrierCount": 256,
+              "reversedCount": 0,
+              "preservedCount": 256,
+              "expectedReversedCount": 0,
+              "expectedPreservedCount": 256,
+              "controlsPassed": true
+            },
+            {
+              "rank": 1,
+              "carrierCount": 1024,
+              "reversedCount": 256,
+              "preservedCount": 768,
+              "expectedReversedCount": 256,
+              "expectedPreservedCount": 768,
+              "controlsPassed": true
+            },
+            {
+              "rank": 2,
+              "carrierCount": 1536,
+              "reversedCount": 768,
+              "preservedCount": 768,
+              "expectedReversedCount": 768,
+              "expectedPreservedCount": 768,
+              "controlsPassed": true
+            },
+            {
+              "rank": 3,
+              "carrierCount": 1024,
+              "reversedCount": 768,
+              "preservedCount": 256,
+              "expectedReversedCount": 768,
+              "expectedPreservedCount": 256,
+              "controlsPassed": true
+            },
+            {
+              "rank": 4,
+              "carrierCount": 256,
+              "reversedCount": 256,
+              "preservedCount": 0,
+              "expectedReversedCount": 256,
+              "expectedPreservedCount": 0,
+              "controlsPassed": true
+            }
+          ],
+          "exactCountsValid": true,
+          "completeFinitePullbackBoundary": true
+        }
+      ],
+      "completeFinitePullbackBoundary": true
+    }
+  ],
+  "completePairCount": 2,
+  "failedPairCount": 0,
+  "finiteDualSurvivorPullbackBoundaryClosed": true,
+  "finiteCombinatorialChainAndCarrierClosure": true,
+  "positiveResultScope": "finite-combinatorial-chain-and-carrier-closure-only",
+  "actionCovarianceEvaluated": false,
+  "actionCarrierTransformationEstablished": false,
+  "authorityFirewalls": {
+    "candidateSelectionAllowed": false,
+    "candidateRegistrationAllowed": false,
+    "productionGeometrySelectionAllowed": false,
+    "allVolumeEmbeddingOrGluingClaimAllowed": false,
+    "positiveTimeAlgebraClaimAllowed": false,
+    "reflectionPositivityRulingAllowed": false,
+    "theoremOrCounterexampleAllowed": false,
+    "phase515CreationOrUnlockAllowed": false,
+    "phase516CreationOrUnlockAllowed": false,
+    "phase458G1SatisfactionAllowed": false,
+    "limbL8ClosureAllowed": false,
+    "phase458EvaluationAllowed": false,
+    "phase481PackWorkAllowed": false,
+    "actionOrObservableEvaluationAllowed": false,
+    "normalizedMeasureEvaluationAllowed": false,
+    "samplingOrReprocessingAllowed": false,
+    "hmcAllowed": false,
+    "benchmarkAllowed": false,
+    "productionAllowed": false,
+    "launchAllowed": false,
+    "accelerationAllowed": false,
+    "o4OrHumanRulingAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false
+  },
+  "candidateSelected": false,
+  "candidateGeometryInstalled": false,
+  "candidateGeometryRegistered": false,
+  "reflectionRegistered": false,
+  "productionGeometrySelected": false,
+  "allowedVolumeEmbeddingEstablished": false,
+  "sharedEdgeGluingTheoremEstablished": false,
+  "allVolumeGluingTheoremEstablished": false,
+  "positiveTimeAlgebraMembershipEstablished": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "theoremClaimed": false,
+  "targetCounterexampleClaimed": false,
+  "finiteOnly": true,
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "phase515Unlocked": false,
+  "phase516Unlocked": false,
+  "phase458G1Satisfied": false,
+  "closesLimbL8": false,
+  "phase458EvaluationPerformed": false,
+  "phase481PackWorkPerformed": false,
+  "actionOrObservableEvaluated": false,
+  "normalizedMeasureEvaluated": false,
+  "candidateToTargetEqualityEstablished": false,
+  "hermiticityEstablished": false,
+  "samplingOrReprocessingRun": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "accelerationAuthorized": false,
+  "o4Discharged": false,
+  "humanRulingPerformed": false,
+  "externalReviewPending": true,
+  "sourceContractApplicationAllowed": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "physicalUnitOrGevClaimMade": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a19BoundaryHeld": true,
+  "decision": "Both frozen barycentric survivor pairs pass exact finite combinatorial chain, boundary, incidence, slice, and cubical-carrier controls at extents 3 and 4. No action or observable was evaluated, so action covariance and an action-carrier transformation remain unestablished. This does not install or register a geometry or establish an embedding, gluing, positive-time-algebra, or reflection-positivity result."
+}

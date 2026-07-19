@@ -580,3 +580,67 @@ Phase481 pack work, Phase458 evaluation, source-contract application, O4 or
 human ruling, physical-target tuning, or physical-unit promotion. Every output
 keeps external review pending, every execution and promotion authority false,
 and `promotedPhysicalMassClaimCount=0`.
+
+## A19 — Phase482 action/parity/pullback closure (phases 523–526)
+
+The user authorizes the next deterministic, target-blind refinement tranche
+after Amendment A18. Phases523–525 are independent investigations and may be
+implemented in parallel only after this amendment and the registry allocation
+are frozen. Phase526 is dependent and may be implemented only after the three
+precursor contracts and outputs stabilize. This tranche does not alter any
+Phase517–522 terminal, register a theorem foundation, or unlock reserved
+Phases515–516.
+
+Phase523 exact-binds the two executable Phase452 action members, the action-
+family declaration, the A5 generator and serialized record, and the
+Phase517/520/522 lineage findings. It freezes the complete A5 prerequisite
+inventory before classification and determines which prerequisites are
+identical for both executable members, which are member-dependent, and whether
+universal quantification over both members can remove a member-selection
+dependency for any named prerequisite. It may report that member selection is
+still required. It cannot select a member by convenience, treat prose as an
+executable binding, invent a canonical member, or promote agreement on a
+proper subset of prerequisites to action-wide equivalence.
+
+Phase524 exact-binds the executable curvature/action implementation, both
+Phase452 member definitions, the A5 parity assertions, and the Phase517/520/522
+findings. Before evaluation it freezes a source-formula coverage ledger and a
+term-level omega-degree/parity decomposition for each member. An even-action
+certificate requires complete executable-formula coverage and an exact
+derivation cancelling every sign-odd contribution. A concrete surviving odd
+term must retain its member and scope. Floating-point probes, random parity
+samples, contract-supplied truth values, comments, and serialized prose are
+controls or evidence rows only and can never establish the identity. Missing
+formula coverage, non-exact coefficients, or an unresolved cancellation is a
+valid fail-closed terminal rather than permission to assume evenness.
+
+Phase525 exact-binds the two surviving Phase521/522 barycentric
+geometry/reflection pairs and freezes its finite extent menu before scoring.
+For each pair it constructs the vertex/cell reflection, oriented chain
+pullback, edge reversal, face orientation, boundary operator, shared-cell
+incidence, slice assignment, and candidate action-carrier transformation rules
+from the tested combinatorics. Exact involution, chain-map, boundary-
+commutation, incidence-retention, and mapped-carrier checks are mandatory.
+Failure refutes only the tested pair and scope. Finite survival does not install
+the candidate as the committed mesh, prove an allowed-volume embedding or
+gluing theorem, establish positive-time-algebra membership, or establish or
+refute reflection positivity.
+
+Phase526 exact-binds Phases523–525 and the unchanged Phase520–522 package and
+applies frozen fail-closed precedence: invalid or drifted input; unresolved
+member dependence for the named A5 prerequisites; exact omega parity refuted
+or unresolved; no survivor with complete finite pullback/boundary closure;
+unresolved O1/O2 dependency or positive-time-algebra membership; incomplete
+normalized measure/domain; unproved candidate-to-target equality or
+Hermiticity; finite-only evidence; unproved necessity, gluing, or all-scope
+claims; then candidate package ready for independent mathematical review. It
+may reduce the member/candidate menu and name the next exact certificates, but
+cannot register or select a production action or geometry, claim a theorem or
+counterexample, establish or refute reflection positivity, satisfy Phase458
+G1, close L8, or create or unlock Phases515–516.
+
+A19 performs no sampling, HMC, reprocessing, benchmark, production allocation,
+Phase481 pack work, Phase458 evaluation, source-contract application, O4 or
+human ruling, physical-target tuning, or physical-unit promotion. All outputs
+keep external review pending, all execution and promotion authorities false,
+and `promotedPhysicalMassClaimCount=0`.

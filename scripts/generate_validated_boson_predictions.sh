@@ -395,6 +395,10 @@ dotnet run --no-build -c Release --project studies/phase519_a5_candidate_foundat
 dotnet run --no-build -c Release --project studies/phase520_a5_action_subject_lineage_parity_audit_001/Phase520A5ActionSubjectLineageParityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Phase521A5FrozenReflectionCompatibleTriangulationCensus.csproj
 dotnet run --no-build -c Release --project studies/phase522_a5_foundation_candidate_reduction_001/Phase522A5FoundationCandidateReduction.csproj
+dotnet run --no-build -c Release --project studies/phase523_a5_action_member_universalization_audit_001/Phase523A5ActionMemberUniversalizationAudit.csproj
+dotnet run --no-build -c Release --project studies/phase524_a5_exact_omega_parity_decomposition_001/Phase524A5ExactOmegaParityDecomposition.csproj
+dotnet run --no-build -c Release --project studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Phase525A5SurvivorReflectionPullbackBoundaryAudit.csproj
+dotnet run --no-build -c Release --project studies/phase526_a5_certificate_reducer_001/Phase526A5CertificateReducer.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
