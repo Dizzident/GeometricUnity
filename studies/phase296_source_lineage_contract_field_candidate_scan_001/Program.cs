@@ -958,6 +958,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase524_a5_exact_omega_parity_decomposition_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase526_a5_certificate_reducer_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase528_a5_even_sector_premise_applicability_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase529_a5_action_premise_route_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
@@ -998,6 +1001,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P524.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P525.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P526.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P527.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P528.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P529.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

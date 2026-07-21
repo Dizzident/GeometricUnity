@@ -441,8 +441,39 @@ membership, normalized measure/domain, target equality, Hermiticity,
 finite-to-general embedding, necessity, gluing, and all-scope certificates
 remain open. The package is not independent-review-ready; Phases515-516 remain
 locked, Phase458 G1 and L8 remain open, external review remains pending, and
-`promotedPhysicalMassClaimCount=0`. Phase202 is 310 passed / 3 standing
-failures. Registry 527+ is unassigned.
+`promotedPhysicalMassClaimCount=0`. Phase202 was 310 passed / 3 standing
+failures before A20.
+
+A5 REGISTERED-ACTION PREMISE CLOSURE (2026-07-21, Amendment A20;
+Phases527-529): Phase527 replaces the binary64-only SD2 uncertainty with an
+exact theta-zero reduction. On the complete lattice-canonical `n=3` complex,
+the first frozen signed-edge row includes all 4,050 faces and gives exact
+`S(+omega)-S(-omega)=13/180`, equivalently cubic coefficient `13/360`.
+This refutes omega-sign evenness for the registered SD2 member on its
+theta-zero slice; it does not make a general-theta claim.
+
+Phase528 exact-binds the frozen A5 premise, complete two-member executable
+family, and the Phase524/527 witnesses. The identity member has exact action
+difference `1`, and the SD2 theta-zero member has exact difference `13/180`.
+Both registered members are therefore outside the current pack's explicit
+exact-evenness premise. The result is current-pack applicability only; it does
+not rule out alternative actions, inequalities, or reflection-positivity
+theorems.
+
+Phase529 exact-binds Phases524-528 and reaches
+`current-a5-route-inapplicable-to-registered-action-family`. The current A5
+pack route closes at its action premise, so further all-volume geometry is not
+the next step for this pack. Phase525's finite combinatorial geometry result
+is retained but cannot repair the earlier premise mismatch. Limb L8 remains
+generally open, Phase458 G1 remains unsatisfied, Phases515-516 remain locked,
+external review remains pending, and `promotedPhysicalMassClaimCount=0`.
+Phase202 is 313 passed / 3 standing failures after the three A20 checklist
+rows. Registry 530+ is unassigned.
+
+The mandatory A20 incremental checkpoint ran 57 steps and skipped 337. It
+ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
+synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z and
+14 Higgs fields, and `promotedPhysicalMassClaimCount=0`.
 
 The mandatory A19 incremental checkpoint ran 84 steps and skipped 306. It
 ended at `boson-claim-integrity-verified`: O4 coverage was 31/31, the

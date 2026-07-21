@@ -26,7 +26,8 @@ back, NO new phase directory may be created outside this table.
 | 517-519 | Shared Phase482 parallel-candidate foundation extension (A17) | 517 parallel site/link candidate specifications without selection; 518 deterministic exact checks of both candidates; 519 dependent candidate review-readiness adjudication |
 | 520-522 | Shared Phase482 foundation-refinement extension (A18) | 520 exact action-subject lineage/parity closure audit; 521 frozen reflection-compatible triangulation census; 522 dependent foundation-candidate reduction adjudicator |
 | 523-526 | Shared Phase482 action/parity/pullback extension (A19) | 523 action-member universalization audit; 524 exact omega-parity decomposition; 525 survivor reflection-pullback and boundary audit; 526 dependent A5 certificate reducer |
-| 527+ | Unassigned - extend this registry before use | - |
+| 527-529 | Shared Phase482 A5 action-premise extension (A20) | 527 exact SD2 theta-zero parity audit; 528 frozen even-sector premise-applicability audit; 529 dependent A5 action-premise route adjudicator |
+| 530+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

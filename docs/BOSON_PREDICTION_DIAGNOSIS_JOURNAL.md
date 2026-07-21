@@ -21278,3 +21278,51 @@ coverage remained 31/31, the synthetic-overturn battery remained 94/94, the
 source deficits remained 15 W/Z and 14 Higgs fields, and Phase202 remained
 310 passed / 3 standing failures. The pass ended at
 `boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-21 - Amendment A20 closes the current A5 pack at its action premise
+
+The A19 kill order was refined before investing in all-volume geometry. The
+SD2 member had remained unresolved only because the general independent-theta
+implementation uses binary64 inverse and exponential paths. The committed
+theta-zero slice removes the exponential dressing and leaves an exact rational
+SD2/Hodge contraction, so registry 527-529 and Amendment A20 were frozen to
+test that earlier premise first.
+
+Phase527 exact-binds sixteen executable/source and precursor artifacts. It
+reconstructs the complete lattice-canonical extent-3 complex, the exact
+theta-zero endomorphism `R=(I+star)/4`, cell-incidence-averaged contraction,
+and every one of the 4,050 face contributions using rational arithmetic. The
+first preregistered signed-edge row is decisive:
+`S(+omega)-S(-omega)=13/180`, with cubic coefficient `13/360` and 33 nonzero
+contracted face contributions. Binary64 replay is not used as evidence. This
+refutes exact omega-sign evenness for `sd2-id0/c0.5` on the theta-zero slice
+only.
+
+Phase528 exact-binds fourteen A5 premise, family-lineage, and exact-witness
+artifacts. Phase524 supplies the identity-member exact difference `1`, and
+Phase527 supplies the SD2 theta-zero exact difference `13/180`. Because the
+executable family census is complete and contains exactly those two members,
+the current frozen A5 pack's exactly-even full-action premise is inapplicable
+to every registered member. The conclusion is deliberately limited to the
+current pack and registered family; no alternative action, inequality, or
+theorem is ruled out.
+
+Phase529 exact-binds twenty Phase524-528 program, contract, summary, and full
+artifacts. Its precedence and mutation battery reach
+`current-a5-route-inapplicable-to-registered-action-family`. The dependent
+route closes before geometry for this pack. Phase525's two finite
+combinatorial survivors remain valid finite-only evidence, but cannot repair
+the earlier action-premise mismatch. Further all-volume geometry is therefore
+not the next expenditure for this route.
+
+No sampling, HMC, reprocessing, benchmark, production, Phase458 evaluation,
+source-contract application, O4/human ruling, theorem, target counterexample,
+reflection-positivity result, or physical-unit claim occurred. Limb L8 remains
+generally open, Phase458 G1 remains unsatisfied, Phases515-516 remain locked,
+external review remains pending, and `promotedPhysicalMassClaimCount=0`.
+
+The mandatory A20 incremental checkpoint ran 57 steps and skipped 337.
+Phase202 reported 313 passed / 3 standing failures; O4 coverage remained
+31/31, the synthetic-overturn battery remained 94/94, and the source deficits
+remained 15 W/Z and 14 Higgs fields. The pass ended at
+`boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.

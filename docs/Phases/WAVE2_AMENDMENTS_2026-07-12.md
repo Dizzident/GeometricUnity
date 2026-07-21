@@ -644,3 +644,50 @@ Phase481 pack work, Phase458 evaluation, source-contract application, O4 or
 human ruling, physical-target tuning, or physical-unit promotion. All outputs
 keep external review pending, all execution and promotion authorities false,
 and `promotedPhysicalMassClaimCount=0`.
+
+## A20 — Phase482 registered-action A5 premise closure (phases 527–529)
+
+Amendment A19 changes the kill order. Phase524 supplies an exact finite
+omega-odd witness for the identity member, while the SD2 member remains
+unresolved only because the general independent-theta implementation contains
+binary64 inverse/exponential paths. The committed operator separately states
+that theta zero removes the exponential dressing, and its SD2/Hodge
+endomorphism and Einstein coefficient are rational. Before spending on an
+all-volume embedding or gluing construction, this tranche tests whether that
+exact slice already decides the second registered member and whether the
+frozen A5 even-sector premise applies to either registered action member.
+
+Phase527 exact-binds the Phase452 member definition and execution path, the
+curvature, Lambda2/Hodge, Shiab-contraction, and mass-pairing sources, and the
+Phase524/526 artifacts. Its contract freezes the theta-zero reduction, exact
+rational matrix rules, lattice-canonical n=3 scope, lexicographic signed-edge
+witness search, resource ceiling, and terminal taxonomy before evaluation.
+Only a complete exact-rational reduction with a nonzero full-action cubic
+coefficient may refute SD2 parity in that fixed slice. Failure to find a
+witness is only frozen-search survival, not an even-action theorem. Binary64
+replay is a non-gating cross-check and may not manufacture exactness.
+
+Phase528 is hard-gated on exact, drift-free Phase524 and Phase527 inputs. It
+exact-binds the frozen A5 generator, serialized A5 record, registered action
+family, and Phase517/520/523/526 lineage. It audits the precise logical role of
+the generator's `S_B`-even assertion and asks whether every registered member
+satisfies that premise. It may conclude only that the current frozen A5 pack is
+inapplicable to one or both registered members. It cannot prove that no other
+action, reflection, inequality, or reflection-positivity theorem exists, and
+it cannot turn premise failure into a target counterexample.
+
+Phase529 exact-binds Phases527–528 and the unchanged Phase524–526 chain and
+applies frozen precedence: invalid or drifted input; exact reduction
+unavailable; member-scoped premise status unresolved; current frozen A5 route
+inapplicable to every registered action member; or action premise survives and
+the later geometry/measure/target certificates remain worth testing. A route-
+inapplicable terminal closes only the current A5 pack/theorem route at its
+action premise. It does not close limb L8 generally, satisfy Phase458 G1,
+register an action or geometry, unlock Phases515–516, establish or refute
+reflection positivity, or claim a theorem or target counterexample.
+
+A20 performs no sampling, HMC, reprocessing, benchmark, production allocation,
+Phase481 work, Phase458 evaluation, source-contract application, O4 or human
+ruling, target tuning, or physical-unit promotion. External review remains
+pending, every execution and promotion authority remains false, and
+`promotedPhysicalMassClaimCount=0` throughout.

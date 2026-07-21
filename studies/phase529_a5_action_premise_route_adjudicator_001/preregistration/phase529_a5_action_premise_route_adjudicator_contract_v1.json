@@ -1,0 +1,52 @@
+{
+  "contractId": "phase529-a20-dependent-action-premise-route-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A20",
+  "frozenBeforePrecursorConsumption": true,
+  "exactBindings": [
+    { "id": "phase524-program", "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/Program.cs", "sha256": "f2a1a7d2d46b027b77751515e825a07cc4e5bf1e454cf54a3e0c3bf9c80e6b2d" },
+    { "id": "phase524-contract", "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/preregistration/phase524_a5_exact_omega_parity_decomposition_contract_v1.json", "sha256": "c02cc45ab049bb6cf9a7215c13617c43674e14f4130b75be6919fe256e487116" },
+    { "id": "phase524-full", "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition.json", "sha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238" },
+    { "id": "phase524-summary", "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition_summary.json", "sha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238" },
+    { "id": "phase525-program", "path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Program.cs", "sha256": "8b93feb53b4d82286f4e82f0445b67be3fe94b6d1d1674fcd267522cc56edc14" },
+    { "id": "phase525-contract", "path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/preregistration/phase525_survivor_reflection_pullback_boundary_contract_v1.json", "sha256": "21df90c5b393ba28c69e713a28f06a94ec3af9f23c622221b020930f01def3a3" },
+    { "id": "phase525-full", "path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit.json", "sha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455" },
+    { "id": "phase525-summary", "path": "studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/output/a5_survivor_reflection_pullback_boundary_audit_summary.json", "sha256": "f9254f14beb0fc4b4a8cdac3cd6f9e139b01a34a22dd69bb398b724664980455" },
+    { "id": "phase526-program", "path": "studies/phase526_a5_certificate_reducer_001/Program.cs", "sha256": "a324bf58ab55ca1d0a83ebb9cc4a65bd597c2e60efc06bd04b17d6b6535833f8" },
+    { "id": "phase526-contract", "path": "studies/phase526_a5_certificate_reducer_001/preregistration/phase526_a5_certificate_reducer_contract_v1.json", "sha256": "6c8bdb9367d058e07849208ebab996afaf8364877649c84deaeb31be08be6e5c" },
+    { "id": "phase526-full", "path": "studies/phase526_a5_certificate_reducer_001/output/a5_certificate_reducer.json", "sha256": "67eb6c66a6fca23fdbfaf2e41268aebc97bb7acd75a52eca6bd5144b20c88667" },
+    { "id": "phase526-summary", "path": "studies/phase526_a5_certificate_reducer_001/output/a5_certificate_reducer_summary.json", "sha256": "67eb6c66a6fca23fdbfaf2e41268aebc97bb7acd75a52eca6bd5144b20c88667" },
+    { "id": "phase527-program", "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Program.cs", "sha256": "7627fd957db1eb84cc133f351612292f493c2aed81b75c73ae4694cb74172823" },
+    { "id": "phase527-contract", "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/preregistration/phase527_a5_sd2_theta_zero_exact_parity_contract_v1.json", "sha256": "eba343403cb34dfa17a77b8d287ee7d6e775ac65c6886fa113f22a3074a556ac" },
+    { "id": "phase527-full", "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit.json", "sha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797" },
+    { "id": "phase527-summary", "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json", "sha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797" },
+    { "id": "phase528-program", "path": "studies/phase528_a5_even_sector_premise_applicability_audit_001/Program.cs", "sha256": "0a3bb541d8e687f1c1b82712d32e6988eec86a0e16c10081731a5c6d53afcea4" },
+    { "id": "phase528-contract", "path": "studies/phase528_a5_even_sector_premise_applicability_audit_001/preregistration/phase528_a5_even_sector_premise_applicability_contract_v1.json", "sha256": "8838705a2dc78a5043267a525e31c12ce9a5b31ee0a4bb2bdc7456cc26eb2662" },
+    { "id": "phase528-full", "path": "studies/phase528_a5_even_sector_premise_applicability_audit_001/output/a5_even_sector_premise_applicability_audit.json", "sha256": "2c17dbd45217eab5ccf83d42e862ca6b9250d85f277e3891ee2350fb9ff51a77" },
+    { "id": "phase528-summary", "path": "studies/phase528_a5_even_sector_premise_applicability_audit_001/output/a5_even_sector_premise_applicability_audit_summary.json", "sha256": "2c17dbd45217eab5ccf83d42e862ca6b9250d85f277e3891ee2350fb9ff51a77" }
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "exact-reduction-unavailable",
+    "member-scoped-premise-status-unresolved",
+    "current-a5-route-inapplicable-to-registered-action-family",
+    "action-premise-survives-geometry-next"
+  ],
+  "expectedCurrentVerdict": "current-a5-route-inapplicable-to-registered-action-family",
+  "expectedCurrentTerminalStatus": "a5-action-premise-route-adjudicator-current-a5-route-inapplicable-to-registered-action-family",
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "actionMemberSelectionAllowed": false,
+    "actionOrGeometryRegistrationAllowed": false,
+    "phase515Or516UnlockAllowed": false,
+    "phase458EvaluationOrG1Allowed": false,
+    "limbL8GeneralClosureAllowed": false,
+    "generalTheoremOrTargetCounterexampleAllowed": false,
+    "reflectionPositivityRulingAllowed": false,
+    "samplingOrReprocessingAllowed": false,
+    "hmcOrBenchmarkAllowed": false,
+    "productionOrLaunchAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false
+  }
+}

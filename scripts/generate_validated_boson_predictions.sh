@@ -399,6 +399,9 @@ dotnet run --no-build -c Release --project studies/phase523_a5_action_member_uni
 dotnet run --no-build -c Release --project studies/phase524_a5_exact_omega_parity_decomposition_001/Phase524A5ExactOmegaParityDecomposition.csproj
 dotnet run --no-build -c Release --project studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Phase525A5SurvivorReflectionPullbackBoundaryAudit.csproj
 dotnet run --no-build -c Release --project studies/phase526_a5_certificate_reducer_001/Phase526A5CertificateReducer.csproj
+dotnet run --no-build -c Release --project studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Phase527A5Sd2ThetaZeroExactParityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase528_a5_even_sector_premise_applicability_audit_001/Phase528A5EvenSectorPremiseApplicabilityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase529_a5_action_premise_route_adjudicator_001/Phase529A5ActionPremiseRouteAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

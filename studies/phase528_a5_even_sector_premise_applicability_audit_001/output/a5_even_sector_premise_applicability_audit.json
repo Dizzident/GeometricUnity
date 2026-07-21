@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "phase": 528,
+  "phaseId": "phase528-a5-even-sector-premise-applicability-audit",
+  "contractId": "phase528-a20-even-sector-premise-applicability-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A20",
+  "inputsValid": true,
+  "contractValid": true,
+  "exactBindingInventoryValid": true,
+  "exactBindingsValid": true,
+  "frozenPremisePresent": true,
+  "familyDomainComplete": true,
+  "registeredMemberIds": [
+    "identity",
+    "sd2-id0/c0.5"
+  ],
+  "identityOutsidePremise": true,
+  "sd2OutsidePremise": true,
+  "bothRegisteredMembersOutsideFrozenEvenSectorPremise": true,
+  "exactCounterexampleLogicApplied": true,
+  "precedenceBatteryPassed": true,
+  "precedenceBattery": [
+    {
+      "id": "invalid",
+      "expected": "invalid-or-drifted-input",
+      "actual": "invalid-or-drifted-input",
+      "passed": true
+    },
+    {
+      "id": "both-outside",
+      "expected": "both-registered-members-outside-frozen-even-sector-premise",
+      "actual": "both-registered-members-outside-frozen-even-sector-premise",
+      "passed": true
+    },
+    {
+      "id": "identity-only",
+      "expected": "member-scoped-premise-mismatch",
+      "actual": "member-scoped-premise-mismatch",
+      "passed": true
+    },
+    {
+      "id": "unresolved",
+      "expected": "premise-applicability-unresolved",
+      "actual": "premise-applicability-unresolved",
+      "passed": true
+    }
+  ],
+  "verdictKind": "both-registered-members-outside-frozen-even-sector-premise",
+  "terminalStatus": "a5-even-sector-premise-applicability-audit-both-registered-members-outside-frozen-even-sector-premise",
+  "premiseAudit": {
+    "premise": "the committed A5 Stage-A pack treats S_B as exactly even under omega -\u003E -omega and restricts to its even observable sector",
+    "quantifierScope": "both exact-bound executable Phase452 members",
+    "rows": [
+      {
+        "memberId": "identity",
+        "exactWitness": "action(\u002Bomega)-action(-omega)=1",
+        "premiseApplies": false
+      },
+      {
+        "memberId": "sd2-id0/c0.5",
+        "exactWitness": "theta-zero action(\u002Bomega)-action(-omega)=13/180",
+        "premiseApplies": false
+      }
+    ],
+    "currentPackApplicability": "inapplicable-to-every-registered-member"
+  },
+  "decision": "Both registered executable action members have exact finite full-action omega-odd witnesses. The frozen A5 pack\u0027s exactly-even action premise is therefore inapplicable to every member of this registered family. This is only a current-pack applicability result.",
+  "scopeFirewalls": {
+    "generalActionTheoremClaimed": false,
+    "alternativeA5TheoremRuledOut": false,
+    "reflectionPositivityEstablished": false,
+    "reflectionPositivityRefuted": false,
+    "targetTheoremCounterexampleClaimed": false,
+    "geometryCandidateInvalidatedGenerally": false,
+    "thetaNonzeroSd2Claimed": false
+  },
+  "bindings": [
+    {
+      "id": "a5-generator",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a4a5_pack_generator/Program.cs",
+      "expectedSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "actualSha256": "b0952b61b06c72027387b148ae9f1a2f2b8c3d792b31029ca3b3bea586e064d5",
+      "hashMatches": true
+    },
+    {
+      "id": "serialized-a5",
+      "path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "expectedSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "actualSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-program",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/Program.cs",
+      "expectedSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "actualSha256": "1bea4e162a6af422539319af9f3bebf5b2e77a660307981c0fc8a26be87ff799",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-contract",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/preregistration/phase520_a5_action_subject_lineage_parity_contract_v1.json",
+      "expectedSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "actualSha256": "45ee2c9e012c1c0ae21ac0e77b849b6093c405b79e8d8cafbf42703bf2d743cd",
+      "hashMatches": true
+    },
+    {
+      "id": "phase520-summary",
+      "path": "studies/phase520_a5_action_subject_lineage_parity_audit_001/output/a5_action_subject_lineage_parity_audit_summary.json",
+      "expectedSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "actualSha256": "c8d694924a5b85089aca53d958f659b12eac71aad58b5ba4b2344472d111f14f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase523-program",
+      "path": "studies/phase523_a5_action_member_universalization_audit_001/Program.cs",
+      "expectedSha256": "0161d95506ad76af277b0037afbdb7d1b8f194f5b3e4d8e1905276e53be33ae7",
+      "actualSha256": "0161d95506ad76af277b0037afbdb7d1b8f194f5b3e4d8e1905276e53be33ae7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase523-contract",
+      "path": "studies/phase523_a5_action_member_universalization_audit_001/preregistration/phase523_a5_action_member_universalization_contract_v1.json",
+      "expectedSha256": "55b8e9d39b6c0cffe26cfb223dbe02df2e58211085e60cfd009b243423af026a",
+      "actualSha256": "55b8e9d39b6c0cffe26cfb223dbe02df2e58211085e60cfd009b243423af026a",
+      "hashMatches": true
+    },
+    {
+      "id": "phase523-summary",
+      "path": "studies/phase523_a5_action_member_universalization_audit_001/output/a5_action_member_universalization_audit_summary.json",
+      "expectedSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "actualSha256": "798da2474386f7dd5d2ccf66101b1a055580128c76c08e40fd767b37e3e5b0ba",
+      "hashMatches": true
+    },
+    {
+      "id": "phase524-program",
+      "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/Program.cs",
+      "expectedSha256": "f2a1a7d2d46b027b77751515e825a07cc4e5bf1e454cf54a3e0c3bf9c80e6b2d",
+      "actualSha256": "f2a1a7d2d46b027b77751515e825a07cc4e5bf1e454cf54a3e0c3bf9c80e6b2d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase524-contract",
+      "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/preregistration/phase524_a5_exact_omega_parity_decomposition_contract_v1.json",
+      "expectedSha256": "c02cc45ab049bb6cf9a7215c13617c43674e14f4130b75be6919fe256e487116",
+      "actualSha256": "c02cc45ab049bb6cf9a7215c13617c43674e14f4130b75be6919fe256e487116",
+      "hashMatches": true
+    },
+    {
+      "id": "phase524-summary",
+      "path": "studies/phase524_a5_exact_omega_parity_decomposition_001/output/a5_exact_omega_parity_decomposition_summary.json",
+      "expectedSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "actualSha256": "d337e1b5b152acbda0ebc07476e3ec59d84bb41dc7ff295bafcae3da55f6f238",
+      "hashMatches": true
+    },
+    {
+      "id": "phase527-program",
+      "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Program.cs",
+      "expectedSha256": "7627fd957db1eb84cc133f351612292f493c2aed81b75c73ae4694cb74172823",
+      "actualSha256": "7627fd957db1eb84cc133f351612292f493c2aed81b75c73ae4694cb74172823",
+      "hashMatches": true
+    },
+    {
+      "id": "phase527-contract",
+      "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/preregistration/phase527_a5_sd2_theta_zero_exact_parity_contract_v1.json",
+      "expectedSha256": "eba343403cb34dfa17a77b8d287ee7d6e775ac65c6886fa113f22a3074a556ac",
+      "actualSha256": "eba343403cb34dfa17a77b8d287ee7d6e775ac65c6886fa113f22a3074a556ac",
+      "hashMatches": true
+    },
+    {
+      "id": "phase527-summary",
+      "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json",
+      "expectedSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "actualSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "hashMatches": true
+    }
+  ],
+  "deterministicZeroSampling": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "externalReviewPending": true,
+  "actionMemberSelected": false,
+  "actionOrGeometryRegistered": false,
+  "phase515MayBeCreated": false,
+  "phase516MayBeCreated": false,
+  "phase458EvaluationPerformed": false,
+  "phase458G1Satisfied": false,
+  "closesLimbL8": false,
+  "theoremClaimed": false,
+  "targetCounterexampleClaimed": false,
+  "reflectionPositivityEstablished": false,
+  "reflectionPositivityRefuted": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "hmcPerformed": false,
+  "benchmarkPerformed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "sourceContractApplicationPerformed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "allExecutionAndPromotionAuthorities": false,
+  "promotedPhysicalMassClaimCount": 0
+}
