@@ -771,3 +771,52 @@ not create a Phase481 production pack, validate Phase456 production, satisfy
 Phase458 G3/G4/G5, discharge O4, identify a particle observable, authorize
 source-contract application, or permit a GeV or physical-mass claim.
 `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A23 — interacting-HMC failure-localization tranche (2026-07-22)
+
+Phase534 established a coercive reduced target with exact-coefficient replay,
+converged quadrature, and reference-moment agreement, while its frozen
+interacting HMC execution recorded non-finite and divergent trajectories.
+Phase535 therefore refused the complete-lattice pilot. This amendment
+authorizes three mutually independent, non-claim-bearing experiments that
+exact-bind the immutable Phase533-535 evidence and may execute in parallel.
+Their contracts and terminal taxonomies are frozen before their first runs.
+
+1. **Phase536 — trajectory-forensics replay.** Reproduce the Phase534 scalar
+   HMC algorithm, seeds, initial scales, and adaptation without changing its
+   behavior. Record warmup and retained failures separately, step-size history,
+   first-failure iteration and stage, and bounded state/momentum/gradient and
+   energy diagnostics. The phase may localize a failure but may not repair or
+   relabel Phase534.
+2. **Phase537 — deterministic leapfrog correctness and stability audit.** On
+   the exact Phase534 polynomial, compare the analytic gradient with a
+   symmetric finite-difference oracle, check forward/reverse recovery, and
+   require the expected energy-error improvement under a frozen step-halving
+   ladder over a preregistered state/momentum grid. This phase uses no RNG and
+   cannot establish sampling or mixing validity.
+3. **Phase538 — prospective fixed-grid retuning experiment.** Before sampling,
+   freeze a finite grid of fixed step sizes and trajectory lengths, both
+   original seed tables, disjoint holdout seeds, and row-selection rules that
+   do not inspect observed moments. Disable adaptation. Require zero non-finite
+   and divergent trajectories plus acceptance, energy, convergence,
+   effective-sample-size, quadrature-moment, and integration-by-parts gates on
+   every seed family before recording a stable operating row. A passing row is
+   reduced-target feasibility only and does not validate a complete lattice.
+
+No A23 phase depends on another A23 output; synthesis or pilot reopening would
+require a separately frozen later adjudicator. A23 does not create or modify a
+Phase481 pack, rerun or reinterpret Phase456, execute the Phase535 pilot,
+satisfy Phase458 G3/G4/G5, discharge O4, fill a source-lineage contract, or
+support a physical-unit claim. Failed and unresolved terminals are preserved,
+external review remains pending, and `promotedPhysicalMassClaimCount=0`.
+
+Adversarial review is part of this tranche's fail-closed execution record.
+Phase536's original contract is preserved, while its v2 repair contract was
+frozen before a corrected telemetry rerun that fixes proposal-state capture,
+fully validates the numerical menu, and narrows reproduction to aggregate
+behavior. Phase538 preserves its original contract and outputs as explicitly
+non-citable artifacts. Its v2 corrective contract states
+`frozenBeforeFirstRun=false`, freezes the strengthened diagnostics before the
+corrected rerun, leaves the grid, seeds, and numerical thresholds unchanged,
+and labels any positive result post-review-hardened rather than pristine
+preregistration. These repairs do not weaken any gate or erase a failed run.

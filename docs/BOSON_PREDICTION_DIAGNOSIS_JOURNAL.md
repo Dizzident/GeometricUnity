@@ -21434,3 +21434,74 @@ Phase202 reported 319 passed / 3 standing failures; O4 coverage remained
 31/31, the synthetic-overturn battery remained 94/94, and source deficits
 remained 15 W/Z and 14 Higgs fields. The pass ended at
 `boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-22 - Amendment A23 localizes retained failures and finds a hardened reduced-target stability envelope
+
+The user authorized the three independent follow-ons identified after A22.
+Registry 536-538 and Amendment A23 were frozen before the phase directories
+were created. Each arm exact-binds the immutable Phase533-535 evidence and
+consumes no other A23 output, so implementation and targeted execution ran in
+parallel.
+
+Phase536 source-matches the Phase534 scalar HMC algorithm, seeds, initial
+scales, adaptation, and execution lengths. Its aggregate replay exactly
+matches both Phase534 tables' retained acceptance counts, total non-finite and
+divergent counts, and final step sizes. The new partition falsifies the
+warmup-only suspicion: warmup contains 1 non-finite and 3 divergent
+trajectories, while retained sampling contains 107 non-finite and 134
+divergent trajectories. Adversarial review caught that the first version
+recorded the rolled-back state as the proposed failure state and incompletely
+validated its contract. The original contract is preserved. A v2 repair was
+frozen before rerun, captures proposal and post-decision states separately,
+fully checks the frozen menu and telemetry bounds, and narrows the terminal to
+`aggregate-failures-observed-warmup-and-retained`. There is no immutable
+Phase534 per-trajectory trace, exact trajectory reproduction is not claimed,
+and `failureCauseResolved=false`.
+
+Phase537 uses no RNG or sampling. Its exact-bound polynomial gradient agrees
+with an independent symmetric finite-difference calculation at maximum scaled
+error 4.0615e-11. Forward/reverse leapfrog recovery is at worst 5.9212e-16
+over 80 frozen finite-grid rows. RMS absolute energy errors at step sizes 0.1,
+0.05, 0.025, and 0.0125 are 0.0319589, 0.00799788, 0.00199997, and
+0.000500024, giving observed orders 1.99853, 1.99964, and 1.99991. Adversarial
+review found that the first program did not machine-pin every contract field
+and could throw before preserving a negative terminal. The repaired program
+changes no numerical menu or threshold, fully validates every frozen field,
+and serializes every registered terminal. Its result remains
+`deterministic-leapfrog-audit-passed`. This rules out only a basic gradient or
+leapfrog defect on the audited small-step finite grid.
+
+Phase538 initially found six apparent stable rows, but adversarial review
+rejected that result because it required the favorable terminal, gated ESS
+only for the raw state, used weak unsplit/first-negative-lag diagnostics, and
+misnamed a selection-participating third seed family as a holdout. The exact
+original contract and outputs are preserved as non-citable. A v2 corrective
+contract records `frozenBeforeFirstRun=false`, preserves the original grid,
+seeds, and numerical thresholds, and freezes split rank-normalized R-hat plus
+observable-specific paired initial-positive/monotone ESS before the corrected
+rerun. Five of eight rows pass the strengthened gates. The frozen-order first
+passing row moves from step size 0.20 to `eps-0.25-len-2.00`; the 0.20 row now
+fails convergence. On the selected row, both original seed tables and the
+preregistered disjoint third family have zero non-finite and divergent
+trajectories and pass their state, second-moment, integration-by-parts,
+energy, moment, convergence, and ESS gates. The terminal is explicitly
+`post-review-hardened-stable-fixed-grid-row-reduced-target-feasible`. Volatile
+resource measurements are enforced but printed only to the console; two
+consecutive runs produced byte-identical citable JSON.
+
+The three phases narrow the evidence: the Phase534 failure persists during
+retained sampling, the small-step leapfrog implementation is algebraically
+sound on a finite deterministic grid, and a lower-step non-adaptive stability
+envelope exists on the one-dimensional reduced target. They do not yet prove
+that the same envelope transfers to the complete lattice, diagnose the unique
+failure cause, or reopen Phase535. No Phase481 pack, production default,
+Phase458 evaluation, O4 ruling, source-contract application, or physical-unit
+claim follows. Targeted Release builds and runs are green; Phase202 reports
+322 passed / 3 standing failures, integrity preserves the 15/14 source
+deficits, and `promotedPhysicalMassClaimCount=0`.
+
+The mandatory A23 incremental checkpoint ran 86 steps and skipped 316.
+Phase202 reported 322 passed / 3 standing failures; O4 coverage remained
+31/31, the synthetic-overturn battery remained 94/94, and source deficits
+remained 15 W/Z and 14 Higgs fields. The pass ended at
+`boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.

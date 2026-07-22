@@ -408,6 +408,9 @@ dotnet run --no-build -c Release --project studies/phase532_phase458_g4_consumer
 dotnet run --no-build -c Release --project studies/phase533_nested_validation_contract_001/Phase533NestedValidationContract.csproj
 dotnet run --no-build -c Release --project studies/phase534_nested_control_battery_001/Phase534NestedControlBattery.csproj
 dotnet run --no-build -c Release --project studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Phase535BoundedRegisteredOperatorPilotAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase536_trajectory_forensics_replay_001/Phase536TrajectoryForensicsReplay.csproj
+dotnet run --no-build -c Release --project studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

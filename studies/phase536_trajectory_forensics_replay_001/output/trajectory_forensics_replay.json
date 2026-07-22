@@ -1,0 +1,1825 @@
+{
+  "schemaVersion": 1,
+  "phase": 536,
+  "phaseId": "phase536-trajectory-forensics-replay",
+  "contractSha256": "0ea6a4bfc780ded43d2533255becf6b3445e102adf0606b8c42f3fe30a292a8f",
+  "contractValid": true,
+  "bindingInventoryValid": true,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase533-summary",
+      "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json",
+      "expectedSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "actualSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-contract",
+      "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json",
+      "expectedSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "actualSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-program",
+      "path": "studies/phase534_nested_control_battery_001/Program.cs",
+      "expectedSha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4",
+      "actualSha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-summary",
+      "path": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json",
+      "expectedSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "actualSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-summary",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json",
+      "expectedSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "actualSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "hashMatches": true
+    }
+  ],
+  "replayConfiguration": {
+    "scalarAlgorithm": "phase534-run-scalar-hmc-source-matched-replay",
+    "coefficientSource": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json",
+    "polynomial": {
+      "c2": 1.7916666666666679,
+      "c3": 0.036111111111111316,
+      "c4": 0.1704947916666657
+    },
+    "warmup": 1000,
+    "retained": 4000,
+    "leapfrogSteps": 8,
+    "seedOffset": 900000,
+    "initialStepSize": 0.12,
+    "adaptationWindow": 50,
+    "adaptationRule": "rate\u003E0.90 multiply 1.15; rate\u003C0.65 multiply 0.85"
+  },
+  "reproduction": {
+    "aggregateBehaviorReproduced": true,
+    "immutablePerTrajectoryReferenceAvailable": false,
+    "exactTrajectoryReproductionClaimed": false,
+    "rows": [
+      {
+        "table": "table-a",
+        "rowMatches": true,
+        "expectedAccepted": 12779,
+        "actualAccepted": 12779,
+        "expectedNonfinite": 103,
+        "actualNonfinite": 103,
+        "expectedDivergences": 94,
+        "actualDivergences": 94,
+        "expectedStepSizes": [
+          0.6420300126568449,
+          0.7383345145553716,
+          0.7383345145553716,
+          0.6420300126568449
+        ],
+        "actualStepSizes": [
+          0.6420300126568449,
+          0.7383345145553716,
+          0.7383345145553716,
+          0.6420300126568449
+        ]
+      },
+      {
+        "table": "table-b",
+        "rowMatches": true,
+        "expectedAccepted": 12715,
+        "actualAccepted": 12715,
+        "expectedNonfinite": 5,
+        "actualNonfinite": 5,
+        "expectedDivergences": 43,
+        "actualDivergences": 43,
+        "expectedStepSizes": [
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449
+        ],
+        "actualStepSizes": [
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449
+        ]
+      }
+    ]
+  },
+  "failurePartition": {
+    "warmup": {
+      "nonFiniteCount": 1,
+      "divergenceCount": 3
+    },
+    "retained": {
+      "nonFiniteCount": 107,
+      "divergenceCount": 134
+    }
+  },
+  "tables": [
+    {
+      "id": "table-a",
+      "chains": [
+        {
+          "sourceSeed": 533101,
+          "replaySeed": 1433101,
+          "initialScale": 0.015,
+          "warmup": {
+            "total": 1000,
+            "accepted": 905,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3164,
+            "nonFinite": 2,
+            "divergences": 10
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 37,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.74,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 35,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.7,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "retained",
+            "globalIteration": 1021,
+            "segmentIteration": 21,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.18372318937835275,
+            "initialMomentum": -2.81786041000132,
+            "proposedState": 47.14566491609886,
+            "postDecisionState": -0.18372318937835275,
+            "finalMomentum": -22990.583206878142,
+            "finalGradient": 71875.22715964014,
+            "deltaH": 265133542.62319502,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.2717601438277444,
+            "maxAbsFiniteMomentum": 6.544859061102889,
+            "maxAbsFiniteGradient": 15.673077132222229,
+            "maxAbsFiniteEnergy": 13.364323553907898
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 3.260227023485173E+125,
+            "maxAbsFiniteMomentum": 8.621186793845614E+179,
+            "maxAbsFiniteGradient": 2.68560242477434E+180,
+            "maxAbsFiniteEnergy": 6.688487492590303E+250
+          },
+          "finalStepSize": 0.6420300126568449
+        },
+        {
+          "sourceSeed": 533103,
+          "replaySeed": 1433103,
+          "initialScale": 0.03,
+          "warmup": {
+            "total": 1000,
+            "accepted": 923,
+            "nonFinite": 1,
+            "divergences": 1
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3202,
+            "nonFinite": 46,
+            "divergences": 38
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 36,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.72,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.7383345145553716
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 40,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.8,
+              "stepSizeBefore": 0.7383345145553716,
+              "stepSizeAfter": 0.7383345145553716
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.7383345145553716,
+              "stepSizeAfter": 0.7383345145553716
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.7383345145553716,
+              "stepSizeAfter": 0.7383345145553716
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "warmup",
+            "globalIteration": 852,
+            "segmentIteration": 852,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.5637659015760567,
+            "initialMomentum": -2.305193052261158,
+            "proposedState": -612.7963798875502,
+            "postDecisionState": -0.5637659015760567,
+            "finalMomentum": 57920192.587380365,
+            "finalGradient": -156896467.32915315,
+            "deltaH": 1677398389335370,
+            "stepSize": 0.7383345145553716
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.727266637368955E+187,
+            "maxAbsFiniteMomentum": 3.6938089492014704E+187,
+            "maxAbsFiniteGradient": 5.002893507458336E+187,
+            "maxAbsFiniteEnergy": 1677398389335370
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 4.8439858040551454E+284,
+            "maxAbsFiniteMomentum": 2.229071017484325E+296,
+            "maxAbsFiniteGradient": 6.038105962923003E+296,
+            "maxAbsFiniteEnergy": 4.088084599615509E+290
+          },
+          "finalStepSize": 0.7383345145553716
+        },
+        {
+          "sourceSeed": 533107,
+          "replaySeed": 1433107,
+          "initialScale": 0.06,
+          "warmup": {
+            "total": 1000,
+            "accepted": 926,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3210,
+            "nonFinite": 50,
+            "divergences": 38
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 43,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.86,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 40,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.8,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 43,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.86,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.7383345145553716
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "nonfinite",
+            "segment": "retained",
+            "globalIteration": 1081,
+            "segmentIteration": 81,
+            "stage": "final-gradient",
+            "leapfrogIndex": null,
+            "oldState": -0.36711564463541313,
+            "initialMomentum": -2.901661577377817,
+            "proposedState": 3.1429617324261623E+245,
+            "postDecisionState": -0.36711564463541313,
+            "finalMomentum": null,
+            "finalGradient": null,
+            "deltaH": null,
+            "stepSize": 0.7383345145553716
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.5264253207968994,
+            "maxAbsFiniteMomentum": 6.533390348212444,
+            "maxAbsFiniteGradient": 20.741908977715603,
+            "maxAbsFiniteEnergy": 19.772550854219425
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 7.793815757945095E+280,
+            "maxAbsFiniteMomentum": 6.693992142047696E+290,
+            "maxAbsFiniteGradient": 1.8132681081769145E+291,
+            "maxAbsFiniteEnergy": 4.545261338470163E+280
+          },
+          "finalStepSize": 0.7383345145553716
+        },
+        {
+          "sourceSeed": 533109,
+          "replaySeed": 1433109,
+          "initialScale": 0.12,
+          "warmup": {
+            "total": 1000,
+            "accepted": 903,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3203,
+            "nonFinite": 4,
+            "divergences": 7
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 40,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.8,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 36,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.72,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "retained",
+            "globalIteration": 2660,
+            "segmentIteration": 1660,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.3217001260716724,
+            "initialMomentum": -2.707264433224699,
+            "proposedState": 22.381269378374565,
+            "postDecisionState": -0.3217001260716724,
+            "finalMomentum": -2455.477544764901,
+            "finalGradient": 7780.306814569703,
+            "deltaH": 3058764.3760263463,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.771309139460175,
+            "maxAbsFiniteMomentum": 8.147685249824988,
+            "maxAbsFiniteGradient": 25.27784159705879,
+            "maxAbsFiniteEnergy": 16.544113147124822
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 1.2983946841312525E+266,
+            "maxAbsFiniteMomentum": 2.022327085237407E+266,
+            "maxAbsFiniteGradient": 3.1498949353919214E+266,
+            "maxAbsFiniteEnergy": 8.525510143089276E+303
+          },
+          "finalStepSize": 0.6420300126568449
+        }
+      ]
+    },
+    {
+      "id": "table-b",
+      "chains": [
+        {
+          "sourceSeed": 533201,
+          "replaySeed": 1433201,
+          "initialScale": 0.02,
+          "warmup": {
+            "total": 1000,
+            "accepted": 921,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3185,
+            "nonFinite": 1,
+            "divergences": 10
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 44,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.88,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 44,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.88,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 44,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.88,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 43,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.86,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 34,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.68,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 40,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.8,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "retained",
+            "globalIteration": 1023,
+            "segmentIteration": 23,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.456942867021276,
+            "initialMomentum": 3.952349401189952,
+            "proposedState": 3883114488788.458,
+            "postDecisionState": -0.456942867021276,
+            "finalMomentum": -1.281849471329104E+37,
+            "finalGradient": 3.9931138609067883E+37,
+            "deltaH": 8.215690335733519E+73,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.420655915800058,
+            "maxAbsFiniteMomentum": 7.336950022284656,
+            "maxAbsFiniteGradient": 17.71243248984765,
+            "maxAbsFiniteEnergy": 13.566498926970908
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 3.1822309628313853E+159,
+            "maxAbsFiniteMomentum": 4.9565143374882046E+159,
+            "maxAbsFiniteGradient": 7.720066413993928E+159,
+            "maxAbsFiniteEnergy": 3.2625521163779174E+268
+          },
+          "finalStepSize": 0.6420300126568449
+        },
+        {
+          "sourceSeed": 533203,
+          "replaySeed": 1433203,
+          "initialScale": 0.04,
+          "warmup": {
+            "total": 1000,
+            "accepted": 904,
+            "nonFinite": 0,
+            "divergences": 2
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3139,
+            "nonFinite": 2,
+            "divergences": 14
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 37,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.74,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "warmup",
+            "globalIteration": 774,
+            "segmentIteration": 774,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.5201824870524048,
+            "initialMomentum": -2.6863383262438885,
+            "proposedState": 14.877647541519236,
+            "postDecisionState": -0.5201824870524048,
+            "finalMomentum": -716.0804323812598,
+            "finalGradient": 2323.1051703898156,
+            "deltaH": 265250.0943054631,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 41.365664064138265,
+            "maxAbsFiniteMomentum": 15529.8857377181,
+            "maxAbsFiniteGradient": 48605.133164459774,
+            "maxAbsFiniteEnergy": 121093489.1260084
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 1.0541620156019465E+212,
+            "maxAbsFiniteMomentum": 1.6419201514265965E+212,
+            "maxAbsFiniteGradient": 2.5573884694767024E+212,
+            "maxAbsFiniteEnergy": 7.77375425795714E+53
+          },
+          "finalStepSize": 0.6420300126568449
+        },
+        {
+          "sourceSeed": 533207,
+          "replaySeed": 1433207,
+          "initialScale": 0.08,
+          "warmup": {
+            "total": 1000,
+            "accepted": 900,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3201,
+            "nonFinite": 1,
+            "divergences": 10
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 49,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.98,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 40,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.8,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 38,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.76,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 42,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.84,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 41,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.82,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 35,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.7,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 35,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.7,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "retained",
+            "globalIteration": 1363,
+            "segmentIteration": 363,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": 0.22423199635493984,
+            "initialMomentum": 2.8521457092073836,
+            "proposedState": -25.80509233830415,
+            "postDecisionState": 0.22423199635493984,
+            "finalMomentum": 3720.8928002103785,
+            "finalGradient": -11739.242590806578,
+            "deltaH": 6998691.924242434,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.383206249571988,
+            "maxAbsFiniteMomentum": 6.81842218517609,
+            "maxAbsFiniteGradient": 18.33957503080515,
+            "maxAbsFiniteEnergy": 16.110206819724194
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 7.500840459204646E+200,
+            "maxAbsFiniteMomentum": 1.1683005951956532E+201,
+            "maxAbsFiniteGradient": 1.8196977900783772E+201,
+            "maxAbsFiniteEnergy": 5.9045145972718605E+103
+          },
+          "finalStepSize": 0.6420300126568449
+        },
+        {
+          "sourceSeed": 533209,
+          "replaySeed": 1433209,
+          "initialScale": 0.16,
+          "warmup": {
+            "total": 1000,
+            "accepted": 905,
+            "nonFinite": 0,
+            "divergences": 0
+          },
+          "retained": {
+            "total": 4000,
+            "accepted": 3190,
+            "nonFinite": 1,
+            "divergences": 7
+          },
+          "adaptationHistory": [
+            {
+              "completedWarmupIterations": 50,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.12,
+              "stepSizeAfter": 0.13799999999999998
+            },
+            {
+              "completedWarmupIterations": 100,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.13799999999999998,
+              "stepSizeAfter": 0.15869999999999998
+            },
+            {
+              "completedWarmupIterations": 150,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.15869999999999998,
+              "stepSizeAfter": 0.18250499999999997
+            },
+            {
+              "completedWarmupIterations": 200,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.18250499999999997,
+              "stepSizeAfter": 0.20988074999999995
+            },
+            {
+              "completedWarmupIterations": 250,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.20988074999999995,
+              "stepSizeAfter": 0.24136286249999991
+            },
+            {
+              "completedWarmupIterations": 300,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.24136286249999991,
+              "stepSizeAfter": 0.2775672918749999
+            },
+            {
+              "completedWarmupIterations": 350,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.2775672918749999,
+              "stepSizeAfter": 0.31920238565624987
+            },
+            {
+              "completedWarmupIterations": 400,
+              "windowAccepted": 48,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.96,
+              "stepSizeBefore": 0.31920238565624987,
+              "stepSizeAfter": 0.36708274350468734
+            },
+            {
+              "completedWarmupIterations": 450,
+              "windowAccepted": 50,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 1,
+              "stepSizeBefore": 0.36708274350468734,
+              "stepSizeAfter": 0.4221451550303904
+            },
+            {
+              "completedWarmupIterations": 500,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.4221451550303904,
+              "stepSizeAfter": 0.4854669282849489
+            },
+            {
+              "completedWarmupIterations": 550,
+              "windowAccepted": 46,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.92,
+              "stepSizeBefore": 0.4854669282849489,
+              "stepSizeAfter": 0.5582869675276912
+            },
+            {
+              "completedWarmupIterations": 600,
+              "windowAccepted": 47,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.94,
+              "stepSizeBefore": 0.5582869675276912,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 650,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 700,
+              "windowAccepted": 39,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.78,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 750,
+              "windowAccepted": 34,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.68,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 800,
+              "windowAccepted": 36,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.72,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 850,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 900,
+              "windowAccepted": 36,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.72,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 950,
+              "windowAccepted": 45,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.9,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            },
+            {
+              "completedWarmupIterations": 1000,
+              "windowAccepted": 43,
+              "windowTotal": 50,
+              "windowAcceptanceRate": 0.86,
+              "stepSizeBefore": 0.6420300126568449,
+              "stepSizeAfter": 0.6420300126568449
+            }
+          ],
+          "firstFailureRecordCount": 1,
+          "firstFailure": {
+            "kind": "divergence",
+            "segment": "retained",
+            "globalIteration": 1529,
+            "segmentIteration": 529,
+            "stage": "energy",
+            "leapfrogIndex": null,
+            "oldState": -0.529645708136225,
+            "initialMomentum": -2.653890502140242,
+            "proposedState": 10.054434266843824,
+            "postDecisionState": -0.529645708136225,
+            "finalMomentum": -216.05244992120993,
+            "finalGradient": 740.1567951073198,
+            "deltaH": 25295.500070113252,
+            "stepSize": 0.6420300126568449
+          },
+          "warmupFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.2352521887074093,
+            "maxAbsFiniteMomentum": 6.050788085037296,
+            "maxAbsFiniteGradient": 16.167341839835462,
+            "maxAbsFiniteEnergy": 13.89884362136492
+          },
+          "retainedFiniteMagnitudes": {
+            "maxAbsFiniteState": 2.107685667277332E+71,
+            "maxAbsFiniteMomentum": 2.0498117072790364E+213,
+            "maxAbsFiniteGradient": 6.38540774377982E+213,
+            "maxAbsFiniteEnergy": 3.364608095321603E+284
+          },
+          "finalStepSize": 0.6420300126568449
+        }
+      ]
+    }
+  ],
+  "telemetryBounded": true,
+  "verdictKind": "aggregate-failures-observed-warmup-and-retained",
+  "terminalStatus": "trajectory-forensics-replay-aggregate-failures-observed-warmup-and-retained",
+  "phase534Repaired": false,
+  "phase534Relabeled": false,
+  "phase535PilotReopened": false,
+  "completeLatticeSd2Validated": false,
+  "productionValidated": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "failureCauseResolved": false,
+  "decision": "The source-matched replay agrees with Phase534 aggregate table metrics and observes failures in both warmup and retained trajectories. It does not prove per-trajectory identity or resolve the failure cause."
+}

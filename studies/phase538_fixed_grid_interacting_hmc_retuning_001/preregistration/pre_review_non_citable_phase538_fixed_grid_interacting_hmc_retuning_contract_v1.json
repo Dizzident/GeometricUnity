@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase538-a23-fixed-grid-interacting-hmc-retuning-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A23",
+  "frozenBeforeFirstRun": true,
+  "exactBindings": [
+    { "id": "phase533-contract", "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json", "sha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be" },
+    { "id": "phase533-summary", "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json", "sha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164" },
+    { "id": "phase534-contract", "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json", "sha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698" },
+    { "id": "phase534-program", "path": "studies/phase534_nested_control_battery_001/Program.cs", "sha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4" },
+    { "id": "phase534-summary", "path": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json", "sha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9" },
+    { "id": "phase535-summary", "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json", "sha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849" }
+  ],
+  "target": {
+    "kind": "phase534-reduced-theta-zero-sd2-witness-ray-polynomial",
+    "member": "sd2-id0/c0.5",
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "coefficientTolerance": 1e-12
+  },
+  "fixedGrid": [
+    { "rowId": "eps-0.20-len-1.60", "stepSize": 0.20, "trajectoryLength": 1.60, "leapfrogSteps": 8 },
+    { "rowId": "eps-0.25-len-2.00", "stepSize": 0.25, "trajectoryLength": 2.00, "leapfrogSteps": 8 },
+    { "rowId": "eps-0.30-len-1.80", "stepSize": 0.30, "trajectoryLength": 1.80, "leapfrogSteps": 6 },
+    { "rowId": "eps-0.35-len-2.10", "stepSize": 0.35, "trajectoryLength": 2.10, "leapfrogSteps": 6 },
+    { "rowId": "eps-0.40-len-2.40", "stepSize": 0.40, "trajectoryLength": 2.40, "leapfrogSteps": 6 },
+    { "rowId": "eps-0.45-len-2.70", "stepSize": 0.45, "trajectoryLength": 2.70, "leapfrogSteps": 6 },
+    { "rowId": "eps-0.50-len-2.50", "stepSize": 0.50, "trajectoryLength": 2.50, "leapfrogSteps": 5 },
+    { "rowId": "eps-0.55-len-2.20", "stepSize": 0.55, "trajectoryLength": 2.20, "leapfrogSteps": 4 }
+  ],
+  "seedFamilies": [
+    { "id": "original-table-a", "sourceTable": "table-a", "seedOffset": 900000, "seeds": [533101, 533103, 533107, 533109], "initialScales": [0.015, 0.03, 0.06, 0.12] },
+    { "id": "original-table-b", "sourceTable": "table-b", "seedOffset": 900000, "seeds": [533201, 533203, 533207, 533209], "initialScales": [0.02, 0.04, 0.08, 0.16] },
+    { "id": "disjoint-holdout", "sourceTable": "phase538-preregistered-holdout", "seedOffset": 900000, "seeds": [538301, 538303, 538307, 538309], "initialScales": [0.025, 0.05, 0.10, 0.20] }
+  ],
+  "execution": {
+    "warmupPerChain": 1000,
+    "retainedPerChain": 4000,
+    "adaptationEnabled": false,
+    "divergenceAbsoluteDeltaH": 100.0
+  },
+  "gates": {
+    "maximumNonFiniteTrajectoriesPerFamily": 0,
+    "maximumDivergencesPerFamily": 0,
+    "acceptanceMinimum": 0.65,
+    "acceptanceMaximum": 0.999,
+    "rhatMaximum": 1.01,
+    "bulkEssMinimum": 100.0,
+    "expMinusDeltaHAbsoluteFloor": 0.01,
+    "expMinusDeltaHStandardErrorMultiplier": 3.0,
+    "momentStandardErrorMultiplier": 4.0,
+    "quadratureAgreementTolerance": 1e-8,
+    "integrationByPartsTarget": 1.0
+  },
+  "quadrature": {
+    "halfWidth": 4.0,
+    "panels": 32768,
+    "referenceMomentTolerance": 1e-10
+  },
+  "selection": {
+    "rule": "lexicographically-first-fixed-grid-row-passing-every-gate-on-every-seed-family",
+    "observedMomentsMayReorderRows": false,
+    "allRowsExecutedBeforeSelection": true,
+    "physicalTargetsConsulted": false
+  },
+  "resourceRefusal": {
+    "maximumAggregateCpuSeconds": 7200.0,
+    "maximumPeakBytes": 1073741824,
+    "estimatedAggregateCpuSeconds": 120.0,
+    "estimatedPeakBytes": 67108864,
+    "refuseBeforeExecutionOnEstimateExceedance": true
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "no-stable-fixed-grid-row",
+    "stable-fixed-grid-row-reduced-target-feasible"
+  ],
+  "expectedCurrentVerdict": "stable-fixed-grid-row-reduced-target-feasible",
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "phase534ReinterpretedOrRelabeled": false,
+    "phase535PilotExecutedOrReopened": false,
+    "completeLatticeValidated": false,
+    "productionDefaultSelected": false,
+    "phase481PackCreatedOrMutated": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  }
+}

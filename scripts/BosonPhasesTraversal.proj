@@ -394,6 +394,9 @@
     <PhaseProject Include="../studies/phase533_nested_validation_contract_001/Phase533NestedValidationContract.csproj" />
     <PhaseProject Include="../studies/phase534_nested_control_battery_001/Phase534NestedControlBattery.csproj" />
     <PhaseProject Include="../studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Phase535BoundedRegisteredOperatorPilotAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase536_trajectory_forensics_replay_001/Phase536TrajectoryForensicsReplay.csproj" />
+    <PhaseProject Include="../studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj" />
+    <PhaseProject Include="../studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

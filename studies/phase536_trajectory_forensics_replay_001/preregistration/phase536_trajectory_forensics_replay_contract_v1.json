@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase536-a23-trajectory-forensics-replay-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A23",
+  "frozenBeforeFirstRun": true,
+  "expectedInputs": [
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase533-summary","path":"studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json","sha256":"c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164"},
+    {"id":"phase534-contract","path":"studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json","sha256":"f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698"},
+    {"id":"phase534-program","path":"studies/phase534_nested_control_battery_001/Program.cs","sha256":"293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4"},
+    {"id":"phase534-summary","path":"studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json","sha256":"8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9"},
+    {"id":"phase535-summary","path":"studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json","sha256":"91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849"}
+  ],
+  "replayBoundary": {
+    "sourceAlgorithm":"phase534-run-scalar-hmc-byte-bound",
+    "seedOffset":900000,
+    "initialStepSize":0.12,
+    "adaptationWindow":50,
+    "adaptationUpperAcceptance":0.90,
+    "adaptationLowerAcceptance":0.65,
+    "adaptationIncreaseFactor":1.15,
+    "adaptationDecreaseFactor":0.85,
+    "divergenceDeltaH":100.0,
+    "maximumRecordedAdaptationEventsPerChain":20,
+    "maximumRecordedFirstFailuresPerChain":1,
+    "finiteMagnitudeRule":"max-absolute-finite-value-by-warmup-retained-and-state-momentum-gradient-energy",
+    "nonfiniteStagePrecedence":["initial-gradient","position","intermediate-gradient","final-gradient","energy"],
+    "behaviorChangesAllowed":false
+  },
+  "reproductionChecks": {
+    "requireExactTableAcceptanceCounts":true,
+    "requireExactTableNonfiniteCounts":true,
+    "requireExactTableDivergenceCounts":true,
+    "requireExactFinalStepSizes":true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "phase534-behavior-not-reproduced",
+    "failures-localized-warmup-and-retained",
+    "failures-localized-warmup-only",
+    "failures-localized-retained-only",
+    "no-failures-reproduced"
+  ],
+  "claimBoundary": {
+    "phase534Repaired":false,
+    "phase534Relabeled":false,
+    "phase535PilotReopened":false,
+    "completeLatticeSd2Validated":false,
+    "productionValidated":false,
+    "physicalClaimAllowed":false,
+    "promotedPhysicalMassClaimCount":0
+  }
+}

@@ -29,7 +29,8 @@ back, NO new phase directory may be created outside this table.
 | 527-529 | Shared Phase482 A5 action-premise extension (A20) | 527 exact SD2 theta-zero parity audit; 528 frozen even-sector premise-applicability audit; 529 dependent A5 action-premise route adjudicator |
 | 530-532 | Shared O4 G4 authentication/admissibility integrity extension (A21) | 530 authentication-versus-admissibility counterexample audit; 531 disposition-resolution semantics contract; 532 dependent Phase458 G4 consumer correction adjudicator |
 | 533-535 | Shared nested experimental validation extension (A22) | 533 frozen experiment/resource contract; 534 independent Gaussian, free-sampler, and reduced interacting control battery; 535 bounded registered-operator pilot adjudicator |
-| 536+ | Unassigned - extend this registry before use | - |
+| 536-538 | Shared interacting-HMC failure-localization extension (A23) | 536 trajectory-forensics replay; 537 deterministic leapfrog correctness and stability audit; 538 prospective fixed-grid retuning experiment |
+| 539+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

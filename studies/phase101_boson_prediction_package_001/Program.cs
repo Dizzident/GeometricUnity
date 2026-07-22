@@ -374,6 +374,9 @@ const string Phase532Phase458G4ConsumerCorrectionAdjudicatorPath = "studies/phas
 const string Phase533NestedValidationContractPath = "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json";
 const string Phase534NestedControlBatteryPath = "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json";
 const string Phase535BoundedRegisteredOperatorPilotAdjudicatorPath = "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json";
+const string Phase536TrajectoryForensicsReplayPath = "studies/phase536_trajectory_forensics_replay_001/output/trajectory_forensics_replay_summary.json";
+const string Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
+const string Phase538FixedGridInteractingHmcRetuningPath = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -788,6 +791,9 @@ using var phase532 = TryParseJson(Phase532Phase458G4ConsumerCorrectionAdjudicato
 using var phase533 = TryParseJson(Phase533NestedValidationContractPath);
 using var phase534 = TryParseJson(Phase534NestedControlBatteryPath);
 using var phase535 = TryParseJson(Phase535BoundedRegisteredOperatorPilotAdjudicatorPath);
+using var phase536 = TryParseJson(Phase536TrajectoryForensicsReplayPath);
+using var phase537 = TryParseJson(Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath);
+using var phase538 = TryParseJson(Phase538FixedGridInteractingHmcRetuningPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9415,6 +9421,47 @@ var package = new
             pilotRun = JsonBool(phase535.RootElement, "pilotRun"),
             configurationsRetained = JsonBool(phase535.RootElement, "configurationsRetained"),
             promotedPhysicalMassClaimCount = JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+    },
+    interactingHmcFailureLocalization = new
+    {
+        trajectoryForensics = phase536 is null ? null : new
+        {
+            status = JsonString(phase536.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase536.RootElement, "contractValid"),
+            verdictKind = JsonString(phase536.RootElement, "verdictKind"),
+            aggregateBehaviorReproduced = JsonNestedBool(phase536.RootElement, "reproduction", "aggregateBehaviorReproduced"),
+            exactTrajectoryReproductionClaimed = JsonNestedBool(phase536.RootElement, "reproduction", "exactTrajectoryReproductionClaimed"),
+            warmupNonFiniteCount = JsonNestedNestedInt(phase536.RootElement, "failurePartition", "warmup", "nonFiniteCount"),
+            warmupDivergenceCount = JsonNestedNestedInt(phase536.RootElement, "failurePartition", "warmup", "divergenceCount"),
+            retainedNonFiniteCount = JsonNestedNestedInt(phase536.RootElement, "failurePartition", "retained", "nonFiniteCount"),
+            retainedDivergenceCount = JsonNestedNestedInt(phase536.RootElement, "failurePartition", "retained", "divergenceCount"),
+            phase535PilotReopened = JsonBool(phase536.RootElement, "phase535PilotReopened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase536.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        deterministicLeapfrogAudit = phase537 is null ? null : new
+        {
+            status = JsonString(phase537.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase537.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase537.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase537.RootElement, "verdictKind"),
+            gradientPassed = JsonNestedBool(phase537.RootElement, "gradientAudit", "passed"),
+            reversibilityPassed = JsonNestedBool(phase537.RootElement, "reversibilityAudit", "passed"),
+            energyStepHalvingPassed = JsonNestedBool(phase537.RootElement, "energyStepHalvingAudit", "passed"),
+            samplingOrMixingValidityEstablished = JsonBool(phase537.RootElement, "samplingOrMixingValidityEstablished"),
+            promotedPhysicalMassClaimCount = JsonInt(phase537.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        fixedGridRetuning = phase538 is null ? null : new
+        {
+            status = JsonString(phase538.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase538.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase538.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase538.RootElement, "verdictKind"),
+            stableRowCount = JsonNestedInt(phase538.RootElement, "selection", "stableRowCount"),
+            selectedRowId = JsonNestedString(phase538.RootElement, "selection", "selectedRowId"),
+            reducedTargetFeasibilityOnly = JsonBool(phase538.RootElement, "reducedTargetFeasibilityOnly"),
+            phase535PilotExecutedOrReopened = JsonBool(phase538.RootElement, "phase535PilotExecutedOrReopened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

@@ -283,6 +283,9 @@ const string Phase532Path = "studies/phase532_phase458_g4_consumer_correction_ad
 const string Phase533Path = "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json";
 const string Phase534Path = "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json";
 const string Phase535Path = "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json";
+const string Phase536Path = "studies/phase536_trajectory_forensics_replay_001/output/trajectory_forensics_replay_summary.json";
+const string Phase537Path = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
+const string Phase538Path = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -617,6 +620,9 @@ using var phase532 = File.Exists(Phase532Path) ? JsonDocument.Parse(File.ReadAll
 using var phase533 = File.Exists(Phase533Path) ? JsonDocument.Parse(File.ReadAllText(Phase533Path)) : null;
 using var phase534 = File.Exists(Phase534Path) ? JsonDocument.Parse(File.ReadAllText(Phase534Path)) : null;
 using var phase535 = File.Exists(Phase535Path) ? JsonDocument.Parse(File.ReadAllText(Phase535Path)) : null;
+using var phase536 = File.Exists(Phase536Path) ? JsonDocument.Parse(File.ReadAllText(Phase536Path)) : null;
+using var phase537 = File.Exists(Phase537Path) ? JsonDocument.Parse(File.ReadAllText(Phase537Path)) : null;
+using var phase538 = File.Exists(Phase538Path) ? JsonDocument.Parse(File.ReadAllText(Phase538Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7637,6 +7643,59 @@ var boundedPilotAdjudicatorPassed = phase535 is not null
     && JsonBool(phase535.RootElement, "phase535Passed") is true
     && JsonBool(phase535.RootElement, "productionValidated") is false
     && JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var trajectoryForensicsReplayPassed = phase536 is not null
+    && JsonBool(phase536.RootElement, "contractValid") is true
+    && JsonBool(phase536.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase536.RootElement, "telemetryBounded") is true
+    && JsonString(phase536.RootElement, "verdictKind") == "aggregate-failures-observed-warmup-and-retained"
+    && JsonNestedBool(phase536.RootElement, "reproduction", "aggregateBehaviorReproduced") is true
+    && JsonNestedBool(phase536.RootElement, "reproduction", "exactTrajectoryReproductionClaimed") is false
+    && JsonNestedNestedInt(phase536.RootElement, "failurePartition", "warmup", "nonFiniteCount") == 1
+    && JsonNestedNestedInt(phase536.RootElement, "failurePartition", "warmup", "divergenceCount") == 3
+    && JsonNestedNestedInt(phase536.RootElement, "failurePartition", "retained", "nonFiniteCount") == 107
+    && JsonNestedNestedInt(phase536.RootElement, "failurePartition", "retained", "divergenceCount") == 134
+    && JsonBool(phase536.RootElement, "failureCauseResolved") is false
+    && JsonBool(phase536.RootElement, "phase534Repaired") is false
+    && JsonBool(phase536.RootElement, "phase534Relabeled") is false
+    && JsonBool(phase536.RootElement, "phase535PilotReopened") is false
+    && JsonInt(phase536.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var deterministicLeapfrogAuditPassed = phase537 is not null
+    && JsonBool(phase537.RootElement, "inputsValid") is true
+    && JsonBool(phase537.RootElement, "contractValid") is true
+    && JsonBool(phase537.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase537.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase537.RootElement, "frozenNumericalMenuValid") is true
+    && JsonString(phase537.RootElement, "verdictKind") == "deterministic-leapfrog-audit-passed"
+    && JsonNestedBool(phase537.RootElement, "gradientAudit", "passed") is true
+    && JsonNestedBool(phase537.RootElement, "reversibilityAudit", "passed") is true
+    && JsonNestedBool(phase537.RootElement, "energyStepHalvingAudit", "passed") is true
+    && JsonBool(phase537.RootElement, "samplingOrMixingValidityEstablished") is false
+    && JsonBool(phase537.RootElement, "phase535PilotReopened") is false
+    && JsonInt(phase537.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var fixedGridInteractingHmcRetuningPassed = phase538 is not null
+    && JsonString(phase538.RootElement, "contractId") == "phase538-a23-fixed-grid-interacting-hmc-retuning-v2-post-review-hardened"
+    && JsonBool(phase538.RootElement, "contractValid") is true
+    && JsonBool(phase538.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase538.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase538.RootElement, "gridValid") is true
+    && JsonBool(phase538.RootElement, "familiesValid") is true
+    && JsonBool(phase538.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase538.RootElement, "targetValid") is true
+    && JsonBool(phase538.RootElement, "quadratureReferenceValid") is true
+    && JsonNestedBool(phase538.RootElement, "execution", "allRowsExecutedBeforeSelection") is true
+    && JsonNestedInt(phase538.RootElement, "selection", "stableRowCount") == 5
+    && JsonNestedString(phase538.RootElement, "selection", "selectedRowId") == "eps-0.25-len-2.00"
+    && JsonNestedBool(phase538.RootElement, "selection", "thirdFamilyParticipatesInSelection") is true
+    && JsonNestedBool(phase538.RootElement, "selection", "thirdFamilyIsIndependentPostSelectionValidation") is false
+    && JsonNestedBool(phase538.RootElement, "resource", "resourceEstimateWithinBounds") is true
+    && JsonNestedBool(phase538.RootElement, "resource", "measuredResourceBoundsPassed") is true
+    && JsonNestedBool(phase538.RootElement, "resource", "volatileMeasurementsSerialized") is false
+    && JsonString(phase538.RootElement, "verdictKind") == "post-review-hardened-stable-fixed-grid-row-reduced-target-feasible"
+    && JsonBool(phase538.RootElement, "reducedTargetFeasibilityOnly") is true
+    && JsonBool(phase538.RootElement, "phase535PilotExecutedOrReopened") is false
+    && JsonBool(phase538.RootElement, "completeLatticeValidated") is false
+    && JsonBool(phase538.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10580,6 +10639,24 @@ var checklist = new[]
         boundedPilotAdjudicatorPassed ? "passed" : "failed",
         phase535 is null ? "Phase535 artifact not materialized" : $"verdictKind={JsonString(phase535.RootElement, "verdictKind")}; precedence={JsonBool(phase535.RootElement, "precedenceBatteryPassed")}; refused={JsonBool(phase535.RootElement, "pilotRefusedByUpstreamControl")}; pilotRun={JsonBool(phase535.RootElement, "pilotRun")}; promotedPhysicalMassClaimCount={JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase535Path),
+    new ObjectiveChecklistItem(
+        "interacting-hmc-trajectory-forensics-replay",
+        "Reproduce the Phase534 aggregate execution record and partition failures between warmup and retained sampling without inferring a cause.",
+        trajectoryForensicsReplayPassed ? "passed" : "failed",
+        phase536 is null ? "Phase536 artifact not materialized" : $"verdictKind={JsonString(phase536.RootElement, "verdictKind")}; aggregateReproduced={JsonNestedBool(phase536.RootElement, "reproduction", "aggregateBehaviorReproduced")}; warmupNonfinite={JsonNestedNestedInt(phase536.RootElement, "failurePartition", "warmup", "nonFiniteCount")}; retainedNonfinite={JsonNestedNestedInt(phase536.RootElement, "failurePartition", "retained", "nonFiniteCount")}; causeResolved={JsonBool(phase536.RootElement, "failureCauseResolved")}; promotedPhysicalMassClaimCount={JsonInt(phase536.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase536Path),
+    new ObjectiveChecklistItem(
+        "deterministic-leapfrog-correctness-stability-audit",
+        "Check the frozen reduced polynomial gradient, reversible leapfrog map, and second-order energy behavior on a deterministic finite grid.",
+        deterministicLeapfrogAuditPassed ? "passed" : "failed",
+        phase537 is null ? "Phase537 artifact not materialized" : $"verdictKind={JsonString(phase537.RootElement, "verdictKind")}; frozenMenu={JsonBool(phase537.RootElement, "frozenNumericalMenuValid")}; gradient={JsonNestedBool(phase537.RootElement, "gradientAudit", "passed")}; reversibility={JsonNestedBool(phase537.RootElement, "reversibilityAudit", "passed")}; energy={JsonNestedBool(phase537.RootElement, "energyStepHalvingAudit", "passed")}; promotedPhysicalMassClaimCount={JsonInt(phase537.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase537Path),
+    new ObjectiveChecklistItem(
+        "fixed-grid-interacting-hmc-retuning",
+        "Apply post-review-hardened convergence diagnostics to the frozen fixed grid and preserve only reduced-target feasibility.",
+        fixedGridInteractingHmcRetuningPassed ? "passed" : "failed",
+        phase538 is null ? "Phase538 artifact not materialized" : $"verdictKind={JsonString(phase538.RootElement, "verdictKind")}; stableRows={JsonNestedInt(phase538.RootElement, "selection", "stableRowCount")}; selected={JsonNestedString(phase538.RootElement, "selection", "selectedRowId")}; reducedOnly={JsonBool(phase538.RootElement, "reducedTargetFeasibilityOnly")}; pilotReopened={JsonBool(phase538.RootElement, "phase535PilotExecutedOrReopened")}; promotedPhysicalMassClaimCount={JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase538Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

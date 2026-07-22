@@ -528,13 +528,54 @@ No Phase481 production pack was created, no complete-lattice or dynamical-theta
 validation occurred, and Phase456, Phase458, G3/G4/G5, O4, and the source
 lineage deficits are unchanged. Phase202 is 319 passed / 3 standing failures,
 external review remains pending, and `promotedPhysicalMassClaimCount=0`.
-Registry 536+ is unassigned.
+Its former 536+ frontier is superseded by Amendment A23 below.
 
 The mandatory A22 incremental checkpoint ran 86 steps and skipped 313. It
 ended at `boson-claim-integrity-verified`: Phase202 reported 319 passed / 3
 standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
 remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`.
+
+INTERACTING-HMC FAILURE LOCALIZATION (2026-07-22, Amendment A23;
+Phases536-538): Phase536 source-matches the Phase534 scalar algorithm and
+reproduces its aggregate table counts and final step sizes. Failures are not a
+warmup-only phenomenon: warmup contains 1 non-finite and 3 divergent
+trajectories, while retained sampling contains 107 non-finite and 134
+divergent trajectories. Corrected telemetry captures proposals before
+rollback, but no immutable per-trajectory Phase534 trace exists, so exact
+trajectory reproduction is not claimed and the failure cause remains
+unresolved.
+
+Phase537's fully machine-pinned deterministic menu passes. The analytic
+polynomial gradient agrees with symmetric finite differences at worst scaled
+error 4.07e-11, forward/reverse recovery is below 5.93e-16 on 80 finite-grid
+rows, and the RMS energy error follows second-order step-size scaling with
+observed orders 1.9985, 1.9996, and 1.9999. This rules out a basic gradient or
+leapfrog-map defect on that finite small-step grid; it does not validate
+sampling, mixing, or the Phase534 failing step-size region.
+
+Phase538 preserves its original contract and outputs as non-citable after
+adversarial review found a favorable-terminal assertion and weak legacy
+convergence diagnostics. The explicit v2 corrective contract keeps the
+original grid, seeds, and thresholds, applies split rank-normalized R-hat and
+observable-specific paired-sequence ESS gates, and is labeled
+post-review-hardened rather than pristine preregistration. Five of eight rows
+pass across both original seed tables and the preregistered disjoint third
+family; the first passing frozen-order row is `eps-0.25-len-2.00`. All three
+families have zero non-finite and divergent trajectories on that row. This is
+reduced-target feasibility only. The third family participates in selection
+and is not an independent post-selection holdout.
+
+No complete-lattice pilot was executed or reopened. Phase534 and Phase535 are
+not reinterpreted, no Phase481 pack or production default was created,
+Phase458 G3/G4/G5 and O4 remain unsatisfied, source-lineage deficits remain,
+external review remains pending, and `promotedPhysicalMassClaimCount=0`.
+Phase202 is 322 passed / 3 standing failures. Registry 539+ is unassigned.
+
+The mandatory A23 incremental checkpoint ran 86 steps and skipped 316. It
+ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
+synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z
+and 14 Higgs fields, and `promotedPhysicalMassClaimCount=0`.
 
 The mandatory A20 incremental checkpoint ran 57 steps and skipped 337. It
 ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
