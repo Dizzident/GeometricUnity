@@ -286,6 +286,7 @@ const string Phase535Path = "studies/phase535_bounded_registered_operator_pilot_
 const string Phase536Path = "studies/phase536_trajectory_forensics_replay_001/output/trajectory_forensics_replay_summary.json";
 const string Phase537Path = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
 const string Phase538Path = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
+const string Phase539Path = "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -623,6 +624,7 @@ using var phase535 = File.Exists(Phase535Path) ? JsonDocument.Parse(File.ReadAll
 using var phase536 = File.Exists(Phase536Path) ? JsonDocument.Parse(File.ReadAllText(Phase536Path)) : null;
 using var phase537 = File.Exists(Phase537Path) ? JsonDocument.Parse(File.ReadAllText(Phase537Path)) : null;
 using var phase538 = File.Exists(Phase538Path) ? JsonDocument.Parse(File.ReadAllText(Phase538Path)) : null;
+using var phase539 = File.Exists(Phase539Path) ? JsonDocument.Parse(File.ReadAllText(Phase539Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7696,6 +7698,30 @@ var fixedGridInteractingHmcRetuningPassed = phase538 is not null
     && JsonBool(phase538.RootElement, "completeLatticeValidated") is false
     && JsonBool(phase538.RootElement, "allDownstreamAuthority") is false
     && JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var independentReducedTargetRowConfirmationPassed = phase539 is not null
+    && JsonString(phase539.RootElement, "contractId") == "phase539-a24-independent-reduced-target-row-confirmation-v1"
+    && JsonBool(phase539.RootElement, "pristinePreregistration") is true
+    && JsonBool(phase539.RootElement, "inputsValid") is true
+    && JsonBool(phase539.RootElement, "contractValid") is true
+    && JsonBool(phase539.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase539.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase539.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase539.RootElement, "familiesValid") is true
+    && JsonBool(phase539.RootElement, "priorSeedsReused") is false
+    && JsonBool(phase539.RootElement, "gatesUnweakened") is true
+    && JsonBool(phase539.RootElement, "targetValid") is true
+    && JsonBool(phase539.RootElement, "quadratureReferenceValid") is true
+    && JsonNestedBool(phase539.RootElement, "resource", "resourceEstimateWithinBounds") is true
+    && JsonNestedBool(phase539.RootElement, "resource", "measuredResourceBoundsPassed") is true
+    && JsonNestedBool(phase539.RootElement, "resource", "volatileMeasurementsSerialized") is false
+    && JsonBool(phase539.RootElement, "everyRegisteredFamilyPassedEveryGate") is true
+    && JsonBool(phase539.RootElement, "independentPostSelectionConfirmation") is true
+    && JsonString(phase539.RootElement, "verdictKind") == "selected-row-independently-confirmed-reduced-target-only"
+    && JsonBool(phase539.RootElement, "phase535PilotExecutedOrReopened") is false
+    && JsonBool(phase539.RootElement, "reducedToCompleteLatticeTransferValidated") is false
+    && JsonBool(phase539.RootElement, "completeLatticeValidated") is false
+    && JsonBool(phase539.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10657,6 +10683,12 @@ var checklist = new[]
         fixedGridInteractingHmcRetuningPassed ? "passed" : "failed",
         phase538 is null ? "Phase538 artifact not materialized" : $"verdictKind={JsonString(phase538.RootElement, "verdictKind")}; stableRows={JsonNestedInt(phase538.RootElement, "selection", "stableRowCount")}; selected={JsonNestedString(phase538.RootElement, "selection", "selectedRowId")}; reducedOnly={JsonBool(phase538.RootElement, "reducedTargetFeasibilityOnly")}; pilotReopened={JsonBool(phase538.RootElement, "phase535PilotExecutedOrReopened")}; promotedPhysicalMassClaimCount={JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase538Path),
+    new ObjectiveChecklistItem(
+        "independent-reduced-target-row-confirmation",
+        "Confirm the fixed Phase538-selected row on pristine post-selection seed families without searching, retuning, or weakening diagnostics.",
+        independentReducedTargetRowConfirmationPassed ? "passed" : "failed",
+        phase539 is null ? "Phase539 artifact not materialized" : $"verdictKind={JsonString(phase539.RootElement, "verdictKind")}; pristine={JsonBool(phase539.RootElement, "pristinePreregistration")}; everyFamilyPassed={JsonBool(phase539.RootElement, "everyRegisteredFamilyPassedEveryGate")}; transferValidated={JsonBool(phase539.RootElement, "reducedToCompleteLatticeTransferValidated")}; pilotReopened={JsonBool(phase539.RootElement, "phase535PilotExecutedOrReopened")}; promotedPhysicalMassClaimCount={JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase539Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

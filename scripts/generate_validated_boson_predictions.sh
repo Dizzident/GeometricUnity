@@ -411,6 +411,7 @@ dotnet run --no-build -c Release --project studies/phase535_bounded_registered_o
 dotnet run --no-build -c Release --project studies/phase536_trajectory_forensics_replay_001/Phase536TrajectoryForensicsReplay.csproj
 dotnet run --no-build -c Release --project studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj
+dotnet run --no-build -c Release --project studies/phase539_independent_reduced_target_row_confirmation_001/Phase539IndependentReducedTargetRowConfirmation.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -377,6 +377,7 @@ const string Phase535BoundedRegisteredOperatorPilotAdjudicatorPath = "studies/ph
 const string Phase536TrajectoryForensicsReplayPath = "studies/phase536_trajectory_forensics_replay_001/output/trajectory_forensics_replay_summary.json";
 const string Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
 const string Phase538FixedGridInteractingHmcRetuningPath = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
+const string Phase539IndependentReducedTargetRowConfirmationPath = "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -794,6 +795,7 @@ using var phase535 = TryParseJson(Phase535BoundedRegisteredOperatorPilotAdjudica
 using var phase536 = TryParseJson(Phase536TrajectoryForensicsReplayPath);
 using var phase537 = TryParseJson(Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath);
 using var phase538 = TryParseJson(Phase538FixedGridInteractingHmcRetuningPath);
+using var phase539 = TryParseJson(Phase539IndependentReducedTargetRowConfirmationPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9462,6 +9464,19 @@ var package = new
             reducedTargetFeasibilityOnly = JsonBool(phase538.RootElement, "reducedTargetFeasibilityOnly"),
             phase535PilotExecutedOrReopened = JsonBool(phase538.RootElement, "phase535PilotExecutedOrReopened"),
             promotedPhysicalMassClaimCount = JsonInt(phase538.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        independentReducedTargetRowConfirmation = phase539 is null ? null : new
+        {
+            status = JsonString(phase539.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase539.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase539.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase539.RootElement, "verdictKind"),
+            pristinePreregistration = JsonBool(phase539.RootElement, "pristinePreregistration"),
+            everyRegisteredFamilyPassedEveryGate = JsonBool(phase539.RootElement, "everyRegisteredFamilyPassedEveryGate"),
+            independentPostSelectionConfirmation = JsonBool(phase539.RootElement, "independentPostSelectionConfirmation"),
+            reducedToCompleteLatticeTransferValidated = JsonBool(phase539.RootElement, "reducedToCompleteLatticeTransferValidated"),
+            phase535PilotExecutedOrReopened = JsonBool(phase539.RootElement, "phase535PilotExecutedOrReopened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

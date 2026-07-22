@@ -397,6 +397,7 @@
     <PhaseProject Include="../studies/phase536_trajectory_forensics_replay_001/Phase536TrajectoryForensicsReplay.csproj" />
     <PhaseProject Include="../studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj" />
     <PhaseProject Include="../studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj" />
+    <PhaseProject Include="../studies/phase539_independent_reduced_target_row_confirmation_001/Phase539IndependentReducedTargetRowConfirmation.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

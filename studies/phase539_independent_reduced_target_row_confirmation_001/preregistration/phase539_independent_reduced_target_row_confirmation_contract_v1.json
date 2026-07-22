@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase539-a24-independent-reduced-target-row-confirmation-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A24",
+  "frozenBeforeFirstRun": true,
+  "exactBindings": [
+    {
+      "id": "phase534-contract",
+      "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json",
+      "sha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698"
+    },
+    {
+      "id": "phase534-program",
+      "path": "studies/phase534_nested_control_battery_001/Program.cs",
+      "sha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4"
+    },
+    {
+      "id": "phase534-summary",
+      "path": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json",
+      "sha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9"
+    },
+    {
+      "id": "phase536-summary",
+      "path": "studies/phase536_trajectory_forensics_replay_001/output/trajectory_forensics_replay_summary.json",
+      "sha256": "1296ed7826071a6fdccf3dd2182461882055bb1153af1c198e9d7b9b7c6ed9ae"
+    },
+    {
+      "id": "phase537-summary",
+      "path": "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json",
+      "sha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516"
+    },
+    {
+      "id": "phase538-contract-v2",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/preregistration/phase538_fixed_grid_interacting_hmc_retuning_contract_v2.json",
+      "sha256": "6ad1516ab89018354e06a160ddb2f4525b6d89df950f1b1af5464be2ad9a319f"
+    },
+    {
+      "id": "phase538-program",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/Program.cs",
+      "sha256": "85e7774d4f28374a9cb32e7fb319ceaaf010e11065a223d7cafdc3433646d332"
+    },
+    {
+      "id": "phase538-summary",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json",
+      "sha256": "6c1d061f4e6e4c21376227276fd4149acc1870c8d9a951d7560f1953be8a2636"
+    }
+  ],
+  "target": {
+    "kind": "phase534-reduced-theta-zero-sd2-witness-ray-polynomial",
+    "member": "sd2-id0/c0.5",
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "coefficientTolerance": 1e-12
+  },
+  "fixedSelectedRow": {
+    "sourcePhase": 538,
+    "rowId": "eps-0.25-len-2.00",
+    "stepSize": 0.25,
+    "trajectoryLength": 2.0,
+    "leapfrogSteps": 8,
+    "rowSearchAllowed": false,
+    "retuningAllowed": false
+  },
+  "independentSeedFamilies": [
+    {
+      "id": "independent-post-selection-a",
+      "seedOffset": 1300000,
+      "seeds": [539401, 539403, 539407, 539409],
+      "initialScales": [0.035, 0.07, 0.105, 0.14]
+    },
+    {
+      "id": "independent-post-selection-b",
+      "seedOffset": 1300000,
+      "seeds": [539501, 539503, 539507, 539509],
+      "initialScales": [0.045, 0.09, 0.135, 0.18]
+    }
+  ],
+  "execution": {
+    "warmupPerChain": 1000,
+    "retainedPerChain": 4000,
+    "adaptationEnabled": false,
+    "divergenceAbsoluteDeltaH": 100.0
+  },
+  "gates": {
+    "copiedUnweakenedFromPhase538V2": true,
+    "maximumNonFiniteTrajectoriesPerFamily": 0,
+    "maximumDivergencesPerFamily": 0,
+    "acceptanceMinimum": 0.65,
+    "acceptanceMaximum": 0.999,
+    "rhatMaximum": 1.01,
+    "bulkEssMinimum": 100.0,
+    "expMinusDeltaHAbsoluteFloor": 0.01,
+    "expMinusDeltaHStandardErrorMultiplier": 3.0,
+    "momentStandardErrorMultiplier": 4.0,
+    "quadratureAgreementTolerance": 1e-8,
+    "integrationByPartsTarget": 1.0
+  },
+  "quadrature": {
+    "halfWidth": 4.0,
+    "panels": 32768,
+    "referenceMomentTolerance": 1e-10
+  },
+  "confirmation": {
+    "everyRegisteredFamilyMustPassEveryGate": true,
+    "phase538SeedsMayBeReused": false,
+    "observedResultsMayAlterRowSeedsThresholdsOrDiagnostics": false,
+    "physicalTargetsConsulted": false
+  },
+  "resourceRefusal": {
+    "maximumAggregateCpuSeconds": 1800.0,
+    "maximumPeakBytes": 536870912,
+    "estimatedAggregateCpuSeconds": 30.0,
+    "estimatedPeakBytes": 67108864,
+    "refuseBeforeExecutionOnEstimateExceedance": true
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "selected-row-not-independently-confirmed",
+    "selected-row-independently-confirmed-reduced-target-only"
+  ],
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "phase534ReinterpretedOrRelabeled": false,
+    "phase538UpgradedToPristinePreregistration": false,
+    "phase535PilotExecutedOrReopened": false,
+    "reducedToCompleteLatticeTransferValidated": false,
+    "completeLatticeValidated": false,
+    "productionDefaultSelected": false,
+    "phase481PackCreatedOrMutated": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  }
+}

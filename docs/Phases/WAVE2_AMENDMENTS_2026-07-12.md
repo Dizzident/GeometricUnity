@@ -820,3 +820,32 @@ non-citable artifacts. Its v2 corrective contract states
 corrected rerun, leaves the grid, seeds, and numerical thresholds unchanged,
 and labels any positive result post-review-hardened rather than pristine
 preregistration. These repairs do not weaken any gate or erase a failed run.
+
+## Amendment A24 — independent confirmation of the selected reduced-target row (2026-07-22)
+
+Phase538 found a post-review-hardened fixed-grid row on the one-dimensional
+Phase534 target, but every Phase538 seed family participated in row selection.
+The result therefore lacks an independent post-selection confirmation. This
+amendment authorizes one prospective, non-claim-bearing experiment that must
+exact-bind the immutable Phase534 and Phase536-538 evidence and freeze its
+contract before its first run.
+
+1. **Phase539 — pristine independent post-selection confirmation.** Fix the
+   Phase538 selected row `eps-0.25-len-2.00` without searching or retuning.
+   Run only newly registered seed families, none used by Phases534, 536, or
+   538, with adaptation disabled. Preserve the Phase538 v2 split
+   rank-normalized R-hat, observable-specific paired initial-positive/monotone
+   ESS, acceptance, energy, quadrature-moment, integration-by-parts,
+   non-finite, divergence, and resource gates without weakening. Every new
+   family must pass every gate for independent confirmation; otherwise the
+   row is not independently confirmed.
+
+Phase539 may confirm or reject only the selected operating row on the frozen
+one-dimensional reduced target. It does not reinterpret Phase534, upgrade
+Phase538 into pristine preregistration, demonstrate reduced-to-complete-lattice
+transfer, reopen or execute the Phase535 pilot, create or modify a Phase481
+pack, select a production default, satisfy Phase458 G3/G4/G5, discharge O4,
+authorize source-contract application, or permit a physical-unit or GeV
+claim. A later separately frozen transfer-readiness adjudicator is required
+before any complete-lattice experiment. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.

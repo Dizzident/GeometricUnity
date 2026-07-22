@@ -744,6 +744,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P536.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P537.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P538.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P539.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

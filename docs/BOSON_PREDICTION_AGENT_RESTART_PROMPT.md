@@ -577,6 +577,32 @@ ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
 synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z
 and 14 Higgs fields, and `promotedPhysicalMassClaimCount=0`.
 
+INDEPENDENT REDUCED-TARGET ROW CONFIRMATION (2026-07-22, Amendment A24;
+Phase539): Phase539 prospectively froze the Phase538-selected
+`eps-0.25-len-2.00` row, two new four-chain seed families, the unchanged
+hardened Phase538 v2 diagnostics, and its terminal taxonomy before the first
+numerical run. It performed no row search, adaptation, or retuning. Both new
+families pass every gate, with acceptance rates 0.9848125 and 0.9853125, zero
+non-finite trajectories, zero divergences, largest split rank-normalized R-hat
+1.0003878606516012, and smallest observable-specific paired-sequence ESS
+9090.178460166302. Two consecutive runs produced byte-identical output. The
+terminal is `selected-row-independently-confirmed-reduced-target-only`.
+
+This closes the post-selection seed-independence gap for the fixed
+one-dimensional operating row only. It does not upgrade Phase538 to pristine
+preregistration, establish reduced-to-complete-lattice transfer, reopen or
+execute Phase535, create a Phase481 pack, select a production default, satisfy
+Phase458 G3/G4/G5, discharge O4, or support a physical-unit or GeV claim.
+External review remains pending, `promotedPhysicalMassClaimCount=0`, and
+registry 540+ is unassigned. A later separately frozen transfer-readiness
+adjudicator is required before any complete-lattice experiment.
+
+The mandatory A24 incremental checkpoint ran 84 steps and skipped 319. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 323 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`.
+
 The mandatory A20 incremental checkpoint ran 57 steps and skipped 337. It
 ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
 synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z and
