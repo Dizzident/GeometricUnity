@@ -953,6 +953,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase528_a5_even_sector_premise_applicability_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase529_a5_action_premise_route_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase530_o4_g4_authentication_admissibility_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase531_o4_g4_disposition_resolution_semantics_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase532_phase458_g4_consumer_correction_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
@@ -996,6 +999,12 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P527.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P528.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P529.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P530.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P531.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P532.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P533.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P534.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P535.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

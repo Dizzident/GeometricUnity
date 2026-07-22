@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "phase": 535,
+  "phaseId": "phase535-bounded-registered-operator-pilot-adjudicator",
+  "contractSha256": "d9cbf4a300ab4857c45ac42d90e4527fb1fd422958b187f0903b17af4f700e85",
+  "contractValid": true,
+  "bindings": [
+    {
+      "id": "phase533-summary",
+      "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json",
+      "expectedSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "actualSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-contract",
+      "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json",
+      "expectedSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "actualSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-program",
+      "path": "studies/phase534_nested_control_battery_001/Program.cs",
+      "expectedSha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4",
+      "actualSha256": "293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-summary",
+      "path": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json",
+      "expectedSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "actualSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "hashMatches": true
+    }
+  ],
+  "precedenceBatteryPassed": true,
+  "precedenceBattery": [
+    {
+      "id": "invalid",
+      "expected": "invalid-or-drifted-input",
+      "actual": "invalid-or-drifted-input",
+      "passed": true
+    },
+    {
+      "id": "phase533",
+      "expected": "phase533-contract-not-closed",
+      "actual": "phase533-contract-not-closed",
+      "passed": true
+    },
+    {
+      "id": "analysis",
+      "expected": "analysis-control-failed",
+      "actual": "analysis-control-failed",
+      "passed": true
+    },
+    {
+      "id": "free",
+      "expected": "free-sampler-control-failed",
+      "actual": "free-sampler-control-failed",
+      "passed": true
+    },
+    {
+      "id": "reduced",
+      "expected": "reduced-interacting-control-failed",
+      "actual": "reduced-interacting-control-failed",
+      "passed": true
+    },
+    {
+      "id": "topology",
+      "expected": "pilot-execution-topology-inadequate",
+      "actual": "pilot-execution-topology-inadequate",
+      "passed": true
+    },
+    {
+      "id": "unresolved",
+      "expected": "pilot-execution-diagnostics-valid-unresolved",
+      "actual": "pilot-execution-diagnostics-valid-unresolved",
+      "passed": true
+    },
+    {
+      "id": "resolved",
+      "expected": "pilot-execution-diagnostics-valid-resolved",
+      "actual": "pilot-execution-diagnostics-valid-resolved",
+      "passed": true
+    }
+  ],
+  "phase533Verdict": "nested-validation-contract-closed",
+  "phase534Verdict": "reduced-interacting-control-failed",
+  "phase533Closed": true,
+  "analysisControlPassed": true,
+  "freeSamplerPassed": true,
+  "reducedInteractingPassed": false,
+  "allControlsClosed": false,
+  "pilotRefusedByUpstreamControl": true,
+  "pilotRun": false,
+  "configurationsRetained": false,
+  "pilotIdentity": {
+    "member": "sd2-id0/c0.5",
+    "beta": 1,
+    "extent": 3,
+    "thetaRule": "theta-identically-zero"
+  },
+  "verdictKind": "reduced-interacting-control-failed",
+  "terminalStatus": "bounded-registered-operator-pilot-adjudicator-reduced-interacting-control-failed",
+  "phase535Passed": true,
+  "phase481PackCreated": false,
+  "productionValidated": false,
+  "dynamicalThetaValidated": false,
+  "temporalAcquisitionValidated": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The Gaussian and free controls passed, but the reduced interacting HMC control recorded non-finite or divergent trajectories. The bounded complete-lattice pilot is refused. The result localizes the next experiment to prospectively retuned interacting integrator controls; it does not diagnose the deeper cause."
+}

@@ -277,6 +277,12 @@ const string Phase526Path = "studies/phase526_a5_certificate_reducer_001/output/
 const string Phase527Path = "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json";
 const string Phase528Path = "studies/phase528_a5_even_sector_premise_applicability_audit_001/output/a5_even_sector_premise_applicability_audit_summary.json";
 const string Phase529Path = "studies/phase529_a5_action_premise_route_adjudicator_001/output/a5_action_premise_route_adjudicator_summary.json";
+const string Phase530Path = "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit_summary.json";
+const string Phase531Path = "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics_summary.json";
+const string Phase532Path = "studies/phase532_phase458_g4_consumer_correction_adjudicator_001/output/phase458_g4_consumer_correction_adjudicator_summary.json";
+const string Phase533Path = "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json";
+const string Phase534Path = "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json";
+const string Phase535Path = "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -605,6 +611,12 @@ using var phase526 = File.Exists(Phase526Path) ? JsonDocument.Parse(File.ReadAll
 using var phase527 = File.Exists(Phase527Path) ? JsonDocument.Parse(File.ReadAllText(Phase527Path)) : null;
 using var phase528 = File.Exists(Phase528Path) ? JsonDocument.Parse(File.ReadAllText(Phase528Path)) : null;
 using var phase529 = File.Exists(Phase529Path) ? JsonDocument.Parse(File.ReadAllText(Phase529Path)) : null;
+using var phase530 = File.Exists(Phase530Path) ? JsonDocument.Parse(File.ReadAllText(Phase530Path)) : null;
+using var phase531 = File.Exists(Phase531Path) ? JsonDocument.Parse(File.ReadAllText(Phase531Path)) : null;
+using var phase532 = File.Exists(Phase532Path) ? JsonDocument.Parse(File.ReadAllText(Phase532Path)) : null;
+using var phase533 = File.Exists(Phase533Path) ? JsonDocument.Parse(File.ReadAllText(Phase533Path)) : null;
+using var phase534 = File.Exists(Phase534Path) ? JsonDocument.Parse(File.ReadAllText(Phase534Path)) : null;
+using var phase535 = File.Exists(Phase535Path) ? JsonDocument.Parse(File.ReadAllText(Phase535Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7557,6 +7569,74 @@ var a5ActionPremiseRouteAdjudicatorPassed = phase529 is not null
     && JsonBool(phase529.RootElement, "closesLimbL8") is false
     && JsonBool(phase529.RootElement, "externalReviewPending") is true
     && JsonInt(phase529.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var o4G4AuthenticationAdmissibilityAuditPassed = phase530 is not null
+    && JsonBool(phase530.RootElement, "inputsValid") is true
+    && JsonBool(phase530.RootElement, "contractValid") is true
+    && JsonBool(phase530.RootElement, "exactBindingInventoryValid") is true
+    && JsonBool(phase530.RootElement, "exactBindingsValid") is true
+    && JsonString(phase530.RootElement, "verdictKind") == "authentication-only-g4-predicate-counterexample"
+    && JsonBool(phase530.RootElement, "authenticationAdmissibilityCounterexample") is true
+    && JsonString(phase530.RootElement, "primaryCounterexampleCaseId") == "authenticated-all-defer"
+    && JsonBool(phase530.RootElement, "syntheticBatteryPassed") is true
+    && JsonBool(phase530.RootElement, "phase458G4Satisfied") is false
+    && JsonBool(phase530.RootElement, "externalReviewPending") is true
+    && JsonInt(phase530.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var o4G4DispositionResolutionSemanticsPassed = phase531 is not null
+    && JsonBool(phase531.RootElement, "inputsValid") is true
+    && JsonBool(phase531.RootElement, "contractValid") is true
+    && JsonBool(phase531.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase531.RootElement, "exactBindingsValid") is true
+    && JsonString(phase531.RootElement, "verdictKind") == "resolution-semantics-closed-current-g4-missing"
+    && JsonBool(phase531.RootElement, "batteryPassed") is true
+    && JsonBool(phase531.RootElement, "allDeferRemainsUnresolved") is true
+    && JsonBool(phase531.RootElement, "oneAdverseDistinguished") is true
+    && JsonBool(phase531.RootElement, "notApplicableNeverSupports") is true
+    && JsonBool(phase531.RootElement, "phase458G4Satisfied") is false
+    && JsonBool(phase531.RootElement, "externalReviewPending") is true
+    && JsonInt(phase531.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase458G4ConsumerCorrectionAdjudicatorPassed = phase532 is not null
+    && JsonBool(phase532.RootElement, "inputsValid") is true
+    && JsonBool(phase532.RootElement, "contractValid") is true
+    && JsonBool(phase532.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase532.RootElement, "exactBindingsValid") is true
+    && JsonString(phase532.RootElement, "verdictKind") == "consumer-correction-closed-current-g4-missing"
+    && JsonBool(phase532.RootElement, "authenticationOnlyPhase478G4PredicateUnsafeForFutureEvaluation") is true
+    && JsonBool(phase532.RootElement, "futureConsumerRequiresPhase531ResolutionAndAdversitySemantics") is true
+    && JsonBool(phase532.RootElement, "syntheticBatteryPassed") is true
+    && JsonNestedString(phase532.RootElement, "currentState", "phase458G4State") == "missing"
+    && JsonBool(phase532.RootElement, "phase458EvaluationPerformed") is false
+    && JsonBool(phase532.RootElement, "externalReviewPending") is true
+    && JsonInt(phase532.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var nestedValidationContractPassed = phase533 is not null
+    && JsonBool(phase533.RootElement, "contractValid") is true
+    && JsonBool(phase533.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase533.RootElement, "resourceEnvelopeAccepted") is true
+    && JsonString(phase533.RootElement, "verdictKind") == "nested-validation-contract-closed"
+    && JsonBool(phase533.RootElement, "phase533Passed") is true
+    && JsonBool(phase533.RootElement, "hmcRun") is false
+    && JsonBool(phase533.RootElement, "productionValidated") is false
+    && JsonInt(phase533.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var nestedControlBatteryRecorded = phase534 is not null
+    && JsonBool(phase534.RootElement, "contractValid") is true
+    && JsonString(phase534.RootElement, "verdictKind") == "reduced-interacting-control-failed"
+    && JsonNestedBool(phase534.RootElement, "analysisControl", "passed") is true
+    && JsonNestedBool(phase534.RootElement, "freeSamplerControl", "passed") is true
+    && JsonNestedBool(phase534.RootElement, "reducedInteractingControl", "passed") is false
+    && JsonNestedNestedBool(phase534.RootElement, "reducedInteractingControl", "polynomial", "polynomialReplayPassed") is true
+    && JsonNestedNestedBool(phase534.RootElement, "reducedInteractingControl", "quadrature", "passed") is true
+    && JsonNestedBool(phase534.RootElement, "reducedInteractingControl", "samplerDiagnosticsPassed") is false
+    && JsonBool(phase534.RootElement, "productionValidated") is false
+    && JsonInt(phase534.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var boundedPilotAdjudicatorPassed = phase535 is not null
+    && JsonBool(phase535.RootElement, "contractValid") is true
+    && JsonBool(phase535.RootElement, "precedenceBatteryPassed") is true
+    && JsonString(phase535.RootElement, "verdictKind") == "reduced-interacting-control-failed"
+    && JsonBool(phase535.RootElement, "pilotRefusedByUpstreamControl") is true
+    && JsonBool(phase535.RootElement, "pilotRun") is false
+    && JsonBool(phase535.RootElement, "configurationsRetained") is false
+    && JsonBool(phase535.RootElement, "phase535Passed") is true
+    && JsonBool(phase535.RootElement, "productionValidated") is false
+    && JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10464,6 +10544,42 @@ var checklist = new[]
         a5ActionPremiseRouteAdjudicatorPassed ? "passed" : "failed",
         phase529 is null ? "Phase529 artifact not materialized" : $"inputsValid={JsonBool(phase529.RootElement, "inputsValid")}; verdictKind={JsonString(phase529.RootElement, "verdictKind")}; completeMembers={JsonBool(phase529.RootElement, "completeMemberStatus")}; allOutside={JsonBool(phase529.RootElement, "everyRegisteredMemberOutside")}; finiteGeometryRetained={JsonBool(phase529.RootElement, "finiteGeometryResultRetained")}; currentRouteClosed={JsonNestedBool(phase529.RootElement, "adjudication", "currentA5PackRouteClosedAtActionPremise")}; promotedPhysicalMassClaimCount={JsonInt(phase529.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase529Path),
+    new ObjectiveChecklistItem(
+        "o4-g4-authentication-admissibility-audit",
+        "Prove whether authentication alone can distinguish unresolved, supporting, and adverse O4 memo content without consuming a human ruling.",
+        o4G4AuthenticationAdmissibilityAuditPassed ? "passed" : "failed",
+        phase530 is null ? "Phase530 artifact not materialized" : $"inputsValid={JsonBool(phase530.RootElement, "inputsValid")}; verdictKind={JsonString(phase530.RootElement, "verdictKind")}; counterexample={JsonBool(phase530.RootElement, "authenticationAdmissibilityCounterexample")}; primaryCase={JsonString(phase530.RootElement, "primaryCounterexampleCaseId")}; promotedPhysicalMassClaimCount={JsonInt(phase530.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase530Path),
+    new ObjectiveChecklistItem(
+        "o4-g4-disposition-resolution-semantics",
+        "Freeze fail-closed resolution and adversity semantics while leaving every human option and rationale untouched.",
+        o4G4DispositionResolutionSemanticsPassed ? "passed" : "failed",
+        phase531 is null ? "Phase531 artifact not materialized" : $"inputsValid={JsonBool(phase531.RootElement, "inputsValid")}; verdictKind={JsonString(phase531.RootElement, "verdictKind")}; batteryPassed={JsonBool(phase531.RootElement, "batteryPassed")}; allDeferUnresolved={JsonBool(phase531.RootElement, "allDeferRemainsUnresolved")}; adverseDistinguished={JsonBool(phase531.RootElement, "oneAdverseDistinguished")}; promotedPhysicalMassClaimCount={JsonInt(phase531.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase531Path),
+    new ObjectiveChecklistItem(
+        "phase458-g4-consumer-correction-adjudicator",
+        "Require content resolution and adverse-disposition precedence in every future Phase458 G4 evaluation while retaining the current missing state.",
+        phase458G4ConsumerCorrectionAdjudicatorPassed ? "passed" : "failed",
+        phase532 is null ? "Phase532 artifact not materialized" : $"inputsValid={JsonBool(phase532.RootElement, "inputsValid")}; verdictKind={JsonString(phase532.RootElement, "verdictKind")}; predicateUnsafe={JsonBool(phase532.RootElement, "authenticationOnlyPhase478G4PredicateUnsafeForFutureEvaluation")}; currentG4={JsonNestedString(phase532.RootElement, "currentState", "phase458G4State")}; evaluated={JsonBool(phase532.RootElement, "phase458EvaluationPerformed")}; promotedPhysicalMassClaimCount={JsonInt(phase532.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase532Path),
+    new ObjectiveChecklistItem(
+        "nested-validation-contract",
+        "Freeze the A22 controls, seed tables, narrow terminals, and resource refusal before any experimental sampling.",
+        nestedValidationContractPassed ? "passed" : "failed",
+        phase533 is null ? "Phase533 artifact not materialized" : $"contractValid={JsonBool(phase533.RootElement, "contractValid")}; verdictKind={JsonString(phase533.RootElement, "verdictKind")}; resourceEnvelopeAccepted={JsonBool(phase533.RootElement, "resourceEnvelopeAccepted")}; promotedPhysicalMassClaimCount={JsonInt(phase533.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase533Path),
+    new ObjectiveChecklistItem(
+        "nested-control-battery-negative-record",
+        "Run the frozen Gaussian, free-sampler, and reduced interacting controls and preserve the earliest negative terminal without retuning after observation.",
+        nestedControlBatteryRecorded ? "passed" : "failed",
+        phase534 is null ? "Phase534 artifact not materialized" : $"verdictKind={JsonString(phase534.RootElement, "verdictKind")}; gaussian={JsonNestedBool(phase534.RootElement, "analysisControl", "passed")}; free={JsonNestedBool(phase534.RootElement, "freeSamplerControl", "passed")}; reduced={JsonNestedBool(phase534.RootElement, "reducedInteractingControl", "passed")}; promotedPhysicalMassClaimCount={JsonInt(phase534.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase534Path),
+    new ObjectiveChecklistItem(
+        "bounded-registered-operator-pilot-adjudicator",
+        "Enforce the A22 kill order and refuse the bounded complete-lattice pilot after a reduced interacting control failure.",
+        boundedPilotAdjudicatorPassed ? "passed" : "failed",
+        phase535 is null ? "Phase535 artifact not materialized" : $"verdictKind={JsonString(phase535.RootElement, "verdictKind")}; precedence={JsonBool(phase535.RootElement, "precedenceBatteryPassed")}; refused={JsonBool(phase535.RootElement, "pilotRefusedByUpstreamControl")}; pilotRun={JsonBool(phase535.RootElement, "pilotRun")}; promotedPhysicalMassClaimCount={JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase535Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

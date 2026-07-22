@@ -1,0 +1,50 @@
+{
+  "contractId": "phase532-a21-phase458-g4-consumer-correction-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A21",
+  "frozenBeforeConsumption": true,
+  "exactBindings": [
+    { "id": "phase478-program", "path": "studies/phase478_phase458_gate_specification_closure_001/Program.cs", "sha256": "a9bc4880fe6360376f51ec441f315b1375284ba58851d632492578585361a387" },
+    { "id": "phase478-contract", "path": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json", "sha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0" },
+    { "id": "phase478-summary", "path": "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json", "sha256": "db8ed650000149b2425d976372cf11e1fd7dee5d241036cbcb5bd13b7d58f195" },
+    { "id": "phase480-program", "path": "studies/phase480_o4_physicist_adjudication_intake_001/Program.cs", "sha256": "ab4360c0113aed14a39e86f2de9d9129346419c4c7b628e746e286d2249b24b6" },
+    { "id": "phase480-summary", "path": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json", "sha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7" },
+    { "id": "phase530-program", "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/Program.cs", "sha256": "c5fc7921f3e812fbceb706edd8876e7ee7a2a42de3f293da31d3b98a8b74eaf7" },
+    { "id": "phase530-contract", "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/preregistration/phase530_o4_g4_authentication_admissibility_audit_contract_v1.json", "sha256": "b4f1cad8dfc9568ec83e740979c682d8248f655fe6fbc91636a66f298468ec5f" },
+    { "id": "phase530-summary", "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit_summary.json", "sha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6" },
+    { "id": "phase531-program", "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/Program.cs", "sha256": "9e664378b1918fba13d652b39bcf17506c5d1ce6ade6717fd5b4f1e04f342d2f" },
+    { "id": "phase531-contract", "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/preregistration/phase531_o4_g4_disposition_resolution_semantics_contract_v1.json", "sha256": "c414605127a3ed201cb6bbde333c031a2c6dc45b85347fb6226d932cc3a217b0" },
+    { "id": "phase531-full", "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics.json", "sha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b" },
+    { "id": "phase531-summary", "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics_summary.json", "sha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b" }
+  ],
+  "consumerPrecedence": [
+    "invalid-or-drifted-input",
+    "missing",
+    "resolved-adverse-upstream-invalidation",
+    "available-true"
+  ],
+  "requiredSyntheticCases": [
+    "all-defer",
+    "one-defer",
+    "all-supporting",
+    "resolved-adverse"
+  ],
+  "expectedCurrentVerdict": "consumer-correction-closed-current-g4-missing",
+  "expectedCurrentTerminalStatus": "phase458-g4-consumer-correction-adjudicator-consumer-correction-closed-current-g4-missing",
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "humanRulingConsumptionAllowed": false,
+    "humanRulingAuthorshipOrInferenceAllowed": false,
+    "o4Satisfied": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "phase458EvaluationAllowed": false,
+    "phase481ConstructionOrMutationAllowed": false,
+    "samplingOrReprocessingAllowed": false,
+    "hmcOrBenchmarkAllowed": false,
+    "productionOrLaunchAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false
+  }
+}

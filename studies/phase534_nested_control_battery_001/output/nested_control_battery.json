@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "phase": 534,
+  "phaseId": "phase534-nested-control-battery",
+  "contractSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+  "contractValid": true,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase533-summary",
+      "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json",
+      "expectedSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "actualSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "hashMatches": true
+    },
+    {
+      "id": "phase527-summary",
+      "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json",
+      "expectedSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "actualSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "hashMatches": true
+    }
+  ],
+  "analysisControl": {
+    "passed": true,
+    "dimension": 4,
+    "gaussianDraws": 4096,
+    "gaussianWorstZ": 2.763710129406009,
+    "rows": [
+      {
+        "table": "table-a",
+        "seed": 533101,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-a",
+        "seed": 533103,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-a",
+        "seed": 533107,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-a",
+        "seed": 533109,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-b",
+        "seed": 533201,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-b",
+        "seed": 533203,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-b",
+        "seed": 533207,
+        "sampleCount": 4096
+      },
+      {
+        "table": "table-b",
+        "seed": 533209,
+        "sampleCount": 4096
+      }
+    ]
+  },
+  "freeSamplerControl": {
+    "passed": true,
+    "tables": [
+      {
+        "id": "table-a",
+        "acceptanceRate": 0.7164306640625,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "expMinusDeltaHMean": 1.0003380527090329,
+        "expMinusDeltaHError": 0.00033805270903286555,
+        "expMinusDeltaHSe": 0.012416323271673795,
+        "rhat": 0.9998537191663931,
+        "ess": 8192,
+        "mean": -0.006042582998973088,
+        "meanSe": 0.011062474335934047,
+        "secondMoment": 1.0024374829156386,
+        "secondMomentSe": 0.031547524452671,
+        "xGradientMean": 1.0377848892302388,
+        "xGradientSe": 0.019872555358108144,
+        "stepSizes": [
+          1.2383472844799999,
+          1.0749542399999998,
+          1.2383472844799999,
+          1.2899450879999999
+        ]
+      },
+      {
+        "id": "table-b",
+        "acceptanceRate": 0.783203125,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "expMinusDeltaHMean": 0.9964862002239375,
+        "expMinusDeltaHError": 0.003513799776062476,
+        "expMinusDeltaHSe": 0.009072065062583816,
+        "rhat": 0.9998492895696657,
+        "ess": 8192,
+        "mean": -0.010929002396710375,
+        "meanSe": 0.011041165718756038,
+        "secondMoment": 0.9986624685476005,
+        "secondMomentSe": 0.024287162262456023,
+        "xGradientMean": 1.0006766830776703,
+        "xGradientSe": 0.012902950029783925,
+        "stepSizes": [
+          1.0319560704,
+          1.2899450879999999,
+          0.9906778275839999,
+          1.0319560704
+        ]
+      }
+    ]
+  },
+  "reducedInteractingControl": {
+    "passed": false,
+    "member": "sd2-id0/c0.5",
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "witnessEdges": [
+      0,
+      1,
+      4
+    ],
+    "witnessComponents": [
+      0,
+      1,
+      2
+    ],
+    "witnessValues": [
+      1,
+      -1,
+      1
+    ],
+    "polynomial": {
+      "c2": 1.7916666666666679,
+      "c3": 0.036111111111111316,
+      "c4": 0.1704947916666657,
+      "expectedC3": 0.03611111111111111,
+      "replayWorst": 7.444127907747345E-16,
+      "polynomialReplayPassed": true
+    },
+    "quadrature": {
+      "passed": true,
+      "halfWidth": 4,
+      "coarsePanels": 16384,
+      "finePanels": 32768,
+      "quadratureDifference": 1.4155343563970746E-15,
+      "fine": {
+        "z": 1.280434890941017,
+        "m1": -0.006173797034719771,
+        "m2": 0.2466950651795902,
+        "m3": -0.006748778034582908,
+        "m4": 0.17117893492868175
+      }
+    },
+    "samplerDiagnosticsPassed": false,
+    "reducedMomentAgreement": true,
+    "schwingerDysonPassed": true,
+    "tables": [
+      {
+        "id": "table-a",
+        "acceptanceRate": 0.7986875,
+        "nonFiniteCount": 103,
+        "divergenceCount": 94,
+        "expMinusDeltaHMean": 0.9674834747654766,
+        "expMinusDeltaHError": 0.03251652523452342,
+        "expMinusDeltaHSe": 0.0077246427739694696,
+        "rhat": 1.001253862451743,
+        "ess": 3725.7242781083237,
+        "mean": 0.01657069712550036,
+        "meanSe": 0.00805917069424518,
+        "secondMoment": 0.242246121107717,
+        "secondMomentSe": 0.004529918889943297,
+        "xGradientMean": 0.9795374432446143,
+        "xGradientSe": 0.02022016941427821,
+        "stepSizes": [
+          0.6420300126568449,
+          0.7383345145553716,
+          0.7383345145553716,
+          0.6420300126568449
+        ]
+      },
+      {
+        "id": "table-b",
+        "acceptanceRate": 0.7946875,
+        "nonFiniteCount": 5,
+        "divergenceCount": 43,
+        "expMinusDeltaHMean": 0.9688110596994051,
+        "expMinusDeltaHError": 0.031188940300594936,
+        "expMinusDeltaHSe": 0.014717670573905215,
+        "rhat": 1.000259555182847,
+        "ess": 6143.453666403732,
+        "mean": -0.013990078895527896,
+        "meanSe": 0.00630256671826939,
+        "secondMoment": 0.2442128700614255,
+        "secondMomentSe": 0.004312014963352201,
+        "xGradientMean": 0.9891534321218003,
+        "xGradientSe": 0.01975924941212263,
+        "stepSizes": [
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449,
+          0.6420300126568449
+        ]
+      }
+    ]
+  },
+  "verdictKind": "reduced-interacting-control-failed",
+  "terminalStatus": "nested-control-battery-reduced-interacting-control-failed",
+  "phase534Passed": false,
+  "completeLatticeSd2Validated": false,
+  "dynamicalThetaValidated": false,
+  "productionValidated": false,
+  "phase481PackCreated": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The earliest failing nested control is preserved. No downstream pilot may treat the control stack as validated."
+}

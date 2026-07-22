@@ -27,7 +27,9 @@ back, NO new phase directory may be created outside this table.
 | 520-522 | Shared Phase482 foundation-refinement extension (A18) | 520 exact action-subject lineage/parity closure audit; 521 frozen reflection-compatible triangulation census; 522 dependent foundation-candidate reduction adjudicator |
 | 523-526 | Shared Phase482 action/parity/pullback extension (A19) | 523 action-member universalization audit; 524 exact omega-parity decomposition; 525 survivor reflection-pullback and boundary audit; 526 dependent A5 certificate reducer |
 | 527-529 | Shared Phase482 A5 action-premise extension (A20) | 527 exact SD2 theta-zero parity audit; 528 frozen even-sector premise-applicability audit; 529 dependent A5 action-premise route adjudicator |
-| 530+ | Unassigned - extend this registry before use | - |
+| 530-532 | Shared O4 G4 authentication/admissibility integrity extension (A21) | 530 authentication-versus-admissibility counterexample audit; 531 disposition-resolution semantics contract; 532 dependent Phase458 G4 consumer correction adjudicator |
+| 533-535 | Shared nested experimental validation extension (A22) | 533 frozen experiment/resource contract; 534 independent Gaussian, free-sampler, and reduced interacting control battery; 535 bounded registered-operator pilot adjudicator |
+| 536+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

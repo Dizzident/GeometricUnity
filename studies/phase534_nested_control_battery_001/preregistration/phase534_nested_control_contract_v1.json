@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase534-a22-nested-control-battery-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A22",
+  "frozenBeforeControlExecution": true,
+  "expectedInputs": [
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase533-summary","path":"studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json","sha256":"c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164"},
+    {"id":"phase527-summary","path":"studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json","sha256":"a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797"}
+  ],
+  "registeredReduction": {
+    "member":"sd2-id0/c0.5",
+    "extent":3,
+    "thetaRule":"theta-identically-zero",
+    "witnessEdges":[0,1,4],
+    "witnessComponents":[0,1,2],
+    "witnessValues":[1,-1,1],
+    "expectedCubicCoefficient":0.036111111111111111,
+    "coefficientTolerance":1e-9,
+    "polynomialReplayRelativeTolerance":1e-10
+  },
+  "quadrature": {
+    "initialHalfWidth":4,
+    "maximumHalfWidth":16,
+    "finePanels":32768,
+    "coarsePanels":16384,
+    "nestedAgreementTolerance":1e-8,
+    "boundaryDensityTolerance":1e-12
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "analysis-control-failed",
+    "free-sampler-control-failed",
+    "reduced-interacting-control-failed",
+    "nested-controls-closed"
+  ],
+  "claimBoundary": {
+    "completeLatticeSd2Validated":false,
+    "dynamicalThetaValidated":false,
+    "productionValidated":false,
+    "physicalClaimAllowed":false,
+    "promotedPhysicalMassClaimCount":0
+  }
+}

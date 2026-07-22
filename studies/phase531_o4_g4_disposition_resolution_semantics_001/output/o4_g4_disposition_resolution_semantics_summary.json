@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "phase": 531,
+  "phaseId": "phase531-o4-g4-disposition-resolution-semantics",
+  "contractId": "phase531-a21-o4-g4-disposition-resolution-semantics-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A21",
+  "inputsValid": true,
+  "contractValid": true,
+  "bindingInventoryValid": true,
+  "exactBindingsValid": true,
+  "phase530MirrorsValid": true,
+  "phase530IdentityValid": true,
+  "unchangedO4SurfacesValid": true,
+  "syntheticOptionPinsValid": true,
+  "rulingCount": 13,
+  "rulingIds": [
+    "O4-F1-INVARIANT-RAYS",
+    "O4-F1-COLLECTIVE-COORDINATE",
+    "O4-F1-FP-NORMALIZATION",
+    "O4-F2-POSITIVE-MODE-IR",
+    "O4-F3-THETA-HAAR",
+    "O4-F4-SADDLE-BACKGROUNDS",
+    "O4-E1-P447-SOFT-FLOOR",
+    "O4-E2-P453-UNIFORM-LADDER",
+    "O4-P455-ZERO-MODE",
+    "O4-P455-SB-MODEL",
+    "O4-C1-COMPACT-REAL-FORM",
+    "O4-C2-YHALF-BOOKKEEPING",
+    "O4-C3-WS3-MPROBE-SCOPE"
+  ],
+  "taxonomy": {
+    "precedence": [
+      "invalid-authentication",
+      "invalid-ruling-set",
+      "unresolved-content",
+      "resolved-adverse",
+      "resolved-supporting"
+    ],
+    "supportingDispositions": [
+      "accept-at-declared-scope",
+      "accept-with-registered-caveats"
+    ],
+    "adverseDispositions": [
+      "reject"
+    ],
+    "unresolvedDispositions": [
+      "insufficient-basis",
+      "not-applicable"
+    ],
+    "deferOption": "defer",
+    "insufficientBasisOrDeferIsUnresolved": true,
+    "notApplicableCountsAsSupport": false,
+    "adverseFlagSurvivesMixedContent": true
+  },
+  "batteryInventoryValid": true,
+  "batteryPassed": true,
+  "syntheticBattery": [
+    {
+      "id": "all-defer",
+      "expected": "unresolved-content",
+      "actual": "unresolved-content",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": true,
+      "scientificallyResolved": false,
+      "passed": true
+    },
+    {
+      "id": "one-defer",
+      "expected": "unresolved-content",
+      "actual": "unresolved-content",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": true,
+      "scientificallyResolved": false,
+      "passed": true
+    },
+    {
+      "id": "all-supporting",
+      "expected": "resolved-supporting",
+      "actual": "resolved-supporting",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": true,
+      "adversePresent": false,
+      "unresolved": false,
+      "scientificallyResolved": true,
+      "passed": true
+    },
+    {
+      "id": "one-adverse",
+      "expected": "resolved-adverse",
+      "actual": "resolved-adverse",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": false,
+      "adversePresent": true,
+      "unresolved": false,
+      "scientificallyResolved": true,
+      "passed": true
+    },
+    {
+      "id": "mixed-adverse",
+      "expected": "resolved-adverse",
+      "actual": "resolved-adverse",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": false,
+      "adversePresent": true,
+      "unresolved": false,
+      "scientificallyResolved": true,
+      "passed": true
+    },
+    {
+      "id": "duplicate-ruling",
+      "expected": "invalid-ruling-set",
+      "actual": "invalid-ruling-set",
+      "rulingSetCompleteUnique": false,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": false,
+      "scientificallyResolved": false,
+      "passed": true
+    },
+    {
+      "id": "missing-ruling",
+      "expected": "invalid-ruling-set",
+      "actual": "invalid-ruling-set",
+      "rulingSetCompleteUnique": false,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": false,
+      "scientificallyResolved": false,
+      "passed": true
+    },
+    {
+      "id": "invalid-authentication",
+      "expected": "invalid-authentication",
+      "actual": "invalid-authentication",
+      "rulingSetCompleteUnique": false,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": false,
+      "scientificallyResolved": false,
+      "passed": true
+    },
+    {
+      "id": "not-applicable-nonsupport",
+      "expected": "unresolved-content",
+      "actual": "unresolved-content",
+      "rulingSetCompleteUnique": true,
+      "fullyResolvedSupporting": false,
+      "adversePresent": false,
+      "unresolved": true,
+      "scientificallyResolved": false,
+      "passed": true
+    }
+  ],
+  "allDeferRemainsUnresolved": true,
+  "oneDeferRemainsUnresolved": true,
+  "allSupportingDistinguished": true,
+  "oneAdverseDistinguished": true,
+  "mixedAdversePreserved": true,
+  "notApplicableNeverSupports": true,
+  "verdictKind": "resolution-semantics-closed-current-g4-missing",
+  "terminalStatus": "o4-g4-disposition-resolution-semantics-resolution-semantics-closed-current-g4-missing",
+  "currentState": {
+    "phase480AuthenticatedMemoPresent": false,
+    "humanRulingConsumed": false,
+    "phase458G4State": "missing",
+    "phase458G4Satisfied": false,
+    "externalReviewPending": true
+  },
+  "decision": "Generic authentication, completeness, resolution, and adversity semantics are frozen without selecting or interpreting a human ruling. Current Phase458 G4 remains missing.",
+  "bindings": [
+    {
+      "id": "phase530-program",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/Program.cs",
+      "expectedSha256": "c5fc7921f3e812fbceb706edd8876e7ee7a2a42de3f293da31d3b98a8b74eaf7",
+      "actualSha256": "c5fc7921f3e812fbceb706edd8876e7ee7a2a42de3f293da31d3b98a8b74eaf7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-contract",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/preregistration/phase530_o4_g4_authentication_admissibility_audit_contract_v1.json",
+      "expectedSha256": "b4f1cad8dfc9568ec83e740979c682d8248f655fe6fbc91636a66f298468ec5f",
+      "actualSha256": "b4f1cad8dfc9568ec83e740979c682d8248f655fe6fbc91636a66f298468ec5f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-full",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit.json",
+      "expectedSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "actualSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-summary",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit_summary.json",
+      "expectedSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "actualSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "hashMatches": true
+    },
+    {
+      "id": "o4-schema",
+      "path": "scripts/o4_register/o4_human_memo_schema_v1.json",
+      "expectedSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+      "actualSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+      "hashMatches": true
+    },
+    {
+      "id": "o4-dependency-map",
+      "path": "scripts/o4_register/dependency_map.json",
+      "expectedSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
+      "actualSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
+      "hashMatches": true
+    }
+  ],
+  "deterministicZeroPhysicsComputation": true,
+  "syntheticCasesAreHumanEvidence": false,
+  "humanOptionSelected": false,
+  "humanRationaleInterpreted": false,
+  "humanRulingAuthored": false,
+  "o4Satisfied": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationPerformed": false,
+  "phase481ConstructedOrMutated": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "hmcPerformed": false,
+  "benchmarkPerformed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "sourceContractApplicationPerformed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "allExecutionAndPromotionAuthorities": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

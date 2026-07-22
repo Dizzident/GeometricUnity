@@ -1,0 +1,42 @@
+{
+  "schemaVersion":1,
+  "contractId":"phase535-a22-bounded-registered-operator-pilot-adjudicator-v1",
+  "planSection":"WAVE2_AMENDMENTS_2026-07-12 A22",
+  "frozenBeforePrecursorConsumption":true,
+  "expectedInputs":[
+    {"id":"phase533-summary","path":"studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json","sha256":"c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164"},
+    {"id":"phase534-contract","path":"studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json","sha256":"f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698"},
+    {"id":"phase534-program","path":"studies/phase534_nested_control_battery_001/Program.cs","sha256":"293e13630faa6405a8ee680b2b52703afc6d61eb95252bf2ae4dfc6fa322cde4"},
+    {"id":"phase534-summary","path":"studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json","sha256":"8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9"}
+  ],
+  "requiredUpstreamVerdicts":{
+    "phase533":"nested-validation-contract-closed",
+    "phase534":"nested-controls-closed"
+  },
+  "pilotIdentity":{
+    "member":"sd2-id0/c0.5",
+    "beta":1.0,
+    "extent":3,
+    "thetaRule":"theta-identically-zero",
+    "twoSeedTablesRequired":true,
+    "configurationRetentionRequired":true
+  },
+  "terminalTaxonomyInPrecedenceOrder":[
+    "invalid-or-drifted-input",
+    "phase533-contract-not-closed",
+    "analysis-control-failed",
+    "free-sampler-control-failed",
+    "reduced-interacting-control-failed",
+    "pilot-execution-topology-inadequate",
+    "pilot-execution-diagnostics-valid-unresolved",
+    "pilot-execution-diagnostics-valid-resolved"
+  ],
+  "claimBoundary":{
+    "pilotMayRunOnlyAfterControlsClose":true,
+    "phase481PackCreated":false,
+    "productionValidated":false,
+    "dynamicalThetaValidated":false,
+    "physicalClaimAllowed":false,
+    "promotedPhysicalMassClaimCount":0
+  }
+}

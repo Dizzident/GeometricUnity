@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "phase": 533,
+  "phaseId": "phase533-nested-validation-contract",
+  "contractId": "phase533-a22-nested-validation-contract-v1",
+  "contractSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase456-summary",
+      "path": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "expectedSha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "actualSha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase507-summary",
+      "path": "studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/output/phase456_selective_inference_pack_readiness_adjudicator_summary.json",
+      "expectedSha256": "ab4916dd7078921b41eeaf99bbb78a442c3b7c12743f6cfef8295c11708849a7",
+      "actualSha256": "ab4916dd7078921b41eeaf99bbb78a442c3b7c12743f6cfef8295c11708849a7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase511-summary",
+      "path": "studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/output/phase481_throughput_benchmark_eligibility_audit_summary.json",
+      "expectedSha256": "05232e898450aedcc245bc1b689cd50b428ae813568578c9799390654771f4c0",
+      "actualSha256": "05232e898450aedcc245bc1b689cd50b428ae813568578c9799390654771f4c0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase527-summary",
+      "path": "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json",
+      "expectedSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "actualSha256": "a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator-source",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "hashMatches": true
+    }
+  ],
+  "resourceEnvelopeAccepted": true,
+  "resourceEnvelope": {
+    "maximumAggregateCpuSeconds": 7200,
+    "estimatedAggregateCpuSeconds": 5400,
+    "maximumPeakBytes": 1073741824,
+    "estimatedPeakBytes": 536870912
+  },
+  "seedTableCount": 2,
+  "frozenTerminalCount": 8,
+  "verdictKind": "nested-validation-contract-closed",
+  "terminalStatus": "nested-validation-contract-nested-validation-contract-closed",
+  "phase533Passed": true,
+  "deterministicZeroSampling": true,
+  "hmcRun": false,
+  "productionValidated": false,
+  "phase481PackCreated": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "physicalClaimAllowed": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The prospective nested experiment, independent controls, seed tables, thresholds, narrow terminals, and resource refusal are frozen. No sampling occurred."
+}

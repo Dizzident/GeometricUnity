@@ -691,3 +691,83 @@ Phase481 work, Phase458 evaluation, source-contract application, O4 or human
 ruling, target tuning, or physical-unit promotion. External review remains
 pending, every execution and promotion authority remains false, and
 `promotedPhysicalMassClaimCount=0` throughout.
+
+## A21 — O4 G4 authentication/admissibility integrity closure (phases 530–532)
+
+The post-A20 evidence-acquisition audit found a fail-closed defect in the
+future Phase458 G4 consumer rule. Phase480 deliberately authenticates memo
+authorship and repository binding only. Phase478 currently equates a genuine
+authenticated Phase480 memo with `G4=available-true`, even though the memo
+schema permits every ruling to remain `insufficient-basis` with selected
+option `defer`. Authentication is not scientific resolution, and a complete
+but nonresponsive memo must not open G4.
+
+Phase530 exact-binds the Phase477 infrastructure output, Phase478 contract,
+program and output, Phase480 contract, verifier, schema, template, program and
+output, and the O4 dependency map. It freezes a synthetic state battery before
+evaluation and demonstrates whether authentication, complete ruling presence,
+scientific resolution, and adverse disposition are distinguished. It authors
+no ruling and uses no synthetic result as human evidence. The expected defect
+terminal is scoped to the Phase478 G4 predicate; it does not invalidate
+Phase480 authentication.
+
+Phase531 exact-binds Phase530 and the unchanged O4 schema and dependency map.
+It freezes a content-resolution taxonomy that is independent of every human
+choice: missing or invalid authentication remains non-satisfying; any
+`insufficient-basis` disposition or `defer` option remains unresolved; fully
+resolved supporting dispositions are distinct from fully resolved adverse
+dispositions; mixed resolved dispositions preserve the adverse flag. The
+phase may define consumer semantics but cannot choose an option, reinterpret a
+rationale, or convert `not-applicable` into support. Its synthetic battery must
+cover all-defer, one-defer, all-supporting, one-adverse, mixed-adverse,
+duplicate/missing ruling, and invalid-authentication cases.
+
+Phase532 is a dependent consumer-correction adjudicator. It exact-binds
+Phases478, 480, 530, and 531 and freezes precedence before consumption. It must
+declare the authentication-only Phase478 G4 predicate unsafe for future
+evaluation and require the Phase531 resolution/adversity result before
+Phase458 can execute. The current state remains `G4=missing`; no retrospective
+Phase458 evaluation occurs. A future authenticated all-defer memo must remain
+missing, while an authenticated resolved adverse memo must remain
+machine-distinguishable from a supporting memo and route through the existing
+upstream-invalidation precedence rather than a positive gate.
+
+A21 does not modify or consume a human memo, register a reviewer, satisfy O4,
+G3, G4, or G5, construct or mutate Phase481, evaluate Phase458, authorize
+sampling, HMC, benchmarking, production, or launch, fill a source contract, or
+support a physical-unit claim. It performs zero physics computation, keeps
+external review pending, and preserves `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A22 — nested experimental validation tranche (2026-07-21)
+
+This amendment authorizes a non-claim-bearing experimental route selected by
+the cross-model blocker council. Guessing is permitted only behind a
+prospectively frozen falsifier: every negative, unresolved, or refusal
+terminal is preserved and no existing verdict is weakened.
+
+Execution order is strict:
+
+1. **Phase533 — frozen experiment and resource contract.** Exact-bind the
+   Phase456, Phase507, and Phase511 records; freeze independent control
+   definitions, two disjoint overdispersed seed tables, numerical thresholds,
+   terminal precedence, and a static refusal ceiling of two aggregate CPU
+   hours and one GiB. This phase performs no sampling.
+2. **Phase534 — nested control battery.** Run an independently implemented
+   exact-Gaussian direct-draw analysis control, a free-field HMC sampler
+   baseline, and a coercive low-dimensional theta-zero SD2 target whose HMC
+   moments are checked against deterministic high-precision quadrature and
+   integration-by-parts identities. A free-field pass does not validate the
+   interacting sampler, and the reduced interacting control does not validate
+   the complete lattice action.
+3. **Phase535 — bounded registered-operator pilot adjudicator.** Proceed only
+   if Phase533 and Phase534 close. Exercise the registered SD2 operator at
+   beta one under the frozen bounded topology and both seed tables. A
+   reproducible unresolved result remains unresolved; failed execution
+   diagnostics establish only that the topology is inadequate and do not
+   distinguish tuning, slow mixing, metastability, or degeneracy.
+
+All outputs remain workbench-relative and in lattice units. The tranche does
+not create a Phase481 production pack, validate Phase456 production, satisfy
+Phase458 G3/G4/G5, discharge O4, identify a particle observable, authorize
+source-contract application, or permit a GeV or physical-mass claim.
+`promotedPhysicalMassClaimCount=0`.

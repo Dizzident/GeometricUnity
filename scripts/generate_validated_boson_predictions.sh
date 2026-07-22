@@ -402,6 +402,12 @@ dotnet run --no-build -c Release --project studies/phase526_a5_certificate_reduc
 dotnet run --no-build -c Release --project studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Phase527A5Sd2ThetaZeroExactParityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase528_a5_even_sector_premise_applicability_audit_001/Phase528A5EvenSectorPremiseApplicabilityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase529_a5_action_premise_route_adjudicator_001/Phase529A5ActionPremiseRouteAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase530_o4_g4_authentication_admissibility_audit_001/Phase530O4G4AuthenticationAdmissibilityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase531_o4_g4_disposition_resolution_semantics_001/Phase531O4G4DispositionResolutionSemantics.csproj
+dotnet run --no-build -c Release --project studies/phase532_phase458_g4_consumer_correction_adjudicator_001/Phase532Phase458G4ConsumerCorrectionAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase533_nested_validation_contract_001/Phase533NestedValidationContract.csproj
+dotnet run --no-build -c Release --project studies/phase534_nested_control_battery_001/Phase534NestedControlBattery.csproj
+dotnet run --no-build -c Release --project studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Phase535BoundedRegisteredOperatorPilotAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

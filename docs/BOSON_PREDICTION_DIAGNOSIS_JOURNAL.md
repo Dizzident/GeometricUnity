@@ -21326,3 +21326,111 @@ Phase202 reported 313 passed / 3 standing failures; O4 coverage remained
 31/31, the synthetic-overturn battery remained 94/94, and the source deficits
 remained 15 W/Z and 14 Higgs fields. The pass ended at
 `boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-21 - Amendment A21 repairs the future Phase458 G4 consumer boundary
+
+The post-A20 evidence-acquisition audit found a fail-closed defect in the
+future Phase458 G4 consumer rule. Phase480 authenticates human authorship and
+repository binding, while Phase478 treated a genuine authenticated memo as
+`available-true` without reading normalized ruling content. Because the memo
+schema permits every ruling to remain `insufficient-basis` with option `defer`,
+authentication alone cannot establish scientific resolution.
+
+Phase530 exact-binds eleven O4 infrastructure, Phase478, Phase480, schema,
+template, verifier, and dependency-map artifacts. Its frozen six-case battery
+passes. The primary counterexample is an authenticated, complete all-defer
+state: the authentication-only predicate returns `available-true`, while the
+content remains unresolved. Resolved supporting and resolved adverse cases
+receive the same old G4 state. The terminal is
+`authentication-only-g4-predicate-counterexample`. Independent read-only peer
+review found no concrete defect in that proof: the bound Phase480 verifier
+allows all thirteen defer rows and has no global resolved-ruling requirement,
+while the bound Phase478 G4 block does not read normalized rulings,
+dispositions, or selected options. This is a future-consumer defect only;
+Phase480 authentication is neither invalidated nor modified.
+
+Phase531 exact-binds Phase530 plus the unchanged memo schema and dependency
+map. It freezes a five-level taxonomy separating invalid authentication,
+invalid ruling sets, unresolved content, resolved adverse content, and resolved
+supporting content. Its nine-case battery passes. All-defer and one-defer remain
+unresolved, `not-applicable` never becomes support, duplicate/missing rulings
+fail closed, and adverse status survives mixed resolved dispositions. No
+synthetic case is human evidence, and no option or rationale is selected or
+interpreted. Its terminal is
+`resolution-semantics-closed-current-g4-missing`.
+
+Phase532 exact-binds the Phase478/480/530/531 chain and passes its four-case
+consumer-precedence battery. Future authenticated all-defer or one-defer
+content remains G4 `missing`; resolved supporting content may become
+`available-true`; resolved adverse content becomes `available-false` and routes
+to `blocked-upstream-invalidated-by-o4`. The old authentication-only predicate
+is therefore forbidden for future Phase458 evaluation without rewriting the
+historical Phase478 or Phase480 artifacts. The current terminal is
+`consumer-correction-closed-current-g4-missing`: no authenticated human memo is
+present, current G4 is missing, no upstream invalidation exists, and Phase458
+remains `blocked-inputs-incomplete`.
+
+All three phases are deterministic zero-physics audits. No human memo was
+consumed or changed; no reviewer was registered; no ruling was authored,
+inferred, or simulated; and no sampling, HMC, reprocessing, benchmark,
+production, Phase481 construction, Phase458 evaluation, source-contract
+application, or physical-unit claim occurred. G3/G4/G5 remain missing,
+external review remains pending, all execution and promotion authorities are
+false, and `promotedPhysicalMassClaimCount=0`. Registry 533+ is the next
+unassigned frontier.
+
+## 2026-07-21 - Amendment A22 localizes the experimental failure to interacting HMC execution
+
+The user authorized the council's experimental route with explicit permission
+to guess and preserve falsified guesses. Registry 533-535 and Amendment A22
+were frozen before the new phase directories were created. The design uses a
+nested kill order: deterministic contract, independent Gaussian analysis
+control, free-field HMC control, reduced interacting control, and only then a
+bounded complete-lattice pilot.
+
+Phase533 exact-binds five inputs and freezes two disjoint overdispersed
+four-chain seed tables, acceptance/convergence/ESS/energy thresholds, control
+and pilot configurations, an eight-terminal precedence, and a hard refusal
+above two aggregate CPU hours or one GiB. Its deterministic terminal is
+`nested-validation-contract-closed`.
+
+Phase534 produces new machine evidence. Eight independent Gaussian rows pass
+with worst standardized discrepancy 2.7638. Both free-field HMC tables pass:
+acceptance is 0.7164 and 0.7832, no non-finite or divergent trajectories occur,
+the exponential energy identity passes, split-R-hat is below one within finite
+sample fluctuation, and effective sample size is 8,192.
+
+The registered `sd2-id0/c0.5` theta-zero witness ray independently
+reconstructs a coercive quartic action with coefficients
+`c2=1.7916666666666679`, `c3=0.036111111111111316`, and
+`c4=0.1704947916666657`. The cubic coefficient matches the exact Phase527
+`13/360` result, the four held-out polynomial replays pass at worst relative
+error 7.45e-16, and the 16,384/32,768-panel deterministic quadratures agree at
+1.42e-15. Both interacting tables' moments and integration-by-parts residuals
+agree with that reference.
+
+The execution gate fails first. Frozen warmup adaptation drives the interacting
+integrator into non-finite or divergent trajectories: table A records 103
+non-finite and 94 divergent trajectories; table B records 5 and 43. Those
+counts forbid a green control even though retained moments look accurate.
+Phase534 therefore preserves `reduced-interacting-control-failed`.
+
+Phase535's eight-case precedence battery passes and the phase exact-binds the
+negative Phase534 artifact. It refuses the complete-lattice pilot before HMC
+or configuration retention. No retuning was performed after observing the
+failure. The evidence narrows the next experiment to a new prospective
+interacting-integrator stability and retuning control; it does not distinguish
+step-size adaptation, integrator stability, force behavior, or deeper mixing
+effects.
+
+No production result, Phase481 pack, complete-lattice validation,
+dynamical-theta validation, Phase458 evaluation, O4 ruling, source-contract
+application, or physical-unit claim occurred. Phase202 is 319 passed / 3
+standing failures, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A22 incremental checkpoint ran 86 steps and skipped 313.
+Phase202 reported 319 passed / 3 standing failures; O4 coverage remained
+31/31, the synthetic-overturn battery remained 94/94, and source deficits
+remained 15 W/Z and 14 Higgs fields. The pass ended at
+`boson-claim-integrity-verified` with `promotedPhysicalMassClaimCount=0`.

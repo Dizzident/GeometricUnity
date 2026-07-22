@@ -368,6 +368,12 @@ const string Phase526A5CertificateReducerPath = "studies/phase526_a5_certificate
 const string Phase527A5Sd2ThetaZeroExactParityAuditPath = "studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json";
 const string Phase528A5EvenSectorPremiseApplicabilityAuditPath = "studies/phase528_a5_even_sector_premise_applicability_audit_001/output/a5_even_sector_premise_applicability_audit_summary.json";
 const string Phase529A5ActionPremiseRouteAdjudicatorPath = "studies/phase529_a5_action_premise_route_adjudicator_001/output/a5_action_premise_route_adjudicator_summary.json";
+const string Phase530O4G4AuthenticationAdmissibilityAuditPath = "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit_summary.json";
+const string Phase531O4G4DispositionResolutionSemanticsPath = "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics_summary.json";
+const string Phase532Phase458G4ConsumerCorrectionAdjudicatorPath = "studies/phase532_phase458_g4_consumer_correction_adjudicator_001/output/phase458_g4_consumer_correction_adjudicator_summary.json";
+const string Phase533NestedValidationContractPath = "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json";
+const string Phase534NestedControlBatteryPath = "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json";
+const string Phase535BoundedRegisteredOperatorPilotAdjudicatorPath = "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -776,6 +782,12 @@ using var phase526 = TryParseJson(Phase526A5CertificateReducerPath);
 using var phase527 = TryParseJson(Phase527A5Sd2ThetaZeroExactParityAuditPath);
 using var phase528 = TryParseJson(Phase528A5EvenSectorPremiseApplicabilityAuditPath);
 using var phase529 = TryParseJson(Phase529A5ActionPremiseRouteAdjudicatorPath);
+using var phase530 = TryParseJson(Phase530O4G4AuthenticationAdmissibilityAuditPath);
+using var phase531 = TryParseJson(Phase531O4G4DispositionResolutionSemanticsPath);
+using var phase532 = TryParseJson(Phase532Phase458G4ConsumerCorrectionAdjudicatorPath);
+using var phase533 = TryParseJson(Phase533NestedValidationContractPath);
+using var phase534 = TryParseJson(Phase534NestedControlBatteryPath);
+using var phase535 = TryParseJson(Phase535BoundedRegisteredOperatorPilotAdjudicatorPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9322,6 +9334,87 @@ var package = new
             closesLimbL8 = JsonBool(phase529.RootElement, "closesLimbL8"),
             externalReviewPending = JsonBool(phase529.RootElement, "externalReviewPending"),
             promotedPhysicalMassClaimCount = JsonInt(phase529.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+    },
+    o4G4ConsumerIntegrityClosure = new
+    {
+        authenticationAdmissibilityAudit = phase530 is null ? null : new
+        {
+            status = JsonString(phase530.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase530.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase530.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase530.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase530.RootElement, "verdictKind"),
+            authenticationAdmissibilityCounterexample = JsonBool(phase530.RootElement, "authenticationAdmissibilityCounterexample"),
+            primaryCounterexampleCaseId = JsonString(phase530.RootElement, "primaryCounterexampleCaseId"),
+            phase458G4Satisfied = JsonBool(phase530.RootElement, "phase458G4Satisfied"),
+            externalReviewPending = JsonBool(phase530.RootElement, "externalReviewPending"),
+            promotedPhysicalMassClaimCount = JsonInt(phase530.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        dispositionResolutionSemantics = phase531 is null ? null : new
+        {
+            status = JsonString(phase531.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase531.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase531.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase531.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase531.RootElement, "verdictKind"),
+            batteryPassed = JsonBool(phase531.RootElement, "batteryPassed"),
+            allDeferRemainsUnresolved = JsonBool(phase531.RootElement, "allDeferRemainsUnresolved"),
+            oneAdverseDistinguished = JsonBool(phase531.RootElement, "oneAdverseDistinguished"),
+            notApplicableNeverSupports = JsonBool(phase531.RootElement, "notApplicableNeverSupports"),
+            phase458G4Satisfied = JsonBool(phase531.RootElement, "phase458G4Satisfied"),
+            externalReviewPending = JsonBool(phase531.RootElement, "externalReviewPending"),
+            promotedPhysicalMassClaimCount = JsonInt(phase531.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        consumerCorrectionAdjudicator = phase532 is null ? null : new
+        {
+            status = JsonString(phase532.RootElement, "terminalStatus"),
+            inputsValid = JsonBool(phase532.RootElement, "inputsValid"),
+            contractValid = JsonBool(phase532.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase532.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase532.RootElement, "verdictKind"),
+            authenticationOnlyPredicateUnsafe = JsonBool(phase532.RootElement, "authenticationOnlyPhase478G4PredicateUnsafeForFutureEvaluation"),
+            futureConsumerRequiresResolutionSemantics = JsonBool(phase532.RootElement, "futureConsumerRequiresPhase531ResolutionAndAdversitySemantics"),
+            currentG4State = JsonNestedString(phase532.RootElement, "currentState", "phase458G4State"),
+            phase458EvaluationPerformed = JsonBool(phase532.RootElement, "phase458EvaluationPerformed"),
+            externalReviewPending = JsonBool(phase532.RootElement, "externalReviewPending"),
+            promotedPhysicalMassClaimCount = JsonInt(phase532.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+    },
+    nestedExperimentalValidation = new
+    {
+        experimentContract = phase533 is null ? null : new
+        {
+            status = JsonString(phase533.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase533.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase533.RootElement, "exactBindingsValid"),
+            resourceEnvelopeAccepted = JsonBool(phase533.RootElement, "resourceEnvelopeAccepted"),
+            verdictKind = JsonString(phase533.RootElement, "verdictKind"),
+            phase533Passed = JsonBool(phase533.RootElement, "phase533Passed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase533.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        controlBattery = phase534 is null ? null : new
+        {
+            status = JsonString(phase534.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase534.RootElement, "contractValid"),
+            verdictKind = JsonString(phase534.RootElement, "verdictKind"),
+            analysisControlPassed = JsonNestedBool(phase534.RootElement, "analysisControl", "passed"),
+            freeSamplerControlPassed = JsonNestedBool(phase534.RootElement, "freeSamplerControl", "passed"),
+            reducedInteractingControlPassed = JsonNestedBool(phase534.RootElement, "reducedInteractingControl", "passed"),
+            polynomialReplayPassed = JsonNestedNestedBool(phase534.RootElement, "reducedInteractingControl", "polynomial", "polynomialReplayPassed"),
+            quadraturePassed = JsonNestedNestedBool(phase534.RootElement, "reducedInteractingControl", "quadrature", "passed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase534.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        pilotAdjudicator = phase535 is null ? null : new
+        {
+            status = JsonString(phase535.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase535.RootElement, "contractValid"),
+            precedenceBatteryPassed = JsonBool(phase535.RootElement, "precedenceBatteryPassed"),
+            verdictKind = JsonString(phase535.RootElement, "verdictKind"),
+            pilotRefusedByUpstreamControl = JsonBool(phase535.RootElement, "pilotRefusedByUpstreamControl"),
+            pilotRun = JsonBool(phase535.RootElement, "pilotRun"),
+            configurationsRetained = JsonBool(phase535.RootElement, "configurationsRetained"),
+            promotedPhysicalMassClaimCount = JsonInt(phase535.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

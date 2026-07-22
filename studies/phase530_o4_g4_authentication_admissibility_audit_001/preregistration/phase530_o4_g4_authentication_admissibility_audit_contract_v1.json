@@ -1,0 +1,52 @@
+{
+  "contractId": "phase530-a21-o4-g4-authentication-admissibility-audit-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A21",
+  "frozenBeforePrecursorConsumption": true,
+  "exactBindings": [
+    { "id": "phase477-summary", "path": "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json", "sha256": "baaff3aec339ff325c0b49d3e78d47732db7581fb8b2e35365714d309fc87581" },
+    { "id": "phase478-contract", "path": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json", "sha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0" },
+    { "id": "phase478-program", "path": "studies/phase478_phase458_gate_specification_closure_001/Program.cs", "sha256": "a9bc4880fe6360376f51ec441f315b1375284ba58851d632492578585361a387" },
+    { "id": "phase478-summary", "path": "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json", "sha256": "db8ed650000149b2425d976372cf11e1fd7dee5d241036cbcb5bd13b7d58f195" },
+    { "id": "phase480-contract", "path": "studies/phase480_o4_physicist_adjudication_intake_001/preregistration/o4_intake_contract_v1.json", "sha256": "a5f5b516807d53a6af5aa81b0d908c1308e693c40cd1cd15958b14924dee7927" },
+    { "id": "phase480-verifier", "path": "studies/phase480_o4_physicist_adjudication_intake_001/verify_intake.js", "sha256": "594e6483d8e57de2443025a78affe48217a66ab97a7eb5d671c846662da806a9" },
+    { "id": "memo-schema", "path": "scripts/o4_register/o4_human_memo_schema_v1.json", "sha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a" },
+    { "id": "memo-template", "path": "scripts/o4_register/o4_human_memo_template_v1.json", "sha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b" },
+    { "id": "phase480-program", "path": "studies/phase480_o4_physicist_adjudication_intake_001/Program.cs", "sha256": "ab4360c0113aed14a39e86f2de9d9129346419c4c7b628e746e286d2249b24b6" },
+    { "id": "phase480-summary", "path": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json", "sha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7" },
+    { "id": "o4-dependency-map", "path": "scripts/o4_register/dependency_map.json", "sha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0" }
+  ],
+  "syntheticStateBattery": [
+    { "caseId": "invalid-authentication", "authenticationValid": false, "completeRulingPresence": true, "allRulingsResolved": true, "adverseDispositionPresent": false, "expectedAuthenticationOnlyG4": "missing", "expectedContentClass": "authentication-invalid" },
+    { "caseId": "authenticated-incomplete-defense", "authenticationValid": true, "completeRulingPresence": false, "allRulingsResolved": false, "adverseDispositionPresent": false, "expectedAuthenticationOnlyG4": "available-true", "expectedContentClass": "incomplete" },
+    { "caseId": "authenticated-all-defer", "authenticationValid": true, "completeRulingPresence": true, "allRulingsResolved": false, "adverseDispositionPresent": false, "expectedAuthenticationOnlyG4": "available-true", "expectedContentClass": "unresolved" },
+    { "caseId": "authenticated-one-defer", "authenticationValid": true, "completeRulingPresence": true, "allRulingsResolved": false, "adverseDispositionPresent": false, "expectedAuthenticationOnlyG4": "available-true", "expectedContentClass": "unresolved" },
+    { "caseId": "authenticated-all-supporting", "authenticationValid": true, "completeRulingPresence": true, "allRulingsResolved": true, "adverseDispositionPresent": false, "expectedAuthenticationOnlyG4": "available-true", "expectedContentClass": "resolved-supporting" },
+    { "caseId": "authenticated-one-adverse", "authenticationValid": true, "completeRulingPresence": true, "allRulingsResolved": true, "adverseDispositionPresent": true, "expectedAuthenticationOnlyG4": "available-true", "expectedContentClass": "resolved-adverse" }
+  ],
+  "primaryCounterexampleCaseId": "authenticated-all-defer",
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "authentication-only-g4-predicate-counterexample",
+    "no-counterexample-under-frozen-battery"
+  ],
+  "expectedCurrentVerdict": "authentication-only-g4-predicate-counterexample",
+  "expectedCurrentTerminalStatus": "o4-g4-authentication-admissibility-audit-authentication-only-g4-predicate-counterexample",
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "humanMemoConsumedOrModified": false,
+    "reviewerRegistered": false,
+    "rulingAuthoredOrInferred": false,
+    "o4Satisfied": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "phase458EvaluationAllowed": false,
+    "phase481ConstructionOrMutationAllowed": false,
+    "samplingOrReprocessingAllowed": false,
+    "hmcOrBenchmarkAllowed": false,
+    "productionOrLaunchAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false
+  }
+}

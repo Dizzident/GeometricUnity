@@ -388,6 +388,12 @@
     <PhaseProject Include="../studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Phase527A5Sd2ThetaZeroExactParityAudit.csproj" />
     <PhaseProject Include="../studies/phase528_a5_even_sector_premise_applicability_audit_001/Phase528A5EvenSectorPremiseApplicabilityAudit.csproj" />
     <PhaseProject Include="../studies/phase529_a5_action_premise_route_adjudicator_001/Phase529A5ActionPremiseRouteAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase530_o4_g4_authentication_admissibility_audit_001/Phase530O4G4AuthenticationAdmissibilityAudit.csproj" />
+    <PhaseProject Include="../studies/phase531_o4_g4_disposition_resolution_semantics_001/Phase531O4G4DispositionResolutionSemantics.csproj" />
+    <PhaseProject Include="../studies/phase532_phase458_g4_consumer_correction_adjudicator_001/Phase532Phase458G4ConsumerCorrectionAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase533_nested_validation_contract_001/Phase533NestedValidationContract.csproj" />
+    <PhaseProject Include="../studies/phase534_nested_control_battery_001/Phase534NestedControlBattery.csproj" />
+    <PhaseProject Include="../studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Phase535BoundedRegisteredOperatorPilotAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

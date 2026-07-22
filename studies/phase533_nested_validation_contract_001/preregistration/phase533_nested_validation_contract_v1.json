@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase533-a22-nested-validation-contract-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A22",
+  "frozenBeforeExperiment": true,
+  "expectedInputs": [
+    {"id":"phase456-summary","path":"studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json","sha256":"1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b"},
+    {"id":"phase507-summary","path":"studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/output/phase456_selective_inference_pack_readiness_adjudicator_summary.json","sha256":"ab4916dd7078921b41eeaf99bbb78a442c3b7c12743f6cfef8295c11708849a7"},
+    {"id":"phase511-summary","path":"studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/output/phase481_throughput_benchmark_eligibility_audit_summary.json","sha256":"05232e898450aedcc245bc1b689cd50b428ae813568578c9799390654771f4c0"},
+    {"id":"phase527-summary","path":"studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/output/a5_sd2_theta_zero_exact_parity_audit_summary.json","sha256":"a919f6ff4470248ccbcdb1193436dffcf0da2c49123596fc1a6ebb2e79bde797"},
+    {"id":"registered-operator-source","path":"studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs","sha256":"cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0"}
+  ],
+  "resourceRefusal": {
+    "maximumAggregateCpuSeconds": 7200,
+    "maximumPeakBytes": 1073741824,
+    "estimatedAggregateCpuSeconds": 5400,
+    "estimatedPeakBytes": 536870912,
+    "refuseOnEstimateExceedance": true
+  },
+  "seedTables": [
+    {"id":"table-a","seeds":[533101,533103,533107,533109],"initialScales":[0.015,0.03,0.06,0.12]},
+    {"id":"table-b","seeds":[533201,533203,533207,533209],"initialScales":[0.02,0.04,0.08,0.16]}
+  ],
+  "controlConfiguration": {
+    "gaussianDimension": 4,
+    "gaussianDrawsPerSeed": 4096,
+    "freeWarmupPerSeed": 512,
+    "freeRetainedPerSeed": 2048,
+    "reducedWarmupPerSeed": 1000,
+    "reducedRetainedPerSeed": 4000,
+    "leapfrogSteps": 8,
+    "targetAcceptanceMinimum": 0.65,
+    "targetAcceptanceMaximum": 0.90,
+    "rhatMaximum": 1.01,
+    "bulkEssMinimum": 100,
+    "energyIdentityAbsoluteFloor": 0.01,
+    "simultaneousStandardErrorMultiplier": 4
+  },
+  "pilotConfiguration": {
+    "member":"sd2-id0/c0.5",
+    "beta":1.0,
+    "extent":3,
+    "thetaRule":"theta-identically-zero",
+    "warmupPerChain":24,
+    "retainedPerChain":64,
+    "leapfrogSteps":6,
+    "retentionCadence":1,
+    "stepSize":0.0125,
+    "maximumNonFiniteTrajectories":0,
+    "maximumDeclaredDivergences":0,
+    "divergenceDeltaH":100.0
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "analysis-control-failed",
+    "free-sampler-control-failed",
+    "reduced-interacting-control-failed",
+    "pilot-execution-topology-inadequate",
+    "pilot-execution-diagnostics-valid-unresolved",
+    "pilot-execution-diagnostics-valid-resolved"
+  ],
+  "claimBoundary": {
+    "phase481PackCreated": false,
+    "productionValidated": false,
+    "dynamicalThetaValidated": false,
+    "temporalAcquisitionValidated": false,
+    "physicalClaimAllowed": false,
+    "promotedPhysicalMassClaimCount": 0
+  }
+}

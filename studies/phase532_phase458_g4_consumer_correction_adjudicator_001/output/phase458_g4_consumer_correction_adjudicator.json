@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "phase": 532,
+  "phaseId": "phase532-phase458-g4-consumer-correction-adjudicator",
+  "contractId": "phase532-a21-phase458-g4-consumer-correction-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A21",
+  "inputsValid": true,
+  "contractValid": true,
+  "bindingInventoryValid": true,
+  "exactBindingsValid": true,
+  "phase478SemanticsValid": true,
+  "phase480CurrentStateValid": true,
+  "phase530SemanticsValid": true,
+  "phase531SemanticsValid": true,
+  "authenticationOnlyPhase478G4PredicateUnsafeForFutureEvaluation": true,
+  "phase478ArtifactInvalidatedOrMutated": false,
+  "phase480AuthenticationInvalidatedOrMutated": false,
+  "futureConsumerRequiresPhase531ResolutionAndAdversitySemantics": true,
+  "consumerPrecedence": [
+    "invalid-or-drifted-input",
+    "missing",
+    "resolved-adverse-upstream-invalidation",
+    "available-true"
+  ],
+  "syntheticBatteryPassed": true,
+  "syntheticCases": [
+    {
+      "id": "all-defer",
+      "valid": true,
+      "authenticated": true,
+      "contentClass": "unresolved-content",
+      "expectedG4State": "missing",
+      "actualG4State": "missing",
+      "expectedRoute": "blocked-inputs-incomplete",
+      "actualRoute": "blocked-inputs-incomplete",
+      "expectedAdverse": false,
+      "actualAdverse": false,
+      "actualSupporting": false,
+      "passed": true
+    },
+    {
+      "id": "one-defer",
+      "valid": true,
+      "authenticated": true,
+      "contentClass": "unresolved-content",
+      "expectedG4State": "missing",
+      "actualG4State": "missing",
+      "expectedRoute": "blocked-inputs-incomplete",
+      "actualRoute": "blocked-inputs-incomplete",
+      "expectedAdverse": false,
+      "actualAdverse": false,
+      "actualSupporting": false,
+      "passed": true
+    },
+    {
+      "id": "all-supporting",
+      "valid": true,
+      "authenticated": true,
+      "contentClass": "resolved-supporting",
+      "expectedG4State": "available-true",
+      "actualG4State": "available-true",
+      "expectedRoute": "continue-phase458-precedence",
+      "actualRoute": "continue-phase458-precedence",
+      "expectedAdverse": false,
+      "actualAdverse": false,
+      "actualSupporting": true,
+      "passed": true
+    },
+    {
+      "id": "resolved-adverse",
+      "valid": true,
+      "authenticated": true,
+      "contentClass": "resolved-adverse",
+      "expectedG4State": "available-false",
+      "actualG4State": "available-false",
+      "expectedRoute": "blocked-upstream-invalidated-by-o4",
+      "actualRoute": "blocked-upstream-invalidated-by-o4",
+      "expectedAdverse": true,
+      "actualAdverse": true,
+      "actualSupporting": false,
+      "passed": true
+    }
+  ],
+  "currentState": {
+    "phase480AuthenticatedMemoPresent": false,
+    "phase531ResolutionClass": "unresolved-content",
+    "phase458G4State": "missing",
+    "phase458G4Satisfied": false,
+    "upstreamInvalidationPresent": false,
+    "phase458RestingState": "blocked-inputs-incomplete"
+  },
+  "futureRules": {
+    "authenticatedAllDeferG4State": "missing",
+    "authenticatedOneDeferG4State": "missing",
+    "authenticatedResolvedSupportingG4State": "available-true",
+    "authenticatedResolvedAdverseG4State": "available-false",
+    "authenticatedResolvedAdverseOutcome": "blocked-upstream-invalidated-by-o4",
+    "resolvedAdverseNeverPositive": true,
+    "authenticationAloneNeverSatisfiesG4": true
+  },
+  "verdictKind": "consumer-correction-closed-current-g4-missing",
+  "terminalStatus": "phase458-g4-consumer-correction-adjudicator-consumer-correction-closed-current-g4-missing",
+  "decision": "The authentication-only Phase478 G4 predicate is unsafe for future Phase458 evaluation. Future consumption must use Phase531 resolution and adversity semantics: defer remains missing, supporting resolved content may become available-true, and adverse resolved content remains non-positive and routes to the existing upstream-invalidation outcome. Current G4 remains missing and Phase458 is not evaluated.",
+  "bindings": [
+    {
+      "id": "phase478-program",
+      "path": "studies/phase478_phase458_gate_specification_closure_001/Program.cs",
+      "expectedSha256": "a9bc4880fe6360376f51ec441f315b1375284ba58851d632492578585361a387",
+      "actualSha256": "a9bc4880fe6360376f51ec441f315b1375284ba58851d632492578585361a387",
+      "hashMatches": true
+    },
+    {
+      "id": "phase478-contract",
+      "path": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json",
+      "expectedSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "actualSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase478-summary",
+      "path": "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json",
+      "expectedSha256": "db8ed650000149b2425d976372cf11e1fd7dee5d241036cbcb5bd13b7d58f195",
+      "actualSha256": "db8ed650000149b2425d976372cf11e1fd7dee5d241036cbcb5bd13b7d58f195",
+      "hashMatches": true
+    },
+    {
+      "id": "phase480-program",
+      "path": "studies/phase480_o4_physicist_adjudication_intake_001/Program.cs",
+      "expectedSha256": "ab4360c0113aed14a39e86f2de9d9129346419c4c7b628e746e286d2249b24b6",
+      "actualSha256": "ab4360c0113aed14a39e86f2de9d9129346419c4c7b628e746e286d2249b24b6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase480-summary",
+      "path": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+      "expectedSha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7",
+      "actualSha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-program",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/Program.cs",
+      "expectedSha256": "c5fc7921f3e812fbceb706edd8876e7ee7a2a42de3f293da31d3b98a8b74eaf7",
+      "actualSha256": "c5fc7921f3e812fbceb706edd8876e7ee7a2a42de3f293da31d3b98a8b74eaf7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-contract",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/preregistration/phase530_o4_g4_authentication_admissibility_audit_contract_v1.json",
+      "expectedSha256": "b4f1cad8dfc9568ec83e740979c682d8248f655fe6fbc91636a66f298468ec5f",
+      "actualSha256": "b4f1cad8dfc9568ec83e740979c682d8248f655fe6fbc91636a66f298468ec5f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase530-summary",
+      "path": "studies/phase530_o4_g4_authentication_admissibility_audit_001/output/o4_g4_authentication_admissibility_audit_summary.json",
+      "expectedSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "actualSha256": "ef3cd805f9dc05a3ae396ac1d3252332ee92d7273bf31758849f80cc272fd6e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase531-program",
+      "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/Program.cs",
+      "expectedSha256": "9e664378b1918fba13d652b39bcf17506c5d1ce6ade6717fd5b4f1e04f342d2f",
+      "actualSha256": "9e664378b1918fba13d652b39bcf17506c5d1ce6ade6717fd5b4f1e04f342d2f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase531-contract",
+      "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/preregistration/phase531_o4_g4_disposition_resolution_semantics_contract_v1.json",
+      "expectedSha256": "c414605127a3ed201cb6bbde333c031a2c6dc45b85347fb6226d932cc3a217b0",
+      "actualSha256": "c414605127a3ed201cb6bbde333c031a2c6dc45b85347fb6226d932cc3a217b0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase531-full",
+      "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics.json",
+      "expectedSha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b",
+      "actualSha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase531-summary",
+      "path": "studies/phase531_o4_g4_disposition_resolution_semantics_001/output/o4_g4_disposition_resolution_semantics_summary.json",
+      "expectedSha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b",
+      "actualSha256": "8b7e38f3179e9fb38c764d88bbd73043a8395b2a3cd5f2656580eba39fe7823b",
+      "hashMatches": true
+    }
+  ],
+  "zeroPhysicsCompute": true,
+  "deterministicZeroSampling": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "externalReviewPending": true,
+  "humanMemoConsumed": false,
+  "humanRulingAuthoredOrInferred": false,
+  "o4Satisfied": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationPerformed": false,
+  "phase481ConstructedOrMutated": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "hmcPerformed": false,
+  "benchmarkPerformed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "sourceContractApplicationPerformed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "allExecutionAndPromotionAuthorities": false,
+  "promotedPhysicalMassClaimCount": 0
+}
