@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase548-a29-bounded-complete-lattice-pilot-execution-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A29",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": false,
+  "executesBoundedPilot": true,
+  "exactBindings": [
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase543-summary","path":"studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json","sha256":"a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924"},
+    {"id":"phase545-contract","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/preregistration/phase545_injectable_deterministic_hmc_kernel_repair_contract_v3.json","sha256":"cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9"},
+    {"id":"phase545-kernel","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/PilotKernel.cs","sha256":"420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa"},
+    {"id":"phase545-program","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/Program.cs","sha256":"9dc9a776615395591cdaf4b93ffed4afaf308ec1856ca9206878cca5afbe0cb8"},
+    {"id":"phase545-summary","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json","sha256":"16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d"},
+    {"id":"phase546-v1-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json","sha256":"e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d"},
+    {"id":"phase546-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/preregistration/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v3.json","sha256":"4dc9dc8b63752802e4939b7e1730b8971923eeb8e6d1fbd69f13ac743b11cf27"},
+    {"id":"phase546-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json","sha256":"6562a2828de426b1a995d89574557af926ec6173c6969cd13252533dcc05b434"},
+    {"id":"phase547-contract","path":"studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/preregistration/phase547_bounded_pilot_pack_readiness_contract_v1.json","sha256":"c3a4321ebc9ef6d40a924222304a10c8ec06d3e43d48ef1c630bcc873a3b5217"},
+    {"id":"phase547-program","path":"studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Program.cs","sha256":"6e79a44e3a2052bc0c100454f27201f834750d7fda99160fd1654ea524889e06"},
+    {"id":"phase547-summary","path":"studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json","sha256":"da792451baf42582a28fc455b9ca50efc4e634a08a845d40582aa7da04b74d35"},
+    {"id":"complete-lattice-gradient-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+
+  "registrationPremise": {
+    "requiredPhase547VerdictKind": "bounded-pilot-pack-ready-for-separate-prospective-execution-registration",
+    "requiredPhase547RegistrationAllowed": true,
+    "requiredPhase547PilotExecutionAuthorized": false,
+    "note": "Phase547 authorized registering this phase and explicitly did not authorize execution. Execution authority for this phase comes from this frozen contract alone, and extends to nothing beyond the bounded pilot described here."
+  },
+
+  "target": {
+    "member": "sd2-id0/c0.5",
+    "phi1": "Sd2",
+    "phi2": "Id0",
+    "einsteinCoefficient": 0.5,
+    "epsilonMode": "independent-theta",
+    "thetaRule": "theta-identically-zero",
+    "beta": 1.0,
+    "topologyId": "periodic-hypercubic-4d",
+    "dimensions": 4,
+    "extent": 3,
+    "latticeCanonical": true,
+    "degreesOfFreedom": 3645,
+    "kineticMetric": "identity",
+    "algebra": "su2-trace-pairing"
+  },
+
+  "defaultConfiguration": {
+    "stepSize": 0.06,
+    "leapfrogSteps": 8,
+    "trajectoryLength": 0.48,
+    "warmupPerChain": 60,
+    "retainedPerChain": 340,
+    "trajectoriesPerChain": 400,
+    "retentionCadence": 1,
+    "chainsPerTable": 3,
+    "adaptationPerformed": false,
+    "divergenceAbsoluteDeltaH": 100.0,
+    "maximumNonFiniteTrajectories": 0,
+    "maximumDivergentTrajectories": 0,
+    "minimumAcceptanceRate": 0.6,
+    "momentumRefreshment": "full-independent-standard-normal-per-trajectory",
+    "initialStateRule": "position[i] = initialScale * standardNormal drawn from the chain rng before the first trajectory"
+  },
+
+  "defaultSelectionProvenance": {
+    "pristineSeedBlindPreregistration": false,
+    "method": "scratch-calibration-outside-repository-on-non-registered-seeds",
+    "wroteRepositoryBytes": false,
+    "nonRegisteredCalibrationSeeds": [900001, 900101],
+    "disjointFromRegisteredSeedFamilies": true,
+    "measuredFactsUsed": [
+      "action and gradient vanish exactly at the origin",
+      "largest Hessian eigenvalue at the origin is near 1.96, so the leapfrog stability bound is near 1.43",
+      "smallest Hessian eigenvalue at the origin is near zero, giving a condition number near 7.6e5",
+      "acceptance is near one at step size 0.05 and collapses to zero at step size 0.09",
+      "effective sample size per unit integrator work is marginally better at 8 leapfrog steps than at 16"
+    ],
+    "rejectedInheritedRow": {
+      "source": "phase533-pilotConfiguration",
+      "stepSize": 0.0125,
+      "leapfrogSteps": 6,
+      "warmupPerChain": 24,
+      "retainedPerChain": 64,
+      "reasons": [
+        "64 retained draws per chain cannot reach the frozen bulk effective sample size floor of 100",
+        "step size 0.0125 is about a hundredfold below the measured leapfrog stability bound"
+      ]
+    },
+    "note": "Tuning used throwaway seeds; the registered Phase546 seeds are touched only by the frozen execution below. This is the Phase539 tune-then-confirm pattern, not pristine seed-blind preregistration."
+  },
+
+  "seedTables": [
+    {"id":"complete-lattice-pilot-a","seedOffset":2000000,"seeds":[546101,546103,546107],"initialScales":[0.015,0.03,0.06],"excludedFrozenSeed":546109},
+    {"id":"complete-lattice-pilot-b","seedOffset":2000000,"seeds":[546201,546203,546207],"initialScales":[0.02,0.04,0.08],"excludedFrozenSeed":546209}
+  ],
+  "seedExclusionRule": {
+    "reason": "phase546-resource-ceiling-refuses-four-chains-at-extent-three",
+    "perChainBytes": 1340176,
+    "fourChainBytes": 5360704,
+    "maximumPeakBytes": 5360704,
+    "refusalIsOnEqualOrExceed": true,
+    "ceilingModified": false,
+    "selectionRule": "first-three-seeds-in-frozen-table-order",
+    "decidedBeforeExecution": true
+  },
+
+  "rng": {
+    "algorithm": "xoshiro256-starstar",
+    "seedExpansion": "splitmix64-four-sequential-outputs",
+    "executionSeedRule": "rawSeed + seedOffset",
+    "oneRngPerChain": true,
+    "crossChainStateSharingAllowed": false,
+    "uniformGeneration": "((next-u64-right-shift-11)+0.5)/2^53",
+    "normalGeneration": "box-muller-two-uniforms-no-spare-cache",
+    "acceptanceDrawRule": "always-consume-one-uniform-per-proposal"
+  },
+
+  "resourceRule": {
+    "forwardedFrom": "phase546-v1-contract.resourceRefusal",
+    "maximumAggregateCpuTicks": 466093440,
+    "maximumPeakBytes": 5360704,
+    "maximumChains": 8,
+    "requiredDimensions": 4,
+    "requiredTopologyId": "periodic-hypercubic-4d",
+    "degreesOfFreedomFormula": "45 * extent^4",
+    "bytesPerDegreeOfFreedom": 80,
+    "fixedBytesPerChain": 1048576,
+    "cpuTicksPerForceDegreeOfFreedom": 12,
+    "refuseOnEqualOrExceedLimit": true,
+    "checkedIntegerArithmeticRequired": true,
+    "refuseBeforeAllocation": true,
+    "deterministicControlTicksCountedAgainstCeiling": true,
+    "perTableRequestChains": 3,
+    "requestsAssessedIndependentlyPerTable": true
+  },
+
+  "deterministicPrechecks": {
+    "zeroRngRequired": true,
+    "directionRule": "golden-angle-sine-or-cosine-unit-vector",
+    "originActionMustBeExactlyZero": true,
+    "originGradientNormMustBeExactlyZero": true,
+    "finiteDifferenceRelativeStep": 1e-06,
+    "finiteDifferenceScaledTolerance": 3e-07,
+    "forwardReverseScaledTolerance": 2e-09,
+    "spectralProbe": {
+      "hessianVectorStep": 1e-05,
+      "largestEigenvalueIterations": 30,
+      "smallestEigenvalueIterations": 50,
+      "shiftFactor": 1.05,
+      "requireFinitePositiveLargestEigenvalue": true,
+      "requireStepSizeBelowStabilityBound": true,
+      "stabilityBoundFormula": "2/sqrt(largestEigenvalue)"
+    },
+    "deterministicProbeStateScale": 0.05
+  },
+
+  "checkpointRule": {
+    "forwardedFrom": "phase546-v1-contract.checkpointSchema",
+    "formatId": "gu-complete-lattice-checkpoint-v1",
+    "checksumAlgorithm": "SHA-256",
+    "actionFingerprint": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+    "packFingerprint": "c1d5e3380ee67012127b919962eff4c32f2aad680a638f1bcbead1b98be48cf2",
+    "exactRestartFields": ["formatId","actionFingerprint","packFingerprint","topologyId","extent","dimensions","degreesOfFreedom","beta","thetaRule","chainId","seed","trajectoryIndex","warmupCompleted","retainedCompleted","stepSize","leapfrogSteps","rngAlgorithm","rngStateWords","position"],
+    "rejectChecksumMismatch": true,
+    "rejectNonCanonicalPayload": true,
+    "endOfChainCheckpointRequired": true,
+    "restartEquivalenceControl": {
+      "chainId": "complete-lattice-pilot-a-546101",
+      "uninterruptedTrajectories": 8,
+      "interruptAfterTrajectories": 4,
+      "requireBitIdenticalPosition": true,
+      "requireBitIdenticalRngState": true,
+      "note": "Phase547 recorded that checkpoint round-trip is not live restart equivalence. This control tests live restart equivalence on a reduced prefix of the registered chain; it is not a claim about the full-length chain."
+    }
+  },
+
+  "telemetrySchema": {
+    "forwardedFrom": "phase546-v1-contract.telemetrySchema",
+    "trajectoryRequiredFields": ["chainId","trajectoryIndex","phase","accepted","initialHamiltonian","proposedHamiltonian","deltaH","acceptanceProbability","injectedThreshold","nonFinite","divergent","divergenceThreshold","forceEvaluationCount","maximumForceNorm","proposalElapsedCpuTicks"],
+    "chainSummaryRequiredFields": ["chainId","seed","warmupCount","retainedCount","acceptanceRate","nonFiniteCount","divergenceCount","maximumAbsoluteDeltaH","splitRankNormalizedRhat","bulkEss","tailEss","observableSchemaId","observableMeans","observableStandardErrors","observableRhat","observableBulkEss","checkpointSha256"],
+    "observableSchema": {"schemaId":"complete-lattice-bounded-pilot-observables-v1","requiredNames":["actionDensity","forceNormSquared","configurationNormSquared"]},
+    "convergenceThresholds": {"maximumSplitRankNormalizedRhat":1.01,"minimumBulkEss":100,"minimumTailEss":100},
+    "gaugeInvarianceClassification": {
+      "actionDensity": "gauge-invariant",
+      "forceNormSquared": "gauge-invariant",
+      "configurationNormSquared": "gauge-variant",
+      "note": "Recorded before execution so that any observed split between invariant and variant observables is interpreted against a prospectively declared expectation rather than a post-hoc one."
+    },
+    "timingFieldIsVolatile": "proposalElapsedCpuTicks",
+    "deterministicOutputMustExcludeTiming": true
+  },
+
+  "stoppingConditions": {
+    "failClosed": true,
+    "stopChainOnNonFiniteProposal": true,
+    "stopChainOnDivergentProposal": true,
+    "stopBeforeAllocationOnResourceRefusal": true,
+    "stopBeforeSamplingOnPrecheckFailure": true,
+    "stopBeforeSamplingOnBindingOrPremiseFailure": true,
+    "preserveFailedRunArtifacts": true,
+    "favorableRerunReplacementForbidden": true
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "upstream-registration-authorization-absent",
+    "resource-refusal",
+    "deterministic-precheck-failed",
+    "checkpoint-restart-inequivalence",
+    "pilot-execution-nonfinite-or-divergent",
+    "pilot-executed-diagnostics-invalid",
+    "pilot-executed-diagnostics-valid"
+  ],
+
+  "inferenceScope": {
+    "workbenchRelativeLatticeUnitsOnly": true,
+    "establishesStationarityOfRegisteredTarget": false,
+    "establishesSamplingCorrectness": false,
+    "establishesTransferToLargerExtent": false,
+    "establishesSpectralOrPhysicalQuantity": false,
+    "isProductionBenchmark": false,
+    "isProductionDefaultSelection": false,
+    "cleanTerminalMeaning": "only that this bounded configuration ran within its own frozen gates on this lattice"
+  },
+
+  "authorityFirewalls": {
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}
