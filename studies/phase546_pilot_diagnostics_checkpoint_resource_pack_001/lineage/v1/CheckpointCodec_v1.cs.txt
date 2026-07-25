@@ -1,0 +1,125 @@
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+
+public static class CheckpointCodec
+{
+    private static readonly JsonSerializerOptions CamelCase = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+
+    public static byte[] Encode(CheckpointState state)
+    {
+        byte[] payload = CanonicalPayload(state);
+        string checksum = Convert.ToHexString(SHA256.HashData(payload)).ToLowerInvariant();
+        using var stream = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(stream))
+        {
+            writer.WriteStartObject();
+            writer.WriteString("checksumAlgorithm", "SHA-256");
+            writer.WriteString("payloadSha256", checksum);
+            writer.WritePropertyName("payload");
+            writer.WriteRawValue(payload, skipInputValidation: false);
+            writer.WriteEndObject();
+        }
+        return stream.ToArray();
+    }
+
+    public static CheckpointState Decode(byte[] encoded)
+    {
+        using var document = JsonDocument.Parse(encoded);
+        JsonElement root = document.RootElement;
+        if (root.GetProperty("checksumAlgorithm").GetString() != "SHA-256")
+            throw new InvalidDataException("Unsupported checkpoint checksum algorithm.");
+        JsonElement payloadElement = root.GetProperty("payload");
+        byte[] observedPayload = Encoding.UTF8.GetBytes(payloadElement.GetRawText());
+        string expected = root.GetProperty("payloadSha256").GetString() ?? "";
+        string actual = Convert.ToHexString(SHA256.HashData(observedPayload)).ToLowerInvariant();
+        if (!CryptographicOperations.FixedTimeEquals(Encoding.ASCII.GetBytes(expected), Encoding.ASCII.GetBytes(actual)))
+            throw new InvalidDataException("Checkpoint checksum mismatch.");
+        CheckpointState state = payloadElement.Deserialize<CheckpointState>(CamelCase)
+            ?? throw new InvalidDataException("Checkpoint payload is absent.");
+        byte[] canonical = CanonicalPayload(state);
+        if (!observedPayload.AsSpan().SequenceEqual(canonical))
+            throw new InvalidDataException("Checkpoint payload is not canonical.");
+        Validate(state);
+        return state;
+    }
+
+    public static byte[] CanonicalPayload(CheckpointState state)
+    {
+        Validate(state);
+        using var stream = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(stream))
+        {
+            writer.WriteStartObject();
+            writer.WriteString("formatId", state.FormatId);
+            writer.WriteString("actionFingerprint", state.ActionFingerprint);
+            writer.WriteString("packFingerprint", state.PackFingerprint);
+            writer.WriteString("topologyId", state.TopologyId);
+            writer.WriteNumber("extent", state.Extent);
+            writer.WriteNumber("dimensions", state.Dimensions);
+            writer.WriteNumber("degreesOfFreedom", state.DegreesOfFreedom);
+            writer.WriteNumber("beta", state.Beta);
+            writer.WriteString("thetaRule", state.ThetaRule);
+            writer.WriteString("chainId", state.ChainId);
+            writer.WriteNumber("seed", state.Seed);
+            writer.WriteNumber("trajectoryIndex", state.TrajectoryIndex);
+            writer.WriteNumber("warmupCompleted", state.WarmupCompleted);
+            writer.WriteNumber("retainedCompleted", state.RetainedCompleted);
+            writer.WriteNumber("stepSize", state.StepSize);
+            writer.WriteNumber("leapfrogSteps", state.LeapfrogSteps);
+            writer.WriteString("rngAlgorithm", state.RngAlgorithm);
+            writer.WritePropertyName("rngStateWords");
+            writer.WriteStartArray();
+            foreach (ulong word in state.RngStateWords) writer.WriteNumberValue(word);
+            writer.WriteEndArray();
+            writer.WritePropertyName("position");
+            writer.WriteStartArray();
+            foreach (double value in state.Position) writer.WriteNumberValue(value);
+            writer.WriteEndArray();
+            writer.WriteEndObject();
+        }
+        return stream.ToArray();
+    }
+
+    private static void Validate(CheckpointState state)
+    {
+        if (state.FormatId != "gu-complete-lattice-checkpoint-v1"
+            || state.ActionFingerprint != "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+            || state.PackFingerprint != "c1d5e3380ee67012127b919962eff4c32f2aad680a638f1bcbead1b98be48cf2"
+            || state.TopologyId != "periodic-hypercubic-4d"
+            || state.Extent <= 0 || state.Dimensions != 4
+            || state.DegreesOfFreedom != checked(45 * state.Extent * state.Extent * state.Extent * state.Extent)
+            || state.Position.Length != state.DegreesOfFreedom || state.RngStateWords.Length != 4
+            || state.ChainId.Length == 0 || state.Seed <= 0 || state.TrajectoryIndex < 0
+            || state.WarmupCompleted < 0 || state.RetainedCompleted < 0
+            || !double.IsFinite(state.Beta) || !double.IsFinite(state.StepSize) || state.StepSize <= 0
+            || state.ThetaRule != "theta-identically-zero"
+            || state.RngAlgorithm != "xoshiro256-starstar"
+            || state.RngStateWords.All(x => x == 0)
+            || state.LeapfrogSteps <= 0 || state.Position.Any(x => !double.IsFinite(x)))
+            throw new InvalidDataException("Checkpoint restart state is invalid.");
+    }
+}
+
+public sealed class CheckpointState
+{
+    public string FormatId { get; init; } = "";
+    public string ActionFingerprint { get; init; } = "";
+    public string PackFingerprint { get; init; } = "";
+    public string TopologyId { get; init; } = "";
+    public int Extent { get; init; }
+    public int Dimensions { get; init; }
+    public int DegreesOfFreedom { get; init; }
+    public double Beta { get; init; }
+    public string ThetaRule { get; init; } = "";
+    public string ChainId { get; init; } = "";
+    public int Seed { get; init; }
+    public long TrajectoryIndex { get; init; }
+    public int WarmupCompleted { get; init; }
+    public int RetainedCompleted { get; init; }
+    public double StepSize { get; init; }
+    public int LeapfrogSteps { get; init; }
+    public string RngAlgorithm { get; init; } = "";
+    public ulong[] RngStateWords { get; init; } = [];
+    public double[] Position { get; init; } = [];
+}

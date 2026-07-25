@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A28",
+  "frozenBeforeFirstExecution": true,
+  "syntheticFixturesOnly": true,
+  "exactBindings": [
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase538-contract","path":"studies/phase538_fixed_grid_interacting_hmc_retuning_001/preregistration/phase538_fixed_grid_interacting_hmc_retuning_contract_v2.json","sha256":"6ad1516ab89018354e06a160ddb2f4525b6d89df950f1b1af5464be2ad9a319f"},
+    {"id":"phase539-contract","path":"studies/phase539_independent_reduced_target_row_confirmation_001/preregistration/phase539_independent_reduced_target_row_confirmation_contract_v1.json","sha256":"afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77"},
+    {"id":"phase539-summary","path":"studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json","sha256":"79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495"},
+    {"id":"phase544-contract","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json","sha256":"b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e"},
+    {"id":"phase544-program","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs","sha256":"6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b"},
+    {"id":"phase544-summary","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json","sha256":"e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162"}
+  ],
+  "priorSeedCensus": {
+    "amendments": ["A22","A23","A24"],
+    "rawSeeds": [533101,533103,533107,533109,533201,533203,533207,533209,538301,538303,538307,538309,539401,539403,539407,539409,539501,539503,539507,539509],
+    "executionSeeds": [1433101,1433103,1433107,1433109,1433201,1433203,1433207,1433209,1438301,1438303,1438307,1438309,1839401,1839403,1839407,1839409,1839501,1839503,1839507,1839509]
+  },
+  "prospectiveSeedTables": [
+    {"id":"complete-lattice-pilot-a","seedOffset":2000000,"seeds":[546101,546103,546107,546109]},
+    {"id":"complete-lattice-pilot-b","seedOffset":2000000,"seeds":[546201,546203,546207,546209]}
+  ],
+  "telemetrySchema": {
+    "trajectoryRequiredFields": ["chainId","trajectoryIndex","phase","accepted","initialHamiltonian","proposedHamiltonian","deltaH","acceptanceProbability","injectedThreshold","nonFinite","divergent","divergenceThreshold","forceEvaluationCount","maximumForceNorm","proposalElapsedCpuTicks"],
+    "chainSummaryRequiredFields": ["chainId","seed","warmupCount","retainedCount","acceptanceRate","nonFiniteCount","divergenceCount","maximumAbsoluteDeltaH","splitRankNormalizedRhat","bulkEss","tailEss","observableSchemaId","observableMeans","observableStandardErrors","observableRhat","observableBulkEss","checkpointSha256"],
+    "observableSchema": {"schemaId":"complete-lattice-bounded-pilot-observables-v1","requiredNames":["actionDensity","forceNormSquared","configurationNormSquared"]},
+    "convergenceThresholds": {"maximumSplitRankNormalizedRhat":1.01,"minimumBulkEss":100,"minimumTailEss":100},
+    "divergenceAbsoluteDeltaH": 100.0,
+    "maximumNonFiniteCount": 0,
+    "maximumDivergenceCount": 0
+  },
+  "checkpointSchema": {
+    "formatId": "gu-complete-lattice-checkpoint-v1",
+    "checksumAlgorithm": "SHA-256",
+    "canonicalEncoding": "UTF-8 JSON, fixed property order, invariant round-trip numeric encoding",
+    "exactRestartFields": ["formatId","actionFingerprint","packFingerprint","topologyId","extent","dimensions","degreesOfFreedom","beta","thetaRule","chainId","seed","trajectoryIndex","warmupCompleted","retainedCompleted","stepSize","leapfrogSteps","rngAlgorithm","rngStateWords","position"],
+    "actionFingerprint": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+    "packFingerprint": "c1d5e3380ee67012127b919962eff4c32f2aad680a638f1bcbead1b98be48cf2",
+    "rejectChecksumMismatch": true,
+    "rejectNonCanonicalPayload": true
+  },
+  "resourceRefusal": {
+    "maximumAggregateCpuTicks": 466093440,
+    "maximumPeakBytes": 5360704,
+    "maximumChains": 8,
+    "requiredDimensions": 4,
+    "requiredTopologyId": "periodic-hypercubic-4d",
+    "degreesOfFreedomFormula": "45 * extent^4",
+    "bytesPerDegreeOfFreedom": 80,
+    "fixedBytesPerChain": 1048576,
+    "cpuTicksPerForceDegreeOfFreedom": 12,
+    "refuseOnEqualOrExceedLimit": true,
+    "checkedIntegerArithmeticRequired": true
+  },
+  "fixtureIds": ["schema-valid","observable-schema-valid","checkpoint-roundtrip","checkpoint-mutation-refused","checkpoint-noncanonical-refused","seeds-disjoint","resource-below-boundary-accepted","resource-cpu-boundary-refused","resource-memory-boundary-refused","resource-topology-refused","resource-dimension-refused","resource-max-chain-refused","resource-overflow-refused"],
+  "terminalTaxonomyInPrecedenceOrder": ["invalid-or-drifted-input","schema-fixture-failed","checkpoint-fixture-failed","seed-disjointness-fixture-failed","resource-refusal-fixture-failed","pilot-support-pack-materialized"],
+  "authorityFirewalls": {"rngUsed":false,"registeredOperatorProposalPerformed":false,"markovChainAdvanced":false,"warmupPerformed":false,"adaptationPerformed":false,"samplingPerformed":false,"benchmarkPerformed":false,"configurationsRetained":false,"phase535ExecutedReopenedOrMutated":false,"phase481PackCreatedOrMutated":false,"productionDefaultSelected":false,"phase458G3Satisfied":false,"phase458G4Satisfied":false,"phase458G5Satisfied":false,"o4Discharged":false,"sourceContractApplicationAllowed":false,"physicalUnitOrGevClaimAllowed":false,"productionOrLaunchAllowed":false},
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

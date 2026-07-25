@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase540-a25-reduced-to-complete-lattice-transfer-readiness-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A25",
+  "frozenBeforePrecursorConsumption": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "sha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"
+    },
+    {
+      "id": "phase533-summary",
+      "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json",
+      "sha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164"
+    },
+    {
+      "id": "phase535-contract",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/preregistration/phase535_bounded_pilot_adjudicator_contract_v1.json",
+      "sha256": "d9cbf4a300ab4857c45ac42d90e4527fb1fd422958b187f0903b17af4f700e85"
+    },
+    {
+      "id": "phase535-program",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Program.cs",
+      "sha256": "bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187"
+    },
+    {
+      "id": "phase535-summary",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json",
+      "sha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849"
+    },
+    {
+      "id": "phase537-summary",
+      "path": "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json",
+      "sha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516"
+    },
+    {
+      "id": "phase538-summary",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json",
+      "sha256": "6c1d061f4e6e4c21376227276fd4149acc1870c8d9a951d7560f1953be8a2636"
+    },
+    {
+      "id": "phase539-contract",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/preregistration/phase539_independent_reduced_target_row_confirmation_contract_v1.json",
+      "sha256": "afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77"
+    },
+    {
+      "id": "phase539-program",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/Program.cs",
+      "sha256": "fcd17bb3294e7e9ff529af95a8f9356c06937104ebcc79479ba971c53593fc13"
+    },
+    {
+      "id": "phase539-summary",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json",
+      "sha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495"
+    }
+  ],
+  "gateOrder": [
+    "independent-reduced-row-confirmed",
+    "explicit-reduced-to-complete-lattice-transfer-map",
+    "deterministic-complete-lattice-integrator-oracle",
+    "executable-bounded-pilot-branch",
+    "hardened-complete-lattice-diagnostics-and-independent-seeds",
+    "bounded-resource-and-execution-topology"
+  ],
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "independent-reduced-row-not-confirmed",
+    "reduced-to-complete-lattice-transfer-map-missing",
+    "deterministic-complete-lattice-integrator-oracle-missing",
+    "executable-bounded-pilot-branch-missing",
+    "hardened-complete-lattice-diagnostics-missing",
+    "bounded-resource-or-execution-topology-missing",
+    "ready-for-prospective-bounded-control-construction"
+  ],
+  "requiredTransferMap": {
+    "mustMapTargetDegreesOfFreedom": true,
+    "mustMapForceAndGradient": true,
+    "mustMapStepSizeAndLeapfrogCount": true,
+    "mustJustifyAnyParameterDifference": true,
+    "scalarSuccessMayNotImplyCompleteLatticeSuccess": true
+  },
+  "successorOnTransferMapMissing": {
+    "kind": "prospective-deterministic-complete-lattice-integrator-transfer-control",
+    "samplingAllowed": false,
+    "requiredChecks": [
+      "exact-force-or-finite-difference-gradient-parity",
+      "forward-reverse-recovery",
+      "finite-energy-step-halving",
+      "explicit-reduced-row-to-pilot-parameter-map",
+      "resource-refusal-before-allocation"
+    ]
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "phase535PilotExecutedOrReopened": false,
+    "configurationsRetained": false,
+    "hmcOrSamplingPerformed": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  }
+}

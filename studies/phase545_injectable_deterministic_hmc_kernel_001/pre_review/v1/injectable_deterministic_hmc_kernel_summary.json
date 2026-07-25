@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "phase": 545,
+  "phaseId": "phase545-injectable-deterministic-hmc-kernel",
+  "contractId": "phase545-a28-injectable-deterministic-hmc-kernel-v1",
+  "contractSha256": "0d99b7f37a3dd435489316043a42c97a6ec221b148a0da2020967a1efe8f1327",
+  "kernelSha256": "1ec39db252fab639a8399ebaad49ceaba5a14dbb51fd00003bf48a46d453b951",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "markovChainAdvanced": false,
+  "warmupPerformed": false,
+  "adaptationPerformed": false,
+  "samplingPerformed": false,
+  "configurationsRetained": false,
+  "completeLattice": {
+    "extent": 3,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "omegaDegreesOfFreedom": 3645
+  },
+  "fixtures": {
+    "resource": {
+      "passed": true,
+      "resourceRefused": false,
+      "divergent": false,
+      "estimatedWorkingBytes": 87480,
+      "evaluatorCalledOnRefusal": false,
+      "forceEvaluationCount": 0
+    },
+    "corruption": {
+      "passed": true,
+      "finite": false,
+      "divergent": true,
+      "accepted": false,
+      "forceEvaluationCount": 1
+    },
+    "accept": {
+      "passed": true,
+      "accepted": true,
+      "finite": true,
+      "divergent": false,
+      "initialHamiltonian": 0.0020744438859778107,
+      "finalHamiltonian": 0.0020744438917066825,
+      "deltaHamiltonian": 5.728871804028257E-12,
+      "injectedLogUniformThreshold": -100,
+      "logAcceptanceThreshold": -5.728871804028257E-12,
+      "forceEvaluationCount": 5
+    },
+    "reject": {
+      "passed": true,
+      "accepted": false,
+      "finite": true,
+      "divergent": false,
+      "initialHamiltonian": 0.0020744438859778107,
+      "finalHamiltonian": 0.002085955209869581,
+      "deltaHamiltonian": 1.1511323891770248E-05,
+      "injectedLogUniformThreshold": 0,
+      "logAcceptanceThreshold": -1.1511323891770248E-05,
+      "rejectionReturnedInjectedPosition": true,
+      "forceEvaluationCount": 5
+    },
+    "reversal": {
+      "passed": true,
+      "forwardFinite": true,
+      "reverseFinite": true,
+      "scaledError": 9.834157466363251E-19,
+      "tolerance": 2E-09
+    }
+  },
+  "reusableKernelMaterialized": true,
+  "verdictKind": "injectable-deterministic-hmc-kernel-materialized",
+  "terminalStatus": "injectable-deterministic-hmc-kernel-injectable-deterministic-hmc-kernel-materialized",
+  "decision": "The prospectively frozen injected single-proposal fixtures pass. This is reusable kernel implementation evidence only, not HMC, sampling, acceptance-rate, mixing, or convergence evidence.",
+  "laterDependentPackReadinessAdjudicationAllowed": true,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase543-summary",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json",
+      "expectedSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "actualSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-contract",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json",
+      "expectedSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "actualSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-program",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs",
+      "expectedSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "actualSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-summary",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json",
+      "expectedSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "actualSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ]
+}

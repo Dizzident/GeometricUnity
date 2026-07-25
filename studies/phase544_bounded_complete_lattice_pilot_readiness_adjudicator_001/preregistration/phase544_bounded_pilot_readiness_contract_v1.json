@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase544-a27-bounded-complete-lattice-pilot-readiness-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A27",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase535-program","path":"studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Program.cs","sha256":"bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187"},
+    {"id":"phase535-summary","path":"studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json","sha256":"91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849"},
+    {"id":"phase540-contract","path":"studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/preregistration/phase540_reduced_to_complete_lattice_transfer_readiness_contract_v1.json","sha256":"a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857"},
+    {"id":"phase540-summary","path":"studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json","sha256":"14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236"},
+    {"id":"phase542-summary","path":"studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json","sha256":"1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82"},
+    {"id":"phase543-contract","path":"studies/phase543_complete_lattice_multistate_stability_grid_001/preregistration/phase543_branch_selected_deterministic_transfer_contract_v1.json","sha256":"abf5392aac512b3e6fa9be9bcafe6c72c0ccee2dc287123463222ce22251a3b9"},
+    {"id":"phase543-program","path":"studies/phase543_complete_lattice_multistate_stability_grid_001/Program.cs","sha256":"17839519a09f87dad4e143eeb4c8239dcb565201b616b3d5a6d01f50c601d6ef"},
+    {"id":"phase543-summary","path":"studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json","sha256":"a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924"}
+  ],
+  "readinessGatesInOrder": [
+    "resolved-force-closure-branch",
+    "deterministic-complete-lattice-force-gradient-oracle",
+    "deterministic-complete-lattice-multistate-integrator-controls",
+    "new-executable-bounded-pilot-implementation",
+    "hardened-complete-lattice-diagnostics",
+    "disjoint-prospective-seeds-and-checkpoint-rules",
+    "executable-resource-topology-refusal"
+  ],
+  "requiredNewPilotEvidence": {
+    "mustBeDistinctFromHistoricallyClosedPhase535": true,
+    "hmcImplementationArtifactRequired": true,
+    "acceptRejectAndDivergenceTelemetryRequired": true,
+    "configurationLevelCheckpointCodecRequired": true,
+    "disjointSeedTablesRequired": true,
+    "staticCpuAndMemoryRefusalRequired": true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "force-closure-branch-unresolved",
+    "deterministic-force-oracle-missing",
+    "deterministic-multistate-integrator-controls-failed",
+    "executable-bounded-pilot-implementation-missing",
+    "hardened-complete-lattice-diagnostics-missing",
+    "prospective-seed-or-checkpoint-rules-missing",
+    "resource-topology-refusal-evidence-missing",
+    "later-bounded-pilot-pack-construction-ready"
+  ],
+  "authorityFirewalls": {"rngUsed":false,"hmcOrSamplingPerformed":false,"configurationsRetained":false,"phase535ExecutedReopenedOrMutated":false,"phase481PackCreatedOrMutated":false,"productionDefaultSelected":false,"phase458G3Satisfied":false,"phase458G4Satisfied":false,"phase458G5Satisfied":false,"o4Discharged":false,"sourceContractApplicationAllowed":false,"physicalUnitOrGevClaimAllowed":false,"productionOrLaunchAllowed":false},
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

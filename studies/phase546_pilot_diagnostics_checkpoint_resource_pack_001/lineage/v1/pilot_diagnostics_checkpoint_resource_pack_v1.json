@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "phase": 546,
+  "phaseId": "phase546-pilot-diagnostics-checkpoint-resource-pack",
+  "contractId": "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-v1",
+  "contractSha256": "e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase538-contract",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/preregistration/phase538_fixed_grid_interacting_hmc_retuning_contract_v2.json",
+      "expectedSha256": "6ad1516ab89018354e06a160ddb2f4525b6d89df950f1b1af5464be2ad9a319f",
+      "actualSha256": "6ad1516ab89018354e06a160ddb2f4525b6d89df950f1b1af5464be2ad9a319f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-contract",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/preregistration/phase539_independent_reduced_target_row_confirmation_contract_v1.json",
+      "expectedSha256": "afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77",
+      "actualSha256": "afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-summary",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json",
+      "expectedSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "actualSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-contract",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json",
+      "expectedSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "actualSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-program",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs",
+      "expectedSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "actualSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-summary",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json",
+      "expectedSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "actualSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "hashMatches": true
+    }
+  ],
+  "syntheticFixturesOnly": true,
+  "schemaValid": true,
+  "telemetrySchema": {
+    "trajectoryRequiredFields": [
+      "chainId",
+      "trajectoryIndex",
+      "phase",
+      "accepted",
+      "initialHamiltonian",
+      "proposedHamiltonian",
+      "deltaH",
+      "acceptanceProbability",
+      "injectedThreshold",
+      "nonFinite",
+      "divergent",
+      "divergenceThreshold",
+      "forceEvaluationCount",
+      "maximumForceNorm",
+      "proposalElapsedCpuTicks"
+    ],
+    "chainSummaryRequiredFields": [
+      "chainId",
+      "seed",
+      "warmupCount",
+      "retainedCount",
+      "acceptanceRate",
+      "nonFiniteCount",
+      "divergenceCount",
+      "maximumAbsoluteDeltaH",
+      "splitRankNormalizedRhat",
+      "bulkEss",
+      "tailEss",
+      "observableSchemaId",
+      "observableMeans",
+      "observableStandardErrors",
+      "observableRhat",
+      "observableBulkEss",
+      "checkpointSha256"
+    ],
+    "convergenceThresholdsFrozen": true,
+    "observableSchemaValid": true,
+    "completeLatticeTelemetryFrozen": true
+  },
+  "checkpointCodec": {
+    "formatId": "gu-complete-lattice-checkpoint-v1",
+    "checksumAlgorithm": "SHA-256",
+    "exactRestartFields": [
+      "formatId",
+      "actionFingerprint",
+      "packFingerprint",
+      "topologyId",
+      "extent",
+      "dimensions",
+      "degreesOfFreedom",
+      "beta",
+      "thetaRule",
+      "chainId",
+      "seed",
+      "trajectoryIndex",
+      "warmupCompleted",
+      "retainedCompleted",
+      "stepSize",
+      "leapfrogSteps",
+      "rngAlgorithm",
+      "rngStateWords",
+      "position"
+    ],
+    "syntheticEncodedSha256": "5209befe63d76ffb3fbc7b1273b60f339cfb171bdb4c491ea75f7e53168bb49a",
+    "roundtripPassed": true,
+    "mutationRefused": true,
+    "nonCanonicalPayloadRefused": true
+  },
+  "seedPack": {
+    "priorRawSeedCount": 20,
+    "priorExecutionSeedCount": 20,
+    "prospectiveTableCount": 2,
+    "prospectiveRawSeeds": [
+      546101,
+      546103,
+      546107,
+      546109,
+      546201,
+      546203,
+      546207,
+      546209
+    ],
+    "prospectiveExecutionSeeds": [
+      2546101,
+      2546103,
+      2546107,
+      2546109,
+      2546201,
+      2546203,
+      2546207,
+      2546209
+    ],
+    "disjointFromAllA22ThroughA24SeedFamilies": true
+  },
+  "resourceRefusal": {
+    "below": {
+      "allowed": true,
+      "refusalReason": null,
+      "estimatedCpuTicks": 52488000,
+      "estimatedPeakBytes": 2680352
+    },
+    "cpuBoundary": {
+      "allowed": false,
+      "refusalReason": "cpu-boundary-or-limit-exceeded",
+      "estimatedCpuTicks": 466093440,
+      "estimatedPeakBytes": 5360704
+    },
+    "memoryBoundary": {
+      "allowed": false,
+      "refusalReason": "memory-boundary-or-limit-exceeded",
+      "estimatedCpuTicks": 104976000,
+      "estimatedPeakBytes": 5360704
+    },
+    "invalidTopology": {
+      "allowed": false,
+      "refusalReason": "topology-mismatch",
+      "estimatedCpuTicks": 52488000,
+      "estimatedPeakBytes": 2680352
+    },
+    "invalidDimension": {
+      "allowed": false,
+      "refusalReason": "dimension-mismatch",
+      "estimatedCpuTicks": 52488000,
+      "estimatedPeakBytes": 2680352
+    },
+    "excessiveChains": {
+      "allowed": false,
+      "refusalReason": "invalid-shape",
+      "estimatedCpuTicks": 3936600,
+      "estimatedPeakBytes": 12061584
+    },
+    "overflow": {
+      "allowed": false,
+      "refusalReason": "checked-arithmetic-overflow",
+      "estimatedCpuTicks": 9223372036854775807,
+      "estimatedPeakBytes": 9223372036854775807
+    },
+    "allBoundaryFixturesPassed": true
+  },
+  "fixtures": [
+    {
+      "id": "schema-valid",
+      "passed": true
+    },
+    {
+      "id": "observable-schema-valid",
+      "passed": true
+    },
+    {
+      "id": "checkpoint-roundtrip",
+      "passed": true
+    },
+    {
+      "id": "checkpoint-mutation-refused",
+      "passed": true
+    },
+    {
+      "id": "checkpoint-noncanonical-refused",
+      "passed": true
+    },
+    {
+      "id": "seeds-disjoint",
+      "passed": true
+    },
+    {
+      "id": "resource-below-boundary-accepted",
+      "passed": true
+    },
+    {
+      "id": "resource-cpu-boundary-refused",
+      "passed": true
+    },
+    {
+      "id": "resource-memory-boundary-refused",
+      "passed": true
+    },
+    {
+      "id": "resource-topology-refused",
+      "passed": true
+    },
+    {
+      "id": "resource-dimension-refused",
+      "passed": true
+    },
+    {
+      "id": "resource-max-chain-refused",
+      "passed": true
+    },
+    {
+      "id": "resource-overflow-refused",
+      "passed": true
+    }
+  ],
+  "passedFixtureCount": 13,
+  "allFixturesPassed": true,
+  "verdictKind": "pilot-support-pack-materialized",
+  "terminalStatus": "pilot-diagnostics-checkpoint-resource-pack-pilot-support-pack-materialized",
+  "decision": "The non-executing diagnostics, prospective-seed, canonical-checkpoint, and checked resource-refusal support pack is materialized for dependent Phase547 adjudication only.",
+  "rngUsed": false,
+  "registeredOperatorProposalPerformed": false,
+  "markovChainAdvanced": false,
+  "warmupPerformed": false,
+  "adaptationPerformed": false,
+  "samplingPerformed": false,
+  "benchmarkPerformed": false,
+  "configurationsRetained": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

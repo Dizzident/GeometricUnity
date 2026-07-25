@@ -287,6 +287,14 @@ const string Phase536Path = "studies/phase536_trajectory_forensics_replay_001/ou
 const string Phase537Path = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
 const string Phase538Path = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
 const string Phase539Path = "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json";
+const string Phase540Path = "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json";
+const string Phase541Path = "studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json";
+const string Phase542Path = "studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json";
+const string Phase543Path = "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json";
+const string Phase544Path = "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json";
+const string Phase545Path = "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json";
+const string Phase546Path = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
+const string Phase547Path = "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -625,6 +633,14 @@ using var phase536 = File.Exists(Phase536Path) ? JsonDocument.Parse(File.ReadAll
 using var phase537 = File.Exists(Phase537Path) ? JsonDocument.Parse(File.ReadAllText(Phase537Path)) : null;
 using var phase538 = File.Exists(Phase538Path) ? JsonDocument.Parse(File.ReadAllText(Phase538Path)) : null;
 using var phase539 = File.Exists(Phase539Path) ? JsonDocument.Parse(File.ReadAllText(Phase539Path)) : null;
+using var phase540 = File.Exists(Phase540Path) ? JsonDocument.Parse(File.ReadAllText(Phase540Path)) : null;
+using var phase541 = File.Exists(Phase541Path) ? JsonDocument.Parse(File.ReadAllText(Phase541Path)) : null;
+using var phase542 = File.Exists(Phase542Path) ? JsonDocument.Parse(File.ReadAllText(Phase542Path)) : null;
+using var phase543 = File.Exists(Phase543Path) ? JsonDocument.Parse(File.ReadAllText(Phase543Path)) : null;
+using var phase544 = File.Exists(Phase544Path) ? JsonDocument.Parse(File.ReadAllText(Phase544Path)) : null;
+using var phase545 = File.Exists(Phase545Path) ? JsonDocument.Parse(File.ReadAllText(Phase545Path)) : null;
+using var phase546 = File.Exists(Phase546Path) ? JsonDocument.Parse(File.ReadAllText(Phase546Path)) : null;
+using var phase547 = File.Exists(Phase547Path) ? JsonDocument.Parse(File.ReadAllText(Phase547Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7722,6 +7738,151 @@ var independentReducedTargetRowConfirmationPassed = phase539 is not null
     && JsonBool(phase539.RootElement, "completeLatticeValidated") is false
     && JsonBool(phase539.RootElement, "allDownstreamAuthority") is false
     && JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var reducedToCompleteLatticeTransferReadinessPassed = phase540 is not null
+    && JsonString(phase540.RootElement, "contractId") == "phase540-a25-reduced-to-complete-lattice-transfer-readiness-v1"
+    && JsonBool(phase540.RootElement, "contractValid") is true
+    && JsonBool(phase540.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase540.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase540.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase540.RootElement, "deterministicZeroSampling") is true
+    && JsonBool(phase540.RootElement, "hmcOrSamplingPerformed") is false
+    && JsonBool(phase540.RootElement, "configurationsRetained") is false
+    && JsonBool(phase540.RootElement, "targetIdentityMetadataAligned") is true
+    && JsonBool(phase540.RootElement, "integratorParametersIdentical") is false
+    && JsonString(phase540.RootElement, "earliestMissingGate") == "explicit-reduced-to-complete-lattice-transfer-map"
+    && JsonBool(phase540.RootElement, "allTransferReadinessGatesClosed") is false
+    && JsonBool(phase540.RootElement, "laterControlConstructionAuthorized") is false
+    && JsonString(phase540.RootElement, "verdictKind") == "reduced-to-complete-lattice-transfer-map-missing"
+    && JsonBool(phase540.RootElement, "phase535PilotExecutedOrReopened") is false
+    && JsonBool(phase540.RootElement, "phase481PackCreatedOrMutated") is false
+    && JsonBool(phase540.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase540.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var completeLatticeIntegratorTransferControlPassed = phase541 is not null
+    && JsonString(phase541.RootElement, "contractId") == "phase541-a26-complete-lattice-integrator-transfer-control-v1"
+    && JsonBool(phase541.RootElement, "contractValid") is true
+    && JsonBool(phase541.RootElement, "bindingInventoryValid") is true
+    && JsonBool(phase541.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase541.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase541.RootElement, "resourceAccepted") is true
+    && JsonBool(phase541.RootElement, "deterministicZeroSampling") is true
+    && JsonBool(phase541.RootElement, "rngUsed") is false
+    && JsonBool(phase541.RootElement, "hmcOrSamplingPerformed") is false
+    && JsonBool(phase541.RootElement, "configurationsRetained") is false
+    && JsonNestedBool(phase541.RootElement, "actionReconstruction", "passed") is true
+    && JsonNestedBool(phase541.RootElement, "explicitEmbeddingMap", "kineticMetricCompatible") is false
+    && JsonNestedBool(phase541.RootElement, "analyticForceParity", "passed") is true
+    && JsonNestedBool(phase541.RootElement, "transverseForceAudit", "passed") is false
+    && JsonNestedBool(phase541.RootElement, "selectedRowCompleteLatticeLadder", "passed") is true
+    && JsonNestedBool(phase541.RootElement, "pilotRowCompleteLatticeLadder", "passed") is true
+    && JsonString(phase541.RootElement, "verdictKind") == "embedding-kinetic-metric-mismatch"
+    && JsonBool(phase541.RootElement, "laterControlOrPilotAuthorized") is false
+    && JsonBool(phase541.RootElement, "phase535ExecutedReopenedOrMutated") is false
+    && JsonBool(phase541.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase541.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var metricNormalizedForceClosureCensusPassed = phase542 is not null
+    && JsonString(phase542.RootElement, "contractId") == "phase542-a27-metric-normalized-force-closure-census-v1"
+    && JsonBool(phase542.RootElement, "contractValid") is true
+    && JsonBool(phase542.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase542.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase542.RootElement, "resourceAccepted") is true
+    && JsonBool(phase542.RootElement, "deterministicZeroSampling") is true
+    && JsonBool(phase542.RootElement, "rngUsed") is false
+    && JsonBool(phase542.RootElement, "hmcOrSamplingPerformed") is false
+    && JsonNestedBool(phase542.RootElement, "metricNormalization", "passed") is true
+    && JsonNestedInt(phase542.RootElement, "forceClosure", "basisDimension") == 24
+    && JsonNestedBool(phase542.RootElement, "forceClosure", "compactClosureFound") is false
+    && JsonString(phase542.RootElement, "verdictKind") == "force-closure-expands-beyond-compact-limit"
+    && JsonBool(phase542.RootElement, "laterDeterministicExperimentAuthorized") is true
+    && JsonBool(phase542.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase542.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var completeLatticeMultistateStabilityGridPassed = phase543 is not null
+    && JsonString(phase543.RootElement, "contractId") == "phase543-a27-branch-selected-deterministic-transfer-v1"
+    && JsonBool(phase543.RootElement, "contractValid") is true
+    && JsonBool(phase543.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase543.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase543.RootElement, "resourceAccepted") is true
+    && JsonBool(phase543.RootElement, "branchSelectionValid") is true
+    && JsonString(phase543.RootElement, "selectedBranch") == "complete-lattice-multistate-step-halving"
+    && JsonNestedBool(phase543.RootElement, "gradientControl", "passed") is true
+    && JsonNestedBool(phase543.RootElement, "completeLatticeStabilityGrid", "passed") is true
+    && JsonBool(phase543.RootElement, "deterministicControlsPassed") is true
+    && JsonString(phase543.RootElement, "verdictKind") == "branch-selected-deterministic-controls-passed"
+    && JsonBool(phase543.RootElement, "hmcOrSamplingPerformed") is false
+    && JsonBool(phase543.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase543.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var boundedCompleteLatticePilotReadinessPassed = phase544 is not null
+    && JsonString(phase544.RootElement, "contractId") == "phase544-a27-bounded-complete-lattice-pilot-readiness-v1"
+    && JsonBool(phase544.RootElement, "contractValid") is true
+    && JsonBool(phase544.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase544.RootElement, "historicalPhase535StayedClosed") is true
+    && JsonInt(phase544.RootElement, "passedGateCount") == 3
+    && JsonInt(phase544.RootElement, "failedGateCount") == 4
+    && JsonString(phase544.RootElement, "earliestMissingGate") == "new-executable-bounded-pilot-implementation"
+    && JsonString(phase544.RootElement, "verdictKind") == "executable-bounded-pilot-implementation-missing"
+    && JsonBool(phase544.RootElement, "laterBoundedPilotPackConstructionReady") is false
+    && JsonBool(phase544.RootElement, "hmcOrSamplingPerformed") is false
+    && JsonBool(phase544.RootElement, "phase535ExecutedReopenedOrMutated") is false
+    && JsonBool(phase544.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase544.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var injectableDeterministicHmcKernelPassed = phase545 is not null
+    && JsonString(phase545.RootElement, "contractId") == "phase545-a28-injectable-deterministic-hmc-kernel-repair-v3"
+    && JsonBool(phase545.RootElement, "contractValid") is true
+    && JsonBool(phase545.RootElement, "rulesValid") is true
+    && JsonBool(phase545.RootElement, "fixtureRulesValid") is true
+    && JsonBool(phase545.RootElement, "firewallInventoryValid") is true
+    && JsonBool(phase545.RootElement, "preReviewBindingsValid") is true
+    && JsonBool(phase545.RootElement, "interimV2BindingsValid") is true
+    && JsonBool(phase545.RootElement, "upstreamBindingsValid") is true
+    && JsonBool(phase545.RootElement, "precursorSemanticsValid") is true
+    && JsonBool(phase545.RootElement, "originalPositiveResultCitable") is false
+    && JsonBool(phase545.RootElement, "interimCorrectedExecutionCitable") is false
+    && JsonBool(phase545.RootElement, "v2RepairResultCitable") is false
+    && phase545.RootElement.TryGetProperty("fixtures", out var p545AuditFixtures)
+    && p545AuditFixtures.EnumerateObject().Count() == 10
+    && p545AuditFixtures.EnumerateObject().All(item => JsonBool(item.Value, "passed") is true)
+    && JsonBool(phase545.RootElement, "reusableKernelV3Repaired") is true
+    && JsonString(phase545.RootElement, "verdictKind") == "injectable-deterministic-hmc-kernel-v3-repaired"
+    && JsonBool(phase545.RootElement, "pilotExecuted") is false
+    && JsonBool(phase545.RootElement, "hmcEvidenceEstablished") is false
+    && JsonBool(phase545.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase545.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var pilotDiagnosticsCheckpointResourcePackPassed = phase546 is not null
+    && JsonString(phase546.RootElement, "contractId") == "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-repair-v3"
+    && JsonBool(phase546.RootElement, "contractValid") is true
+    && JsonBool(phase546.RootElement, "exactBindingsValid") is true
+    && phase546.RootElement.TryGetProperty("lineage", out var p546AuditLineage)
+    && JsonBool(p546AuditLineage, "authenticV1Valid") is true
+    && JsonBool(p546AuditLineage, "v1PositiveResultIncomplete") is true
+    && JsonBool(p546AuditLineage, "v1CitableForPhase547ResourceGate") is false
+    && JsonBool(p546AuditLineage, "v2PositiveResultNonCitable") is true
+    && phase546.RootElement.TryGetProperty("repairEvidence", out var p546AuditRepair)
+    && JsonBool(p546AuditRepair, "dofMismatchFixtureTested") is true
+    && JsonBool(p546AuditRepair, "dofMismatchFixturePassed") is true
+    && JsonInt(phase546.RootElement, "inheritedAuthenticV1FixtureCount") == 13
+    && JsonInt(phase546.RootElement, "newDedicatedFixtureCount") == 1
+    && JsonInt(phase546.RootElement, "correctedTotalFixtureCount") == 14
+    && JsonBool(phase546.RootElement, "allCorrectedFixturesPassed") is true
+    && JsonString(phase546.RootElement, "verdictKind") == "pilot-support-pack-materialized-with-authentic-lineage-dof-repair"
+    && JsonBool(phase546.RootElement, "samplingPerformed") is false
+    && JsonBool(phase546.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase546.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var boundedPilotPackReadinessAdjudicatorPassed = phase547 is not null
+    && JsonString(phase547.RootElement, "contractId") == "phase547-a28-bounded-pilot-pack-readiness-adjudicator-v1"
+    && JsonBool(phase547.RootElement, "contractValid") is true
+    && JsonBool(phase547.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase547.RootElement, "inputsValid") is true
+    && JsonBool(phase547.RootElement, "phase544PremiseValid") is true
+    && JsonBool(phase547.RootElement, "precedenceBatteryPassed") is true
+    && JsonInt(phase547.RootElement, "passedGateCount") == 4
+    && JsonInt(phase547.RootElement, "failedGateCount") == 0
+    && JsonBool(phase547.RootElement, "allFourMissingPhase544GatesClosed") is true
+    && JsonString(phase547.RootElement, "verdictKind") == "bounded-pilot-pack-ready-for-separate-prospective-execution-registration"
+    && JsonBool(phase547.RootElement, "boundedPilotExecutionPhaseRegistrationAllowed") is true
+    && JsonBool(phase547.RootElement, "pilotExecutionAuthorized") is false
+    && JsonBool(phase547.RootElement, "launchAuthorized") is false
+    && JsonBool(phase547.RootElement, "hmcEvidenceEstablished") is false
+    && JsonBool(phase547.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10689,6 +10850,54 @@ var checklist = new[]
         independentReducedTargetRowConfirmationPassed ? "passed" : "failed",
         phase539 is null ? "Phase539 artifact not materialized" : $"verdictKind={JsonString(phase539.RootElement, "verdictKind")}; pristine={JsonBool(phase539.RootElement, "pristinePreregistration")}; everyFamilyPassed={JsonBool(phase539.RootElement, "everyRegisteredFamilyPassedEveryGate")}; transferValidated={JsonBool(phase539.RootElement, "reducedToCompleteLatticeTransferValidated")}; pilotReopened={JsonBool(phase539.RootElement, "phase535PilotExecutedOrReopened")}; promotedPhysicalMassClaimCount={JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase539Path),
+    new ObjectiveChecklistItem(
+        "reduced-to-complete-lattice-transfer-readiness",
+        "Adjudicate the exact transfer boundary and select the earliest missing prerequisite without running the complete-lattice pilot.",
+        reducedToCompleteLatticeTransferReadinessPassed ? "passed" : "failed",
+        phase540 is null ? "Phase540 artifact not materialized" : $"verdictKind={JsonString(phase540.RootElement, "verdictKind")}; earliestMissing={JsonString(phase540.RootElement, "earliestMissingGate")}; allGatesClosed={JsonBool(phase540.RootElement, "allTransferReadinessGatesClosed")}; pilotReopened={JsonBool(phase540.RootElement, "phase535PilotExecutedOrReopened")}; promotedPhysicalMassClaimCount={JsonInt(phase540.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase540Path),
+    new ObjectiveChecklistItem(
+        "complete-lattice-integrator-transfer-control",
+        "Audit the scalar embedding, induced kinetic metric, force invariance, and both frozen integrator rows on deterministic complete-lattice trajectories.",
+        completeLatticeIntegratorTransferControlPassed ? "passed" : "failed",
+        phase541 is null ? "Phase541 artifact not materialized" : $"verdictKind={JsonString(phase541.RootElement, "verdictKind")}; metricCompatible={JsonNestedBool(phase541.RootElement, "explicitEmbeddingMap", "kineticMetricCompatible")}; forceParity={JsonNestedBool(phase541.RootElement, "analyticForceParity", "passed")}; rayInvariant={JsonNestedBool(phase541.RootElement, "transverseForceAudit", "passed")}; pilotReopened={JsonBool(phase541.RootElement, "phase535ExecutedReopenedOrMutated")}; promotedPhysicalMassClaimCount={JsonInt(phase541.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase541Path),
+    new ObjectiveChecklistItem(
+        "metric-normalized-force-closure-census",
+        "Normalize the witness kinetic metric and census deterministic force/Jacobian closure without sampling.",
+        metricNormalizedForceClosureCensusPassed ? "passed" : "failed",
+        phase542 is null ? "Phase542 artifact not materialized" : $"verdictKind={JsonString(phase542.RootElement, "verdictKind")}; basisDimension={JsonNestedInt(phase542.RootElement, "forceClosure", "basisDimension")}; compactClosure={JsonNestedBool(phase542.RootElement, "forceClosure", "compactClosureFound")}; promotedPhysicalMassClaimCount={JsonInt(phase542.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase542Path),
+    new ObjectiveChecklistItem(
+        "complete-lattice-multistate-stability-grid",
+        "Exercise the branch-selected complete-lattice deterministic multi-state step-halving control.",
+        completeLatticeMultistateStabilityGridPassed ? "passed" : "failed",
+        phase543 is null ? "Phase543 artifact not materialized" : $"verdictKind={JsonString(phase543.RootElement, "verdictKind")}; branch={JsonString(phase543.RootElement, "selectedBranch")}; gridPassed={JsonNestedBool(phase543.RootElement, "completeLatticeStabilityGrid", "passed")}; promotedPhysicalMassClaimCount={JsonInt(phase543.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase543Path),
+    new ObjectiveChecklistItem(
+        "bounded-complete-lattice-pilot-readiness",
+        "Adjudicate the remaining executable pilot, diagnostic, seed/checkpoint, and resource prerequisites.",
+        boundedCompleteLatticePilotReadinessPassed ? "passed" : "failed",
+        phase544 is null ? "Phase544 artifact not materialized" : $"verdictKind={JsonString(phase544.RootElement, "verdictKind")}; passedGates={JsonInt(phase544.RootElement, "passedGateCount")}; earliestMissing={JsonString(phase544.RootElement, "earliestMissingGate")}; promotedPhysicalMassClaimCount={JsonInt(phase544.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase544Path),
+    new ObjectiveChecklistItem(
+        "injectable-deterministic-hmc-kernel",
+        "Materialize and adversarially repair the deterministic proposal kernel without RNG, chain advance, pilot execution, or HMC inference.",
+        injectableDeterministicHmcKernelPassed ? "passed" : "failed",
+        phase545 is null ? "Phase545 artifact not materialized" : $"verdictKind={JsonString(phase545.RootElement, "verdictKind")}; reusableKernel={JsonBool(phase545.RootElement, "reusableKernelV3Repaired")}; pilotExecuted={JsonBool(phase545.RootElement, "pilotExecuted")}; hmcEvidence={JsonBool(phase545.RootElement, "hmcEvidenceEstablished")}; promotedPhysicalMassClaimCount={JsonInt(phase545.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase545Path),
+    new ObjectiveChecklistItem(
+        "pilot-diagnostics-checkpoint-resource-pack",
+        "Materialize the synthetic diagnostics, seed, checkpoint, and compositional resource-refusal evidence while preserving non-citable repair lineage.",
+        pilotDiagnosticsCheckpointResourcePackPassed ? "passed" : "failed",
+        phase546 is null ? "Phase546 artifact not materialized" : $"verdictKind={JsonString(phase546.RootElement, "verdictKind")}; inheritedFixtures={JsonInt(phase546.RootElement, "inheritedAuthenticV1FixtureCount")}; newFixtures={JsonInt(phase546.RootElement, "newDedicatedFixtureCount")}; correctedFixtures={JsonInt(phase546.RootElement, "correctedTotalFixtureCount")}; promotedPhysicalMassClaimCount={JsonInt(phase546.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase546Path),
+    new ObjectiveChecklistItem(
+        "bounded-pilot-pack-readiness-adjudicator",
+        "Close the four Phase544 construction gates only for registration of a separate prospectively frozen execution phase.",
+        boundedPilotPackReadinessAdjudicatorPassed ? "passed" : "failed",
+        phase547 is null ? "Phase547 artifact not materialized" : $"verdictKind={JsonString(phase547.RootElement, "verdictKind")}; passedGates={JsonInt(phase547.RootElement, "passedGateCount")}; registration={JsonBool(phase547.RootElement, "boundedPilotExecutionPhaseRegistrationAllowed")}; pilotAuthorized={JsonBool(phase547.RootElement, "pilotExecutionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase547Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

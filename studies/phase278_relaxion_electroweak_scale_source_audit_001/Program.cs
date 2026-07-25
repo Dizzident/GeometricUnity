@@ -518,7 +518,15 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P536.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P537.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P538.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P539.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P539.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P540.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P541.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P542.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P543.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P544.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P545.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P546.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P547.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

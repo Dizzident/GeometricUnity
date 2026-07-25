@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 2,
+  "contractId": "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-repair-v2",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A28",
+  "frozenBeforeCorrectedExecution": true,
+  "syntheticFixturesOnly": true,
+  "repairScope": "dedicated-dof-mismatch-resource-refusal-evidence",
+  "exactBindings": [
+    {"id":"phase546-v1-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json","sha256":"e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d"},
+    {"id":"phase546-v1-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/Program_v1.cs.txt","sha256":"d70ba73f680e9d09e1b14a335b35eb16e088189e88568ea7b8871020338b4e6d"},
+    {"id":"phase546-v1-checkpoint-codec","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/CheckpointCodec_v1.cs.txt","sha256":"d10a9706a7e5b83972f741843f643e22e41ecd34c4153e5d5e46222764f85368"},
+    {"id":"phase546-v1-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_v1.json","sha256":"e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6"},
+    {"id":"phase546-v1-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_summary_v1.json","sha256":"e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6"}
+  ],
+  "v1LineageAdjudication": {
+    "reportedVerdict": "pilot-support-pack-materialized",
+    "reportedPassedFixtureCount": 13,
+    "positiveResultIncomplete": true,
+    "citableForPhase547ResourceGate": false,
+    "soleDefect": "dedicated-dof-mismatch-fixture-evidence-absent",
+    "otherV1EvidenceReinterpretedOrInvalidated": false
+  },
+  "resourceRefusal": {
+    "requiredTopologyId": "periodic-hypercubic-4d",
+    "requiredDimensions": 4,
+    "degreesOfFreedomFormula": "45 * extent^4",
+    "fixtureExtent": 3,
+    "expectedDegreesOfFreedom": 3645,
+    "mismatchedDegreesOfFreedom": 3644,
+    "expectedRefusalReason": "invalid-shape",
+    "checkedIntegerArithmeticRequired": true
+  },
+  "fixtureAccounting": {
+    "exactBoundInheritedV1FixtureCount": 13,
+    "newDedicatedFixtureIds": ["resource-dof-mismatch-refused"],
+    "correctedTotalFixtureCount": 14
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-v1-lineage",
+    "v1-defect-characterization-invalid",
+    "dof-mismatch-fixture-failed",
+    "pilot-support-pack-materialized-with-dof-repair"
+  ],
+  "authorityFirewalls": {
+    "rngUsed": false,
+    "registeredOperatorProposalPerformed": false,
+    "markovChainAdvanced": false,
+    "warmupPerformed": false,
+    "adaptationPerformed": false,
+    "samplingPerformed": false,
+    "benchmarkPerformed": false,
+    "configurationsRetained": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

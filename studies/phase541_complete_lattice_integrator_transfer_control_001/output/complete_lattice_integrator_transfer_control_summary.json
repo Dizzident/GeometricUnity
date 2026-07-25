@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "phase": 541,
+  "phaseId": "phase541-complete-lattice-integrator-transfer-control",
+  "contractId": "phase541-a26-complete-lattice-integrator-transfer-control-v1",
+  "contractSha256": "f4d02b7b9158dbff7a26c04e632320b7dc9d8871ee31a1a0fa5cdc9098dae78c",
+  "contractValid": true,
+  "bindingInventoryValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "resourceAccepted": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "hmcOrSamplingPerformed": false,
+  "configurationsRetained": false,
+  "completeLattice": {
+    "member": "sd2-id0/c0.5",
+    "beta": 1,
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "omegaDegreesOfFreedom": 3645,
+    "thetaDegreesOfFreedom": 243
+  },
+  "explicitEmbeddingMap": {
+    "map": "omega=x*r with the three Phase527 witness coefficients; theta=0",
+    "witnessEdges": [
+      0,
+      1,
+      4
+    ],
+    "witnessComponents": [
+      0,
+      1,
+      2
+    ],
+    "witnessValues": [
+      1,
+      -1,
+      1
+    ],
+    "embeddingNormSquared": 3,
+    "reducedScalarKineticMetric": 1,
+    "kineticMetricCompatible": false,
+    "selectedReducedStepSize": 0.25,
+    "selectedReducedLeapfrogSteps": 8,
+    "metricCompatibleStepRescaling": 0.14433756729740646,
+    "frozenPilotStepSize": 0.0125,
+    "frozenPilotLeapfrogSteps": 6,
+    "parameterRowsIdentical": false
+  },
+  "actionReconstruction": {
+    "passed": true,
+    "c2": 1.7916666666666679,
+    "c3": 0.036111111111111316,
+    "c4": 0.1704947916666657,
+    "maxActionReplayError": 1.6653345369377348E-16,
+    "stateRows": [
+      {
+        "x": -1,
+        "action": 1.9260503472222221,
+        "polynomialAction": 1.9260503472222221,
+        "replayError": 0,
+        "scalarFromFull": -4.156979166666668,
+        "scalarAnalytic": -4.156979166666664,
+        "scalarGradientError": 8.54638316999143E-16,
+        "transverseFraction": 0.391559550847451,
+        "finiteDifference": -0.03416274704548897,
+        "analyticDirectionalDerivative": -0.03416274692148803,
+        "directionalError": 1.24000934520474E-10
+      },
+      {
+        "x": -0.5,
+        "action": 0.45405870225694483,
+        "polynomialAction": 0.45405870225694467,
+        "replayError": 1.6653345369377348E-16,
+        "scalarFromFull": -1.849830729166667,
+        "scalarAnalytic": -1.8498307291666671,
+        "scalarGradientError": 1.2003509371101242E-16,
+        "transverseFraction": 0.3968890282526692,
+        "finiteDifference": -0.01607273050763247,
+        "analyticDirectionalDerivative": -0.016072730477251017,
+        "directionalError": 3.038145429679062E-11
+      },
+      {
+        "x": 0.5,
+        "action": 0.4630864800347226,
+        "polynomialAction": 0.4630864800347225,
+        "replayError": 5.551115123125783E-17,
+        "scalarFromFull": 1.903997395833334,
+        "scalarAnalytic": 1.9039973958333343,
+        "scalarGradientError": 1.1662022511740237E-16,
+        "transverseFraction": 0.38645149044017024,
+        "finiteDifference": 0.017476273567185174,
+        "analyticDirectionalDerivative": 0.01747627361845036,
+        "directionalError": 5.126518654030576E-11
+      },
+      {
+        "x": 1,
+        "action": 1.9982725694444448,
+        "polynomialAction": 1.998272569444445,
+        "replayError": 1.111182770160147E-16,
+        "scalarFromFull": 4.373645833333335,
+        "scalarAnalytic": 4.373645833333333,
+        "scalarGradientError": 4.061501335709243E-16,
+        "transverseFraction": 0.37340718237324133,
+        "finiteDifference": 0.039776919423978804,
+        "analyticDirectionalDerivative": 0.03977691948628528,
+        "directionalError": 6.230647248139931E-11
+      }
+    ]
+  },
+  "analyticForceParity": {
+    "passed": true,
+    "maxScalarGradientError": 8.54638316999143E-16,
+    "maxDirectionalGradientError": 1.24000934520474E-10,
+    "tolerance": 2E-07
+  },
+  "transverseForceAudit": {
+    "passed": false,
+    "maxTransverseForceFraction": 0.3968890282526692,
+    "tolerance": 1E-10
+  },
+  "selectedRowCompleteLatticeLadder": {
+    "passed": true,
+    "energyImproves": true,
+    "minimumAdjacentEnergyImprovement": 1.5,
+    "rows": [
+      {
+        "stepSize": 0.25,
+        "leapfrogSteps": 8,
+        "trajectoryLength": 2,
+        "finite": true,
+        "absoluteEnergyError": 0.004715756827340711,
+        "reversibilityScaledError": 1.5535134994104606E-16,
+        "reversibilityPassed": true
+      },
+      {
+        "stepSize": 0.125,
+        "leapfrogSteps": 16,
+        "trajectoryLength": 2,
+        "finite": true,
+        "absoluteEnergyError": 0.0011723061973037963,
+        "reversibilityScaledError": 1.5772308415227344E-16,
+        "reversibilityPassed": true
+      },
+      {
+        "stepSize": 0.0625,
+        "leapfrogSteps": 32,
+        "trajectoryLength": 2,
+        "finite": true,
+        "absoluteEnergyError": 0.00029266210749778754,
+        "reversibilityScaledError": 1.559921076119149E-16,
+        "reversibilityPassed": true
+      }
+    ]
+  },
+  "pilotRowCompleteLatticeLadder": {
+    "passed": true,
+    "energyImproves": true,
+    "minimumAdjacentEnergyImprovement": 1.5,
+    "rows": [
+      {
+        "stepSize": 0.0125,
+        "leapfrogSteps": 6,
+        "trajectoryLength": 0.07500000000000001,
+        "finite": true,
+        "absoluteEnergyError": 1.5047582424543293E-07,
+        "reversibilityScaledError": 6.963794614060283E-18,
+        "reversibilityPassed": true
+      },
+      {
+        "stepSize": 0.00625,
+        "leapfrogSteps": 12,
+        "trajectoryLength": 0.07500000000000001,
+        "finite": true,
+        "absoluteEnergyError": 3.761695177573188E-08,
+        "reversibilityScaledError": 6.755626330856159E-18,
+        "reversibilityPassed": true
+      },
+      {
+        "stepSize": 0.003125,
+        "leapfrogSteps": 24,
+        "trajectoryLength": 0.07500000000000001,
+        "finite": true,
+        "absoluteEnergyError": 9.404111822597372E-09,
+        "reversibilityScaledError": 9.767179923782366E-18,
+        "reversibilityPassed": true
+      }
+    ]
+  },
+  "deterministicTransferControlsPassed": false,
+  "laterControlOrPilotAuthorized": false,
+  "verdictKind": "embedding-kinetic-metric-mismatch",
+  "terminalStatus": "complete-lattice-integrator-transfer-control-embedding-kinetic-metric-mismatch",
+  "decision": "The scalar witness embeds exactly into the complete-lattice action, but the raw witness has induced Euclidean kinetic metric three while the reduced sampler used metric one. The selected scalar row therefore has no direct symplectic transfer to the frozen pilot row.",
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-contract",
+      "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json",
+      "expectedSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "actualSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "hashMatches": true
+    },
+    {
+      "id": "phase534-summary",
+      "path": "studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json",
+      "expectedSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "actualSha256": "8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-summary",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json",
+      "expectedSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "actualSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "hashMatches": true
+    },
+    {
+      "id": "phase537-summary",
+      "path": "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json",
+      "expectedSha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516",
+      "actualSha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-summary",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json",
+      "expectedSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "actualSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "hashMatches": true
+    },
+    {
+      "id": "phase540-contract",
+      "path": "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/preregistration/phase540_reduced_to_complete_lattice_transfer_readiness_contract_v1.json",
+      "expectedSha256": "a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857",
+      "actualSha256": "a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857",
+      "hashMatches": true
+    },
+    {
+      "id": "phase540-program",
+      "path": "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/Program.cs",
+      "expectedSha256": "ed0ac2b8e2d60d5d7194bf390ccec655597a65bee89951a14f32ef265a54caef",
+      "actualSha256": "ed0ac2b8e2d60d5d7194bf390ccec655597a65bee89951a14f32ef265a54caef",
+      "hashMatches": true
+    },
+    {
+      "id": "phase540-summary",
+      "path": "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json",
+      "expectedSha256": "14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236",
+      "actualSha256": "14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator-source",
+      "path": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+      "expectedSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "actualSha256": "cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ]
+}

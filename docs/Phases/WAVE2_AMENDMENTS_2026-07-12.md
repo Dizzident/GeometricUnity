@@ -849,3 +849,158 @@ authorize source-contract application, or permit a physical-unit or GeV
 claim. A later separately frozen transfer-readiness adjudicator is required
 before any complete-lattice experiment. External review remains pending and
 `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A25 — reduced-to-complete-lattice transfer-readiness adjudication (2026-07-22)
+
+Phase539 independently confirmed the fixed Phase538 row on the exact-bound
+one-dimensional reduced target. That result does not establish that the row,
+integrator behavior, diagnostics, or resource envelope transfer to the
+Phase533 bounded complete lattice. This amendment authorizes one dependent,
+deterministic, zero-sampling adjudicator. Its contract and ordered terminal
+taxonomy must be frozen before precursor consumption.
+
+1. **Phase540 — transfer-readiness adjudicator.** Exact-bind the Phase533 and
+   Phase535 pilot identity/refusal record, the Phase537 deterministic scalar
+   audit, and the Phase538-539 fixed-row evidence. Evaluate in fail-closed
+   precedence: input integrity; independent reduced-row confirmation; an
+   explicit reduced-to-complete-lattice target and integrator mapping; a
+   deterministic complete-lattice force, gradient, reversibility, and finite
+   energy-scaling oracle; an executable bounded-pilot branch; hardened
+   complete-lattice diagnostic and independent-seed acquisition rules; and a
+   bounded resource/topology envelope. Report the earliest missing
+   prerequisite and name the smallest admissible successor experiment. Do not
+   execute HMC, retain configurations, or mutate Phase535.
+
+Phase540 can authorize only the construction of a later prospectively frozen
+control phase when every readiness gate closes. It cannot itself reopen or
+execute Phase535, infer a transfer theorem from scalar evidence, change the
+Phase533 pilot row, create or modify a Phase481 pack, select a production
+default, satisfy Phase458 G3/G4/G5, discharge O4, authorize source-contract
+application, or permit a physical-unit or GeV claim. Failed and missing gates
+are first-class outputs, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`.
+
+## Amendment A26 — deterministic complete-lattice integrator-transfer control (2026-07-22)
+
+Phase540 located the earliest transfer blocker: no exact-bound artifact maps
+the Phase538/539 one-dimensional target and `0.25 x 8` row to the Phase533
+extent-three complete-lattice pilot and its `0.0125 x 6` row. This amendment
+authorizes one prospectively frozen, deterministic, zero-sampling control.
+
+1. **Phase541 — complete-lattice embedding and integrator control.** Exact-bind
+   the Phase533 pilot contract, the Phase534 registered reduction, the
+   Phase535 refusal record, the Phase537 deterministic scalar audit, the
+   Phase539 selected-row confirmation, and the Phase540 transfer verdict.
+   Reconstruct the registered theta-zero SD2 extent-three operator. Before its
+   first execution, freeze a deterministic state/momentum menu, resource
+   ceiling, finite-difference tolerances, forward/reverse tolerances,
+   step-halving requirements, and terminal precedence. Audit the explicit
+   scalar-to-complete-lattice embedding, including its induced kinetic metric;
+   compare the scalar derivative with the full analytic force; test whether
+   transverse force preserves the embedded ray; and exercise the reduced and
+   pilot integrator rows only as deterministic complete-lattice trajectories.
+   Any metric mismatch, transverse force, non-finite trajectory, failed
+   reversibility, or failed energy scaling is preserved as a transfer failure.
+
+Phase541 performs no RNG, HMC accept/reject step, sampling, warmup, adaptation,
+or configuration retention. It cannot reopen, execute, or mutate Phase535;
+change either frozen integrator row; create or modify a Phase481 pack; select a
+production default; satisfy Phase458 G3/G4/G5; discharge O4; fill a source
+contract; or authorize production, launch, a physical-unit claim, or a GeV
+claim. A positive deterministic result would establish only control readiness
+for a separately frozen later adjudicator. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+## Amendment A27 — force-closure and bounded-pilot readiness tranche (2026-07-25)
+
+Phase541 ruled out direct symplectic transfer of the independently confirmed
+one-dimensional row. Its complete-lattice gradient and deterministic
+integrator controls passed, but the raw witness has induced kinetic metric
+three rather than one and the complete-lattice force has a nonzero transverse
+component. This amendment authorizes three dependent, prospectively frozen,
+deterministic, zero-sampling phases. Each dependent contract must be frozen
+after its required precursor exists but before it consumes that precursor.
+
+1. **Phase542 — metric-normalized force/Jacobian closure census.** Exact-bind
+   the immutable Phase541 contract, program, and summary, the Phase534
+   registered reduction, and the complete-lattice gradient source. Normalize
+   the witness direction to unit Euclidean kinetic metric and verify the
+   coordinate/action/force transformation. Starting from that direction,
+   construct a deterministic orthonormal closure under complete-lattice force
+   snapshots and finite-difference Jacobian-vector actions on a frozen
+   amplitude menu. Freeze orthogonalization, sign, rank, residual, dimension,
+   round, and resource rules before execution. A compact survivor requires
+   residual closure within tolerance before the dimension cap; reaching the
+   cap or round limit with unresolved residual is an expanding closure, not a
+   compact model.
+2. **Phase543 — branch-selected deterministic transfer experiment.** Freeze
+   both branches and their precedence before consuming Phase542. If Phase542
+   establishes a compact closure, independently reconstruct and
+   metric-whiten that subspace and compare projected trajectories with the
+   complete-lattice flow over a frozen state/momentum/time menu. Otherwise run
+   a deterministic complete-lattice multi-state step-halving stability grid
+   with fixed positions and momenta. Every branch requires finite evaluation,
+   forward/reverse recovery, energy-error improvement, and branch-specific
+   residual checks. No branch may reinterpret the Phase539 scalar row as a
+   complete-lattice tuning result.
+3. **Phase544 — bounded-pilot readiness adjudicator.** Exact-bind Phases540-543
+   and evaluate, in frozen order: input integrity; resolved closure branch;
+   deterministic complete-lattice force and integrator evidence; an executable
+   bounded-pilot implementation distinct from the historically closed
+   Phase535; hardened complete-lattice diagnostics; disjoint prospective seed
+   and checkpoint rules; and executable resource/topology refusal evidence.
+   Report the earliest missing prerequisite and the smallest admissible
+   successor. A deterministic pass may authorize only later pack construction,
+   never sampling or launch.
+
+A27 performs no RNG, HMC accept/reject step, sampling, warmup, adaptation,
+benchmark, or configuration retention. It does not reopen, execute, mutate, or
+reinterpret Phase535; create or modify a Phase481 pack; select a production
+default; satisfy Phase458 G3/G4/G5; discharge O4; fill a source contract; or
+authorize production, launch, a physical-unit claim, or a GeV claim. Failed,
+expanding, and unresolved outcomes are first-class artifacts. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A28 — bounded complete-lattice pilot pack construction (2026-07-25)
+
+Phase544 closes the force-closure branch, deterministic complete-lattice
+gradient oracle, and multi-state integrator controls. Its earliest missing
+gate is a new executable bounded-pilot implementation distinct from the
+historically closed Phase535, followed by hardened diagnostics, disjoint
+prospective seeds and checkpoint rules, and executable resource/topology
+refusal evidence. This amendment authorizes two independent construction
+phases and one dependent adjudicator. It does not authorize pilot execution.
+
+1. **Phase545 — injectable deterministic HMC kernel materialization.**
+   Exact-bind Phases543-544 and the complete-lattice gradient source. Construct
+   a reusable bounded-pilot kernel with explicit position/momentum inputs,
+   leapfrog proposal, Hamiltonian accounting, deterministic injected
+   accept/reject threshold, non-finite/divergence telemetry, and preallocation
+   refusal. Before its first execution freeze deterministic accept, reject,
+   reversal, corruption, and resource-boundary fixtures. The phase may execute
+   only injected single-proposal fixtures: it may not instantiate an RNG,
+   advance a Markov chain, perform warmup, or retain a sampled configuration.
+2. **Phase546 — diagnostics, seed, checkpoint, and resource-refusal pack.**
+   Exact-bind Phase533's historical seed/resource contract and Phase544.
+   Freeze new seed tables disjoint from every A22-A24 seed family, a complete-
+   lattice telemetry schema, canonical configuration-level checkpoint format
+   with checksum and exact restart state, and CPU/memory/topology refusal
+   arithmetic. Execute only synthetic schema, round-trip, mutation-refusal,
+   seed-disjointness, and boundary fixtures. No registered-operator proposal or
+   sampling may run.
+3. **Phase547 — bounded-pilot pack-readiness adjudicator.** Exact-bind and
+   independently validate Phases545-546 against Phase544's four missing gates:
+   executable implementation, hardened diagnostics, prospective seeds plus
+   checkpoint codec, and executable resource/topology refusal. Frozen
+   precedence must preserve the earliest failure. A fully green result may
+   authorize only a separately registered and prospectively frozen bounded-
+   pilot execution phase; it cannot itself launch that phase.
+
+A28 performs no stochastic RNG draw, Markov-chain advance, warmup, adaptation,
+sampling, benchmark, or sampled-configuration retention. Deterministically
+injected proposal fixtures are implementation tests, not HMC evidence. A28
+does not reopen, execute, mutate, or reinterpret Phase535; create or modify a
+Phase481 pack; select a production default; satisfy Phase458 G3/G4/G5;
+discharge O4; fill a source contract; or authorize production, launch, a
+physical-unit claim, or a GeV claim. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.

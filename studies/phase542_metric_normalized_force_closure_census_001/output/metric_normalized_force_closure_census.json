@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "phase": 542,
+  "phaseId": "phase542-metric-normalized-force-closure-census",
+  "contractId": "phase542-a27-metric-normalized-force-closure-census-v1",
+  "contractSha256": "884f38e9852db54625474ef62739d6b36809f608fb294b727fe8bab589af794a",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "resourceAccepted": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "hmcOrSamplingPerformed": false,
+  "configurationsRetained": false,
+  "completeLattice": {
+    "extent": 3,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "omegaDegreesOfFreedom": 3645
+  },
+  "metricNormalization": {
+    "rawNormSquared": 3,
+    "normalizedNormSquared": 1.0000000000000002,
+    "coordinateRule": "q=sqrt(3)*x; omega=q*r/sqrt(3)",
+    "maxActionReplayError": 0,
+    "maxForceTransformError": 0,
+    "passed": true
+  },
+  "forceClosure": {
+    "basisDimension": 24,
+    "maximumDimension": 24,
+    "maximumCompactDimension": 12,
+    "maximumRounds": 3,
+    "stabilized": false,
+    "residualClosed": false,
+    "maxForceResidual": 5.111636967349556E-11,
+    "maxJacobianResidual": 0.42957271817081416,
+    "closureTolerance": 2E-07,
+    "compactClosureFound": false,
+    "roundRows": [
+      {
+        "round": 0,
+        "startDimension": 1,
+        "added": 3,
+        "endDimension": 4
+      },
+      {
+        "round": 1,
+        "startDimension": 4,
+        "added": 9,
+        "endDimension": 13
+      },
+      {
+        "round": 2,
+        "startDimension": 13,
+        "added": 11,
+        "endDimension": 24
+      }
+    ]
+  },
+  "basisDigest": "73a0640a208000f778dac1ac062c9c0c57bf6b32ddac1e59a6e89d3478758848",
+  "verdictKind": "force-closure-expands-beyond-compact-limit",
+  "terminalStatus": "metric-normalized-force-closure-census-force-closure-expands-beyond-compact-limit",
+  "decision": "Metric normalization is exact, but the frozen force/Jacobian closure did not stabilize within the compact dimension and round limits; scalar or compact-surrogate transfer is not supported.",
+  "laterDeterministicExperimentAuthorized": true,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase534-contract",
+      "path": "studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json",
+      "expectedSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "actualSha256": "f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698",
+      "hashMatches": true
+    },
+    {
+      "id": "phase541-contract",
+      "path": "studies/phase541_complete_lattice_integrator_transfer_control_001/preregistration/phase541_complete_lattice_integrator_transfer_control_contract_v1.json",
+      "expectedSha256": "f4d02b7b9158dbff7a26c04e632320b7dc9d8871ee31a1a0fa5cdc9098dae78c",
+      "actualSha256": "f4d02b7b9158dbff7a26c04e632320b7dc9d8871ee31a1a0fa5cdc9098dae78c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase541-program",
+      "path": "studies/phase541_complete_lattice_integrator_transfer_control_001/Program.cs",
+      "expectedSha256": "cd64a6d20cb3112e5696a9caffeba7847b4bc657a09612d511ecc46ec380d691",
+      "actualSha256": "cd64a6d20cb3112e5696a9caffeba7847b4bc657a09612d511ecc46ec380d691",
+      "hashMatches": true
+    },
+    {
+      "id": "phase541-summary",
+      "path": "studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json",
+      "expectedSha256": "9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246",
+      "actualSha256": "9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ]
+}

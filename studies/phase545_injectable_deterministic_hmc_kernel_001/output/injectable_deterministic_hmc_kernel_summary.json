@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 3,
+  "phase": 545,
+  "phaseId": "phase545-injectable-deterministic-hmc-kernel",
+  "contractId": "phase545-a28-injectable-deterministic-hmc-kernel-repair-v3",
+  "contractSha256": "cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9",
+  "kernelSha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa",
+  "contractValid": true,
+  "rulesValid": true,
+  "fixtureRulesValid": true,
+  "firewallInventoryValid": true,
+  "preReviewBindingsValid": true,
+  "interimV2BindingsValid": true,
+  "upstreamBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "originalPositiveResultCitable": false,
+  "interimCorrectedExecutionCitable": false,
+  "v2RepairResultCitable": false,
+  "frozenBeforeCorrectedExecution": true,
+  "frozenBeforeFinalCorrectedExecution": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "markovChainAdvanced": false,
+  "warmupPerformed": false,
+  "adaptationPerformed": false,
+  "samplingPerformed": false,
+  "configurationsRetained": false,
+  "benchmarkPerformed": false,
+  "pilotExecuted": false,
+  "pilotExecutionAuthorized": false,
+  "hmcEvidenceEstablished": false,
+  "acceptanceRateEstablished": false,
+  "stationarityEstablished": false,
+  "detailedBalanceEstablished": false,
+  "mixingEstablished": false,
+  "convergenceEstablished": false,
+  "observableEstimateProduced": false,
+  "completeLattice": {
+    "extent": 3,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "omegaDegreesOfFreedom": 3645
+  },
+  "fixtures": {
+    "resourceRefusal": {
+      "passed": true,
+      "resourceRefused": true,
+      "workRefused": false,
+      "divergent": false,
+      "refusalReason": "maximum-working-bytes-exceeded",
+      "evaluatorCalls": 0,
+      "forceEvaluationCount": 0,
+      "estimatedWorkingBytes": 87480
+    },
+    "workRefusal": {
+      "passed": true,
+      "resourceRefused": false,
+      "workRefused": true,
+      "divergent": false,
+      "refusalReason": "maximum-leapfrog-steps-exceeded",
+      "evaluatorCalls": 0,
+      "forceEvaluationCount": 0,
+      "estimatedForceEvaluations": 18
+    },
+    "corruption": {
+      "passed": true,
+      "finite": false,
+      "divergent": true,
+      "accepted": false,
+      "forceEvaluationCount": 1
+    },
+    "invalidGradientLength": {
+      "passed": true,
+      "finite": false,
+      "divergent": true,
+      "accepted": false,
+      "evaluatorCalls": 1
+    },
+    "intermediateOverflow": {
+      "passed": true,
+      "finite": false,
+      "divergent": true,
+      "evaluatorCalls": 1,
+      "forceEvaluationCount": 1
+    },
+    "divergentNotAccepted": {
+      "passed": true,
+      "finite": true,
+      "divergent": true,
+      "accepted": false,
+      "deltaHamiltonian": -200,
+      "logAcceptanceIsNegativeInfinity": true,
+      "evaluatorCalls": 2
+    },
+    "exactAcceptBoundary": {
+      "passed": true,
+      "accepted": true,
+      "deltaHamiltonian": 0,
+      "injectedLogUniformThreshold": 0,
+      "logAcceptanceThreshold": -0
+    },
+    "accept": {
+      "passed": true,
+      "accepted": true,
+      "finite": true,
+      "divergent": false,
+      "deltaHamiltonian": 5.728871804028257E-12,
+      "injectedLogUniformThreshold": -100,
+      "logAcceptanceThreshold": -5.728871804028257E-12,
+      "forceEvaluationCount": 5
+    },
+    "reject": {
+      "passed": true,
+      "accepted": false,
+      "finite": true,
+      "divergent": false,
+      "deltaHamiltonian": 1.1511323891770248E-05,
+      "injectedLogUniformThreshold": 0,
+      "logAcceptanceThreshold": -1.1511323891770248E-05,
+      "rejectionReturnedInjectedPosition": true,
+      "forceEvaluationCount": 5
+    },
+    "reversal": {
+      "passed": true,
+      "forwardFinite": true,
+      "reverseFinite": true,
+      "scaledError": 9.834157466363251E-19,
+      "tolerance": 2E-09
+    }
+  },
+  "reusableKernelV3Repaired": true,
+  "verdictKind": "injectable-deterministic-hmc-kernel-v3-repaired",
+  "terminalStatus": "injectable-deterministic-hmc-kernel-injectable-deterministic-hmc-kernel-v3-repaired",
+  "decision": "The prospectively frozen fail-closed v3 repair fixtures pass. The v1 and interim v2 results remain non-citable. This remains deterministic kernel implementation evidence only; no pilot, HMC evidence, acceptance rate, stationarity, detailed balance, mixing, convergence, or observable estimate is established.",
+  "laterDependentPackReadinessAdjudicationAllowed": true,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "preReviewBindings": [
+    {
+      "id": "v1-program",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/Program.cs",
+      "expectedSha256": "c41d8e66ac6c2ea8e7a0c4551a9fe45832cc59e71e6206d89d9842f9dc2790ce",
+      "actualSha256": "c41d8e66ac6c2ea8e7a0c4551a9fe45832cc59e71e6206d89d9842f9dc2790ce",
+      "hashMatches": true
+    },
+    {
+      "id": "v1-kernel",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/PilotKernel.cs",
+      "expectedSha256": "1ec39db252fab639a8399ebaad49ceaba5a14dbb51fd00003bf48a46d453b951",
+      "actualSha256": "1ec39db252fab639a8399ebaad49ceaba5a14dbb51fd00003bf48a46d453b951",
+      "hashMatches": true
+    },
+    {
+      "id": "v1-contract",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/phase545_injectable_deterministic_hmc_kernel_contract_v1.json",
+      "expectedSha256": "0d99b7f37a3dd435489316043a42c97a6ec221b148a0da2020967a1efe8f1327",
+      "actualSha256": "0d99b7f37a3dd435489316043a42c97a6ec221b148a0da2020967a1efe8f1327",
+      "hashMatches": true
+    },
+    {
+      "id": "v1-output",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/injectable_deterministic_hmc_kernel.json",
+      "expectedSha256": "e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b",
+      "actualSha256": "e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b",
+      "hashMatches": true
+    },
+    {
+      "id": "v1-summary",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/injectable_deterministic_hmc_kernel_summary.json",
+      "expectedSha256": "e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b",
+      "actualSha256": "e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b",
+      "hashMatches": true
+    }
+  ],
+  "interimV2Bindings": [
+    {
+      "id": "v2-program",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/Program.cs",
+      "expectedSha256": "c9292f76ba6777f10806ae477b5447c71f8c10d4e12d327297f41e70d86eb2b0",
+      "actualSha256": "c9292f76ba6777f10806ae477b5447c71f8c10d4e12d327297f41e70d86eb2b0",
+      "hashMatches": true
+    },
+    {
+      "id": "v2-kernel",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/PilotKernel.cs",
+      "expectedSha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa",
+      "actualSha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa",
+      "hashMatches": true
+    },
+    {
+      "id": "v2-contract",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/phase545_injectable_deterministic_hmc_kernel_repair_contract_v2.json",
+      "expectedSha256": "d61ef6994955adaa775e5171e1bbd430530a091ccba0d6978512d65886776872",
+      "actualSha256": "d61ef6994955adaa775e5171e1bbd430530a091ccba0d6978512d65886776872",
+      "hashMatches": true
+    },
+    {
+      "id": "v2-output",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/injectable_deterministic_hmc_kernel.json",
+      "expectedSha256": "64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1",
+      "actualSha256": "64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1",
+      "hashMatches": true
+    },
+    {
+      "id": "v2-summary",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/injectable_deterministic_hmc_kernel_summary.json",
+      "expectedSha256": "64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1",
+      "actualSha256": "64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1",
+      "hashMatches": true
+    }
+  ],
+  "upstreamBindings": [
+    {
+      "id": "phase543-summary",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json",
+      "expectedSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "actualSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-contract",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json",
+      "expectedSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "actualSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-program",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs",
+      "expectedSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "actualSha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase544-summary",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json",
+      "expectedSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "actualSha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ]
+}

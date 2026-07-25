@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase541-a26-complete-lattice-integrator-transfer-control-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A26",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase534-contract","path":"studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json","sha256":"f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698"},
+    {"id":"phase534-summary","path":"studies/phase534_nested_control_battery_001/output/nested_control_battery_summary.json","sha256":"8eddc68125122b2d834e28095f1ccab374bd403dbb2a6b7321a25a4b57a4aef9"},
+    {"id":"phase535-summary","path":"studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json","sha256":"91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849"},
+    {"id":"phase537-summary","path":"studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json","sha256":"74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516"},
+    {"id":"phase539-summary","path":"studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json","sha256":"79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495"},
+    {"id":"phase540-contract","path":"studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/preregistration/phase540_reduced_to_complete_lattice_transfer_readiness_contract_v1.json","sha256":"a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857"},
+    {"id":"phase540-program","path":"studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/Program.cs","sha256":"ed0ac2b8e2d60d5d7194bf390ccec655597a65bee89951a14f32ef265a54caef"},
+    {"id":"phase540-summary","path":"studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json","sha256":"14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236"},
+    {"id":"registered-operator-source","path":"studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs","sha256":"cde90817a25a93c803b8b3209bbffa892bbc6bfdb78c792e05a9b068875638b0"},
+    {"id":"complete-lattice-gradient-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+  "registeredTarget": {"member":"sd2-id0/c0.5","beta":1.0,"extent":3,"thetaRule":"theta-identically-zero","expectedRawEmbeddingNormSquared":3.0,"reducedScalarKineticMetric":1.0},
+  "deterministicMenu": {
+    "embeddingStates":[-1.0,-0.5,0.5,1.0],
+    "finiteDifferenceRelativeStep":1e-6,
+    "finiteDifferenceScaledTolerance":2e-7,
+    "actionReplayRelativeTolerance":1e-10,
+    "kineticMetricTolerance":1e-12,
+    "transverseForceRelativeTolerance":1e-10,
+    "forwardReverseScaledTolerance":2e-9,
+    "minimumAdjacentEnergyImprovement":1.5,
+    "selectedRowLadder":[{"stepSize":0.25,"leapfrogSteps":8},{"stepSize":0.125,"leapfrogSteps":16},{"stepSize":0.0625,"leapfrogSteps":32}],
+    "pilotRowLadder":[{"stepSize":0.0125,"leapfrogSteps":6},{"stepSize":0.00625,"leapfrogSteps":12},{"stepSize":0.003125,"leapfrogSteps":24}]
+  },
+  "resourceRefusal":{"maximumEstimatedAggregateCpuSeconds":180,"maximumEstimatedPeakBytes":536870912,"estimatedAggregateCpuSeconds":120,"estimatedPeakBytes":268435456,"refuseBeforeAllocationOnEstimateExceedance":true},
+  "terminalTaxonomyInPrecedenceOrder":[
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "embedding-action-reconstruction-failed",
+    "embedding-kinetic-metric-mismatch",
+    "analytic-force-parity-failed",
+    "embedded-ray-not-force-invariant",
+    "selected-row-complete-lattice-instability",
+    "pilot-row-deterministic-oracle-failed",
+    "deterministic-transfer-controls-passed"
+  ],
+  "authorityFirewalls":{"rngUsed":false,"hmcOrSamplingPerformed":false,"configurationsRetained":false,"phase535ExecutedReopenedOrMutated":false,"phase481PackCreatedOrMutated":false,"productionDefaultSelected":false,"phase458G3Satisfied":false,"phase458G4Satisfied":false,"phase458G5Satisfied":false,"o4Discharged":false,"sourceContractApplicationAllowed":false,"physicalUnitOrGevClaimAllowed":false,"productionOrLaunchAllowed":false},
+  "externalReviewPending":true,
+  "promotedPhysicalMassClaimCount":0
+}

@@ -1,0 +1,355 @@
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+
+const string Root = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001";
+const string ContractPath = Root + "/preregistration/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json";
+const string OutputPath = Root + "/output/pilot_diagnostics_checkpoint_resource_pack.json";
+const string SummaryPath = Root + "/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
+
+using var contractDocument = JsonDocument.Parse(File.ReadAllBytes(ContractPath));
+JsonElement contract = contractDocument.RootElement;
+var bindingSpecs = contract.GetProperty("exactBindings").EnumerateArray().Select(x => new
+{
+    Id = x.GetProperty("id").GetString()!,
+    Path = x.GetProperty("path").GetString()!,
+    ExpectedSha256 = x.GetProperty("sha256").GetString()!,
+}).ToArray();
+var bindings = bindingSpecs.Select(x =>
+{
+    string actual = File.Exists(x.Path) ? Sha(x.Path) : "missing";
+    return new { x.Id, x.Path, x.ExpectedSha256, ActualSha256 = actual, HashMatches = actual == x.ExpectedSha256 };
+}).ToArray();
+string[] bindingIds = ["phase533-contract", "phase538-contract", "phase539-contract", "phase539-summary", "phase544-contract", "phase544-program", "phase544-summary"];
+bool exactBindingsValid = bindingSpecs.Select(x => x.Id).SequenceEqual(bindingIds) && bindings.All(x => x.HashMatches);
+
+string[] trajectoryFields =
+[
+    "chainId", "trajectoryIndex", "phase", "accepted", "initialHamiltonian", "proposedHamiltonian",
+    "deltaH", "acceptanceProbability", "injectedThreshold", "nonFinite", "divergent",
+    "divergenceThreshold", "forceEvaluationCount", "maximumForceNorm", "proposalElapsedCpuTicks",
+];
+string[] chainFields =
+[
+    "chainId", "seed", "warmupCount", "retainedCount", "acceptanceRate", "nonFiniteCount",
+    "divergenceCount", "maximumAbsoluteDeltaH", "splitRankNormalizedRhat", "bulkEss", "tailEss",
+    "observableSchemaId", "observableMeans", "observableStandardErrors", "observableRhat",
+    "observableBulkEss", "checkpointSha256",
+];
+string[] restartFields =
+[
+    "formatId", "actionFingerprint", "packFingerprint", "topologyId", "extent", "dimensions",
+    "degreesOfFreedom", "beta", "thetaRule",
+    "chainId", "seed", "trajectoryIndex", "warmupCompleted", "retainedCompleted", "stepSize",
+    "leapfrogSteps", "rngAlgorithm", "rngStateWords", "position",
+];
+string[] fixtureIds =
+[
+    "schema-valid", "observable-schema-valid", "checkpoint-roundtrip", "checkpoint-mutation-refused",
+    "checkpoint-noncanonical-refused", "seeds-disjoint", "resource-below-boundary-accepted",
+    "resource-cpu-boundary-refused", "resource-memory-boundary-refused", "resource-topology-refused",
+    "resource-dimension-refused", "resource-max-chain-refused", "resource-overflow-refused",
+];
+string[] taxonomy =
+[
+    "invalid-or-drifted-input", "schema-fixture-failed", "checkpoint-fixture-failed",
+    "seed-disjointness-fixture-failed", "resource-refusal-fixture-failed",
+    "pilot-support-pack-materialized",
+];
+JsonElement telemetry = contract.GetProperty("telemetrySchema");
+JsonElement checkpoint = contract.GetProperty("checkpointSchema");
+JsonElement resource = contract.GetProperty("resourceRefusal");
+bool contractValid =
+    contract.GetProperty("schemaVersion").GetInt32() == 1
+    && contract.GetProperty("contractId").GetString() == "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-v1"
+    && contract.GetProperty("planSection").GetString() == "WAVE2_AMENDMENTS_2026-07-12 A28"
+    && contract.GetProperty("frozenBeforeFirstExecution").GetBoolean()
+    && contract.GetProperty("syntheticFixturesOnly").GetBoolean()
+    && exactBindingsValid
+    && telemetry.GetProperty("trajectoryRequiredFields").EnumerateArray().Select(x => x.GetString()).SequenceEqual(trajectoryFields)
+    && telemetry.GetProperty("chainSummaryRequiredFields").EnumerateArray().Select(x => x.GetString()).SequenceEqual(chainFields)
+    && checkpoint.GetProperty("exactRestartFields").EnumerateArray().Select(x => x.GetString()).SequenceEqual(restartFields)
+    && contract.GetProperty("fixtureIds").EnumerateArray().Select(x => x.GetString()).SequenceEqual(fixtureIds)
+    && contract.GetProperty("terminalTaxonomyInPrecedenceOrder").EnumerateArray().Select(x => x.GetString()).SequenceEqual(taxonomy)
+    && contract.GetProperty("authorityFirewalls").EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && contract.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0;
+
+bool schemaValid = trajectoryFields.Distinct().Count() == trajectoryFields.Length
+    && chainFields.Distinct().Count() == chainFields.Length
+    && restartFields.Distinct().Count() == restartFields.Length
+    && checkpoint.GetProperty("formatId").GetString() == "gu-complete-lattice-checkpoint-v1"
+    && checkpoint.GetProperty("checksumAlgorithm").GetString() == "SHA-256"
+    && checkpoint.GetProperty("rejectChecksumMismatch").GetBoolean()
+    && checkpoint.GetProperty("rejectNonCanonicalPayload").GetBoolean()
+    && telemetry.GetProperty("convergenceThresholds").GetProperty("maximumSplitRankNormalizedRhat").GetDouble() == 1.01
+    && telemetry.GetProperty("convergenceThresholds").GetProperty("minimumBulkEss").GetInt32() == 100
+    && telemetry.GetProperty("convergenceThresholds").GetProperty("minimumTailEss").GetInt32() == 100;
+bool observableSchemaValid = telemetry.GetProperty("observableSchema").GetProperty("schemaId").GetString()
+        == "complete-lattice-bounded-pilot-observables-v1"
+    && telemetry.GetProperty("observableSchema").GetProperty("requiredNames").EnumerateArray()
+        .Select(x => x.GetString()).SequenceEqual(["actionDensity", "forceNormSquared", "configurationNormSquared"]);
+
+var synthetic = new CheckpointState
+{
+    FormatId = "gu-complete-lattice-checkpoint-v1",
+    ActionFingerprint = checkpoint.GetProperty("actionFingerprint").GetString()!,
+    PackFingerprint = checkpoint.GetProperty("packFingerprint").GetString()!,
+    TopologyId = "periodic-hypercubic-4d",
+    Extent = 3,
+    Dimensions = 4,
+    DegreesOfFreedom = 3645,
+    Beta = 1.0,
+    ThetaRule = "theta-identically-zero",
+    ChainId = "synthetic-fixture-chain",
+    Seed = 546101,
+    TrajectoryIndex = 17,
+    WarmupCompleted = 12,
+    RetainedCompleted = 5,
+    StepSize = 0.0125,
+    LeapfrogSteps = 6,
+    RngAlgorithm = "xoshiro256-starstar",
+    RngStateWords = [11UL, 13UL, 17UL, 19UL],
+    Position = Enumerable.Range(0, 3645).Select(i => i == 0 ? 0.125 : (i % 17 - 8) / 32.0).ToArray(),
+};
+byte[] encoded = CheckpointCodec.Encode(synthetic);
+CheckpointState decoded = CheckpointCodec.Decode(encoded);
+bool checkpointRoundtrip = CheckpointCodec.CanonicalPayload(synthetic).AsSpan()
+    .SequenceEqual(CheckpointCodec.CanonicalPayload(decoded));
+
+byte[] mutated = (byte[])encoded.Clone();
+int mutationIndex = Encoding.UTF8.GetString(mutated).IndexOf("0.125", StringComparison.Ordinal);
+if (mutationIndex >= 0) mutated[mutationIndex + 2] = (byte)'2';
+bool mutationRefused = ThrowsInvalidData(() => CheckpointCodec.Decode(mutated));
+
+byte[] nonCanonicalPayload = NonCanonicalPayload(synthetic);
+byte[] nonCanonicalEnvelope = Envelope(nonCanonicalPayload);
+bool nonCanonicalRefused = ThrowsInvalidData(() => CheckpointCodec.Decode(nonCanonicalEnvelope));
+bool checkpointFixturesPassed = checkpointRoundtrip && mutationIndex >= 0 && mutationRefused && nonCanonicalRefused;
+
+int[] priorRaw = contract.GetProperty("priorSeedCensus").GetProperty("rawSeeds").EnumerateArray().Select(x => x.GetInt32()).ToArray();
+int[] priorExecution = contract.GetProperty("priorSeedCensus").GetProperty("executionSeeds").EnumerateArray().Select(x => x.GetInt32()).ToArray();
+var newTables = contract.GetProperty("prospectiveSeedTables").EnumerateArray().Select(x => new
+{
+    Id = x.GetProperty("id").GetString()!,
+    Offset = x.GetProperty("seedOffset").GetInt32(),
+    Seeds = x.GetProperty("seeds").EnumerateArray().Select(y => y.GetInt32()).ToArray(),
+}).ToArray();
+int[] newRaw = newTables.SelectMany(x => x.Seeds).ToArray();
+int[] newExecution = newTables.SelectMany(x => x.Seeds.Select(seed => checked(seed + x.Offset))).ToArray();
+bool seedsDisjoint = priorRaw.Length == 20 && priorExecution.Length == 20
+    && newTables.Length == 2 && newTables.All(x => x.Seeds.Length == 4)
+    && newRaw.Distinct().Count() == newRaw.Length && newExecution.Distinct().Count() == newExecution.Length
+    && !newRaw.Intersect(newExecution).Any()
+    && !newRaw.Intersect(priorRaw).Any() && !newRaw.Intersect(priorExecution).Any()
+    && !newExecution.Intersect(priorRaw).Any() && !newExecution.Intersect(priorExecution).Any();
+
+long maximumCpu = resource.GetProperty("maximumAggregateCpuTicks").GetInt64();
+long maximumMemory = resource.GetProperty("maximumPeakBytes").GetInt64();
+var below = Assess(new ResourceRequest("periodic-hypercubic-4d", 4, 3, 2, 3645, 100, 6), resource);
+var cpuBoundary = Assess(new ResourceRequest("periodic-hypercubic-4d", 4, 3, 4, 3645, 444, 6), resource);
+var memoryBoundary = Assess(new ResourceRequest("periodic-hypercubic-4d", 4, 3, 4, 3645, 100, 6), resource);
+var invalidTopology = Assess(new ResourceRequest("open-hypercubic-4d", 4, 3, 2, 3645, 100, 6), resource);
+var invalidDimension = Assess(new ResourceRequest("periodic-hypercubic-4d", 3, 3, 2, 3645, 100, 6), resource);
+var excessiveChains = Assess(new ResourceRequest("periodic-hypercubic-4d", 4, 3, 9, 3645, 10, 1), resource);
+var overflow = Assess(new ResourceRequest("periodic-hypercubic-4d", 4, 3, int.MaxValue, 3645, int.MaxValue, int.MaxValue), resource);
+bool resourceFixturesPassed = below.Allowed
+    && cpuBoundary.EstimatedCpuTicks == maximumCpu && cpuBoundary.RefusalReason == "cpu-boundary-or-limit-exceeded"
+    && memoryBoundary.EstimatedPeakBytes == maximumMemory && memoryBoundary.RefusalReason == "memory-boundary-or-limit-exceeded"
+    && invalidTopology.RefusalReason == "topology-mismatch"
+    && invalidDimension.RefusalReason == "dimension-mismatch"
+    && excessiveChains.RefusalReason == "invalid-shape"
+    && overflow.RefusalReason == "checked-arithmetic-overflow";
+
+var fixtures = new[]
+{
+    new Fixture(fixtureIds[0], schemaValid),
+    new Fixture(fixtureIds[1], observableSchemaValid),
+    new Fixture(fixtureIds[2], checkpointRoundtrip),
+    new Fixture(fixtureIds[3], mutationRefused),
+    new Fixture(fixtureIds[4], nonCanonicalRefused),
+    new Fixture(fixtureIds[5], seedsDisjoint),
+    new Fixture(fixtureIds[6], below.Allowed),
+    new Fixture(fixtureIds[7], cpuBoundary.EstimatedCpuTicks == maximumCpu && !cpuBoundary.Allowed),
+    new Fixture(fixtureIds[8], memoryBoundary.EstimatedPeakBytes == maximumMemory && !memoryBoundary.Allowed),
+    new Fixture(fixtureIds[9], invalidTopology.RefusalReason == "topology-mismatch"),
+    new Fixture(fixtureIds[10], invalidDimension.RefusalReason == "dimension-mismatch"),
+    new Fixture(fixtureIds[11], excessiveChains.RefusalReason == "invalid-shape"),
+    new Fixture(fixtureIds[12], overflow.RefusalReason == "checked-arithmetic-overflow"),
+};
+string verdict = !contractValid ? taxonomy[0]
+    : !schemaValid || !observableSchemaValid ? taxonomy[1]
+    : !checkpointFixturesPassed ? taxonomy[2]
+    : !seedsDisjoint ? taxonomy[3]
+    : !resourceFixturesPassed ? taxonomy[4]
+    : taxonomy[5];
+
+var output = new
+{
+    schemaVersion = 1,
+    phase = 546,
+    phaseId = "phase546-pilot-diagnostics-checkpoint-resource-pack",
+    contractId = contract.GetProperty("contractId").GetString(),
+    contractSha256 = Sha(ContractPath),
+    contractValid,
+    exactBindingsValid,
+    bindings,
+    syntheticFixturesOnly = true,
+    schemaValid,
+    telemetrySchema = new
+    {
+        trajectoryRequiredFields = trajectoryFields,
+        chainSummaryRequiredFields = chainFields,
+        convergenceThresholdsFrozen = true,
+        observableSchemaValid,
+        completeLatticeTelemetryFrozen = schemaValid,
+    },
+    checkpointCodec = new
+    {
+        formatId = checkpoint.GetProperty("formatId").GetString(),
+        checksumAlgorithm = "SHA-256",
+        exactRestartFields = restartFields,
+        syntheticEncodedSha256 = Convert.ToHexString(SHA256.HashData(encoded)).ToLowerInvariant(),
+        roundtripPassed = checkpointRoundtrip,
+        mutationRefused,
+        nonCanonicalPayloadRefused = nonCanonicalRefused,
+    },
+    seedPack = new
+    {
+        priorRawSeedCount = priorRaw.Length,
+        priorExecutionSeedCount = priorExecution.Length,
+        prospectiveTableCount = newTables.Length,
+        prospectiveRawSeeds = newRaw,
+        prospectiveExecutionSeeds = newExecution,
+        disjointFromAllA22ThroughA24SeedFamilies = seedsDisjoint,
+    },
+    resourceRefusal = new
+    {
+        below, cpuBoundary, memoryBoundary, invalidTopology, invalidDimension, excessiveChains, overflow,
+        allBoundaryFixturesPassed = resourceFixturesPassed,
+    },
+    fixtures,
+    passedFixtureCount = fixtures.Count(x => x.Passed),
+    allFixturesPassed = fixtures.All(x => x.Passed),
+    verdictKind = verdict,
+    terminalStatus = "pilot-diagnostics-checkpoint-resource-pack-" + verdict,
+    decision = verdict == taxonomy[5]
+        ? "The non-executing diagnostics, prospective-seed, canonical-checkpoint, and checked resource-refusal support pack is materialized for dependent Phase547 adjudication only."
+        : "The earliest frozen support-pack failure is preserved; no later pilot authority follows.",
+    rngUsed = false,
+    registeredOperatorProposalPerformed = false,
+    markovChainAdvanced = false,
+    warmupPerformed = false,
+    adaptationPerformed = false,
+    samplingPerformed = false,
+    benchmarkPerformed = false,
+    configurationsRetained = false,
+    phase535ExecutedReopenedOrMutated = false,
+    phase481PackCreatedOrMutated = false,
+    productionDefaultSelected = false,
+    phase458G3Satisfied = false,
+    phase458G4Satisfied = false,
+    phase458G5Satisfied = false,
+    o4Discharged = false,
+    sourceContractApplicationAllowed = false,
+    physicalUnitClaimAllowed = false,
+    gevClaimAllowed = false,
+    productionAuthorized = false,
+    launchAuthorized = false,
+    externalReviewPending = true,
+    allDownstreamAuthority = false,
+    promotedPhysicalMassClaimCount = 0,
+};
+Directory.CreateDirectory(Path.GetDirectoryName(OutputPath)!);
+var options = new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+byte[] outputBytes = JsonSerializer.SerializeToUtf8Bytes(output, options);
+File.WriteAllBytes(OutputPath, outputBytes);
+File.WriteAllBytes(SummaryPath, outputBytes);
+Console.WriteLine($"Phase546 verdict: {verdict}");
+Console.WriteLine($"fixtures={fixtures.Count(x => x.Passed)}/{fixtures.Length}, bindings={bindings.Count(x => x.HashMatches)}/{bindings.Length}");
+Console.WriteLine("rng=False, proposal=False, chain=False, sampling=False");
+
+static ResourceAssessment Assess(ResourceRequest request, JsonElement rules)
+{
+    string requiredTopology = rules.GetProperty("requiredTopologyId").GetString()!;
+    int requiredDimensions = rules.GetProperty("requiredDimensions").GetInt32();
+    int maximumChains = rules.GetProperty("maximumChains").GetInt32();
+    try
+    {
+        long cpu = checked((long)request.Chains * request.Trajectories * request.LeapfrogSteps
+            * request.DegreesOfFreedom * rules.GetProperty("cpuTicksPerForceDegreeOfFreedom").GetInt64());
+        long memory = checked((long)request.Chains * (rules.GetProperty("fixedBytesPerChain").GetInt64()
+            + checked((long)request.DegreesOfFreedom * rules.GetProperty("bytesPerDegreeOfFreedom").GetInt64())));
+        string? refusal = request.TopologyId != requiredTopology ? "topology-mismatch"
+            : request.Dimensions != requiredDimensions ? "dimension-mismatch"
+            : request.Extent <= 0 || request.Chains <= 0 || request.Chains > maximumChains
+                || request.DegreesOfFreedom != checked(45 * request.Extent * request.Extent * request.Extent * request.Extent)
+                || request.Trajectories <= 0 || request.LeapfrogSteps <= 0 ? "invalid-shape"
+            : cpu >= rules.GetProperty("maximumAggregateCpuTicks").GetInt64() ? "cpu-boundary-or-limit-exceeded"
+            : memory >= rules.GetProperty("maximumPeakBytes").GetInt64() ? "memory-boundary-or-limit-exceeded"
+            : null;
+        return new ResourceAssessment(refusal is null, refusal, cpu, memory);
+    }
+    catch (OverflowException)
+    {
+        return new ResourceAssessment(false, "checked-arithmetic-overflow", long.MaxValue, long.MaxValue);
+    }
+}
+
+static bool ThrowsInvalidData(Action action)
+{
+    try { action(); return false; }
+    catch (InvalidDataException) { return true; }
+}
+
+static byte[] NonCanonicalPayload(CheckpointState state)
+{
+    using var stream = new MemoryStream();
+    using (var writer = new Utf8JsonWriter(stream))
+    {
+        writer.WriteStartObject();
+        writer.WriteString("topologyId", state.TopologyId);
+        writer.WriteString("formatId", state.FormatId);
+        writer.WriteString("actionFingerprint", state.ActionFingerprint);
+        writer.WriteString("packFingerprint", state.PackFingerprint);
+        writer.WriteNumber("extent", state.Extent);
+        writer.WriteNumber("dimensions", state.Dimensions);
+        writer.WriteNumber("degreesOfFreedom", state.DegreesOfFreedom);
+        writer.WriteNumber("beta", state.Beta);
+        writer.WriteString("thetaRule", state.ThetaRule);
+        writer.WriteString("chainId", state.ChainId);
+        writer.WriteNumber("seed", state.Seed);
+        writer.WriteNumber("trajectoryIndex", state.TrajectoryIndex);
+        writer.WriteNumber("warmupCompleted", state.WarmupCompleted);
+        writer.WriteNumber("retainedCompleted", state.RetainedCompleted);
+        writer.WriteNumber("stepSize", state.StepSize);
+        writer.WriteNumber("leapfrogSteps", state.LeapfrogSteps);
+        writer.WriteString("rngAlgorithm", state.RngAlgorithm);
+        writer.WritePropertyName("rngStateWords");
+        JsonSerializer.Serialize(writer, state.RngStateWords);
+        writer.WritePropertyName("position");
+        JsonSerializer.Serialize(writer, state.Position);
+        writer.WriteEndObject();
+    }
+    return stream.ToArray();
+}
+
+static byte[] Envelope(byte[] payload)
+{
+    using var stream = new MemoryStream();
+    using (var writer = new Utf8JsonWriter(stream))
+    {
+        writer.WriteStartObject();
+        writer.WriteString("checksumAlgorithm", "SHA-256");
+        writer.WriteString("payloadSha256", Convert.ToHexString(SHA256.HashData(payload)).ToLowerInvariant());
+        writer.WritePropertyName("payload");
+        writer.WriteRawValue(payload);
+        writer.WriteEndObject();
+    }
+    return stream.ToArray();
+}
+
+static string Sha(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+
+sealed record Fixture(string Id, bool Passed);
+sealed record ResourceRequest(string TopologyId, int Dimensions, int Extent, int Chains, int DegreesOfFreedom, int Trajectories, int LeapfrogSteps);
+sealed record ResourceAssessment(bool Allowed, string? RefusalReason, long EstimatedCpuTicks, long EstimatedPeakBytes);

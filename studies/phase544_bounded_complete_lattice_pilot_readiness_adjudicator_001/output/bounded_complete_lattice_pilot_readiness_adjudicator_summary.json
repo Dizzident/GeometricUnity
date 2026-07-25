@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "phase": 544,
+  "phaseId": "phase544-bounded-complete-lattice-pilot-readiness-adjudicator",
+  "contractId": "phase544-a27-bounded-complete-lattice-pilot-readiness-v1",
+  "contractSha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "hmcOrSamplingPerformed": false,
+  "configurationsRetained": false,
+  "historicalPhase535StayedClosed": true,
+  "gates": [
+    {
+      "id": "resolved-force-closure-branch",
+      "passed": true,
+      "evidence": "Phase542 fixes the expanding-closure branch and Phase543 consumes the complete-lattice branch."
+    },
+    {
+      "id": "deterministic-complete-lattice-force-gradient-oracle",
+      "passed": true,
+      "evidence": "Phase542 metric normalization and Phase543 independent directional-gradient control."
+    },
+    {
+      "id": "deterministic-complete-lattice-multistate-integrator-controls",
+      "passed": true,
+      "evidence": "Phase543 multi-state/two-momentum step-halving grid."
+    },
+    {
+      "id": "new-executable-bounded-pilot-implementation",
+      "passed": false,
+      "evidence": "No exact-bound A27 artifact implements a new HMC accept/reject branch distinct from closed Phase535."
+    },
+    {
+      "id": "hardened-complete-lattice-diagnostics",
+      "passed": false,
+      "evidence": "No exact-bound A27 artifact freezes complete-lattice acceptance, divergence, convergence, and observable telemetry."
+    },
+    {
+      "id": "disjoint-prospective-seeds-and-checkpoint-rules",
+      "passed": false,
+      "evidence": "No exact-bound A27 artifact freezes new disjoint seeds and a configuration-level checkpoint codec."
+    },
+    {
+      "id": "executable-resource-topology-refusal",
+      "passed": false,
+      "evidence": "No executable pilot exists against which to validate CPU, memory, topology, and refusal arithmetic."
+    }
+  ],
+  "passedGateCount": 3,
+  "failedGateCount": 4,
+  "earliestMissingGate": "new-executable-bounded-pilot-implementation",
+  "allReadinessGatesClosed": false,
+  "laterBoundedPilotPackConstructionReady": false,
+  "verdictKind": "executable-bounded-pilot-implementation-missing",
+  "terminalStatus": "bounded-complete-lattice-pilot-readiness-executable-bounded-pilot-implementation-missing",
+  "decision": "The deterministic complete-lattice geometry, force, and integrator controls now pass, but no new prospectively frozen executable HMC pilot exists. The smallest successor is a non-executing pack-construction phase that binds implementation, telemetry, disjoint seeds, checkpoint codec, and resource refusal rules.",
+  "smallestAdmissibleSuccessor": "separately-registered-nonexecuting-bounded-pilot-pack-construction",
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase535-program",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Program.cs",
+      "expectedSha256": "bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187",
+      "actualSha256": "bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-summary",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json",
+      "expectedSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "actualSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "hashMatches": true
+    },
+    {
+      "id": "phase540-contract",
+      "path": "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/preregistration/phase540_reduced_to_complete_lattice_transfer_readiness_contract_v1.json",
+      "expectedSha256": "a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857",
+      "actualSha256": "a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857",
+      "hashMatches": true
+    },
+    {
+      "id": "phase540-summary",
+      "path": "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json",
+      "expectedSha256": "14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236",
+      "actualSha256": "14543c5276d7300e4d8b533908a33b33f6cb57c53262e694d219f71853e2a236",
+      "hashMatches": true
+    },
+    {
+      "id": "phase542-summary",
+      "path": "studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json",
+      "expectedSha256": "1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82",
+      "actualSha256": "1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82",
+      "hashMatches": true
+    },
+    {
+      "id": "phase543-contract",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/preregistration/phase543_branch_selected_deterministic_transfer_contract_v1.json",
+      "expectedSha256": "abf5392aac512b3e6fa9be9bcafe6c72c0ccee2dc287123463222ce22251a3b9",
+      "actualSha256": "abf5392aac512b3e6fa9be9bcafe6c72c0ccee2dc287123463222ce22251a3b9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase543-program",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/Program.cs",
+      "expectedSha256": "17839519a09f87dad4e143eeb4c8239dcb565201b616b3d5a6d01f50c601d6ef",
+      "actualSha256": "17839519a09f87dad4e143eeb4c8239dcb565201b616b3d5a6d01f50c601d6ef",
+      "hashMatches": true
+    },
+    {
+      "id": "phase543-summary",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json",
+      "expectedSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "actualSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "hashMatches": true
+    }
+  ]
+}

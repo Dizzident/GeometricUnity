@@ -412,6 +412,14 @@ dotnet run --no-build -c Release --project studies/phase536_trajectory_forensics
 dotnet run --no-build -c Release --project studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj
 dotnet run --no-build -c Release --project studies/phase539_independent_reduced_target_row_confirmation_001/Phase539IndependentReducedTargetRowConfirmation.csproj
+dotnet run --no-build -c Release --project studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/Phase540ReducedToCompleteLatticeTransferReadiness.csproj
+dotnet run --no-build -c Release --project studies/phase541_complete_lattice_integrator_transfer_control_001/Phase541CompleteLatticeIntegratorTransferControl.csproj
+dotnet run --no-build -c Release --project studies/phase542_metric_normalized_force_closure_census_001/Phase542MetricNormalizedForceClosureCensus.csproj
+dotnet run --no-build -c Release --project studies/phase543_complete_lattice_multistate_stability_grid_001/Phase543CompleteLatticeMultistateStabilityGrid.csproj
+dotnet run --no-build -c Release --project studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Phase544BoundedCompleteLatticePilotReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj
+dotnet run --no-build -c Release --project studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Phase546PilotDiagnosticsCheckpointResourcePack.csproj
+dotnet run --no-build -c Release --project studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

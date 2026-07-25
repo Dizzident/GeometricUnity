@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase542-a27-metric-normalized-force-closure-census-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A27",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase534-contract","path":"studies/phase534_nested_control_battery_001/preregistration/phase534_nested_control_contract_v1.json","sha256":"f06a7a40b87c0eb969d668bd53d664b91f4f23c9dedb39328d85d26f09694698"},
+    {"id":"phase541-contract","path":"studies/phase541_complete_lattice_integrator_transfer_control_001/preregistration/phase541_complete_lattice_integrator_transfer_control_contract_v1.json","sha256":"f4d02b7b9158dbff7a26c04e632320b7dc9d8871ee31a1a0fa5cdc9098dae78c"},
+    {"id":"phase541-program","path":"studies/phase541_complete_lattice_integrator_transfer_control_001/Program.cs","sha256":"cd64a6d20cb3112e5696a9caffeba7847b4bc657a09612d511ecc46ec380d691"},
+    {"id":"phase541-summary","path":"studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json","sha256":"9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246"},
+    {"id":"complete-lattice-gradient-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+  "registeredTarget": {"member":"sd2-id0/c0.5","beta":1.0,"extent":3,"thetaRule":"theta-identically-zero"},
+  "closureMenu": {
+    "rawEmbeddingNormSquared": 3.0,
+    "amplitudesInNormalizedCoordinate": [-1.7320508075688772,-0.8660254037844386,0.8660254037844386,1.7320508075688772],
+    "jacobianRelativeStep": 1e-5,
+    "orthogonalRankRelativeTolerance": 1e-9,
+    "closureResidualRelativeTolerance": 2e-7,
+    "coordinateReplayTolerance": 2e-10,
+    "maximumClosureDimension": 24,
+    "maximumExpansionRounds": 3,
+    "maximumCompactDimension": 12
+  },
+  "resourceRefusal": {"maximumEstimatedAggregateCpuSeconds":600,"maximumEstimatedPeakBytes":1073741824,"estimatedAggregateCpuSeconds":360,"estimatedPeakBytes":536870912,"refuseBeforeAllocationOnEstimateExceedance":true},
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "metric-normalized-coordinate-replay-failed",
+    "force-closure-computation-invalid",
+    "compact-force-closed-subspace-found",
+    "force-closure-expands-beyond-compact-limit"
+  ],
+  "authorityFirewalls": {"rngUsed":false,"hmcOrSamplingPerformed":false,"configurationsRetained":false,"phase535ExecutedReopenedOrMutated":false,"phase481PackCreatedOrMutated":false,"productionDefaultSelected":false,"phase458G3Satisfied":false,"phase458G4Satisfied":false,"phase458G5Satisfied":false,"o4Discharged":false,"sourceContractApplicationAllowed":false,"physicalUnitOrGevClaimAllowed":false,"productionOrLaunchAllowed":false},
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

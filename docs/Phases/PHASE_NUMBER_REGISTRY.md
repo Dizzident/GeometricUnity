@@ -31,7 +31,11 @@ back, NO new phase directory may be created outside this table.
 | 533-535 | Shared nested experimental validation extension (A22) | 533 frozen experiment/resource contract; 534 independent Gaussian, free-sampler, and reduced interacting control battery; 535 bounded registered-operator pilot adjudicator |
 | 536-538 | Shared interacting-HMC failure-localization extension (A23) | 536 trajectory-forensics replay; 537 deterministic leapfrog correctness and stability audit; 538 prospective fixed-grid retuning experiment |
 | 539 | Shared reduced-target independent-confirmation extension (A24) | 539 pristine independent post-selection confirmation of the Phase538 selected fixed row |
-| 540+ | Unassigned - extend this registry before use | - |
+| 540 | Shared reduced-to-complete-lattice transfer-readiness extension (A25) | 540 zero-sampling transfer-readiness adjudicator and earliest-blocker selector |
+| 541 | Shared deterministic complete-lattice integrator-transfer extension (A26) | 541 zero-sampling complete-lattice embedding, force, and integrator control |
+| 542-544 | Shared complete-lattice force-closure and pilot-readiness extension (A27) | 542 metric-normalized force/Jacobian closure census; 543 branch-selected deterministic transfer experiment; 544 dependent bounded-pilot readiness adjudicator |
+| 545-547 | Shared bounded complete-lattice pilot pack extension (A28) | 545 injectable deterministic HMC kernel materialization; 546 diagnostics, seed, checkpoint, and resource-refusal pack; 547 dependent pack-readiness adjudicator |
+| 548+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

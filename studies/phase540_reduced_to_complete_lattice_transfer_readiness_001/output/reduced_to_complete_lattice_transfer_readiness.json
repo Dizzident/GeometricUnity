@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "phase": 540,
+  "phaseId": "phase540-reduced-to-complete-lattice-transfer-readiness",
+  "contractId": "phase540-a25-reduced-to-complete-lattice-transfer-readiness-v1",
+  "contractSha256": "a65bbaa1b23ae12436b93e2f24e5876e1fbc66cf39b70af7ac529cf850b8a857",
+  "contractValid": true,
+  "bindingInventoryValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "deterministicZeroSampling": true,
+  "hmcOrSamplingPerformed": false,
+  "configurationsRetained": false,
+  "targetIdentityMetadataAligned": true,
+  "integratorParametersIdentical": false,
+  "independentReducedRowConfirmed": true,
+  "explicitTransferMapPresent": false,
+  "deterministicCompleteLatticeIntegratorOraclePresent": false,
+  "executableBoundedPilotBranchPresent": false,
+  "hardenedCompleteLatticeDiagnosticsAndIndependentSeedsPresent": false,
+  "boundedResourceAndExecutionTopologyPresent": false,
+  "reducedRowParameters": {
+    "stepSize": 0.25,
+    "leapfrogSteps": 8
+  },
+  "completeLatticePilotParameters": {
+    "stepSize": 0.0125,
+    "leapfrogSteps": 6
+  },
+  "gates": [
+    {
+      "id": "independent-reduced-row-confirmed",
+      "passed": true,
+      "evidence": "Phase539 must independently confirm the fixed reduced row."
+    },
+    {
+      "id": "explicit-reduced-to-complete-lattice-transfer-map",
+      "passed": false,
+      "evidence": "No exact-bound A25 input maps the one-dimensional target, force, and 0.25 x 8 row to the complete-lattice pilot; the frozen pilot instead specifies 0.0125 x 6."
+    },
+    {
+      "id": "deterministic-complete-lattice-integrator-oracle",
+      "passed": false,
+      "evidence": "The exact-bound Phase537 input audits only the scalar polynomial and cannot certify the complete-lattice force or map."
+    },
+    {
+      "id": "executable-bounded-pilot-branch",
+      "passed": false,
+      "evidence": "Phase535 deliberately contains no executable pilot branch after its upstream refusal."
+    },
+    {
+      "id": "hardened-complete-lattice-diagnostics-and-independent-seeds",
+      "passed": false,
+      "evidence": "No exact-bound A25 input supplies a prospective complete-lattice analogue of the hardened Phase538/539 diagnostics and post-selection seed rules."
+    },
+    {
+      "id": "bounded-resource-and-execution-topology",
+      "passed": false,
+      "evidence": "The Phase533 estimate is bounded, but no executable branch/topology exists against which to validate it."
+    }
+  ],
+  "earliestMissingGate": "explicit-reduced-to-complete-lattice-transfer-map",
+  "allTransferReadinessGatesClosed": false,
+  "laterControlConstructionAuthorized": false,
+  "successor": {
+    "kind": "prospective-deterministic-complete-lattice-integrator-transfer-control",
+    "samplingAllowed": false,
+    "requiredChecks": [
+      "exact-force-or-finite-difference-gradient-parity",
+      "forward-reverse-recovery",
+      "finite-energy-step-halving",
+      "explicit-reduced-row-to-pilot-parameter-map",
+      "resource-refusal-before-allocation"
+    ],
+    "separatelyRegisteredAndProspectivelyFrozenPhaseRequired": true
+  },
+  "verdictKind": "reduced-to-complete-lattice-transfer-map-missing",
+  "terminalStatus": "reduced-to-complete-lattice-transfer-readiness-reduced-to-complete-lattice-transfer-map-missing",
+  "decision": "The reduced row is independently confirmed, but no explicit target/force/integrator mapping connects it to the differently parameterized complete-lattice pilot. A deterministic transfer-control phase is the smallest admissible successor; Phase535 remains closed.",
+  "phase535PilotExecutedOrReopened": false,
+  "phase535Mutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase533-summary",
+      "path": "studies/phase533_nested_validation_contract_001/output/nested_validation_contract_summary.json",
+      "expectedSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "actualSha256": "c96cd7461c927615364a2e74e2be8f00b8b4ccf1079cbee8c752e2356b79b164",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-contract",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/preregistration/phase535_bounded_pilot_adjudicator_contract_v1.json",
+      "expectedSha256": "d9cbf4a300ab4857c45ac42d90e4527fb1fd422958b187f0903b17af4f700e85",
+      "actualSha256": "d9cbf4a300ab4857c45ac42d90e4527fb1fd422958b187f0903b17af4f700e85",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-program",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Program.cs",
+      "expectedSha256": "bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187",
+      "actualSha256": "bedb02549365aa662a04358ad8d28503a07e5dfc748a81ec80215a122b6a8187",
+      "hashMatches": true
+    },
+    {
+      "id": "phase535-summary",
+      "path": "studies/phase535_bounded_registered_operator_pilot_adjudicator_001/output/bounded_registered_operator_pilot_adjudicator_summary.json",
+      "expectedSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "actualSha256": "91df4db8f9ee3b60af3ffe68bdc653dfbf76c7b32a2f676ad0e4b031124cf849",
+      "hashMatches": true
+    },
+    {
+      "id": "phase537-summary",
+      "path": "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json",
+      "expectedSha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516",
+      "actualSha256": "74d61e7412a057addb6722251ae5c17cf93176dc6837528d117e2d04c3249516",
+      "hashMatches": true
+    },
+    {
+      "id": "phase538-summary",
+      "path": "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json",
+      "expectedSha256": "6c1d061f4e6e4c21376227276fd4149acc1870c8d9a951d7560f1953be8a2636",
+      "actualSha256": "6c1d061f4e6e4c21376227276fd4149acc1870c8d9a951d7560f1953be8a2636",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-contract",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/preregistration/phase539_independent_reduced_target_row_confirmation_contract_v1.json",
+      "expectedSha256": "afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77",
+      "actualSha256": "afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-program",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/Program.cs",
+      "expectedSha256": "fcd17bb3294e7e9ff529af95a8f9356c06937104ebcc79479ba971c53593fc13",
+      "actualSha256": "fcd17bb3294e7e9ff529af95a8f9356c06937104ebcc79479ba971c53593fc13",
+      "hashMatches": true
+    },
+    {
+      "id": "phase539-summary",
+      "path": "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json",
+      "expectedSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "actualSha256": "79982bc84d21e88781aa7011b37d771f882b56df8f6f3cdaf7dce5333d478495",
+      "hashMatches": true
+    }
+  ]
+}

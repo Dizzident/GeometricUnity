@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase545-a28-injectable-deterministic-hmc-kernel-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A28",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {
+      "id": "phase543-summary",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json",
+      "sha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924"
+    },
+    {
+      "id": "phase544-contract",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json",
+      "sha256": "b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e"
+    },
+    {
+      "id": "phase544-program",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs",
+      "sha256": "6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b"
+    },
+    {
+      "id": "phase544-summary",
+      "path": "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json",
+      "sha256": "e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162"
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    }
+  ],
+  "kernelRules": {
+    "positionInput": "explicit-readonly-span",
+    "momentumInput": "explicit-readonly-span",
+    "acceptThresholdInput": "explicit-log-uniform-in-closed-negative-half-line",
+    "proposal": "velocity-leapfrog-with-terminal-half-kick",
+    "hamiltonian": "action-plus-one-half-euclidean-momentum-norm-squared",
+    "acceptRule": "finite-and-log-threshold-less-than-or-equal-to-minimum-of-zero-and-negative-delta-h",
+    "rejectionState": "exact-clone-of-injected-position",
+    "divergenceRule": "non-finite-or-absolute-delta-h-greater-than-100",
+    "preallocationRefusal": "refuse-before-kernel-array-allocation-when-estimated-working-bytes-exceed-limit"
+  },
+  "fixtureMenu": {
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "stateScale": 0.04,
+    "momentumScale": 0.05,
+    "accept": {
+      "stepSize": 0.00625,
+      "leapfrogSteps": 4,
+      "injectedLogUniformThreshold": -100.0,
+      "expectedAccepted": true
+    },
+    "reject": {
+      "stepSize": 0.4,
+      "leapfrogSteps": 4,
+      "injectedLogUniformThreshold": 0.0,
+      "expectedAccepted": false
+    },
+    "reversal": {
+      "stepSize": 0.00625,
+      "leapfrogSteps": 4,
+      "scaledTolerance": 2e-9
+    },
+    "corruption": {
+      "kind": "non-finite-action-and-gradient",
+      "expectedFinite": false,
+      "expectedDivergent": true,
+      "expectedAccepted": false
+    },
+    "resourceBoundary": {
+      "allowedWorkingBytes": 268435456,
+      "refusedWorkingBytes": 1,
+      "expectedAllowedRefused": false,
+      "expectedBoundaryRefused": true,
+      "expectedRefusalDivergent": false
+    }
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "kernel-contract-invalid",
+    "preallocation-refusal-failed",
+    "nonfinite-telemetry-failed",
+    "accept-fixture-failed",
+    "reject-fixture-failed",
+    "reversal-fixture-failed",
+    "injectable-deterministic-hmc-kernel-materialized"
+  ],
+  "authorityFirewalls": {
+    "rngUsed": false,
+    "markovChainAdvanced": false,
+    "warmupPerformed": false,
+    "adaptationPerformed": false,
+    "samplingPerformed": false,
+    "configurationsRetained": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

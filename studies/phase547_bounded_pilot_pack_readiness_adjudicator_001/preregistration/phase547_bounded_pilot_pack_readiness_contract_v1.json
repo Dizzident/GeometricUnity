@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase547-a28-bounded-pilot-pack-readiness-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A28",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase544-contract","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/preregistration/phase544_bounded_pilot_readiness_contract_v1.json","sha256":"b1c95ade426fd10e340647deb2d7c401e2e770b9b6bbfffc351506405d6a682e"},
+    {"id":"phase544-program","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Program.cs","sha256":"6849a1aad59b1481a7f98ab43e43e518e36b07279c8b46b21793736837bf8e4b"},
+    {"id":"phase544-summary","path":"studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json","sha256":"e039b770c9c1dfc6de389d64700db0d810bae70cccb8040ff9ed8c49cc34d162"},
+
+    {"id":"phase545-v1-contract","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/phase545_injectable_deterministic_hmc_kernel_contract_v1.json","sha256":"0d99b7f37a3dd435489316043a42c97a6ec221b148a0da2020967a1efe8f1327"},
+    {"id":"phase545-v1-program","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/Program.cs","sha256":"c41d8e66ac6c2ea8e7a0c4551a9fe45832cc59e71e6206d89d9842f9dc2790ce"},
+    {"id":"phase545-v1-kernel","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/PilotKernel.cs","sha256":"1ec39db252fab639a8399ebaad49ceaba5a14dbb51fd00003bf48a46d453b951"},
+    {"id":"phase545-v1-output","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/injectable_deterministic_hmc_kernel.json","sha256":"e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b"},
+    {"id":"phase545-v1-summary","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v1/injectable_deterministic_hmc_kernel_summary.json","sha256":"e834d208d7519f75949557db4326fd39a4b17c7bbc564261c32edba69603556b"},
+
+    {"id":"phase545-v2-contract","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/phase545_injectable_deterministic_hmc_kernel_repair_contract_v2.json","sha256":"d61ef6994955adaa775e5171e1bbd430530a091ccba0d6978512d65886776872"},
+    {"id":"phase545-v2-program","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/Program.cs","sha256":"c9292f76ba6777f10806ae477b5447c71f8c10d4e12d327297f41e70d86eb2b0"},
+    {"id":"phase545-v2-kernel","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/PilotKernel.cs","sha256":"420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa"},
+    {"id":"phase545-v2-output","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/injectable_deterministic_hmc_kernel.json","sha256":"64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1"},
+    {"id":"phase545-v2-summary","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/pre_review/v2_interim/injectable_deterministic_hmc_kernel_summary.json","sha256":"64de45f63812da3a105963b3710a92c550849a4b4227d6b8cdf30d605b1f0cd1"},
+
+    {"id":"phase545-v3-contract","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/preregistration/phase545_injectable_deterministic_hmc_kernel_repair_contract_v3.json","sha256":"cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9"},
+    {"id":"phase545-v3-program","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/Program.cs","sha256":"9dc9a776615395591cdaf4b93ffed4afaf308ec1856ca9206878cca5afbe0cb8"},
+    {"id":"phase545-v3-kernel","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/PilotKernel.cs","sha256":"420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa"},
+    {"id":"phase545-v3-output","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel.json","sha256":"16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d"},
+    {"id":"phase545-v3-summary","path":"studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json","sha256":"16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d"},
+
+    {"id":"phase546-v1-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json","sha256":"e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d"},
+    {"id":"phase546-v1-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/Program_v1.cs.txt","sha256":"d70ba73f680e9d09e1b14a335b35eb16e088189e88568ea7b8871020338b4e6d"},
+    {"id":"phase546-v1-codec","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/CheckpointCodec_v1.cs.txt","sha256":"d10a9706a7e5b83972f741843f643e22e41ecd34c4153e5d5e46222764f85368"},
+    {"id":"phase546-v1-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_v1.json","sha256":"c9a031da68b8d336a158358a058a23c37dec6d1f2b2eaecd8f58c516721cba04"},
+    {"id":"phase546-v1-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_summary_v1.json","sha256":"c9a031da68b8d336a158358a058a23c37dec6d1f2b2eaecd8f58c516721cba04"},
+
+    {"id":"phase546-v2-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v2.json","sha256":"363b5c9c175adaea9223336e9a564491e1b9c1856df9c6ad6159fd2b8563c7c3"},
+    {"id":"phase546-v2-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/Program_v2.cs.txt","sha256":"38d08584ed0b562395b142d1464ec96b302b5663ec4461b091df8093085f743c"},
+    {"id":"phase546-v2-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/pilot_diagnostics_checkpoint_resource_pack_v2.json","sha256":"6b6939119e799b9899589544006aab4a135cc2421d86c49f7b274c8a5d71ba2f"},
+    {"id":"phase546-v2-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/pilot_diagnostics_checkpoint_resource_pack_summary_v2.json","sha256":"6b6939119e799b9899589544006aab4a135cc2421d86c49f7b274c8a5d71ba2f"},
+
+    {"id":"phase546-v3-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/preregistration/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v3.json","sha256":"4dc9dc8b63752802e4939b7e1730b8971923eeb8e6d1fbd69f13ac743b11cf27"},
+    {"id":"phase546-v3-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Program.cs","sha256":"febd7f8338d3c01dd1eb433f0ea9c94c64bf5cc22b520fe51ac517334a2953d4"},
+    {"id":"phase546-v3-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack.json","sha256":"6562a2828de426b1a995d89574557af926ec6173c6969cd13252533dcc05b434"},
+    {"id":"phase546-v3-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json","sha256":"6562a2828de426b1a995d89574557af926ec6173c6969cd13252533dcc05b434"},
+
+    {"id":"phase533-contract","path":"studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json","sha256":"377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be"},
+    {"id":"phase538-contract","path":"studies/phase538_fixed_grid_interacting_hmc_retuning_001/preregistration/phase538_fixed_grid_interacting_hmc_retuning_contract_v2.json","sha256":"6ad1516ab89018354e06a160ddb2f4525b6d89df950f1b1af5464be2ad9a319f"},
+    {"id":"phase539-contract","path":"studies/phase539_independent_reduced_target_row_confirmation_001/preregistration/phase539_independent_reduced_target_row_confirmation_contract_v1.json","sha256":"afc01c3cde37fc82d7554b15e3b73916e9dce387dfa1c37b90dc87aeb69b4f77"}
+  ],
+  "readinessGatesInOrder": [
+    "new-executable-bounded-pilot-implementation",
+    "hardened-complete-lattice-diagnostics",
+    "disjoint-prospective-seeds-and-checkpoint-rules",
+    "executable-resource-topology-refusal"
+  ],
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "phase544-readiness-premise-invalid",
+    "executable-bounded-pilot-implementation-missing",
+    "hardened-complete-lattice-diagnostics-missing",
+    "prospective-seed-or-checkpoint-rules-missing",
+    "resource-topology-refusal-evidence-missing",
+    "bounded-pilot-pack-ready-for-separate-prospective-execution-registration"
+  ],
+  "evidenceBoundaries": {
+    "phase545DeterministicFixtureCount": 10,
+    "injectedDeterministicSingleProposalFixturesPerformed": true,
+    "phase545ResourceFixtureEstablishesOnlyEarlyRefusal": true,
+    "phase545CompletePeakMemoryBoundEstablished": false,
+    "phase545CombinedWorkFixtureIndependentlyTestsForceCap": false,
+    "phase546AuthenticV1FixtureCount": 13,
+    "phase546AuthenticV1DofBranchDynamicallyTested": false,
+    "phase546V3ExecutedFixtureCount": 1,
+    "phase546CompositionalCorrectedFixtureCount": 14,
+    "resourceArithmeticIsBenchmark": false
+  },
+  "authorityFirewalls": {
+    "rngUsed": false,
+    "markovChainAdvanced": false,
+    "warmupPerformed": false,
+    "adaptationPerformed": false,
+    "samplingPerformed": false,
+    "benchmarkPerformed": false,
+    "configurationsRetained": false,
+    "pilotExecuted": false,
+    "pilotExecutionAuthorized": false,
+    "launchAuthorized": false,
+    "hmcEvidenceEstablished": false,
+    "acceptanceRateEstablished": false,
+    "stationarityEstablished": false,
+    "detailedBalanceEstablished": false,
+    "mixingEstablished": false,
+    "convergenceEstablished": false,
+    "observableEstimateProduced": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

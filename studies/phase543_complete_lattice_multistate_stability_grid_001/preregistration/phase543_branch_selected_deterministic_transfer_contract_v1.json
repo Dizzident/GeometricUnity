@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase543-a27-branch-selected-deterministic-transfer-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A27",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase541-summary","path":"studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json","sha256":"9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246"},
+    {"id":"phase542-contract","path":"studies/phase542_metric_normalized_force_closure_census_001/preregistration/phase542_metric_normalized_force_closure_contract_v1.json","sha256":"884f38e9852db54625474ef62739d6b36809f608fb294b727fe8bab589af794a"},
+    {"id":"phase542-program","path":"studies/phase542_metric_normalized_force_closure_census_001/Program.cs","sha256":"1bb50713398c4706eb5a6d2fb11eb65925ac09e964eab335c3b896e8aaac2a53"},
+    {"id":"phase542-summary","path":"studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json","sha256":"1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82"},
+    {"id":"complete-lattice-gradient-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+  "branchPrecedence": {
+    "compactClosureVerdict": "compact-force-closed-subspace-found",
+    "compactBranch": "independent-metric-whitened-shadowing",
+    "otherwiseBranch": "complete-lattice-multistate-step-halving",
+    "expectedFrozenBranch": "complete-lattice-multistate-step-halving"
+  },
+  "completeLatticeMenu": {
+    "extent": 3,
+    "thetaRule": "theta-identically-zero",
+    "stateScales": [0.05,0.1,0.2],
+    "densePerturbationScale": 0.03,
+    "momentumFamilies": ["sine","cosine"],
+    "ladder": [
+      {"stepSize":0.025,"leapfrogSteps":4},
+      {"stepSize":0.0125,"leapfrogSteps":8},
+      {"stepSize":0.00625,"leapfrogSteps":16}
+    ],
+    "finiteDifferenceRelativeStep": 1e-6,
+    "finiteDifferenceScaledTolerance": 3e-7,
+    "forwardReverseScaledTolerance": 2e-9,
+    "minimumAdjacentEnergyImprovement": 1.5,
+    "minimumOffRayStateFraction": 0.01
+  },
+  "compactBranchMenu": {
+    "maximumDimension": 12,
+    "maximumProjectedFullFlowScaledError": 1e-6,
+    "forwardReverseScaledTolerance": 2e-9,
+    "minimumAdjacentEnergyImprovement": 1.5
+  },
+  "resourceRefusal": {"maximumEstimatedAggregateCpuSeconds":600,"maximumEstimatedPeakBytes":1073741824,"estimatedAggregateCpuSeconds":420,"estimatedPeakBytes":536870912,"refuseBeforeAllocationOnEstimateExceedance":true},
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "branch-selection-invalid",
+    "deterministic-state-menu-invalid",
+    "complete-lattice-gradient-or-finiteness-failed",
+    "complete-lattice-multistate-stability-failed",
+    "compact-shadowing-failed",
+    "branch-selected-deterministic-controls-passed"
+  ],
+  "authorityFirewalls": {"rngUsed":false,"hmcOrSamplingPerformed":false,"configurationsRetained":false,"phase535ExecutedReopenedOrMutated":false,"phase481PackCreatedOrMutated":false,"productionDefaultSelected":false,"phase458G3Satisfied":false,"phase458G4Satisfied":false,"phase458G5Satisfied":false,"o4Discharged":false,"sourceContractApplicationAllowed":false,"physicalUnitOrGevClaimAllowed":false,"productionOrLaunchAllowed":false},
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

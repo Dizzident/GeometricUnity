@@ -1,0 +1,222 @@
+using System.Security.Cryptography;
+using System.Text.Json;
+
+const string Root = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001";
+const string ContractPath = Root + "/preregistration/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v2.json";
+const string OutputPath = Root + "/output/pilot_diagnostics_checkpoint_resource_pack.json";
+const string SummaryPath = Root + "/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
+
+using var contractDocument = JsonDocument.Parse(File.ReadAllBytes(ContractPath));
+JsonElement contract = contractDocument.RootElement;
+var bindingSpecs = contract.GetProperty("exactBindings").EnumerateArray().Select(x => new
+{
+    Id = x.GetProperty("id").GetString()!,
+    Path = x.GetProperty("path").GetString()!,
+    ExpectedSha256 = x.GetProperty("sha256").GetString()!,
+}).ToArray();
+var bindings = bindingSpecs.Select(x =>
+{
+    string actual = File.Exists(x.Path) ? Sha(x.Path) : "missing";
+    return new
+    {
+        x.Id,
+        x.Path,
+        x.ExpectedSha256,
+        ActualSha256 = actual,
+        HashMatches = actual == x.ExpectedSha256,
+    };
+}).ToArray();
+string[] bindingIds =
+[
+    "phase546-v1-contract",
+    "phase546-v1-program",
+    "phase546-v1-checkpoint-codec",
+    "phase546-v1-output",
+    "phase546-v1-summary",
+];
+bool exactBindingsValid = bindingSpecs.Select(x => x.Id).SequenceEqual(bindingIds)
+    && bindings.All(x => x.HashMatches);
+
+using var v1ContractDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs[0].Path));
+using var v1OutputDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs[3].Path));
+using var v1SummaryDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs[4].Path));
+JsonElement v1Contract = v1ContractDocument.RootElement;
+JsonElement v1Output = v1OutputDocument.RootElement;
+JsonElement v1Summary = v1SummaryDocument.RootElement;
+JsonElement lineage = contract.GetProperty("v1LineageAdjudication");
+JsonElement accounting = contract.GetProperty("fixtureAccounting");
+JsonElement resource = contract.GetProperty("resourceRefusal");
+string[] taxonomy =
+[
+    "invalid-or-drifted-v1-lineage",
+    "v1-defect-characterization-invalid",
+    "dof-mismatch-fixture-failed",
+    "pilot-support-pack-materialized-with-dof-repair",
+];
+
+bool contractValid = contract.GetProperty("schemaVersion").GetInt32() == 2
+    && contract.GetProperty("contractId").GetString()
+        == "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-repair-v2"
+    && contract.GetProperty("planSection").GetString() == "WAVE2_AMENDMENTS_2026-07-12 A28"
+    && contract.GetProperty("frozenBeforeCorrectedExecution").GetBoolean()
+    && contract.GetProperty("syntheticFixturesOnly").GetBoolean()
+    && contract.GetProperty("repairScope").GetString()
+        == "dedicated-dof-mismatch-resource-refusal-evidence"
+    && exactBindingsValid
+    && contract.GetProperty("terminalTaxonomyInPrecedenceOrder").EnumerateArray()
+        .Select(x => x.GetString()).SequenceEqual(taxonomy)
+    && contract.GetProperty("authorityFirewalls").EnumerateObject()
+        .All(x => x.Value.ValueKind == JsonValueKind.False)
+    && contract.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0;
+
+bool preservedV1SemanticsValid =
+    v1Contract.GetProperty("contractId").GetString()
+        == "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-v1"
+    && v1Output.GetProperty("verdictKind").GetString() == "pilot-support-pack-materialized"
+    && v1Summary.GetProperty("verdictKind").GetString() == "pilot-support-pack-materialized"
+    && v1Output.GetProperty("passedFixtureCount").GetInt32() == 13
+    && v1Output.GetProperty("allFixturesPassed").GetBoolean()
+    && v1Output.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0;
+
+bool v1DefectCharacterizationValid =
+    lineage.GetProperty("reportedVerdict").GetString() == "pilot-support-pack-materialized"
+    && lineage.GetProperty("reportedPassedFixtureCount").GetInt32() == 13
+    && lineage.GetProperty("positiveResultIncomplete").GetBoolean()
+    && !lineage.GetProperty("citableForPhase547ResourceGate").GetBoolean()
+    && lineage.GetProperty("soleDefect").GetString()
+        == "dedicated-dof-mismatch-fixture-evidence-absent"
+    && !lineage.GetProperty("otherV1EvidenceReinterpretedOrInvalidated").GetBoolean();
+
+var dofRequest = new ResourceShape(
+    resource.GetProperty("requiredTopologyId").GetString()!,
+    resource.GetProperty("requiredDimensions").GetInt32(),
+    resource.GetProperty("fixtureExtent").GetInt32(),
+    resource.GetProperty("mismatchedDegreesOfFreedom").GetInt32());
+ResourceRefusal dofAssessment = AssessShape(dofRequest);
+int expectedDof = resource.GetProperty("expectedDegreesOfFreedom").GetInt32();
+bool dofMismatchFixtureTested = true;
+bool dofMismatchFixturePassed =
+    expectedDof == 3645
+    && dofRequest.DegreesOfFreedom == 3644
+    && dofAssessment.ExpectedDegreesOfFreedom == expectedDof
+    && dofAssessment.ObservedDegreesOfFreedom == dofRequest.DegreesOfFreedom
+    && !dofAssessment.Allowed
+    && dofAssessment.RefusalReason == resource.GetProperty("expectedRefusalReason").GetString()
+    && dofAssessment.RefusalReason == "invalid-shape";
+
+int inheritedFixtureCount = accounting.GetProperty("exactBoundInheritedV1FixtureCount").GetInt32();
+int newFixtureCount = accounting.GetProperty("newDedicatedFixtureIds").GetArrayLength();
+int correctedFixtureCount = checked(inheritedFixtureCount + newFixtureCount);
+bool fixtureAccountingValid = inheritedFixtureCount == 13
+    && newFixtureCount == 1
+    && accounting.GetProperty("newDedicatedFixtureIds").EnumerateArray()
+        .Select(x => x.GetString()).SequenceEqual(["resource-dof-mismatch-refused"])
+    && accounting.GetProperty("correctedTotalFixtureCount").GetInt32() == 14
+    && correctedFixtureCount == 14;
+
+string verdict = !contractValid || !preservedV1SemanticsValid ? taxonomy[0]
+    : !v1DefectCharacterizationValid || !fixtureAccountingValid ? taxonomy[1]
+    : !dofMismatchFixtureTested || !dofMismatchFixturePassed ? taxonomy[2]
+    : taxonomy[3];
+
+var output = new
+{
+    schemaVersion = 2,
+    phase = 546,
+    phaseId = "phase546-pilot-diagnostics-checkpoint-resource-pack-repair",
+    contractId = contract.GetProperty("contractId").GetString(),
+    contractSha256 = Sha(ContractPath),
+    contractValid,
+    exactBindingsValid,
+    bindings,
+    v1Lineage = new
+    {
+        preservedV1SemanticsValid,
+        positiveResultIncomplete = true,
+        citableForPhase547ResourceGate = false,
+        soleDefect = "dedicated-dof-mismatch-fixture-evidence-absent",
+        otherV1EvidenceReinterpretedOrInvalidated = false,
+        inheritedFixtureCount,
+    },
+    repairEvidence = new
+    {
+        fixtureId = "resource-dof-mismatch-refused",
+        dofMismatchFixtureTested,
+        dofMismatchFixturePassed,
+        request = dofRequest,
+        assessment = dofAssessment,
+        expectedRefusalReason = "invalid-shape",
+    },
+    newDedicatedFixtureCount = newFixtureCount,
+    correctedPassedFixtureCount = verdict == taxonomy[3] ? correctedFixtureCount : inheritedFixtureCount,
+    correctedTotalFixtureCount = correctedFixtureCount,
+    allCorrectedFixturesPassed = verdict == taxonomy[3],
+    verdictKind = verdict,
+    terminalStatus = "pilot-diagnostics-checkpoint-resource-pack-" + verdict,
+    decision = verdict == taxonomy[3]
+        ? "The exact-bound v1 support pack is supplemented by dedicated synthetic DOF-mismatch refusal evidence. Only the corrected v2 result is admissible to dependent Phase547 resource-gate adjudication."
+        : "The earliest frozen v2 repair failure is preserved; no Phase547 resource-gate evidence follows.",
+    rngUsed = false,
+    registeredOperatorProposalPerformed = false,
+    markovChainAdvanced = false,
+    warmupPerformed = false,
+    adaptationPerformed = false,
+    samplingPerformed = false,
+    benchmarkPerformed = false,
+    configurationsRetained = false,
+    phase535ExecutedReopenedOrMutated = false,
+    phase481PackCreatedOrMutated = false,
+    productionDefaultSelected = false,
+    phase458G3Satisfied = false,
+    phase458G4Satisfied = false,
+    phase458G5Satisfied = false,
+    o4Discharged = false,
+    sourceContractApplicationAllowed = false,
+    physicalUnitClaimAllowed = false,
+    gevClaimAllowed = false,
+    productionAuthorized = false,
+    launchAuthorized = false,
+    externalReviewPending = true,
+    allDownstreamAuthority = false,
+    promotedPhysicalMassClaimCount = 0,
+};
+
+Directory.CreateDirectory(Path.GetDirectoryName(OutputPath)!);
+var options = new JsonSerializerOptions
+{
+    WriteIndented = true,
+    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+};
+byte[] outputBytes = JsonSerializer.SerializeToUtf8Bytes(output, options);
+File.WriteAllBytes(OutputPath, outputBytes);
+File.WriteAllBytes(SummaryPath, outputBytes);
+Console.WriteLine($"Phase546 v2 verdict: {verdict}");
+Console.WriteLine($"correctedFixtures={output.correctedPassedFixtureCount}/{correctedFixtureCount}, dofMismatchTested={dofMismatchFixtureTested}");
+Console.WriteLine("rng=False, proposal=False, chain=False, sampling=False");
+
+static ResourceRefusal AssessShape(ResourceShape request)
+{
+    try
+    {
+        int expected = checked(45 * request.Extent * request.Extent * request.Extent * request.Extent);
+        string? refusal = request.TopologyId != "periodic-hypercubic-4d" ? "topology-mismatch"
+            : request.Dimensions != 4 ? "dimension-mismatch"
+            : request.Extent <= 0 || request.DegreesOfFreedom != expected ? "invalid-shape"
+            : null;
+        return new ResourceRefusal(refusal is null, refusal, expected, request.DegreesOfFreedom);
+    }
+    catch (OverflowException)
+    {
+        return new ResourceRefusal(false, "checked-arithmetic-overflow", -1, request.DegreesOfFreedom);
+    }
+}
+
+static string Sha(string path) =>
+    Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+
+sealed record ResourceShape(string TopologyId, int Dimensions, int Extent, int DegreesOfFreedom);
+sealed record ResourceRefusal(
+    bool Allowed,
+    string? RefusalReason,
+    int ExpectedDegreesOfFreedom,
+    int ObservedDegreesOfFreedom);

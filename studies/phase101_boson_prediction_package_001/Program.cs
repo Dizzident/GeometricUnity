@@ -378,6 +378,14 @@ const string Phase536TrajectoryForensicsReplayPath = "studies/phase536_trajector
 const string Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath = "studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/output/deterministic_leapfrog_correctness_stability_audit_summary.json";
 const string Phase538FixedGridInteractingHmcRetuningPath = "studies/phase538_fixed_grid_interacting_hmc_retuning_001/output/fixed_grid_interacting_hmc_retuning_summary.json";
 const string Phase539IndependentReducedTargetRowConfirmationPath = "studies/phase539_independent_reduced_target_row_confirmation_001/output/independent_reduced_target_row_confirmation_summary.json";
+const string Phase540ReducedToCompleteLatticeTransferReadinessPath = "studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/output/reduced_to_complete_lattice_transfer_readiness_summary.json";
+const string Phase541CompleteLatticeIntegratorTransferControlPath = "studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json";
+const string Phase542MetricNormalizedForceClosureCensusPath = "studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json";
+const string Phase543CompleteLatticeMultistateStabilityGridPath = "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json";
+const string Phase544BoundedCompleteLatticePilotReadinessPath = "studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/output/bounded_complete_lattice_pilot_readiness_adjudicator_summary.json";
+const string Phase545InjectableDeterministicHmcKernelPath = "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json";
+const string Phase546PilotDiagnosticsCheckpointResourcePackPath = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
+const string Phase547BoundedPilotPackReadinessAdjudicatorPath = "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -796,6 +804,14 @@ using var phase536 = TryParseJson(Phase536TrajectoryForensicsReplayPath);
 using var phase537 = TryParseJson(Phase537DeterministicLeapfrogCorrectnessStabilityAuditPath);
 using var phase538 = TryParseJson(Phase538FixedGridInteractingHmcRetuningPath);
 using var phase539 = TryParseJson(Phase539IndependentReducedTargetRowConfirmationPath);
+using var phase540 = TryParseJson(Phase540ReducedToCompleteLatticeTransferReadinessPath);
+using var phase541 = TryParseJson(Phase541CompleteLatticeIntegratorTransferControlPath);
+using var phase542 = TryParseJson(Phase542MetricNormalizedForceClosureCensusPath);
+using var phase543 = TryParseJson(Phase543CompleteLatticeMultistateStabilityGridPath);
+using var phase544 = TryParseJson(Phase544BoundedCompleteLatticePilotReadinessPath);
+using var phase545 = TryParseJson(Phase545InjectableDeterministicHmcKernelPath);
+using var phase546 = TryParseJson(Phase546PilotDiagnosticsCheckpointResourcePackPath);
+using var phase547 = TryParseJson(Phase547BoundedPilotPackReadinessAdjudicatorPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9477,6 +9493,125 @@ var package = new
             reducedToCompleteLatticeTransferValidated = JsonBool(phase539.RootElement, "reducedToCompleteLatticeTransferValidated"),
             phase535PilotExecutedOrReopened = JsonBool(phase539.RootElement, "phase535PilotExecutedOrReopened"),
             promotedPhysicalMassClaimCount = JsonInt(phase539.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        reducedToCompleteLatticeTransferReadiness = phase540 is null ? null : new
+        {
+            status = JsonString(phase540.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase540.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase540.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase540.RootElement, "verdictKind"),
+            earliestMissingGate = JsonString(phase540.RootElement, "earliestMissingGate"),
+            independentReducedRowConfirmed = JsonBool(phase540.RootElement, "independentReducedRowConfirmed"),
+            allTransferReadinessGatesClosed = JsonBool(phase540.RootElement, "allTransferReadinessGatesClosed"),
+            laterControlConstructionAuthorized = JsonBool(phase540.RootElement, "laterControlConstructionAuthorized"),
+            hmcOrSamplingPerformed = JsonBool(phase540.RootElement, "hmcOrSamplingPerformed"),
+            phase535PilotExecutedOrReopened = JsonBool(phase540.RootElement, "phase535PilotExecutedOrReopened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase540.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        completeLatticeIntegratorTransferControl = phase541 is null ? null : new
+        {
+            status = JsonString(phase541.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase541.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase541.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase541.RootElement, "verdictKind"),
+            kineticMetricCompatible = phase541.RootElement.TryGetProperty("explicitEmbeddingMap", out var p541Embedding)
+                ? JsonBool(p541Embedding, "kineticMetricCompatible") : null,
+            analyticForceParityPassed = phase541.RootElement.TryGetProperty("analyticForceParity", out var p541Force)
+                ? JsonBool(p541Force, "passed") : null,
+            embeddedRayForceInvariant = phase541.RootElement.TryGetProperty("transverseForceAudit", out var p541Transverse)
+                ? JsonBool(p541Transverse, "passed") : null,
+            hmcOrSamplingPerformed = JsonBool(phase541.RootElement, "hmcOrSamplingPerformed"),
+            phase535ExecutedReopenedOrMutated = JsonBool(phase541.RootElement, "phase535ExecutedReopenedOrMutated"),
+            promotedPhysicalMassClaimCount = JsonInt(phase541.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        metricNormalizedForceClosureCensus = phase542 is null ? null : new
+        {
+            status = JsonString(phase542.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase542.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase542.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase542.RootElement, "verdictKind"),
+            metricNormalizationPassed = phase542.RootElement.TryGetProperty("metricNormalization", out var p542Metric)
+                ? JsonBool(p542Metric, "passed") : null,
+            basisDimension = phase542.RootElement.TryGetProperty("forceClosure", out var p542Closure)
+                ? JsonInt(p542Closure, "basisDimension") : null,
+            compactClosureFound = phase542.RootElement.TryGetProperty("forceClosure", out var p542ClosureCompact)
+                ? JsonBool(p542ClosureCompact, "compactClosureFound") : null,
+            hmcOrSamplingPerformed = JsonBool(phase542.RootElement, "hmcOrSamplingPerformed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase542.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        completeLatticeMultistateStabilityGrid = phase543 is null ? null : new
+        {
+            status = JsonString(phase543.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase543.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase543.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase543.RootElement, "verdictKind"),
+            selectedBranch = JsonString(phase543.RootElement, "selectedBranch"),
+            branchSelectionValid = JsonBool(phase543.RootElement, "branchSelectionValid"),
+            gradientControlPassed = phase543.RootElement.TryGetProperty("gradientControl", out var p543Gradient)
+                ? JsonBool(p543Gradient, "passed") : null,
+            stabilityGridPassed = phase543.RootElement.TryGetProperty("completeLatticeStabilityGrid", out var p543Grid)
+                ? JsonBool(p543Grid, "passed") : null,
+            hmcOrSamplingPerformed = JsonBool(phase543.RootElement, "hmcOrSamplingPerformed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase543.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        boundedCompleteLatticePilotReadiness = phase544 is null ? null : new
+        {
+            status = JsonString(phase544.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase544.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase544.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase544.RootElement, "verdictKind"),
+            passedGateCount = JsonInt(phase544.RootElement, "passedGateCount"),
+            failedGateCount = JsonInt(phase544.RootElement, "failedGateCount"),
+            earliestMissingGate = JsonString(phase544.RootElement, "earliestMissingGate"),
+            laterPackConstructionReady = JsonBool(phase544.RootElement, "laterBoundedPilotPackConstructionReady"),
+            hmcOrSamplingPerformed = JsonBool(phase544.RootElement, "hmcOrSamplingPerformed"),
+            phase535ExecutedReopenedOrMutated = JsonBool(phase544.RootElement, "phase535ExecutedReopenedOrMutated"),
+            promotedPhysicalMassClaimCount = JsonInt(phase544.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        injectableDeterministicHmcKernel = phase545 is null ? null : new
+        {
+            status = JsonString(phase545.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase545.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase545.RootElement, "preReviewBindingsValid")
+                is true && JsonBool(phase545.RootElement, "interimV2BindingsValid") is true
+                && JsonBool(phase545.RootElement, "upstreamBindingsValid") is true,
+            verdictKind = JsonString(phase545.RootElement, "verdictKind"),
+            deterministicFixtureCount = phase545.RootElement.TryGetProperty("fixtures", out var p545Fixtures)
+                ? (int?)p545Fixtures.EnumerateObject().Count() : null,
+            reusableKernelV3Repaired = JsonBool(phase545.RootElement, "reusableKernelV3Repaired"),
+            pilotExecuted = JsonBool(phase545.RootElement, "pilotExecuted"),
+            hmcEvidenceEstablished = JsonBool(phase545.RootElement, "hmcEvidenceEstablished"),
+            promotedPhysicalMassClaimCount = JsonInt(phase545.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        pilotDiagnosticsCheckpointResourcePack = phase546 is null ? null : new
+        {
+            status = JsonString(phase546.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase546.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase546.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase546.RootElement, "verdictKind"),
+            authenticV1Valid = phase546.RootElement.TryGetProperty("lineage", out var p546Lineage)
+                ? JsonBool(p546Lineage, "authenticV1Valid") : null,
+            v2PositiveResultNonCitable = phase546.RootElement.TryGetProperty("lineage", out var p546LineageV2)
+                ? JsonBool(p546LineageV2, "v2PositiveResultNonCitable") : null,
+            correctedFixtureCount = JsonInt(phase546.RootElement, "correctedTotalFixtureCount"),
+            dofMismatchFixturePassed = phase546.RootElement.TryGetProperty("repairEvidence", out var p546Repair)
+                ? JsonBool(p546Repair, "dofMismatchFixturePassed") : null,
+            samplingPerformed = JsonBool(phase546.RootElement, "samplingPerformed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase546.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        boundedPilotPackReadinessAdjudicator = phase547 is null ? null : new
+        {
+            status = JsonString(phase547.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase547.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase547.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase547.RootElement, "verdictKind"),
+            passedGateCount = JsonInt(phase547.RootElement, "passedGateCount"),
+            failedGateCount = JsonInt(phase547.RootElement, "failedGateCount"),
+            precedenceBatteryPassed = JsonBool(phase547.RootElement, "precedenceBatteryPassed"),
+            executionPhaseRegistrationAllowed = JsonBool(phase547.RootElement, "boundedPilotExecutionPhaseRegistrationAllowed"),
+            pilotExecutionAuthorized = JsonBool(phase547.RootElement, "pilotExecutionAuthorized"),
+            launchAuthorized = JsonBool(phase547.RootElement, "launchAuthorized"),
+            promotedPhysicalMassClaimCount = JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

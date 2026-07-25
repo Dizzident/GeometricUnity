@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "phase": 543,
+  "phaseId": "phase543-complete-lattice-multistate-stability-grid",
+  "contractId": "phase543-a27-branch-selected-deterministic-transfer-v1",
+  "contractSha256": "abf5392aac512b3e6fa9be9bcafe6c72c0ccee2dc287123463222ce22251a3b9",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "precursorSemanticsValid": true,
+  "resourceAccepted": true,
+  "deterministicZeroSampling": true,
+  "rngUsed": false,
+  "hmcOrSamplingPerformed": false,
+  "configurationsRetained": false,
+  "selectedBranch": "complete-lattice-multistate-step-halving",
+  "branchSelectionValid": true,
+  "compactBranchSelected": false,
+  "completeLattice": {
+    "extent": 3,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "omegaDegreesOfFreedom": 3645
+  },
+  "deterministicStateMenu": {
+    "stateCount": 3,
+    "momentumFamilyCount": 2,
+    "stateScales": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "denseScale": 0.03,
+    "minimumObservedOffRay": 0.029998724983430102,
+    "minimumRequiredOffRay": 0.01,
+    "passed": true
+  },
+  "gradientControl": {
+    "passed": true,
+    "maxDirectionalGradientError": 1.4291785203207619E-11,
+    "tolerance": 3E-07
+  },
+  "completeLatticeStabilityGrid": {
+    "passed": true,
+    "ladder": [
+      {},
+      {},
+      {}
+    ],
+    "rows": [
+      {
+        "stateIndex": 0,
+        "momentumFamily": "sine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 1.6129101796380496E-06,
+              "reversibilityScaledError": 1.250173273451792E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 4.0315798599532826E-07,
+              "reversibilityScaledError": 1.2491134247577992E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 1.0078514944833472E-07,
+              "reversibilityScaledError": 1.3740186981725264E-17,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      },
+      {
+        "stateIndex": 0,
+        "momentumFamily": "cosine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 9.714376305591799E-07,
+              "reversibilityScaledError": 1.1316196362651446E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 2.428082445105062E-07,
+              "reversibilityScaledError": 1.1393284537785856E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 6.069886404613811E-08,
+              "reversibilityScaledError": 1.1413179731051438E-17,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      },
+      {
+        "stateIndex": 1,
+        "momentumFamily": "sine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 4.36868436537452E-07,
+              "reversibilityScaledError": 7.411163067582354E-18,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 1.0917816184452533E-07,
+              "reversibilityScaledError": 9.753884320220294E-18,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 2.7292107351861716E-08,
+              "reversibilityScaledError": 9.465044436325196E-18,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      },
+      {
+        "stateIndex": 1,
+        "momentumFamily": "cosine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 9.550943387282018E-07,
+              "reversibilityScaledError": 1.2802492545845902E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 2.3872284660164667E-07,
+              "reversibilityScaledError": 1.1208593281682935E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 5.967754268532133E-08,
+              "reversibilityScaledError": 1.225054098515949E-17,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      },
+      {
+        "stateIndex": 2,
+        "momentumFamily": "sine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 1.6231633624963493E-06,
+              "reversibilityScaledError": 1.2234242932888854E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 4.057192215523031E-07,
+              "reversibilityScaledError": 1.3469426895657036E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 1.0142533102275308E-07,
+              "reversibilityScaledError": 1.4541337512578915E-17,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      },
+      {
+        "stateIndex": 2,
+        "momentumFamily": "cosine",
+        "result": {
+          "passed": true,
+          "energyImproves": true,
+          "minimumAdjacentEnergyImprovement": 1.5,
+          "rows": [
+            {
+              "stepSize": 0.025,
+              "leapfrogSteps": 4,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 9.174369476339095E-07,
+              "reversibilityScaledError": 1.1119628399526541E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.0125,
+              "leapfrogSteps": 8,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 2.2930866183656917E-07,
+              "reversibilityScaledError": 1.1071272652634864E-17,
+              "reversibilityPassed": true
+            },
+            {
+              "stepSize": 0.00625,
+              "leapfrogSteps": 16,
+              "trajectoryLength": 0.1,
+              "finite": true,
+              "absoluteEnergyError": 5.732400587543651E-08,
+              "reversibilityScaledError": 1.3269439414418945E-17,
+              "reversibilityPassed": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "compactShadowing": {
+    "selected": false,
+    "passed": false,
+    "notExecutedBecauseClosureExpanded": true
+  },
+  "deterministicControlsPassed": true,
+  "verdictKind": "branch-selected-deterministic-controls-passed",
+  "terminalStatus": "branch-selected-deterministic-transfer-branch-selected-deterministic-controls-passed",
+  "decision": "The compact closure was rejected upstream, and the preregistered complete-lattice branch passed its multi-state deterministic gradient, reversibility, and step-halving controls. This is not an HMC tuning or mixing result.",
+  "laterReadinessAdjudicationAuthorized": true,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0,
+  "bindings": [
+    {
+      "id": "phase541-summary",
+      "path": "studies/phase541_complete_lattice_integrator_transfer_control_001/output/complete_lattice_integrator_transfer_control_summary.json",
+      "expectedSha256": "9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246",
+      "actualSha256": "9f736fb37c117a8f61964bf9a6033c822c9786e607cbe244030125c8758f4246",
+      "hashMatches": true
+    },
+    {
+      "id": "phase542-contract",
+      "path": "studies/phase542_metric_normalized_force_closure_census_001/preregistration/phase542_metric_normalized_force_closure_contract_v1.json",
+      "expectedSha256": "884f38e9852db54625474ef62739d6b36809f608fb294b727fe8bab589af794a",
+      "actualSha256": "884f38e9852db54625474ef62739d6b36809f608fb294b727fe8bab589af794a",
+      "hashMatches": true
+    },
+    {
+      "id": "phase542-program",
+      "path": "studies/phase542_metric_normalized_force_closure_census_001/Program.cs",
+      "expectedSha256": "1bb50713398c4706eb5a6d2fb11eb65925ac09e964eab335c3b896e8aaac2a53",
+      "actualSha256": "1bb50713398c4706eb5a6d2fb11eb65925ac09e964eab335c3b896e8aaac2a53",
+      "hashMatches": true
+    },
+    {
+      "id": "phase542-summary",
+      "path": "studies/phase542_metric_normalized_force_closure_census_001/output/metric_normalized_force_closure_census_summary.json",
+      "expectedSha256": "1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82",
+      "actualSha256": "1b8b7653d884d2ce22dde629611ad9c8f0d44cdcb8296d5765acf8b5f81f5a82",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ]
+}

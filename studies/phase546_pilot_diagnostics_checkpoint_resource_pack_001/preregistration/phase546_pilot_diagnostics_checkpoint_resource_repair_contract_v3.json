@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 3,
+  "contractId": "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-repair-v3",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A28",
+  "frozenBeforeCorrectedExecution": true,
+  "syntheticFixturesOnly": true,
+  "repairScope": "authentic-v1-provenance-plus-dedicated-dof-mismatch-evidence",
+  "exactBindings": [
+    {"id":"phase546-v1-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json","sha256":"e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d"},
+    {"id":"phase546-v1-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/Program_v1.cs.txt","sha256":"d70ba73f680e9d09e1b14a335b35eb16e088189e88568ea7b8871020338b4e6d"},
+    {"id":"phase546-v1-checkpoint-codec","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/CheckpointCodec_v1.cs.txt","sha256":"d10a9706a7e5b83972f741843f643e22e41ecd34c4153e5d5e46222764f85368"},
+    {"id":"phase546-v1-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_v1.json","sha256":"c9a031da68b8d336a158358a058a23c37dec6d1f2b2eaecd8f58c516721cba04"},
+    {"id":"phase546-v1-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_summary_v1.json","sha256":"c9a031da68b8d336a158358a058a23c37dec6d1f2b2eaecd8f58c516721cba04"},
+    {"id":"phase546-v2-contract","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v2.json","sha256":"363b5c9c175adaea9223336e9a564491e1b9c1856df9c6ad6159fd2b8563c7c3"},
+    {"id":"phase546-v2-program","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/Program_v2.cs.txt","sha256":"38d08584ed0b562395b142d1464ec96b302b5663ec4461b091df8093085f743c"},
+    {"id":"phase546-v2-output","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/pilot_diagnostics_checkpoint_resource_pack_v2.json","sha256":"6b6939119e799b9899589544006aab4a135cc2421d86c49f7b274c8a5d71ba2f"},
+    {"id":"phase546-v2-summary","path":"studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v2/pilot_diagnostics_checkpoint_resource_pack_summary_v2.json","sha256":"6b6939119e799b9899589544006aab4a135cc2421d86c49f7b274c8a5d71ba2f"}
+  ],
+  "lineageAdjudication": {
+    "v1AuthenticOutputSha256": "c9a031da68b8d336a158358a058a23c37dec6d1f2b2eaecd8f58c516721cba04",
+    "v1PositiveResultIncomplete": true,
+    "v1CitableForPhase547ResourceGate": false,
+    "v1SoleEvidenceDefect": "dedicated-dof-mismatch-fixture-evidence-absent",
+    "v2PositiveResultNonCitable": true,
+    "v2ProvenanceDefect": "v2-contract-bound-newline-altered-v1-output-instead-of-authentic-v1-bytes",
+    "newlineAlteredV1Sha256BoundByV2": "e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6",
+    "v2ScientificFixtureResultReinterpretedOrInvalidated": false
+  },
+  "resourceRefusal": {
+    "requiredTopologyId": "periodic-hypercubic-4d",
+    "requiredDimensions": 4,
+    "degreesOfFreedomFormula": "45 * extent^4",
+    "fixtureExtent": 3,
+    "expectedDegreesOfFreedom": 3645,
+    "mismatchedDegreesOfFreedom": 3644,
+    "expectedRefusalReason": "invalid-shape",
+    "checkedIntegerArithmeticRequired": true
+  },
+  "fixtureAccounting": {
+    "exactBoundInheritedAuthenticV1FixtureCount": 13,
+    "newDedicatedFixtureIds": ["resource-dof-mismatch-refused"],
+    "correctedTotalFixtureCount": 14
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-lineage",
+    "lineage-adjudication-invalid",
+    "dof-mismatch-fixture-failed",
+    "pilot-support-pack-materialized-with-authentic-lineage-dof-repair"
+  ],
+  "authorityFirewalls": {
+    "rngUsed": false,
+    "registeredOperatorProposalPerformed": false,
+    "markovChainAdvanced": false,
+    "warmupPerformed": false,
+    "adaptationPerformed": false,
+    "samplingPerformed": false,
+    "benchmarkPerformed": false,
+    "configurationsRetained": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitOrGevClaimAllowed": false,
+    "productionOrLaunchAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

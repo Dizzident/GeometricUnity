@@ -603,6 +603,141 @@ standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
 remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`.
 
+REDUCED-TO-COMPLETE-LATTICE TRANSFER READINESS (2026-07-22, Amendment A25;
+Phase540): Phase540 is a deterministic zero-sampling adjudicator over the
+exact-bound Phase533/535 pilot record and Phase537-539 integrator evidence.
+The independent reduced-row gate passes. The earliest missing gate is
+`explicit-reduced-to-complete-lattice-transfer-map`: no exact-bound A25 input
+maps the one-dimensional target, force, and `0.25 x 8` row to the Phase533
+complete-lattice pilot, whose frozen integrator parameters are `0.0125 x 6`.
+The terminal is `reduced-to-complete-lattice-transfer-map-missing`.
+
+Later gates also remain open for a deterministic complete-lattice force and
+reversibility oracle, an executable bounded-pilot branch, hardened
+complete-lattice diagnostics with independent seeds, and executable
+resource/topology evidence. Phase540 selects a separately registered,
+prospectively frozen, zero-sampling deterministic integrator-transfer control
+as the smallest admissible successor; it does not authorize that construction
+or any HMC. Phase535 remains closed, no configurations were retained, no
+Phase481 pack or production default was created, Phase458 and O4 are unchanged,
+external review remains pending, `promotedPhysicalMassClaimCount=0`, and
+registry 541+ is unassigned.
+
+The mandatory A25 incremental checkpoint ran 84 steps and skipped 320. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 324 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-22T21-30-50-576Z.json`.
+
+COMPLETE-LATTICE INTEGRATOR TRANSFER CONTROL (2026-07-22, Amendment A26;
+Phase541): Phase541 prospectively freezes a deterministic, zero-sampling
+complete-lattice control over the registered theta-zero SD2 extent-three
+operator. The Phase534 scalar polynomial reconstructs on the embedded witness
+ray, analytic scalar/full-force parity passes, and both the `0.25 x 8`
+selected-row ladder and `0.0125 x 6` pilot-row ladder remain finite,
+machine-reversible, and energy-improving under step halving on the frozen
+deterministic state.
+
+The earliest transfer failure is geometric: the raw three-coefficient witness
+has induced Euclidean kinetic metric `3`, while the reduced sampler used metric
+`1`. In addition, the full analytic force has maximum transverse fraction
+`0.3968890282526692`, so the witness ray is not invariant under the complete-
+lattice flow. The terminal is `embedding-kinetic-metric-mismatch`. This rules
+out direct symplectic transfer of the independently confirmed scalar row; it
+does not identify an integrator defect. Phase541 used no RNG or HMC, retained
+no configurations, and did not reopen Phase535. No Phase481 pack, production
+default, Phase458/O4 satisfaction, source-contract application, or physical-
+unit claim follows. External review remains pending,
+`promotedPhysicalMassClaimCount=0`, and registry 542+ is unassigned.
+
+The mandatory A26 incremental checkpoint ran 83 steps and skipped 322. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 325 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-22T21-50-38-868Z.json`.
+
+FORCE-CLOSURE AND PILOT-READINESS TRANCHE (2026-07-25, Amendment A27;
+Phases542-544): Phase542 proves that the Phase541 metric factor is removable
+by the exact coordinate `q=sqrt(3)*x`, but this does not close the dynamics.
+The deterministic force/Jacobian basis grows `1 -> 4 -> 13 -> 24`, reaches its
+frozen dimension cap without stabilization, and retains Jacobian residual
+`0.42957271817081416`. Its terminal is
+`force-closure-expands-beyond-compact-limit`; the scalar route is not replaced
+by a compact surrogate.
+
+Phase543 therefore takes its prospectively frozen complete-lattice branch.
+Three fixed off-ray states, two deterministic momentum families, and three
+step-halved rows produce eighteen finite trajectories. The independent
+directional-gradient check reaches `1.4291785203207619e-11`; every trajectory
+is machine-reversible and every ladder has the expected energy-error
+improvement. The terminal is
+`branch-selected-deterministic-controls-passed`, which is deterministic
+integrator evidence only and is not an HMC tuning or mixing result.
+
+Phase544 closes its first three readiness gates and stops at
+`new-executable-bounded-pilot-implementation`. Its terminal is
+`executable-bounded-pilot-implementation-missing`; hardened complete-lattice
+diagnostics, disjoint prospective seeds and a configuration-level checkpoint
+codec, and executable resource/topology refusal evidence also remain absent.
+The smallest admissible successor is a separately registered, non-executing
+bounded-pilot pack-construction phase. Phase535 remains closed and unchanged.
+No RNG, HMC, sampling, configurations, Phase481 pack, production authority,
+Phase458/O4 satisfaction, source-contract application, or physical-unit claim
+follows. External review remains pending,
+`promotedPhysicalMassClaimCount=0`, and registry 545+ is unassigned.
+
+The mandatory A27 incremental checkpoint ran 86 steps and skipped 322. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 328 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-25T13-35-51-704Z.json`.
+
+BOUNDED COMPLETE-LATTICE PILOT PACK (2026-07-25, Amendment A28;
+Phases545-547): Phase545 materializes a reusable injectable deterministic
+proposal kernel. Adversarial review rejected the original v1 and an
+execution-preceded interim v2; both histories are preserved and non-citable.
+The prospectively frozen v3 repairs divergent-proposal acceptance,
+pre-evaluator finite checks, work refusal, contract validation, and explicit
+non-authority fields. All ten deterministic fixtures pass. They establish
+implementation behavior only, not HMC acceptance, equilibrium, mixing,
+convergence, or observable evidence.
+
+Phase546 freezes the telemetry, prospective seeds, canonical checksummed
+checkpoint, and resource-refusal pack. Its authentic v1 has thirteen passing
+synthetic fixtures but lacked a dedicated DOF-mismatch case. The first repair
+bound newline-altered copies of the v1 outputs and is preserved as a
+non-citable provenance incident. The prospectively frozen v3 restores the
+authentic bytes and adds one passing DOF-rule fixture. The evidence is
+compositional: thirteen v1 fixtures plus one v3 fixture; v3 did not execute
+fourteen fixtures or dynamically exercise the archived v1 estimator branch.
+
+Phase547 exact-binds both repair lineages and independently reconstructs the
+historical seed census. All four narrowly defined Phase544 construction gates
+and all seven precedence cases pass. Its terminal is
+`bounded-pilot-pack-ready-for-separate-prospective-execution-registration`.
+This authorizes only registration of a separate prospectively frozen execution
+phase. It does not authorize pilot execution or launch. Resource arithmetic is
+not a benchmark, checkpoint round-trip is not live restart equivalence, and
+telemetry schema is not measured convergence. Phase535 remains closed and
+unchanged; Phase481, Phase458, O4, source-contract, production, physical-unit,
+and GeV authority remain unchanged. External review remains pending,
+`promotedPhysicalMassClaimCount=0`, and registry 548+ is unassigned.
+
+Targeted Release builds, two-run byte-reproducibility checks, traversal build,
+Phase101, Phase202, and claim-integrity verification are green. Phase202
+reports 331 passed / 3 standing failures, source deficits remain 15 W/Z and 14
+Higgs fields, and `promotedPhysicalMassClaimCount=0`.
+
+The mandatory A28 incremental checkpoint ran 86 steps and skipped 325. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 331 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-25T14-26-45-291Z.json`.
+
 The mandatory A20 incremental checkpoint ran 57 steps and skipped 337. It
 ended at `boson-claim-integrity-verified`: O4 coverage remained 31/31, the
 synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z and

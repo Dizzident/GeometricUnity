@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "phase": 546,
+  "phaseId": "phase546-pilot-diagnostics-checkpoint-resource-pack-repair",
+  "contractId": "phase546-a28-pilot-diagnostics-checkpoint-resource-pack-repair-v2",
+  "contractSha256": "363b5c9c175adaea9223336e9a564491e1b9c1856df9c6ad6159fd2b8563c7c3",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase546-v1-contract",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json",
+      "expectedSha256": "e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d",
+      "actualSha256": "e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-v1-program",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/Program_v1.cs.txt",
+      "expectedSha256": "d70ba73f680e9d09e1b14a335b35eb16e088189e88568ea7b8871020338b4e6d",
+      "actualSha256": "d70ba73f680e9d09e1b14a335b35eb16e088189e88568ea7b8871020338b4e6d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-v1-checkpoint-codec",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/CheckpointCodec_v1.cs.txt",
+      "expectedSha256": "d10a9706a7e5b83972f741843f643e22e41ecd34c4153e5d5e46222764f85368",
+      "actualSha256": "d10a9706a7e5b83972f741843f643e22e41ecd34c4153e5d5e46222764f85368",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-v1-output",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_v1.json",
+      "expectedSha256": "e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6",
+      "actualSha256": "e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-v1-summary",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/pilot_diagnostics_checkpoint_resource_pack_summary_v1.json",
+      "expectedSha256": "e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6",
+      "actualSha256": "e9d7e2ee2b6dfbce7bab3e980be0c5889534c1694bbe9d270546597e0edd9cf6",
+      "hashMatches": true
+    }
+  ],
+  "v1Lineage": {
+    "preservedV1SemanticsValid": true,
+    "positiveResultIncomplete": true,
+    "citableForPhase547ResourceGate": false,
+    "soleDefect": "dedicated-dof-mismatch-fixture-evidence-absent",
+    "otherV1EvidenceReinterpretedOrInvalidated": false,
+    "inheritedFixtureCount": 13
+  },
+  "repairEvidence": {
+    "fixtureId": "resource-dof-mismatch-refused",
+    "dofMismatchFixtureTested": true,
+    "dofMismatchFixturePassed": true,
+    "request": {
+      "topologyId": "periodic-hypercubic-4d",
+      "dimensions": 4,
+      "extent": 3,
+      "degreesOfFreedom": 3644
+    },
+    "assessment": {
+      "allowed": false,
+      "refusalReason": "invalid-shape",
+      "expectedDegreesOfFreedom": 3645,
+      "observedDegreesOfFreedom": 3644
+    },
+    "expectedRefusalReason": "invalid-shape"
+  },
+  "newDedicatedFixtureCount": 1,
+  "correctedPassedFixtureCount": 14,
+  "correctedTotalFixtureCount": 14,
+  "allCorrectedFixturesPassed": true,
+  "verdictKind": "pilot-support-pack-materialized-with-dof-repair",
+  "terminalStatus": "pilot-diagnostics-checkpoint-resource-pack-pilot-support-pack-materialized-with-dof-repair",
+  "decision": "The exact-bound v1 support pack is supplemented by dedicated synthetic DOF-mismatch refusal evidence. Only the corrected v2 result is admissible to dependent Phase547 resource-gate adjudication.",
+  "rngUsed": false,
+  "registeredOperatorProposalPerformed": false,
+  "markovChainAdvanced": false,
+  "warmupPerformed": false,
+  "adaptationPerformed": false,
+  "samplingPerformed": false,
+  "benchmarkPerformed": false,
+  "configurationsRetained": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

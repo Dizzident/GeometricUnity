@@ -398,6 +398,14 @@
     <PhaseProject Include="../studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj" />
     <PhaseProject Include="../studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj" />
     <PhaseProject Include="../studies/phase539_independent_reduced_target_row_confirmation_001/Phase539IndependentReducedTargetRowConfirmation.csproj" />
+    <PhaseProject Include="../studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/Phase540ReducedToCompleteLatticeTransferReadiness.csproj" />
+    <PhaseProject Include="../studies/phase541_complete_lattice_integrator_transfer_control_001/Phase541CompleteLatticeIntegratorTransferControl.csproj" />
+    <PhaseProject Include="../studies/phase542_metric_normalized_force_closure_census_001/Phase542MetricNormalizedForceClosureCensus.csproj" />
+    <PhaseProject Include="../studies/phase543_complete_lattice_multistate_stability_grid_001/Phase543CompleteLatticeMultistateStabilityGrid.csproj" />
+    <PhaseProject Include="../studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Phase544BoundedCompleteLatticePilotReadinessAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj" />
+    <PhaseProject Include="../studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Phase546PilotDiagnosticsCheckpointResourcePack.csproj" />
+    <PhaseProject Include="../studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />
