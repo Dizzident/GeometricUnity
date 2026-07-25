@@ -21760,3 +21760,119 @@ standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
 remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`. The skip report is
 `scripts/incremental/skip_reports/pass_2026-07-25T14-26-45-291Z.json`.
+
+## 2026-07-25 - Amendment A29, Phase548: bounded complete-lattice pilot executed
+
+Phase547 authorized registering a separate prospectively frozen execution phase
+and nothing more. Phase548 is that phase. Its contract was committed to git
+before the first registered seed was drawn, and the sampling ran only after
+that freeze.
+
+The contract exact-binds thirteen artifacts across the Phase533/543/545/546/547
+chain plus the registered operator source, and it re-derives the Phase546
+telemetry schema, observable schema, convergence thresholds, canonical
+checkpoint format and checked resource rule from the frozen upstream bytes
+rather than restating them, refusing to run on any mismatch. The Phase545
+kernel is reused by project reference, so the proposal code that executed is
+the hash-bound kernel itself.
+
+The inherited Phase533 row was rejected on record, not quietly. Its 64 retained
+draws per chain cannot reach the frozen bulk effective-sample-size floor of
+100, and its 0.0125 step size sits about a hundredfold below the measured
+leapfrog stability bound. The executed default is `0.06` step, 8 leapfrog
+steps, 60 warmup and 340 retained trajectories per chain. It was chosen by a
+scratch calibration that ran outside the repository on non-registered seeds and
+wrote no repository byte; the contract records this with
+`pristineSeedBlindPreregistration` false. This is the Phase539 tune-then-confirm
+pattern, and it is labelled as such rather than presented as seed-blind
+preregistration.
+
+A frozen ceiling bound the design in a way worth recording. At four chains and
+extent three both Phase546 limits bind: peak bytes land exactly on the
+`5360704` ceiling and the rule refuses on equality, while at this phase's
+trajectory count the aggregate CPU-tick limit is crossed as well and, being
+checked first, is the reported reason. The pilot therefore runs three chains
+per seed table on the first three frozen seeds of each. The run recomputes the
+four-chain assessment and preserves both the reason and the peak-byte equality
+as a witness. No ceiling, formula, or threshold was modified to make room.
+
+Deterministic zero-sampling prechecks all pass. Action and gradient vanish
+exactly at the origin, the directional finite-difference gradient error is
+`1.36e-9` against `3e-7`, and forward/reverse integration closes to `1.55e-16`
+against `2e-9`. The frozen spectral probe gives largest eigenvalue `1.9598`,
+hence a leapfrog stability bound of `1.4287`, about twenty-four times the
+frozen step; and smallest eigenvalue `1.23e-6`, a condition number near
+`1.6e6`. These are iterative estimates, not an eigendecomposition.
+
+Phase547 had recorded that codec round-trip is not live restart equivalence.
+Phase548 closes that specific gap on a reduced prefix: an eight-trajectory run
+of a registered chain is reproduced bit for bit by four trajectories, a
+canonical checksummed checkpoint, a decode, and four more trajectories, in both
+position and RNG state. That is a reduced-prefix result and not a full-length
+chain claim.
+
+Six chains completed with zero non-finite and zero divergent trajectories,
+acceptance between `0.9125` and `0.95`, and largest absolute energy error
+`0.885`. All six left their overdispersed starts and agree closely, with mean
+action density `0.3534`-`0.3570` and mean squared configuration norm
+`2239`-`2271`. The frozen convergence gates nevertheless do not all pass, so
+the preserved terminal is `pilot-executed-diagnostics-invalid`. In table a both
+gauge-invariant observables pass every gate (split R-hat `1.0074` and `1.0026`,
+bulk effective sample sizes `212.3` and `393.5`). In table b all three
+observables exceed the `1.01` R-hat threshold marginally (`1.0124`, `1.0141`,
+`1.0151`). The gauge-variant observable is the worst row in both tables
+(`1.0387` and `1.0151`) and is the only one to miss the bulk floor (`72.2` and
+`99.7`).
+
+The contract declared each observable's gauge class before execution precisely
+so that any invariant-versus-variant split would be read against a prospective
+expectation. The split holds in table a and fails in table b, so
+`gaugeSectorSplitObserved` is recorded false. The honest reading is that the
+bounded budget leaves marginal cross-chain disagreement in every sector, worst
+in the gauge-variant one; a clean sector separation was not demonstrated. The
+spectral probe quantifies the bound: the implied slowest-mode trajectory length
+is about `2836`, while the entire frozen budget buys `192` units of trajectory
+length per chain, roughly seven percent of one slow-mode correlation time.
+
+Two repairs are preserved under `output/incident/` and are non-citable. The
+first execution attempt completed all six chains and then aborted while
+serializing a non-computable diagnostic, which strict JSON cannot encode; the
+fix is confined to output encoding, and a diagnostic that cannot be computed is
+now reported as null, which never means passed. The second attempt reported no
+tail effective sample size for any gauge-invariant observable, which was a
+defect in this phase's own estimator rather than a property of the chains: the
+Geyer pair sum omitted the leading `rho_0 = 1` term, biasing tau low by exactly
+two, so a well-mixed sequence returned a negative tau. The corrected estimator
+restores the standard definition, moved the tail rows from not-computable to
+large finite values, and left every split R-hat unchanged. Neither repair
+touched the frozen contract, configuration, seeds, thresholds, or gates, the
+chains are identical across all attempts because the run is deterministic in
+its frozen seeds, and the terminal was the same before and after.
+
+The lesson worth carrying forward is that Phase548 computes its own chains and
+its own verdict, so its assessment surface is not independent of its execution.
+Both repairs were caught only because the failure modes happened to be loud. An
+independently registered adjudicator that re-derives the diagnostics from the
+preserved telemetry and checkpoints is the appropriate successor, and registry
+549+ is unassigned.
+
+The authoritative hashes are Phase548 contract
+`a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49`,
+program `6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177`,
+and output `ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be`,
+with the output byte-identical across consecutive runs.
+
+This tranche is workbench-relative and in lattice units. It establishes no
+stationarity, sampling correctness, transfer to a larger extent, or spectral or
+physical quantity, and it is not a production benchmark. No Phase481 pack was
+created, no production default selected, Phase458 G3/G4/G5 and O4 remain
+unsatisfied, the source-lineage deficits are unchanged, Phase535 remains closed
+and unchanged, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A29 incremental checkpoint ran 57 steps and skipped 355. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 332 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-25T16-45-10-068Z.json`.

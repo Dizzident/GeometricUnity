@@ -386,6 +386,7 @@ const string Phase544BoundedCompleteLatticePilotReadinessPath = "studies/phase54
 const string Phase545InjectableDeterministicHmcKernelPath = "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json";
 const string Phase546PilotDiagnosticsCheckpointResourcePackPath = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
 const string Phase547BoundedPilotPackReadinessAdjudicatorPath = "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json";
+const string Phase548BoundedCompleteLatticePilotExecutionPath = "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -812,6 +813,7 @@ using var phase544 = TryParseJson(Phase544BoundedCompleteLatticePilotReadinessPa
 using var phase545 = TryParseJson(Phase545InjectableDeterministicHmcKernelPath);
 using var phase546 = TryParseJson(Phase546PilotDiagnosticsCheckpointResourcePackPath);
 using var phase547 = TryParseJson(Phase547BoundedPilotPackReadinessAdjudicatorPath);
+using var phase548 = TryParseJson(Phase548BoundedCompleteLatticePilotExecutionPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9612,6 +9614,31 @@ var package = new
             pilotExecutionAuthorized = JsonBool(phase547.RootElement, "pilotExecutionAuthorized"),
             launchAuthorized = JsonBool(phase547.RootElement, "launchAuthorized"),
             promotedPhysicalMassClaimCount = JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        boundedCompleteLatticePilotExecution = phase548 is null ? null : new
+        {
+            status = JsonString(phase548.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase548.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase548.RootElement, "exactBindingsValid"),
+            inputsValid = JsonBool(phase548.RootElement, "inputsValid"),
+            verdictKind = JsonString(phase548.RootElement, "verdictKind"),
+            registrationAuthorized = phase548.RootElement.TryGetProperty("registrationPremise", out var p548Premise)
+                ? JsonBool(p548Premise, "registrationAuthorized") : null,
+            prechecksPassed = phase548.RootElement.TryGetProperty("deterministicPrechecks", out var p548Prechecks)
+                ? JsonBool(p548Prechecks, "prechecksPassed") : null,
+            restartEquivalent = phase548.RootElement.TryGetProperty("checkpointRestartEquivalence", out var p548Restart)
+                ? JsonBool(p548Restart, "restartEquivalent") : null,
+            samplingPerformed = JsonBool(phase548.RootElement, "samplingPerformed"),
+            executionClean = phase548.RootElement.TryGetProperty("execution", out var p548Execution)
+                ? JsonBool(p548Execution, "executionClean") : null,
+            diagnosticsValid = phase548.RootElement.TryGetProperty("diagnostics", out var p548Diagnostics)
+                ? JsonBool(p548Diagnostics, "diagnosticsValid") : null,
+            productionDefaultSelected = JsonBool(phase548.RootElement, "productionDefaultSelected"),
+            productionAuthorized = JsonBool(phase548.RootElement, "productionAuthorized"),
+            launchAuthorized = JsonBool(phase548.RootElement, "launchAuthorized"),
+            physicalUnitClaimAllowed = JsonBool(phase548.RootElement, "physicalUnitClaimAllowed"),
+            gevClaimAllowed = JsonBool(phase548.RootElement, "gevClaimAllowed"),
+            promotedPhysicalMassClaimCount = JsonInt(phase548.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

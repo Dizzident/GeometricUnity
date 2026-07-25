@@ -1,0 +1,4 @@
+Phase548 verdict: pilot-executed-diagnostics-invalid
+bindings=13/13, prechecks=True, restart=True, clean=True, diagnosticsValid=False
+lambdaMax=1.959768238227516, lambdaMin=1.2273204745838484E-06, stabilityBound=1.4286558973499097
+forceEvaluations=22069, chains=6

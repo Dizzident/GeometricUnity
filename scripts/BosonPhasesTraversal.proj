@@ -406,6 +406,7 @@
     <PhaseProject Include="../studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj" />
     <PhaseProject Include="../studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Phase546PilotDiagnosticsCheckpointResourcePack.csproj" />
     <PhaseProject Include="../studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

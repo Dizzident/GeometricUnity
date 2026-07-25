@@ -58,14 +58,20 @@ registered Phase546 seeds are touched only by the frozen execution.
 
 ## The binding constraint: three chains, not four
 
-The Phase546 resource rule refuses when estimated peak bytes reach the ceiling,
-and four chains at extent three land exactly on it:
+The Phase546 resource rule refuses on equality, and at four chains **both** its
+limits are reached. Peak bytes land exactly on the ceiling:
 
 ```
 perChainBytes = 1048576 + 3645 * 80 = 1340176
-4 * 1340176   = 5360704 = maximumPeakBytes   -> refused
+4 * 1340176   = 5360704 = maximumPeakBytes   -> at the limit
 3 * 1340176   = 4020528                      -> allowed
 ```
+
+At this phase's trajectory count the aggregate CPU-tick limit is crossed too
+(`4 * 400 * 8 * 3645 * 12 = 559872000` against a ceiling of `466093440`), and
+because the rule checks CPU before memory it reports
+`cpu-boundary-or-limit-exceeded` as the refusal reason. The run records both the
+reason and the peak-byte figure so the equality is visible.
 
 The pilot therefore runs **three chains per seed table**, taking the first
 three seeds of each frozen Phase546 table in frozen order, and runs the two
@@ -108,6 +114,48 @@ quantity.
   byte-reproducible; the deterministic projection of each is hashed into the
   main output so the scientific content stays pinned while the timing does not.
 - `output/checkpoints/` - the canonical checksummed end-of-chain checkpoints.
+- `output/incident/` - the two preserved, non-citable repair records described
+  below.
 
 Failed and negative outcomes in these directories are first-class artifacts and
 are preserved, never overwritten with a favorable rerun.
+
+## Result
+
+The terminal is `pilot-executed-diagnostics-invalid`. Six chains ran to
+completion with zero non-finite and zero divergent trajectories, acceptance
+between `0.9125` and `0.95`, and largest absolute energy error `0.885`. Both
+gauge-invariant observables pass every frozen gate in table a; in table b all
+three observables exceed the `1.01` split R-hat threshold marginally, and the
+gauge-variant observable misses the bulk effective-sample-size floor in both
+tables. The prospectively declared gauge-sector split is therefore only partly
+observed, and `gaugeSectorSplitObserved` is recorded false.
+
+The deterministic spectral probe explains the bound: the condition number is
+near `1.6e6`, implying a slowest-mode trajectory length near `2836`, while the
+entire frozen budget buys `192` units of trajectory length per chain.
+
+## Two preserved repairs
+
+Both live under `output/incident/` and neither is citable evidence.
+
+1. **Serialization abort.** The first attempt completed all six chains and then
+   aborted while writing a non-computable diagnostic, which strict JSON cannot
+   encode. The fix is confined to output encoding: a diagnostic that cannot be
+   computed is reported as null, which never means "passed".
+2. **Defective tail effective-sample-size estimator.** The second attempt
+   reported no tail effective sample size for any gauge-invariant observable.
+   That was this phase's own estimator, not a property of the chains: the Geyer
+   pair sum omitted the leading `rho_0 = 1` term, biasing tau low by exactly
+   two, so a well-mixed sequence returned a negative tau. The corrected
+   estimator restores the standard definition.
+
+Neither repair touched the frozen contract, configuration, seeds, thresholds,
+or gates. The chains are identical across all attempts because the run is
+deterministic in its frozen seeds, every split R-hat is unchanged, and the
+terminal was `pilot-executed-diagnostics-invalid` before and after.
+
+Because this phase computes its own chains and its own verdict, its assessment
+surface is not independent of its execution - a point these two repairs make
+concrete. An independently registered adjudicator over the preserved telemetry
+and checkpoints is the appropriate successor.

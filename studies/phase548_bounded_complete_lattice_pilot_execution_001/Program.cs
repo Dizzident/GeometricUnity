@@ -476,9 +476,9 @@ var tableDiagnostics = tables.Select(table =>
         {
             name,
             gaugeClass = telemetrySchema.GetProperty("gaugeInvarianceClassification").GetProperty(name).GetString(),
-            splitRankNormalizedRhat = d.SplitRankNormalizedRhat,
-            bulkEss = d.BulkEss,
-            tailEss = d.TailEss,
+            splitRankNormalizedRhat = Reportable(d.SplitRankNormalizedRhat),
+            bulkEss = Reportable(d.BulkEss),
+            tailEss = Reportable(d.TailEss),
             rhatPassed = rhatOk,
             bulkEssPassed = bulkOk,
             tailEssPassed = tailOk,
@@ -491,7 +491,7 @@ var tableDiagnostics = tables.Select(table =>
     {
         tableId = table.Id,
         chainCount = members.Length,
-        minimumObservedAcceptance,
+        minimumObservedAcceptance = Reportable(minimumObservedAcceptance),
         acceptancePassed = acceptanceOk,
         observables = perObservable,
         passed = acceptanceOk && perObservable.All(x => x.passed),
@@ -500,7 +500,11 @@ var tableDiagnostics = tables.Select(table =>
 bool diagnosticsValid = samplingPerformed && executionClean && tableDiagnostics.All(x => x.passed);
 
 var failingObservables = tableDiagnostics.SelectMany(t => t.observables.Where(o => !o.passed)
-    .Select(o => new { table = t.tableId, o.name, o.gaugeClass, o.splitRankNormalizedRhat, o.bulkEss, o.tailEss })).ToArray();
+    .Select(o => new
+    {
+        table = t.tableId, o.name, o.gaugeClass, o.splitRankNormalizedRhat, o.bulkEss, o.tailEss,
+        o.rhatPassed, o.bulkEssPassed, o.tailEssPassed,
+    })).ToArray();
 bool everyFailingObservableIsGaugeVariant = failingObservables.Length > 0
     && failingObservables.All(x => x.gaugeClass == "gauge-variant");
 bool everyGaugeInvariantObservablePassed = samplingPerformed && tableDiagnostics
@@ -587,22 +591,22 @@ var output = new
     deterministicPrechecks = new
     {
         zeroRngUsed = true,
-        originAction = originEvaluation.Action,
-        originGradientNorm,
+        originAction = Reportable(originEvaluation.Action),
+        originGradientNorm = Reportable(originGradientNorm),
         originExact,
-        largestEigenvalue,
-        smallestEigenvalue,
-        conditionNumberEstimate = System.Math.Abs(largestEigenvalue) / System.Math.Max(System.Math.Abs(smallestEigenvalue), 1e-300),
-        stabilityBound,
+        largestEigenvalue = Reportable(largestEigenvalue),
+        smallestEigenvalue = Reportable(smallestEigenvalue),
+        conditionNumberEstimate = Reportable(System.Math.Abs(largestEigenvalue) / System.Math.Max(System.Math.Abs(smallestEigenvalue), 1e-300)),
+        stabilityBound = Reportable(stabilityBound),
         stepSizeBelowStabilityBound = stepSize < stabilityBound,
         spectralValid,
-        directionalGradientError,
+        directionalGradientError = Reportable(directionalGradientError),
         gradientValid,
-        reversibilityError,
+        reversibilityError = Reportable(reversibilityError),
         reversibilityValid,
         prechecksPassed,
         spectralProbeIsIterativeEstimateNotEigendecomposition = true,
-        slowestModeTrajectoryLengthEstimate = System.Math.PI / System.Math.Sqrt(System.Math.Max(System.Math.Abs(smallestEigenvalue), 1e-300)),
+        slowestModeTrajectoryLengthEstimate = Reportable(System.Math.PI / System.Math.Sqrt(System.Math.Max(System.Math.Abs(smallestEigenvalue), 1e-300))),
         totalTrajectoryLengthPerChain = stepSize * leapfrogSteps * trajectoriesPerChain,
     },
     checkpointRestartEquivalence = new
@@ -626,14 +630,14 @@ var output = new
         {
             chainId = x.ChainId, tableId = x.TableId, seed = x.ExecutionSeed, rawSeed = x.RawSeed,
             warmupCount = x.WarmupCount, retainedCount = x.RetainedCount,
-            acceptanceRate = x.AcceptanceRate, nonFiniteCount = x.NonFiniteCount,
-            divergenceCount = x.DivergenceCount, maximumAbsoluteDeltaH = x.MaximumAbsoluteDeltaH,
+            acceptanceRate = Reportable(x.AcceptanceRate), nonFiniteCount = x.NonFiniteCount,
+            divergenceCount = x.DivergenceCount, maximumAbsoluteDeltaH = Reportable(x.MaximumAbsoluteDeltaH),
             halted = x.Halted, observableSchemaId,
-            observableMeans = observableNames.ToDictionary(n => n, n => x.Observables[n].Length == 0 ? double.NaN : x.Observables[n].Average()),
-            observableStandardErrors = observableNames.ToDictionary(n => n, n => StandardError(x.Observables[n], x.PerObservable[n].BulkEss)),
-            splitRankNormalizedRhat = observableNames.ToDictionary(n => n, n => x.PerObservable[n].SplitRankNormalizedRhat),
-            bulkEss = observableNames.ToDictionary(n => n, n => x.PerObservable[n].BulkEss),
-            tailEss = observableNames.ToDictionary(n => n, n => x.PerObservable[n].TailEss),
+            observableMeans = observableNames.ToDictionary(n => n, n => x.Observables[n].Length == 0 ? null : Reportable(x.Observables[n].Average())),
+            observableStandardErrors = observableNames.ToDictionary(n => n, n => Reportable(StandardError(x.Observables[n], x.PerObservable[n].BulkEss))),
+            splitRankNormalizedRhat = observableNames.ToDictionary(n => n, n => Reportable(x.PerObservable[n].SplitRankNormalizedRhat)),
+            bulkEss = observableNames.ToDictionary(n => n, n => Reportable(x.PerObservable[n].BulkEss)),
+            tailEss = observableNames.ToDictionary(n => n, n => Reportable(x.PerObservable[n].TailEss)),
             checkpointSha256 = x.CheckpointSha256,
             telemetryDeterministicSha256 = x.TelemetryDeterministicSha256,
         }).ToArray(),
@@ -769,6 +773,11 @@ CheckpointState BuildCheckpoint(string chainId, int seed, ChainState state, int 
     return (evaluation.Action, evaluation.Gradient);
 }
 
+// A diagnostic that cannot be computed (a degenerate or perfectly mixed
+// sequence) is reported as null rather than as a non-finite number, which
+// strict JSON cannot encode. Null here means "not computable", never "passed".
+static double? Reportable(double value) => double.IsFinite(value) ? value : null;
+
 static bool BitIdentical(double[] a, double[] b) =>
     a.Length == b.Length && a.Zip(b).All(pair =>
         BitConverter.DoubleToInt64Bits(pair.First) == BitConverter.DoubleToInt64Bits(pair.Second));
@@ -843,6 +852,7 @@ static double Ess(double[][] chains)
     double varPlus = ((n - 1.0) / n) * within + between / n;
     if (varPlus <= 0) return double.NaN;
     var rho = new double[n];
+    rho[0] = 1.0;
     for (int lag = 1; lag < n; lag++)
     {
         double covariance = 0.0;
@@ -855,11 +865,14 @@ static double Ess(double[][] chains)
         }
         rho[lag] = 1.0 - (within - covariance / m) / varPlus;
     }
+    // Geyer initial monotone positive sequence. The pair sum starts at
+    // rho[0] + rho[1] with rho[0] = 1; dropping that leading term biases tau
+    // low by exactly 2 and makes a well-mixed sequence report tau < 0.
     double tau = -1.0;
     double previousPair = double.PositiveInfinity;
-    for (int k = 0; 2 * k + 2 < n; k++)
+    for (int k = 0; 2 * k + 1 < n; k++)
     {
-        double pair = rho[2 * k + 1] + rho[2 * k + 2];
+        double pair = rho[2 * k] + rho[2 * k + 1];
         if (pair < 0) break;
         pair = System.Math.Min(pair, previousPair);
         previousPair = pair;

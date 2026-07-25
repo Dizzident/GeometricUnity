@@ -295,6 +295,7 @@ const string Phase544Path = "studies/phase544_bounded_complete_lattice_pilot_rea
 const string Phase545Path = "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json";
 const string Phase546Path = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
 const string Phase547Path = "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json";
+const string Phase548Path = "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -641,6 +642,7 @@ using var phase544 = File.Exists(Phase544Path) ? JsonDocument.Parse(File.ReadAll
 using var phase545 = File.Exists(Phase545Path) ? JsonDocument.Parse(File.ReadAllText(Phase545Path)) : null;
 using var phase546 = File.Exists(Phase546Path) ? JsonDocument.Parse(File.ReadAllText(Phase546Path)) : null;
 using var phase547 = File.Exists(Phase547Path) ? JsonDocument.Parse(File.ReadAllText(Phase547Path)) : null;
+using var phase548 = File.Exists(Phase548Path) ? JsonDocument.Parse(File.ReadAllText(Phase548Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7883,6 +7885,58 @@ var boundedPilotPackReadinessAdjudicatorPassed = phase547 is not null
     && JsonBool(phase547.RootElement, "hmcEvidenceEstablished") is false
     && JsonBool(phase547.RootElement, "allDownstreamAuthority") is false
     && JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount") == 0;
+// The bounded pilot's job is to execute its frozen configuration fail-closed and
+// preserve whatever terminal follows. This row therefore asserts the execution
+// invariants and the claim boundary, and accepts either executed terminal. It
+// deliberately does NOT require the convergence gates to pass: an honest
+// negative convergence terminal is a correct outcome for this phase, not a
+// defect. It does require that the chains actually ran without a non-finite or
+// divergent trajectory, since that would be a genuine execution failure.
+var boundedCompleteLatticePilotExecutionPassed = phase548 is not null
+    && JsonString(phase548.RootElement, "contractId") == "phase548-a29-bounded-complete-lattice-pilot-execution-v1"
+    && JsonBool(phase548.RootElement, "contractValid") is true
+    && JsonBool(phase548.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase548.RootElement, "forwardingFaithful") is true
+    && JsonBool(phase548.RootElement, "seedProvenanceValid") is true
+    && JsonBool(phase548.RootElement, "inputsValid") is true
+    && phase548.RootElement.TryGetProperty("registrationPremise", out var p548Premise)
+    && JsonBool(p548Premise, "registrationAuthorized") is true
+    && JsonBool(p548Premise, "phase547PilotExecutionAuthorized") is false
+    && phase548.RootElement.TryGetProperty("deterministicPrechecks", out var p548Prechecks)
+    && JsonBool(p548Prechecks, "prechecksPassed") is true
+    && JsonBool(p548Prechecks, "originExact") is true
+    && JsonBool(p548Prechecks, "stepSizeBelowStabilityBound") is true
+    && phase548.RootElement.TryGetProperty("checkpointRestartEquivalence", out var p548Restart)
+    && JsonBool(p548Restart, "restartEquivalent") is true
+    && JsonBool(p548Restart, "isNotFullLengthChainEquivalence") is true
+    && phase548.RootElement.TryGetProperty("resource", out var p548Resource)
+    && JsonBool(p548Resource, "resourceAllowed") is true
+    && phase548.RootElement.TryGetProperty("seedUse", out var p548Seeds)
+    && JsonBool(p548Seeds, "ceilingModified") is false
+    && JsonBool(p548Seeds, "fourChainWouldBeRefused") is true
+    && phase548.RootElement.TryGetProperty("execution", out var p548Execution)
+    && JsonBool(p548Execution, "samplingPerformed") is true
+    && JsonBool(p548Execution, "executionClean") is true
+    && phase548.RootElement.TryGetProperty("frozenDefault", out var p548Default)
+    && JsonBool(p548Default, "adaptationPerformed") is false
+    && JsonBool(p548Default, "pristineSeedBlindPreregistration") is false
+    && (JsonString(phase548.RootElement, "verdictKind") == "pilot-executed-diagnostics-valid"
+        || JsonString(phase548.RootElement, "verdictKind") == "pilot-executed-diagnostics-invalid")
+    && JsonBool(phase548.RootElement, "phase535ExecutedReopenedOrMutated") is false
+    && JsonBool(phase548.RootElement, "phase481PackCreatedOrMutated") is false
+    && JsonBool(phase548.RootElement, "productionDefaultSelected") is false
+    && JsonBool(phase548.RootElement, "productionAuthorized") is false
+    && JsonBool(phase548.RootElement, "launchAuthorized") is false
+    && JsonBool(phase548.RootElement, "phase458G3Satisfied") is false
+    && JsonBool(phase548.RootElement, "phase458G4Satisfied") is false
+    && JsonBool(phase548.RootElement, "phase458G5Satisfied") is false
+    && JsonBool(phase548.RootElement, "o4Discharged") is false
+    && JsonBool(phase548.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase548.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase548.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase548.RootElement, "allDownstreamAuthority") is false
+    && JsonBool(phase548.RootElement, "externalReviewPending") is true
+    && JsonInt(phase548.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10898,6 +10952,12 @@ var checklist = new[]
         boundedPilotPackReadinessAdjudicatorPassed ? "passed" : "failed",
         phase547 is null ? "Phase547 artifact not materialized" : $"verdictKind={JsonString(phase547.RootElement, "verdictKind")}; passedGates={JsonInt(phase547.RootElement, "passedGateCount")}; registration={JsonBool(phase547.RootElement, "boundedPilotExecutionPhaseRegistrationAllowed")}; pilotAuthorized={JsonBool(phase547.RootElement, "pilotExecutionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase547.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase547Path),
+    new ObjectiveChecklistItem(
+        "bounded-complete-lattice-pilot-execution",
+        "Execute the frozen bounded complete-lattice pilot fail-closed and preserve its terminal, whatever the convergence gates report.",
+        boundedCompleteLatticePilotExecutionPassed ? "passed" : "failed",
+        phase548 is null ? "Phase548 artifact not materialized" : $"verdictKind={JsonString(phase548.RootElement, "verdictKind")}; samplingPerformed={JsonBool(phase548.RootElement, "samplingPerformed")}; executionClean={(phase548.RootElement.TryGetProperty("execution", out var p548Row) ? JsonBool(p548Row, "executionClean") : null)}; diagnosticsValid={(phase548.RootElement.TryGetProperty("diagnostics", out var p548DiagRow) ? JsonBool(p548DiagRow, "diagnosticsValid") : null)}; productionAuthorized={JsonBool(phase548.RootElement, "productionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase548.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase548Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

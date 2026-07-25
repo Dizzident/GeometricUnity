@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 1,
+  "phase": 548,
+  "phaseId": "phase548-bounded-complete-lattice-pilot-execution",
+  "contractId": "phase548-a29-bounded-complete-lattice-pilot-execution-v1",
+  "contractSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "forwardingFaithful": true,
+  "seedProvenanceValid": true,
+  "inputsValid": true,
+  "bindings": [
+    {
+      "id": "phase533-contract",
+      "path": "studies/phase533_nested_validation_contract_001/preregistration/phase533_nested_validation_contract_v1.json",
+      "expectedSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "actualSha256": "377953149918faf2b374716bcfc44f7dbb6aa644663c29886198e63f8a0069be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase543-summary",
+      "path": "studies/phase543_complete_lattice_multistate_stability_grid_001/output/complete_lattice_multistate_stability_grid_summary.json",
+      "expectedSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "actualSha256": "a80d85f2893d4ad2a17cc6dfe701feee82b47d0d77f691c16155fa23a0211924",
+      "hashMatches": true
+    },
+    {
+      "id": "phase545-contract",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/preregistration/phase545_injectable_deterministic_hmc_kernel_repair_contract_v3.json",
+      "expectedSha256": "cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9",
+      "actualSha256": "cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase545-kernel",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/PilotKernel.cs",
+      "expectedSha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa",
+      "actualSha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa",
+      "hashMatches": true
+    },
+    {
+      "id": "phase545-program",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/Program.cs",
+      "expectedSha256": "9dc9a776615395591cdaf4b93ffed4afaf308ec1856ca9206878cca5afbe0cb8",
+      "actualSha256": "9dc9a776615395591cdaf4b93ffed4afaf308ec1856ca9206878cca5afbe0cb8",
+      "hashMatches": true
+    },
+    {
+      "id": "phase545-summary",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json",
+      "expectedSha256": "16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d",
+      "actualSha256": "16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-v1-contract",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/lineage/v1/phase546_pilot_diagnostics_checkpoint_resource_contract_v1.json",
+      "expectedSha256": "e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d",
+      "actualSha256": "e92b7744bf011629eb9991293736b863a28c79beb5d4b78311880454cfb8335d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-contract",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/preregistration/phase546_pilot_diagnostics_checkpoint_resource_repair_contract_v3.json",
+      "expectedSha256": "4dc9dc8b63752802e4939b7e1730b8971923eeb8e6d1fbd69f13ac743b11cf27",
+      "actualSha256": "4dc9dc8b63752802e4939b7e1730b8971923eeb8e6d1fbd69f13ac743b11cf27",
+      "hashMatches": true
+    },
+    {
+      "id": "phase546-summary",
+      "path": "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json",
+      "expectedSha256": "6562a2828de426b1a995d89574557af926ec6173c6969cd13252533dcc05b434",
+      "actualSha256": "6562a2828de426b1a995d89574557af926ec6173c6969cd13252533dcc05b434",
+      "hashMatches": true
+    },
+    {
+      "id": "phase547-contract",
+      "path": "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/preregistration/phase547_bounded_pilot_pack_readiness_contract_v1.json",
+      "expectedSha256": "c3a4321ebc9ef6d40a924222304a10c8ec06d3e43d48ef1c630bcc873a3b5217",
+      "actualSha256": "c3a4321ebc9ef6d40a924222304a10c8ec06d3e43d48ef1c630bcc873a3b5217",
+      "hashMatches": true
+    },
+    {
+      "id": "phase547-program",
+      "path": "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Program.cs",
+      "expectedSha256": "6e79a44e3a2052bc0c100454f27201f834750d7fda99160fd1654ea524889e06",
+      "actualSha256": "6e79a44e3a2052bc0c100454f27201f834750d7fda99160fd1654ea524889e06",
+      "hashMatches": true
+    },
+    {
+      "id": "phase547-summary",
+      "path": "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json",
+      "expectedSha256": "da792451baf42582a28fc455b9ca50efc4e634a08a845d40582aa7da04b74d35",
+      "actualSha256": "da792451baf42582a28fc455b9ca50efc4e634a08a845d40582aa7da04b74d35",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ],
+  "registrationPremise": {
+    "phase547VerdictKind": "bounded-pilot-pack-ready-for-separate-prospective-execution-registration",
+    "phase547RegistrationAllowed": true,
+    "phase547PilotExecutionAuthorized": false,
+    "registrationAuthorized": true,
+    "executionAuthorityIsThisFrozenContractOnly": true
+  },
+  "completeLattice": {
+    "extent": 3,
+    "dimensions": 4,
+    "topologyId": "periodic-hypercubic-4d",
+    "beta": 1,
+    "thetaRule": "theta-identically-zero",
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "degreesOfFreedom": 3645,
+    "topologyValid": true,
+    "member": "sd2-id0/c0.5",
+    "kineticMetric": "identity"
+  },
+  "frozenDefault": {
+    "stepSize": 0.06,
+    "leapfrogSteps": 8,
+    "trajectoryLength": 0.48,
+    "warmupPerChain": 60,
+    "retainedPerChain": 340,
+    "trajectoriesPerChain": 400,
+    "chainsPerTable": 3,
+    "tableCount": 2,
+    "divergenceThreshold": 100,
+    "minimumAcceptance": 0.6,
+    "maximumNonFinite": 0,
+    "maximumDivergent": 0,
+    "adaptationPerformed": false,
+    "inheritedFromPhase533": false,
+    "selectionMethod": "scratch-calibration-outside-repository-on-non-registered-seeds",
+    "pristineSeedBlindPreregistration": false,
+    "nonRegisteredCalibrationSeeds": [
+      900001,
+      900101
+    ]
+  },
+  "seedUse": {
+    "tables": [
+      {
+        "tableId": "complete-lattice-pilot-a",
+        "rawSeeds": [
+          546101,
+          546103,
+          546107
+        ],
+        "executionSeeds": [
+          2546101,
+          2546103,
+          2546107
+        ],
+        "initialScales": [
+          0.015,
+          0.03,
+          0.06
+        ],
+        "excludedFrozenSeed": 546109
+      },
+      {
+        "tableId": "complete-lattice-pilot-b",
+        "rawSeeds": [
+          546201,
+          546203,
+          546207
+        ],
+        "executionSeeds": [
+          2546201,
+          2546203,
+          2546207
+        ],
+        "initialScales": [
+          0.02,
+          0.04,
+          0.08
+        ],
+        "excludedFrozenSeed": 546209
+      }
+    ],
+    "exclusionReason": "phase546-resource-ceiling-refuses-four-chains-at-extent-three",
+    "ceilingModified": false,
+    "fourChainWouldBeRefused": true,
+    "fourChainRefusalReason": "cpu-boundary-or-limit-exceeded",
+    "fourChainEstimatedPeakBytes": 5360704
+  },
+  "resource": {
+    "maximumAggregateCpuTicks": 466093440,
+    "maximumPeakBytes": 5360704,
+    "samplingAssessments": [
+      {
+        "tableId": "complete-lattice-pilot-a",
+        "assessment": {
+          "allowed": true,
+          "refusalReason": null,
+          "estimatedCpuTicks": 419904000,
+          "estimatedPeakBytes": 4020528
+        }
+      },
+      {
+        "tableId": "complete-lattice-pilot-b",
+        "assessment": {
+          "allowed": true,
+          "refusalReason": null,
+          "estimatedCpuTicks": 419904000,
+          "estimatedPeakBytes": 4020528
+        }
+      }
+    ],
+    "controlForceEvaluations": 326,
+    "controlTicks": 14259240,
+    "totalAssessments": [
+      {
+        "tableId": "complete-lattice-pilot-a",
+        "assessment": {
+          "allowed": true,
+          "refusalReason": null,
+          "estimatedCpuTicks": 434163240,
+          "estimatedPeakBytes": 4020528
+        }
+      },
+      {
+        "tableId": "complete-lattice-pilot-b",
+        "assessment": {
+          "allowed": true,
+          "refusalReason": null,
+          "estimatedCpuTicks": 434163240,
+          "estimatedPeakBytes": 4020528
+        }
+      }
+    ],
+    "samplingResourceAllowed": true,
+    "totalResourceAllowed": true,
+    "resourceAllowed": true,
+    "refusedBeforeAllocation": false
+  },
+  "deterministicPrechecks": {
+    "zeroRngUsed": true,
+    "originAction": 0,
+    "originGradientNorm": 0,
+    "originExact": true,
+    "largestEigenvalue": 1.959768238227516,
+    "smallestEigenvalue": 1.2273204745838484E-06,
+    "conditionNumberEstimate": 1596786.0708035699,
+    "stabilityBound": 1.4286558973499097,
+    "stepSizeBelowStabilityBound": true,
+    "spectralValid": true,
+    "directionalGradientError": 1.3581320200406477E-09,
+    "gradientValid": true,
+    "reversibilityError": 1.5537159883982617E-16,
+    "reversibilityValid": true,
+    "prechecksPassed": true,
+    "spectralProbeIsIterativeEstimateNotEigendecomposition": true,
+    "slowestModeTrajectoryLengthEstimate": 2835.7692118162986,
+    "totalTrajectoryLengthPerChain": 192
+  },
+  "checkpointRestartEquivalence": {
+    "chainId": "complete-lattice-pilot-a-546101",
+    "uninterruptedTrajectories": 8,
+    "interruptAfterTrajectories": 4,
+    "encodedCheckpointSha256": "63664a6cb4f696e0b666e8892e6d50d904bc77294603032ab315bc05b44d6c91",
+    "checkpointPreservesState": true,
+    "restartPositionIdentical": true,
+    "restartRngIdentical": true,
+    "restartEquivalent": true,
+    "reducedPrefixOnly": true,
+    "isNotFullLengthChainEquivalence": true
+  },
+  "execution": {
+    "samplingPerformed": true,
+    "executionClean": true,
+    "chains": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "tableId": "complete-lattice-pilot-a",
+        "seed": 2546101,
+        "rawSeed": 546101,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.925,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.853942362393127,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.35344338913119216,
+          "forceNormSquared": 9864.560393296539,
+          "configurationNormSquared": 2249.0896320319935
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.0008617571944638534,
+          "forceNormSquared": 16.4203070440371,
+          "configurationNormSquared": 18.940935865606264
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 1.0011337597194736,
+          "forceNormSquared": 0.9981391085836191,
+          "configurationNormSquared": 1.0499476832894943
+        },
+        "bulkEss": {
+          "actionDensity": 140.74754160472386,
+          "forceNormSquared": 841.5155004084895,
+          "configurationNormSquared": 14.729326565358278
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 29.083881099502822
+        },
+        "checkpointSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+        "telemetryDeterministicSha256": "1ea4706e34bc2aadda620f9f926cc22d9ff24b7d654180fa0baba2c3b11f4d80"
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "tableId": "complete-lattice-pilot-a",
+        "seed": 2546103,
+        "rawSeed": 546103,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.93,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.885238062594226,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.35633567140778083,
+          "forceNormSquared": 9955.019873065572,
+          "configurationNormSquared": 2258.0846090857744
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.0009744669724836388,
+          "forceNormSquared": 32.21540721489954,
+          "configurationNormSquared": 9.192927022349295
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 0.997408495883528,
+          "forceNormSquared": 1.0023598085788032,
+          "configurationNormSquared": 0.9999214785696778
+        },
+        "bulkEss": {
+          "actionDensity": 99.76449921066147,
+          "forceNormSquared": 191.62320409532927,
+          "configurationNormSquared": 46.83750628969873
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 393.9814387600396
+        },
+        "checkpointSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+        "telemetryDeterministicSha256": "e33862d9a2f30a911745bb5cec769f728d3643eef17bbd1d9297d4ee59f1342e"
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "tableId": "complete-lattice-pilot-a",
+        "seed": 2546107,
+        "rawSeed": 546107,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.9325,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.7052817062960912,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.3545026114361279,
+          "forceNormSquared": 9909.596251199457,
+          "configurationNormSquared": 2238.6722586018086
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.0005464689089127442,
+          "forceNormSquared": null,
+          "configurationNormSquared": 6.2689260449403665
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 0.9990408329002308,
+          "forceNormSquared": 0.9994943078860352,
+          "configurationNormSquared": 1.0045376836234332
+        },
+        "bulkEss": {
+          "actionDensity": 280.20387382695816,
+          "forceNormSquared": null,
+          "configurationNormSquared": 67.35045235546325
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 159.28381538477387
+        },
+        "checkpointSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+        "telemetryDeterministicSha256": "599b25fa04bf2816d094bc9fd6bcca38a592eb327e193d3251b9ce299672f8e0"
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "tableId": "complete-lattice-pilot-b",
+        "seed": 2546201,
+        "rawSeed": 546201,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.9125,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.7831772387442015,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.3554899603017969,
+          "forceNormSquared": 9885.639126769665,
+          "configurationNormSquared": 2271.390784371103
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.0009057707232817921,
+          "forceNormSquared": 22.267584261615077,
+          "configurationNormSquared": 6.474366930191047
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 1.025042921170423,
+          "forceNormSquared": 1.0238915543534737,
+          "configurationNormSquared": 1.0134599209232424
+        },
+        "bulkEss": {
+          "actionDensity": 115.80179011893664,
+          "forceNormSquared": 390.9526802299766,
+          "configurationNormSquared": 69.39681254502976
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 595.6101779518671
+        },
+        "checkpointSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+        "telemetryDeterministicSha256": "049c1eb4711caa24b7fad4dbbcb43c4ac2cbd17a27d1fd814c0af9bfe0ab8687"
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "tableId": "complete-lattice-pilot-b",
+        "seed": 2546203,
+        "rawSeed": 546203,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.94,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.7524418699665603,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.3567673358412531,
+          "forceNormSquared": 9970.09350504509,
+          "configurationNormSquared": 2251.549726756321
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.00013488108646762825,
+          "forceNormSquared": null,
+          "configurationNormSquared": 8.673623123786419
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 1.000395437322112,
+          "forceNormSquared": 1.009506808999316,
+          "configurationNormSquared": 1.004022700781916
+        },
+        "bulkEss": {
+          "actionDensity": 4565.121521642403,
+          "forceNormSquared": null,
+          "configurationNormSquared": 47.106191042933986
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 89.00279900329659
+        },
+        "checkpointSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+        "telemetryDeterministicSha256": "81608b261457dd46574e30703af90416f72386c1d260bd2a06b6f31b19989165"
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "tableId": "complete-lattice-pilot-b",
+        "seed": 2546207,
+        "rawSeed": 546207,
+        "warmupCount": 60,
+        "retainedCount": 340,
+        "acceptanceRate": 0.95,
+        "nonFiniteCount": 0,
+        "divergenceCount": 0,
+        "maximumAbsoluteDeltaH": 0.744439437170513,
+        "halted": false,
+        "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+        "observableMeans": {
+          "actionDensity": 0.35702759493352043,
+          "forceNormSquared": 9969.421615481284,
+          "configurationNormSquared": 2271.330852269563
+        },
+        "observableStandardErrors": {
+          "actionDensity": 0.0008902825834619603,
+          "forceNormSquared": 15.501456759508333,
+          "configurationNormSquared": 9.677339462676887
+        },
+        "splitRankNormalizedRhat": {
+          "actionDensity": 1.024641916359168,
+          "forceNormSquared": 1.0146417037776434,
+          "configurationNormSquared": 1.027979751732942
+        },
+        "bulkEss": {
+          "actionDensity": 113.97962148160356,
+          "forceNormSquared": 738.0904202675555,
+          "configurationNormSquared": 43.53596411788821
+        },
+        "tailEss": {
+          "actionDensity": null,
+          "forceNormSquared": null,
+          "configurationNormSquared": 56.70192868672935
+        },
+        "checkpointSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+        "telemetryDeterministicSha256": "581833516e89f8f9b490f6834e06b3b1f030fae9054b25142b689bedaa3c839c"
+      }
+    ],
+    "totalForceEvaluations": 22069
+  },
+  "diagnostics": {
+    "definitions": {
+      "splitRankNormalizedRhat": "maximum of rank-normalized split R-hat and rank-normalized folded split R-hat",
+      "bulkEss": "effective sample size of rank-normalized draws using the Geyer initial monotone positive sequence",
+      "tailEss": "effective sample size of the rank-normalized folded absolute deviation from the median"
+    },
+    "thresholds": {
+      "maximumRhat": 1.01,
+      "minimumBulkEss": 100,
+      "minimumTailEss": 100,
+      "minimumAcceptance": 0.6
+    },
+    "tables": [
+      {
+        "tableId": "complete-lattice-pilot-a",
+        "chainCount": 3,
+        "minimumObservedAcceptance": 0.925,
+        "acceptancePassed": true,
+        "observables": [
+          {
+            "name": "actionDensity",
+            "gaugeClass": "gauge-invariant",
+            "splitRankNormalizedRhat": 1.0074488749733528,
+            "bulkEss": 327.80393293336914,
+            "tailEss": null,
+            "rhatPassed": true,
+            "bulkEssPassed": true,
+            "tailEssPassed": false,
+            "passed": false
+          },
+          {
+            "name": "forceNormSquared",
+            "gaugeClass": "gauge-invariant",
+            "splitRankNormalizedRhat": 1.002567581821562,
+            "bulkEss": 1408.870042427084,
+            "tailEss": null,
+            "rhatPassed": true,
+            "bulkEssPassed": true,
+            "tailEssPassed": false,
+            "passed": false
+          },
+          {
+            "name": "configurationNormSquared",
+            "gaugeClass": "gauge-variant",
+            "splitRankNormalizedRhat": 1.0386631823268684,
+            "bulkEss": 83.16007460018552,
+            "tailEss": 127.5325114521391,
+            "rhatPassed": false,
+            "bulkEssPassed": false,
+            "tailEssPassed": true,
+            "passed": false
+          }
+        ],
+        "passed": false
+      },
+      {
+        "tableId": "complete-lattice-pilot-b",
+        "chainCount": 3,
+        "minimumObservedAcceptance": 0.9125,
+        "acceptancePassed": true,
+        "observables": [
+          {
+            "name": "actionDensity",
+            "gaugeClass": "gauge-invariant",
+            "splitRankNormalizedRhat": 1.012441780041052,
+            "bulkEss": 675.5886022437548,
+            "tailEss": null,
+            "rhatPassed": false,
+            "bulkEssPassed": true,
+            "tailEssPassed": false,
+            "passed": false
+          },
+          {
+            "name": "forceNormSquared",
+            "gaugeClass": "gauge-invariant",
+            "splitRankNormalizedRhat": 1.0141212353898779,
+            "bulkEss": 4364.937808148512,
+            "tailEss": null,
+            "rhatPassed": false,
+            "bulkEssPassed": true,
+            "tailEssPassed": false,
+            "passed": false
+          },
+          {
+            "name": "configurationNormSquared",
+            "gaugeClass": "gauge-variant",
+            "splitRankNormalizedRhat": 1.0150545860220823,
+            "bulkEss": 123.91712591069212,
+            "tailEss": 288.98638241803576,
+            "rhatPassed": false,
+            "bulkEssPassed": true,
+            "tailEssPassed": true,
+            "passed": false
+          }
+        ],
+        "passed": false
+      }
+    ],
+    "diagnosticsValid": false,
+    "failingObservables": [
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "actionDensity",
+        "gaugeClass": "gauge-invariant",
+        "splitRankNormalizedRhat": 1.0074488749733528,
+        "bulkEss": 327.80393293336914,
+        "tailEss": null,
+        "rhatPassed": true,
+        "bulkEssPassed": true,
+        "tailEssPassed": false
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "forceNormSquared",
+        "gaugeClass": "gauge-invariant",
+        "splitRankNormalizedRhat": 1.002567581821562,
+        "bulkEss": 1408.870042427084,
+        "tailEss": null,
+        "rhatPassed": true,
+        "bulkEssPassed": true,
+        "tailEssPassed": false
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "configurationNormSquared",
+        "gaugeClass": "gauge-variant",
+        "splitRankNormalizedRhat": 1.0386631823268684,
+        "bulkEss": 83.16007460018552,
+        "tailEss": 127.5325114521391,
+        "rhatPassed": false,
+        "bulkEssPassed": false,
+        "tailEssPassed": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "actionDensity",
+        "gaugeClass": "gauge-invariant",
+        "splitRankNormalizedRhat": 1.012441780041052,
+        "bulkEss": 675.5886022437548,
+        "tailEss": null,
+        "rhatPassed": false,
+        "bulkEssPassed": true,
+        "tailEssPassed": false
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "forceNormSquared",
+        "gaugeClass": "gauge-invariant",
+        "splitRankNormalizedRhat": 1.0141212353898779,
+        "bulkEss": 4364.937808148512,
+        "tailEss": null,
+        "rhatPassed": false,
+        "bulkEssPassed": true,
+        "tailEssPassed": false
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "configurationNormSquared",
+        "gaugeClass": "gauge-variant",
+        "splitRankNormalizedRhat": 1.0150545860220823,
+        "bulkEss": 123.91712591069212,
+        "tailEss": 288.98638241803576,
+        "rhatPassed": false,
+        "bulkEssPassed": true,
+        "tailEssPassed": true
+      }
+    ],
+    "everyGaugeInvariantObservablePassed": false,
+    "everyFailingObservableIsGaugeVariant": false,
+    "gaugeSectorSplitObserved": false
+  },
+  "telemetry": {
+    "schemaSatisfied": true,
+    "trajectoryRequiredFields": [
+      "chainId",
+      "trajectoryIndex",
+      "phase",
+      "accepted",
+      "initialHamiltonian",
+      "proposedHamiltonian",
+      "deltaH",
+      "acceptanceProbability",
+      "injectedThreshold",
+      "nonFinite",
+      "divergent",
+      "divergenceThreshold",
+      "forceEvaluationCount",
+      "maximumForceNorm",
+      "proposalElapsedCpuTicks"
+    ],
+    "chainSummaryRequiredFields": [
+      "chainId",
+      "seed",
+      "warmupCount",
+      "retainedCount",
+      "acceptanceRate",
+      "nonFiniteCount",
+      "divergenceCount",
+      "maximumAbsoluteDeltaH",
+      "splitRankNormalizedRhat",
+      "bulkEss",
+      "tailEss",
+      "observableSchemaId",
+      "observableMeans",
+      "observableStandardErrors",
+      "observableRhat",
+      "observableBulkEss",
+      "checkpointSha256"
+    ],
+    "observableSchemaId": "complete-lattice-bounded-pilot-observables-v1",
+    "observableNames": [
+      "actionDensity",
+      "forceNormSquared",
+      "configurationNormSquared"
+    ],
+    "timingFieldIsVolatile": "proposalElapsedCpuTicks",
+    "deterministicOutputExcludesTiming": true,
+    "telemetryFilesAreNotByteReproducible": true
+  },
+  "verdictKind": "pilot-executed-diagnostics-invalid",
+  "terminalStatus": "bounded-complete-lattice-pilot-execution-pilot-executed-diagnostics-invalid",
+  "decision": "The bounded complete-lattice pilot executed with no non-finite or divergent trajectory, but at least one frozen convergence gate failed. The negative result is the preserved terminal; no favorable rerun replaces it and no downstream authority follows.",
+  "inferenceScope": {
+    "workbenchRelativeLatticeUnitsOnly": true,
+    "establishesStationarityOfRegisteredTarget": false,
+    "establishesSamplingCorrectness": false,
+    "establishesTransferToLargerExtent": false,
+    "establishesSpectralOrPhysicalQuantity": false,
+    "isProductionBenchmark": false
+  },
+  "rngUsed": true,
+  "markovChainAdvanced": true,
+  "warmupPerformed": true,
+  "samplingPerformed": true,
+  "adaptationPerformed": false,
+  "benchmarkPerformed": false,
+  "configurationsRetained": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

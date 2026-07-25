@@ -420,6 +420,7 @@ dotnet run --no-build -c Release --project studies/phase544_bounded_complete_lat
 dotnet run --no-build -c Release --project studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj
 dotnet run --no-build -c Release --project studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Phase546PilotDiagnosticsCheckpointResourcePack.csproj
 dotnet run --no-build -c Release --project studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
