@@ -21926,3 +21926,133 @@ standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
 remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`. The skip report is
 `scripts/incremental/skip_reports/pass_2026-07-25T17-12-29-625Z.json`.
+
+## 2026-07-25 - Amendment A30, Phases550-552 and 555: the flat sector is measured
+
+COMPLETE-LATTICE FLAT-SECTOR CENSUS (2026-07-25, Amendment A30; Phases550-552,
+555): the A30 plan was allocated as planning only. It is now implemented for
+the deterministic block. Phase548's and Phase549's terminals are untouched, no
+sampler was tuned, no ceiling was raised, and the two remaining blind seeds are
+still blind.
+
+Phase550 is a deterministic zero-sampling census of the second-order form of
+the registered action, at the origin, at the six preserved Phase548 checkpoint
+positions, and along one flat ray. It consumes none of the Phase548
+smallest-eigenvalue or mixing-length numbers, which the plan showed to be
+one-sided. The dense form is assembled exactly from the operator's own
+linearization primitives, `H(x)u = LinCurvT(x, K(LinCurv(x,u))) + LinCurvT(u,
+w0) - LinCurvT(0, w0)`, with `w0 = K(F(x))`; arm A cross-checks it against a
+four-point antisymmetric extraction from the registered gradient at worst
+relative deviation `2.3e-15` and tests the cubic premise with a six-point
+prediction at worst residual `3.7e-15`. That exactness is what made ten dense
+base points fit: the measured cost was 557 CPU-seconds against a declared
+estimate of 700 and a frozen ceiling of 1800.
+
+The flat sector at the origin is exactly 252-dimensional and the bracket
+closes. The lower bound is threshold-free: `d.d = 0` holds on all 81 vertex
+functions and 4050 faces in exact integer arithmetic, the scalar coboundary has
+finite-field rank `1131` over both frozen primes, and an exhibited set of 85
+exactly closed integer generators has rank `84`, so `84 * 3 = 252` directions
+lie exactly in the kernel. The threshold-conditional inertia count at the
+smallest rung above the roundoff floor is also `252`, with a plateau across the
+three lowest rungs and zero negative inertia. Both recorded falsifiers are
+refuted: the registered contraction annihilates nothing beyond the image of
+`d`. Five frozen closed single-algebra-axis directions evaluate to exactly
+`0.0` at every rung of a ladder to `t = 1000`, while the two negative controls
+are strictly positive and scale as the exact fourth power.
+
+Off the origin the picture changes. At all six preserved positions the count
+below `+1e-9` equals the count below `-1e-9`, from 105 to 117 by chain, so
+those directions are not near-null: they are negative. The origin flat block is
+strongly lifted there, with restricted eigenvalues in `[0.26, 2.2]`, and the
+largest eigenvalue rises from `1.976` to about `10` to `12`. The exact
+homogeneous decomposition, solved from three evaluations with no fitting, gives
+degree-2, degree-3 and degree-4 fractions near `0.62`, `-0.07` and `0.44` at all
+six, with residuals at `1e-15`. Along the flat ray at `t = 0.5, 5, 47`, 200 of
+the 252 directions remain exactly flat and 52 acquire curvature whose largest
+restricted eigenvalue grows as exactly the square of the ray parameter.
+
+Arm H converts the Phase548 declaration into a measurement. At the origin
+`actionDensity` and `forceNormSquared` are invariant along the measured flat
+sector to `1e-35` and `1e-31`; at the six preserved positions they move by
+`6e-04` and `4.4e-03`. This is invariance along the measured flat sector, not a
+gauge-orbit statement: no group, orbit or quotient is constructed anywhere in
+the block.
+
+Phase551 is the independent adjudicator. It holds no project reference to
+Phase550 and reuses none of its code, and recomputes every quantity by a
+different algorithm family: four-point gradient extraction rather than exact
+primitives, dense LDL^T with symmetric diagonal pivoting rather than
+tridiagonalization plus Sturm, block subspace iteration with Rayleigh-Ritz
+rather than Lanczos, different primes and pivot rule for the integer rank, and
+a null basis rebuilt from different mesh arrays. Its four-case known-answer
+battery runs before any audited datum is read and includes the two failure
+modes the audited arms could have: a soft cluster between the rungs, where the
+plateau test must fail, and a threefold-degenerate largest eigenvalue.
+
+The adjudication caught two defects in its own code and specification, both
+preserved under `lineage/v1/` as non-citable. The independent homogeneous solve
+used an incorrect elimination for the degree-four coefficient; it reproduced
+`S(1)` exactly, so it was invisible in the value. The smallest-eigenvalue
+comparison target was not well posed, and that defect was in both contracts:
+deflating against the constructed null basis does not remove the assembled
+form's roundoff-level near-null eigenvectors, so the deflated operator retains
+an eigenvalue near zero alongside the intended gap, and the audited Lanczos and
+this phase's shifted block iteration converged to different genuine eigenvalues
+of it. The v2 rule compares the well-posed quantity, the smallest eigenvalue
+strictly above the measured flat sector, and records without gating that the
+audited iterative interval does not bracket it at either audited base point.
+That is a finding about the audited arm D, not about the operator. Neither
+repair touched an integer comparison, a rung, the battery, a firewall, or the
+taxonomy, and every load-bearing agreement already held in v1.
+
+With those repairs the terminal is `adjudication-confirms-reported-values`: the
+integer `252` and rank `1131`, the inertia counts at all eight rungs, the
+negative inertia, the largest eigenvalue to the last digits, the null-basis
+residual, the exact homogeneous decomposition at all six positions, and the
+flatness ladder with both controls. The dense form is re-derived at a frozen
+subset of two base points, disclosed as a prospective scope limit.
+
+Phase552 re-analyses the six already-determined chains, disclosed as
+retrospective on known data with every statistic frozen before the replay. All
+six replay bit-identically. The 252-dimensional flat basis is rebuilt from the
+mesh and agrees in dimension. Under the frozen batch-mean drift statistics
+nothing drifts: the worst standardized statistic anywhere is `2.62` against a
+threshold of `3`, so the terminal is `stationary-under-resolved-consistent`,
+one of two clean outcomes the taxonomy does not prefer between. The recomputed
+diagnostics localize the deficit instead of removing it: `actionDensity` and
+`forceNormSquared` reach bulk effective sample sizes of `212` to `420`, while
+the squared configuration norm and its flat-sector projection sit at `72` and
+`81` in table a and `100` and `70` in table b.
+
+Phase555 assembles the two reserved measure-convention questions,
+`O4-F1-COLLECTIVE-COORDINATE` and `O4-F1-FP-NORMALIZATION`, with the measured
+inputs a reviewer needs. It authors no ruling, consumes no memo, verifies no
+signature, and changes no pending flag; Phase480 semantics are unchanged.
+
+Phase553 is NOT registered. Its first registration clause is met - an exactly
+flat sector was found - but Phase550 measured that the origin flat sector is
+lifted at the sampled configurations, with flat-block eigenvalues in
+`[0.26, 2.2]` and about 110 negative directions, so the near-flat-coordinate
+lever the constant-budget reallocation scan was designed around is not present
+there. Registering it is a scientific judgement that belongs with the reserved
+questions rather than with a silent decision either way. Phase554 remains
+deliberately unregistered.
+
+Nothing in this block satisfies Phase458 G3/G4/G5, discharges O4, creates a
+Phase481 pack, selects a production default, reopens Phase535, applies a
+quotient or a measure normalization, or supports a physical-unit claim. This
+lane establishes only whether the registered operator's complete-lattice target
+is samplable at all. External review remains pending and
+`promotedPhysicalMassClaimCount=0`. Registry 553, 554 and 556+ are unassigned.
+
+The mandatory A30 execution checkpoint ran 88 steps and skipped 329. It ended
+at `boson-claim-integrity-verified`: Phase202 reported 337 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery remained
+94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran all four new phases and the
+integrity verifier pins their exact output hashes, so it doubles as the two-run
+byte-reproducibility check. No scanner recorded any new path or text, and the
+four new implementation notes were registered in the nine exclusion lists in
+the same checkpoint. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-25T20-42-09-870Z.json`.

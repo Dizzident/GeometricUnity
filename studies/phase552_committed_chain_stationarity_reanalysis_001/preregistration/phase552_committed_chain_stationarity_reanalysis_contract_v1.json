@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase552-a30-committed-chain-stationarity-reanalysis-v1",
+  "planSection": "COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25 A30",
+  "planDocument": "docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md",
+  "frozenBeforeFirstExecution": true,
+
+  "analysisIsRetrospectiveOnKnownData": true,
+  "statisticsAndThresholdsFrozenBeforeReplay": true,
+  "isDiagnosticOnly": true,
+  "mayChangePhase548Terminal": false,
+  "isAConvergenceAssessmentOfThePilot": false,
+  "newSamplingPerformed": false,
+  "honestyNote": "The summary of this dataset was already known when these statistics were chosen, in the spirit of Phase548's pristineSeedBlindPreregistration false. Recomputing a different function of an already-determined dataset consumes no blind currency, but it is not a prospective test and may not be reported as one.",
+
+  "exactBindings": [
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-summary","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json","sha256":"ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"},
+    {"id":"phase548-telemetry-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json","sha256":"e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90"},
+    {"id":"phase548-telemetry-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json","sha256":"4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd"},
+    {"id":"phase548-telemetry-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json","sha256":"f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db"},
+    {"id":"phase548-telemetry-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json","sha256":"a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c"},
+    {"id":"phase548-telemetry-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json","sha256":"6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2"},
+    {"id":"phase548-telemetry-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json","sha256":"20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd"},
+    {"id":"phase548-checkpoint-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json","sha256":"eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"},
+    {"id":"phase548-checkpoint-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json","sha256":"5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"},
+    {"id":"phase548-checkpoint-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json","sha256":"7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"},
+    {"id":"phase548-checkpoint-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json","sha256":"9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"},
+    {"id":"phase548-checkpoint-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json","sha256":"6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"},
+    {"id":"phase548-checkpoint-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json","sha256":"ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"},
+    {"id":"phase549-summary","path":"studies/phase549_bounded_pilot_independent_result_adjudicator_001/output/bounded_pilot_independent_result_adjudicator_summary.json","sha256":"76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee"},
+    {"id":"phase550-summary","path":"studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json","sha256":"0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"},
+    {"id":"shiab-operator-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+
+  "replay": {
+    "samplerReimplementedFromTheFrozenPhase548Contract": true,
+    "referencesPhase545Kernel": false,
+    "reusesPhase548Or549Code": false,
+    "deltaHRelativeTolerance": 1e-12,
+    "requireBitIdenticalStoredFinalPosition": true,
+    "corroboratedByPhase549": true,
+    "note": "Phase549 already established that replaying the frozen seeds reproduces the chains bit for bit, so a replay failure here is a hard contradiction and takes its own terminal."
+  },
+
+  "flatSectorProjection": {
+    "basisSource": "rebuilt from the mesh by the same deterministic construction rule the audited census used, not read from its output",
+    "dimensionMustAgreeWithPhase550": true,
+    "series": ["flatSectorNormSquared", "complementNormSquared"],
+    "rule": "flatSectorNormSquared is the squared norm of the orthogonal projection of the retained position onto the measured flat basis; complementNormSquared is the remainder"
+  },
+
+  "driftTest": {
+    "frozenBeforeReplay": true,
+    "batchCount": 20,
+    "batchSizeRule": "retainedPerChain / batchCount, which is 17 at the frozen 340 retained draws",
+    "statistics": [
+      "half-window difference of batch means, standardized by the batch-mean standard errors of the two halves",
+      "ordinary least squares slope of the batch means against the batch index, standardized by its residual standard error"
+    ],
+    "absoluteZThreshold": 3.0,
+    "chainsRequiredToDeclareDrift": 3,
+    "decisionSeries": ["configurationNormSquared", "flatSectorNormSquared", "complementNormSquared"],
+    "reportedButNotGatedSeries": ["actionDensity", "forceNormSquared"],
+    "inconclusiveRule": "any non-finite standardized statistic makes the test inconclusive"
+  },
+
+  "convergenceRecomputation": {
+    "estimator": "split rank-normalized R-hat with folded rank normalization, plus bulk and tail effective sample size",
+    "appliedTo": ["actionDensity", "forceNormSquared", "configurationNormSquared", "flatSectorNormSquared", "complementNormSquared"],
+    "rehabilitatesAnyPhase548Gate": false,
+    "selectsAnyConfiguration": false
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "replay-not-bit-identical",
+    "drift-test-inconclusive",
+    "non-stationary-drift-detected",
+    "stationary-under-resolved-consistent"
+  ],
+  "terminalOrderDeviationFromPlan": {
+    "planOrder": ["invalid-or-drifted-input","replay-not-bit-identical","resource-refusal","drift-test-inconclusive","non-stationary-drift-detected","stationary-under-resolved-consistent"],
+    "reason": "resource refusal is evaluated before any allocation or replay, so it precedes the replay terminal here; the two clean scientific outcomes and their relative order are unchanged and the taxonomy still prefers neither"
+  },
+  "lastTwoTerminalsAreBothCleanScientificOutcomes": true,
+  "taxonomyPrefersNeitherCleanOutcome": true,
+  "independentAdjudicatorBecomesMandatoryOn": "non-stationary-drift-detected",
+
+  "resourceRule": {
+    "forwardedFrom": "phase548-contract.resourceRule",
+    "ceilingModified": false,
+    "newSamplingRequested": false,
+    "requestIsTheAlreadyCommittedTrajectorySet": true,
+    "estimatedForceEvaluations": 21600,
+    "estimatedAggregateCpuSeconds": 500.0
+  },
+
+  "authorityFirewalls": {
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

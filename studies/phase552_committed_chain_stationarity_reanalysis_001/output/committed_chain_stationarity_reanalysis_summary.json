@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "phase": 552,
+  "phaseId": "phase552-committed-chain-stationarity-reanalysis",
+  "contractId": "phase552-a30-committed-chain-stationarity-reanalysis-v1",
+  "contractSha256": "c0cf13b28fdff978dd4797ed37f690506fa210fe0426929be28f8e81c078381a",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "expectedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "actualSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json",
+      "expectedSha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90",
+      "actualSha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json",
+      "expectedSha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd",
+      "actualSha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json",
+      "expectedSha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db",
+      "actualSha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json",
+      "expectedSha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c",
+      "actualSha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json",
+      "expectedSha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2",
+      "actualSha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-telemetry-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json",
+      "expectedSha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd",
+      "actualSha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "expectedSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "actualSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "expectedSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "actualSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "expectedSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "actualSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "expectedSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "actualSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "expectedSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "actualSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-checkpoint-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "expectedSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "actualSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "hashMatches": true
+    },
+    {
+      "id": "phase549-summary",
+      "path": "studies/phase549_bounded_pilot_independent_result_adjudicator_001/output/bounded_pilot_independent_result_adjudicator_summary.json",
+      "expectedSha256": "76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee",
+      "actualSha256": "76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee",
+      "hashMatches": true
+    },
+    {
+      "id": "phase550-summary",
+      "path": "studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json",
+      "expectedSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "actualSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-operator-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ],
+  "honestyDisclosure": {
+    "analysisIsRetrospectiveOnKnownData": true,
+    "statisticsAndThresholdsFrozenBeforeReplay": true,
+    "isDiagnosticOnly": true,
+    "changesPhase548Terminal": false,
+    "isAConvergenceAssessmentOfThePilot": false,
+    "note": "The summary of this dataset was already known when these statistics were chosen. Recomputing a different function of an already-determined dataset consumes no blind currency, but it is not a prospective test and is not reported as one."
+  },
+  "flatSectorBasis": {
+    "rebuiltFromMesh": true,
+    "generatorsNotClosed": 0,
+    "dimension": 252,
+    "reportedPhase550Dimension": 252,
+    "agreesWithPhase550": true
+  },
+  "replay": {
+    "chains": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.925,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.93,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.9325,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.9125,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.94,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "decisionsMatch": true,
+        "positionBitIdentical": true,
+        "worstRelativeDeltaHDeviation": 0,
+        "acceptanceRate": 0.95,
+        "retainedDraws": 340,
+        "passed": true
+      }
+    ],
+    "bitIdentical": true,
+    "newSamplingPerformed": false,
+    "reExecutesAlreadyCommittedTrajectoriesUnderIdenticalSeeds": true,
+    "corroboratedByPhase549": true
+  },
+  "driftTest": {
+    "batchCount": 20,
+    "absoluteZThreshold": 3,
+    "chainsRequiredToDeclareDrift": 3,
+    "decisionSeries": [
+      "configurationNormSquared",
+      "flatSectorNormSquared",
+      "complementNormSquared"
+    ],
+    "driftChainCountBySeries": {
+      "actionDensity": 0,
+      "forceNormSquared": 0,
+      "configurationNormSquared": 0,
+      "flatSectorNormSquared": 0,
+      "complementNormSquared": 0
+    },
+    "driftDetected": false,
+    "driftInconclusive": false,
+    "rows": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.35412108800384845,
+        "secondHalfMean": 0.3527656902585359,
+        "halfWindowZ": -0.619353729931511,
+        "regressionSlope": -0.0003099049717306921,
+        "slopeZ": -1.7477763126784425,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 9850.417647440536,
+        "secondHalfMean": 9878.703139152545,
+        "halfWindowZ": 0.34026528925755906,
+        "regressionSlope": -4.828350469756485,
+        "slopeZ": -0.6761334059616916,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2262.244043739945,
+        "secondHalfMean": 2235.9352203240433,
+        "halfWindowZ": -0.9725426641124952,
+        "regressionSlope": -4.902685877625813,
+        "slopeZ": -2.322547119011585,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 392.29635811772835,
+        "secondHalfMean": 386.464273801461,
+        "halfWindowZ": -0.38824378501011064,
+        "regressionSlope": -1.4161847356462278,
+        "slopeZ": -1.1197968018281825,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1869.9476856222166,
+        "secondHalfMean": 1849.4709465225828,
+        "halfWindowZ": -1.1784819457013647,
+        "regressionSlope": -3.4865011419796,
+        "slopeZ": -2.620748368398648,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.3561279920145483,
+        "secondHalfMean": 0.35654335080101335,
+        "halfWindowZ": 0.18630139926837916,
+        "regressionSlope": -7.994823428351017E-05,
+        "slopeZ": -0.41512428182483596,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 9922.461264455711,
+        "secondHalfMean": 9987.57848167544,
+        "halfWindowZ": 0.788812676044454,
+        "regressionSlope": -0.3825562969970852,
+        "slopeZ": -0.05254761324715704,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2254.7661714879955,
+        "secondHalfMean": 2261.4030466835547,
+        "halfWindowZ": 0.31932220866307215,
+        "regressionSlope": 0.4769685839890341,
+        "slopeZ": 0.2644212086914041,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 376.7589865427009,
+        "secondHalfMean": 395.87593261739204,
+        "halfWindowZ": 1.6716012734019685,
+        "regressionSlope": 1.9220909598935618,
+        "slopeZ": 1.992273506306378,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1878.0071849452943,
+        "secondHalfMean": 1865.5271140661625,
+        "halfWindowZ": -0.6782078337558742,
+        "regressionSlope": -1.4451223759045269,
+        "slopeZ": -0.914885614702639,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.3541166834559284,
+        "secondHalfMean": 0.3548885394163275,
+        "halfWindowZ": 0.4457785892050281,
+        "regressionSlope": 9.146850784982441E-05,
+        "slopeZ": 0.6121680653411063,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 9907.391604888213,
+        "secondHalfMean": 9911.8008975107,
+        "halfWindowZ": 0.0695985819024553,
+        "regressionSlope": -1.247682765777633,
+        "slopeZ": -0.22741864623026103,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2234.5440385751704,
+        "secondHalfMean": 2242.8004786284446,
+        "halfWindowZ": 0.6543689260912242,
+        "regressionSlope": 1.3476854057726213,
+        "slopeZ": 1.2708604044233525,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 381.7760545789126,
+        "secondHalfMean": 387.4830185681743,
+        "halfWindowZ": 0.4857778438434053,
+        "regressionSlope": 0.28292483218084885,
+        "slopeZ": 0.27651685857099756,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1852.7679839962577,
+        "secondHalfMean": 1855.31746006027,
+        "halfWindowZ": 0.16969396780733317,
+        "regressionSlope": 1.0647605735917707,
+        "slopeZ": 0.8322328909854015,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.3539074340616713,
+        "secondHalfMean": 0.35707248654192303,
+        "halfWindowZ": 1.535452564232928,
+        "regressionSlope": 0.0003885110307242621,
+        "slopeZ": 2.3323847643549898,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 9810.862591554935,
+        "secondHalfMean": 9960.415661984383,
+        "halfWindowZ": 1.8898538762394004,
+        "regressionSlope": 14.803309311132598,
+        "slopeZ": 2.225288211178613,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2271.019463129419,
+        "secondHalfMean": 2271.7621056127878,
+        "halfWindowZ": 0.05255672021496883,
+        "regressionSlope": 0.3429330874252433,
+        "slopeZ": 0.28047703656155115,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 406.84373587429025,
+        "secondHalfMean": 387.57418567780184,
+        "halfWindowZ": -1.9343139517990564,
+        "regressionSlope": -1.9758935081081266,
+        "slopeZ": -2.3884521971238954,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1864.1757272551283,
+        "secondHalfMean": 1884.187919934986,
+        "halfWindowZ": 1.4751188991025335,
+        "regressionSlope": 2.3188265955333494,
+        "slopeZ": 2.0720323232637194,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.3573488186451389,
+        "secondHalfMean": 0.3561858530373675,
+        "halfWindowZ": -0.7283391344586206,
+        "regressionSlope": -4.082758642049709E-05,
+        "slopeZ": -0.2913134990725021,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 10021.629564305165,
+        "secondHalfMean": 9918.557445785014,
+        "halfWindowZ": -1.6442227869592527,
+        "regressionSlope": -3.9858790240778443,
+        "slopeZ": -0.6927846243664274,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2246.6376603763874,
+        "secondHalfMean": 2256.461793136257,
+        "halfWindowZ": 0.5191674931697056,
+        "regressionSlope": 1.179930071609769,
+        "slopeZ": 0.7241072293923637,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 380.59051864433616,
+        "secondHalfMean": 373.9038791638502,
+        "halfWindowZ": -0.5008502494496697,
+        "regressionSlope": 0.16893486720348294,
+        "slopeZ": 0.14500845190378667,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1866.0471417320514,
+        "secondHalfMean": 1882.5579139724064,
+        "halfWindowZ": 1.1024155030388265,
+        "regressionSlope": 1.010995204406283,
+        "slopeZ": 0.7656395883123519,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "series": "actionDensity",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 0.35860976297507474,
+        "secondHalfMean": 0.3554454268919663,
+        "halfWindowZ": -1.6700605571853842,
+        "regressionSlope": -0.00022629318015317948,
+        "slopeZ": -1.3444490221647203,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "series": "forceNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 10023.759941688128,
+        "secondHalfMean": 9915.083289274446,
+        "halfWindowZ": -1.7375458193780824,
+        "regressionSlope": -8.274482074991482,
+        "slopeZ": -1.4972102224523978,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "series": "configurationNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 2275.8733223444365,
+        "secondHalfMean": 2266.788382194693,
+        "halfWindowZ": -0.4820152050340476,
+        "regressionSlope": -0.28967910302372846,
+        "slopeZ": -0.17626708248281245,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "series": "flatSectorNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 391.6911315604426,
+        "secondHalfMean": 392.44042203198717,
+        "halfWindowZ": 0.05868052160107523,
+        "regressionSlope": 0.4662268868266698,
+        "slopeZ": 0.42313073322449063,
+        "conclusive": true,
+        "drifts": false
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "series": "complementNormSquared",
+        "batchCount": 20,
+        "batchSize": 17,
+        "firstHalfMean": 1884.1821907839937,
+        "secondHalfMean": 1874.3479601627055,
+        "halfWindowZ": -0.66976801060976,
+        "regressionSlope": -0.7559059898504189,
+        "slopeZ": -0.5921360063141344,
+        "conclusive": true,
+        "drifts": false
+      }
+    ]
+  },
+  "decomposedConvergence": {
+    "rows": [
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "actionDensity",
+        "splitRankNormalizedRhat": 1.0074488749733528,
+        "bulkEss": 212.33365196307267,
+        "tailEss": 622.2583110822234,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "forceNormSquared",
+        "splitRankNormalizedRhat": 1.002567581821562,
+        "bulkEss": 393.53585678545556,
+        "tailEss": 602.3747572039119,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "configurationNormSquared",
+        "splitRankNormalizedRhat": 1.0386631823268684,
+        "bulkEss": 72.15228305551715,
+        "tailEss": 101.8096979688506,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "flatSectorNormSquared",
+        "splitRankNormalizedRhat": 1.0310916628861901,
+        "bulkEss": 81.0056083455973,
+        "tailEss": 156.701601725303,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "complementNormSquared",
+        "splitRankNormalizedRhat": 1.0187856214950126,
+        "bulkEss": 63.648996539207936,
+        "tailEss": 234.61447479874093,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "actionDensity",
+        "splitRankNormalizedRhat": 1.012441780041052,
+        "bulkEss": 286.9641233206607,
+        "tailEss": 656.20297385478,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "forceNormSquared",
+        "splitRankNormalizedRhat": 1.0141212353898779,
+        "bulkEss": 420.4942377427681,
+        "tailEss": 710.6020805652751,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "configurationNormSquared",
+        "splitRankNormalizedRhat": 1.0150545860220823,
+        "bulkEss": 99.7310011218456,
+        "tailEss": 182.88810615034012,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "flatSectorNormSquared",
+        "splitRankNormalizedRhat": 1.0473477160926188,
+        "bulkEss": 70.15251094623618,
+        "tailEss": 182.7127671072524,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "complementNormSquared",
+        "splitRankNormalizedRhat": 1.0134189590103568,
+        "bulkEss": 127.60778418214335,
+        "tailEss": 248.1286612067698,
+        "isDiagnosticOnlyAndDoesNotRehabilitateAnyGate": true
+      }
+    ],
+    "note": "Recomputed on the decomposed series for diagnosis. It rehabilitates no Phase548 gate and selects no configuration."
+  },
+  "resource": {
+    "forwardedPhase546Rule": true,
+    "ceilingModified": false,
+    "newSamplingRequested": false,
+    "perTableRequestedCpuTicks": 419904000,
+    "maximumAggregateCpuTicks": 466093440,
+    "accepted": true
+  },
+  "verdictKind": "stationary-under-resolved-consistent",
+  "terminalStatus": "committed-chain-stationarity-reanalysis-stationary-under-resolved-consistent",
+  "decision": "Under the frozen batch-mean drift statistics, the six committed chains show no detected drift in the squared configuration norm or in either of its flat-sector and complement components across the retained window. This is consistent with chains that were stationary but under-resolved, and it is a diagnostic statement about six already-determined chains, not a stationarity result for the target.",
+  "independentAdjudicationRequired": false,
+  "scope": {
+    "establishesStationarityOfTheTarget": false,
+    "rehabilitatesAnyFailedGate": false,
+    "selectsADefault": false,
+    "touchesPhase481Phase458OrO4": false,
+    "workbenchRelativeLatticeUnitsOnly": true
+  },
+  "analysisIsRetrospectiveOnKnownData": true,
+  "newSamplingPerformed": false,
+  "phase548TerminalChanged": false,
+  "registeredBlindSeedTouched": false,
+  "nullSpaceInterpretedAsGaugeVolume": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "phase548Or549Reinterpreted": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

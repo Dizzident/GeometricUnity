@@ -422,6 +422,10 @@ dotnet run --no-build -c Release --project studies/phase546_pilot_diagnostics_ch
 dotnet run --no-build -c Release --project studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj
 dotnet run --no-build -c Release --project studies/phase549_bounded_pilot_independent_result_adjudicator_001/Phase549BoundedPilotIndependentResultAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase550_complete_lattice_flat_sector_census_001/Phase550CompleteLatticeFlatSectorCensus.csproj
+dotnet run --no-build -c Release --project studies/phase551_flat_sector_independent_spectral_adjudicator_001/Phase551FlatSectorIndependentSpectralAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase552_committed_chain_stationarity_reanalysis_001/Phase552CommittedChainStationarityReanalysis.csproj
+dotnet run --no-build -c Release --project studies/phase555_flat_sector_external_review_escalation_packet_001/Phase555FlatSectorExternalReviewEscalationPacket.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

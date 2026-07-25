@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase551-a30-flat-sector-independent-spectral-adjudicator-repair-v2",
+  "planSection": "COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25 A30",
+  "planDocument": "docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "independentOfPhase550Implementation": true,
+  "mayNotReferencePhase550Project": true,
+  "batteryRunsBeforeAnyPhase550Datum": true,
+  "noAdjudicatorOfTheAdjudicator": true,
+
+  "exactBindings": [
+    {"id":"phase550-contract","path":"studies/phase550_complete_lattice_flat_sector_census_001/preregistration/phase550_complete_lattice_flat_sector_census_contract_v1.json","sha256":"d1ac66cc31c1b509afa1cc057f4c98e105b521e04daa83af116cb03d9f2c9a99"},
+    {"id":"phase550-program","path":"studies/phase550_complete_lattice_flat_sector_census_001/Program.cs","sha256":"35f76849bdaa3966ece60b8cbc3cd98c5be55957865b06224fa6b6039c93a425"},
+    {"id":"phase550-summary","path":"studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json","sha256":"0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"},
+    {"id":"phase550-spectra","path":"studies/phase550_complete_lattice_flat_sector_census_001/output/spectra/complete_lattice_spectra.json","sha256":"0a7057f8b02e5c05adab729a194885083c0e27afd153992824447ec631af0c59"},
+    {"id":"shiab-operator-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"},
+    {"id":"curvature-assembler-source","path":"src/Gu.ReferenceCpu/CurvatureAssembler.cs","sha256":"ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"},
+    {"id":"mass-matrix-source","path":"src/Gu.ReferenceCpu/CpuMassMatrix.cs","sha256":"6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"},
+    {"id":"mesh-generator-source","path":"src/Gu.Geometry/SimplicialMeshGenerator.cs","sha256":"e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"},
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-summary","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json","sha256":"ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"},
+    {"id":"phase548-checkpoint-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json","sha256":"eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"},
+    {"id":"phase548-checkpoint-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json","sha256":"5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"},
+    {"id":"phase548-checkpoint-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json","sha256":"7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"},
+    {"id":"phase548-checkpoint-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json","sha256":"9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"},
+    {"id":"phase548-checkpoint-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json","sha256":"6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"},
+    {"id":"phase548-checkpoint-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json","sha256":"ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"}
+  ],
+
+  "independentMethods": {
+    "secondOrderExtraction": "four-point antisymmetric extraction from the registered joint gradient",
+    "fourPointStep": 0.25,
+    "auditedExtraction": "the operator's own exact linearization primitives",
+    "inertiaMethod": "dense LDL^T with symmetric diagonal pivoting on the largest remaining diagonal, with explicit breakdown detection",
+    "auditedInertiaMethod": "Householder tridiagonalization followed by LDL^T Sturm counts",
+    "extremalMethod": "block subspace iteration from a frozen deterministic start block, closed by a Rayleigh-Ritz projection",
+    "auditedExtremalMethod": "Lanczos with full reorthogonalization",
+    "subspaceBlockSize": 16,
+    "subspaceIterations": 400,
+    "incidenceRankPrimes": [999983, 2147483647],
+    "incidenceRankPivotRule": "reverse row order with a last-nonzero-column pivot",
+    "nullBasisSource": "rebuilt from the vertex-edge incidence arrays and the lattice index decomposition, not read from the audited output",
+    "orthonormalization": "Householder QR",
+    "orthonormalizationRejectionThreshold": 1e-08,
+    "denseBasePoints": ["origin", "complete-lattice-pilot-a-546101"],
+    "denseBasePointScopeIsProspective": true,
+    "startBlockIsFrozenNotSampled": true,
+    "startBlockNote": "The plan named randomized subspace iteration. This phase must be byte-reproducible and may construct no RNG, so the start block is a frozen deterministic fill. The algorithm family remains subspace iteration and is not the audited phase's Lanczos."
+  },
+
+  "estimatorKnownAnswerBattery": {
+    "runsBeforeAnyAuditedDatumIsRead": true,
+    "shiftLadder": [1e-09, 1e-08, 1e-07, 1e-06, 1e-05, 0.0001, 0.001, 0.01],
+    "subspaceBlockSize": 16,
+    "subspaceIterations": 400,
+    "spectrumSegmentRule": "each case's planted spectrum is the concatenation of its segments, each segment linearly spaced from its first value to its last, assigned to a frozen deterministic orthonormal frame",
+    "cases": [
+      {
+        "id": "planted-nullity-with-gap",
+        "purpose": "a clean planted nullity with a wide gap, which every rung of the ladder must report identically",
+        "size": 360,
+        "segments": [{"count":97,"from":0.0,"to":0.0},{"count":263,"from":0.5,"to":3.0}],
+        "expectPlateauOverLowestThreeRungs": true
+      },
+      {
+        "id": "soft-cluster-between-rungs",
+        "purpose": "the arm C failure mode: seven eigenvalues sit at 3e-08, between the frozen rungs, so a route that reads any single rung as the nullity is wrong by exactly seven and the plateau test must fail",
+        "size": 360,
+        "segments": [{"count":40,"from":0.0,"to":0.0},{"count":7,"from":3e-08,"to":3e-08},{"count":313,"from":0.5,"to":3.0}],
+        "expectPlateauOverLowestThreeRungs": false
+      },
+      {
+        "id": "planted-indefinite",
+        "purpose": "eleven planted negative eigenvalues, which the negative inertia count must report exactly",
+        "size": 300,
+        "segments": [{"count":11,"from":-2.0,"to":-0.3},{"count":19,"from":0.0,"to":0.0},{"count":270,"from":0.4,"to":2.5}],
+        "expectPlateauOverLowestThreeRungs": true
+      },
+      {
+        "id": "degenerate-largest",
+        "purpose": "the arm D failure mode: a largest eigenvalue of multiplicity three, where a single-vector iteration stalls and only a block method certifies a tight residual",
+        "size": 300,
+        "segments": [{"count":12,"from":0.0,"to":0.0},{"count":285,"from":0.4,"to":2.0},{"count":3,"from":4.0,"to":4.0}],
+        "expectPlateauOverLowestThreeRungs": true
+      }
+    ],
+    "gates": {
+      "inertiaCountsMustMatchThePlantedSpectrumExactly": true,
+      "negativeInertiaMustMatchExactly": true,
+      "largestEigenvalueRelativeTolerance": 1e-08,
+      "largestResidualRelativeTolerance": 1e-06,
+      "smallestEigenvalueRelativeTolerance": 1e-08,
+      "plateauOutcomeMustMatchTheDeclaredExpectation": true
+    }
+  },
+
+  "repairLineage": {
+    "supersedes": "phase551-a30-flat-sector-independent-spectral-adjudicator-v1",
+    "v1ContractPath": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/lineage/v1/phase551_flat_sector_independent_spectral_adjudicator_contract_v1.json",
+    "v1ProgramPath": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/lineage/v1/Program_v1.cs.txt",
+    "v1OutputPath": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/lineage/v1/flat_sector_independent_spectral_adjudicator_summary_v1.json",
+    "v1Preserved": true,
+    "v1Citable": false,
+    "executionPrecededThisRepair": true,
+    "defects": [
+      "implementation: the independent homogeneous solve used an incorrect elimination for the degree-four coefficient; it reproduced S(1) exactly, so the error was invisible in the value and appeared only as disagreement with the audited split",
+      "specification, present in both contracts: the v1 rule compared a-posteriori intervals for the smallest eigenvalue on the orthogonal complement of the measured null basis, which is not a well-posed comparison target because deflating against the constructed null basis does not remove the assembled form's roundoff-level near-null eigenvectors"
+    ],
+    "whatTheRepairDidNotTouch": [
+      "every integer comparison", "the shift ladder", "the inertia counts",
+      "the known-answer battery", "every authority firewall", "the terminal taxonomy"
+    ],
+    "loadBearingAgreementsAlreadyHeldInV1": [
+      "threshold-free integer flat-sector lower bound", "inertia counts at all eight rungs",
+      "negative inertia", "largest eigenvalue", "null-basis residual", "flatness ladder"
+    ]
+  },
+
+  "comparison": {
+    "shiftLadder": [1e-09, 1e-08, 1e-07, 1e-06, 1e-05, 0.0001, 0.001, 0.01],
+    "integerQuantitiesRequireExactEquality": true,
+    "eigenvalueRelativeTolerance": 1e-08,
+    "nullBasisResidualRelativeTolerance": 1e-10,
+    "homogeneousRelativeTolerance": 1e-09,
+    "homogeneousSolveRule": "solved from t = 1, 2, 3, which is a different linear system from the audited t = 1, -1, 2, by the elimination S4 = (2*s3 - 9*s2 + 18*s1)/36, S3 = (s2 - 4*s1 - 12*S4)/4, S2 = s1 - S3 - S4",
+    "smallestEigenvalueRule": "the independent a-posteriori interval must contain the audited spectrum's smallest eigenvalue strictly above the measured flat sector, which the audited row reports as the tridiagonal reference of its own smallest-eigenvalue row; neither number is treated as a point estimate",
+    "smallestEigenvalueRuleRationale": "deflating against the constructed null basis does not remove the assembled form's roundoff-level near-null eigenvectors, so the deflated operator genuinely retains an eigenvalue near zero alongside the intended gap and the two routes can converge to different genuine eigenvalues of it; the well-posed comparison target is the smallest eigenvalue strictly above the measured flat sector, which both routes can reach",
+    "auditedIterativeIntervalBracketingIsReportedNotGated": true
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "estimator-battery-failed",
+    "adjudication-contradicts-reported-values",
+    "adjudication-inconclusive-tolerance-exceeded",
+    "adjudication-confirms-reported-values"
+  ],
+
+  "resourceRefusal": {
+    "idiom": "phase541",
+    "maximumEstimatedAggregateCpuSeconds": 1800.0,
+    "maximumEstimatedPeakBytes": 805306368,
+    "estimatedAggregateCpuSeconds": 1450.0,
+    "estimatedPeakBytes": 335544320,
+    "arithmetic": {
+      "denseBasePoints": 2,
+      "gradientEvaluationsPerDenseForm": 14580,
+      "measuredSecondsPerGradientEvaluation": 0.0226,
+      "denseFormSecondsEach": 330.0,
+      "factorizationsPerBasePoint": 9,
+      "factorizationSecondsEach": 6.0,
+      "subspaceSecondsPerBasePoint": 140.0
+    },
+    "refuseBeforeAllocation": true,
+    "phase546SamplerCeilingUntouched": true,
+    "noSamplerRunsUnderThisCeiling": true
+  },
+
+  "scope": {
+    "confirmingAMeasurementGrantsNoAuthority": true,
+    "upgradesAMatrixFactIntoATheoryFact": false,
+    "adjudicatorOfTheAdjudicatorRequired": false,
+    "recursionStopsHereAsItDidAtPhase549": true
+  },
+
+  "authorityFirewalls": {
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase555-a30-flat-sector-external-review-escalation-packet-v1",
+  "planSection": "COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25 A30",
+  "planDocument": "docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md",
+  "frozenBeforeFirstExecution": true,
+
+  "zeroCompute": true,
+  "authorsARuling": false,
+  "consumesAMemo": false,
+  "verifiesASignature": false,
+  "changesAPendingFlag": false,
+  "phase480SemanticsChanged": false,
+
+  "exactBindings": [
+    {"id":"phase550-summary","path":"studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json","sha256":"0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"},
+    {"id":"phase551-summary","path":"studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json","sha256":"9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0"},
+    {"id":"phase552-summary","path":"studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json","sha256":"0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8"},
+    {"id":"o4-memo-schema","path":"scripts/o4_register/o4_human_memo_schema_v1.json","sha256":"989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a"},
+    {"id":"o4-memo-template","path":"scripts/o4_register/o4_human_memo_template_v1.json","sha256":"501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b"},
+    {"id":"o4-dependency-map","path":"scripts/o4_register/dependency_map.json","sha256":"076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0"},
+    {"id":"phase480-summary","path":"studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json","sha256":"91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7"}
+  ],
+
+  "reservedRulingIds": ["O4-F1-COLLECTIVE-COORDINATE", "O4-F1-FP-NORMALIZATION"],
+  "reservedRulingIdRationale": "These are the two register items that carry exactly the reserved measure convention: whether a measured null direction may be treated as a collective coordinate of the description, and whether the corresponding transverse normalization is correct. Both must already exist in the unchanged memo schema; this phase adds none and modifies none.",
+
+  "requiredMeasuredInputs": [
+    "measured-flat-sector-dimension",
+    "topological-versus-operator-decomposition",
+    "exact-homogeneous-decomposition-at-real-configurations",
+    "transverse-scale-along-a-flat-ray",
+    "measured-observable-invariance",
+    "independent-confirmation-of-the-measured-values",
+    "committed-chain-drift-reading"
+  ],
+  "admissibleUpstreamTerminals": {
+    "phase550": ["origin-and-configuration-spectrum-characterized"],
+    "phase551": ["adjudication-confirms-reported-values"],
+    "phase552": ["stationary-under-resolved-consistent", "non-stationary-drift-detected"]
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "packet-incomplete-inputs-missing",
+    "packet-assembled-awaiting-external-ruling"
+  ],
+
+  "authorityFirewalls": {
+    "rulingAuthoredOrInferred": false,
+    "memoConsumed": false,
+    "signatureVerified": false,
+    "pendingFlagChanged": false,
+    "o4Discharged": false,
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

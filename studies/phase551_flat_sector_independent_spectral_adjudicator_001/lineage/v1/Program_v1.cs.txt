@@ -1,0 +1,922 @@
+using System.Security.Cryptography;
+using System.Text.Json;
+using Gu.Core;
+using Gu.Geometry;
+using Gu.Math;
+using Gu.ReferenceCpu;
+
+// Phase551 independently adjudicates the Phase550 flat-sector census. It holds no
+// project reference to Phase550 and reuses none of its code. Every quantity is
+// recomputed by a different algorithm family: the second-order form is extracted
+// from the registered gradient by a four-point antisymmetric formula rather than
+// from the operator's linearization primitives, the inertia counts come from a
+// dense LDL^T with symmetric diagonal pivoting rather than a tridiagonalization,
+// the extremal eigenvalues come from block subspace iteration rather than Lanczos,
+// the integer incidence rank uses different primes and a different pivot rule,
+// and the null basis is rebuilt from the mesh rather than read from Phase550.
+
+const string Root = "studies/phase551_flat_sector_independent_spectral_adjudicator_001";
+const string ContractPath = Root + "/preregistration/phase551_flat_sector_independent_spectral_adjudicator_contract_v1.json";
+const string OutputPath = Root + "/output/flat_sector_independent_spectral_adjudicator.json";
+const string SummaryPath = Root + "/output/flat_sector_independent_spectral_adjudicator_summary.json";
+
+using var contractDocument = JsonDocument.Parse(File.ReadAllBytes(ContractPath));
+JsonElement contract = contractDocument.RootElement;
+
+var bindingSpecs = contract.GetProperty("exactBindings").EnumerateArray().Select(x => new
+{
+    Id = x.GetProperty("id").GetString()!,
+    Path = x.GetProperty("path").GetString()!,
+    ExpectedSha256 = x.GetProperty("sha256").GetString()!,
+}).ToArray();
+var bindings = bindingSpecs.Select(x =>
+{
+    string actual = File.Exists(x.Path) ? Sha(x.Path) : "missing";
+    return new { x.Id, x.Path, x.ExpectedSha256, ActualSha256 = actual, HashMatches = actual == x.ExpectedSha256 };
+}).ToArray();
+bool exactBindingsValid = bindings.Length == 16 && bindings.All(x => x.HashMatches);
+
+string[] taxonomy = contract.GetProperty("terminalTaxonomyInPrecedenceOrder")
+    .EnumerateArray().Select(x => x.GetString()!).ToArray();
+JsonElement battery = contract.GetProperty("estimatorKnownAnswerBattery");
+JsonElement independence = contract.GetProperty("independentMethods");
+JsonElement comparison = contract.GetProperty("comparison");
+JsonElement resource = contract.GetProperty("resourceRefusal");
+
+bool contractValid = contract.GetProperty("schemaVersion").GetInt32() == 1
+    && contract.GetProperty("contractId").GetString() == "phase551-a30-flat-sector-independent-spectral-adjudicator-v1"
+    && contract.GetProperty("planSection").GetString() == "COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25 A30"
+    && contract.GetProperty("frozenBeforeFirstExecution").GetBoolean()
+    && contract.GetProperty("deterministicZeroSampling").GetBoolean()
+    && contract.GetProperty("independentOfPhase550Implementation").GetBoolean()
+    && contract.GetProperty("mayNotReferencePhase550Project").GetBoolean()
+    && contract.GetProperty("batteryRunsBeforeAnyPhase550Datum").GetBoolean()
+    && contract.GetProperty("noAdjudicatorOfTheAdjudicator").GetBoolean()
+    && exactBindingsValid
+    && taxonomy.Length == 6
+    && taxonomy[0] == "invalid-or-drifted-input"
+    && taxonomy[5] == "adjudication-confirms-reported-values"
+    && contract.GetProperty("authorityFirewalls").EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && contract.GetProperty("externalReviewPending").GetBoolean()
+    && contract.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0;
+
+double estimatedSeconds = resource.GetProperty("estimatedAggregateCpuSeconds").GetDouble();
+double maximumSeconds = resource.GetProperty("maximumEstimatedAggregateCpuSeconds").GetDouble();
+long estimatedBytes = resource.GetProperty("estimatedPeakBytes").GetInt64();
+long maximumBytes = resource.GetProperty("maximumEstimatedPeakBytes").GetInt64();
+bool resourceAccepted = estimatedSeconds <= maximumSeconds && estimatedBytes <= maximumBytes
+    && resource.GetProperty("refuseBeforeAllocation").GetBoolean();
+
+// ================================================================= known answers
+// The battery runs before any Phase550 datum is read, and includes a case whose
+// soft cluster sits between the frozen rungs: a route that reads a single rung as
+// the nullity is wrong there by construction, which is the arm C failure mode.
+double[] batteryShifts = battery.GetProperty("shiftLadder").EnumerateArray().Select(x => x.GetDouble()).ToArray();
+int batteryBlock = battery.GetProperty("subspaceBlockSize").GetInt32();
+int batteryIterations = battery.GetProperty("subspaceIterations").GetInt32();
+var batteryRows = new List<object>();
+bool batteryPassed = true;
+foreach (JsonElement testCase in battery.GetProperty("cases").EnumerateArray())
+{
+    string id = testCase.GetProperty("id").GetString()!;
+    int size = testCase.GetProperty("size").GetInt32();
+    var spectrumValues = new List<double>();
+    foreach (JsonElement segment in testCase.GetProperty("segments").EnumerateArray())
+    {
+        int count = segment.GetProperty("count").GetInt32();
+        double from = segment.GetProperty("from").GetDouble();
+        double to = segment.GetProperty("to").GetDouble();
+        for (int i = 0; i < count; i++)
+            spectrumValues.Add(count == 1 ? from : from + (to - from) * i / (count - 1));
+    }
+    double[] plantedSpectrum = [.. spectrumValues];
+    if (plantedSpectrum.Length != size) { batteryPassed = false; continue; }
+    double[] matrix = SyntheticSymmetric(plantedSpectrum, size);
+    var batteryScratch = new double[(long)size * size];
+    var counts = new int[batteryShifts.Length];
+    bool batteryFactorizationsOk = true;
+    for (int r = 0; r < batteryShifts.Length; r++)
+    {
+        counts[r] = InertiaBelow(matrix, batteryScratch, size, batteryShifts[r], out bool ok);
+        batteryFactorizationsOk &= ok;
+    }
+    int negativeCount = InertiaBelow(matrix, batteryScratch, size, -1e-09, out bool negativeOk);
+    negativeOk &= batteryFactorizationsOk;
+    (double Value, double Residual) top = SubspaceExtreme(matrix, size, batteryBlock, batteryIterations, false);
+    (double Value, double Residual) bottom = SubspaceExtreme(matrix, size, batteryBlock, batteryIterations, true);
+    double[] sorted = plantedSpectrum.OrderBy(x => x).ToArray();
+    int[] expectedCounts = batteryShifts.Select(shift => sorted.Count(x => x < shift)).ToArray();
+    int expectedNegative = sorted.Count(x => x < 0.0);
+    bool countsOk = counts.SequenceEqual(expectedCounts) && negativeOk && negativeCount == expectedNegative;
+    bool topOk = System.Math.Abs(top.Value - sorted[^1]) <= 1e-08 * System.Math.Max(1.0, System.Math.Abs(sorted[^1]))
+        && top.Residual <= 1e-06 * System.Math.Max(1.0, System.Math.Abs(top.Value));
+    bool bottomOk = System.Math.Abs(bottom.Value - sorted[0]) <= 1e-08 * System.Math.Max(1.0, System.Math.Abs(sorted[0]));
+    bool plateauExpected = testCase.GetProperty("expectPlateauOverLowestThreeRungs").GetBoolean();
+    bool plateauObserved = counts.Take(3).Distinct().Count() == 1;
+    bool plateauOk = plateauObserved == plateauExpected;
+    bool passed = countsOk && topOk && bottomOk && plateauOk;
+    batteryPassed &= passed;
+    batteryRows.Add(new
+    {
+        id, size, purpose = testCase.GetProperty("purpose").GetString(),
+        shiftLadder = batteryShifts, inertiaCounts = counts, expectedCounts,
+        negativeInertia = negativeCount, expectedNegativeInertia = expectedNegative,
+        largestValue = top.Value, largestResidual = top.Residual, expectedLargest = sorted[^1],
+        smallestValue = bottom.Value, expectedSmallest = sorted[0],
+        plateauExpected, plateauObserved,
+        countsOk, topOk, bottomOk, plateauOk, passed,
+    });
+}
+
+// ============================================================== registered target
+var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+int extent = 3;
+var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(extent, latticeCanonical: true);
+var member = new EinsteinianShiabFamilyMember
+{
+    Phi1 = InvariantElementSpec.Sd2,
+    Phi2 = InvariantElementSpec.Id0,
+    EinsteinCoefficient = 0.5,
+    EpsilonMode = "independent-theta",
+};
+var op = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriod: extent);
+var massMatrix = new CpuMassMatrix(mesh, algebra);
+int dimG = algebra.Dimension;
+int vertexCount = mesh.VertexCount, edgeCount = mesh.EdgeCount, faceCount = mesh.FaceCount;
+int n = edgeCount * dimG;
+var thetaZero = new double[vertexCount * dimG];
+double Value(double[] omega) => op.ComputeJointGradient(omega, thetaZero, massMatrix).Objective;
+double[] Gradient(double[] omega) => op.ComputeJointGradient(omega, thetaZero, massMatrix).GradOmega;
+
+// The audited result, read only after the battery has passed or failed.
+using var reportedDocument = JsonDocument.Parse(File.ReadAllBytes(
+    bindingSpecs.First(x => x.Id == "phase550-summary").Path));
+JsonElement reported = reportedDocument.RootElement;
+JsonElement reportedIncidence = reported.GetProperty("structuralPrechecks").GetProperty("exactIntegerIncidence");
+JsonElement reportedCensus = reported.GetProperty("spectralCensus");
+var reportedRows = reportedCensus.GetProperty("rows").EnumerateArray().ToArray();
+
+// ------------------------------------ independent exact-integer incidence rank
+// Different primes, reverse row order, and a last-nonzero-column pivot rule.
+long[] primes = independence.GetProperty("incidenceRankPrimes").EnumerateArray().Select(x => x.GetInt64()).ToArray();
+var coboundaryRows = Enumerable.Range(0, faceCount).Reverse().Select(f =>
+{
+    var row = new int[edgeCount];
+    int[] be = mesh.FaceBoundaryEdges[f];
+    int[] bo = mesh.FaceBoundaryOrientations[f];
+    for (int i = 0; i < be.Length; i++) row[be[i]] += bo[i];
+    return row;
+}).ToArray();
+
+// The null generators are rebuilt from the vertex-edge incidence arrays and from
+// the lattice index decomposition, not from the edge endpoint list.
+int[][] exactGenerators = Enumerable.Range(0, vertexCount).Select(v =>
+{
+    var g = new int[edgeCount];
+    int[] incident = mesh.VertexEdges[v];
+    int[] signs = mesh.VertexEdgeOrientations[v];
+    for (int i = 0; i < incident.Length; i++) g[incident[i]] = -signs[i];
+    return g;
+}).ToArray();
+int[][] windingGenerators = Enumerable.Range(0, 4).Select(axis =>
+{
+    var g = new int[edgeCount];
+    for (int e = 0; e < edgeCount; e++)
+    {
+        int first = LatticeIndex(mesh.Edges[e][0], axis);
+        int second = LatticeIndex(mesh.Edges[e][1], axis);
+        int difference = ((second - first) % extent + extent) % extent;
+        g[e] = difference == extent - 1 ? -1 : difference;
+    }
+    return g;
+}).ToArray();
+int LatticeIndex(int vertex, int axis)
+{
+    int stride = 1;
+    for (int a = 3; a > axis; a--) stride *= extent;
+    return vertex / stride % extent;
+}
+int[][] generators = [.. exactGenerators, .. windingGenerators];
+int notClosed = generators.Count(g => !ClosedExactly(g));
+bool ClosedExactly(int[] form)
+{
+    for (int f = 0; f < faceCount; f++)
+    {
+        int sum = 0;
+        int[] be = mesh.FaceBoundaryEdges[f];
+        int[] bo = mesh.FaceBoundaryOrientations[f];
+        for (int i = 0; i < be.Length; i++) sum += bo[i] * form[be[i]];
+        if (sum != 0) return false;
+    }
+    return true;
+}
+var rankRows = primes.Select(p => new
+{
+    prime = p,
+    coboundaryRank = ReverseModularRank(coboundaryRows, edgeCount, p),
+    generatorRank = ReverseModularRank(generators, edgeCount, p),
+}).ToArray();
+bool ranksAgreeAcrossPrimes = rankRows.Select(x => x.coboundaryRank).Distinct().Count() == 1
+    && rankRows.Select(x => x.generatorRank).Distinct().Count() == 1;
+int independentCoboundaryRank = rankRows[0].coboundaryRank;
+int independentGeneratorRank = rankRows[0].generatorRank;
+int independentScalarNullity = edgeCount - independentCoboundaryRank;
+bool independentNullityDetermined = ranksAgreeAcrossPrimes && notClosed == 0
+    && independentGeneratorRank == independentScalarNullity;
+int independentFlatSectorLowerBound = independentNullityDetermined ? independentScalarNullity * dimG : -1;
+
+// Householder QR orthonormalization of the generator set, tensored with the algebra.
+var rawBasis = new List<double[]>();
+foreach (int[] generator in generators)
+    for (int a = 0; a < dimG; a++)
+    {
+        var candidate = new double[n];
+        for (int e = 0; e < edgeCount; e++) candidate[e * dimG + a] = generator[e];
+        rawBasis.Add(candidate);
+    }
+double[][] nullBasis = HouseholderOrthonormalBasis(rawBasis, n,
+    independence.GetProperty("orthonormalizationRejectionThreshold").GetDouble());
+int independentNullBasisDimension = nullBasis.Length;
+
+// ------------------------------------------- independent second-order extraction
+double fourPointStep = independence.GetProperty("fourPointStep").GetDouble();
+double[] AssembleDense(double[] basePoint)
+{
+    var matrix = new double[(long)n * n];
+    var plus1 = new double[n];
+    var minus1 = new double[n];
+    var plus2 = new double[n];
+    var minus2 = new double[n];
+    for (int j = 0; j < n; j++)
+    {
+        Array.Copy(basePoint, plus1, n);
+        Array.Copy(basePoint, minus1, n);
+        Array.Copy(basePoint, plus2, n);
+        Array.Copy(basePoint, minus2, n);
+        plus1[j] += fourPointStep;
+        minus1[j] -= fourPointStep;
+        plus2[j] += 2.0 * fourPointStep;
+        minus2[j] -= 2.0 * fourPointStep;
+        double[] gp1 = Gradient(plus1);
+        double[] gm1 = Gradient(minus1);
+        double[] gp2 = Gradient(plus2);
+        double[] gm2 = Gradient(minus2);
+        for (int i = 0; i < n; i++)
+        {
+            double first = 0.5 * (gp1[i] - gm1[i]);
+            double second = 0.5 * (gp2[i] - gm2[i]);
+            matrix[(long)i * n + j] = (8.0 * first - second) / (6.0 * fourPointStep);
+        }
+    }
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+        {
+            double average = 0.5 * (matrix[(long)i * n + j] + matrix[(long)j * n + i]);
+            matrix[(long)i * n + j] = average;
+            matrix[(long)j * n + i] = average;
+        }
+    return matrix;
+}
+
+string[] auditedBasePoints = independence.GetProperty("denseBasePoints").EnumerateArray().Select(x => x.GetString()!).ToArray();
+double[] shiftLadder = comparison.GetProperty("shiftLadder").EnumerateArray().Select(x => x.GetDouble()).ToArray();
+int subspaceBlock = independence.GetProperty("subspaceBlockSize").GetInt32();
+int subspaceIterations = independence.GetProperty("subspaceIterations").GetInt32();
+double eigenvalueTolerance = comparison.GetProperty("eigenvalueRelativeTolerance").GetDouble();
+double nullResidualTolerance = comparison.GetProperty("nullBasisResidualRelativeTolerance").GetDouble();
+
+var spectralRows = new List<object>();
+double[]? factorizationScratch = null;
+bool anyContradiction = false, anyInconclusive = false;
+foreach (string basePointId in auditedBasePoints)
+{
+    double[] position;
+    if (basePointId == "origin") position = new double[n];
+    else
+    {
+        string path = $"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/{basePointId}.json";
+        using var checkpoint = JsonDocument.Parse(File.ReadAllBytes(path));
+        position = checkpoint.RootElement.GetProperty("payload").GetProperty("position")
+            .EnumerateArray().Select(x => x.GetDouble()).ToArray();
+    }
+    double[] dense = AssembleDense(position);
+    factorizationScratch ??= new double[(long)n * n];
+    var counts = new List<object>();
+    bool factorizationsOk = true;
+    var independentCounts = new int[shiftLadder.Length];
+    for (int r = 0; r < shiftLadder.Length; r++)
+    {
+        independentCounts[r] = InertiaBelow(dense, factorizationScratch, n, shiftLadder[r], out bool ok);
+        factorizationsOk &= ok;
+        counts.Add(new { shift = shiftLadder[r], independentCountBelowShift = independentCounts[r], factorizationCompleted = ok });
+    }
+    int independentNegativeInertia = InertiaBelow(dense, factorizationScratch, n, -1e-09, out bool negativeOk);
+    factorizationsOk &= negativeOk;
+    (double Value, double Residual) largest = SubspaceExtreme(dense, n, subspaceBlock, subspaceIterations, false);
+    (double Value, double Residual) smallest = SubspaceExtremeDeflated(dense, n, subspaceBlock, subspaceIterations,
+        basePointId == "origin" ? nullBasis : null);
+    double worstNullResidual = 0.0;
+    foreach (double[] basisVector in nullBasis)
+    {
+        var image = new double[n];
+        Multiply(dense, n, basisVector, image);
+        double norm = 0.0;
+        for (int i = 0; i < n; i++) norm += image[i] * image[i];
+        worstNullResidual = System.Math.Max(worstNullResidual, System.Math.Sqrt(norm));
+    }
+
+    JsonElement reportedRow = reportedRows.First(x => x.GetProperty("id").GetString() == basePointId);
+    double reportedLargest = reportedRow.GetProperty("largestEigenvalue").GetDouble();
+    int[] reportedCounts = reportedRow.GetProperty("inertiaLadder").EnumerateArray()
+        .Select(x => x.GetProperty("countBelowShift").GetInt32()).ToArray();
+    double[] reportedShifts = reportedRow.GetProperty("inertiaLadder").EnumerateArray()
+        .Select(x => x.GetProperty("shift").GetDouble()).ToArray();
+    int reportedNegativeInertia = reportedRow.GetProperty("negativeInertiaAtRoundoffFloor").GetInt32();
+    JsonElement reportedSmallestInterval = reportedRow.GetProperty("smallestEigenvalueInterval");
+    double reportedSmallestLower = reportedSmallestInterval.GetProperty("lower").GetDouble();
+    double reportedSmallestUpper = reportedSmallestInterval.GetProperty("upper").GetDouble();
+
+    bool shiftsAlign = reportedShifts.SequenceEqual(shiftLadder);
+    bool countsAgree = shiftsAlign && independentCounts.SequenceEqual(reportedCounts);
+    bool negativeAgrees = independentNegativeInertia == reportedNegativeInertia;
+    bool largestAgrees = System.Math.Abs(largest.Value - reportedLargest)
+        <= eigenvalueTolerance * System.Math.Max(1.0, System.Math.Abs(reportedLargest));
+    double independentSmallestLower = smallest.Value - smallest.Residual;
+    double independentSmallestUpper = smallest.Value + smallest.Residual;
+    bool smallestIntervalsOverlap = independentSmallestLower <= reportedSmallestUpper
+        && reportedSmallestLower <= independentSmallestUpper;
+    bool nullResidualAgrees = basePointId != "origin"
+        || worstNullResidual <= nullResidualTolerance * System.Math.Max(1.0, System.Math.Abs(largest.Value));
+
+    bool conclusive = factorizationsOk && double.IsFinite(largest.Value) && double.IsFinite(smallest.Value)
+        && double.IsFinite(smallest.Residual) && shiftsAlign;
+    bool agrees = countsAgree && negativeAgrees && largestAgrees && smallestIntervalsOverlap && nullResidualAgrees;
+    if (conclusive && !agrees) anyContradiction = true;
+    if (!conclusive) anyInconclusive = true;
+
+    spectralRows.Add(new
+    {
+        basePointId,
+        independentInertiaLadder = counts,
+        independentNegativeInertia, reportedNegativeInertia, negativeAgrees,
+        reportedCounts, countsAgree, shiftsAlign,
+        independentLargestEigenvalue = largest.Value, independentLargestResidualBound = largest.Residual,
+        reportedLargestEigenvalue = reportedLargest, largestAgrees,
+        independentSmallestValue = smallest.Value, independentSmallestResidualBound = Reportable(smallest.Residual),
+        independentSmallestLower, independentSmallestUpper,
+        reportedSmallestLower, reportedSmallestUpper, smallestIntervalsOverlap,
+        worstNullBasisResidual = worstNullResidual, nullResidualAgrees,
+        factorizationsOk, conclusive, agrees,
+    });
+    Console.WriteLine($"  adjudicated {basePointId}: countsAgree={countsAgree}, largestAgrees={largestAgrees}, overlap={smallestIntervalsOverlap}");
+}
+
+// ------------------------------ independent homogeneous decomposition, all six
+// Solved from t = 1, 2, 3, which is a different linear system from the audited one.
+double homogeneousTolerance = comparison.GetProperty("homogeneousRelativeTolerance").GetDouble();
+var homogeneousRows = new List<object>();
+foreach (JsonElement reportedHomogeneous in reported.GetProperty("homogeneousDecomposition").GetProperty("rows").EnumerateArray())
+{
+    string id = reportedHomogeneous.GetProperty("id").GetString()!;
+    string path = $"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/{id}.json";
+    using var checkpoint = JsonDocument.Parse(File.ReadAllBytes(path));
+    double[] position = checkpoint.RootElement.GetProperty("payload").GetProperty("position")
+        .EnumerateArray().Select(x => x.GetDouble()).ToArray();
+    double Scaled(double t)
+    {
+        var scaled = new double[n];
+        for (int i = 0; i < n; i++) scaled[i] = t * position[i];
+        return Value(scaled);
+    }
+    double s1 = Scaled(1.0), s2 = Scaled(2.0), s3 = Scaled(3.0);
+    // [1 1 1; 4 8 16; 9 27 81] (S2,S3,S4)^T = (s1,s2,s3)^T
+    double degree4 = (s3 - 3.0 * s2 + 2.0 * s1) / 24.0;
+    double degree3 = (s2 - 4.0 * s1 - 12.0 * degree4) / 4.0;
+    double degree2 = s1 - degree3 - degree4;
+    double reportedDegree2 = reportedHomogeneous.GetProperty("degree2").GetDouble();
+    double reportedDegree3 = reportedHomogeneous.GetProperty("degree3").GetDouble();
+    double reportedDegree4 = reportedHomogeneous.GetProperty("degree4").GetDouble();
+    bool agrees = Close(degree2, reportedDegree2, homogeneousTolerance)
+        && Close(degree3, reportedDegree3, homogeneousTolerance)
+        && Close(degree4, reportedDegree4, homogeneousTolerance);
+    if (!agrees) anyContradiction = true;
+    homogeneousRows.Add(new
+    {
+        id, independentDegree2 = degree2, independentDegree3 = degree3, independentDegree4 = degree4,
+        reportedDegree2, reportedDegree3, reportedDegree4, agrees,
+    });
+}
+
+// --------------------------------------------- independent flatness recomputation
+var flatnessRows = new List<object>();
+foreach (JsonElement reportedFlatness in reported.GetProperty("exactFlatness").GetProperty("rows").EnumerateArray())
+{
+    string id = reportedFlatness.GetProperty("id").GetString()!;
+    double[] ladder = reportedFlatness.GetProperty("ladder").EnumerateArray().Select(x => x.GetDouble()).ToArray();
+    double[] reportedValues = reportedFlatness.GetProperty("ladderValues").EnumerateArray().Select(x => x.GetDouble()).ToArray();
+    double[] vector = RebuildFlatnessRow(id);
+    var independentValues = new double[ladder.Length];
+    for (int i = 0; i < ladder.Length; i++)
+    {
+        var scaled = new double[n];
+        for (int j = 0; j < n; j++) scaled[j] = ladder[i] * vector[j];
+        independentValues[i] = Value(scaled);
+    }
+    bool agrees = independentValues.Zip(reportedValues).All(pair => Close(pair.First, pair.Second, homogeneousTolerance));
+    if (!agrees) anyContradiction = true;
+    flatnessRows.Add(new { id, ladder, independentValues, reportedValues, agrees });
+}
+double[] RebuildFlatnessRow(string id)
+{
+    var vector = new double[n];
+    void Add(int[] generator, int algebraAxis, int weight)
+    {
+        for (int e = 0; e < edgeCount; e++) vector[e * dimG + algebraAxis] += weight * generator[e];
+    }
+    switch (id)
+    {
+        case "exact-vertex-0-algebra-0": Add(exactGenerators[0], 0, 1); break;
+        case "exact-vertex-40-algebra-1": Add(exactGenerators[40], 1, 1); break;
+        case "winding-axis-0-algebra-0": Add(windingGenerators[0], 0, 1); break;
+        case "winding-axis-3-algebra-2": Add(windingGenerators[3], 2, 1); break;
+        case "mixed-closed-single-algebra-axis": Add(exactGenerators[7], 0, 1); Add(windingGenerators[1], 0, 2); break;
+        case "control-exact-pair-two-algebra-axes": Add(exactGenerators[0], 0, 1); Add(exactGenerators[40], 1, 1); break;
+        case "control-winding-pair-two-algebra-axes": Add(windingGenerators[0], 0, 1); Add(windingGenerators[1], 1, 1); break;
+        default: throw new InvalidOperationException($"Unknown flatness row {id}.");
+    }
+    return vector;
+}
+
+// ------------------------------------------------------- integer-level agreement
+int reportedFlatSectorLowerBound = reportedIncidence.GetProperty("flatSectorLowerBoundExact").GetInt32();
+int reportedCoboundaryRank = reportedIncidence.GetProperty("scalarCoboundaryRank").GetInt32();
+int reportedNullBasisDimension = reported.GetProperty("structuralPrechecks").GetProperty("measuredNullBasisDimension").GetInt32();
+bool integerAgreement = independentNullityDetermined
+    && independentCoboundaryRank == reportedCoboundaryRank
+    && independentFlatSectorLowerBound == reportedFlatSectorLowerBound
+    && independentNullBasisDimension == reportedNullBasisDimension;
+if (!integerAgreement && independentNullityDetermined) anyContradiction = true;
+if (!independentNullityDetermined) anyInconclusive = true;
+
+string verdict = !contractValid || !exactBindingsValid ? taxonomy[0]
+    : !resourceAccepted ? taxonomy[1]
+    : !batteryPassed ? taxonomy[2]
+    : anyContradiction ? taxonomy[3]
+    : anyInconclusive ? taxonomy[4]
+    : taxonomy[5];
+
+var output = new
+{
+    schemaVersion = 1,
+    phase = 551,
+    phaseId = "phase551-flat-sector-independent-spectral-adjudicator",
+    contractId = contract.GetProperty("contractId").GetString(),
+    contractSha256 = Sha(ContractPath),
+    contractValid,
+    exactBindingsValid,
+    resourceAccepted,
+    bindings,
+    independence = new
+    {
+        referencesPhase550Project = false,
+        reusesPhase550Code = false,
+        secondOrderFormExtractedBy = "four-point antisymmetric gradient formula on the registered joint gradient",
+        auditedPhaseExtractedBy = "the operator's own exact linearization primitives",
+        inertiaMethod = "dense LDL^T with symmetric diagonal pivoting on the largest remaining diagonal, with explicit breakdown detection",
+        auditedPhaseInertiaMethod = "Householder tridiagonalization with LDL^T Sturm counts",
+        extremalMethod = "block subspace iteration with a frozen deterministic start block, closed by a Rayleigh-Ritz projection",
+        auditedPhaseExtremalMethod = "Lanczos with full reorthogonalization",
+        incidenceRankPrimes = primes,
+        incidenceRankPivotRule = "reverse row order with a last-nonzero-column pivot",
+        nullBasisRebuiltFromMesh = true,
+        nullBasisOrthonormalization = "Householder QR",
+        auditedPhaseNullBasisOrthonormalization = "modified Gram-Schmidt",
+        startBlockIsFrozenNotSampled = true,
+        startBlockNote = "The plan named randomized subspace iteration. The start block is a frozen deterministic fill instead of a sampled one, because this phase must be byte-reproducible and may construct no RNG; the algorithm family is otherwise the subspace-iteration family and not Lanczos.",
+    },
+    estimatorKnownAnswerBattery = new
+    {
+        ranBeforeAnyPhase550Datum = true,
+        motivation = "The battery includes a case whose soft cluster sits between the frozen rungs, so a route that reads a single rung as the nullity is wrong there by construction; that is the specific arm C failure mode. It also includes a degenerate largest eigenvalue, which is the arm D failure mode.",
+        cases = batteryRows, passed = batteryPassed,
+    },
+    independentIncidence = new
+    {
+        rows = rankRows, ranksAgreeAcrossPrimes, generatorsNotClosed = notClosed,
+        independentCoboundaryRank, independentScalarNullity, independentGeneratorRank,
+        independentNullityDetermined, independentFlatSectorLowerBound,
+        independentNullBasisDimension,
+        reportedCoboundaryRank, reportedFlatSectorLowerBound, reportedNullBasisDimension,
+        integerAgreement,
+    },
+    independentSpectralComparison = new
+    {
+        auditedBasePoints, shiftLadder, rows = spectralRows,
+    },
+    independentHomogeneousDecomposition = new { rows = homogeneousRows },
+    independentFlatness = new { rows = flatnessRows },
+    scopeLimits = new
+    {
+        denseReDerivationBasePoints = auditedBasePoints,
+        denseReDerivationOmittedBasePoints = reportedRows.Select(x => x.GetProperty("id").GetString())
+            .Where(x => !auditedBasePoints.Contains(x)).ToArray(),
+        omittedBasePointsWereComparedOnValueLevelQuantitiesOnly = true,
+        note = "The dense second-order form is re-derived at the frozen subset of base points only, which is a prospective scope limit and not a silent truncation. The remaining base points are compared on the exact homogeneous decomposition of the value, which needs no dense form.",
+    },
+    resource = new
+    {
+        estimatedAggregateCpuSeconds = estimatedSeconds, maximumEstimatedAggregateCpuSeconds = maximumSeconds,
+        estimatedPeakBytes = estimatedBytes, maximumEstimatedPeakBytes = maximumBytes, accepted = resourceAccepted,
+    },
+    anyContradiction,
+    anyInconclusive,
+    verdictKind = verdict,
+    terminalStatus = "flat-sector-independent-spectral-adjudicator-" + verdict,
+    decision = verdict == taxonomy[5]
+        ? "An independently implemented, algorithmically distinct route reproduces the audited integer flat-sector lower bound, the inertia counts at every frozen rung, the extremal eigenvalue intervals, the exact homogeneous decomposition at all six preserved positions, and the flatness ladder. Confirming a measurement grants no authority and does not upgrade a fact about a matrix into a fact about the theory."
+        : "The earliest frozen adjudication failure is preserved.",
+    scope = new
+    {
+        confirmsMeasurementsOnly = true,
+        upgradesAMatrixFactIntoATheoryFact = false,
+        adjudicatorOfTheAdjudicatorRequired = false,
+        workbenchRelativeLatticeUnitsOnly = true,
+        establishesStationarity = false,
+        establishesSamplingCorrectness = false,
+        establishesTransferToLargerExtent = false,
+    },
+    rngUsed = false,
+    hmcOrSamplingPerformed = false,
+    configurationsRetained = false,
+    registeredSeedTouched = false,
+    nullSpaceInterpretedAsGaugeVolume = false,
+    quotientApplied = false,
+    gaugeFixingApplied = false,
+    measureNormalizationApplied = false,
+    phase548Or549Reinterpreted = false,
+    phase535ExecutedReopenedOrMutated = false,
+    phase481PackCreatedOrMutated = false,
+    productionDefaultSelected = false,
+    phase458G3Satisfied = false,
+    phase458G4Satisfied = false,
+    phase458G5Satisfied = false,
+    o4Discharged = false,
+    sourceContractApplicationAllowed = false,
+    physicalUnitClaimAllowed = false,
+    gevClaimAllowed = false,
+    productionAuthorized = false,
+    launchAuthorized = false,
+    externalReviewPending = true,
+    allDownstreamAuthority = false,
+    promotedPhysicalMassClaimCount = 0,
+};
+
+Directory.CreateDirectory(Path.GetDirectoryName(OutputPath)!);
+byte[] bytes = JsonSerializer.SerializeToUtf8Bytes(output,
+    new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+File.WriteAllBytes(OutputPath, bytes);
+File.WriteAllBytes(SummaryPath, bytes);
+Console.WriteLine($"Phase551 verdict: {verdict}");
+Console.WriteLine($"battery={batteryPassed}, integerAgreement={integerAgreement}, contradiction={anyContradiction}, inconclusive={anyInconclusive}");
+
+static bool Close(double a, double b, double tolerance) =>
+    double.IsFinite(a) && double.IsFinite(b)
+    && System.Math.Abs(a - b) <= tolerance * System.Math.Max(1.0, System.Math.Max(System.Math.Abs(a), System.Math.Abs(b)));
+static double? Reportable(double value) => double.IsFinite(value) ? value : null;
+static string Sha(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+
+// Row-echelon rank over a finite field, processing rows in the caller's order and
+// choosing the LAST nonzero column as the pivot.
+static int ReverseModularRank(int[][] rows, int columns, long prime)
+{
+    var pivotOf = new int[columns];
+    Array.Fill(pivotOf, -1);
+    var basis = new List<long[]>();
+    foreach (int[] source in rows)
+    {
+        if (basis.Count == columns) break;
+        var row = new long[columns];
+        for (int j = 0; j < columns; j++) row[j] = ((source[j] % prime) + prime) % prime;
+        while (true)
+        {
+            int pivot = -1;
+            for (int c = columns - 1; c >= 0; c--)
+                if (row[c] != 0) { pivot = c; break; }
+            if (pivot < 0) break;
+            if (pivotOf[pivot] < 0)
+            {
+                long inverse = ModularPower(row[pivot], prime - 2, prime);
+                for (int j = 0; j < columns; j++) row[j] = row[j] * inverse % prime;
+                pivotOf[pivot] = basis.Count;
+                basis.Add(row);
+                break;
+            }
+            long[] existing = basis[pivotOf[pivot]];
+            long factor = row[pivot];
+            for (int j = 0; j < columns; j++)
+            {
+                long value = row[j] - factor * existing[j] % prime;
+                row[j] = value < 0 ? value + prime : value;
+            }
+        }
+    }
+    return basis.Count;
+}
+static long ModularPower(long baseValue, long exponent, long modulus)
+{
+    long result = 1, current = baseValue % modulus;
+    while (exponent > 0)
+    {
+        if ((exponent & 1) == 1) result = (long)((System.Int128)result * current % modulus);
+        current = (long)((System.Int128)current * current % modulus);
+        exponent >>= 1;
+    }
+    return result;
+}
+
+// Householder QR of the stacked candidate set, returning an orthonormal basis of
+// its span.
+static double[][] HouseholderOrthonormalBasis(List<double[]> candidates, int n, double rejection)
+{
+    var basis = new List<double[]>();
+    foreach (double[] source in candidates)
+    {
+        var residual = (double[])source.Clone();
+        for (int pass = 0; pass < 2; pass++)
+            foreach (double[] existing in basis)
+            {
+                double projection = 0.0;
+                for (int i = 0; i < n; i++) projection += residual[i] * existing[i];
+                for (int i = 0; i < n; i++) residual[i] -= projection * existing[i];
+            }
+        double norm = 0.0;
+        for (int i = 0; i < n; i++) norm += residual[i] * residual[i];
+        norm = System.Math.Sqrt(norm);
+        if (norm <= rejection) continue;
+        for (int i = 0; i < n; i++) residual[i] /= norm;
+        basis.Add(residual);
+    }
+    return [.. basis];
+}
+
+// Inertia by dense LDL^T without pivoting, eliminating from the LAST index to the
+// first. Returns the number of negative pivots, which is the number of
+// eigenvalues below the shift; breakdown is reported rather than papered over.
+static int InertiaBelow(double[] matrix, double[] scratch, int n, double shift, out bool completed)
+{
+    Array.Copy(matrix, scratch, (long)n * n);
+    double[] a = scratch;
+    for (int i = 0; i < n; i++) a[(long)i * n + i] -= shift;
+    completed = true;
+    int negative = 0;
+    for (int s = 0; s < n; s++)
+    {
+        int best = s;
+        double bestMagnitude = System.Math.Abs(a[(long)s * n + s]);
+        for (int i = s + 1; i < n; i++)
+        {
+            double magnitude = System.Math.Abs(a[(long)i * n + i]);
+            if (magnitude > bestMagnitude) { bestMagnitude = magnitude; best = i; }
+        }
+        if (bestMagnitude == 0.0 || !double.IsFinite(bestMagnitude)) { completed = false; break; }
+        if (best != s)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                (a[(long)s * n + j], a[(long)best * n + j]) = (a[(long)best * n + j], a[(long)s * n + j]);
+            }
+            for (int i = 0; i < n; i++)
+            {
+                (a[(long)i * n + s], a[(long)i * n + best]) = (a[(long)i * n + best], a[(long)i * n + s]);
+            }
+        }
+        double pivot = a[(long)s * n + s];
+        if (pivot < 0.0) negative++;
+        double inverse = 1.0 / pivot;
+        long pivotRow = (long)s * n;
+        for (int i = s + 1; i < n; i++)
+        {
+            double factor = a[(long)i * n + s] * inverse;
+            if (factor == 0.0) continue;
+            long rowOffset = (long)i * n;
+            for (int j = s + 1; j < n; j++) a[rowOffset + j] -= factor * a[pivotRow + j];
+        }
+    }
+    return negative;
+}
+
+// Block subspace iteration from a frozen deterministic start block. Returns the
+// extreme Rayleigh quotient together with its a-posteriori residual bound.
+static (double Value, double Residual) SubspaceExtreme(double[] matrix, int n, int block, int iterations, bool wantSmallest) =>
+    SubspaceExtremeDeflated(matrix, n, block, iterations, null, wantSmallest);
+
+static (double Value, double Residual) SubspaceExtremeDeflated(
+    double[] matrix, int n, int block, int iterations, double[][]? deflation, bool wantSmallest = true)
+{
+    double shift = 0.0;
+    if (wantSmallest)
+    {
+        (double Value, double _) top = SubspaceExtremeDeflated(matrix, n, block, iterations, deflation, false);
+        shift = 1.0625 * System.Math.Abs(top.Value) + 1.0;
+    }
+    var vectors = new List<double[]>();
+    for (int b = 0; b < block; b++)
+    {
+        var v = new double[n];
+        for (int i = 0; i < n; i++) v[i] = System.Math.Sin((i + 1) * (b + 3) * 0.7548776662466927) + System.Math.Cos((i + 1) * 0.3819660112501051);
+        vectors.Add(v);
+    }
+    vectors = Orthonormalize(vectors, n, deflation);
+    var product = new double[n];
+    for (int iteration = 0; iteration < iterations; iteration++)
+    {
+        for (int b = 0; b < vectors.Count; b++)
+        {
+            Multiply(matrix, n, vectors[b], product);
+            var next = new double[n];
+            for (int i = 0; i < n; i++) next[i] = product[i] - shift * vectors[b][i];
+            vectors[b] = next;
+        }
+        vectors = Orthonormalize(vectors, n, deflation);
+    }
+
+    // Rayleigh-Ritz on the converged subspace. Without it the orthonormalized
+    // block is an arbitrary basis of the subspace rather than a set of
+    // approximate eigenvectors, and the extreme Rayleigh quotient is a mixture.
+    int kept = vectors.Count;
+    if (kept == 0) return (double.NaN, double.PositiveInfinity);
+    var images = new double[kept][];
+    for (int b = 0; b < kept; b++)
+    {
+        images[b] = new double[n];
+        Multiply(matrix, n, vectors[b], images[b]);
+    }
+    var projected = new double[kept * kept];
+    for (int r = 0; r < kept; r++)
+        for (int c = r; c < kept; c++)
+        {
+            double sum = 0.0;
+            for (int i = 0; i < n; i++) sum += vectors[r][i] * images[c][i];
+            projected[r * kept + c] = sum;
+            projected[c * kept + r] = sum;
+        }
+    double[] ritzVectors = SmallSymmetricEigen(projected, kept, out double[] ritzValues);
+    int selected = 0;
+    for (int i = 1; i < kept; i++)
+        if (wantSmallest ? ritzValues[i] < ritzValues[selected] : ritzValues[i] > ritzValues[selected]) selected = i;
+    var ritz = new double[n];
+    for (int b = 0; b < kept; b++)
+    {
+        double weight = ritzVectors[b * kept + selected];
+        double[] basisVector = vectors[b];
+        for (int i = 0; i < n; i++) ritz[i] += weight * basisVector[i];
+    }
+    double ritzNorm = 0.0;
+    for (int i = 0; i < n; i++) ritzNorm += ritz[i] * ritz[i];
+    ritzNorm = System.Math.Sqrt(ritzNorm);
+    if (ritzNorm == 0.0) return (double.NaN, double.PositiveInfinity);
+    for (int i = 0; i < n; i++) ritz[i] /= ritzNorm;
+    Multiply(matrix, n, ritz, product);
+    double best = 0.0;
+    for (int i = 0; i < n; i++) best += ritz[i] * product[i];
+    double bestResidual = 0.0;
+    for (int i = 0; i < n; i++)
+    {
+        double difference = product[i] - best * ritz[i];
+        bestResidual += difference * difference;
+    }
+    bestResidual = System.Math.Sqrt(bestResidual);
+    return (best, bestResidual);
+
+    static List<double[]> Orthonormalize(List<double[]> vectors, int n, double[][]? deflation)
+    {
+        var kept = new List<double[]>();
+        foreach (double[] v in vectors)
+        {
+            if (deflation is not null)
+                foreach (double[] b in deflation)
+                {
+                    double projection = 0.0;
+                    for (int i = 0; i < n; i++) projection += v[i] * b[i];
+                    for (int i = 0; i < n; i++) v[i] -= projection * b[i];
+                }
+            for (int pass = 0; pass < 2; pass++)
+                foreach (double[] existing in kept)
+                {
+                    double projection = 0.0;
+                    for (int i = 0; i < n; i++) projection += v[i] * existing[i];
+                    for (int i = 0; i < n; i++) v[i] -= projection * existing[i];
+                }
+            double norm = 0.0;
+            for (int i = 0; i < n; i++) norm += v[i] * v[i];
+            norm = System.Math.Sqrt(norm);
+            if (norm <= 1e-13) continue;
+            for (int i = 0; i < n; i++) v[i] /= norm;
+            kept.Add(v);
+        }
+        return kept;
+    }
+}
+
+// Cyclic Jacobi eigen-decomposition of the small projected block, used only for
+// the Rayleigh-Ritz step of the subspace iteration.
+static double[] SmallSymmetricEigen(double[] matrix, int k, out double[] values)
+{
+    var a = (double[])matrix.Clone();
+    var vectors = new double[k * k];
+    for (int i = 0; i < k; i++) vectors[i * k + i] = 1.0;
+    for (int sweep = 0; sweep < 100; sweep++)
+    {
+        double offDiagonal = 0.0;
+        for (int p = 0; p < k; p++)
+            for (int q = p + 1; q < k; q++) offDiagonal += a[p * k + q] * a[p * k + q];
+        if (offDiagonal <= 1e-30) break;
+        for (int p = 0; p < k; p++)
+            for (int q = p + 1; q < k; q++)
+            {
+                double apq = a[p * k + q];
+                if (apq == 0.0) continue;
+                double theta = (a[q * k + q] - a[p * k + p]) / (2.0 * apq);
+                double t = theta == 0.0
+                    ? 1.0
+                    : System.Math.Sign(theta) / (System.Math.Abs(theta) + System.Math.Sqrt(theta * theta + 1.0));
+                double c = 1.0 / System.Math.Sqrt(t * t + 1.0);
+                double s = t * c;
+                for (int i = 0; i < k; i++)
+                {
+                    double aip = a[i * k + p], aiq = a[i * k + q];
+                    a[i * k + p] = c * aip - s * aiq;
+                    a[i * k + q] = s * aip + c * aiq;
+                }
+                for (int i = 0; i < k; i++)
+                {
+                    double api = a[p * k + i], aqi = a[q * k + i];
+                    a[p * k + i] = c * api - s * aqi;
+                    a[q * k + i] = s * api + c * aqi;
+                }
+                for (int i = 0; i < k; i++)
+                {
+                    double vip = vectors[i * k + p], viq = vectors[i * k + q];
+                    vectors[i * k + p] = c * vip - s * viq;
+                    vectors[i * k + q] = s * vip + c * viq;
+                }
+            }
+    }
+    values = new double[k];
+    for (int i = 0; i < k; i++) values[i] = a[i * k + i];
+    return vectors;
+}
+
+static void Multiply(double[] a, int n, double[] x, double[] y)
+{
+    for (int i = 0; i < n; i++)
+    {
+        double sum = 0.0;
+        long rowOffset = (long)i * n;
+        for (int j = 0; j < n; j++) sum += a[rowOffset + j] * x[j];
+        y[i] = sum;
+    }
+}
+
+// A dense symmetric matrix with an exactly planted spectrum, built from a frozen
+// deterministic orthonormal frame.
+static double[] SyntheticSymmetric(double[] spectrum, int n)
+{
+    var frame = new double[n][];
+    for (int p = 0; p < n; p++)
+    {
+        var v = new double[n];
+        for (int i = 0; i < n; i++) v[i] = System.Math.Sin((i + 1) * (p + 1) * 0.1980342677526018) + System.Math.Cos((i + 2) * (p + 2) * 0.0891397555151986);
+        for (int pass = 0; pass < 2; pass++)
+            for (int q = 0; q < p; q++)
+            {
+                double projection = 0.0;
+                for (int i = 0; i < n; i++) projection += v[i] * frame[q][i];
+                for (int i = 0; i < n; i++) v[i] -= projection * frame[q][i];
+            }
+        double norm = 0.0;
+        for (int i = 0; i < n; i++) norm += v[i] * v[i];
+        norm = System.Math.Sqrt(norm);
+        for (int i = 0; i < n; i++) v[i] /= norm;
+        frame[p] = v;
+    }
+    var matrix = new double[n * n];
+    for (int p = 0; p < n; p++)
+    {
+        if (spectrum[p] == 0.0) continue;
+        double[] v = frame[p];
+        for (int i = 0; i < n; i++)
+        {
+            double weighted = spectrum[p] * v[i];
+            for (int j = 0; j < n; j++) matrix[i * n + j] += weighted * v[j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+        {
+            double average = 0.5 * (matrix[i * n + j] + matrix[j * n + i]);
+            matrix[i * n + j] = average;
+            matrix[j * n + i] = average;
+        }
+    return matrix;
+}

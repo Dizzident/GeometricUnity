@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "phase": 555,
+  "phaseId": "phase555-flat-sector-external-review-escalation-packet",
+  "contractId": "phase555-a30-flat-sector-external-review-escalation-packet-v1",
+  "contractSha256": "edb6dc9ecefd675099f35a2957a05d4b45b42874ee32926d7bf6d859d8c3d9e8",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase550-summary",
+      "path": "studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json",
+      "expectedSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "actualSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "hashMatches": true
+    },
+    {
+      "id": "phase551-summary",
+      "path": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json",
+      "expectedSha256": "9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0",
+      "actualSha256": "9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase552-summary",
+      "path": "studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json",
+      "expectedSha256": "0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8",
+      "actualSha256": "0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8",
+      "hashMatches": true
+    },
+    {
+      "id": "o4-memo-schema",
+      "path": "scripts/o4_register/o4_human_memo_schema_v1.json",
+      "expectedSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+      "actualSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+      "hashMatches": true
+    },
+    {
+      "id": "o4-memo-template",
+      "path": "scripts/o4_register/o4_human_memo_template_v1.json",
+      "expectedSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
+      "actualSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
+      "hashMatches": true
+    },
+    {
+      "id": "o4-dependency-map",
+      "path": "scripts/o4_register/dependency_map.json",
+      "expectedSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
+      "actualSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase480-summary",
+      "path": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+      "expectedSha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7",
+      "actualSha256": "91efcf23ebe879c9a4154caa9d478d720ae1b4497a40512c11cbef740ed6fed7",
+      "hashMatches": true
+    }
+  ],
+  "zeroCompute": true,
+  "upstream": {
+    "censusTerminal": "origin-and-configuration-spectrum-characterized",
+    "adjudicationTerminal": "adjudication-confirms-reported-values",
+    "reanalysisTerminal": "stationary-under-resolved-consistent",
+    "upstreamTerminalsAdmissible": true
+  },
+  "requiredInputs": [
+    {
+      "id": "measured-flat-sector-dimension",
+      "present": true
+    },
+    {
+      "id": "topological-versus-operator-decomposition",
+      "present": true
+    },
+    {
+      "id": "exact-homogeneous-decomposition-at-real-configurations",
+      "present": true
+    },
+    {
+      "id": "transverse-scale-along-a-flat-ray",
+      "present": true
+    },
+    {
+      "id": "measured-observable-invariance",
+      "present": true
+    },
+    {
+      "id": "independent-confirmation-of-the-measured-values",
+      "present": true
+    },
+    {
+      "id": "committed-chain-drift-reading",
+      "present": true
+    }
+  ],
+  "allRequiredInputsPresent": true,
+  "reservedRulingIds": [
+    "O4-F1-COLLECTIVE-COORDINATE",
+    "O4-F1-FP-NORMALIZATION"
+  ],
+  "reservedRulingIdsPresentInSchema": true,
+  "questions": [
+    {
+      "rulingId": "O4-F1-COLLECTIVE-COORDINATE",
+      "question": "May the measured exactly flat sector of the second-order form at the origin be classified as pure redundancy of the description, so that a quotient by it is the correct construction for this registered action on this complete lattice?",
+      "whyItIsReserved": "Classifying a measured null direction as redundancy is a convention about the measure, not a measurement. Phase490 already recorded quotient-underdetermined when this program attempted the analogous classification, and no phase in this lane applies a quotient.",
+      "measuredInputs": {
+        "flatSectorDimension": 252,
+        "thresholdConditionalUpperBound": 252,
+        "boundsCoincide": true,
+        "lowerBoundIsThresholdFree": true,
+        "exactPart": 240,
+        "harmonicPart": 12,
+        "operatorContributionBeyondKernelOfExteriorDerivative": 0,
+        "scalarCoboundaryRank": 1131,
+        "degreesOfFreedom": 3645,
+        "exactlyFlatAlongTheWholeFrozenLadder": true,
+        "negativeControlsValid": true,
+        "configurationRows": [
+          {
+            "configuration": "complete-lattice-pilot-a-546101",
+            "positionNormSquared": 2087.798912718738,
+            "largestEigenvalue": 10.382465612857507,
+            "smallestEigenvalue": -0.6144797362407053,
+            "countBelowSmallestPositiveRung": 113,
+            "negativeInertiaAtRoundoffFloor": 113,
+            "originFlatBlockSmallestEigenvalue": 0.2705642234648901,
+            "originFlatBlockLargestEigenvalue": 2.0324520587048527
+          },
+          {
+            "configuration": "complete-lattice-pilot-a-546103",
+            "positionNormSquared": 2221.329762798079,
+            "largestEigenvalue": 11.739485295397547,
+            "smallestEigenvalue": -0.6743189379824767,
+            "countBelowSmallestPositiveRung": 112,
+            "negativeInertiaAtRoundoffFloor": 112,
+            "originFlatBlockSmallestEigenvalue": 0.2714189820887533,
+            "originFlatBlockLargestEigenvalue": 2.010228929201085
+          },
+          {
+            "configuration": "complete-lattice-pilot-a-546107",
+            "positionNormSquared": 2244.7965177170295,
+            "largestEigenvalue": 10.337615370046194,
+            "smallestEigenvalue": -0.6753302878971944,
+            "countBelowSmallestPositiveRung": 105,
+            "negativeInertiaAtRoundoffFloor": 105,
+            "originFlatBlockSmallestEigenvalue": 0.2559720545736237,
+            "originFlatBlockLargestEigenvalue": 2.1746653089681582
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546201",
+            "positionNormSquared": 2292.315293564298,
+            "largestEigenvalue": 11.265952104108795,
+            "smallestEigenvalue": -0.7232625207845675,
+            "countBelowSmallestPositiveRung": 115,
+            "negativeInertiaAtRoundoffFloor": 115,
+            "originFlatBlockSmallestEigenvalue": 0.2743132635861444,
+            "originFlatBlockLargestEigenvalue": 2.2104646326464663
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546203",
+            "positionNormSquared": 2211.851558057043,
+            "largestEigenvalue": 11.535795209239554,
+            "smallestEigenvalue": -0.7292557960202695,
+            "countBelowSmallestPositiveRung": 115,
+            "negativeInertiaAtRoundoffFloor": 115,
+            "originFlatBlockSmallestEigenvalue": 0.2740350317185319,
+            "originFlatBlockLargestEigenvalue": 1.9894776267306462
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546207",
+            "positionNormSquared": 2254.488435890813,
+            "largestEigenvalue": 11.386173104183506,
+            "smallestEigenvalue": -0.7471298137783752,
+            "countBelowSmallestPositiveRung": 117,
+            "negativeInertiaAtRoundoffFloor": 117,
+            "originFlatBlockSmallestEigenvalue": 0.2726556090031659,
+            "originFlatBlockLargestEigenvalue": 2.0403634709225145
+          }
+        ]
+      },
+      "whatEachAnswerWouldPermit": {
+        "ifTheSectorIsRedundancy": "a separately preregistered construction could be motivated; it would still require its own frozen contract, its own controls, and its own independent adjudicator, and it would not by itself satisfy any Phase458 gate",
+        "ifTheSectorIsNotRedundancy": "the flat sector is a property of the registered action and the measure is not normalizable along it without a further physical input, which is itself a finding this lane may record but not act on",
+        "ifTheReviewerDefers": "the question remains unresolved and every downstream construction remains blocked, which is the current state"
+      },
+      "rulingAuthoredHere": false
+    },
+    {
+      "rulingId": "O4-F1-FP-NORMALIZATION",
+      "question": "If the measured flat sector were classified as redundancy, is normalizing by the corresponding transverse factor the correct normalization for this registered action, given that the transverse curvature measured along a flat ray grows as the square of the ray parameter and 200 of the 252 directions remain exactly flat there?",
+      "whyItIsReserved": "The transverse normalization is the second half of the same measure convention. Measuring the transverse scale is permitted in this lane; choosing the normalization is not.",
+      "measuredInputs": {
+        "transverseRows": [
+          {
+            "rayPoint": "flat-ray-t0.5",
+            "positionNormSquared": 0.24999999999999994,
+            "remainingExactlyFlatCount": 200,
+            "liftedFlatBlockLargestEigenvalue": 0.000107065517932069,
+            "fullLogDeterminantAboveRoundoffFloor": -894.5660120725923,
+            "isModelBased": true
+          },
+          {
+            "rayPoint": "flat-ray-t5",
+            "positionNormSquared": 24.999999999999993,
+            "remainingExactlyFlatCount": 200,
+            "liftedFlatBlockLargestEigenvalue": 0.010706551793206462,
+            "fullLogDeterminantAboveRoundoffFloor": -398.3625257548998,
+            "isModelBased": true
+          },
+          {
+            "rayPoint": "flat-ray-t47",
+            "positionNormSquared": 2209.0000000000014,
+            "remainingExactlyFlatCount": 200,
+            "liftedFlatBlockLargestEigenvalue": 0.9460309164477322,
+            "fullLogDeterminantAboveRoundoffFloor": 235.81306159278756,
+            "isModelBased": true
+          }
+        ],
+        "remainingExactlyFlatAlongTheRay": [
+          200
+        ],
+        "liftedDirectionCountAlongTheRay": [
+          52
+        ],
+        "transverseCurvatureScalesAsTheSquareOfTheRayParameter": true,
+        "quantityIsModelBasedNotCertified": true,
+        "homogeneousRows": [
+          {
+            "configuration": "complete-lattice-pilot-a-546101",
+            "value": 1239.3536478367396,
+            "degreeTwoFraction": 0.6271243802397964,
+            "degreeThreeFraction": -0.05978787077912606,
+            "degreeFourFraction": 0.4326634905393297
+          },
+          {
+            "configuration": "complete-lattice-pilot-a-546103",
+            "value": 1253.440196389877,
+            "degreeTwoFraction": 0.6236052088851041,
+            "degreeThreeFraction": -0.06762331380549998,
+            "degreeFourFraction": 0.44401810492039584
+          },
+          {
+            "configuration": "complete-lattice-pilot-a-546107",
+            "value": 1247.6234552441683,
+            "degreeTwoFraction": 0.6427156005315018,
+            "degreeThreeFraction": -0.07069224345956292,
+            "degreeFourFraction": 0.4279766429280612
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546201",
+            "value": 1326.1570772655236,
+            "degreeTwoFraction": 0.6243804414036747,
+            "degreeThreeFraction": -0.06399711965813913,
+            "degreeFourFraction": 0.43961667825446454
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546203",
+            "value": 1271.4028926972862,
+            "degreeTwoFraction": 0.6270023889630462,
+            "degreeThreeFraction": -0.07141804279871765,
+            "degreeFourFraction": 0.44441565383567144
+          },
+          {
+            "configuration": "complete-lattice-pilot-b-546207",
+            "value": 1302.5658883508747,
+            "degreeTwoFraction": 0.6189844099327614,
+            "degreeThreeFraction": -0.06820501965375789,
+            "degreeFourFraction": 0.44922060972099653
+          }
+        ],
+        "invarianceRows": [
+          {
+            "observable": "actionDensity",
+            "prospectivelyDeclaredClass": "gauge-invariant",
+            "worstRelativeDeviationAlongTheMeasuredFlatSector": 0.0007698808365998455,
+            "measuredFlatSectorInvariant": false
+          },
+          {
+            "observable": "forceNormSquared",
+            "prospectivelyDeclaredClass": "gauge-invariant",
+            "worstRelativeDeviationAlongTheMeasuredFlatSector": 0.004732500770848243,
+            "measuredFlatSectorInvariant": false
+          },
+          {
+            "observable": "configurationNormSquared",
+            "prospectivelyDeclaredClass": "gauge-variant",
+            "worstRelativeDeviationAlongTheMeasuredFlatSector": 1.0000000000000078,
+            "measuredFlatSectorInvariant": false
+          }
+        ],
+        "measuredInvarianceIsNotAGaugeOrbitStatement": true
+      },
+      "whatEachAnswerWouldPermit": {
+        "ifTheNormalizationIsCorrect": "a separately preregistered normalized construction could be motivated under its own contract; it would not by itself satisfy any Phase458 gate",
+        "ifTheNormalizationIsNotCorrect": "no normalized construction follows and the lane\u0027s prerequisite question remains open",
+        "ifTheReviewerDefers": "the question remains unresolved, which is the current state"
+      },
+      "rulingAuthoredHere": false
+    }
+  ],
+  "standingFirewallsRestatedForTheReviewer": {
+    "measuringIsPermittedInterpretingIsNot": true,
+    "noQuotientApplied": true,
+    "noGaugeFixingApplied": true,
+    "noMeasureNormalizationApplied": true,
+    "noCeilingInflation": true,
+    "noReadjudicationOfPhase548Or549": true,
+    "noGateProgress": "G3, G4 and G5 are keyed to the Phase455 and Phase456 artifacts and to the register, and nothing in this lane can supply them at any level of success",
+    "whatThisLaneEstablishes": "only whether the registered operator\u0027s complete-lattice target is samplable at all, which is a prerequisite for any future pack and is not a gate input",
+    "everyQuantityIsAPropertyOfADiscreteOperator": true
+  },
+  "verdictKind": "packet-assembled-awaiting-external-ruling",
+  "terminalStatus": "flat-sector-external-review-escalation-packet-packet-assembled-awaiting-external-ruling",
+  "decision": "The two reserved measure-convention questions are assembled with the measured inputs a reviewer needs to answer them: a threshold-free integer flat-sector dimension with its topological and operator decomposition, the exact homogeneous decomposition of the value at six committed configurations, the transverse scale along a flat ray, and the measured rather than declared observable invariance. No ruling is authored, no memo is consumed, no signature is verified, and no pending flag changes.",
+  "authorsARuling": false,
+  "consumesAMemo": false,
+  "verifiesASignature": false,
+  "changesAPendingFlag": false,
+  "phase480SemanticsChanged": false,
+  "o4Discharged": false,
+  "nullSpaceInterpretedAsGaugeVolume": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "phase548Or549Reinterpreted": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase550-a30-complete-lattice-flat-sector-census-v1",
+  "planSection": "COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25 A30",
+  "planDocument": "docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+
+  "exactBindings": [
+    {"id":"shiab-operator-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"},
+    {"id":"curvature-assembler-source","path":"src/Gu.ReferenceCpu/CurvatureAssembler.cs","sha256":"ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"},
+    {"id":"mass-matrix-source","path":"src/Gu.ReferenceCpu/CpuMassMatrix.cs","sha256":"6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"},
+    {"id":"mesh-generator-source","path":"src/Gu.Geometry/SimplicialMeshGenerator.cs","sha256":"e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"},
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-summary","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json","sha256":"ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"},
+    {"id":"phase548-checkpoint-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json","sha256":"eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"},
+    {"id":"phase548-checkpoint-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json","sha256":"5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"},
+    {"id":"phase548-checkpoint-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json","sha256":"7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"},
+    {"id":"phase548-checkpoint-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json","sha256":"9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"},
+    {"id":"phase548-checkpoint-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json","sha256":"6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"},
+    {"id":"phase548-checkpoint-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json","sha256":"ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"}
+  ],
+
+  "registeredTarget": {
+    "member": "sd2-id0/c0.5",
+    "phi1": "Sd2",
+    "phi2": "Id0",
+    "einsteinCoefficient": 0.5,
+    "epsilonMode": "independent-theta",
+    "thetaRule": "theta-identically-zero",
+    "topologyId": "periodic-hypercubic-4d",
+    "dimensions": 4,
+    "extent": 3,
+    "latticeCanonical": true,
+    "algebra": "su2-trace-pairing",
+    "algebraDimension": 3,
+    "expectedVertexCount": 81,
+    "expectedEdgeCount": 1215,
+    "expectedFaceCount": 4050,
+    "expectedEulerCharacteristic": 0,
+    "degreesOfFreedom": 3645,
+    "valueRule": "op.ComputeJointGradient(omega, thetaZero, massMatrix).Objective"
+  },
+
+  "betaSemantics": {
+    "recordedLabelOnly": true,
+    "entersExecutedValue": false,
+    "note": "Plan fact 3. Phase548 records beta=1.0 as a label; no factor of beta enters the executed value. This phase therefore records no beta-dependence and makes no beta-dependence claim."
+  },
+
+  "oneSidedUpstreamNumbers": {
+    "phase548SmallestEigenvalueIsUpperBoundOnly": true,
+    "phase548ReportedSmallestEigenvalue": 1.2273204745838484e-06,
+    "phase548SlowestModeTrajectoryLengthEstimate": 2835.769,
+    "mayBeCitedAsMeasurement": false,
+    "note": "Plan fact 1. The Phase548 probe returns a Rayleigh quotient of a shifted-power iterate, which for a symmetric operator bounds the smallest eigenvalue from ABOVE. No arm below consumes either number as an input, a threshold, or a target."
+  },
+
+  "structuralExpectationRecordedNotAssumed": {
+    "predictedNullityOfDiscreteExteriorDerivativeOnOneForms": 252,
+    "decomposition": {"exactPart": 240, "harmonicPart": 12, "firstBettiNumber": 4, "algebraDimension": 3},
+    "predictedSingleAxisExactlyFlatSubspaceDimensionPerAxis": 84,
+    "falsifierBelow": "a measured nullity below 252 would indicate that the discrete d.d = 0 identity fails under the committed orientation conventions",
+    "falsifierAbove": "a measured nullity above 252 would indicate that the registered contraction annihilates part of the image of d, which is a property of the action family and not of gauge",
+    "isGated": false,
+    "note": "Recorded so a later reader can see what was expected before the measurement. No terminal below is conditioned on which outcome the data support."
+  },
+
+  "hessianExtraction": {
+    "method": "exact-operator-primitive",
+    "identity": "H(x)u = LinearizeCurvatureTranspose(x, K(LinearizeCurvature(x,u))) + LinearizeCurvatureTranspose(u, w0) - LinearizeCurvatureTranspose(0, w0), with w0 = K(CurvatureAssembler.Assemble(x)) and K(z) = ApplyContractionWithThetaTranspose(MassMatrix.Apply(ApplyContractionWithTheta(z, theta0)), theta0)",
+    "derivation": "S(x+u) = 0.5<C F(x+u), M C F(x+u)> with F(x+u) = F(x) + J(x)u + Q(u); the u-quadratic part is 0.5<C J u, M C J u> + <C F(x), M C Q(u)>, whose gradient in u is the identity above. Q is the self-bracket part of the curvature and its differential at base u is exactly the bracket part of the operator's own linearization at u.",
+    "usesFiniteDifferences": false,
+    "crossCheckedAgainstFourPointGradientExtraction": true,
+    "note": "No finite-difference step enters the assembled form. The four-point and six-point gradient extractions are used only as independent cross-checks in arm A."
+  },
+
+  "armA": {
+    "id": "structural-prechecks-exact-integer",
+    "ddIdentity": {
+      "rule": "for every vertex basis function f and every face, sum_i orientation_i * (d0 f)[edge_i] = 0 in exact integer arithmetic",
+      "d0Rule": "(d0 f)[e] = f(edgeVertex1) - f(edgeVertex0)",
+      "requiredNonZeroCount": 0
+    },
+    "incidenceRank": {
+      "rule": "row-echelon rank of the scalar face-by-edge coboundary over two finite fields, with an exhibited exact-integer null generator set of matching rank; both bounds are threshold-free integers",
+      "primes": [1048573, 2147483629],
+      "generatorSet": "81 exact 1-forms d0(delta_v) plus 4 lattice winding 1-forms, each verified closed in exact integer arithmetic",
+      "windingRule": "w_k[e] = the axis-k lattice displacement of the edge reduced to {-1,0,1} by the periodic wrap",
+      "requiredAgreementBetweenPrimes": true,
+      "twoSidedArgument": "rank over a finite field lower-bounds the rational rank, so nullity <= edges - rank; an exhibited independent closed generator set of size g gives nullity >= g; equality closes the integer"
+    },
+    "singleEdgeCurvature": {
+      "rule": "for a frozen subset of single-edge basis directions, the assembled curvature equals the linear coboundary bit for bit, because a single-edge vector has vanishing self-bracket",
+      "subsetSize": 32,
+      "subsetRule": "index = floor(k * degreesOfFreedom / subsetSize) for k = 0..subsetSize-1",
+      "requiredMaximumAbsoluteDeviation": 0.0
+    },
+    "symmetry": {"relativeFrobeniusTolerance": 1e-12},
+    "extractionAgreement": {
+      "baseStateRule": "x[i] = 0.05 * sin((i+1) * 0.6180339887498948)",
+      "directionRule": "direction k is the Euclidean unit normalization of u[i] = sin((i+1) * (k+1) * 0.6180339887498948)",
+      "directionCount": 3,
+      "fourPointStep": 0.25,
+      "sixPointSteps": [0.25, 0.5, 0.75],
+      "exactVersusFourPointRelativeTolerance": 1e-09,
+      "cubicPolynomialityResidualTolerance": 1e-09,
+      "note": "The six-point check predicts the third antisymmetric sample from the first two under the cubic premise, so it TESTS polynomiality instead of assuming it."
+    }
+  },
+
+  "armB": {
+    "id": "exact-flatness-with-negative-control",
+    "ladder": [1.0, 10.0, 100.0, 1000.0],
+    "constructionAssertionsAreGated": true,
+    "measuredFlatnessOutcomeIsGated": false,
+    "rows": [
+      {"id":"exact-vertex-0-algebra-0","kind":"exact","vertices":[0],"latticeAxes":[],"algebraAxes":[0],"weights":[1],"declaredSelfBracketZero":true,"declaredClosed":true,"role":"flat-candidate"},
+      {"id":"exact-vertex-40-algebra-1","kind":"exact","vertices":[40],"latticeAxes":[],"algebraAxes":[1],"weights":[1],"declaredSelfBracketZero":true,"declaredClosed":true,"role":"flat-candidate"},
+      {"id":"winding-axis-0-algebra-0","kind":"winding","vertices":[],"latticeAxes":[0],"algebraAxes":[0],"weights":[1],"declaredSelfBracketZero":true,"declaredClosed":true,"role":"flat-candidate"},
+      {"id":"winding-axis-3-algebra-2","kind":"winding","vertices":[],"latticeAxes":[3],"algebraAxes":[2],"weights":[1],"declaredSelfBracketZero":true,"declaredClosed":true,"role":"flat-candidate"},
+      {"id":"mixed-closed-single-algebra-axis","kind":"mixed","vertices":[7],"latticeAxes":[1],"algebraAxes":[0,0],"weights":[1,2],"declaredSelfBracketZero":true,"declaredClosed":true,"role":"flat-candidate"},
+      {"id":"control-exact-pair-two-algebra-axes","kind":"mixed","vertices":[0,40],"latticeAxes":[],"algebraAxes":[0,1],"weights":[1,1],"declaredSelfBracketZero":false,"declaredClosed":true,"role":"negative-control"},
+      {"id":"control-winding-pair-two-algebra-axes","kind":"mixed","vertices":[],"latticeAxes":[0,1],"algebraAxes":[0,1],"weights":[1,1],"declaredSelfBracketZero":false,"declaredClosed":true,"role":"negative-control"}
+    ],
+    "gatedConstructionAssertions": [
+      "every row has strictly positive Euclidean norm",
+      "every row is closed in exact integer arithmetic",
+      "every row's self-bracket vanishes or does not vanish exactly as declared",
+      "every negative control has strictly positive value at every ladder rung",
+      "every negative control scales as the fourth power of the ladder parameter"
+    ],
+    "quarticScalingRelativeTolerance": 1e-09,
+    "flatCandidateReportedAbsoluteThreshold": 0.0,
+    "note": "Without the negative control this arm is fail-open: a zero could mean only that the constructed vector was zero. The controls are gated; whether the flat candidates actually evaluate to zero is a measurement and is reported, not gated."
+  },
+
+  "armC": {
+    "id": "nullity-two-sided",
+    "lowerBound": {
+      "source": "exact-integer closed generator set tensored with the algebra, orthonormalized by modified Gram-Schmidt",
+      "isThresholdFree": true,
+      "measuredResidualRule": "||H v|| / ||v|| for each orthonormalized basis vector, reported relative to the largest eigenvalue",
+      "measuredResidualRelativeTolerance": 1e-10,
+      "orthonormalizationRejectionThreshold": 1e-08
+    },
+    "upperBound": {
+      "method": "Householder tridiagonalization followed by LDL^T Sturm-sequence inertia counts on the shifted tridiagonal",
+      "shiftLadder": [1e-09, 1e-08, 1e-07, 1e-06, 1e-05, 0.0001, 0.001, 0.01],
+      "smallestRungMustExceedRoundoffFloor": true,
+      "roundoffFloorRule": "degreesOfFreedom * machineEpsilon * largestEigenvalue",
+      "everyRungIsThresholdConditional": true,
+      "noRungMayBeDescribedAsProvingAnExactZero": true,
+      "plateauRungCount": 3,
+      "plateauRequiredAtOriginOnly": true
+    },
+    "negativeInertiaReported": true
+  },
+
+  "armD": {
+    "id": "conditioning-of-the-complement",
+    "largestEigenvalue": {"method":"lanczos-with-full-reorthogonalization","steps":200,"aPosterioriBound":"|lambda - rho(v)| <= ||H v - rho(v) v||"},
+    "smallestOnComplement": {"method":"lanczos-with-full-reorthogonalization-deflated-against-the-measured-null-basis","steps":200,"deflationAppliedAtEveryStep":true,"deflationAppliedAtOriginOnly":true},
+    "intervalsOnly": true,
+    "pointEstimatesForbidden": true,
+    "residualBoundRelativeTolerance": 1e-06,
+    "residualToleranceGatedOnLargestOnly": true,
+    "containmentRule": "the a-posteriori interval must contain at least one eigenvalue of the independently computed tridiagonal spectrum, which is guaranteed when both routes are correct and is therefore a cross-check between them; the distance to the specific reference eigenvalue is reported without being gated, because a wide interval is still an honest interval",
+    "spectralConsistency": {
+      "traceRelativeTolerance": 1e-10,
+      "frobeniusRelativeTolerance": 1e-10,
+      "inertiaVersusEigenvalueCountMaximumDifference": 1,
+      "inertiaVersusEigenvalueCountNote": "The Sturm count and the count of computed eigenvalues below a rung can legitimately differ by the number of eigenvalues lying within rounding distance of that rung, so a difference of at most one per rung is admissible and the observed difference is reported.",
+      "eigenSolverMustConverge": true,
+      "note": "The eigenvalues from the tridiagonal route must reproduce the trace and the squared Frobenius norm of the assembled form, which is an independent check that neither the assembly nor the factorization drifted."
+    }
+  },
+
+  "armE": {
+    "id": "non-origin-forms",
+    "positionSource": "the position field of the six exact-bound Phase548 checkpoint payloads, in frozen chain order",
+    "chainOrder": [
+      "complete-lattice-pilot-a-546101","complete-lattice-pilot-a-546103","complete-lattice-pilot-a-546107",
+      "complete-lattice-pilot-b-546201","complete-lattice-pilot-b-546203","complete-lattice-pilot-b-546207"
+    ],
+    "denseFormAtEveryPosition": true,
+    "flatBlockRestriction": {
+      "rule": "P^T H(x) P where P is the measured origin null basis",
+      "eigenvalueMethod": "cyclic-Jacobi",
+      "note": "This measures what became of the origin flat sector at real configurations. It is a restricted block, not a subspace of the local kernel."
+    },
+    "plateauGateApplied": false,
+    "note": "The pilot chains sat near squared configuration norm 2250, so no origin-only statement governs behaviour there. Arm C's exact lower bound does NOT transfer to a non-origin point and is not asserted there."
+  },
+
+  "armF": {
+    "id": "exact-homogeneous-decomposition",
+    "rule": "S(t*x) = t^2*S2 + t^3*S3 + t^4*S4 solved exactly from t = 1, -1, 2",
+    "solution": "S3 = (S(1)-S(-1))/2; A = (S(1)+S(-1))/2; S2 = (16A - (S(2) - 8*S3))/12; S4 = ((S(2) - 8*S3) - 4A)/12",
+    "consistencyProbe": {"t": 3.0, "relativeTolerance": 1e-09},
+    "isFitted": false,
+    "appliedAtAllSixPositions": true
+  },
+
+  "armG": {
+    "id": "transverse-scale-along-a-flat-ray",
+    "rayRow": "exact-vertex-0-algebra-0",
+    "rayNormalization": "unit Euclidean norm",
+    "ladder": [0.5, 5.0, 47.0],
+    "ladderRationale": "the pilot chains sat near squared configuration norm 2250, so the largest rung is the matching Euclidean scale",
+    "quantities": ["log-determinant of the measured-flat-sector block P^T H P","log-determinant of the full form over eigenvalues above the roundoff floor"],
+    "isModelBased": true,
+    "isCertifiedProperty": false,
+    "planScopeNote": "The plan named the full log-determinant along the ray. Both the full-spectrum log-determinant above the roundoff floor and the flat-block log-determinant are reported; the flat-block quantity is the one that isolates the transverse scale of the flat coordinates. Neither is a certified property and neither may be cited as one."
+  },
+
+  "armH": {
+    "id": "measured-observable-invariance",
+    "observables": ["actionDensity","forceNormSquared","configurationNormSquared"],
+    "observableRules": {
+      "actionDensity": "S(omega) / degreesOfFreedom",
+      "forceNormSquared": "dot(gradient, gradient)",
+      "configurationNormSquared": "dot(omega, omega)"
+    },
+    "directionCount": 12,
+    "directionRule": "index = floor(k * measuredNullityLowerBound / directionCount) into the orthonormalized null basis, k = 0..directionCount-1",
+    "displacements": [0.1, 1.0],
+    "basePoints": "the origin and all six preserved positions",
+    "invarianceRelativeTolerance": 1e-10,
+    "classificationIsMeasuredNotDeclared": true,
+    "isAGaugeOrbitStatement": false,
+    "note": "This measures invariance along the MEASURED flat sector of the second-order form. It constructs no gauge group, no orbit and no quotient, so it is not a gauge-invariance statement and may not be read as one. It can nonetheless show that the Phase548 prospective declaration does not match the measured behaviour."
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "structural-precheck-failed",
+    "matvec-or-factorization-unstable",
+    "spectrum-bounds-only-nullity-uncertified",
+    "origin-and-configuration-spectrum-characterized"
+  ],
+  "terminalIsKeyedToCertificationQualityNotOutcome": true,
+
+  "resourceRefusal": {
+    "idiom": "phase541",
+    "maximumEstimatedAggregateCpuSeconds": 1800.0,
+    "maximumEstimatedPeakBytes": 805306368,
+    "estimatedAggregateCpuSeconds": 700.0,
+    "estimatedPeakBytes": 268435456,
+    "arithmetic": {
+      "denseFormBasePoints": 10,
+      "measuredSecondsPerHessianColumn": 0.0096,
+      "denseFormSecondsEach": 35.0,
+      "tridiagonalizationSecondsEach": 13.3,
+      "flatBlockRestrictionSecondsEach": 10.0,
+      "iterativeBoundSecondsEach": 5.0,
+      "integerAndLadderSecondsTotal": 40.0,
+      "denseFormBytes": 106272200,
+      "workingCopyBytes": 106272200,
+      "nullBasisBytes": 7350000
+    },
+    "refuseBeforeAllocation": true,
+    "refuseOnEqualOrExceedLimit": false,
+    "deterministicControlCostCountedAgainstCeiling": true,
+    "phase546SamplerCeilingUntouched": true,
+    "noSamplerRunsUnderThisCeiling": true,
+    "ceilingMayNotBeRaisedAtRunTime": true
+  },
+
+  "samplingFirewall": {
+    "rngConstructed": false,
+    "registeredSeedTouched": false,
+    "remainingBlindSeedsUntouched": [546109, 546209],
+    "hmcOrSamplingPerformed": false,
+    "configurationsRetained": false
+  },
+
+  "authorityFirewalls": {
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "phase548Or549Reread": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+
+  "inferenceScope": {
+    "workbenchRelativeLatticeUnitsOnly": true,
+    "establishesStationarity": false,
+    "establishesSamplingCorrectness": false,
+    "establishesMixingOrConvergence": false,
+    "establishesTransferToLargerExtent": false,
+    "establishesGaugeInterpretationOfANullDirection": false,
+    "establishesAQuotientOrMeasureNormalization": false,
+    "establishesAProductionDefault": false,
+    "establishesAPhysicalOrUnitCarryingQuantity": false,
+    "cleanTerminalMeaning": "exact and certified properties of the second-order form of the committed operator at named points, an exact integer lower bound on the flat-sector dimension, an exact decomposition of the value into homogeneous degrees at six committed configurations, and a measured rather than declared invariance classification of the three pilot observables",
+    "aMeasuredNullityIsAFactAboutAMatrix": true
+  },
+
+  "independentAdjudicationRequired": true,
+  "independentAdjudicator": "phase551",
+  "implementationProvenance": {
+    "structuralCombinatoricsValidatedOutsideRepositoryBeforeFreeze": true,
+    "spectralOrValueQuantitiesInspectedBeforeFreeze": false,
+    "note": "The mesh combinatorics used by arm A (the d.d identity, the closedness of the exhibited generators, and the finite-field rank routine) were exercised on a scratch program outside the repository that wrote no repository byte, so that a coding defect would not masquerade as a structural finding. No second-order form, eigenvalue, inertia count, value decomposition or observable deviation was computed before this contract was frozen."
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}
