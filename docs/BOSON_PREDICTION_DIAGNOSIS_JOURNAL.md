@@ -21876,3 +21876,53 @@ standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
 remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`. The skip report is
 `scripts/incremental/skip_reports/pass_2026-07-25T16-45-10-068Z.json`.
+
+## 2026-07-25 - Amendment A29, Phase549: independent adjudication of the pilot
+
+INDEPENDENT PILOT RESULT ADJUDICATION (2026-07-25, Amendment A29;
+Phase549): Phase548 computed its own chains and its own verdict, and two
+defects in its own reporting and diagnostic code had to be caught by hand.
+Phase549 is the isolated assessment surface that situation requires. It does
+not reference the Phase545 kernel and reuses no Phase548 code: the sampler, the
+convergence estimators, and the checkpoint reader are re-implemented from the
+frozen contracts alone. Its contract exact-binds sixteen artifacts, including
+all six preserved telemetry files and all six checkpoints.
+
+Its estimator known-answer battery runs before the estimators touch any pilot
+draw and targets the Phase548 failure mode directly. Independent draws give
+R-hat `1.0001` with bulk and tail effective-sample-size fractions `0.990` and
+`0.981`; an AR(1) sequence at `rho=0.9` gives a bulk fraction of `0.051`
+against the analytic `0.0526`; separated chain means give R-hat `1.535`. The
+defective estimator Phase548 originally shipped fails this battery.
+
+Telemetry integrity passes on all six chains, with required fields, frozen row
+counts and indices, `deltaH` equal to the Hamiltonian difference, and both the
+acceptance rule and the divergence label re-derived rather than trusted.
+Because Phase548 did not retain the per-draw observable series, its convergence
+numbers are not recomputable from preserved bytes alone, so Phase549 replays
+all six chains from the frozen seeds with its own sampler. The worst relative
+`deltaH` deviation against the recorded telemetry is `0`, every acceptance
+decision matches, checkpoint payload checksums and headers verify, and every
+stored final position is bit-identical to the replayed one.
+
+Every reported split R-hat is reproduced to the sixth decimal and every
+per-observable gate outcome matches, so the terminal is
+`adjudication-confirms-reported-terminal` and the independently derived pilot
+terminal is `pilot-executed-diagnostics-invalid`, as reported. One defect was
+found and fixed in Phase549's own first attempt, a placeholder comparison row
+emitting non-finite numbers; the fix is confined to output encoding and touched
+no check, threshold, or gate.
+
+Confirming a negative grants no authority. Phase549 does not reinterpret
+Phase548 and establishes no stationarity, sampling correctness, transfer to a
+larger extent, or spectral or physical quantity. Phase535 remains closed,
+Phase458 G3/G4/G5 and O4 remain unsatisfied, source-lineage deficits are
+unchanged, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`. Registry 550+ is unassigned.
+
+The mandatory A29 adjudication checkpoint ran 81 steps and skipped 332. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 333 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-07-25T17-12-29-625Z.json`.

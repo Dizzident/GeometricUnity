@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "phase": 549,
+  "phaseId": "phase549-bounded-pilot-independent-result-adjudicator",
+  "contractId": "phase549-a29-bounded-pilot-independent-result-adjudicator-v1",
+  "contractSha256": "a49dd0717ac7384a39f2714b904dbbda9cb9ee49e53648f4bd42be4c7c69d382",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "expectedSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "actualSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "expectedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "actualSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json",
+      "expectedSha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90",
+      "actualSha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json",
+      "expectedSha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd",
+      "actualSha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json",
+      "expectedSha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db",
+      "actualSha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json",
+      "expectedSha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c",
+      "actualSha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json",
+      "expectedSha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2",
+      "actualSha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2",
+      "hashMatches": true
+    },
+    {
+      "id": "telemetry-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json",
+      "expectedSha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd",
+      "actualSha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "expectedSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "actualSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "expectedSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "actualSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "expectedSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "actualSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "expectedSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "actualSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "expectedSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "actualSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "hashMatches": true
+    },
+    {
+      "id": "checkpoint-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "expectedSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "actualSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "hashMatches": true
+    },
+    {
+      "id": "complete-lattice-gradient-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    }
+  ],
+  "independence": {
+    "reusesPhase548Code": false,
+    "referencesPhase545Kernel": false,
+    "samplerReimplementedFromContract": true,
+    "estimatorsReimplemented": true,
+    "checkpointReaderReimplemented": true
+  },
+  "estimatorKnownAnswerBattery": {
+    "motivation": "Phase548\u0027s tail effective-sample-size estimator was defective; these estimators are validated against known answers before use.",
+    "syntheticSeed": 549001,
+    "chains": 4,
+    "drawsPerChain": 2000,
+    "cases": [
+      {
+        "id": "independent-draws",
+        "kind": "iid",
+        "rhat": 1.000134221001914,
+        "bulkEss": 7920.219203501707,
+        "tailEss": 7846.080012656644,
+        "bulkEssFraction": 0.9900274004377134,
+        "tailEssFraction": 0.9807600015820804,
+        "passed": true
+      },
+      {
+        "id": "strong-autocorrelation",
+        "kind": "ar1",
+        "rhat": 1.0044207991464091,
+        "bulkEss": 410.86411460621116,
+        "tailEss": 1083.4261401161689,
+        "bulkEssFraction": 0.05135801432577639,
+        "tailEssFraction": 0.1354282675145211,
+        "passed": true
+      },
+      {
+        "id": "separated-chain-means",
+        "kind": "iid-with-offset",
+        "rhat": 1.534746182203665,
+        "bulkEss": 7.0685019903241315,
+        "tailEss": 28.01616187904069,
+        "bulkEssFraction": 0.0008835627487905164,
+        "tailEssFraction": 0.0035020202348800865,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "telemetryIntegrity": {
+    "chains": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.925,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.93,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.9325,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.9125,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.94,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "rowCount": 400,
+        "fieldsPresent": true,
+        "countsOk": true,
+        "deltaConsistent": true,
+        "acceptanceRuleHolds": true,
+        "divergenceLabelHolds": true,
+        "nonFinite": 0,
+        "divergent": 0,
+        "independentAcceptanceRate": 0.95,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "independentReplay": {
+    "chains": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.925,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.93,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.9325,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.9125,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.94,
+        "retainedDraws": 340,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "worstRelativeDeltaHDeviation": 0,
+        "decisionsMatch": true,
+        "independentAcceptanceRate": 0.95,
+        "retainedDraws": 340,
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "perDrawObservableSeriesWasRetainedByPhase548": false,
+    "replayWasRequiredBecauseObservableSeriesWasNotRetained": true
+  },
+  "checkpointAudit": {
+    "chains": [
+      {
+        "chainId": "complete-lattice-pilot-a-546101",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546103",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-a-546107",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546201",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546203",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      },
+      {
+        "chainId": "complete-lattice-pilot-b-546207",
+        "checksumOk": true,
+        "headerOk": true,
+        "positionMatchesReplay": true,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "diagnosticsComparison": {
+    "thresholds": {
+      "maximumRhat": 1.01,
+      "minimumBulkEss": 100,
+      "minimumTailEss": 100,
+      "minimumAcceptance": 0.6
+    },
+    "rows": [
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "actionDensity",
+        "independentRhat": 1.0074488749733528,
+        "reportedRhat": 1.0074488749733528,
+        "independentBulkEss": 212.33365196307267,
+        "reportedBulkEss": 212.33365196307267,
+        "independentTailEss": 622.2583110822234,
+        "reportedTailEss": 622.2583110822234,
+        "independentPassed": true,
+        "reportedPassed": true,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "forceNormSquared",
+        "independentRhat": 1.002567581821562,
+        "reportedRhat": 1.002567581821562,
+        "independentBulkEss": 393.53585678545556,
+        "reportedBulkEss": 393.53585678545556,
+        "independentTailEss": 602.3747572039119,
+        "reportedTailEss": 602.3747572039119,
+        "independentPassed": true,
+        "reportedPassed": true,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "configurationNormSquared",
+        "independentRhat": 1.0386631823268684,
+        "reportedRhat": 1.0386631823268684,
+        "independentBulkEss": 72.15228305551715,
+        "reportedBulkEss": 72.15228305551715,
+        "independentTailEss": 101.8096979688506,
+        "reportedTailEss": 101.8096979688506,
+        "independentPassed": false,
+        "reportedPassed": false,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "name": "acceptanceFloor",
+        "independentRhat": null,
+        "reportedRhat": null,
+        "independentBulkEss": null,
+        "reportedBulkEss": null,
+        "independentTailEss": null,
+        "reportedTailEss": null,
+        "independentPassed": true,
+        "reportedPassed": true,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "actionDensity",
+        "independentRhat": 1.012441780041052,
+        "reportedRhat": 1.012441780041052,
+        "independentBulkEss": 286.9641233206607,
+        "reportedBulkEss": 286.9641233206607,
+        "independentTailEss": 656.20297385478,
+        "reportedTailEss": 656.20297385478,
+        "independentPassed": false,
+        "reportedPassed": false,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "forceNormSquared",
+        "independentRhat": 1.0141212353898779,
+        "reportedRhat": 1.0141212353898779,
+        "independentBulkEss": 420.4942377427681,
+        "reportedBulkEss": 420.4942377427681,
+        "independentTailEss": 710.6020805652751,
+        "reportedTailEss": 710.6020805652751,
+        "independentPassed": false,
+        "reportedPassed": false,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "configurationNormSquared",
+        "independentRhat": 1.0150545860220823,
+        "reportedRhat": 1.0150545860220823,
+        "independentBulkEss": 99.7310011218456,
+        "reportedBulkEss": 99.7310011218456,
+        "independentTailEss": 182.88810615034012,
+        "reportedTailEss": 182.88810615034012,
+        "independentPassed": false,
+        "reportedPassed": false,
+        "agrees": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "name": "acceptanceFloor",
+        "independentRhat": null,
+        "reportedRhat": null,
+        "independentBulkEss": null,
+        "reportedBulkEss": null,
+        "independentTailEss": null,
+        "reportedTailEss": null,
+        "independentPassed": true,
+        "reportedPassed": true,
+        "agrees": true
+      }
+    ],
+    "diagnosticsReproduced": true,
+    "independentTerminal": "pilot-executed-diagnostics-invalid",
+    "reportedTerminal": "pilot-executed-diagnostics-invalid",
+    "terminalReproduced": true
+  },
+  "verdictKind": "adjudication-confirms-reported-terminal",
+  "terminalStatus": "bounded-pilot-independent-result-adjudicator-adjudication-confirms-reported-terminal",
+  "decision": "An independent re-implementation of the sampler, the estimators, and the checkpoint reader reproduces the Phase548 telemetry, checkpoints, convergence numbers, per-observable gate outcomes, and terminal. The confirmed terminal remains a negative convergence result, and confirming it grants no authority.",
+  "scope": {
+    "confirmsReportedTerminalOnly": true,
+    "reinterpretsPhase548": false,
+    "establishesStationarityOfRegisteredTarget": false,
+    "establishesSamplingCorrectness": false,
+    "establishesTransferToLargerExtent": false,
+    "workbenchRelativeLatticeUnitsOnly": true
+  },
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

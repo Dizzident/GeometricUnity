@@ -296,6 +296,7 @@ const string Phase545Path = "studies/phase545_injectable_deterministic_hmc_kerne
 const string Phase546Path = "studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/output/pilot_diagnostics_checkpoint_resource_pack_summary.json";
 const string Phase547Path = "studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/output/bounded_pilot_pack_readiness_adjudicator_summary.json";
 const string Phase548Path = "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json";
+const string Phase549Path = "studies/phase549_bounded_pilot_independent_result_adjudicator_001/output/bounded_pilot_independent_result_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -643,6 +644,7 @@ using var phase545 = File.Exists(Phase545Path) ? JsonDocument.Parse(File.ReadAll
 using var phase546 = File.Exists(Phase546Path) ? JsonDocument.Parse(File.ReadAllText(Phase546Path)) : null;
 using var phase547 = File.Exists(Phase547Path) ? JsonDocument.Parse(File.ReadAllText(Phase547Path)) : null;
 using var phase548 = File.Exists(Phase548Path) ? JsonDocument.Parse(File.ReadAllText(Phase548Path)) : null;
+using var phase549 = File.Exists(Phase549Path) ? JsonDocument.Parse(File.ReadAllText(Phase549Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7937,6 +7939,45 @@ var boundedCompleteLatticePilotExecutionPassed = phase548 is not null
     && JsonBool(phase548.RootElement, "allDownstreamAuthority") is false
     && JsonBool(phase548.RootElement, "externalReviewPending") is true
     && JsonInt(phase548.RootElement, "promotedPhysicalMassClaimCount") == 0;
+// The adjudicator's job is to reproduce the pilot independently and report
+// whatever it finds. This row requires the independence checks to pass and the
+// reported terminal to be reproduced; it does not require the pilot's
+// convergence gates to have passed, and confirming a negative is a pass here.
+var boundedPilotIndependentResultAdjudicationPassed = phase549 is not null
+    && JsonString(phase549.RootElement, "contractId") == "phase549-a29-bounded-pilot-independent-result-adjudicator-v1"
+    && JsonBool(phase549.RootElement, "contractValid") is true
+    && JsonBool(phase549.RootElement, "exactBindingsValid") is true
+    && phase549.RootElement.TryGetProperty("independence", out var p549Independence)
+    && JsonBool(p549Independence, "reusesPhase548Code") is false
+    && JsonBool(p549Independence, "referencesPhase545Kernel") is false
+    && JsonBool(p549Independence, "samplerReimplementedFromContract") is true
+    && JsonBool(p549Independence, "estimatorsReimplemented") is true
+    && phase549.RootElement.TryGetProperty("estimatorKnownAnswerBattery", out var p549Battery)
+    && JsonBool(p549Battery, "passed") is true
+    && phase549.RootElement.TryGetProperty("telemetryIntegrity", out var p549Telemetry)
+    && JsonBool(p549Telemetry, "passed") is true
+    && phase549.RootElement.TryGetProperty("independentReplay", out var p549Replay)
+    && JsonBool(p549Replay, "passed") is true
+    && phase549.RootElement.TryGetProperty("checkpointAudit", out var p549Checkpoint)
+    && JsonBool(p549Checkpoint, "passed") is true
+    && phase549.RootElement.TryGetProperty("diagnosticsComparison", out var p549Comparison)
+    && JsonBool(p549Comparison, "diagnosticsReproduced") is true
+    && JsonBool(p549Comparison, "terminalReproduced") is true
+    && JsonString(phase549.RootElement, "verdictKind") == "adjudication-confirms-reported-terminal"
+    && phase549.RootElement.TryGetProperty("scope", out var p549Scope)
+    && JsonBool(p549Scope, "reinterpretsPhase548") is false
+    && JsonBool(p549Scope, "establishesStationarityOfRegisteredTarget") is false
+    && JsonBool(p549Scope, "establishesSamplingCorrectness") is false
+    && JsonBool(phase549.RootElement, "phase535ExecutedReopenedOrMutated") is false
+    && JsonBool(phase549.RootElement, "productionDefaultSelected") is false
+    && JsonBool(phase549.RootElement, "productionAuthorized") is false
+    && JsonBool(phase549.RootElement, "launchAuthorized") is false
+    && JsonBool(phase549.RootElement, "o4Discharged") is false
+    && JsonBool(phase549.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase549.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase549.RootElement, "allDownstreamAuthority") is false
+    && JsonBool(phase549.RootElement, "externalReviewPending") is true
+    && JsonInt(phase549.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -10958,6 +10999,12 @@ var checklist = new[]
         boundedCompleteLatticePilotExecutionPassed ? "passed" : "failed",
         phase548 is null ? "Phase548 artifact not materialized" : $"verdictKind={JsonString(phase548.RootElement, "verdictKind")}; samplingPerformed={JsonBool(phase548.RootElement, "samplingPerformed")}; executionClean={(phase548.RootElement.TryGetProperty("execution", out var p548Row) ? JsonBool(p548Row, "executionClean") : null)}; diagnosticsValid={(phase548.RootElement.TryGetProperty("diagnostics", out var p548DiagRow) ? JsonBool(p548DiagRow, "diagnosticsValid") : null)}; productionAuthorized={JsonBool(phase548.RootElement, "productionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase548.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase548Path),
+    new ObjectiveChecklistItem(
+        "bounded-pilot-independent-result-adjudication",
+        "Independently re-implement the sampler, estimators, and checkpoint reader, and reproduce the Phase548 telemetry, checkpoints, diagnostics, and terminal.",
+        boundedPilotIndependentResultAdjudicationPassed ? "passed" : "failed",
+        phase549 is null ? "Phase549 artifact not materialized" : $"verdictKind={JsonString(phase549.RootElement, "verdictKind")}; battery={(phase549.RootElement.TryGetProperty("estimatorKnownAnswerBattery", out var p549BatteryRow) ? JsonBool(p549BatteryRow, "passed") : null)}; replay={(phase549.RootElement.TryGetProperty("independentReplay", out var p549ReplayRow) ? JsonBool(p549ReplayRow, "passed") : null)}; terminalReproduced={(phase549.RootElement.TryGetProperty("diagnosticsComparison", out var p549CmpRow) ? JsonBool(p549CmpRow, "terminalReproduced") : null)}; promotedPhysicalMassClaimCount={JsonInt(phase549.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase549Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

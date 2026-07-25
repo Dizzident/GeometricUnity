@@ -21,7 +21,10 @@
       "Bash(python3:*)",
       "Bash(for proj:*)",
       "Bash(dotnet test:*)",
-      "Bash(./scripts/verify_boson_claim_integrity.sh)"
+      "Bash(./scripts/verify_boson_claim_integrity.sh)",
+      "Bash(mkdir -p /tmp/claude-1000/-home-josh-Documents-GitHub-GeometricUnity/d39acc7d-3ff0-40a2-90ce-2ecc7e763bcb/scratchpad/m3b_delta_ref)",
+      "Bash(cp src/Gu.ReferenceCpu/EinsteinianShiab*.cs src/Gu.ReferenceCpu/Lambda2Algebra.cs tests/Gu.ReferenceCpu.Tests/EinsteinianShiab4DTests.cs /tmp/claude-1000/-home-josh-Documents-GitHub-GeometricUnity/d39acc7d-3ff0-40a2-90ce-2ecc7e763bcb/scratchpad/m3b_delta_ref/)",
+      "Bash(awk '{print $2, $3\"%\"}')"
     ]
   }
 }

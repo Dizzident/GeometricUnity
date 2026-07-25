@@ -1,6 +1,6 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "generatedAt": "2026-07-25T14:27:59.7841786+00:00",
+  "generatedAt": "2026-07-25T17:13:57.573399+00:00",
   "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
   "responseImageObservedProjectionRequirementAuditPassed": true,
   "targetBlindConstruction": true,
@@ -65,7 +65,7 @@
       },
       {
         "fieldId": "wBosonSourceRowId",
-        "candidateLineCount": 143,
+        "candidateLineCount": 152,
         "intakeReadyCandidateCount": 0,
         "filled": false
       },

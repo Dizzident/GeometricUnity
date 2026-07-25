@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase549-a29-bounded-pilot-independent-result-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A29",
+  "frozenBeforeFirstExecution": true,
+  "independentOfPhase548Implementation": true,
+  "mayNotReferencePhase545Kernel": true,
+  "exactBindings": [
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-program","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs","sha256":"6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"},
+    {"id":"phase548-summary","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json","sha256":"ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"},
+    {"id":"telemetry-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json","sha256":"e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90"},
+    {"id":"telemetry-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json","sha256":"4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd"},
+    {"id":"telemetry-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json","sha256":"f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db"},
+    {"id":"telemetry-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json","sha256":"a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c"},
+    {"id":"telemetry-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json","sha256":"6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2"},
+    {"id":"telemetry-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json","sha256":"20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd"},
+    {"id":"checkpoint-a-546101","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json","sha256":"eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"},
+    {"id":"checkpoint-a-546103","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json","sha256":"5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"},
+    {"id":"checkpoint-a-546107","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json","sha256":"7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"},
+    {"id":"checkpoint-b-546201","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json","sha256":"9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"},
+    {"id":"checkpoint-b-546203","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json","sha256":"6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"},
+    {"id":"checkpoint-b-546207","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json","sha256":"ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"},
+    {"id":"complete-lattice-gradient-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"}
+  ],
+
+  "estimatorKnownAnswerBattery": {
+    "purpose": "Phase548's tail effective-sample-size estimator was defective and reported non-computable for well-mixed sequences. This adjudicator re-implements the estimators independently and tests them against sequences with known answers BEFORE using them on the pilot draws.",
+    "syntheticSeed": 549001,
+    "chains": 4,
+    "drawsPerChain": 2000,
+    "cases": [
+      {"id":"independent-draws","kind":"iid","expectRhatBelow":1.01,"expectBulkEssFractionAbove":0.7,"expectTailEssFractionAbove":0.5},
+      {"id":"strong-autocorrelation","kind":"ar1","rho":0.9,"expectRhatBelow":1.05,"expectBulkEssFractionBelow":0.15},
+      {"id":"separated-chain-means","kind":"iid-with-offset","offset":1.0,"expectRhatAbove":1.01}
+    ]
+  },
+
+  "telemetryAudit": {
+    "requiredTrajectoryFields": ["chainId","trajectoryIndex","phase","accepted","initialHamiltonian","proposedHamiltonian","deltaH","acceptanceProbability","injectedThreshold","nonFinite","divergent","divergenceThreshold","forceEvaluationCount","maximumForceNorm","proposalElapsedCpuTicks"],
+    "expectedRowsPerChain": 400,
+    "expectedWarmupRows": 60,
+    "expectedRetainedRows": 340,
+    "acceptanceRuleMustHold": "accepted == (finite and not divergent and injectedThreshold <= min(0, -deltaH))",
+    "deltaHConsistencyRule": "deltaH == proposedHamiltonian - initialHamiltonian",
+    "requireZeroNonFinite": true,
+    "requireZeroDivergent": true,
+    "hamiltonianAbsoluteTolerance": 1e-09
+  },
+
+  "independentReplay": {
+    "reimplementSamplerFromContractAlone": true,
+    "compareAgainstTelemetry": true,
+    "deltaHRelativeTolerance": 1e-09,
+    "acceptanceDecisionsMustMatchExactly": true,
+    "recomputeObservablesFromReplay": true,
+    "note": "The per-draw observable series was not retained by Phase548, so the reported convergence numbers cannot be recomputed from preserved bytes alone. This adjudicator therefore replays the chains from the frozen seeds with an independent implementation and re-derives the observables itself."
+  },
+
+  "reportedDiagnosticsComparison": {
+    "rhatAbsoluteTolerance": 1e-06,
+    "essRelativeTolerance": 1e-06,
+    "mustReproduceEveryReportedGateOutcome": true,
+    "mustReproduceReportedTerminal": true
+  },
+
+  "checkpointAudit": {
+    "recomputePayloadChecksum": true,
+    "requireCanonicalPayload": true,
+    "requireFinalPositionMatchesReplay": true,
+    "positionMustBeBitIdentical": true
+  },
+
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "independent-estimator-battery-failed",
+    "telemetry-integrity-failed",
+    "independent-replay-mismatch",
+    "checkpoint-audit-failed",
+    "reported-diagnostics-not-reproduced",
+    "adjudication-confirms-reported-terminal"
+  ],
+
+  "authorityFirewalls": {
+    "reinterpretsPhase548": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}
