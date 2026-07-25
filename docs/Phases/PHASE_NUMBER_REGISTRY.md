@@ -35,7 +35,9 @@ back, NO new phase directory may be created outside this table.
 | 541 | Shared deterministic complete-lattice integrator-transfer extension (A26) | 541 zero-sampling complete-lattice embedding, force, and integrator control |
 | 542-544 | Shared complete-lattice force-closure and pilot-readiness extension (A27) | 542 metric-normalized force/Jacobian closure census; 543 branch-selected deterministic transfer experiment; 544 dependent bounded-pilot readiness adjudicator |
 | 545-547 | Shared bounded complete-lattice pilot pack extension (A28) | 545 injectable deterministic HMC kernel materialization; 546 diagnostics, seed, checkpoint, and resource-refusal pack; 547 dependent pack-readiness adjudicator |
-| 548+ | Unassigned - extend this registry before use | - |
+| 548-549 | Shared bounded complete-lattice pilot execution and adjudication extension (A29) | 548 prospectively frozen bounded pilot execution (DONE, `pilot-executed-diagnostics-invalid`); 549 independent result adjudicator (DONE, `adjudication-confirms-reported-terminal`) - recorded retrospectively 2026-07-25; both were committed before this row existed |
+| 550-555 | Shared complete-lattice flat-sector census extension (A30) | PLANNING ALLOCATION ONLY, none implemented or registered: 550 deterministic flat-sector and spectral census; 551 independent spectral adjudicator; 552 committed-chain stationarity re-analysis; 553 conditional constant-budget trajectory-length reallocation scan; 554 conditional blind confirmation, deliberately unregistered until 550 closes; 555 zero-compute external-review escalation packet. Plan: `docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md` |
+| 556+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -838,7 +838,90 @@ Phase548 and establishes no stationarity, sampling correctness, transfer to a
 larger extent, or spectral or physical quantity. Phase535 remains closed,
 Phase458 G3/G4/G5 and O4 remain unsatisfied, source-lineage deficits are
 unchanged, external review remains pending, and
-`promotedPhysicalMassClaimCount=0`. Registry 550+ is unassigned.
+`promotedPhysicalMassClaimCount=0`. Registry 550+ was unassigned at that
+checkpoint; its former 550+ frontier is superseded by Amendment A30 below.
+
+NEXT-PHASE PLAN: COMPLETE-LATTICE FLAT-SECTOR CENSUS (2026-07-25, Amendment
+A30; Phases550-555): PLANNING ALLOCATION ONLY. No phase in this block is
+implemented, frozen, registered, or executed; no contract exists; no seed is
+drawn; and nothing here authorizes sampling, creates a Phase481 pack, selects a
+production default, reopens Phase535, satisfies Phase458 G3/G4/G5, discharges
+O4, applies a source contract, or supports a physical-unit claim. Binding plan:
+`docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md`, which carries
+the per-phase questions, arms, terminal ladders, resource arithmetic, and
+firewalls. Phase548's and Phase549's terminals are immutable and are not
+reread, rehabilitated, or reinterpreted by any phase in this block.
+
+Four facts re-read from the committed sources, not from the A29 narrative,
+determine the block. First, the Phase548 smallest-eigenvalue number is the
+Rayleigh quotient of a shifted-power-iteration iterate, which for a symmetric
+operator is an UPPER bound: the record establishes only `lambdaMin <=
+1.2273204745838484e-06`. The condition number is therefore a lower bound and
+`slowestModeTrajectoryLengthEstimate = 2835.769...` is pi over the square root
+of an upper bound on a quantity that may be exactly zero. It is a diagnostic
+artifact, not a measurement; no successor may cite it as one, and the derived
+"short by a factor of fifteen" reading inherits the same one-sided error.
+Second, extent three is the enforced floor: `CreateUniform4DPeriodic` throws
+below three, and the committed counts are 81 vertices, `15*n^4 = 1215` edges,
+`50*n^4 = 4050` faces, Euler characteristic zero. Third, `beta` is a recorded
+label in this execution path: Phase548 reads it and writes it into the summary
+and checkpoint header, but no factor of `beta` enters the executed value, which
+is exactly `op.ComputeJointGradient(omega, thetaZero, massMatrix).Objective`,
+so a different `beta` changes nothing without changing the operator. Fourth,
+the frozen pack cannot buy the missing path length: at extent three with three
+chains the rule caps `trajectories * leapfrogSteps` at 3551 per chain, so total
+path length per chain is at most about 213 at step `0.06` and 284 at `0.08`
+against the 192 the pilot spent, while at extent four the memory rule admits
+only two chains (`1970176` bytes per chain; three chains reach `5910528`
+against the `5360704` ceiling and are refused).
+
+The block is therefore deterministic first and spends no seeds. Phase550 is a
+zero-sampling flat-sector and spectral census over the committed operator and
+the six preserved checkpoint positions: exact-integer structural prechecks
+including `d.d = 0` and the incidence rank, an exact-flatness test carried with
+a mandatory negative control, a two-sided nullity (exact-integer lower bound;
+threshold-conditional inertia counts above the `~1.6e-12` roundoff floor for
+the upper bound), certified interval bounds on the complement, exact
+homogeneous-degree decomposition of the value at the preserved positions, and a
+MEASURED rather than declared invariance classification of the three pilot
+observables. Its terminal is keyed to certification quality, never to which
+outcome the data support, so there is no favorable answer to steer toward. It
+declares a new deterministic ceiling in the Phase541 idiom (about 1800
+CPU-seconds and 768 MiB, refuse-before-allocation); the Phase546 sampler
+ceiling is untouched and no sampler runs under the new one. Phase551 is its
+independent adjudicator, sharing no code and running a known-answer battery
+before touching any Phase550 datum. Phase552 re-analyses the six committed
+chains for drift versus under-resolution, replaying already-determined chains
+under frozen statistics with `analysisIsRetrospectiveOnKnownData` recorded
+true. Phase553 is a conditional constant-budget trajectory-length reallocation
+scan that changes no ceiling and uses disclosed non-blind seeds; Phase554, the
+only phase permitted to consume the two remaining blind seeds 546109 and
+546209, is deliberately left unregistered until the flat sector is measured.
+Phase555 is a zero-compute escalation packet that authors no ruling.
+
+Standing firewalls for the block: no quotient and no gauge fixing, because
+classifying a measured null direction as gauge volume and normalizing by the
+corresponding transverse factor is a measure convention and the register
+carries exactly those two items as pending review, with Phase490's
+`quotient-underdetermined` as precedent - measuring is permitted, interpreting
+is not; no ceiling inflation, and in particular no sampler ceiling may be
+raised to buy a passing convergence gate on the same configuration; no
+re-adjudication of Phase548/549; and no gate progress, since G3/G4/G5 are keyed
+to the Phase455/456 and register artifacts and nothing in this lane can supply
+them at any level of success. This lane establishes only whether the registered
+operator's complete-lattice target is samplable at all, which is a prerequisite
+for any future pack and is not a gate input. Registry 550-555 is allocated for
+planning; registry 556+ is unassigned, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A30 planning checkpoint ran 63 steps and skipped 350. It ended
+at `boson-claim-integrity-verified`: Phase202 reported 333 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery remained
+94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. No scanner recorded the new plan document,
+so no exclusion list was extended and no scanner coverage was reduced. The skip
+report is
+`scripts/incremental/skip_reports/pass_2026-07-25T18-41-45-385Z.json`.
 
 The mandatory A29 adjudication checkpoint ran 81 steps and skipped 332. It
 ended at `boson-claim-integrity-verified`: Phase202 reported 333 passed / 3

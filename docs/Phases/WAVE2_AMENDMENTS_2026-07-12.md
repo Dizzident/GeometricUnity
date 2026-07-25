@@ -1004,3 +1004,66 @@ Phase481 pack; select a production default; satisfy Phase458 G3/G4/G5;
 discharge O4; fill a source contract; or authorize production, launch, a
 physical-unit claim, or a GeV claim. External review remains pending and
 `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A29 — bounded pilot execution and adjudication (2026-07-25)
+
+Phases548-549 cite `WAVE2_AMENDMENTS_2026-07-12 A29` as their plan section, but
+the A29 narrative was recorded only in
+`docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md` and is not restated here. That
+record is authoritative for A29; this heading exists so the amendment sequence
+is not silently discontinuous. Phase548 executed the bounded complete-lattice
+pilot and preserved `pilot-executed-diagnostics-invalid`; Phase549
+independently confirmed it at `adjudication-confirms-reported-terminal`. Both
+terminals are immutable.
+
+## Amendment A30 — complete-lattice flat-sector census (2026-07-25)
+
+PLANNING ALLOCATION ONLY. Phases550-555 are allocated in
+`docs/Phases/PHASE_NUMBER_REGISTRY.md` and are not implemented, frozen,
+registered, or executed. The binding plan, with per-phase questions, arms,
+terminal ladders, resource arithmetic, and firewalls, is
+`docs/Phases/COMPLETE_LATTICE_FLAT_SECTOR_PLAN_2026-07-25.md`. A phase
+registered from this block cites `WAVE2_AMENDMENTS_2026-07-12 A30`.
+
+A29 attributed the failing convergence gates to the spectrum, but the
+smallest-eigenvalue number backing that reading is the Rayleigh quotient of a
+shifted-power-iteration iterate and is therefore an upper bound only; the
+derived condition number and mixing length inherit the same one-sided error.
+Extent three is the enforced floor, `beta` is a recorded label that does not
+enter the executed value, and the frozen pack caps total path length per chain
+near 213-284 against the 192 already spent. The block is therefore
+deterministic first and spends no seeds.
+
+1. **Phase550 — deterministic flat-sector and spectral census.** Zero sampling.
+   Exact-integer structural prechecks, an exact-flatness test carried with a
+   mandatory negative control, a two-sided nullity with an exact-integer lower
+   bound and threshold-conditional inertia counts above the roundoff floor,
+   certified interval bounds on the complement, exact homogeneous-degree
+   decomposition at the six preserved checkpoint positions, and a measured
+   rather than declared observable-invariance classification. Its terminal is
+   keyed to certification quality, never to the outcome. New deterministic
+   ceiling in the Phase541 idiom; the Phase546 sampler ceiling is untouched.
+2. **Phase551 — independent spectral adjudicator.** No shared code, a
+   different algorithm family per quantity, and a known-answer battery run
+   before the estimators touch any Phase550 datum.
+3. **Phase552 — committed-chain stationarity re-analysis.** Replays six
+   already-determined chains under statistics frozen beforehand, records
+   `analysisIsRetrospectiveOnKnownData` true, and is diagnostic only.
+4. **Phase553 — conditional constant-budget reallocation scan.** Inside the
+   existing ceiling, disclosed non-blind seeds, selection rule frozen before
+   execution.
+5. **Phase554 — conditional blind confirmation.** The only phase permitted to
+   consume the two remaining blind seeds, deliberately left unregistered until
+   Phase550 closes.
+6. **Phase555 — external-review escalation packet.** Zero compute, authors no
+   ruling.
+
+A30 may not quotient or gauge-fix: classifying a measured null direction as
+gauge volume, and normalizing by the corresponding transverse factor, is a
+measure convention reserved to the pending register items, with Phase490's
+`quotient-underdetermined` as precedent. It may not raise a sampler ceiling to
+buy a passing convergence gate, re-adjudicate Phases548-549, reopen Phase535,
+create or modify a Phase481 pack, select a production default, satisfy
+Phase458 G3/G4/G5, discharge O4, fill a source contract, or authorize
+production, launch, a physical-unit claim, or a GeV claim. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.
