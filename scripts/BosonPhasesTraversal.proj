@@ -414,6 +414,8 @@
     <PhaseProject Include="../studies/phase555_flat_sector_external_review_escalation_packet_001/Phase555FlatSectorExternalReviewEscalationPacket.csproj" />
     <PhaseProject Include="../studies/phase556_registered_action_transformation_map_applicability_audit_001/Phase556RegisteredActionTransformationMapApplicabilityAudit.csproj" />
     <PhaseProject Include="../studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase559_bounded_transformation_law_source_census_001/Phase559BoundedTransformationLawSourceCensus.csproj" />
+    <PhaseProject Include="../studies/phase560_transformation_law_source_census_independent_adjudicator_001/Phase560TransformationLawSourceCensusIndependentAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

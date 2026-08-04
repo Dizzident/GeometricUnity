@@ -303,6 +303,8 @@ const string Phase552Path = "studies/phase552_committed_chain_stationarity_reana
 const string Phase555Path = "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json";
 const string Phase556Path = "studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json";
 const string Phase558Path = "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator_summary.json";
+const string Phase559Path = "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json";
+const string Phase560Path = "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/transformation_law_source_census_independent_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -657,6 +659,8 @@ using var phase552 = File.Exists(Phase552Path) ? JsonDocument.Parse(File.ReadAll
 using var phase555 = File.Exists(Phase555Path) ? JsonDocument.Parse(File.ReadAllText(Phase555Path)) : null;
 using var phase556 = File.Exists(Phase556Path) ? JsonDocument.Parse(File.ReadAllText(Phase556Path)) : null;
 using var phase558 = File.Exists(Phase558Path) ? JsonDocument.Parse(File.ReadAllText(Phase558Path)) : null;
+using var phase559 = File.Exists(Phase559Path) ? JsonDocument.Parse(File.ReadAllText(Phase559Path)) : null;
+using var phase560 = File.Exists(Phase560Path) ? JsonDocument.Parse(File.ReadAllText(Phase560Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -8264,6 +8268,95 @@ var registeredActionTransformationIdentityIndependentAdjudicatorPassed = phase55
     && JsonBool(phase558.RootElement, "externalReviewPending") is true
     && JsonBool(phase558.RootElement, "allDownstreamAuthority") is false
     && JsonInt(phase558.RootElement, "promotedPhysicalMassClaimCount") == 0;
+// A32 rows: a continuum transformation formula is useful source evidence but
+// cannot silently fill a missing registered lattice lowering or preserve a
+// fixed second component. The independent row enforces exact gate/presence.
+var boundedTransformationLawSourceCensusPassed = phase559 is not null
+    && JsonString(phase559.RootElement, "contractId") == "phase559-a32-bounded-transformation-law-source-census-v1"
+    && JsonBool(phase559.RootElement, "contractValid") is true
+    && JsonBool(phase559.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase559.RootElement, "resourceAccepted") is true
+    && phase559.RootElement.TryGetProperty("boundedCorpus", out var p559Corpus)
+    && JsonBool(p559Corpus, "boundedCorpusValid") is true
+    && JsonBool(p559Corpus, "primaryPdfHashRecorded") is true
+    && phase559.RootElement.TryGetProperty("primaryEvidence", out var p559Evidence)
+    && JsonBool(p559Evidence, "allPrimaryAnchorsPresent") is true
+    && JsonBool(p559Evidence, "continuumLawLocated") is true
+    && JsonBool(p559Evidence, "primaryWarnsOfConventionConflict") is true
+    && phase559.RootElement.TryGetProperty("registeredComparison", out var p559Comparison)
+    && JsonBool(p559Comparison, "registeredRunFixesSecondField") is true
+    && JsonBool(p559Comparison, "registeredOperatorIdentifiesThetaWithGroupField") is true
+    && JsonBool(p559Comparison, "registeredSourcesIdentifyOmegaAsPrimaryAffineTranslation") is false
+    && JsonBool(p559Comparison, "primaryDefinesDiscreteEndpointAverage") is false
+    && JsonBool(p559Comparison, "genericMapUsesEndpointAverage") is true
+    && JsonBool(p559Comparison, "primaryBindsRegisteredObjectiveCovariance") is false
+    && JsonBool(p559Comparison, "bridgeStatusesMatchFrozen") is true
+    && JsonBool(p559Comparison, "everyRegisteredBridgeRowSourceBound") is false
+    && JsonBool(p559Comparison, "fullRegisteredSourceBridge") is false
+    && JsonBool(p559Comparison, "fixedSecondComponentSilentlyPreserved") is false
+    && JsonBool(p559Comparison, "signOrEndpointTuned") is false
+    && JsonString(phase559.RootElement, "verdictKind") == "bounded-source-census-finds-continuum-law-discrete-bridge-incomplete"
+    && JsonBool(phase559.RootElement, "phase561GateOpen") is false
+    && JsonBool(phase559.RootElement, "phase561RegisteredOrExecuted") is false
+    && JsonBool(phase559.RootElement, "rngUsed") is false
+    && JsonBool(phase559.RootElement, "samplingPerformed") is false
+    && JsonBool(phase559.RootElement, "reprocessingPerformed") is false
+    && JsonBool(phase559.RootElement, "protectedPhase554SeedsRead") is false
+    && JsonBool(phase559.RootElement, "directionCalledGaugeOrRedundant") is false
+    && JsonBool(phase559.RootElement, "quotientApplied") is false
+    && JsonBool(phase559.RootElement, "rulingAuthoredOrInferred") is false
+    && JsonBool(phase559.RootElement, "o4Discharged") is false
+    && JsonBool(phase559.RootElement, "phase458Satisfied") is false
+    && JsonBool(phase559.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase559.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase559.RootElement, "externalReviewPending") is true
+    && JsonInt(phase559.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var transformationLawSourceCensusIndependentAdjudicatorPassed = phase560 is not null
+    && JsonString(phase560.RootElement, "contractId") == "phase560-a32-transformation-law-source-census-independent-adjudicator-v1"
+    && JsonBool(phase560.RootElement, "contractValid") is true
+    && JsonBool(phase560.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase560.RootElement, "resourceAccepted") is true
+    && phase560.RootElement.TryGetProperty("independentImplementation", out var p560Independence)
+    && JsonBool(p560Independence, "phase559ProjectReference") is false
+    && JsonBool(p560Independence, "sharedPhase559Code") is false
+    && JsonBool(p560Independence, "rawSourcesReconstructed") is true
+    && phase560.RootElement.TryGetProperty("knownAnswerBattery", out var p560Battery)
+    && JsonBool(p560Battery, "ranBeforeAnyPhase559Datum") is true
+    && JsonInt(p560Battery, "requiredCaseCount") == 5
+    && JsonBool(p560Battery, "passed") is true
+    && phase560.RootElement.TryGetProperty("independentSourceAudit", out var p560Source)
+    && JsonBool(p560Source, "rawContinuumAffineLawPresent") is true
+    && JsonBool(p560Source, "rawConventionWarningPresent") is true
+    && JsonBool(p560Source, "rawRegisteredRunFixesTheta") is true
+    && JsonBool(p560Source, "rawThetaRepresentsIndependentGroupField") is true
+    && JsonBool(p560Source, "rawRegisteredOmegaMappingPresent") is false
+    && JsonBool(p560Source, "rawPrimaryEndpointLoweringPresent") is false
+    && JsonBool(p560Source, "rawGenericEndpointAverageIsImplementationOnly") is true
+    && JsonBool(p560Source, "rawDiscreteActionCovarianceBindingPresent") is false
+    && JsonBool(p560Source, "rowsAgreeWithPhase559") is true
+    && JsonBool(p560Source, "completeRegisteredBridge") is false
+    && phase560.RootElement.TryGetProperty("auditedBranch", out var p560Branch)
+    && JsonBool(p560Branch, "phase559InputsValid") is true
+    && JsonBool(p560Branch, "phase559TerminalExpected") is true
+    && JsonBool(p560Branch, "phase561GateOpen") is false
+    && JsonBool(p560Branch, "phase561Present") is false
+    && JsonBool(p560Branch, "phase561PresenceExactlyMatchesGate") is true
+    && JsonBool(phase560.RootElement, "adjudicationPassed") is true
+    && JsonBool(phase560.RootElement, "supplementMaterialized") is true
+    && JsonString(phase560.RootElement, "verdictKind") == "adjudication-confirms-continuum-law-discrete-bridge-incomplete"
+    && JsonBool(phase560.RootElement, "rngUsed") is false
+    && JsonBool(phase560.RootElement, "samplingPerformed") is false
+    && JsonBool(phase560.RootElement, "reprocessingPerformed") is false
+    && JsonBool(phase560.RootElement, "protectedPhase554SeedsRead") is false
+    && JsonBool(phase560.RootElement, "directionCalledGaugeOrRedundant") is false
+    && JsonBool(phase560.RootElement, "quotientApplied") is false
+    && JsonBool(phase560.RootElement, "rulingAuthoredOrInferred") is false
+    && JsonBool(phase560.RootElement, "o4Discharged") is false
+    && JsonBool(phase560.RootElement, "phase458Satisfied") is false
+    && JsonBool(phase560.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase560.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase560.RootElement, "externalReviewPending") is true
+    && JsonInt(phase560.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -11327,6 +11420,18 @@ var checklist = new[]
         registeredActionTransformationIdentityIndependentAdjudicatorPassed ? "passed" : "failed",
         phase558 is null ? "Phase558 artifact not materialized" : $"verdictKind={JsonString(phase558.RootElement, "verdictKind")}; battery={(phase558.RootElement.TryGetProperty("knownAnswerBattery", out var p558ChecklistBattery) ? JsonBool(p558ChecklistBattery, "passed") : null)}; adjudication={JsonBool(phase558.RootElement, "adjudicationPassed")}; phase557Gate={JsonBool(phase558.RootElement, "phase557GateOpen")}; supplement={JsonBool(phase558.RootElement, "supplementMaterialized")}; promotedPhysicalMassClaimCount={JsonInt(phase558.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase558Path),
+    new ObjectiveChecklistItem(
+        "bounded-transformation-law-source-census",
+        "Audit the bounded primary source for the missing transformation law while refusing to treat a continuum formula as a registered lattice lowering.",
+        boundedTransformationLawSourceCensusPassed ? "passed" : "failed",
+        phase559 is null ? "Phase559 artifact not materialized" : $"verdictKind={JsonString(phase559.RootElement, "verdictKind")}; continuumLaw={(phase559.RootElement.TryGetProperty("primaryEvidence", out var p559ChecklistEvidence) ? JsonBool(p559ChecklistEvidence, "continuumLawLocated") : null)}; registeredBridge={(phase559.RootElement.TryGetProperty("registeredComparison", out var p559ChecklistComparison) ? JsonBool(p559ChecklistComparison, "fullRegisteredSourceBridge") : null)}; phase561Gate={JsonBool(phase559.RootElement, "phase561GateOpen")}; promotedPhysicalMassClaimCount={JsonInt(phase559.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase559Path),
+    new ObjectiveChecklistItem(
+        "transformation-law-source-census-independent-adjudicator",
+        "Independently adjudicate the bounded source census, enforce exact Phase561 gate/presence equivalence, and add evidence without answering a reserved ruling.",
+        transformationLawSourceCensusIndependentAdjudicatorPassed ? "passed" : "failed",
+        phase560 is null ? "Phase560 artifact not materialized" : $"verdictKind={JsonString(phase560.RootElement, "verdictKind")}; battery={(phase560.RootElement.TryGetProperty("knownAnswerBattery", out var p560ChecklistBattery) ? JsonBool(p560ChecklistBattery, "passed") : null)}; adjudication={JsonBool(phase560.RootElement, "adjudicationPassed")}; gatePresence={(phase560.RootElement.TryGetProperty("auditedBranch", out var p560ChecklistBranch) ? JsonBool(p560ChecklistBranch, "phase561PresenceExactlyMatchesGate") : null)}; supplement={JsonBool(phase560.RootElement, "supplementMaterialized")}; promotedPhysicalMassClaimCount={JsonInt(phase560.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase560Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

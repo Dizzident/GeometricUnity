@@ -394,6 +394,8 @@ const string Phase552CommittedChainStationarityReanalysisPath = "studies/phase55
 const string Phase555FlatSectorExternalReviewEscalationPacketPath = "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json";
 const string Phase556RegisteredActionTransformationMapApplicabilityAuditPath = "studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json";
 const string Phase558RegisteredActionTransformationIdentityIndependentAdjudicatorPath = "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator_summary.json";
+const string Phase559BoundedTransformationLawSourceCensusPath = "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json";
+const string Phase560TransformationLawSourceCensusIndependentAdjudicatorPath = "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/transformation_law_source_census_independent_adjudicator_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -828,6 +830,8 @@ using var phase552 = TryParseJson(Phase552CommittedChainStationarityReanalysisPa
 using var phase555 = TryParseJson(Phase555FlatSectorExternalReviewEscalationPacketPath);
 using var phase556 = TryParseJson(Phase556RegisteredActionTransformationMapApplicabilityAuditPath);
 using var phase558 = TryParseJson(Phase558RegisteredActionTransformationIdentityIndependentAdjudicatorPath);
+using var phase559 = TryParseJson(Phase559BoundedTransformationLawSourceCensusPath);
+using var phase560 = TryParseJson(Phase560TransformationLawSourceCensusIndependentAdjudicatorPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9785,6 +9789,35 @@ var package = new
             supplementMaterialized = JsonBool(phase558.RootElement, "supplementMaterialized"),
             o4Discharged = JsonBool(phase558.RootElement, "o4Discharged"),
             promotedPhysicalMassClaimCount = JsonInt(phase558.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        boundedTransformationLawSourceCensus = phase559 is null ? null : new
+        {
+            status = JsonString(phase559.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase559.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase559.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase559.RootElement, "verdictKind"),
+            continuumLawLocated = phase559.RootElement.TryGetProperty("primaryEvidence", out var p559Evidence)
+                ? JsonBool(p559Evidence, "continuumLawLocated") : null,
+            fullRegisteredSourceBridge = phase559.RootElement.TryGetProperty("registeredComparison", out var p559Comparison)
+                ? JsonBool(p559Comparison, "fullRegisteredSourceBridge") : null,
+            phase561GateOpen = JsonBool(phase559.RootElement, "phase561GateOpen"),
+            o4Discharged = JsonBool(phase559.RootElement, "o4Discharged"),
+            promotedPhysicalMassClaimCount = JsonInt(phase559.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        transformationLawSourceCensusIndependentAdjudicator = phase560 is null ? null : new
+        {
+            status = JsonString(phase560.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase560.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase560.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase560.RootElement, "verdictKind"),
+            adjudicationPassed = JsonBool(phase560.RootElement, "adjudicationPassed"),
+            supplementMaterialized = JsonBool(phase560.RootElement, "supplementMaterialized"),
+            phase561GateOpen = phase560.RootElement.TryGetProperty("auditedBranch", out var p560Branch)
+                ? JsonBool(p560Branch, "phase561GateOpen") : null,
+            phase561PresenceExactlyMatchesGate = p560Branch.ValueKind == JsonValueKind.Object
+                ? JsonBool(p560Branch, "phase561PresenceExactlyMatchesGate") : null,
+            o4Discharged = JsonBool(phase560.RootElement, "o4Discharged"),
+            promotedPhysicalMassClaimCount = JsonInt(phase560.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

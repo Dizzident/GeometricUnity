@@ -1133,6 +1133,65 @@ remained 15 W/Z and 14 Higgs fields, and
 ended at `boson-claim-integrity-verified`. Its skip report is
 `scripts/incremental/skip_reports/pass_2026-08-03T20-52-46-343Z.json`.
 
+CURRENT EXECUTION RECORD: BOUNDED TRANSFORMATION-LAW SOURCE CENSUS
+(2026-08-04, Amendment A32; Phases559-561): Phases559 and 560 are implemented,
+frozen, and executed. Phase561 is not registered because its exact source-bridge
+gate is closed. The binding scope is Amendment A32 in
+`docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md`.
+
+Phase559 audited the single committed primary text under the frozen source
+root. The candidate passage was known before phase design. The source contains
+an affine-space action, a base-connection coordinate rule, an explicit
+two-component infinitesimal law, and the squared-residual action. It also
+explicitly warns that multiple sign conventions and notational shifts occur in
+the relevant section. This improves the source record but does not complete the
+registered lowering.
+
+Four decisive registered rows remain unresolved: Phase548's `omega` is not
+source-identified with the primary affine translation variable; the primary
+does not define the discrete edge-endpoint lowering; its second-component law
+is not bound into the generic registered map; and covariance of the discrete
+objective is not established. Phase548's fixed second field cannot be assigned
+zero variation merely to preserve its sampled slice. Phase559 returned
+`bounded-source-census-finds-continuum-law-discrete-bridge-incomplete`.
+
+Phase560 independently reconstructed those facts without a Phase559 project
+reference or shared code. Its complete, partial, absent, sign-conflicted, and
+fixed-second-component-decoy batteries ran before any Phase559 datum. It
+returned
+`adjudication-confirms-continuum-law-discrete-bridge-incomplete`, materialized
+an additive Phase555 supplement, and enforced exact equality between the false
+Phase561 gate and Phase561's absence. This supersedes no A31 artifact and
+answers neither reserved Phase555 ruling.
+
+NEXT STEP: request or locate a source that explicitly binds the registered
+discrete fields and action law. The request is now narrower than after A31: it
+must specify the `omega`/affine-translation identification, a discrete
+edge/endpoint lowering, the transformation of the independent second field,
+and covariance of the registered squared-residual objective, including a
+consistent sign convention. Do not register Phase561 until a versioned
+successor exact-binds all four rows and independent adjudication agrees.
+
+The separate sampler-resolution route remains unallocated. Its first legitimate
+phase must prospectively compare per-direction autocorrelation in both the
+origin basis and configuration-local soft bases against a dimension-share null;
+a repeat of aggregate Phase552 diagnostics is not useful. Do not register
+Phases553 or 554 and do not read their protected seeds. A32 satisfies no
+Phase458 gate, creates no Phase481 pack, authorizes no production, and supports
+no physical-unit or GeV claim. External review remains pending,
+`promotedPhysicalMassClaimCount=0`, and registry 562+ is unassigned.
+
+VALIDATED A32 CHECKPOINT: after preserving the initial fail-closed Phase559
+binding failure and applying the non-scientific volatile-input repair recorded
+in the diagnosis journal, the mandatory incremental cascade ran 49 steps and
+skipped 372. It re-executed Phases559 and 560, reproduced both citable
+terminals, enforced the false-Phase561-gate/Phase561-absence equivalence, and
+ended at `boson-claim-integrity-verified`. Phase202 reported 341 passed / 3
+standing failures; O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The successful skip report is
+`scripts/incremental/skip_reports/pass_2026-08-04T16-00-52-636Z.json`.
+
 The mandatory A30 execution checkpoint ran 88 steps and skipped 329. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 337 passed / 3 standing
 failures, O4 coverage remained 31/31, the synthetic-overturn battery remained

@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "phaseId": "phase559-bounded-transformation-law-source-census",
+  "contractId": "phase559-a32-bounded-transformation-law-source-census-v1",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "primary-text",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "expectedSha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "actualSha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase402-program",
+      "path": "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/Program.cs",
+      "expectedSha256": "438a4b533784ecd681711cabf65a0d32b5e1d8ac8ab1ffb1538c4762aa4a5e7c",
+      "actualSha256": "438a4b533784ecd681711cabf65a0d32b5e1d8ac8ab1ffb1538c4762aa4a5e7c",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "expectedSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "actualSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "generic-map",
+      "path": "src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs",
+      "expectedSha256": "057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c",
+      "actualSha256": "057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-summary",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+      "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase556-summary",
+      "path": "studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json",
+      "expectedSha256": "4ebc1a86d84663d84db2263750f05d221268db6c7c5a7516cb05ba873e8e0e5f",
+      "actualSha256": "4ebc1a86d84663d84db2263750f05d221268db6c7c5a7516cb05ba873e8e0e5f",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase558-summary",
+      "path": "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator_summary.json",
+      "expectedSha256": "ee8dd46e94beccf4fa3b77e819148a2a1ae4f5ca0fb7efdf6b045edc232a2c6e",
+      "actualSha256": "ee8dd46e94beccf4fa3b77e819148a2a1ae4f5ca0fb7efdf6b045edc232a2c6e",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "id": "phase558-supplement",
+      "path": "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/phase555_transformation_identity_supplement.json",
+      "expectedSha256": "bc892af8df8f83980d2a7c77e42c842f1c1c5347aa1251c2e146c713a0b9c586",
+      "actualSha256": "bc892af8df8f83980d2a7c77e42c842f1c1c5347aa1251c2e146c713a0b9c586",
+      "exists": true,
+      "hashMatches": true
+    }
+  ],
+  "resourceAccepted": true,
+  "boundedCorpus": {
+    "root": "docs/Reference/ExperimentReferences/texts",
+    "expectedFiles": [
+      "GU-DRAFT-2021-TEXT.txt"
+    ],
+    "actualFiles": [
+      "GU-DRAFT-2021-TEXT.txt"
+    ],
+    "boundedCorpusValid": true,
+    "primaryPdfHashRecorded": true
+  },
+  "primaryEvidence": {
+    "anchorRows": [
+      {
+        "id": "natural-right-action",
+        "tokens": [
+          "A \u00B7 g",
+          "A \u00B7 \u03B5",
+          "\u002B $"
+        ],
+        "present": true,
+        "lineNumbers": [
+          1628,
+          1642,
+          1643,
+          1649,
+          1651,
+          1779,
+          1829,
+          1880,
+          1883,
+          1887,
+          1893,
+          1905
+        ]
+      },
+      {
+        "id": "base-connection-coordinate-action",
+        "tokens": [
+          "\u03B1 \u00B7 g",
+          "\u03B5\u22121 (\u03B1)\u03B5",
+          "dA0 \u03B5"
+        ],
+        "present": true,
+        "lineNumbers": [
+          1779,
+          1831,
+          1843,
+          1866,
+          1867,
+          1868,
+          1873,
+          1887,
+          1890,
+          1893,
+          1907,
+          1916
+        ]
+      },
+      {
+        "id": "sign-convention-warning",
+        "tokens": [
+          "multiple sign conventions",
+          "notational shifts"
+        ],
+        "present": true,
+        "lineNumbers": [
+          1808
+        ]
+      },
+      {
+        "id": "squared-residual-action",
+        "tokens": [
+          "I2B",
+          "||\u03A5"
+        ],
+        "present": true,
+        "lineNumbers": [
+          2267,
+          2272
+        ]
+      },
+      {
+        "id": "infinitesimal-action-start",
+        "tokens": [
+          "g \u00B7 \u03C4A0",
+          "exp(s\u03B3)"
+        ],
+        "present": true,
+        "lineNumbers": [
+          1850,
+          1914,
+          2434,
+          2437
+        ]
+      },
+      {
+        "id": "two-component-infinitesimal-law",
+        "tokens": [
+          "\u03B41\u03C9",
+          "dA\u03C9",
+          "DL\u03B5\u03C9"
+        ],
+        "present": true,
+        "lineNumbers": [
+          2331,
+          2369,
+          2382,
+          2400,
+          2422,
+          2443,
+          2444,
+          2446,
+          2456
+        ]
+      }
+    ],
+    "allPrimaryAnchorsPresent": true,
+    "primaryDefinesAffineConnectionCoordinates": true,
+    "primaryDefinesTwoComponentInfinitesimalLaw": true,
+    "primaryWarnsOfConventionConflict": true,
+    "primaryDefinesSquaredResidualAction": true,
+    "continuumLawLocated": true
+  },
+  "registeredComparison": {
+    "registeredRunFixesSecondField": true,
+    "registeredOperatorIdentifiesThetaWithGroupField": true,
+    "registeredSourcesIdentifyOmegaAsPrimaryAffineTranslation": false,
+    "primaryDefinesDiscreteEndpointAverage": false,
+    "genericMapUsesEndpointAverage": true,
+    "primaryBindsRegisteredObjectiveCovariance": false,
+    "bridgeRows": [
+      {
+        "id": "continuum-affine-field-definition",
+        "status": "primary-source-present",
+        "decisive": false
+      },
+      {
+        "id": "registered-field-identification",
+        "status": "source-unmapped",
+        "decisive": true
+      },
+      {
+        "id": "edge-endpoint-lowering",
+        "status": "source-absent",
+        "decisive": true
+      },
+      {
+        "id": "second-field-transformation",
+        "status": "continuum-source-present-registered-map-unbound",
+        "decisive": true
+      },
+      {
+        "id": "registered-action-covariance",
+        "status": "source-unmapped",
+        "decisive": true
+      }
+    ],
+    "bridgeStatusesMatchFrozen": true,
+    "everyRegisteredBridgeRowSourceBound": false,
+    "fullRegisteredSourceBridge": false,
+    "fixedSecondComponentSilentlyPreserved": false,
+    "signOrEndpointTuned": false
+  },
+  "verdictKind": "bounded-source-census-finds-continuum-law-discrete-bridge-incomplete",
+  "terminalStatus": "bounded-transformation-law-source-census-bounded-source-census-finds-continuum-law-discrete-bridge-incomplete",
+  "decision": "The bounded primary source contains a continuum affine-space action and a two-component infinitesimal law, but the registered Phase548 lowering remains incomplete: omega is not source-identified with the draft affine translation, no edge-endpoint lowering is supplied, the second-field law is not incorporated into the generic registered map, and covariance of the discrete objective is not source-bound. Phase561 remains closed.",
+  "nextTask": "independent-source-census-adjudication",
+  "phase561GateOpen": false,
+  "phase561RegisteredOrExecuted": false,
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "phase553Or554RegisteredOrExecuted": false,
+  "directionCalledGaugeOrRedundant": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "rulingAuthoredOrInferred": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1187,3 +1187,50 @@ missing-source list but answers neither reserved ruling. The next unallocated
 machine/source task is to locate or request a source-defined transformation law
 with explicit field identifications. Do not guess `A0`, `omegaStar`, signs, or
 endpoint conventions in order to open Phase557.
+
+## Amendment A32 — bounded transformation-law source census (2026-08-04)
+
+EXECUTION PLAN: allocate Phases559-561 as one fail-closed branch. The bounded
+primary corpus is the single committed text extraction under
+`docs/Reference/ExperimentReferences/texts/`, whose provenance records the
+2021 GU draft and its PDF hash. The candidate was located before phase design,
+so the search is disclosed rather than described as blind. Classification
+rules, source hashes, required equation anchors, missing-item taxonomy,
+negative controls, and terminal precedence must be frozen before Phase559's
+first execution. No web source, secondary convention, or code comment may fill
+a missing primary-source row.
+
+1. **Phase559 — bounded primary-source transformation-law census and
+   registered-lowering bridge audit.** Verify that the bounded corpus contains
+   exactly the declared primary text, then locate the natural action on the
+   affine space, the base-connection coordinate rule, the explicit
+   infinitesimal two-component law, the sign-convention warning, and the
+   squared-residual action. Compare those source facts with the exact Phase548
+   default program and operator. Score separately: continuum field
+   identification, registered field identification, edge lowering/endpoint
+   rule, second-field transformation, and registered-action covariance. A
+   continuum formula is not a discrete lowering, and a code comment is not a
+   primary-source bridge. The registered bridge is complete only if every row
+   is source-bound without choosing signs, endpoints, or a zero variation to
+   preserve the sampled slice.
+2. **Phase560 — independent source-census adjudicator and Phase555
+   supplement.** Use no Phase559 project reference or shared implementation.
+   Run complete, partial, absent, sign-conflicted, and fixed-second-component
+   known-answer cases before reading Phase559. Reconstruct decisive raw-source
+   anchors independently, verify terminal precedence, and publish an additive
+   packet supplement. It authors neither reserved Phase555 ruling.
+3. **Phase561 — conditional versioned finite-transformation and full-Ward
+   falsifier.** Do not register unless Phases559 and 560 both establish a
+   complete registered source bridge. If opened, use a versioned gate/presence
+   equivalence check rather than Phase558's permissive latent predicate, and
+   test identity, inverse, composition, BCH scaling, action and gradient
+   covariance, and the full off-origin Ward term. Missing source, an
+   unpreserved sampled slice, or an ambiguous sign is a closed gate, not a
+   license to select a convention.
+
+Phase559 and Phase560 are deterministic and perform no sampling, replay,
+quotient, gauge fixing, or normalization. Phase561 is source-gated and uses no
+randomness if it is ever opened. A32 does not register Phases553 or 554, read
+their protected seeds, reinterpret Phases548-549, answer O4, satisfy Phase458,
+create a Phase481 pack, or support a physical-unit claim. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.

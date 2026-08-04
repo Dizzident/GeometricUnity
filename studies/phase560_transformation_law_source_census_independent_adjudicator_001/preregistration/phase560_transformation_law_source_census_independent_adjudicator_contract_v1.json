@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase560-a32-transformation-law-source-census-independent-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A32",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "independentOfPhase559Implementation": true,
+  "mayNotReferencePhase559Project": true,
+  "batteryRunsBeforeAnyPhase559Datum": true,
+  "exactBindings": [
+    {"id":"phase559-contract","path":"studies/phase559_bounded_transformation_law_source_census_001/preregistration/phase559_bounded_transformation_law_source_census_contract_v1.json","sha256":"b19b43a8822314cb8ee819ba2429de774360e3eb82d2c9c653a98913947f791f"},
+    {"id":"phase559-program","path":"studies/phase559_bounded_transformation_law_source_census_001/Program.cs","sha256":"216eb29376c8a490568b77c57d57c8ef36bfc7b91c67871bc1f837b46a09619c"},
+    {"id":"phase559-summary","path":"studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json","sha256":"5e2fd70f50e7c70dce8ebfc8400d9ab312dabb0e4b6e66d01e2bd791b936f790"},
+    {"id":"primary-text","path":"docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt","sha256":"062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"},
+    {"id":"phase548-program","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs","sha256":"6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"},
+    {"id":"registered-operator","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"},
+    {"id":"generic-map","path":"src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs","sha256":"057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c"},
+    {"id":"phase555-summary","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json","sha256":"c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6"},
+    {"id":"phase558-supplement","path":"studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/phase555_transformation_identity_supplement.json","sha256":"bc892af8df8f83980d2a7c77e42c842f1c1c5347aa1251c2e146c713a0b9c586"}
+  ],
+  "knownAnswerCases": [
+    {"id":"complete-five-row-bridge","statuses":["bound","bound","bound","bound","bound"],"signConflict":false,"expected":"complete"},
+    {"id":"partial-registered-identification","statuses":["bound","partial","bound","bound","bound"],"signConflict":false,"expected":"incomplete"},
+    {"id":"absent-endpoint-lowering","statuses":["bound","bound","absent","bound","bound"],"signConflict":false,"expected":"incomplete"},
+    {"id":"sign-conflicted-source","statuses":["bound","bound","bound","bound","bound"],"signConflict":true,"expected":"conflicted"},
+    {"id":"fixed-second-component-decoy","statuses":["bound","bound","bound","fixed-zero-without-law","bound"],"signConflict":false,"expected":"incomplete"}
+  ],
+  "requiredKnownAnswerCaseCount": 5,
+  "continuumLawCannotFillRegisteredLowering": true,
+  "phase561RequiresCompleteBridgeAndAdjudication": true,
+  "phase561PresenceMustExactlyEqualGate": true,
+  "phase555Supplement": {
+    "parentPacketPath": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+    "parentPacketSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+    "supplementIsAdditive": true,
+    "answersNeitherReservedRuling": true
+  },
+  "expectedPhase559Verdict": "bounded-source-census-finds-continuum-law-discrete-bridge-incomplete",
+  "expectedVerdict": "adjudication-confirms-continuum-law-discrete-bridge-incomplete",
+  "resourceCeilingSeconds": 30
+}
