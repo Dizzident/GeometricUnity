@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "phase": 558,
+  "phaseId": "phase558-registered-action-transformation-identity-independent-adjudicator",
+  "contractId": "phase558-a31-registered-action-transformation-identity-independent-adjudicator-v1",
+  "contractSha256": "11679c5e3e7d4e8e8095eeef6a60a57f3434745eb53c2dcfb2da5671a21cb703",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase556-contract",
+      "path": "studies/phase556_registered_action_transformation_map_applicability_audit_001/preregistration/phase556_registered_action_transformation_map_applicability_audit_contract_v1.json",
+      "expectedSha256": "84cc5b89fec024365e60a690f077c9219d9dd78ca2da204932e211f5c4e89772",
+      "actualSha256": "84cc5b89fec024365e60a690f077c9219d9dd78ca2da204932e211f5c4e89772",
+      "hashMatches": true
+    },
+    {
+      "id": "phase556-program",
+      "path": "studies/phase556_registered_action_transformation_map_applicability_audit_001/Program.cs",
+      "expectedSha256": "2d6eb1026858616170123d31583c318a071ca843b6ca77ce76fa52a8d469c5db",
+      "actualSha256": "2d6eb1026858616170123d31583c318a071ca843b6ca77ce76fa52a8d469c5db",
+      "hashMatches": true
+    },
+    {
+      "id": "phase556-summary",
+      "path": "studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json",
+      "expectedSha256": "4ebc1a86d84663d84db2263750f05d221268db6c7c5a7516cb05ba873e8e0e5f",
+      "actualSha256": "4ebc1a86d84663d84db2263750f05d221268db6c7c5a7516cb05ba873e8e0e5f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-summary",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+      "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-full-packet",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet.json",
+      "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-contract",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/preregistration/phase555_flat_sector_external_review_escalation_packet_contract_v1.json",
+      "expectedSha256": "edb6dc9ecefd675099f35a2957a05d4b45b42874ee32926d7bf6d859d8c3d9e8",
+      "actualSha256": "edb6dc9ecefd675099f35a2957a05d4b45b42874ee32926d7bf6d859d8c3d9e8",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-program",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/Program.cs",
+      "expectedSha256": "ebab2b707929ace38d297c628a82243763312c9960414660c1f39e3686e528a5",
+      "actualSha256": "ebab2b707929ace38d297c628a82243763312c9960414660c1f39e3686e528a5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "expectedSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "actualSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-project",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj",
+      "expectedSha256": "2e4ee43a0fd4c03b5dd12f1e48ac088a9f4de031f0681c38baa307a1cb91e66a",
+      "actualSha256": "2e4ee43a0fd4c03b5dd12f1e48ac088a9f4de031f0681c38baa307a1cb91e66a",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator-source",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-mass-matrix-source",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "expectedSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "actualSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-trace-pairing-source",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "expectedSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-curvature-source",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "generic-infinitesimal-map-source",
+      "path": "src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs",
+      "expectedSha256": "057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c",
+      "actualSha256": "057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c",
+      "hashMatches": true
+    },
+    {
+      "id": "generic-action-linearization-source",
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs",
+      "expectedSha256": "02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae",
+      "actualSha256": "02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae",
+      "hashMatches": true
+    }
+  ],
+  "independentImplementation": {
+    "phase556ProjectReference": false,
+    "phase557ProjectReference": false,
+    "sharedPhase556Or557Code": false,
+    "sourceReconstructionUsedExactBoundRawArtifacts": true
+  },
+  "knownAnswerBattery": {
+    "ranBeforeAnyPhase556Datum": true,
+    "requiredCaseCount": 5,
+    "signFixture": {
+      "id": "generic-map-sign-and-field-identification",
+      "formula": "-d(xi)\u002B[omegaStar-2*A0,xi_avg]",
+      "dXi": [
+        0.25,
+        -0.5,
+        1
+      ],
+      "omega": [
+        1,
+        2,
+        3
+      ],
+      "xiAverage": [
+        4,
+        -1,
+        2
+      ],
+      "bracket": [
+        7,
+        10,
+        -9
+      ],
+      "assignmentA": {
+        "identification": "A0=0,omegaStar=omega",
+        "atOrigin": [
+          -0.25,
+          0.5,
+          -1
+        ],
+        "offOrigin": [
+          6.75,
+          10.5,
+          -10
+        ]
+      },
+      "assignmentB": {
+        "identification": "A0=omega,omegaStar=omega",
+        "atOrigin": [
+          -0.25,
+          0.5,
+          -1
+        ],
+        "offOrigin": [
+          -7.25,
+          -9.5,
+          8
+        ]
+      },
+      "wrongDerivativeSign": [
+        7.25,
+        9.5,
+        -8
+      ],
+      "candidatesCoincideAtOrigin": true,
+      "candidatesDifferOffOrigin": true,
+      "wrongDerivativeSignDetected": true,
+      "passed": true
+    },
+    "rankAndIntersectionFixture": {
+      "id": "exact-rank-and-intersection",
+      "smallRows": [
+        {
+          "prime": 101,
+          "plantedRank": 2,
+          "rankA": 2,
+          "rankB": 2,
+          "joinedRank": 3,
+          "intersectionDimension": 1,
+          "passed": true
+        },
+        {
+          "prime": 103,
+          "plantedRank": 2,
+          "rankA": 2,
+          "rankB": 2,
+          "joinedRank": 3,
+          "intersectionDimension": 1,
+          "passed": true
+        }
+      ],
+      "ambient252SubstitutionRows": [
+        {
+          "prime": 101,
+          "ambientDimension": 252,
+          "exactRank": 240,
+          "harmonicRank": 12,
+          "goodRank": 240,
+          "decoyRank": 240,
+          "goodExactIntersection": 240,
+          "goodHarmonicIntersection": 0,
+          "decoyExactIntersection": 228,
+          "decoyHarmonicIntersection": 12,
+          "matchingRankAloneRejected": true,
+          "passed": true
+        },
+        {
+          "prime": 103,
+          "ambientDimension": 252,
+          "exactRank": 240,
+          "harmonicRank": 12,
+          "goodRank": 240,
+          "decoyRank": 240,
+          "goodExactIntersection": 240,
+          "goodHarmonicIntersection": 0,
+          "decoyExactIntersection": 228,
+          "decoyHarmonicIntersection": 12,
+          "matchingRankAloneRejected": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "wardFixture": {
+      "id": "nonstationary-full-ward-term",
+      "action": "S(x)=0.5*(x0^2\u002Bx1^2)",
+      "generatorLaw": "G(x)=J*x",
+      "point": [
+        2,
+        -3
+      ],
+      "gradient": [
+        2,
+        -3
+      ],
+      "generator": [
+        3,
+        2
+      ],
+      "hessianGenerator": [
+        3,
+        2
+      ],
+      "derivativeGeneratorTransposeGradient": [
+        -3,
+        -2
+      ],
+      "bareHgNorm": 3.605551275463989,
+      "fullWardResidual": [
+        0,
+        0
+      ],
+      "fullWardResidualNorm": 0,
+      "wrongWardSignResidualNorm": 7.211102550927978,
+      "passed": true
+    },
+    "positivityFixture": {
+      "id": "positive-form-and-indefinite-decoy",
+      "vector": [
+        1,
+        -2,
+        0.5
+      ],
+      "identityMetricValue": 2.625,
+      "negativePairingDecoyValue": 1.625,
+      "negativeWeightDecoyValue": -0.5,
+      "negativePairingRejected": true,
+      "negativeWeightRejected": true,
+      "negativeSquaredNormRejected": true,
+      "nanSquaredNormRejected": true,
+      "infinitySquaredNormRejected": true,
+      "passed": true
+    },
+    "terminalPrecedenceFixture": {
+      "id": "terminal-precedence",
+      "rows": [
+        {
+          "Id": "invalid-precedes-battery-and-branch",
+          "InputValid": false,
+          "BatteryPassed": false,
+          "Phase556Verdict": "transformation-map-source-underdetermined",
+          "Phase557Verdict": null,
+          "Expected": "invalid-or-drifted-input",
+          "Actual": "invalid-or-drifted-input",
+          "Passed": true
+        },
+        {
+          "Id": "battery-precedes-branch",
+          "InputValid": true,
+          "BatteryPassed": false,
+          "Phase556Verdict": "transformation-map-source-underdetermined",
+          "Phase557Verdict": null,
+          "Expected": "known-answer-battery-failed",
+          "Actual": "known-answer-battery-failed",
+          "Passed": true
+        },
+        {
+          "Id": "map-inapplicable",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "transformation-map-source-inapplicable",
+          "Phase557Verdict": null,
+          "Expected": "adjudication-finds-source-map-inapplicable",
+          "Actual": "adjudication-finds-source-map-inapplicable",
+          "Passed": true
+        },
+        {
+          "Id": "map-underdetermined",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "transformation-map-source-underdetermined",
+          "Phase557Verdict": null,
+          "Expected": "adjudication-confirms-transformation-map-source-underdetermined",
+          "Actual": "adjudication-confirms-transformation-map-source-underdetermined",
+          "Passed": true
+        },
+        {
+          "Id": "infinitesimal-mismatch",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "origin-infinitesimal-identity-falsified",
+          "Phase557Verdict": null,
+          "Expected": "adjudication-finds-infinitesimal-identity-mismatch",
+          "Actual": "adjudication-finds-infinitesimal-identity-mismatch",
+          "Passed": true
+        },
+        {
+          "Id": "compatible-with-missing-phase557",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "registered-infinitesimal-map-compatible-for-finite-test",
+          "Phase557Verdict": null,
+          "Expected": "invalid-or-drifted-input",
+          "Actual": "invalid-or-drifted-input",
+          "Passed": true
+        },
+        {
+          "Id": "finite-law-missing",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "registered-infinitesimal-map-compatible-for-finite-test",
+          "Phase557Verdict": "finite-transformation-law-not-registered",
+          "Expected": "adjudication-finds-finite-transformation-law-missing",
+          "Actual": "adjudication-finds-finite-transformation-law-missing",
+          "Passed": true
+        },
+        {
+          "Id": "finite-identity-failed",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "registered-infinitesimal-map-compatible-for-finite-test",
+          "Phase557Verdict": "finite-transformation-identity-falsified",
+          "Expected": "adjudication-finds-finite-closure-or-covariance-failure",
+          "Actual": "adjudication-finds-finite-closure-or-covariance-failure",
+          "Passed": true
+        },
+        {
+          "Id": "ready",
+          "InputValid": true,
+          "BatteryPassed": true,
+          "Phase556Verdict": "registered-infinitesimal-map-compatible-for-finite-test",
+          "Phase557Verdict": "finite-transformation-identity-supported-for-review",
+          "Expected": "machine-evidence-ready-for-human-review",
+          "Actual": "machine-evidence-ready-for-human-review",
+          "Passed": true
+        }
+      ],
+      "passed": true
+    },
+    "passed": true
+  },
+  "independentObjectiveClosure": {
+    "scope": "phase548-default-cpu-mass-matrix-and-trace-pairing-only",
+    "phase548TargetContractMatches": true,
+    "phase548UsesRegisteredDefault": true,
+    "objectiveSourceAnchorsPresent": true,
+    "defaultPositiveMassMatrixAnchorsPresent": true,
+    "positiveTracePairingAnchorsPresent": true,
+    "registeredObjectivePositivityIndependentlyClosed": true,
+    "classWideClaimMade": false
+  },
+  "independentTransformationSourceAudit": {
+    "genericFormula": "-d(xi)\u002B[omegaStar-2*A0,xi_avg]",
+    "genericMapAnchorsPresent": true,
+    "linearizationOnlyWrapsGenericMap": true,
+    "curvatureFormulaAnchorsPresent": true,
+    "phase548ProjectReferencesGenericAssemblies": false,
+    "phase548NamesGenericMap": false,
+    "phase548DefinesGenericBackgroundFields": false,
+    "operatorNamesGenericMap": false,
+    "registeredActionTransformationLawPresent": false,
+    "sourceBridgePresent": false,
+    "termRows": [
+      {
+        "id": "carrier-and-component-order",
+        "status": "source-matched",
+        "decisive": false
+      },
+      {
+        "id": "origin-coboundary-term",
+        "status": "source-matched-at-origin-only",
+        "decisive": false
+      },
+      {
+        "id": "background-field-identification",
+        "status": "source-unmapped",
+        "decisive": true
+      },
+      {
+        "id": "edge-endpoint-averaging",
+        "status": "source-unmapped",
+        "decisive": true
+      },
+      {
+        "id": "theta-transformation",
+        "status": "source-unmapped",
+        "decisive": true
+      },
+      {
+        "id": "action-transformation-law",
+        "status": "source-absent",
+        "decisive": true
+      }
+    ],
+    "termRowsAgreeWithPhase556": true,
+    "candidatesCoincideAtOrigin": true,
+    "candidatesDifferOffOrigin": true,
+    "sharedOriginCoboundaryTreatedAsCompatibility": false,
+    "signOrEndpointTuned": false,
+    "sourceMapUnderdetermined": true
+  },
+  "auditedBranch": {
+    "phase556Verdict": "transformation-map-source-underdetermined",
+    "phase556ContractValid": true,
+    "phase556BindingsValid": true,
+    "phase556PositivityClosed": true,
+    "phase556MapApplicable": false,
+    "phase556MapDetermined": false,
+    "phase556GateOpen": false,
+    "phase556ConditionalExecuted": false,
+    "phase556FirewallsHold": true,
+    "phase557Directories": [],
+    "phase557Absent": true,
+    "phase557AbsenceMatchesGate": true,
+    "auditedNegativeBranchInternallyConsistent": true
+  },
+  "conditionalRankIntersectionAndIdentityAudit": {
+    "upstreamExecuted": false,
+    "independentlyRebuilt": false,
+    "refusalReason": "The source-law gate closed before Phase556\u0027s conditional rank, intersection, stationarity, and identity-residual arm. Phase558 does not manufacture those audited values after closure.",
+    "knownAnswerRankAndIntersectionBatteryPassed": true,
+    "knownAnswerFullWardTermBatteryPassed": true
+  },
+  "adjudicationAgrees": true,
+  "adjudicationPassed": true,
+  "independentReconstructionPassed": true,
+  "phase557GateOpen": false,
+  "supplementMaterialized": true,
+  "phase555Supplement": {
+    "path": "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/phase555_transformation_identity_supplement.json",
+    "sha256": "bc892af8df8f83980d2a7c77e42c842f1c1c5347aa1251c2e146c713a0b9c586",
+    "parentPacketByteImmutable": true,
+    "reservedRulingIds": [
+      "O4-F1-COLLECTIVE-COORDINATE",
+      "O4-F1-FP-NORMALIZATION"
+    ],
+    "answersEitherReservedQuestion": false,
+    "authorsARuling": false,
+    "changesAPendingFlag": false,
+    "additiveOnly": true
+  },
+  "verdictKind": "adjudication-confirms-transformation-map-source-underdetermined",
+  "terminalStatus": "registered-action-transformation-identity-independent-adjudicator-adjudication-confirms-transformation-map-source-underdetermined",
+  "decision": "Independent source reconstruction confirms that the registered Phase548 default objective is nonnegative and that the generic infinitesimal map is not source-bound to the registered action. Two plausible unregistered background assignments coincide at the origin and differ off origin. Phase557 correctly remains absent, and the conditional identity quantities remain refused rather than inferred.",
+  "nextUnallocatedTask": "locate-or-request-a-source-defined-transformation-law-with-explicit-field-identifications",
+  "inferenceScope": "This phase adjudicates source applicability and packet lineage only. It does not interpret a measured null direction or establish a transformation orbit.",
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "phase553Or554RegisteredOrExecuted": false,
+  "directionCalledGaugeOrRedundant": false,
+  "nullSpaceInterpretedAsGaugeVolume": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "rulingAuthoredOrInferred": false,
+  "phase548Or549Reinterpreted": false,
+  "phase535ExecutedReopenedOrMutated": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "phase458G3Satisfied": false,
+  "phase458G4Satisfied": false,
+  "phase458G5Satisfied": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "o4Discharged": false,
+  "externalReviewPending": true,
+  "allDownstreamAuthority": false,
+  "promotedPhysicalMassClaimCount": 0
+}

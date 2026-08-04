@@ -22056,3 +22056,117 @@ byte-reproducibility check. No scanner recorded any new path or text, and the
 four new implementation notes were registered in the nine exclusion lists in
 the same checkpoint. The skip report is
 `scripts/incremental/skip_reports/pass_2026-07-25T20-42-09-870Z.json`.
+
+## 2026-08-03 - Amendment A31, Phase556: the generic transformation map is not source-bound to the registered action
+
+REGISTERED-ACTION TRANSFORMATION-MAP APPLICABILITY AUDIT (2026-08-03,
+Amendment A31; Phase556): Phase556 is implemented and executed under its
+prospectively frozen deterministic contract. It consumed no random number,
+performed no sampling or chain replay, and did not read the protected Phase554
+seeds.
+
+The first arm closed a deliberately narrow statement about the action that
+Phase548 actually ran. For the frozen default CPU mass matrix and registered
+trace pairing, the source evaluates the objective as one half of the pairing
+of the curvature image with its mass-matrix image. The pairing matrix is the
+positive identity, the default face weights are one, and three deterministic
+probes agreed exactly with an independent squared-norm evaluation, including a
+nonzero witness. The custom-weight constructor was explicitly kept outside
+this closure: a frozen negative-weight decoy evaluated to `-0.5`. Thus the
+machine-citable result is nonnegativity of the registered Phase548 default
+path, not a theorem about every public mass-matrix construction. In particular,
+this retires the proposed search for an action path tending to negative
+infinity without reinterpreting Phase550's off-origin negative Hessian
+directions.
+
+The second arm returned the useful negative terminal
+`transformation-map-source-underdetermined`. The exact-bound generic map has
+the form `-d(xi) + [omegaStar - 2*A0, xi_avg]`, but no bound source connects
+that map to the registered operator or identifies the operator's `omega` and
+fixed `theta=0` variables with the map's `A0` and `omegaStar`. The carrier and
+component order match, and the origin coboundary term matches only at the
+origin after an unregistered zero-background identification. Four decisive
+items remain unbound: the background-field identification, endpoint-averaging
+rule, theta transformation, and action transformation law. Matching a
+coboundary or a rank was frozen as insufficient, and no sign or endpoint was
+tuned.
+
+Because every semantic term was not source-bound, the conditional origin
+rank, intersection, stationarity and `H0*G0` arm refused before execution.
+This is a gate closure rather than a failed numerical identity: Phase557 is
+not opened and must not be built under the current A31 contract. The next
+binding step is the branch-independent Phase558 adjudicator and additive
+Phase555 packet supplement; if the independent result agrees, a later machine
+phase must locate or request a source-defined transformation law rather than
+guess one.
+
+Phase556 calls no direction gauge or redundant, constructs no group orbit,
+applies no quotient, gauge fixing, or measure normalization, authors no human
+ruling, and changes no pending flag. It does not satisfy Phase458 G3/G4/G5,
+create or modify a Phase481 pack, select a production default, authorize
+production or launch, fill a source contract, or support a physical-unit or
+GeV claim. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+## 2026-08-03 - Amendment A31, Phase558: independent adjudication confirms the missing source bridge
+
+REGISTERED-ACTION TRANSFORMATION-IDENTITY INDEPENDENT ADJUDICATOR (2026-08-03,
+Amendment A31; Phase558): Phase558 executed twice byte-identically and returned
+`adjudication-confirms-transformation-map-source-underdetermined`. It references
+neither the Phase556 nor Phase557 project and shares none of their
+implementation. Its exact-bound raw-source reconstruction independently
+confirmed both decisive Phase556 facts: the registered Phase548 default action
+path is nonnegative, and the generic infinitesimal map is not source-bound to
+that registered action.
+
+The five-case known-answer battery ran before any Phase556 datum. Its sign and
+field-identification fixture exhibited two plausible but unregistered
+background assignments that coincide at the origin and differ off origin. Its
+rank fixture included two subspaces with the same rank but different
+intersections with planted 240-dimensional exact and 12-dimensional harmonic
+blocks, so rank agreement alone cannot pass. Its nonstationary fixture made the
+bare Hessian-generator term fail while the full Ward term passed exactly. Its
+positive-form fixture rejected a negative pairing, a negative face weight, a
+negative squared-norm report, NaN and infinity. Its precedence fixture passed
+all nine frozen branches, including refusal when Phase556 opens Phase557 but no
+Phase557 artifact exists.
+
+On audited data the independent source scan reproduced the six-term comparison.
+The carrier and origin-only coboundary rows agree; background identification,
+the registered action's endpoint-averaging rule, theta transformation, and the
+registered action transformation law remain unbound. The two candidate
+assignments demonstrate why origin agreement does not determine the off-origin
+law. Phase557 is correctly absent, and Phase558 did not rebuild the conditional
+rank, intersection, stationarity or identity residuals that Phase556 refused
+behind the closed source-law gate.
+
+An additive supplement now attaches these machine facts to the byte-immutable
+Phase555 packet. It answers neither `O4-F1-COLLECTIVE-COORDINATE` nor
+`O4-F1-FP-NORMALIZATION`, authors no ruling, and changes no pending flag. The
+next unallocated task is to locate or request a source-defined transformation
+law with explicit field identifications; guessing a background assignment or
+tuning a sign remains prohibited.
+
+Phase558 performed no sampling or reprocessing and read no protected seed. It
+calls no direction gauge or redundant, applies no quotient, gauge fixing, or
+measure normalization, satisfies no Phase458 gate, creates no Phase481 pack,
+selects no production default, and authorizes no production or launch. External
+review remains pending and `promotedPhysicalMassClaimCount=0`.
+
+Post-execution audit found one latent positive-branch limitation that does not
+affect this exact-bound negative result. The named
+`phase557AbsenceMatchesGate` predicate accepts a gate-open/missing-Phase557
+combination, although the later terminal selector still refuses that
+combination as invalid and the known-answer precedence fixture requires the
+refusal. The executed branch has gate closed and Phase557 absent, so its value
+and terminal are unchanged. Do not silently edit the frozen Phase558 program;
+if a future source law opens Phase557, use a versioned repair or successor that
+tests the full gate/presence equivalence before citing this predicate.
+
+The mandatory A31 execution checkpoint ran 89 steps and skipped 330. It
+re-executed Phases556 and 558, reproduced both citable terminals and the
+Phase558 supplement hash, and ended at `boson-claim-integrity-verified`.
+Phase202 reported 339 passed / 3 standing failures, O4 coverage remained 31/31,
+the synthetic-overturn battery remained 94/94, source deficits remained 15 W/Z
+and 14 Higgs fields, and `promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-08-03T20-52-46-343Z.json`.

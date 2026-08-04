@@ -301,6 +301,8 @@ const string Phase550Path = "studies/phase550_complete_lattice_flat_sector_censu
 const string Phase551Path = "studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json";
 const string Phase552Path = "studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json";
 const string Phase555Path = "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json";
+const string Phase556Path = "studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json";
+const string Phase558Path = "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -653,6 +655,8 @@ using var phase550 = File.Exists(Phase550Path) ? JsonDocument.Parse(File.ReadAll
 using var phase551 = File.Exists(Phase551Path) ? JsonDocument.Parse(File.ReadAllText(Phase551Path)) : null;
 using var phase552 = File.Exists(Phase552Path) ? JsonDocument.Parse(File.ReadAllText(Phase552Path)) : null;
 using var phase555 = File.Exists(Phase555Path) ? JsonDocument.Parse(File.ReadAllText(Phase555Path)) : null;
+using var phase556 = File.Exists(Phase556Path) ? JsonDocument.Parse(File.ReadAllText(Phase556Path)) : null;
+using var phase558 = File.Exists(Phase558Path) ? JsonDocument.Parse(File.ReadAllText(Phase558Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -8126,6 +8130,140 @@ var flatSectorExternalReviewEscalationPacketPassed = phase555 is not null
     && JsonBool(phase555.RootElement, "allDownstreamAuthority") is false
     && JsonBool(phase555.RootElement, "externalReviewPending") is true
     && JsonInt(phase555.RootElement, "promotedPhysicalMassClaimCount") == 0;
+// A31 row: a source name or matching origin dimension is not an action law.
+// This row requires the scoped default-path positivity closure and preserves
+// the useful negative result when the exact-bound sources leave the generic
+// transformation map underdetermined. The conditional origin arm must refuse.
+var registeredActionTransformationMapApplicabilityAuditPassed = phase556 is not null
+    && JsonString(phase556.RootElement, "contractId") == "phase556-a31-registered-action-transformation-map-applicability-audit-v1"
+    && JsonBool(phase556.RootElement, "contractValid") is true
+    && JsonBool(phase556.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase556.RootElement, "resourceAccepted") is true
+    && phase556.RootElement.TryGetProperty("positivityClosure", out var p556Positivity)
+    && JsonBool(p556Positivity, "classWideClaimMade") is false
+    && JsonBool(p556Positivity, "objectiveSourceAnchorsPresent") is true
+    && JsonBool(p556Positivity, "pairingMatches") is true
+    && JsonBool(p556Positivity, "pairingPositiveDefinite") is true
+    && JsonBool(p556Positivity, "formMetricMatches") is true
+    && JsonBool(p556Positivity, "negativeControlsPassed") is true
+    && JsonBool(p556Positivity, "nonnegativityClosedForRegisteredDefaultPath") is true
+    && JsonBool(phase556.RootElement, "registeredObjectivePositivityClosed") is true
+    && phase556.RootElement.TryGetProperty("transformationComparison", out var p556Comparison)
+    && JsonBool(p556Comparison, "comparisonSourceAnchorsPresent") is true
+    && JsonBool(p556Comparison, "sourceBridgePresent") is false
+    && JsonBool(p556Comparison, "termStatusesMatchFrozen") is true
+    && JsonBool(p556Comparison, "everyTermSourceBound") is false
+    && JsonBool(p556Comparison, "explicitSourceContradiction") is false
+    && JsonBool(p556Comparison, "sourceUnderdetermined") is true
+    && JsonBool(p556Comparison, "sourceCompatibilityExact") is false
+    && JsonBool(p556Comparison, "sharedCoboundaryOrMatchingDimensionTreatedAsCompatibility") is false
+    && JsonBool(p556Comparison, "signOrEndpointTuned") is false
+    && phase556.RootElement.TryGetProperty("conditionalOriginAudit", out var p556Conditional)
+    && JsonBool(p556Conditional, "executed") is false
+    && JsonBool(p556Conditional, "passed") is false
+    && JsonBool(phase556.RootElement, "conditionalOriginAuditExecuted") is false
+    && JsonBool(phase556.RootElement, "transformationMapSourceApplicable") is false
+    && JsonBool(phase556.RootElement, "transformationMapSourceDetermined") is false
+    && JsonBool(phase556.RootElement, "phase557GateOpen") is false
+    && JsonString(phase556.RootElement, "verdictKind") == "transformation-map-source-underdetermined"
+    && JsonBool(phase556.RootElement, "rngUsed") is false
+    && JsonBool(phase556.RootElement, "samplingPerformed") is false
+    && JsonBool(phase556.RootElement, "phase553Or554RegisteredOrExecuted") is false
+    && JsonBool(phase556.RootElement, "directionCalledGaugeOrRedundant") is false
+    && JsonBool(phase556.RootElement, "nullSpaceInterpretedAsGaugeVolume") is false
+    && JsonBool(phase556.RootElement, "quotientApplied") is false
+    && JsonBool(phase556.RootElement, "gaugeFixingApplied") is false
+    && JsonBool(phase556.RootElement, "measureNormalizationApplied") is false
+    && JsonBool(phase556.RootElement, "rulingAuthoredOrInferred") is false
+    && JsonBool(phase556.RootElement, "productionAuthorized") is false
+    && JsonBool(phase556.RootElement, "launchAuthorized") is false
+    && JsonBool(phase556.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase556.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase556.RootElement, "o4Discharged") is false
+    && JsonBool(phase556.RootElement, "externalReviewPending") is true
+    && JsonBool(phase556.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase556.RootElement, "promotedPhysicalMassClaimCount") == 0;
+// A31 row: independently reconstruct the negative source-applicability branch,
+// verify that Phase557 stayed absent behind its closed gate, and add evidence
+// to the immutable Phase555 packet without answering either reserved ruling.
+var registeredActionTransformationIdentityIndependentAdjudicatorPassed = phase558 is not null
+    && JsonString(phase558.RootElement, "contractId") == "phase558-a31-registered-action-transformation-identity-independent-adjudicator-v1"
+    && JsonBool(phase558.RootElement, "contractValid") is true
+    && JsonBool(phase558.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase558.RootElement, "resourceAccepted") is true
+    && phase558.RootElement.TryGetProperty("independentImplementation", out var p558Independence)
+    && JsonBool(p558Independence, "phase556ProjectReference") is false
+    && JsonBool(p558Independence, "phase557ProjectReference") is false
+    && JsonBool(p558Independence, "sharedPhase556Or557Code") is false
+    && JsonBool(p558Independence, "sourceReconstructionUsedExactBoundRawArtifacts") is true
+    && phase558.RootElement.TryGetProperty("knownAnswerBattery", out var p558Battery)
+    && JsonBool(p558Battery, "ranBeforeAnyPhase556Datum") is true
+    && JsonInt(p558Battery, "requiredCaseCount") == 5
+    && JsonBool(p558Battery, "passed") is true
+    && p558Battery.TryGetProperty("rankAndIntersectionFixture", out var p558RankBattery)
+    && JsonBool(p558RankBattery, "passed") is true
+    && p558Battery.TryGetProperty("wardFixture", out var p558WardBattery)
+    && JsonBool(p558WardBattery, "passed") is true
+    && p558Battery.TryGetProperty("positivityFixture", out var p558PositivityBattery)
+    && JsonBool(p558PositivityBattery, "negativePairingRejected") is true
+    && JsonBool(p558PositivityBattery, "negativeWeightRejected") is true
+    && JsonBool(p558PositivityBattery, "negativeSquaredNormRejected") is true
+    && JsonBool(p558PositivityBattery, "nanSquaredNormRejected") is true
+    && JsonBool(p558PositivityBattery, "infinitySquaredNormRejected") is true
+    && JsonBool(p558PositivityBattery, "passed") is true
+    && p558Battery.TryGetProperty("terminalPrecedenceFixture", out var p558PrecedenceBattery)
+    && JsonBool(p558PrecedenceBattery, "passed") is true
+    && phase558.RootElement.TryGetProperty("independentObjectiveClosure", out var p558Objective)
+    && JsonBool(p558Objective, "registeredObjectivePositivityIndependentlyClosed") is true
+    && JsonBool(p558Objective, "classWideClaimMade") is false
+    && phase558.RootElement.TryGetProperty("independentTransformationSourceAudit", out var p558Source)
+    && JsonBool(p558Source, "genericMapAnchorsPresent") is true
+    && JsonBool(p558Source, "sourceBridgePresent") is false
+    && JsonBool(p558Source, "termRowsAgreeWithPhase556") is true
+    && JsonBool(p558Source, "candidatesCoincideAtOrigin") is true
+    && JsonBool(p558Source, "candidatesDifferOffOrigin") is true
+    && JsonBool(p558Source, "sharedOriginCoboundaryTreatedAsCompatibility") is false
+    && JsonBool(p558Source, "signOrEndpointTuned") is false
+    && JsonBool(p558Source, "sourceMapUnderdetermined") is true
+    && phase558.RootElement.TryGetProperty("auditedBranch", out var p558Branch)
+    && JsonBool(p558Branch, "phase556GateOpen") is false
+    && JsonBool(p558Branch, "phase557Absent") is true
+    && JsonBool(p558Branch, "phase557AbsenceMatchesGate") is true
+    && JsonBool(p558Branch, "auditedNegativeBranchInternallyConsistent") is true
+    && phase558.RootElement.TryGetProperty("conditionalRankIntersectionAndIdentityAudit", out var p558Conditional)
+    && JsonBool(p558Conditional, "upstreamExecuted") is false
+    && JsonBool(p558Conditional, "independentlyRebuilt") is false
+    && JsonBool(p558Conditional, "knownAnswerRankAndIntersectionBatteryPassed") is true
+    && JsonBool(p558Conditional, "knownAnswerFullWardTermBatteryPassed") is true
+    && JsonBool(phase558.RootElement, "adjudicationAgrees") is true
+    && phase558.RootElement.TryGetProperty("phase555Supplement", out var p558Supplement)
+    && JsonBool(p558Supplement, "parentPacketByteImmutable") is true
+    && JsonBool(p558Supplement, "answersEitherReservedQuestion") is false
+    && JsonBool(p558Supplement, "authorsARuling") is false
+    && JsonBool(p558Supplement, "changesAPendingFlag") is false
+    && JsonBool(p558Supplement, "additiveOnly") is true
+    && JsonString(phase558.RootElement, "verdictKind") == "adjudication-confirms-transformation-map-source-underdetermined"
+    && JsonBool(phase558.RootElement, "adjudicationPassed") is true
+    && JsonBool(phase558.RootElement, "independentReconstructionPassed") is true
+    && JsonBool(phase558.RootElement, "phase557GateOpen") is false
+    && JsonBool(phase558.RootElement, "supplementMaterialized") is true
+    && JsonBool(phase558.RootElement, "rngUsed") is false
+    && JsonBool(phase558.RootElement, "samplingPerformed") is false
+    && JsonBool(phase558.RootElement, "reprocessingPerformed") is false
+    && JsonBool(phase558.RootElement, "protectedPhase554SeedsRead") is false
+    && JsonBool(phase558.RootElement, "directionCalledGaugeOrRedundant") is false
+    && JsonBool(phase558.RootElement, "quotientApplied") is false
+    && JsonBool(phase558.RootElement, "gaugeFixingApplied") is false
+    && JsonBool(phase558.RootElement, "measureNormalizationApplied") is false
+    && JsonBool(phase558.RootElement, "rulingAuthoredOrInferred") is false
+    && JsonBool(phase558.RootElement, "productionAuthorized") is false
+    && JsonBool(phase558.RootElement, "launchAuthorized") is false
+    && JsonBool(phase558.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase558.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase558.RootElement, "o4Discharged") is false
+    && JsonBool(phase558.RootElement, "externalReviewPending") is true
+    && JsonBool(phase558.RootElement, "allDownstreamAuthority") is false
+    && JsonInt(phase558.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -11177,6 +11315,18 @@ var checklist = new[]
         flatSectorExternalReviewEscalationPacketPassed ? "passed" : "failed",
         phase555 is null ? "Phase555 artifact not materialized" : $"verdictKind={JsonString(phase555.RootElement, "verdictKind")}; inputsPresent={JsonBool(phase555.RootElement, "allRequiredInputsPresent")}; rulingAuthored={JsonBool(phase555.RootElement, "authorsARuling")}; pendingFlagChanged={JsonBool(phase555.RootElement, "changesAPendingFlag")}; promotedPhysicalMassClaimCount={JsonInt(phase555.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase555Path),
+    new ObjectiveChecklistItem(
+        "registered-action-transformation-map-applicability-audit",
+        "Close nonnegativity for the registered default action path and determine whether the generic infinitesimal transformation map is source-applicable without tuning conventions.",
+        registeredActionTransformationMapApplicabilityAuditPassed ? "passed" : "failed",
+        phase556 is null ? "Phase556 artifact not materialized" : $"verdictKind={JsonString(phase556.RootElement, "verdictKind")}; positivityClosed={(phase556.RootElement.TryGetProperty("positivityClosure", out var p556ChecklistPositivity) ? JsonBool(p556ChecklistPositivity, "nonnegativityClosedForRegisteredDefaultPath") : null)}; sourceBridge={(phase556.RootElement.TryGetProperty("transformationComparison", out var p556ChecklistComparison) ? JsonBool(p556ChecklistComparison, "sourceBridgePresent") : null)}; sourceUnderdetermined={(p556ChecklistComparison.ValueKind == JsonValueKind.Object ? JsonBool(p556ChecklistComparison, "sourceUnderdetermined") : null)}; conditionalOriginAudit={JsonBool(phase556.RootElement, "conditionalOriginAuditExecuted")}; promotedPhysicalMassClaimCount={JsonInt(phase556.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase556Path),
+    new ObjectiveChecklistItem(
+        "registered-action-transformation-identity-independent-adjudicator",
+        "Independently adjudicate the transformation-map source-applicability branch and publish an additive supplement to the immutable Phase555 review packet.",
+        registeredActionTransformationIdentityIndependentAdjudicatorPassed ? "passed" : "failed",
+        phase558 is null ? "Phase558 artifact not materialized" : $"verdictKind={JsonString(phase558.RootElement, "verdictKind")}; battery={(phase558.RootElement.TryGetProperty("knownAnswerBattery", out var p558ChecklistBattery) ? JsonBool(p558ChecklistBattery, "passed") : null)}; adjudication={JsonBool(phase558.RootElement, "adjudicationPassed")}; phase557Gate={JsonBool(phase558.RootElement, "phase557GateOpen")}; supplement={JsonBool(phase558.RootElement, "supplementMaterialized")}; promotedPhysicalMassClaimCount={JsonInt(phase558.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase558Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

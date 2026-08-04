@@ -1067,3 +1067,123 @@ create or modify a Phase481 pack, select a production default, satisfy
 Phase458 G3/G4/G5, discharge O4, fill a source contract, or authorize
 production, launch, a physical-unit claim, or a GeV claim. External review
 remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A31 — registered-action transformation-identity evidence (2026-08-03)
+
+EXECUTION STATUS: Phase556 and Phase558 are implemented, frozen, and executed.
+Phase557 is deliberately not registered because Phase556 closed its hard gate.
+A cross-model blocker council identified the cheapest potentially decisive
+route after A30, and an adversarial pass corrected three unsafe premises before
+phase construction. The council was advisory and authored neither ruling
+reserved by Phase555.
+
+The committed objective is evaluated as
+`0.5 * <Upsilon, M Upsilon>` with the registered positive trace pairing and
+positive face weights. A search for an action path tending to negative
+infinity is therefore structurally incompatible with the executed objective;
+negative Hessian directions can describe local saddles but cannot defeat the
+nonnegative objective identity. The generic Phase2 `InfinitesimalGaugeMap`,
+however, has not been source-bound to the Phase548 action: it uses
+`-d(xi) + [omegaStar - 2*A0, xi_avg]`, while Phase548 executes directly in
+`omega` at `theta=0`. Comments, matching dimensions, or a common `-d(xi)` term
+are not a compatibility proof. In addition, away from a stationary point an
+invariance identity does not imply bare `H*G=0`; the derivative-of-generator
+term contracted with the nonzero gradient is mandatory. Phase552 already
+performed the ordinary replay, split, drift, R-hat, and effective-sample-size
+diagnostics, and the origin-flat basis is lifted at the six sampled positions,
+so neither a generic diagnostic rerun nor a fixed-origin-basis tuning argument
+is admitted as the next experiment.
+
+1. **Phase556 — registered-action positivity closure and transformation-map
+   applicability audit.** Exact-bind Phases550-552 and 555, the registered
+   Phase548 operator and mass-matrix sources, `InfinitesimalGaugeMap`, and
+   `GaugeActionLinearization`. Freeze source hashes, basis/sign/endpoint
+   conventions, exact-rank algorithms, decoys, resource ceilings, and terminal
+   precedence before execution. First emit a machine-checkable closure of the
+   objective's nonnegativity and fail if the registered pairing or weights do
+   not support it. Then derive the infinitesimal variation of the action that
+   Phase548 actually executed and compare it term by term with the generic map;
+   a source mismatch or absent transformation law is a decisive negative, not
+   permission to repair the map inside the phase. Only on exact compatibility,
+   verify that the origin is stationary, reconstruct the 240 exact and 12
+   harmonic directions separately, compute exact or two-prime reconstructed
+   ranks and intersections with the map image, and test `H0*G0=0`. Report
+   algebraic identities only. No direction is called redundant or gauge.
+   Frozen terminal precedence is `input-integrity-invalid`,
+   `registered-objective-positivity-closure-failed`,
+   `transformation-map-source-inapplicable`,
+   `transformation-map-source-underdetermined`,
+   `origin-infinitesimal-identity-falsified`, then
+   `registered-infinitesimal-map-compatible-for-finite-test`; only the last
+   terminal opens Phase557.
+2. **Phase557 — conditional finite-transformation and Ward-identity
+   falsifier.** Hard-refuse unless Phase556's exact compatibility terminal and
+   hashes match. Before consuming its numerical result, freeze the finite
+   transformation candidate only if it is derivable from committed source,
+   together with identity, inverse, composition, Baker-Campbell-Hausdorff,
+   action/gradient covariance, step-scaling, and Ward-identity tests. At the
+   verified stationary origin the bare identity may be tested; at each of the
+   six preserved positions test
+   `H*G + (D G)^T*gradient = 0` in the corresponding component convention,
+   never bare `H*G=0`. Carry wrong-sign, wrong-endpoint, and harmonic-direction
+   negative controls that must fail. If no finite law is source-defined, or
+   closure/covariance fails, preserve that terminal without substituting a
+   conventional lattice law. Its substantive terminals are
+   `finite-transformation-law-not-registered`,
+   `finite-transformation-identity-falsified`, and
+   `finite-transformation-identity-supported-for-review`, after input and gate
+   refusal precedence.
+3. **Phase558 — independent identity adjudicator and review-packet
+   supplement.** Exact-bind the applicable Phase556/557 lineage and the
+   immutable Phase555 packet. Use no Phase556/557 project reference or shared
+   implementation where an independent reconstruction is feasible, and run
+   known-answer sign, rank, Ward-term, and control batteries before consuming
+   audited values. Rebuild the decisive ranks/intersections and identity
+   residuals, validate terminal precedence, and materialize an additive packet
+   supplement. Distinguish input invalidity, source-map inapplicability,
+   infinitesimal mismatch, missing finite law, finite closure/covariance
+   failure, and machine-evidence-ready-for-human-review. The strongest terminal
+   still answers neither `O4-F1-COLLECTIVE-COORDINATE` nor
+   `O4-F1-FP-NORMALIZATION`.
+
+Execution order is Phase556 first, Phase557 only on its hard gate, and Phase558
+after either the positive or negative branch so failures remain adjudicated
+and citable. If Phase556 rejects the generic map, the next unallocated task is
+to locate or request a source-defined transformation law, not to tune signs
+until identities pass. If Phase557 survives, the result sharpens the external
+review request but does not authorize quotienting or normalization. A later
+sampler-resolution phase is deliberately unallocated: before any new sampling
+or use of the protected Phase554 seeds, it would have to compare directional
+autocorrelation inside the origin basis and configuration-local soft bases
+against an explicit dimension-share null and predeclare a two-sided decision
+rule. A repeat of Phase552's ordinary diagnostics is not sufficient.
+
+A31 performs no RNG draw, HMC transition, stochastic chain replay or
+reprocessing, benchmark, sampling, warmup, adaptation, quotient, gauge fixing,
+or measure normalization. It does not consume the protected Phase554 seeds, register
+Phase553 or Phase554, change a sampler ceiling, re-adjudicate Phases548-549,
+create or modify a Phase481 pack, satisfy Phase458 G3/G4/G5, discharge O4,
+fill a source contract, or authorize production, launch, a physical-unit
+claim, or a GeV claim. External review remains mandatory and
+`promotedPhysicalMassClaimCount=0`.
+
+Execution produced the negative but narrowing terminal
+`transformation-map-source-underdetermined`. Phase556 machine-closed
+nonnegativity only for the exact Phase548 default trace-pairing, unit-face-weight
+path; it explicitly excluded the public custom-weight constructor from that
+closure. The bound sources supply no registered identification of Phase548's
+`omega` and fixed `theta=0` variables with the generic map's `A0` and
+`omegaStar`, no registered endpoint-averaging rule for the action, no theta
+transformation, and no action transformation law. The conditional origin
+rank/intersection/`H0*G0` arm therefore did not execute, and Phase557 stayed
+absent.
+
+Phase558 independently confirmed the same terminal without a Phase556 or
+Phase557 project reference. Its known-answer battery rejected a rank-240
+candidate in which 12 exact directions were silently replaced by harmonic
+directions, and its off-origin Ward fixture required the
+derivative-of-generator term. The additive Phase555 supplement preserves the
+missing-source list but answers neither reserved ruling. The next unallocated
+machine/source task is to locate or request a source-defined transformation law
+with explicit field identifications. Do not guess `A0`, `omegaStar`, signs, or
+endpoint conventions in order to open Phase557.

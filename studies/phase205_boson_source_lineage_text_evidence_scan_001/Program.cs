@@ -617,6 +617,8 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P551.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P552.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P555.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P556.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P558.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md", StringComparison.Ordinal)

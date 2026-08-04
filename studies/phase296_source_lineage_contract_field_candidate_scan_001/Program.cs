@@ -1031,6 +1031,8 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P551.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P552.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P555.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P556.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P558.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

@@ -1000,8 +1000,138 @@ satisfies Phase458 G3/G4/G5, discharges O4, creates a Phase481 pack, selects a
 production default, reopens Phase535, applies a quotient or measure
 normalization, or supports a physical-unit claim. Phase202 is 337 passed / 3
 standing failures, external review remains pending,
-`promotedPhysicalMassClaimCount=0`, and registry 553, 554 and 556+ are
+`promotedPhysicalMassClaimCount=0`, and registry 553, 554 and 556+ were
+unassigned at that checkpoint; A31 below supersedes the 556+ frontier.
+
+CURRENT EXECUTION RECORD: REGISTERED-ACTION TRANSFORMATION-IDENTITY EVIDENCE
+(2026-08-03, Amendment A31; Phases556-558): Phase556 and Phase558 are
+implemented, frozen, and executed. Phase557 is not registered because its
+Phase556 hard gate is closed. The binding scope is
+`docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md` Amendment A31. The plan came from a
+read-only GPT-5.6-Sol/Claude-Fable-5 blocker council followed by adversarial
+source review; the council was advisory and answered neither human ruling
+reserved in Phase555.
+
+The most valuable machine question in this tranche was not whether the 240
+exact origin-flat directions are gauge. It was whether the repository's
+generic Phase2 transformation map applies to the action Phase548 actually executed.
+`InfinitesimalGaugeMap` implements
+`-d(xi) + [omegaStar - 2*A0, xi_avg]`; the registered operator executes in
+`omega` at `theta=0`, and no committed artifact currently binds their fields,
+backgrounds, signs, endpoint averaging, or transformation semantics. A
+rank-240 coincidence at the origin could arise from their shared coboundary
+structure and would not establish an orbit. At the six nonstationary
+positions, bare `H*G=0` is the wrong identity: differentiating
+`gradient^T*G=0` produces a derivative-of-generator/gradient term. These two
+issues must be resolved before an orbit experiment can say anything.
+
+The council also retired two expensive distractions. The executed objective
+has the source-level form `0.5 * <Upsilon, M Upsilon>` with the registered
+positive pairing and face weights, so it is nonnegative. The 105-117 negative
+Hessian directions are local-saddle evidence; searching for a path with the
+objective tending to negative infinity has an impossible success condition.
+Phase556 made that positivity closure machine-citable instead of spending
+compute on an escape search. Phase552 already replayed all six chains and ran
+ordinary drift, R-hat, bulk/tail effective-sample-size, norm, flat-projection,
+and complement diagnostics. Repeating those tests adds little information,
+and using only the fixed origin-flat basis is unsafe because Phase550 measured
+that block lifted to `[0.26, 2.2]` at the sampled positions.
+
+The allocated order is:
+
+1. **Phase556 — registered-action positivity closure and transformation-map
+   applicability audit.** Exact-bind Phases550-552 and 555 plus the registered
+   operator, mass matrix, generic map, and gauge-action linearization sources.
+   Freeze all hashes, signs, bases, endpoint conventions, exact-rank methods,
+   decoys, ceilings, and precedence first. Verify the objective's nonnegative
+   quadratic-form structure, then derive the infinitesimal variation of the
+   executed action and compare it term by term with the generic map. A mismatch
+   or missing source law is a successful elimination result; do not repair the
+   map in-phase. Only if compatibility is exact may the phase verify origin
+   stationarity, separately reconstruct the 240 exact and 12 harmonic blocks,
+   compute exact/two-prime ranks and intersections, and test `H0*G0=0`.
+   Frozen terminal precedence is `input-integrity-invalid`,
+   `registered-objective-positivity-closure-failed`,
+   `transformation-map-source-inapplicable`,
+   `transformation-map-source-underdetermined`,
+   `origin-infinitesimal-identity-falsified`, then
+   `registered-infinitesimal-map-compatible-for-finite-test`; only the last
+   terminal opens Phase557.
+2. **Phase557 — hard-gated finite-transformation and Ward-identity
+   falsifier.** Refuse unless Phase556's compatible terminal and hashes match.
+   Use a finite transformation only if it is derivable from committed source;
+   otherwise preserve `finite-transformation-law-not-registered`. Freeze and
+   test identity/inverse/composition, BCH step scaling, action and gradient
+   covariance, `G^T*gradient=0`, and the full off-origin identity
+   `H*G + (D G)^T*gradient = 0` at the six preserved positions. Wrong-sign,
+   wrong-endpoint, and harmonic controls must reject. It uses no RNG or new
+   sampling. Its substantive terminals are
+   `finite-transformation-law-not-registered`,
+   `finite-transformation-identity-falsified`, and
+   `finite-transformation-identity-supported-for-review`, after input and gate
+   refusal precedence.
+3. **Phase558 — independent identity adjudicator and Phase555 packet
+   supplement.** Rebuild the decisive facts without Phase556/557 shared code
+   where feasible, run known-answer batteries before audited data, enforce
+   terminal precedence, and publish an additive review-packet supplement.
+   Distinguish invalid input, map inapplicability, infinitesimal mismatch,
+   absent finite law, finite identity failure, and
+   `machine-evidence-ready-for-human-review`. Even the strongest result does
+   not declare redundancy, construct a quotient, normalize a measure, answer
+   either Phase555 question, or discharge O4.
+
+EXECUTED BRANCH: Phase556 returned
+`transformation-map-source-underdetermined`. It closed nonnegativity only for
+the exact Phase548 default trace-pairing, unit-face-weight construction. The
+custom-weight constructor remains outside that closure. The bound sources do
+not identify Phase548's `omega` and fixed `theta=0` variables with the generic
+map's `A0` and `omegaStar`, and they do not supply a registered endpoint rule,
+theta transformation, or action transformation law. Consequently the
+conditional origin rank/intersection/`H0*G0` arm did not execute and
+`phase557GateOpen=false`; Phase557 is absent and must remain unregistered.
+
+Phase558 then independently returned
+`adjudication-confirms-transformation-map-source-underdetermined`. Its five
+known-answer batteries ran before any Phase556 datum. In particular, both a
+correct synthetic exact block and a decoy with 12 exact directions replaced by
+harmonic directions had rank 240, but their exact/harmonic intersections were
+`240/0` and `228/12`; matching rank alone was therefore rejected. The Ward
+fixture had nonzero bare `H*G` off stationarity but zero full
+`H*G + (D G)^T*gradient`, so future off-origin tests must keep the full term.
+The independent implementation had no Phase556/557 project reference, ran
+twice byte-identically, and materialized an additive Phase555 supplement without
+answering either reserved ruling.
+
+KNOWN LATENT LIMITATION: Phase558's named `phase557AbsenceMatchesGate`
+predicate is too permissive for a hypothetical gate-open/missing-Phase557
+branch, although its terminal selector and known-answer precedence fixture
+still classify that branch invalid. The executed gate-closed/Phase557-absent
+branch is unaffected. Do not mutate the frozen Phase558 program; any future
+gate-open branch requires a versioned repair or successor before this predicate
+may be cited.
+
+NEXT STEP: locate or request a source-defined transformation law with explicit
+field identifications. Do not choose `A0`, `omegaStar`, signs, endpoint
+averaging, or a theta law merely to make an identity pass. A future phase may
+be allocated only after a committed source candidate exists or a bounded source
+census is prospectively specified; until then Phase557 stays closed. Do not
+register Phase553 or Phase554 and do not consume the protected blind seeds. A
+sampler-resolution successor remains deliberately unallocated; any later design must
+compare per-direction autocorrelation in both the origin basis and
+configuration-local soft bases against the dimension-share null before it may
+justify a within-ceiling nonblind intervention. No A31 outcome satisfies
+Phase458 G3/G4/G5, creates a Phase481 pack, authorizes production, fills a
+source contract, or permits a physical-unit or GeV claim. External review
+remains pending and `promotedPhysicalMassClaimCount=0`; registry 559+ remains
 unassigned.
+
+VALIDATED A31 CHECKPOINT: the mandatory incremental pass ran 89 steps and
+skipped 330. Phase202 reported 339 passed / 3 standing failures; O4 coverage
+remained 31/31, the synthetic-overturn battery remained 94/94, source deficits
+remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-executed Phases556 and 558 and
+ended at `boson-claim-integrity-verified`. Its skip report is
+`scripts/incremental/skip_reports/pass_2026-08-03T20-52-46-343Z.json`.
 
 The mandatory A30 execution checkpoint ran 88 steps and skipped 329. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 337 passed / 3 standing

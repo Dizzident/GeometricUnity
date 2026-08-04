@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase558-a31-registered-action-transformation-identity-independent-adjudicator-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A31",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "independentOfPhase556AndPhase557Implementations": true,
+  "mayNotReferencePhase556OrPhase557Project": true,
+  "batteryRunsBeforeAnyPhase556Datum": true,
+  "phase557IsConditionalOnPhase556CompatibleTerminal": true,
+  "exactBindings": [
+    {"id":"phase556-contract","path":"studies/phase556_registered_action_transformation_map_applicability_audit_001/preregistration/phase556_registered_action_transformation_map_applicability_audit_contract_v1.json","sha256":"84cc5b89fec024365e60a690f077c9219d9dd78ca2da204932e211f5c4e89772"},
+    {"id":"phase556-program","path":"studies/phase556_registered_action_transformation_map_applicability_audit_001/Program.cs","sha256":"2d6eb1026858616170123d31583c318a071ca843b6ca77ce76fa52a8d469c5db"},
+    {"id":"phase556-summary","path":"studies/phase556_registered_action_transformation_map_applicability_audit_001/output/registered_action_transformation_map_applicability_audit_summary.json","sha256":"4ebc1a86d84663d84db2263750f05d221268db6c7c5a7516cb05ba873e8e0e5f"},
+    {"id":"phase555-summary","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json","sha256":"c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6"},
+    {"id":"phase555-full-packet","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet.json","sha256":"c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6"},
+    {"id":"phase555-contract","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/preregistration/phase555_flat_sector_external_review_escalation_packet_contract_v1.json","sha256":"edb6dc9ecefd675099f35a2957a05d4b45b42874ee32926d7bf6d859d8c3d9e8"},
+    {"id":"phase555-program","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/Program.cs","sha256":"ebab2b707929ace38d297c628a82243763312c9960414660c1f39e3686e528a5"},
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-program","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs","sha256":"6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"},
+    {"id":"phase548-project","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj","sha256":"2e4ee43a0fd4c03b5dd12f1e48ac088a9f4de031f0681c38baa307a1cb91e66a"},
+    {"id":"registered-operator-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"},
+    {"id":"registered-mass-matrix-source","path":"src/Gu.ReferenceCpu/CpuMassMatrix.cs","sha256":"6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"},
+    {"id":"registered-trace-pairing-source","path":"src/Gu.Math/LieAlgebraFactory.cs","sha256":"e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"},
+    {"id":"registered-curvature-source","path":"src/Gu.ReferenceCpu/CurvatureAssembler.cs","sha256":"ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"},
+    {"id":"generic-infinitesimal-map-source","path":"src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs","sha256":"057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c"},
+    {"id":"generic-action-linearization-source","path":"src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs","sha256":"02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae"}
+  ],
+  "knownAnswerBattery": {
+    "rankPrimes": [101, 103],
+    "requiredCases": [
+      "generic-map-sign-and-field-identification",
+      "exact-rank-and-intersection",
+      "nonstationary-full-ward-term",
+      "positive-form-and-indefinite-decoy",
+      "terminal-precedence"
+    ],
+    "requiredCandidateAssignments": [
+      "A0=0,omegaStar=omega",
+      "A0=omega,omegaStar=omega"
+    ],
+    "candidatesMustCoincideAtOriginAndDifferOffOrigin": true,
+    "ambientRankSubstitutionDecoy": {
+      "ambientDimension": 252,
+      "exactDimension": 240,
+      "harmonicDimension": 12,
+      "goodCandidateExactIntersection": 240,
+      "goodCandidateHarmonicIntersection": 0,
+      "decoyCandidateExactIntersection": 228,
+      "decoyCandidateHarmonicIntersection": 12,
+      "bothCandidateRanks": 240,
+      "purpose": "matching-rank-alone-does-not-establish-the-required-subspace"
+    },
+    "bareHGMustFailAtNonstationaryWardFixture": true,
+    "fullWardTermMustPass": true,
+    "positivityControls": [
+      "negative-pairing-entry-rejects",
+      "negative-face-weight-rejects",
+      "negative-squared-norm-rejects",
+      "nonfinite-squared-norm-rejects"
+    ],
+    "precedenceControls": [
+      "invalid-input-precedes-battery-and-substantive-branches",
+      "battery-failure-precedes-substantive-branches",
+      "compatible-phase556-with-missing-phase557-is-invalid-incomplete"
+    ]
+  },
+  "independentSourceReconstruction": {
+    "requiredObjectiveAnchors": [
+      "var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();",
+      "var massMatrix = new CpuMassMatrix(mesh, algebra);",
+      "var mUpsilon = massMatrix.Apply(FaceTensor(upsilon, \"Upsilon\")).Coefficients;",
+      "objective += upsilon[i] * mUpsilon[i];",
+      "objective *= 0.5;",
+      ": this(mesh, algebra, CreateUniformWeights(mesh.FaceCount))",
+      "Array.Fill(weights, 1.0);",
+      "public static LieAlgebra CreateSu2WithTracePairing()",
+      "PairingId = \"trace\""
+    ],
+    "requiredGenericMapAnchors": [
+      "CarrierType = \"gauge-parameter-0form\"",
+      "CarrierType = \"connection-1form\"",
+      "xiAvg[a] = 0.5 * (xi.Coefficients[v0 * dimG + a] + xi.Coefficients[v1 * dimG + a]);",
+      "bracketCoeff[a] = _omegaStarCoeffs[e * dimG + a] - 2.0 * _a0Coeffs[e * dimG + a];",
+      "result[e * dimG + a] = -dXi[e * dimG + a] + bracket[a];",
+      "_gaugeMap = new InfinitesimalGaugeMap(mesh, algebra, a0, omegaStar);"
+    ],
+    "requiredUnboundItems": [
+      "background-field-identification",
+      "edge-endpoint-averaging-rule-for-the-registered-action",
+      "theta-transformation",
+      "registered-action-transformation-law"
+    ],
+    "matchingOriginCoboundaryOrRankIsInsufficient": true,
+    "signOrEndpointTuningProhibited": true
+  },
+  "conditionalLineage": {
+    "phase556CompatibleVerdict": "registered-infinitesimal-map-compatible-for-finite-test",
+    "phase557MustBeAbsentWhenGateClosed": true,
+    "phase557DirectoryGlob": "studies/phase557_*_001",
+    "rankIntersectionOrIdentityResidualAuditExecutesOnlyWhenUpstreamExecuted": true
+  },
+  "phase555Supplement": {
+    "parentPacketMustRemainByteImmutable": true,
+    "reservedRulingIds": [
+      "O4-F1-COLLECTIVE-COORDINATE",
+      "O4-F1-FP-NORMALIZATION"
+    ],
+    "authorsARuling": false,
+    "changesAPendingFlag": false,
+    "supplementIsAdditive": true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "adjudication-finds-source-map-inapplicable",
+    "adjudication-confirms-transformation-map-source-underdetermined",
+    "adjudication-finds-infinitesimal-identity-mismatch",
+    "adjudication-finds-finite-transformation-law-missing",
+    "adjudication-finds-finite-closure-or-covariance-failure",
+    "machine-evidence-ready-for-human-review"
+  ],
+  "resourceRefusal": {
+    "estimatedAggregateCpuSeconds": 10.0,
+    "maximumEstimatedAggregateCpuSeconds": 30.0,
+    "estimatedPeakBytes": 30000000,
+    "maximumEstimatedPeakBytes": 100000000,
+    "refuseBeforeAllocation": true,
+    "refusalClassifiesAs": "invalid-or-drifted-input"
+  },
+  "authorityFirewalls": {
+    "directionCalledGaugeOrRedundant": false,
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "rulingAuthoredOrInferred": false,
+    "o4Discharged": false,
+    "phase553Or554RegisteredOrExecuted": false,
+    "protectedPhase554SeedsRead": false,
+    "samplingOrReprocessingPerformed": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

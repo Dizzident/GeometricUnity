@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase556-a31-registered-action-transformation-map-applicability-audit-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A31",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase550-summary","path":"studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json","sha256":"0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"},
+    {"id":"phase551-summary","path":"studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json","sha256":"9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0"},
+    {"id":"phase552-summary","path":"studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json","sha256":"0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8"},
+    {"id":"phase555-summary","path":"studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json","sha256":"c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6"},
+    {"id":"phase548-contract","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json","sha256":"a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"},
+    {"id":"phase548-program","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs","sha256":"6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"},
+    {"id":"phase548-project","path":"studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj","sha256":"2e4ee43a0fd4c03b5dd12f1e48ac088a9f4de031f0681c38baa307a1cb91e66a"},
+    {"id":"phase548-operator-source","path":"src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs","sha256":"a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"},
+    {"id":"phase548-mass-matrix-source","path":"src/Gu.ReferenceCpu/CpuMassMatrix.cs","sha256":"6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"},
+    {"id":"trace-pairing-factory-source","path":"src/Gu.Math/LieAlgebraFactory.cs","sha256":"e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"},
+    {"id":"curvature-assembler-source","path":"src/Gu.ReferenceCpu/CurvatureAssembler.cs","sha256":"ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"},
+    {"id":"generic-infinitesimal-map-source","path":"src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs","sha256":"057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c"},
+    {"id":"generic-action-linearization-source","path":"src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs","sha256":"02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae"}
+  ],
+  "admissibleUpstreamTerminals": {
+    "phase550": ["origin-and-configuration-spectrum-characterized"],
+    "phase551": ["adjudication-confirms-reported-values"],
+    "phase552": ["stationary-under-resolved-consistent", "non-stationary-drift-detected"],
+    "phase555": ["packet-assembled-awaiting-external-ruling"]
+  },
+  "registeredTarget": {
+    "extent": 3,
+    "member": "sd2-id0/c0.5",
+    "epsilonMode": "independent-theta",
+    "thetaRule": "theta-identically-zero",
+    "beta": 1.0,
+    "expectedVertexCount": 81,
+    "expectedEdgeCount": 1215,
+    "expectedFaceCount": 4050,
+    "expectedConnectionDegreesOfFreedom": 3645,
+    "expectedExactFlatDimension": 240,
+    "expectedHarmonicDimension": 12
+  },
+  "objectivePositivityClosure": {
+    "scope": "phase548-default-cpu-mass-matrix-and-trace-pairing-only",
+    "customWeightConstructorIsOutsideClosure": true,
+    "registeredFormula": "0.5 * <Upsilon, M Upsilon>",
+    "requiredPairingId": "trace",
+    "requiredPairingMatrix": [1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0],
+    "requiredFormMetricId": "diagonal-uniform",
+    "requiredDefaultFaceWeight": 1.0,
+    "sourceAnchors": {
+      "operator": [
+        "double objective = 0;",
+        "objective += upsilon[i] * mUpsilon[i];",
+        "objective *= 0.5;"
+      ],
+      "massMatrix": [
+        ": this(mesh, algebra, CreateUniformWeights(mesh.FaceCount))",
+        "Array.Fill(weights, 1.0);",
+        "sum += _algebra.InvariantMetric[a * dimG + b]"
+      ],
+      "phase548Program": [
+        "double beta = target.GetProperty(\"beta\").GetDouble();",
+        "var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();",
+        "var massMatrix = new CpuMassMatrix(mesh, algebra);",
+        "var gradient = op.ComputeJointGradient(omega, thetaZero, massMatrix);"
+      ],
+      "pairingFactory": [
+        "public static LieAlgebra CreateSu2WithTracePairing()",
+        "metric[0] = 1.0;",
+        "metric[4] = 1.0;",
+        "metric[8] = 1.0;",
+        "PairingId = \"trace\""
+      ]
+    },
+    "deterministicProbeCount": 3,
+    "requiredMaximumIndependentObjectiveDeviation": 0.0,
+    "negativeControls": [
+      "a-negative-diagonal-pairing-entry-must-reject-positive-definiteness",
+      "a-negative-face-weight-must-reject-positive-definiteness",
+      "a-negative-squared-norm-value-must-reject-nonnegativity"
+    ]
+  },
+  "transformationMapComparison": {
+    "genericFormula": "-d(xi) + [omegaStar - 2*A0, xi_avg]",
+    "executedVariable": "omega",
+    "executedFixedVariable": "theta=0",
+    "executedInfinitesimalVariationFormula": "deltaS=<C(F(omega)),M*C(D_F(omega)[deltaOmega])>",
+    "genericCandidateSubstitution": "deltaOmega=-d(xi)+[omegaStar-2*A0,xi_avg]",
+    "requiredRegisteredIdentity": "deltaS=0 for every registered omega and admissible xi",
+    "sourceAnchors": {
+      "operator": [
+        "public (double Objective, double[] GradOmega, double[] GradTheta) ComputeJointGradient(",
+        "double[] omega, double[] theta, CpuMassMatrix massMatrix)",
+        "var conn = new ConnectionField(_mesh, _algebra, omega);",
+        "var f = CurvatureAssembler.Assemble(conn).Coefficients;",
+        "dF/domega(delta) = d(delta) + [omega, delta]",
+        "var gradOmega = LinearizeCurvatureTranspose(omega, wOmega);"
+      ],
+      "phase548Program": [
+        "EpsilonMode = \"independent-theta\"",
+        "var op = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriod: extent);",
+        "double[] thetaZero = new double[mesh.VertexCount * algebra.Dimension];",
+        "op.ComputeJointGradient(omega, thetaZero, massMatrix)"
+      ],
+      "curvatureAssembler": [
+        "F = d(omega) + (1/2)[omega, omega]",
+        "coefficients[fi * dimG + a] = dOmega[a] + 0.5 * wedgeTerm[a];"
+      ],
+      "genericMap": [
+        "CarrierType = \"gauge-parameter-0form\"",
+        "CarrierType = \"connection-1form\"",
+        "xiAvg[a] = 0.5 * (xi.Coefficients[v0 * dimG + a] + xi.Coefficients[v1 * dimG + a]);",
+        "bracketCoeff[a] = _omegaStarCoeffs[e * dimG + a] - 2.0 * _a0Coeffs[e * dimG + a];",
+        "result[e * dimG + a] = -dXi[e * dimG + a] + bracket[a];"
+      ],
+      "actionLinearization": [
+        "Wraps the Phase 2 InfinitesimalGaugeMap",
+        "ExpectedGaugeRank = algebra.Dimension * (mesh.VertexCount - 1);"
+      ]
+    },
+    "requiredTermIds": [
+      "carrier-and-component-order",
+      "origin-coboundary-term",
+      "background-field-identification",
+      "edge-endpoint-averaging",
+      "theta-transformation",
+      "action-transformation-law"
+    ],
+    "expectedTermStatusesFromBoundSources": {
+      "carrier-and-component-order": "source-matched",
+      "origin-coboundary-term": "source-matched-at-origin-only",
+      "background-field-identification": "source-unmapped",
+      "edge-endpoint-averaging": "source-unmapped",
+      "theta-transformation": "source-unmapped",
+      "action-transformation-law": "source-absent"
+    },
+    "compatibilityRequiresEveryTermSourceBound": true,
+    "sharedCoboundaryOrMatchingDimensionIsNotCompatibility": true,
+    "signOrEndpointTuningProhibited": true,
+    "missingSourceBindingClassifiesAs": "transformation-map-source-underdetermined",
+    "explicitContradictionClassifiesAs": "transformation-map-source-inapplicable"
+  },
+  "conditionalOriginAudit": {
+    "executeOnlyOnExactSourceCompatibility": true,
+    "rankPrimes": [1048573, 2147483629],
+    "requiredOriginStationary": true,
+    "expectedExactRank": 240,
+    "expectedHarmonicRank": 12,
+    "exactAndHarmonicMustRemainSeparate": true,
+    "testH0G0": true,
+    "knownAnswerDecoys": [
+      "constant-vertex-parameters-have-zero-coboundary",
+      "one-harmonic-generator-is-closed-but-not-exact",
+      "wrong-sign-does-not-repair-an-unmapped-background",
+      "matching-rank-alone-does-not-establish-an-action-identity"
+    ]
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "input-integrity-invalid",
+    "registered-objective-positivity-closure-failed",
+    "transformation-map-source-inapplicable",
+    "transformation-map-source-underdetermined",
+    "origin-infinitesimal-identity-falsified",
+    "registered-infinitesimal-map-compatible-for-finite-test"
+  ],
+  "resourceRefusal": {
+    "estimatedAggregateCpuSeconds": 15.0,
+    "maximumEstimatedAggregateCpuSeconds": 120.0,
+    "estimatedPeakBytes": 100000000,
+    "maximumEstimatedPeakBytes": 500000000,
+    "refuseBeforeAllocation": true,
+    "noDenseHessianAllocatedUnlessConditionalGateOpens": true,
+    "phase546SamplerCeilingUntouched": true
+  },
+  "authorityFirewalls": {
+    "directionCalledGaugeOrRedundant": false,
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "rulingAuthoredOrInferred": false,
+    "o4Discharged": false,
+    "phase553Or554RegisteredOrExecuted": false,
+    "phase548Or549Reinterpreted": false,
+    "phase535ExecutedReopenedOrMutated": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

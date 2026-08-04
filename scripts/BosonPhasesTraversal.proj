@@ -412,6 +412,8 @@
     <PhaseProject Include="../studies/phase551_flat_sector_independent_spectral_adjudicator_001/Phase551FlatSectorIndependentSpectralAdjudicator.csproj" />
     <PhaseProject Include="../studies/phase552_committed_chain_stationarity_reanalysis_001/Phase552CommittedChainStationarityReanalysis.csproj" />
     <PhaseProject Include="../studies/phase555_flat_sector_external_review_escalation_packet_001/Phase555FlatSectorExternalReviewEscalationPacket.csproj" />
+    <PhaseProject Include="../studies/phase556_registered_action_transformation_map_applicability_audit_001/Phase556RegisteredActionTransformationMapApplicabilityAudit.csproj" />
+    <PhaseProject Include="../studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

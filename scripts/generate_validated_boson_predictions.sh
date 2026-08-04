@@ -426,6 +426,8 @@ dotnet run --no-build -c Release --project studies/phase550_complete_lattice_fla
 dotnet run --no-build -c Release --project studies/phase551_flat_sector_independent_spectral_adjudicator_001/Phase551FlatSectorIndependentSpectralAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase552_committed_chain_stationarity_reanalysis_001/Phase552CommittedChainStationarityReanalysis.csproj
 dotnet run --no-build -c Release --project studies/phase555_flat_sector_external_review_escalation_packet_001/Phase555FlatSectorExternalReviewEscalationPacket.csproj
+dotnet run --no-build -c Release --project studies/phase556_registered_action_transformation_map_applicability_audit_001/Phase556RegisteredActionTransformationMapApplicabilityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

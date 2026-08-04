@@ -196,6 +196,8 @@ var excludedPathFragments = new[]
     "docs/Phases/Implementation/IMPLEMENTATION_P551.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P552.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P555.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P556.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P558.md",
     "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md",
     "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md",
     "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md",

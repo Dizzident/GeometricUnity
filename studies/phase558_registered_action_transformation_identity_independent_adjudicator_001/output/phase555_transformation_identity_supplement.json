@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "supplementId": "phase558-a31-phase555-transformation-identity-supplement-v1",
+  "artifactKind": "additive-evidence-supplement",
+  "materialized": true,
+  "parentPacket": {
+    "phase": 555,
+    "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+    "sha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+    "byteImmutable": true
+  },
+  "reservedRulingIds": [
+    "O4-F1-COLLECTIVE-COORDINATE",
+    "O4-F1-FP-NORMALIZATION"
+  ],
+  "answersCollectiveCoordinateRuling": false,
+  "answersFpNormalizationRuling": false,
+  "authorsARuling": false,
+  "consumesAMemo": false,
+  "verifiesASignature": false,
+  "changesAPendingFlag": false,
+  "additiveOnly": true,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "sourceEvidence": {
+    "phase556Verdict": "transformation-map-source-underdetermined",
+    "phase558Verdict": "adjudication-confirms-transformation-map-source-underdetermined",
+    "registeredDefaultObjectiveNonnegative": true,
+    "genericTransformationMapSourceBoundToRegisteredAction": false,
+    "conditionalOriginIdentityAuditExecuted": false,
+    "phase557GateOpen": false,
+    "phase557Present": false,
+    "unresolvedSourceItems": [
+      "background-field-identification",
+      "edge-endpoint-averaging-rule-for-the-registered-action",
+      "theta-transformation",
+      "registered-action-transformation-law"
+    ],
+    "nextMachineOrSourceTask": "locate-or-request-a-source-defined-transformation-law-with-explicit-field-identifications"
+  }
+}
