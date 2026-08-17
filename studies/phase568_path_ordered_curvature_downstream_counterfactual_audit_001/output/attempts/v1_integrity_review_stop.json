@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "phase": 568,
+  "attemptId": "phase568-v1-first-execution-stopped-for-integrity-review",
+  "contractVersion": "v1",
+  "contractSha256": "1644d2c813ebe750b955ed94f0d0c31c03e61ab81bd928bfe2a6526fec9c3a0f",
+  "programSha256": "5a40f24b6bf8a052f923972ad8b4b64383ebca85b75c95909e47928336b69619",
+  "terminalOutputEmitted": false,
+  "completedCheckpointRows": 1,
+  "firstPrintedRow": {
+    "id": "complete-lattice-pilot-a-546101",
+    "registeredNegativeInertiaCount": 113,
+    "candidateNegativeInertiaCount": 190
+  },
+  "stopReason": "The v1 process was stopped after the first checkpoint row for adversarial integrity review. The partial console observation is preserved but is not a terminal result and may not be promoted or substituted for a completed v2 artifact.",
+  "rngUsed": false,
+  "hmcOrSamplingPerformed": false,
+  "promotedPhysicalMassClaimCount": 0
+}

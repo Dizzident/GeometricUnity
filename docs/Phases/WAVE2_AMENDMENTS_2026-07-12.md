@@ -1234,3 +1234,215 @@ randomness if it is ever opened. A32 does not register Phases553 or 554, read
 their protected seeds, reinterpret Phases548-549, answer O4, satisfy Phase458,
 create a Phase481 pack, or support a physical-unit claim. External review
 remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A33 — discrete transformation-candidate falsification (2026-08-04)
+
+EXECUTION PLAN: allocate Phases562-563 as a zero-sampling machine-compatibility
+branch. A32 established that the primary continuum law does not source-bind the
+registered lattice lowering. A33 must not repair that absence by selecting a
+convention. Instead it prospectively freezes and exhausts a small declared
+candidate family, using the exact registered operator to falsify incompatible
+members and to state precisely what any survivor would and would not establish.
+
+1. **Phase562 — registered-operator candidate-family covariance and Ward
+   census.** On the deterministic `CreateUniform4D(1)` control mesh, enumerate
+   both exterior-derivative signs, both bracket signs, tail/mean/head edge
+   endpoint rules, both identity-tangent signs for the independent vertex
+   field, and both adjoint-covariance signs. At frozen nonzero backgrounds and
+   gauge-parameter probes, test the curvature linearization, the full dressed
+   residual linearization, direct quadratic-action Ward cancellation, and
+   direct-versus-reverse-gradient derivative parity. Run planted exact,
+   covariance-failure, Ward-only false-positive, and fixed-second-field decoys
+   before audited data. Thresholds, candidate order, tie handling, and terminal
+   precedence are frozen before execution. A machine-compatible survivor is
+   not a source identification.
+2. **Phase563 — independent candidate-census adjudicator and Phase555
+   supplement.** Reference no Phase562 project and share no Phase562 code.
+   Rebuild the candidate family and decisive residuals from exact-bound core
+   sources, run an independent planted battery before reading Phase562, compare
+   survivor sets and best-row ordering, and emit an additive review-packet
+   supplement. If no exact candidate survives, localize the earliest failed
+   stage. If one or more survive, report them only as source-unbound machine
+   candidates. Either outcome leaves the Phase561 source gate closed.
+
+Both phases are deterministic, use no RNG, sampling, replay, protected seed,
+quotient, gauge fixing, or measure normalization, and change no registered
+operator or production configuration. They call no direction gauge or
+redundant and do not reinterpret the Phase550 flat sector. A33 cannot answer a
+reserved O4/Phase555 ruling, satisfy Phase458, create a Phase481 pack, authorize
+production or launch, or support a physical-unit or GeV claim. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A34 — curvature-mismatch localization and finite-transport control (2026-08-04)
+
+EXECUTION STATUS: Phases564-566 are implemented, frozen, and executed as one
+deterministic, zero-sampling diagnostic branch. A cross-model council and blind adversarial exchange agreed
+that exact finite link covariance alone is constructional and that a scalar
+weak-field slope is underidentified. The accepted design therefore begins with
+an exact signed-tensor coefficient decomposition of the frozen Phase562
+curvature residual, uses a separately governed commuting null to test the
+linear chain convention, and only then compares the registered additive
+curvature with a group-valued holonomy on the identical simplicial incidence
+structure. The scalar `0.13852638546139323` remains descriptive and is not an
+acceptance target.
+
+1. **Phase564 — additive curvature-residual power decomposition and commuting
+   control.** Exact-bind the immutable Phase562/563 records, their frozen
+   contracts, and the registered mesh, Lie-algebra, curvature, and
+   linearization sources. For the four sign-related best rows, decompose the
+   full face-by-algebra residual exactly as
+   `s * (R0 + t R1 + t^2 R2)` under `omega -> t omega` and
+   `xi -> s xi`, before scalar aggregation. Verify the decomposition on a
+   preregistered two-parameter ladder, report raw and normalized residuals, and
+   classify the earliest nonzero coefficient without calling it physical. In
+   a separately governed deterministic Cartan control, require the brackets
+   and the oriented `d(d xi)` residual to collapse at a roundoff-scaled bound.
+   An Abelian failure identifies a successor evaluator/chain-convention audit;
+   it does not mutate or reopen Phases562/563.
+2. **Phase565 — conditional registered-combinatorics finite-transport and BCH
+   control.** Refuse before construction unless Phase564 has valid inputs, a
+   passing commuting null, and a localized nonzero coefficient. Build SU(2)
+   links on the exact `CreateUniform4D(1)` edge orientation, traverse each
+   registered `Faces[f]` tuple from `Faces[f][0]`, and freeze the exponential,
+   reversed-link, endpoint-action, multiplication-order, basepoint, logarithm,
+   norm, and branch guards. Test untraced holonomy conjugation, reversed-loop
+   inversion, basepoint transport, and class-function invariance. These are
+   prerequisites only. The decision-changing test is whether the signed
+   logarithm of each face holonomy agrees through second order with the exact
+   registered `d omega + 0.5[omega,omega]` tensor and leaves a stable
+   third-order remainder on the frozen deterministic directions. Failure
+   records either a control-construction defect or no registered weak-field
+   correspondence; success records only a finite-transport feasibility fact.
+3. **Phase566 — independent coefficient/holonomy adjudicator and Phase555
+   supplement.** Use no Phase564/565 project reference or shared implementation.
+   Run planted chain, coefficient-order, orientation, conjugation, and
+   trace-too-early batteries before reading audited outputs. Reconstruct the
+   decisive additive coefficients directly and repeat finite transport in a
+   different matrix representation, then compare classifications, covariance,
+   orientation, and weak-field order. Materialize an additive review-packet
+   supplement without answering either reserved ruling.
+
+The simple additive sign/endpoint family is excluded from further immediate
+search by the frozen Phase562/563 terminals. Ordinary sampler diagnostics are
+also excluded from this curvature-covariance blocker path because they cannot
+alter a deterministic algebraic residual; the separately governed sampler
+lane remains unallocated. A34 does not source-select the finite link model,
+repair or reinterpret Phase548, open Phase561, register Phases553/554, read
+their protected seeds, answer O4, satisfy Phase458, create a Phase481 pack, or
+authorize production, launch, a physical-unit claim, or a GeV claim. External
+review remains pending and `promotedPhysicalMassClaimCount=0`.
+
+Execution localized a previously unenumerated ordering defect. Phase564's
+commuting null and constant coefficient pass at roundoff, while its dominant
+signed coefficient is the mixed connection/parameter term (`R1`), not the
+quadratic-curvature term (`R2`). Phase565 then showed that exact finite
+transport works on the registered incidence structure, but the registered
+boundary array is ordered `e01, reverse(e02), e12`; a composable face loop is
+`e01, e12, reverse(e02)`. The boundary-array exponential agrees with the
+registered curvature through second order but is not a composable transport
+path. The composable holonomy instead has a second-order signed mismatch equal
+to `[x2,x1]`. Phase566 independently confirmed the coefficient decomposition,
+finite covariance, slopes, and signed mismatch using manual curvature algebra
+and SO(3) matrices. This is a concrete successor-code hypothesis, not license
+to edit the frozen operator: the next legitimate phase must prospectively
+compare a versioned path-ordered curvature with the frozen registered action
+and all downstream identities before any model replacement is considered.
+
+## Amendment A35 — path-ordered-curvature downstream counterfactual (2026-08-11)
+
+EXECUTION PLAN: allocate Phases567-569 as one prospective, deterministic,
+zero-sampling counterfactual branch. A34 showed that the registered additive
+curvature follows the noncomposable registered boundary-array order through
+second order, whereas a composable face loop uses a different wedge-pair
+order. A35 tests only that diagnosed replacement in study-local code. It does
+not edit `CurvatureAssembler`, `EinsteinianShiabOperator`, Phase548, or any
+production configuration, and neither branch is source-selected.
+
+1. **Phase567 — study-local path-ordered curvature candidate and exact
+   controls.** For each face tuple `(v0,v1,v2)`, construct directed edge values
+   `q0=omega(v0->v1)`, `q1=omega(v1->v2)`, and `q2=omega(v2->v0)`, and freeze
+   the BCH2 candidate
+   `q0+q1+q2+0.5*([q0,q1]+[q0,q2]+[q1,q2])`. Require the exact signed
+   correction identity against the registered boundary-array order, exact
+   face-chain composition, a commuting null, analytic linearization and
+   transpose agreement, and finite quaternion holonomy controls. The candidate
+   is a truncated weak-field object: exact finite covariance belongs only to
+   the group holonomy, while the candidate-to-holonomy residual must have the
+   frozen third-order slope. Repeat the chain and differential controls on the
+   periodic extent-three target topology. Success opens only the Phase568
+   workbench comparison.
+2. **Phase568 — downstream action, gradient, and spectrum counterfactual
+   audit.** Exact-bind the Phase567 candidate and compare it with the frozen
+   registered branch at the origin and exactly the six preserved Phase548
+   checkpoint positions. Reconstruct the identical theta-zero SD2/Id0,
+   coefficient-0.5 contraction and mass-matrix functional study-locally.
+   Before scientific comparison, require registered-control reproduction,
+   candidate finite-difference and transpose controls, direct/reverse gradient
+   parity, Hessian symmetry, origin Hessian equivalence, and the exact
+   closed-form origin-null lower bound. Reuse exact-bound Phase550 registered
+   spectra and assemble at most one candidate dense Hessian at a time. The
+   decision is whether shared-threshold negative inertia is removed, uniformly
+   reduced, mixed, or not reduced across all six preserved positions. Any
+   improvement remains workbench evidence and not a sampler or source claim.
+3. **Phase569 — independent preserved-pilot counterfactual adjudicator.** Use
+   no Phase567/568 project reference or shared implementation. Run planted
+   orientation, order, action-scale, gradient-sign, and checkpoint-integrity
+   batteries before reading audited outputs; then independently reconstruct
+   both curvature orders, the downstream objective, and the reverse gradient
+   at the origin and six preserved checkpoints. Compare the independently
+   measured direction and classification with Phases567/568. Static
+   differences cannot establish that a different target would have converged
+   or explain Phase548's failed R-hat/ESS. Roundoff equality may close boundary
+   ordering only at the audited preserved-position scope; material difference
+   leaves its causal role unresolved and may justify only a separately
+   preregistered candidate-sampling pack.
+
+Terminal precedence and numeric tolerances are frozen in each contract before
+its first execution. Phase568 refuses before dense allocation if its bounded
+CPU or memory ceiling is exceeded. The branch reads no Phase554 protected
+seed, constructs no RNG, performs no HMC, replay, quotient, gauge fixing, or
+measure normalization, and does not reinterpret Phase548. It cannot open
+Phase561, answer O4, satisfy Phase458, create a Phase481 pack, authorize
+production or launch, or support a physical-unit or GeV claim. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.
+
+EXECUTION RESULT: all three phases completed. Phase567 passed the exact signed
+correction, composable-chain, periodic-target topology, differential,
+transpose, and finite-transport controls. Its candidate holonomy remainder has
+slope `3.0000294486481653`, while the frozen registered remainder retains slope
+`2.0000161269886476`; the terminal is
+`path-ordered-candidate-local-controls-pass-source-unbound`.
+
+The first Phase568 v1 process was stopped after one checkpoint row when an
+adversarial review found that its program did not machine-enforce every
+authority and resource promise. It emitted no terminal output. The immutable
+v1 contract and explicit stop artifact are retained. V2 repaired those checks
+but was not executed because a second review found that it did not bind its
+own program or the stopped-attempt record. Frozen v3 binds the final program,
+both predecessor contracts, and the stop artifact and machine-checks the full
+firewall and resource arithmetic before dense allocation.
+
+Phase568 v3 reproduced the registered curvature, action, and gradient, passed
+candidate differential/transpose/gradient/polynomiality controls, recovered
+the exact 252-dimensional origin closed-form null lower bound, and matched the
+registered origin Hessian at `2.3768667604747567e-16`. On every preserved
+checkpoint, the candidate increased rather than reduced shared-threshold
+negative inertia: `113->190`, `112->185`, `105->191`, `115->200`, `115->187`,
+and `117->191`. Candidate actions were 23.4%-27.8% above the registered values,
+and gradient scaled differences were 0.601-0.631. The terminal is
+`candidate-does-not-reduce-audited-negative-inertia`.
+
+Phase569 independently reconstructed the incidence-level curvatures,
+contraction, transpose, actions, and full gradients without a Phase567/568
+project reference or shared implementation. All six checkpoint checksums and
+headers passed; action/gradient values agreed with Phase568; the non-null
+counterfactual and spectral classification were confirmed. Its terminal is
+`adjudication-confirms-boundary-ordering-effect-present-sampler-causality-unresolved`.
+
+A35 therefore closes this exact composable BCH2 replacement as a stabilization
+of the Phase550 negative-curvature pattern. It does not establish how a new
+target would sample and cannot retroactively explain Phase548's R-hat/ESS
+failure. Because the candidate is source-unbound and uniformly worsens the
+audited negative inertia, no candidate-sampling pack is justified by A35.
+Further machine work should return to the separately governed registered-target
+sampler-resolution lane; model replacement requires a primary-source lowering.

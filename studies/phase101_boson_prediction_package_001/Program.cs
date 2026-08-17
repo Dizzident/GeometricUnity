@@ -396,6 +396,14 @@ const string Phase556RegisteredActionTransformationMapApplicabilityAuditPath = "
 const string Phase558RegisteredActionTransformationIdentityIndependentAdjudicatorPath = "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator_summary.json";
 const string Phase559BoundedTransformationLawSourceCensusPath = "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json";
 const string Phase560TransformationLawSourceCensusIndependentAdjudicatorPath = "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/transformation_law_source_census_independent_adjudicator_summary.json";
+const string Phase562DiscreteTransformationCandidateCovarianceWardCensusPath = "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/output/discrete_transformation_candidate_covariance_ward_census_summary.json";
+const string Phase563DiscreteTransformationCandidateCensusIndependentAdjudicatorPath = "studies/phase563_discrete_transformation_candidate_census_independent_adjudicator_001/output/discrete_transformation_candidate_census_independent_adjudicator_summary.json";
+const string Phase564AdditiveCurvatureResidualPowerDecompositionPath = "studies/phase564_additive_curvature_residual_power_decomposition_001/output/additive_curvature_residual_power_decomposition_summary.json";
+const string Phase565RegisteredFiniteTransportBchControlPath = "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json";
+const string Phase566IndependentFiniteTransportAdjudicatorPath = "studies/phase566_independent_finite_transport_adjudicator_001/output/independent_finite_transport_adjudicator_summary.json";
+const string Phase567PathOrderedCurvatureCandidatePath = "studies/phase567_path_ordered_curvature_candidate_001/output/path_ordered_curvature_candidate_summary.json";
+const string Phase568PathOrderedCurvatureDownstreamCounterfactualAuditPath = "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/output/path_ordered_curvature_downstream_counterfactual_audit_summary.json";
+const string Phase569IndependentPathOrderedCounterfactualAdjudicatorPath = "studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/output/independent_path_ordered_counterfactual_adjudicator_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -832,6 +840,14 @@ using var phase556 = TryParseJson(Phase556RegisteredActionTransformationMapAppli
 using var phase558 = TryParseJson(Phase558RegisteredActionTransformationIdentityIndependentAdjudicatorPath);
 using var phase559 = TryParseJson(Phase559BoundedTransformationLawSourceCensusPath);
 using var phase560 = TryParseJson(Phase560TransformationLawSourceCensusIndependentAdjudicatorPath);
+using var phase562 = TryParseJson(Phase562DiscreteTransformationCandidateCovarianceWardCensusPath);
+using var phase563 = TryParseJson(Phase563DiscreteTransformationCandidateCensusIndependentAdjudicatorPath);
+using var phase564 = TryParseJson(Phase564AdditiveCurvatureResidualPowerDecompositionPath);
+using var phase565 = TryParseJson(Phase565RegisteredFiniteTransportBchControlPath);
+using var phase566 = TryParseJson(Phase566IndependentFiniteTransportAdjudicatorPath);
+using var phase567 = TryParseJson(Phase567PathOrderedCurvatureCandidatePath);
+using var phase568 = TryParseJson(Phase568PathOrderedCurvatureDownstreamCounterfactualAuditPath);
+using var phase569 = TryParseJson(Phase569IndependentPathOrderedCounterfactualAdjudicatorPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -9818,6 +9834,139 @@ var package = new
                 ? JsonBool(p560Branch, "phase561PresenceExactlyMatchesGate") : null,
             o4Discharged = JsonBool(phase560.RootElement, "o4Discharged"),
             promotedPhysicalMassClaimCount = JsonInt(phase560.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        discreteTransformationCandidateCovarianceWardCensus = phase562 is null ? null : new
+        {
+            status = JsonString(phase562.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase562.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase562.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase562.RootElement, "verdictKind"),
+            candidateCount = phase562.RootElement.TryGetProperty("census", out var p562Census) ? JsonInt(p562Census, "candidateCount") : null,
+            survivorCount = p562Census.ValueKind == JsonValueKind.Object ? JsonInt(p562Census, "survivorCount") : null,
+            earliestUniversalFailure = p562Census.ValueKind == JsonValueKind.Object ? JsonString(p562Census, "earliestUniversalFailure") : null,
+            phase561GateOpen = JsonBool(phase562.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase562.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        discreteTransformationCandidateCensusIndependentAdjudicator = phase563 is null ? null : new
+        {
+            status = JsonString(phase563.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase563.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase563.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase563.RootElement, "verdictKind"),
+            adjudicationPassed = phase563.RootElement.TryGetProperty("comparison", out var p563Comparison) ? JsonBool(p563Comparison, "adjudicationPassed") : null,
+            survivorCount = phase563.RootElement.TryGetProperty("independentCensus", out var p563Census) ? JsonInt(p563Census, "survivorCount") : null,
+            earliestUniversalFailure = p563Census.ValueKind == JsonValueKind.Object ? JsonString(p563Census, "earliestUniversalFailure") : null,
+            supplementMaterialized = JsonBool(phase563.RootElement, "supplementMaterialized"),
+            phase561GateOpen = JsonBool(phase563.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase563.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        additiveCurvatureResidualPowerDecomposition = phase564 is null ? null : new
+        {
+            status = JsonString(phase564.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase564.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase564.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase564.RootElement, "verdictKind"),
+            globalR0Norm = phase564.RootElement.TryGetProperty("decomposition", out var p564Decomposition) ? JsonDouble(p564Decomposition, "globalR0Norm") : null,
+            globalR1Norm = p564Decomposition.ValueKind == JsonValueKind.Object ? JsonDouble(p564Decomposition, "globalR1Norm") : null,
+            globalR2Norm = p564Decomposition.ValueKind == JsonValueKind.Object ? JsonDouble(p564Decomposition, "globalR2Norm") : null,
+            commutingNullPassed = phase564.RootElement.TryGetProperty("commutingControl", out var p564Commuting) ? JsonBool(p564Commuting, "passed") : null,
+            phase565GateOpen = JsonBool(phase564.RootElement, "phase565GateOpen"),
+            phase561GateOpen = JsonBool(phase564.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase564.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        registeredFiniteTransportBchControl = phase565 is null ? null : new
+        {
+            status = JsonString(phase565.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase565.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase565.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase565.RootElement, "verdictKind"),
+            finiteControlsPassed = phase565.RootElement.TryGetProperty("exactFiniteControls", out var p565Finite) ? JsonBool(p565Finite, "passed") : null,
+            continuousLoopSlope = phase565.RootElement.TryGetProperty("weakFieldComparison", out var p565Weak) ? JsonDouble(p565Weak, "continuousLoopSlope") : null,
+            registeredBoundaryArrayProductSlope = p565Weak.ValueKind == JsonValueKind.Object ? JsonDouble(p565Weak, "registeredBoundaryArrayProductSlope") : null,
+            secondOrderMismatchLocalized = p565Weak.ValueKind == JsonValueKind.Object ? JsonBool(p565Weak, "secondOrderMismatchLocalized") : null,
+            phase561GateOpen = JsonBool(phase565.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase565.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        independentFiniteTransportAdjudicator = phase566 is null ? null : new
+        {
+            status = JsonString(phase566.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase566.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase566.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase566.RootElement, "verdictKind"),
+            phase564Agrees = phase566.RootElement.TryGetProperty("additiveReconstruction", out var p566Additive) ? JsonBool(p566Additive, "agrees") : null,
+            phase565Agrees = phase566.RootElement.TryGetProperty("finiteTransportReconstruction", out var p566Finite) ? JsonBool(p566Finite, "agrees") : null,
+            supplementMaterialized = JsonBool(phase566.RootElement, "supplementMaterialized"),
+            phase561GateOpen = JsonBool(phase566.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase566.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        pathOrderedCurvatureCandidate = phase567 is null ? null : new
+        {
+            status = JsonString(phase567.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase567.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase567.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase567.RootElement, "verdictKind"),
+            candidateId = phase567.RootElement.TryGetProperty("candidateSpecification", out var p567Candidate)
+                ? JsonString(p567Candidate, "candidateId") : null,
+            pathControlsPassed = phase567.RootElement.TryGetProperty("topologyAndDifferentialControls", out var p567Topology)
+                ? JsonBool(p567Topology, "pathControlsPassed") : null,
+            differentialControlsPassed = p567Topology.ValueKind == JsonValueKind.Object
+                ? JsonBool(p567Topology, "differentialControlsPassed") : null,
+            finiteTransportControlsPassed = phase567.RootElement.TryGetProperty("finiteTransportControls", out var p567Finite)
+                ? JsonBool(p567Finite, "passed") : null,
+            weakFieldCorrespondencePassed = phase567.RootElement.TryGetProperty("weakFieldCorrespondence", out var p567Weak)
+                ? JsonBool(p567Weak, "passed") : null,
+            phase568EvaluationGateOpen = JsonBool(phase567.RootElement, "phase568EvaluationGateOpen"),
+            phase561GateOpen = JsonBool(phase567.RootElement, "phase561GateOpen"),
+            promotedPhysicalMassClaimCount = JsonInt(phase567.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        pathOrderedCurvatureDownstreamCounterfactualAudit = phase568 is null ? null : new
+        {
+            status = JsonString(phase568.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase568.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase568.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase568.RootElement, "verdictKind"),
+            candidateDefinitionValid = JsonBool(phase568.RootElement, "candidateDefinitionValid"),
+            candidateDifferentialPassed = phase568.RootElement.TryGetProperty("implementationControls", out var p568Implementation)
+                ? JsonBool(p568Implementation, "candidateDifferentialPassed") : null,
+            candidateAdjointPassed = p568Implementation.ValueKind == JsonValueKind.Object
+                ? JsonBool(p568Implementation, "candidateAdjointPassed") : null,
+            candidateGradientPassed = p568Implementation.ValueKind == JsonValueKind.Object
+                ? JsonBool(p568Implementation, "candidateGradientPassed") : null,
+            candidatePolynomialityPassed = p568Implementation.ValueKind == JsonValueKind.Object
+                ? JsonBool(p568Implementation, "candidatePolynomialityPassed") : null,
+            originEquivalencePassed = phase568.RootElement.TryGetProperty("originEquivalence", out var p568Origin)
+                ? JsonBool(p568Origin, "passed") : null,
+            checkpointCount = phase568.RootElement.TryGetProperty("counterfactual", out var p568Counterfactual)
+                ? JsonInt(p568Counterfactual, "checkpointCount") : null,
+            uniformlyNonDecreasing = p568Counterfactual.ValueKind == JsonValueKind.Object
+                ? JsonBool(p568Counterfactual, "uniformlyNonDecreasing") : null,
+            candidateSourceSelected = JsonBool(phase568.RootElement, "candidateSourceSelected"),
+            phase561Opened = JsonBool(phase568.RootElement, "phase561Opened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase568.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        independentPathOrderedCounterfactualAdjudicator = phase569 is null ? null : new
+        {
+            status = JsonString(phase569.RootElement, "terminalStatus"),
+            contractValid = JsonBool(phase569.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase569.RootElement, "exactBindingsValid"),
+            verdictKind = JsonString(phase569.RootElement, "verdictKind"),
+            projectIndependent = phase569.RootElement.TryGetProperty("independence", out var p569Independence)
+                ? JsonBool(p569Independence, "projectIndependent") : null,
+            knownAnswerBatteryPassed = phase569.RootElement.TryGetProperty("knownAnswerBattery", out var p569Battery)
+                ? JsonBool(p569Battery, "passed") : null,
+            upstreamCandidateGateOpen = phase569.RootElement.TryGetProperty("upstreamGate", out var p569Upstream)
+                ? JsonBool(p569Upstream, "upstreamCandidateGateOpen") : null,
+            everyPreservedPositionCompared = phase569.RootElement.TryGetProperty("counterfactual", out var p569Counterfactual)
+                ? JsonBool(p569Counterfactual, "everyPreservedPositionCompared") : null,
+            upstreamActionAndGradientAgreement = p569Counterfactual.ValueKind == JsonValueKind.Object
+                ? JsonBool(p569Counterfactual, "upstreamActionAndGradientAgreement") : null,
+            counterfactualNull = p569Counterfactual.ValueKind == JsonValueKind.Object
+                ? JsonBool(p569Counterfactual, "counterfactualNull") : null,
+            spectraClassificationConclusive = phase569.RootElement.TryGetProperty("spectraAdjudication", out var p569Spectra)
+                ? JsonBool(p569Spectra, "classificationConclusive") : null,
+            samplingPerformed = JsonBool(phase569.RootElement, "samplingPerformed"),
+            phase561Opened = JsonBool(phase569.RootElement, "phase561Opened"),
+            promotedPhysicalMassClaimCount = JsonInt(phase569.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

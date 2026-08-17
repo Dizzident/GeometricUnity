@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "phase": 566,
+  "phaseId": "phase566-independent-finite-transport-adjudicator",
+  "contractId": "phase566-a34-independent-finite-transport-adjudicator-v1",
+  "contractSha256": "78aff1cff63286022408c42dcf56a3fada690c5f4ac56a74e23328b12528c4ea",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase564-summary",
+      "path": "studies/phase564_additive_curvature_residual_power_decomposition_001/output/additive_curvature_residual_power_decomposition_summary.json",
+      "expectedSha256": "8ed45a206dbb824f345f08816e7a789097567143d6b8c96b4fb9924770c24af3",
+      "actualSha256": "8ed45a206dbb824f345f08816e7a789097567143d6b8c96b4fb9924770c24af3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-summary",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json",
+      "expectedSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "actualSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-contract",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/preregistration/phase565_registered_finite_transport_bch_control_contract_v1.json",
+      "expectedSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "actualSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-program",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/Program.cs",
+      "expectedSha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "actualSha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase562-summary",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/output/discrete_transformation_candidate_covariance_ward_census_summary.json",
+      "expectedSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "actualSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-summary",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+      "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "expectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    }
+  ],
+  "independentImplementation": {
+    "phase564ProjectReference": false,
+    "phase565ProjectReference": false,
+    "sharedPhase564Or565Code": false,
+    "manualCurvatureReconstruction": true,
+    "finiteRepresentation": "so3-adjoint-3x3-matrices"
+  },
+  "independentKnownAnswerBattery": {
+    "ranBeforeAuditedOutputsRead": true,
+    "plantedExpLogError": 0,
+    "plantedTraceError": 4.440892098500626E-16,
+    "plantedInverseError": 1.9724042404289787E-16,
+    "plantedPolynomialError": 0,
+    "passed": true
+  },
+  "additiveReconstruction": {
+    "globalR0Norm": 4.762629517401146E-16,
+    "globalR1Norm": 0.13852467037511326,
+    "globalR2Norm": 0.002976165391536086,
+    "independentCommutingResidual": 2.1544120232613906E-16,
+    "classification": "leading-mixed-transport-order-localized",
+    "auditedR0": 4.762629517401146E-16,
+    "auditedR1": 0.13852467037511315,
+    "auditedR2": 0.002976165391536094,
+    "coefficientDeviation": 1.1102230246251565E-16,
+    "agreementTolerance": 1E-12,
+    "agrees": true
+  },
+  "finiteTransportReconstruction": {
+    "maxMatrixCovariance": 7.029205696467741E-16,
+    "maxMatrixReverse": 3.690193546825559E-16,
+    "maxMatrixBasepoint": 5.989194037114866E-16,
+    "maxMatrixTrace": 1.3322676295501878E-15,
+    "matrixTolerance": 2E-13,
+    "matrixControlsPassed": true,
+    "continuousSlope": 2.000016126988653,
+    "arraySlope": 3.00000279987033,
+    "coefficientRelativeError": 0.00036853543301415244,
+    "coefficientTolerance": 0.003,
+    "independentMismatch": true,
+    "auditedMismatch": true,
+    "agrees": true
+  },
+  "supplementMaterialized": true,
+  "verdictKind": "adjudication-confirms-boundary-order-second-order-mismatch",
+  "terminalStatus": "independent-finite-transport-adjudicator-adjudication-confirms-boundary-order-second-order-mismatch",
+  "decision": "The independent matrix reconstruction confirms that registered boundary ordering disagrees at second order with a composable face holonomy.",
+  "phase561GateOpen": false,
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "phases562Or563MutatedOrReinterpreted": false,
+  "registeredOperatorMutated": false,
+  "sourceIdentificationAuthoredOrInferred": false,
+  "rulingAuthoredOrInferred": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

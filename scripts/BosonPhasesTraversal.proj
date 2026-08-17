@@ -416,6 +416,14 @@
     <PhaseProject Include="../studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj" />
     <PhaseProject Include="../studies/phase559_bounded_transformation_law_source_census_001/Phase559BoundedTransformationLawSourceCensus.csproj" />
     <PhaseProject Include="../studies/phase560_transformation_law_source_census_independent_adjudicator_001/Phase560TransformationLawSourceCensusIndependentAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/Phase562DiscreteTransformationCandidateCovarianceWardCensus.csproj" />
+    <PhaseProject Include="../studies/phase563_discrete_transformation_candidate_census_independent_adjudicator_001/Phase563DiscreteTransformationCandidateCensusIndependentAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase564_additive_curvature_residual_power_decomposition_001/Phase564AdditiveCurvatureResidualPowerDecomposition.csproj" />
+    <PhaseProject Include="../studies/phase565_registered_finite_transport_bch_control_001/Phase565RegisteredFiniteTransportBchControl.csproj" />
+    <PhaseProject Include="../studies/phase566_independent_finite_transport_adjudicator_001/Phase566IndependentFiniteTransportAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase567_path_ordered_curvature_candidate_001/Phase567PathOrderedCurvatureCandidate.csproj" />
+    <PhaseProject Include="../studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Phase568PathOrderedCurvatureDownstreamCounterfactualAudit.csproj" />
+    <PhaseProject Include="../studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Phase569IndependentPathOrderedCounterfactualAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

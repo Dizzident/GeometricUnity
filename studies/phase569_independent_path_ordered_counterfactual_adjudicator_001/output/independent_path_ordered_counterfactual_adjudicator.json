@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "phase": 569,
+  "phaseId": "phase569-independent-path-ordered-counterfactual-adjudicator",
+  "contractId": "phase569-a35-independent-path-ordered-counterfactual-adjudicator-v1",
+  "contractSha256": "e877d580d67e7a6f4e2390144cf08469a45c094049f9d55aaaae09e1d49e0a9f",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "Id": "phase569-program",
+      "Path": "studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Program.cs",
+      "ExpectedSha256": "b1e3b354529db88ef35be7c90653a9be19eb2a329e9b95b073e355ab985a0922",
+      "ActualSha256": "b1e3b354529db88ef35be7c90653a9be19eb2a329e9b95b073e355ab985a0922",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase565-contract",
+      "Path": "studies/phase565_registered_finite_transport_bch_control_001/preregistration/phase565_registered_finite_transport_bch_control_contract_v1.json",
+      "ExpectedSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "ActualSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase565-summary",
+      "Path": "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json",
+      "ExpectedSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "ActualSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase566-contract",
+      "Path": "studies/phase566_independent_finite_transport_adjudicator_001/preregistration/phase566_independent_finite_transport_adjudicator_contract_v1.json",
+      "ExpectedSha256": "78aff1cff63286022408c42dcf56a3fada690c5f4ac56a74e23328b12528c4ea",
+      "ActualSha256": "78aff1cff63286022408c42dcf56a3fada690c5f4ac56a74e23328b12528c4ea",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase566-summary",
+      "Path": "studies/phase566_independent_finite_transport_adjudicator_001/output/independent_finite_transport_adjudicator_summary.json",
+      "ExpectedSha256": "a9b1bc0ceb8d334b0561725521d7e4b94362454675c52f0a0044d37fd28b27cd",
+      "ActualSha256": "a9b1bc0ceb8d334b0561725521d7e4b94362454675c52f0a0044d37fd28b27cd",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase567-contract",
+      "Path": "studies/phase567_path_ordered_curvature_candidate_001/preregistration/phase567_path_ordered_curvature_candidate_contract_v1.json",
+      "ExpectedSha256": "78ab85813e59a589d256dbf1b86df5944cbfeccc32a16de715e49eb7e990d17e",
+      "ActualSha256": "78ab85813e59a589d256dbf1b86df5944cbfeccc32a16de715e49eb7e990d17e",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase567-summary",
+      "Path": "studies/phase567_path_ordered_curvature_candidate_001/output/path_ordered_curvature_candidate_summary.json",
+      "ExpectedSha256": "dadc8b42ea11c7854fee2096d3d6a33794bfa68e1e931f8f1d1b38fd64394f93",
+      "ActualSha256": "dadc8b42ea11c7854fee2096d3d6a33794bfa68e1e931f8f1d1b38fd64394f93",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase568-contract-v3",
+      "Path": "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/preregistration/phase568_path_ordered_curvature_downstream_counterfactual_audit_contract_v3.json",
+      "ExpectedSha256": "d4483a78653ac2a8612b9f8ae7b06a5ae73e4981ea4883c27ebab901b4e9fdc6",
+      "ActualSha256": "d4483a78653ac2a8612b9f8ae7b06a5ae73e4981ea4883c27ebab901b4e9fdc6",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase568-program-v3",
+      "Path": "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Program.cs",
+      "ExpectedSha256": "27ecb772ebd90db77544c9c0f2070762713e1bd854f9a74440b583915e829002",
+      "ActualSha256": "27ecb772ebd90db77544c9c0f2070762713e1bd854f9a74440b583915e829002",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase568-summary",
+      "Path": "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/output/path_ordered_curvature_downstream_counterfactual_audit_summary.json",
+      "ExpectedSha256": "4b61e4d51a672ac444c0979187bab5637f5665ab2d37e8698ac575d407912c03",
+      "ActualSha256": "4b61e4d51a672ac444c0979187bab5637f5665ab2d37e8698ac575d407912c03",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase568-spectra",
+      "Path": "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/output/spectra/path_ordered_curvature_downstream_counterfactual_spectra.json",
+      "ExpectedSha256": "c3249cc7d8111122e02fbc48d03c2b99732ca4b5b10089df0591525932cf6167",
+      "ActualSha256": "c3249cc7d8111122e02fbc48d03c2b99732ca4b5b10089df0591525932cf6167",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase568-v1-stop-artifact",
+      "Path": "studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/output/attempts/v1_integrity_review_stop.json",
+      "ExpectedSha256": "ea97744634ea2d99c32eee52759898e5c8da3e40ee7bae195625ebb90e8de14f",
+      "ActualSha256": "ea97744634ea2d99c32eee52759898e5c8da3e40ee7bae195625ebb90e8de14f",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase548-program",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "ExpectedSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "ActualSha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase548-contract",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "ExpectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "ActualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase548-summary",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "ExpectedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "ActualSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase549-contract",
+      "Path": "studies/phase549_bounded_pilot_independent_result_adjudicator_001/preregistration/phase549_independent_result_adjudicator_contract_v1.json",
+      "ExpectedSha256": "a49dd0717ac7384a39f2714b904dbbda9cb9ee49e53648f4bd42be4c7c69d382",
+      "ActualSha256": "a49dd0717ac7384a39f2714b904dbbda9cb9ee49e53648f4bd42be4c7c69d382",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase549-summary",
+      "Path": "studies/phase549_bounded_pilot_independent_result_adjudicator_001/output/bounded_pilot_independent_result_adjudicator_summary.json",
+      "ExpectedSha256": "76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee",
+      "ActualSha256": "76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase550-contract",
+      "Path": "studies/phase550_complete_lattice_flat_sector_census_001/preregistration/phase550_complete_lattice_flat_sector_census_contract_v1.json",
+      "ExpectedSha256": "d1ac66cc31c1b509afa1cc057f4c98e105b521e04daa83af116cb03d9f2c9a99",
+      "ActualSha256": "d1ac66cc31c1b509afa1cc057f4c98e105b521e04daa83af116cb03d9f2c9a99",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase550-summary",
+      "Path": "studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json",
+      "ExpectedSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "ActualSha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase551-contract",
+      "Path": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/preregistration/phase551_flat_sector_independent_spectral_adjudicator_repair_contract_v2.json",
+      "ExpectedSha256": "f3874567af9ec5a589988d365ae79fc9d103f35dccafc382683174ff49688473",
+      "ActualSha256": "f3874567af9ec5a589988d365ae79fc9d103f35dccafc382683174ff49688473",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase551-summary",
+      "Path": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json",
+      "ExpectedSha256": "9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0",
+      "ActualSha256": "9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase552-contract",
+      "Path": "studies/phase552_committed_chain_stationarity_reanalysis_001/preregistration/phase552_committed_chain_stationarity_reanalysis_contract_v1.json",
+      "ExpectedSha256": "c0cf13b28fdff978dd4797ed37f690506fa210fe0426929be28f8e81c078381a",
+      "ActualSha256": "c0cf13b28fdff978dd4797ed37f690506fa210fe0426929be28f8e81c078381a",
+      "HashMatches": true
+    },
+    {
+      "Id": "phase552-summary",
+      "Path": "studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json",
+      "ExpectedSha256": "0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8",
+      "ActualSha256": "0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-a-546101",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "ExpectedSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "ActualSha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-a-546103",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "ExpectedSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "ActualSha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-a-546107",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "ExpectedSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "ActualSha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-b-546201",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "ExpectedSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "ActualSha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-b-546203",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "ExpectedSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "ActualSha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974",
+      "HashMatches": true
+    },
+    {
+      "Id": "checkpoint-b-546207",
+      "Path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "ExpectedSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "ActualSha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab",
+      "HashMatches": true
+    },
+    {
+      "Id": "mesh-generator-source",
+      "Path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "ExpectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "ActualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "HashMatches": true
+    },
+    {
+      "Id": "mesh-topology-source",
+      "Path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "ExpectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "ActualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "HashMatches": true
+    },
+    {
+      "Id": "curvature-source",
+      "Path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "ExpectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "ActualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "HashMatches": true
+    },
+    {
+      "Id": "shiab-source",
+      "Path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "ExpectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "ActualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "HashMatches": true
+    },
+    {
+      "Id": "lambda2-source",
+      "Path": "src/Gu.ReferenceCpu/Lambda2Algebra.cs",
+      "ExpectedSha256": "ddd48fd984717aa8c9731272df969ab713b2997490bc2001d76231f164d0133d",
+      "ActualSha256": "ddd48fd984717aa8c9731272df969ab713b2997490bc2001d76231f164d0133d",
+      "HashMatches": true
+    },
+    {
+      "Id": "mass-matrix-source",
+      "Path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "ExpectedSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "ActualSha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16",
+      "HashMatches": true
+    }
+  ],
+  "independence": {
+    "referencesPhase567Project": false,
+    "referencesPhase568Project": false,
+    "sharesPhase567Or568Implementation": false,
+    "projectIndependent": true,
+    "curvatureReconstructedFromIncidence": true,
+    "contractionAndTransposeReconstructed": true,
+    "fullGradientsReconstructed": true,
+    "denseSpectraRecomputed": false
+  },
+  "knownAnswerBattery": {
+    "auditedNumericDataParsedBeforeBattery": false,
+    "checksumControl": {
+      "tamperDetected": true,
+      "passed": true
+    },
+    "orderControl": {
+      "orderIdentityError": 6.518499014193635E-17,
+      "commutingError": 0,
+      "wrongOrderError": 0.1562015044741887,
+      "predictedDifference": "candidate-minus-registered-equals-bracket-x2-x1",
+      "passed": true
+    },
+    "derivativeControl": {
+      "adjointError": 6.322147055164459E-15,
+      "directionalFiniteDifference": 0.007657270498229174,
+      "directionalAnalytic": 0.0076572711204993095,
+      "directionalGradientError": 6.222701355931837E-10,
+      "wrongGradientSignError": 0.015314541618728483,
+      "passed": true
+    },
+    "polynomialControl": {
+      "polynomialA2": 0.4075176886645584,
+      "polynomialA3": 1.0874458992190852E-17,
+      "polynomialA4": 0.00011861483970033398,
+      "polynomialError": 2.4424906541753444E-15,
+      "passed": true
+    },
+    "passed": true
+  },
+  "upstreamGate": {
+    "phase567Verdict": "path-ordered-candidate-local-controls-pass-source-unbound",
+    "phase567GateOpen": true,
+    "phase568Verdict": "candidate-does-not-reduce-audited-negative-inertia",
+    "upstreamCandidateGateOpen": true
+  },
+  "checkpointAudit": {
+    "rows": [
+      {
+        "bindingId": "checkpoint-a-546101",
+        "chainId": "complete-lattice-pilot-a-546101",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      },
+      {
+        "bindingId": "checkpoint-a-546103",
+        "chainId": "complete-lattice-pilot-a-546103",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      },
+      {
+        "bindingId": "checkpoint-a-546107",
+        "chainId": "complete-lattice-pilot-a-546107",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      },
+      {
+        "bindingId": "checkpoint-b-546201",
+        "chainId": "complete-lattice-pilot-b-546201",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      },
+      {
+        "bindingId": "checkpoint-b-546203",
+        "chainId": "complete-lattice-pilot-b-546203",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      },
+      {
+        "bindingId": "checkpoint-b-546207",
+        "chainId": "complete-lattice-pilot-b-546207",
+        "checksumOk": true,
+        "headerOk": true,
+        "expectedChain": true,
+        "positionLength": 3645,
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "rngStateUsed": false
+  },
+  "counterfactual": {
+    "rows": [
+      {
+        "Id": "origin",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 0,
+        "CandidateCurvatureNormSquared": 0,
+        "CurvatureScaledDifference": 0,
+        "RegisteredAction": 0,
+        "CandidateAction": 0,
+        "ActionScaledDifference": 0,
+        "RegisteredGradientNormSquared": 0,
+        "CandidateGradientNormSquared": 0,
+        "GradientCosine": 1,
+        "GradientScaledDifference": 0
+      },
+      {
+        "Id": "complete-lattice-pilot-a-546101",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 19853.317734730656,
+        "CandidateCurvatureNormSquared": 21875.34807485027,
+        "CurvatureScaledDifference": 0.576814699046511,
+        "RegisteredAction": 1239.3536478367396,
+        "CandidateAction": 1661.1214310264315,
+        "ActionScaledDifference": 0.253905449241646,
+        "RegisteredGradientNormSquared": 9560.373204296946,
+        "CandidateGradientNormSquared": 19136.152994452736,
+        "GradientCosine": 0.7955359445104673,
+        "GradientScaledDifference": 0.612366484487127
+      },
+      {
+        "Id": "complete-lattice-pilot-a-546103",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 19937.07111307647,
+        "CandidateCurvatureNormSquared": 22463.34091207847,
+        "CurvatureScaledDifference": 0.599764818579804,
+        "RegisteredAction": 1253.440196389877,
+        "CandidateAction": 1705.5918332967217,
+        "ActionScaledDifference": 0.26509955552078673,
+        "RegisteredGradientNormSquared": 9535.924535783553,
+        "CandidateGradientNormSquared": 19553.565250264135,
+        "GradientCosine": 0.7796932889248255,
+        "GradientScaledDifference": 0.63142405610229
+      },
+      {
+        "Id": "complete-lattice-pilot-a-546107",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 20482.71563492765,
+        "CandidateCurvatureNormSquared": 22934.274908135114,
+        "CurvatureScaledDifference": 0.5849115283111259,
+        "RegisteredAction": 1247.6234552441683,
+        "CandidateAction": 1728.0633575946374,
+        "ActionScaledDifference": 0.27802215713850514,
+        "RegisteredGradientNormSquared": 9210.575085152877,
+        "CandidateGradientNormSquared": 19645.559787461658,
+        "GradientCosine": 0.791414655501174,
+        "GradientScaledDifference": 0.6205217263833827
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546201",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 21232.963196203335,
+        "CandidateCurvatureNormSquared": 23408.51386451202,
+        "CurvatureScaledDifference": 0.5921905366506185,
+        "RegisteredAction": 1326.1570772655236,
+        "CandidateAction": 1800.092978950727,
+        "ActionScaledDifference": 0.26328412322426825,
+        "RegisteredGradientNormSquared": 10360.823932368741,
+        "CandidateGradientNormSquared": 20912.5113519567,
+        "GradientCosine": 0.7847786346496745,
+        "GradientScaledDifference": 0.6250346254722591
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546203",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 20183.75568012358,
+        "CandidateCurvatureNormSquared": 22632.498490487123,
+        "CurvatureScaledDifference": 0.5984724665511255,
+        "RegisteredAction": 1271.4028926972862,
+        "CandidateAction": 1711.1787377299884,
+        "ActionScaledDifference": 0.2570017002525984,
+        "RegisteredGradientNormSquared": 10025.647222462252,
+        "CandidateGradientNormSquared": 19700.865588622357,
+        "GradientCosine": 0.7952220913153936,
+        "GradientScaledDifference": 0.6118185484267114
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546207",
+        "Finite": true,
+        "RegisteredCurvatureNormSquared": 20769.58793606592,
+        "CandidateCurvatureNormSquared": 22849.820011047475,
+        "CurvatureScaledDifference": 0.5984647414222524,
+        "RegisteredAction": 1302.5658883508747,
+        "CandidateAction": 1700.8938846211474,
+        "ActionScaledDifference": 0.23418744689001877,
+        "RegisteredGradientNormSquared": 10147.839508092653,
+        "CandidateGradientNormSquared": 18922.578092971347,
+        "GradientCosine": 0.8019238656471883,
+        "GradientScaledDifference": 0.6014680458979568
+      }
+    ],
+    "everyPreservedPositionCompared": true,
+    "upstreamActionAndGradientAgreement": true,
+    "counterfactualNull": false,
+    "nonNullEstablishesSamplerCausality": false
+  },
+  "spectraAdjudication": {
+    "rows": [
+      {
+        "Id": "complete-lattice-pilot-a-546101",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 113,
+        "candidateNegativeInertiaCount": 190,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      },
+      {
+        "Id": "complete-lattice-pilot-a-546103",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 112,
+        "candidateNegativeInertiaCount": 185,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      },
+      {
+        "Id": "complete-lattice-pilot-a-546107",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 105,
+        "candidateNegativeInertiaCount": 191,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546201",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 115,
+        "candidateNegativeInertiaCount": 200,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546203",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 115,
+        "candidateNegativeInertiaCount": 187,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      },
+      {
+        "Id": "complete-lattice-pilot-b-546207",
+        "upstreamRowFound": true,
+        "registeredNegativeInertiaCount": 117,
+        "candidateNegativeInertiaCount": 191,
+        "candidateHessianSymmetric": true,
+        "candidateSpectrumValidated": true,
+        "independentlyRecomputedDenseSpectrum": false,
+        "numericActionAndGradientAgreement": true
+      }
+    ],
+    "denseEigensolveRepeated": false,
+    "phase568SpectraAdjudicatedOnly": true,
+    "classificationConclusive": true
+  },
+  "resource": {
+    "checkpointCount": 6,
+    "denseSpectrumRecomputationCount": 0,
+    "hmcTrajectoryCount": 0,
+    "samplingCount": 0,
+    "withinFrozenResourceRule": true
+  },
+  "verdictKind": "adjudication-confirms-boundary-ordering-effect-present-sampler-causality-unresolved",
+  "terminalStatus": "independent-path-ordered-counterfactual-adjudicator-adjudication-confirms-boundary-ordering-effect-present-sampler-causality-unresolved",
+  "decision": "The independent reconstruction confirms a non-null ordering-dependent curvature, action, or gradient counterfactual on the preserved positions and agrees with the downstream audit. Because those positions were generated under the frozen target, sampler causality remains unresolved and requires a separate prospective pack.",
+  "scope": {
+    "preservedPositionsWereGeneratedUnderRegisteredTarget": true,
+    "establishesCandidateConvergence": false,
+    "explainsPhase548DiagnosticFailure": false,
+    "changesPhase548Or549Terminal": false,
+    "workbenchModelCandidateOnly": true,
+    "workbenchRelativeLatticeUnitsOnly": true
+  },
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "trajectoryReplayPerformed": false,
+  "registeredBlindSeedTouched": false,
+  "checkpointMutated": false,
+  "frozenOperatorMutated": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "phase548Or549Reinterpreted": false,
+  "phase561Opened": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

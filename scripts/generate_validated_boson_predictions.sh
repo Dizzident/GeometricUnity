@@ -430,6 +430,14 @@ dotnet run --no-build -c Release --project studies/phase556_registered_action_tr
 dotnet run --no-build -c Release --project studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase559_bounded_transformation_law_source_census_001/Phase559BoundedTransformationLawSourceCensus.csproj
 dotnet run --no-build -c Release --project studies/phase560_transformation_law_source_census_independent_adjudicator_001/Phase560TransformationLawSourceCensusIndependentAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/Phase562DiscreteTransformationCandidateCovarianceWardCensus.csproj
+dotnet run --no-build -c Release --project studies/phase563_discrete_transformation_candidate_census_independent_adjudicator_001/Phase563DiscreteTransformationCandidateCensusIndependentAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase564_additive_curvature_residual_power_decomposition_001/Phase564AdditiveCurvatureResidualPowerDecomposition.csproj
+dotnet run --no-build -c Release --project studies/phase565_registered_finite_transport_bch_control_001/Phase565RegisteredFiniteTransportBchControl.csproj
+dotnet run --no-build -c Release --project studies/phase566_independent_finite_transport_adjudicator_001/Phase566IndependentFiniteTransportAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase567_path_ordered_curvature_candidate_001/Phase567PathOrderedCurvatureCandidate.csproj
+dotnet run --no-build -c Release --project studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Phase568PathOrderedCurvatureDownstreamCounterfactualAudit.csproj
+dotnet run --no-build -c Release --project studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Phase569IndependentPathOrderedCounterfactualAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

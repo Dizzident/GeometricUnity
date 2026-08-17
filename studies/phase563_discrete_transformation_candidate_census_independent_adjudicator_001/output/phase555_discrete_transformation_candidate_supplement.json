@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "supplementId": "phase563-a33-phase555-discrete-transformation-candidate-supplement-v1",
+  "artifactKind": "additive-evidence-supplement",
+  "materialized": true,
+  "parentPacket": {
+    "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+    "sha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+    "byteImmutable": true
+  },
+  "upstreamSupplement": {
+    "path": "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/phase555_source_census_supplement.json",
+    "sha256": "f5bdf08b3c854939ace4db6c3f48458e4b556a2af6a5749de7ef71e02fd9474a",
+    "byteImmutable": true
+  },
+  "candidateCount": 48,
+  "survivorCount": 0,
+  "survivors": [],
+  "bestResidual": 0.13852638546139323,
+  "tiedBest": [
+    "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+    "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+    "d-1-b-1-tail-t\u002B1-c-1",
+    "d-1-b-1-tail-t-1-c-1"
+  ],
+  "earliestUniversalFailure": "curvature-covariance",
+  "adjudicationPassed": true,
+  "machineCompatibilityIsNotSourceIdentification": true,
+  "phase561SourceGateSatisfied": false,
+  "answersCollectiveCoordinateRuling": false,
+  "answersFpNormalizationRuling": false,
+  "authorsARuling": false,
+  "changesAPendingFlag": false,
+  "additiveOnly": true,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

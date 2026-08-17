@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "phase": 563,
+  "phaseId": "phase563-discrete-transformation-candidate-census-independent-adjudicator",
+  "contractId": "phase563-a33-discrete-transformation-candidate-census-independent-adjudicator-v1",
+  "contractSha256": "12b3b6ff89161a8859db07e9d6f2544c39e7a006969db14f22eea0db3c695b30",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase562-program",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/Program.cs",
+      "expectedSha256": "f81521771c5ac9ecb8b943c863013d185696dfcf8503852cd5e612389376a854",
+      "actualSha256": "f81521771c5ac9ecb8b943c863013d185696dfcf8503852cd5e612389376a854",
+      "hashMatches": true
+    },
+    {
+      "id": "phase562-contract",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/preregistration/phase562_discrete_transformation_candidate_covariance_ward_census_contract_v1.json",
+      "expectedSha256": "6aa7ebd6c5c8b9867bc516deb9e8f1fc3e90bc744bc3c31409d05218ba94aa84",
+      "actualSha256": "6aa7ebd6c5c8b9867bc516deb9e8f1fc3e90bc744bc3c31409d05218ba94aa84",
+      "hashMatches": true
+    },
+    {
+      "id": "phase562-summary",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/output/discrete_transformation_candidate_covariance_ward_census_summary.json",
+      "expectedSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "actualSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "expectedSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "actualSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "expectedSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase555-summary",
+      "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+      "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase560-supplement",
+      "path": "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/phase555_source_census_supplement.json",
+      "expectedSha256": "f5bdf08b3c854939ace4db6c3f48458e4b556a2af6a5749de7ef71e02fd9474a",
+      "actualSha256": "f5bdf08b3c854939ace4db6c3f48458e4b556a2af6a5749de7ef71e02fd9474a",
+      "hashMatches": true
+    }
+  ],
+  "independentImplementation": {
+    "phase562ProjectReference": false,
+    "sharedPhase562Code": false,
+    "rawCoreSourcesRecomputed": true,
+    "candidateCount": 48
+  },
+  "independentKnownAnswerBattery": {
+    "ranBeforePhase562Read": true,
+    "exactResidual": 0,
+    "plantedCovarianceFailure": 1.8973665961010273,
+    "wardOnlyFalsePositiveRejected": true,
+    "missingCandidateDetected": true,
+    "duplicateCandidateDetected": true,
+    "fixedSliceDecoyRejected": true,
+    "passed": true
+  },
+  "independentCensus": {
+    "candidateCount": 48,
+    "rows": [
+      {
+        "Id": "d\u002B1-b\u002B1-average-t\u002B1-c\u002B1",
+        "Curvature": 0.15984658461254156,
+        "Residual": 0.1000485475498219,
+        "Ward": 0.00015916934782370432,
+        "Parity": 1.6540859393981977E-17,
+        "Stage": 0.15984658461254156,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-average-t\u002B1-c-1",
+        "Curvature": 0.22621216285452173,
+        "Residual": 0.08653460975833287,
+        "Ward": 0.00015916934782370432,
+        "Parity": 1.6540859393981977E-17,
+        "Stage": 0.22621216285452173,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-average-t-1-c\u002B1",
+        "Curvature": 0.15984658461254156,
+        "Residual": 0.10002281147720954,
+        "Ward": 8.517871810391259E-05,
+        "Parity": 1.685256751857156E-17,
+        "Stage": 0.15984658461254156,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-average-t-1-c-1",
+        "Curvature": 0.22621216285452173,
+        "Residual": 0.1457052899367682,
+        "Ward": 8.517871810391259E-05,
+        "Parity": 1.685256751857156E-17,
+        "Stage": 0.22621216285452173,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-head-t\u002B1-c\u002B1",
+        "Curvature": 0.2165185175291956,
+        "Residual": 0.11464548853014138,
+        "Ward": 7.806218211436222E-05,
+        "Parity": 4.082021179407924E-17,
+        "Stage": 0.2165185175291956,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-head-t\u002B1-c-1",
+        "Curvature": 0.24090909036327202,
+        "Residual": 0.0972179177646301,
+        "Ward": 7.806218211436222E-05,
+        "Parity": 4.082021179407924E-17,
+        "Stage": 0.24090909036327202,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-head-t-1-c\u002B1",
+        "Curvature": 0.2165185175291956,
+        "Residual": 0.10540016086398898,
+        "Ward": 5.283140836433643E-05,
+        "Parity": 4.0935408274905827E-17,
+        "Stage": 0.2165185175291956,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-head-t-1-c-1",
+        "Curvature": 0.24090909036327202,
+        "Residual": 0.14547807836538337,
+        "Ward": 5.283140836433643E-05,
+        "Parity": 4.0935408274905827E-17,
+        "Stage": 0.24090909036327202,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "Curvature": 0.13852638546139323,
+        "Residual": 0.09242307419603568,
+        "Ward": 0.00024027651353304567,
+        "Parity": 2.3972726473191208E-17,
+        "Stage": 0.13852638546139323,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-tail-t\u002B1-c-1",
+        "Curvature": 0.24346388254612328,
+        "Residual": 0.08480178528820191,
+        "Ward": 0.00024027651353304567,
+        "Parity": 2.3972726473191208E-17,
+        "Stage": 0.24346388254612328,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+        "Curvature": 0.13852638546139323,
+        "Residual": 0.10279163716936715,
+        "Ward": 0.00016628588381325366,
+        "Parity": 2.3684735271124746E-17,
+        "Stage": 0.13852638546139323,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b\u002B1-tail-t-1-c-1",
+        "Curvature": 0.24346388254612328,
+        "Residual": 0.15153343095414132,
+        "Ward": 0.00016628588381325366,
+        "Parity": 2.3684735271124746E-17,
+        "Stage": 0.24346388254612328,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-average-t\u002B1-c\u002B1",
+        "Curvature": 0.17342266506727969,
+        "Residual": 0.10799469011968846,
+        "Ward": 0.00018730361250937101,
+        "Parity": 4.198572912950116E-17,
+        "Stage": 0.17342266506727969,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-average-t\u002B1-c-1",
+        "Curvature": 0.16259549488288025,
+        "Residual": 0.07784552462975522,
+        "Ward": 0.00018730361250937101,
+        "Parity": 4.198572912950116E-17,
+        "Stage": 0.16259549488288025,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-average-t-1-c\u002B1",
+        "Curvature": 0.17342266506727969,
+        "Residual": 0.08569717693862494,
+        "Ward": 0.0001133129827895785,
+        "Parity": 4.130810277169772E-17,
+        "Stage": 0.17342266506727969,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-average-t-1-c-1",
+        "Curvature": 0.16259549488288025,
+        "Residual": 0.12445087635946392,
+        "Ward": 0.0001133129827895785,
+        "Parity": 4.130810277169772E-17,
+        "Stage": 0.16259549488288025,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-head-t\u002B1-c\u002B1",
+        "Curvature": 0.16024026119743462,
+        "Residual": 0.10043056272945428,
+        "Ward": 0.0002684107782187124,
+        "Parity": 4.1396194198212166E-17,
+        "Stage": 0.16024026119743462,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-head-t\u002B1-c-1",
+        "Curvature": 0.1910573372843886,
+        "Residual": 0.07519416111648257,
+        "Ward": 0.0002684107782187124,
+        "Parity": 4.1396194198212166E-17,
+        "Stage": 0.1910573372843886,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-head-t-1-c\u002B1",
+        "Curvature": 0.16024026119743462,
+        "Residual": 0.08829890175134551,
+        "Ward": 0.00019442014849892035,
+        "Parity": 4.18163225400503E-17,
+        "Stage": 0.16024026119743462,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-head-t-1-c-1",
+        "Curvature": 0.1910573372843886,
+        "Residual": 0.13081093940074254,
+        "Ward": 0.00019442014849892035,
+        "Parity": 4.18163225400503E-17,
+        "Stage": 0.1910573372843886,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-tail-t\u002B1-c\u002B1",
+        "Curvature": 0.22235527177673112,
+        "Residual": 0.12208848106370629,
+        "Ward": 0.0001061964468000287,
+        "Parity": 6.850802477392781E-17,
+        "Stage": 0.22235527177673112,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-tail-t\u002B1-c-1",
+        "Curvature": 0.17703008348771423,
+        "Residual": 0.09017692883578848,
+        "Ward": 0.0001061964468000287,
+        "Parity": 6.850802477392781E-17,
+        "Stage": 0.17703008348771423,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-tail-t-1-c\u002B1",
+        "Curvature": 0.22235527177673112,
+        "Residual": 0.09250678445664925,
+        "Ward": 3.220581708023642E-05,
+        "Parity": 6.810144895924575E-17,
+        "Stage": 0.22235527177673112,
+        "Compatible": false
+      },
+      {
+        "Id": "d\u002B1-b-1-tail-t-1-c-1",
+        "Curvature": 0.17703008348771423,
+        "Residual": 0.12462234284780217,
+        "Ward": 3.220581708023642E-05,
+        "Parity": 6.810144895924575E-17,
+        "Stage": 0.17703008348771423,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-average-t\u002B1-c\u002B1",
+        "Curvature": 0.16259549488288025,
+        "Residual": 0.12445087635946392,
+        "Ward": 0.0001133129827895785,
+        "Parity": 4.130810277169772E-17,
+        "Stage": 0.16259549488288025,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-average-t\u002B1-c-1",
+        "Curvature": 0.17342266506727969,
+        "Residual": 0.08569717693862494,
+        "Ward": 0.0001133129827895785,
+        "Parity": 4.130810277169772E-17,
+        "Stage": 0.17342266506727969,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-average-t-1-c\u002B1",
+        "Curvature": 0.16259549488288025,
+        "Residual": 0.07784552462975522,
+        "Ward": 0.00018730361250937101,
+        "Parity": 4.198572912950116E-17,
+        "Stage": 0.16259549488288025,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-average-t-1-c-1",
+        "Curvature": 0.17342266506727969,
+        "Residual": 0.10799469011968846,
+        "Ward": 0.00018730361250937101,
+        "Parity": 4.198572912950116E-17,
+        "Stage": 0.17342266506727969,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-head-t\u002B1-c\u002B1",
+        "Curvature": 0.1910573372843886,
+        "Residual": 0.13081093940074254,
+        "Ward": 0.00019442014849892035,
+        "Parity": 4.18163225400503E-17,
+        "Stage": 0.1910573372843886,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-head-t\u002B1-c-1",
+        "Curvature": 0.16024026119743462,
+        "Residual": 0.08829890175134551,
+        "Ward": 0.00019442014849892035,
+        "Parity": 4.18163225400503E-17,
+        "Stage": 0.16024026119743462,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-head-t-1-c\u002B1",
+        "Curvature": 0.1910573372843886,
+        "Residual": 0.07519416111648257,
+        "Ward": 0.0002684107782187124,
+        "Parity": 4.1396194198212166E-17,
+        "Stage": 0.1910573372843886,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-head-t-1-c-1",
+        "Curvature": 0.16024026119743462,
+        "Residual": 0.10043056272945428,
+        "Ward": 0.0002684107782187124,
+        "Parity": 4.1396194198212166E-17,
+        "Stage": 0.16024026119743462,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "Curvature": 0.17703008348771423,
+        "Residual": 0.12462234284780217,
+        "Ward": 3.220581708023642E-05,
+        "Parity": 6.810144895924575E-17,
+        "Stage": 0.17703008348771423,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-tail-t\u002B1-c-1",
+        "Curvature": 0.22235527177673112,
+        "Residual": 0.09250678445664925,
+        "Ward": 3.220581708023642E-05,
+        "Parity": 6.810144895924575E-17,
+        "Stage": 0.22235527177673112,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-tail-t-1-c\u002B1",
+        "Curvature": 0.17703008348771423,
+        "Residual": 0.09017692883578848,
+        "Ward": 0.0001061964468000287,
+        "Parity": 6.850802477392781E-17,
+        "Stage": 0.17703008348771423,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b\u002B1-tail-t-1-c-1",
+        "Curvature": 0.22235527177673112,
+        "Residual": 0.12208848106370629,
+        "Ward": 0.0001061964468000287,
+        "Parity": 6.850802477392781E-17,
+        "Stage": 0.22235527177673112,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-average-t\u002B1-c\u002B1",
+        "Curvature": 0.22621216285452173,
+        "Residual": 0.1457052899367682,
+        "Ward": 8.517871810391259E-05,
+        "Parity": 1.685256751857156E-17,
+        "Stage": 0.22621216285452173,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-average-t\u002B1-c-1",
+        "Curvature": 0.15984658461254156,
+        "Residual": 0.10002281147720954,
+        "Ward": 8.517871810391259E-05,
+        "Parity": 1.685256751857156E-17,
+        "Stage": 0.15984658461254156,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-average-t-1-c\u002B1",
+        "Curvature": 0.22621216285452173,
+        "Residual": 0.08653460975833287,
+        "Ward": 0.00015916934782370432,
+        "Parity": 1.6540859393981977E-17,
+        "Stage": 0.22621216285452173,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-average-t-1-c-1",
+        "Curvature": 0.15984658461254156,
+        "Residual": 0.1000485475498219,
+        "Ward": 0.00015916934782370432,
+        "Parity": 1.6540859393981977E-17,
+        "Stage": 0.15984658461254156,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-head-t\u002B1-c\u002B1",
+        "Curvature": 0.24090909036327202,
+        "Residual": 0.14547807836538337,
+        "Ward": 5.283140836433643E-05,
+        "Parity": 4.0935408274905827E-17,
+        "Stage": 0.24090909036327202,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-head-t\u002B1-c-1",
+        "Curvature": 0.2165185175291956,
+        "Residual": 0.10540016086398898,
+        "Ward": 5.283140836433643E-05,
+        "Parity": 4.0935408274905827E-17,
+        "Stage": 0.2165185175291956,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-head-t-1-c\u002B1",
+        "Curvature": 0.24090909036327202,
+        "Residual": 0.0972179177646301,
+        "Ward": 7.806218211436222E-05,
+        "Parity": 4.082021179407924E-17,
+        "Stage": 0.24090909036327202,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-head-t-1-c-1",
+        "Curvature": 0.2165185175291956,
+        "Residual": 0.11464548853014138,
+        "Ward": 7.806218211436222E-05,
+        "Parity": 4.082021179407924E-17,
+        "Stage": 0.2165185175291956,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-tail-t\u002B1-c\u002B1",
+        "Curvature": 0.24346388254612328,
+        "Residual": 0.15153343095414132,
+        "Ward": 0.00016628588381325366,
+        "Parity": 2.3684735271124746E-17,
+        "Stage": 0.24346388254612328,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-tail-t\u002B1-c-1",
+        "Curvature": 0.13852638546139323,
+        "Residual": 0.10279163716936715,
+        "Ward": 0.00016628588381325366,
+        "Parity": 2.3684735271124746E-17,
+        "Stage": 0.13852638546139323,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-tail-t-1-c\u002B1",
+        "Curvature": 0.24346388254612328,
+        "Residual": 0.08480178528820191,
+        "Ward": 0.00024027651353304567,
+        "Parity": 2.3972726473191208E-17,
+        "Stage": 0.24346388254612328,
+        "Compatible": false
+      },
+      {
+        "Id": "d-1-b-1-tail-t-1-c-1",
+        "Curvature": 0.13852638546139323,
+        "Residual": 0.09242307419603568,
+        "Ward": 0.00024027651353304567,
+        "Parity": 2.3972726473191208E-17,
+        "Stage": 0.13852638546139323,
+        "Compatible": false
+      }
+    ],
+    "survivorCount": 0,
+    "survivors": [],
+    "bestResidual": 0.13852638546139323,
+    "tiedBest": [
+      "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+      "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+      "d-1-b-1-tail-t\u002B1-c-1",
+      "d-1-b-1-tail-t-1-c-1"
+    ],
+    "earliestUniversalFailure": "curvature-covariance"
+  },
+  "comparison": {
+    "everyIdAgrees": true,
+    "maxNumericDeviation": 0,
+    "agreementTolerance": 1E-14,
+    "survivorSetsMatch": true,
+    "bestTieSetsMatch": true,
+    "earliestUniversalFailureMatches": true,
+    "terminalMatches": true,
+    "adjudicationPassed": true
+  },
+  "supplementMaterialized": true,
+  "verdictKind": "adjudication-confirms-all-candidates-machine-incompatible",
+  "terminalStatus": "discrete-transformation-candidate-census-independent-adjudicator-adjudication-confirms-all-candidates-machine-incompatible",
+  "decision": "The independent 48-candidate reconstruction confirms that every frozen candidate is machine-incompatible, with the earliest universal failure at curvature-covariance.",
+  "phase561GateOpen": false,
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "phase553Or554RegisteredOrExecuted": false,
+  "registeredOperatorMutated": false,
+  "directionCalledGaugeOrRedundant": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "sourceIdentificationAuthoredOrInferred": false,
+  "rulingAuthoredOrInferred": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

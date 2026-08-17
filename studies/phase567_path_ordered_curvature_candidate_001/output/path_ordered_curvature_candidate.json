@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "phase": 567,
+  "phaseId": "phase567-path-ordered-curvature-candidate",
+  "contractId": "phase567-a35-path-ordered-curvature-candidate-v1",
+  "contractSha256": "78ab85813e59a589d256dbf1b86df5944cbfeccc32a16de715e49eb7e990d17e",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase564-summary",
+      "path": "studies/phase564_additive_curvature_residual_power_decomposition_001/output/additive_curvature_residual_power_decomposition_summary.json",
+      "expectedSha256": "8ed45a206dbb824f345f08816e7a789097567143d6b8c96b4fb9924770c24af3",
+      "actualSha256": "8ed45a206dbb824f345f08816e7a789097567143d6b8c96b4fb9924770c24af3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-summary",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json",
+      "expectedSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "actualSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-contract",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/preregistration/phase565_registered_finite_transport_bch_control_contract_v1.json",
+      "expectedSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "actualSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-program",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/Program.cs",
+      "expectedSha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "actualSha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase566-summary",
+      "path": "studies/phase566_independent_finite_transport_adjudicator_001/output/independent_finite_transport_adjudicator_summary.json",
+      "expectedSha256": "a9b1bc0ceb8d334b0561725521d7e4b94362454675c52f0a0044d37fd28b27cd",
+      "actualSha256": "a9b1bc0ceb8d334b0561725521d7e4b94362454675c52f0a0044d37fd28b27cd",
+      "hashMatches": true
+    },
+    {
+      "id": "phase566-contract",
+      "path": "studies/phase566_independent_finite_transport_adjudicator_001/preregistration/phase566_independent_finite_transport_adjudicator_contract_v1.json",
+      "expectedSha256": "78aff1cff63286022408c42dcf56a3fada690c5f4ac56a74e23328b12528c4ea",
+      "actualSha256": "78aff1cff63286022408c42dcf56a3fada690c5f4ac56a74e23328b12528c4ea",
+      "hashMatches": true
+    },
+    {
+      "id": "phase566-program",
+      "path": "studies/phase566_independent_finite_transport_adjudicator_001/Program.cs",
+      "expectedSha256": "04c84acc0eea878780009d501c72dbda5190da0a41bc2cb03064e019abf139c5",
+      "actualSha256": "04c84acc0eea878780009d501c72dbda5190da0a41bc2cb03064e019abf139c5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "expectedSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "expectedSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "actualSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "expectedSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "hashMatches": true
+    },
+    {
+      "id": "candidate-source",
+      "path": "studies/phase567_path_ordered_curvature_candidate_001/PathOrderedCurvatureCandidate.cs",
+      "expectedSha256": "091857897e8f517e81f9f2a207d3c5ef9bdd14177dd61cc2c95c8c8235313bc7",
+      "actualSha256": "091857897e8f517e81f9f2a207d3c5ef9bdd14177dd61cc2c95c8c8235313bc7",
+      "hashMatches": true
+    }
+  ],
+  "a34GateOpen": true,
+  "knownAnswerBattery": {
+    "ranBeforeAuditedOutputsRead": true,
+    "plantedCorrectionError": 3.9747508192403134E-18,
+    "plantedCommutingError": 0,
+    "passed": true
+  },
+  "candidateSpecification": {
+    "candidateId": "a35-path-ordered-bch2-v1",
+    "boundaryPositionOrder": [
+      0,
+      2,
+      1
+    ],
+    "directedPath": "v0-to-v1,v1-to-v2,v2-to-v0",
+    "exactCandidateMinusRegistered": "[b2,b1]",
+    "truncatedBch2NotExactlyFiniteCovariant": true
+  },
+  "topologyAndDifferentialControls": {
+    "meshRows": [
+      {
+        "mesh": "CreateUniform4D(1)",
+        "VertexCount": 16,
+        "EdgeCount": 65,
+        "FaceCount": 110,
+        "everyFaceComposable": true,
+        "correctionError": 7.785037240661044E-17,
+        "linearTermError": 3.231886469711088E-17,
+        "finiteDifferenceError": 5.626478628251515E-11,
+        "transposeError": 6.938893903907228E-18
+      },
+      {
+        "mesh": "CreateUniform4DPeriodic(3,latticeCanonical:true)",
+        "VertexCount": 81,
+        "EdgeCount": 1215,
+        "FaceCount": 4050,
+        "everyFaceComposable": true,
+        "correctionError": 4.956794284120082E-16,
+        "linearTermError": 8.512892539820388E-17,
+        "finiteDifferenceError": 1.2480458976704435E-10,
+        "transposeError": 2.3592239273284576E-16
+      }
+    ],
+    "globalCorrectionError": 4.956794284120082E-16,
+    "globalLinearTermError": 8.512892539820388E-17,
+    "globalFiniteDifferenceError": 1.2480458976704435E-10,
+    "globalTransposeError": 2.3592239273284576E-16,
+    "pathControlsPassed": true,
+    "differentialControlsPassed": true
+  },
+  "finiteTransportControls": {
+    "maxHolonomyCovariance": 6.741091679974159E-16,
+    "maxReverseIdentity": 5.553127308716792E-16,
+    "maxBasepointTransport": 3.332171512626876E-16,
+    "maxClassFunctionError": 5.551115123125783E-16,
+    "passed": true
+  },
+  "weakFieldCorrespondence": {
+    "rows": [
+      {
+        "t": 1,
+        "candidateResidual": 0.000105172069364618,
+        "registeredResidual": 0.008917580152995073
+      },
+      {
+        "t": 0.5,
+        "candidateResidual": 1.314534174135186E-05,
+        "registeredResidual": 0.002229292564048853
+      },
+      {
+        "t": 0.25,
+        "candidateResidual": 1.643128694842843E-06,
+        "registeredResidual": 0.0005573156759981208
+      },
+      {
+        "t": 0.125,
+        "candidateResidual": 2.0538970687370414E-07,
+        "registeredResidual": 0.00013932831969998158
+      },
+      {
+        "t": 0.0625,
+        "candidateResidual": 2.5673660196661555E-08,
+        "registeredResidual": 3.483202587434021E-05
+      },
+      {
+        "t": 0.03125,
+        "candidateResidual": 3.2092052356175783E-09,
+        "registeredResidual": 8.708001016094005E-06
+      }
+    ],
+    "candidateResidualSlope": 3.0000294486481653,
+    "expectedCandidateSlope": 3,
+    "registeredResidualSlope": 2.0000161269886476,
+    "expectedRegisteredSlope": 2,
+    "passed": true
+  },
+  "verdictKind": "path-ordered-candidate-local-controls-pass-source-unbound",
+  "terminalStatus": "path-ordered-curvature-candidate-path-ordered-candidate-local-controls-pass-source-unbound",
+  "phase568EvaluationGateOpen": true,
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "registeredOperatorMutated": false,
+  "phase548RepairedOrReinterpreted": false,
+  "sourceIdentificationAuthoredOrInferred": false,
+  "phase561GateOpen": false,
+  "rulingAuthoredOrInferred": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

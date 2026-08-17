@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "supplementId": "phase566-a34-phase555-finite-transport-supplement-v1",
+  "artifactKind": "additive-evidence-supplement",
+  "materialized": true,
+  "parentPacket": {
+    "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+    "sha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+    "byteImmutable": true
+  },
+  "additiveResidualClass": "leading-mixed-transport-order-localized",
+  "finiteTransportClass": "adjudication-confirms-boundary-order-second-order-mismatch",
+  "adjudicationPassed": true,
+  "finiteTransportIsNotSourceSelection": true,
+  "answersCollectiveCoordinateRuling": false,
+  "answersFpNormalizationRuling": false,
+  "authorsARuling": false,
+  "changesAPendingFlag": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

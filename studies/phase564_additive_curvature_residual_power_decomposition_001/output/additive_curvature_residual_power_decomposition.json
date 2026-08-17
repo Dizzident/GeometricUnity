@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "phase": 564,
+  "phaseId": "phase564-additive-curvature-residual-power-decomposition",
+  "contractId": "phase564-a34-additive-curvature-residual-power-decomposition-v1",
+  "contractSha256": "6c3b167dec9a38fd20673aff66c05c82a0f2cfac99ebe928a99a2cc42d356b53",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "resourceAccepted": true,
+  "bindings": [
+    {
+      "id": "phase562-summary",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/output/discrete_transformation_candidate_covariance_ward_census_summary.json",
+      "expectedSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "actualSha256": "8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53",
+      "hashMatches": true
+    },
+    {
+      "id": "phase562-contract",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/preregistration/phase562_discrete_transformation_candidate_covariance_ward_census_contract_v1.json",
+      "expectedSha256": "6aa7ebd6c5c8b9867bc516deb9e8f1fc3e90bc744bc3c31409d05218ba94aa84",
+      "actualSha256": "6aa7ebd6c5c8b9867bc516deb9e8f1fc3e90bc744bc3c31409d05218ba94aa84",
+      "hashMatches": true
+    },
+    {
+      "id": "phase562-program",
+      "path": "studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/Program.cs",
+      "expectedSha256": "f81521771c5ac9ecb8b943c863013d185696dfcf8503852cd5e612389376a854",
+      "actualSha256": "f81521771c5ac9ecb8b943c863013d185696dfcf8503852cd5e612389376a854",
+      "hashMatches": true
+    },
+    {
+      "id": "phase563-summary",
+      "path": "studies/phase563_discrete_transformation_candidate_census_independent_adjudicator_001/output/discrete_transformation_candidate_census_independent_adjudicator_summary.json",
+      "expectedSha256": "e6a1bd8bbbe9abdda467d22d0c4b3d8d84ae53f76ebca3a84586490715dd799e",
+      "actualSha256": "e6a1bd8bbbe9abdda467d22d0c4b3d8d84ae53f76ebca3a84586490715dd799e",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "expectedSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "actualSha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "expectedSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "expectedSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "expectedSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "actualSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "hashMatches": true
+    }
+  ],
+  "knownAnswerBattery": {
+    "ranBeforeAuditedData": true,
+    "plantedReconstructionError": 0,
+    "plantedCrossNorm": 1,
+    "plantedCommutingNorm": 0,
+    "passed": true
+  },
+  "upstream": {
+    "phase562Verdict": "candidate-family-all-machine-incompatible",
+    "phase563Verdict": "adjudication-confirms-all-candidates-machine-incompatible",
+    "bestRowsMatch": true
+  },
+  "coefficientModel": "residual(t,s)=s*(R0\u002Bt*R1\u002Bt^2*R2)",
+  "decomposition": {
+    "candidateCount": 4,
+    "probeCount": 16,
+    "coefficientTolerance": 1E-12,
+    "globalR0Norm": 4.762629517401146E-16,
+    "globalR1Norm": 0.13852467037511315,
+    "globalR2Norm": 0.002976165391536094,
+    "maxReconstructionError": 1.6479873021779667E-16,
+    "reconstructionTolerance": 1E-12,
+    "decompositionExact": true,
+    "rows": [
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "scale": 0.017,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.03696870763726441,
+        "r2Norm": 0.0004194095033119073,
+        "maximumSignedTensorReconstructionError": 1.5839685520244867E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "scale": 0.017,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.07596514181861044,
+        "r2Norm": 0.000895017479868815,
+        "maximumSignedTensorReconstructionError": 1.3791051634015616E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "scale": 0.031,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.06741352569148217,
+        "r2Norm": 0.0013946454418087974,
+        "maximumSignedTensorReconstructionError": 1.3617579286417936E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t\u002B1-c\u002B1",
+        "scale": 0.031,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.13852467037511315,
+        "r2Norm": 0.002976165391536094,
+        "maximumSignedTensorReconstructionError": 1.6479873021779667E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+        "scale": 0.017,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.03696870763726441,
+        "r2Norm": 0.0004194095033119073,
+        "maximumSignedTensorReconstructionError": 1.5839685520244867E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+        "scale": 0.017,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.07596514181861044,
+        "r2Norm": 0.000895017479868815,
+        "maximumSignedTensorReconstructionError": 1.3791051634015616E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+        "scale": 0.031,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.06741352569148217,
+        "r2Norm": 0.0013946454418087974,
+        "maximumSignedTensorReconstructionError": 1.3617579286417936E-16
+      },
+      {
+        "candidateId": "d\u002B1-b\u002B1-tail-t-1-c\u002B1",
+        "scale": 0.031,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.13852467037511315,
+        "r2Norm": 0.002976165391536094,
+        "maximumSignedTensorReconstructionError": 1.6479873021779667E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t\u002B1-c-1",
+        "scale": 0.017,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.03696870763726441,
+        "r2Norm": 0.0004194095033119073,
+        "maximumSignedTensorReconstructionError": 1.5839685520244867E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t\u002B1-c-1",
+        "scale": 0.017,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.07596514181861044,
+        "r2Norm": 0.000895017479868815,
+        "maximumSignedTensorReconstructionError": 1.3791051634015616E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t\u002B1-c-1",
+        "scale": 0.031,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.06741352569148217,
+        "r2Norm": 0.0013946454418087974,
+        "maximumSignedTensorReconstructionError": 1.3617579286417936E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t\u002B1-c-1",
+        "scale": 0.031,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.13852467037511315,
+        "r2Norm": 0.002976165391536094,
+        "maximumSignedTensorReconstructionError": 1.6479873021779667E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t-1-c-1",
+        "scale": 0.017,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.03696870763726441,
+        "r2Norm": 0.0004194095033119073,
+        "maximumSignedTensorReconstructionError": 1.5839685520244867E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t-1-c-1",
+        "scale": 0.017,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.07596514181861044,
+        "r2Norm": 0.000895017479868815,
+        "maximumSignedTensorReconstructionError": 1.3791051634015616E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t-1-c-1",
+        "scale": 0.031,
+        "omegaFrequency": 0.173,
+        "xiFrequency": 0.311,
+        "r0Norm": 3.6638411145107034E-16,
+        "r1Norm": 0.06741352569148217,
+        "r2Norm": 0.0013946454418087974,
+        "maximumSignedTensorReconstructionError": 1.3617579286417936E-16
+      },
+      {
+        "candidateId": "d-1-b-1-tail-t-1-c-1",
+        "scale": 0.031,
+        "omegaFrequency": 0.419,
+        "xiFrequency": 0.587,
+        "r0Norm": 4.762629517401146E-16,
+        "r1Norm": 0.13852467037511315,
+        "r2Norm": 0.002976165391536094,
+        "maximumSignedTensorReconstructionError": 1.6479873021779667E-16
+      }
+    ]
+  },
+  "commutingControl": {
+    "separatelyGovernedDeterministicControl": true,
+    "fixedCartanGenerator": 0,
+    "maxCommutingBracket": 0,
+    "maxOrientedDd": 5.551115123125783E-17,
+    "maxRegisteredResidual": 5.551115123125783E-17,
+    "tolerance": 1E-12,
+    "passed": true
+  },
+  "interpretation": {
+    "mechanismLocalized": true,
+    "earliestNonzeroConnectionPower": 1,
+    "scalarPhase562ResidualUsedAsAcceptanceTarget": false,
+    "resultIsSourceSelection": false
+  },
+  "verdictKind": "leading-mixed-transport-order-localized",
+  "terminalStatus": "additive-curvature-residual-power-decomposition-leading-mixed-transport-order-localized",
+  "phase565GateOpen": true,
+  "phase561GateOpen": false,
+  "rngUsed": false,
+  "samplingPerformed": false,
+  "reprocessingPerformed": false,
+  "protectedPhase554SeedsRead": false,
+  "phases562Or563MutatedOrReinterpreted": false,
+  "registeredOperatorMutated": false,
+  "sourceIdentificationAuthoredOrInferred": false,
+  "rulingAuthoredOrInferred": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase565-a34-registered-finite-transport-bch-control-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "exactBindings": [
+    {"id":"phase564-summary","path":"studies/phase564_additive_curvature_residual_power_decomposition_001/output/additive_curvature_residual_power_decomposition_summary.json","sha256":"8ed45a206dbb824f345f08816e7a789097567143d6b8c96b4fb9924770c24af3"},
+    {"id":"phase564-contract","path":"studies/phase564_additive_curvature_residual_power_decomposition_001/preregistration/phase564_additive_curvature_residual_power_decomposition_contract_v1.json","sha256":"6c3b167dec9a38fd20673aff66c05c82a0f2cfac99ebe928a99a2cc42d356b53"},
+    {"id":"phase564-program","path":"studies/phase564_additive_curvature_residual_power_decomposition_001/Program.cs","sha256":"2def68638905163675a56f1922bfd8478db5b3f2e003f1c9bddabf8e5028ca35"},
+    {"id":"phase562-summary","path":"studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/output/discrete_transformation_candidate_covariance_ward_census_summary.json","sha256":"8ebf3177d9923e5ba1dfa526f14c718008ee048c65b355e0c781fd19ce9a7f53"},
+    {"id":"curvature-assembler","path":"src/Gu.ReferenceCpu/CurvatureAssembler.cs","sha256":"ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"},
+    {"id":"mesh-generator","path":"src/Gu.Geometry/SimplicialMeshGenerator.cs","sha256":"e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"},
+    {"id":"mesh-topology-builder","path":"src/Gu.Geometry/MeshTopologyBuilder.cs","sha256":"792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"},
+    {"id":"lie-algebra-factory","path":"src/Gu.Math/LieAlgebraFactory.cs","sha256":"e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"}
+  ],
+  "phase564RequiredGate": {"phase565GateOpen":true,"allowedVerdicts":["leading-mixed-transport-order-localized","leading-quadratic-curvature-order-localized"]},
+  "registeredConventions": {"representation":"unit-quaternion-su2-with-[Ta,Tb]=epsilon_abc-Tc","canonicalEdgeDirection":"mesh.Edges[e][0]-to-mesh.Edges[e][1]","finiteGaugeAction":"U_tail_head-prime=g_tail*U_tail_head*g_head^-1","faceBasepoint":"mesh.Faces[f][0]","composableLoop":"v0-to-v1-to-v2-to-v0","reversedLink":"group-inverse","multiplicationOrder":"left-to-right-path-order","logarithmBranch":"principal-near-identity","pairing":"positive-euclidean-su2-trace"},
+  "amplitudeLadder": [1.0,0.5,0.25,0.125,0.0625,0.03125,0.015625,0.0078125,0.00390625],
+  "exactGroupTolerance": 2e-13,
+  "slopeTolerance": 0.2,
+  "coefficientRelativeTolerance": 0.003,
+  "resourceRefusal": {"estimatedAggregateCpuSeconds":6.0,"maximumEstimatedAggregateCpuSeconds":60.0,"estimatedPeakBytes":80000000,"maximumEstimatedPeakBytes":400000000,"refuseBeforeAllocation":true},
+  "terminalTaxonomyInPrecedenceOrder": ["invalid-or-drifted-input","phase564-gate-refused","known-answer-battery-failed","finite-transport-control-failed","registered-curvature-continuous-holonomy-second-order-mismatch","registered-curvature-continuous-holonomy-correspondence-supported","weak-field-comparison-under-resolved"],
+  "authorityFirewalls": {"repairsPhase548":false,"reopensPhase562Or563":false,"opensPhase561":false,"sourceSelectsFiniteTransport":false,"answersO4":false,"satisfiesPhase458":false,"createsPhase481Pack":false,"authorizesProduction":false,"authorizesLaunch":false,"authorizesPhysicalUnitClaim":false,"authorizesGevClaim":false},
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}
