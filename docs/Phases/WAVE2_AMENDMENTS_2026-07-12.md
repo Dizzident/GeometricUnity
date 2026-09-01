@@ -1661,3 +1661,38 @@ External review remains pending and `promotedPhysicalMassClaimCount=0`.
 Registry 574 is allocated; 575+ remains unassigned. This amendment registers
 the design only: Phase574 execution requires its prospectively frozen
 contract committed before the first execution.
+
+### A38 execution record (completed 2026-09-01)
+
+Phase574 v1 executed once under its prospectively frozen contract and
+returned `fold-order-flip-confirmed-source-attributed`. The known-answer
+battery - deterministically rehearsed outside the repository before the
+freeze, as disclosed in the contract - passed, including the planted
+ulp-at-a-fold-tie fixture that moves only the folded R-hat component while
+ordinary ranks, bulk ESS, tail ESS, and the ranked component stay
+bit-identical. All six committed chains replayed with matching decisions and
+bit-identical final checkpoints, and the shared position stream was measured
+through both committed observable paths ported verbatim.
+
+Every H-fold clause held. Thirty of the 36 table rows differ at raw ulp
+scale, with maximum scaled difference `2.9604386036136494e-15`; ordinary
+rank vectors agree on all 36 rows; each of the five committed mismatch rows
+shows a fold-order flip of exactly two or three folded-rank entries; and
+each side's committed R-hat, bulk ESS, tail ESS, and pass flags reproduce
+bit-for-bit from its own recovered raw series through the shared kernel that
+Phase573 proved implementation-independent. Attribution is measured:
+`eNormSquared`, `eMovementSquared`, and `closedMovementSquared` first
+diverge at projection accumulation, while `closedGramLargest` and
+`closedGramSmallest` first diverge at the assembled Gram matrix. Thirteen
+additional fold flips in non-mismatch rows were masked by the R-hat max
+rule, as the hypothesis anticipated. Both sides' recovered raw directional
+series are retained in the committed output.
+
+The Phase570/572 disagreement is thereby fully explained as an ulp-scale
+representation effect on near-tied folded ranks; it was never an estimator,
+replay, or data defect. Phase572's fail-closed terminal was correct and
+stands at its unchanged `2e-10` tolerance. A38 grants nothing further: the
+Phase571 lever remains not independently confirmed, prospective sampler-pack
+planning remains closed, and any re-adjudication under an agreed rank/fold
+convention requires its own separately registered prospective phase.
+External review remains pending and `promotedPhysicalMassClaimCount=0`.

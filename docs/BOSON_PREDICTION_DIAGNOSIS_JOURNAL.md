@@ -22555,3 +22555,57 @@ battery remained 94/94, source deficits remained 15 W/Z and 14 Higgs
 fields, and `promotedPhysicalMassClaimCount=0`. No scanner recorded the A38
 design text. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T20-12-11-795Z.json`.
+
+## 2026-09-01 - Amendment A38, Phase574: the R-hat disagreement is fully explained by measured fold-order flips
+
+DIRECTIONAL RAW-TRACE FOLD-ORDER LOCALIZATION (2026-09-01, Amendment A38;
+Phase574 executed): the A38-designed raw-trace experiment ran once under its
+prospectively frozen 36-binding contract and returned
+`fold-order-flip-confirmed-source-attributed` on the first execution. One
+deterministic replay of the six committed Phase548 chains (decisions matched,
+final checkpoints bit-identical) produced the shared position stream, which
+was then measured through both committed observable paths ported verbatim:
+the Phase570 v7 scalar edge-space basis with its 40-sweep descending
+unclamped Jacobi, and the Phase572 full-dof sign-canonicalized directions
+with their 32-sweep ascending zero-clamped Jacobi. A single estimator kernel
+served both sides, justified by Phase573's bit-for-bit kernel-parity proof.
+
+Every clause of the pre-registered H-fold hypothesis held. Thirty of 36
+table rows carry raw ulp-scale differences with maximum scaled difference
+`2.9604386036136494e-15`. Ordinary rank vectors agree exactly on all 36
+rows, which is why every bulk ESS value was bit-identical upstream. Each of
+the five committed mismatch rows shows a fold-order flip of exactly two or
+three folded-rank entries near a fold tie, and each side's committed R-hat,
+bulk ESS, tail ESS, and pass flags reproduce bit-for-bit from its own
+recovered series. Attribution is measured rather than inferred: three
+mismatch series first diverge at projection accumulation and the two Gram
+eigenvalue series first diverge at the assembled Gram matrix. Thirteen
+further fold flips in non-mismatch rows were masked by R-hat's max rule.
+The recovered raw directional series for both sides are retained in the
+committed output, discharging the retention gap Phase573 identified.
+
+The scientific conclusion is narrow and closed: the Phase570/572
+directional-diagnostics disagreement was an ulp-scale numerical-
+representation effect on near-tied folded ranks - two honest independent
+implementations of the same mathematics - and not an estimator, replay, or
+data defect. Phase572's fail-closed terminal was the system working as
+designed and stands at its unchanged `2e-10` tolerance. A38 grants no
+further authority: the Phase571 longer-trajectory lever remains not
+independently confirmed, prospective sampler-pack planning remains closed,
+and any future re-adjudication under an agreed rank/fold convention
+requires its own separately registered prospective phase. Phase574
+performed no new sampling, Markov advance beyond committed replay,
+configuration retention, protected Phase554 seed read, target change,
+quotient, gauge fixing, or measure normalization, and it grants no
+Phase561, O4, Phase458, Phase481, production, launch, physical-unit, or
+GeV authority. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A38 execution checkpoint ran 91 steps and skipped 343. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 354 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn
+battery remained 94/94, source deficits remained 15 W/Z and 14 Higgs
+fields, and `promotedPhysicalMassClaimCount=0`. The pass re-ran Phase574
+and the integrity verifier pins its exact output hash, so it doubles as the
+two-run byte-reproducibility check. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T21-19-37-838Z.json`.

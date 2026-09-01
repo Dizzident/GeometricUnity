@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "phase": 574,
+  "contractId": "phase574-a38-directional-raw-trace-fold-order-localization-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A38",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "retrospectiveKnownDataAudit": true,
+  "newSamplingPerformed": false,
+  "batteryRehearsal": {
+    "performedOutsideRepositoryBeforeFreeze": true,
+    "deterministicFixturesOnly": true,
+    "upstreamNumericRowsRead": false,
+    "repositoryBytesWritten": false
+  },
+  "hFold": {
+    "clauseA": "the two committed observable paths produce raw directional series that differ in at least every committed mismatch series",
+    "clauseB": "pooled ordinary rank vectors agree exactly on all 36 table rows",
+    "clauseC": "pooled folded-rank orderings differ in every committed mismatch row",
+    "clauseD": "each side's committed R-hat, bulk ESS, and tail ESS values reproduce bit-for-bit from its own recovered raw series",
+    "integrityStop": "a committed mismatch row whose pooled raw series are bit-identical across sides contradicts phase573 kernel parity and stops the audit"
+  },
+  "requiredUpstreamVerdicts": {
+    "phase548": "pilot-executed-diagnostics-invalid",
+    "phase570": "invariant-directional-under-resolution-not-localized",
+    "phase572": "directional-diagnostics-disagree",
+    "phase573": "rhat-only-disagreement-localized-input-trace-required"
+  },
+  "expectedTableRowCount": 36,
+  "expectedMismatchCount": 5,
+  "expectedMismatchKeys": [
+    "complete-lattice-pilot-a|closedGramLargest",
+    "complete-lattice-pilot-a|closedMovementSquared",
+    "complete-lattice-pilot-a|eMovementSquared",
+    "complete-lattice-pilot-a|eNormSquared",
+    "complete-lattice-pilot-b|closedGramSmallest"
+  ],
+  "replayRule": {
+    "deltaHRelativeTolerance": 1e-12,
+    "requireEveryDecisionMatch": true,
+    "requireFinalPositionBitIdentical": true,
+    "retainedPerChain": 340,
+    "rngUsed": true,
+    "rngUseRestrictedToCommittedReplay": true,
+    "markovChainAdvancedBeyondCommittedReplay": false,
+    "configurationsRetained": false
+  },
+  "observablePathA": {
+    "source": "phase570-program-v7",
+    "basis": "scalar edge-space cBasis with strided per-algebra coefficient accumulation",
+    "eigensolver": "40-sweep Jacobi, two-diagonal pivot threshold, descending order, unclamped"
+  },
+  "observablePathB": {
+    "source": "phase572-program",
+    "basis": "full-dof sign-canonicalized orthonormal directions in acceptance order",
+    "eigensolver": "32-sweep Jacobi, three-diagonal pivot threshold, ascending order, zero-clamped"
+  },
+  "sharedEstimatorKernelJustification": "phase573 proved bit-for-bit estimator-kernel parity on identical inputs, so one kernel ported from phase570-program-v7 serves both sides",
+  "reproductionRule": {
+    "sideAMustBitwiseReproduce": "phase570-full tableDiagnostics.rows rhat/bulkEss/tailEss/passed",
+    "sideBMustBitwiseReproduce": "phase572-full directionalAdjudication.tableRows rhat/bulkEss/tailEss/passed"
+  },
+  "attributionStages": [
+    "projection-accumulation",
+    "gram-matrix",
+    "eigenvalue-computation"
+  ],
+  "rawTraceRetention": {
+    "retainedInOutput": true,
+    "sides": 2,
+    "chains": 6,
+    "seriesPerChain": 18,
+    "valuesPerSeries": 340,
+    "retainedDoubles": 73440
+  },
+  "resourceRefusal": {
+    "forceEvaluationFormula": "6*400*(8+1)",
+    "estimatedForceEvaluations": 21600,
+    "maximumForceEvaluations": 25000,
+    "derivedPeakBytes": 293895496,
+    "maximumPeakBytes": 536870912,
+    "refuseBeforeAllocation": true,
+    "noDenseHessianAllocated": true,
+    "forbiddenAllocationShape": "dof*dof",
+    "allocationMenu": [
+      {
+        "id": "mesh-topology",
+        "shape": "edge*256",
+        "bytes": 311040
+      },
+      {
+        "id": "side-a-scalar-bases",
+        "shape": "84*edge*8",
+        "bytes": 816480
+      },
+      {
+        "id": "side-b-direction-construction",
+        "shape": "(243+12+64+252)*dof*8",
+        "bytes": 16650360
+      },
+      {
+        "id": "replay-vectors",
+        "shape": "16*dof*8",
+        "bytes": 466560
+      },
+      {
+        "id": "evaluator-working-reserve",
+        "shape": "128*dof*8",
+        "bytes": 3732480
+      },
+      {
+        "id": "retained-raw-series",
+        "shape": "2*6*18*340*8",
+        "bytes": 587520
+      },
+      {
+        "id": "position-gram-log",
+        "shape": "2*2040*9*8",
+        "bytes": 293760
+      },
+      {
+        "id": "telemetry-checkpoint",
+        "shape": "6*(400*32+dof*8)",
+        "bytes": 251760
+      },
+      {
+        "id": "diagnostics-scratch",
+        "shape": "8*6*18*340*8",
+        "bytes": 2350080
+      },
+      {
+        "id": "serialization-reserve",
+        "shape": "64*1024*1024",
+        "bytes": 67108864
+      },
+      {
+        "id": "object-overhead-reserve",
+        "shape": "64*1024*1024",
+        "bytes": 67108864
+      },
+      {
+        "id": "runtime-reserve",
+        "shape": "128*1024*1024",
+        "bytes": 134217728
+      }
+    ]
+  },
+  "numericComparison": {
+    "scaledAbsoluteFormula": "abs(a-b)/max(1,abs(b))"
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "a38-upstream-gate-refused",
+    "resource-refusal",
+    "committed-chain-replay-not-bit-identical",
+    "committed-diagnostics-not-reproduced",
+    "raw-series-bit-identical-contradiction",
+    "ordinary-rank-divergence-present",
+    "disagreement-not-localized",
+    "fold-order-flip-confirmed-source-unresolved",
+    "fold-order-flip-confirmed-source-attributed"
+  ],
+  "scope": {
+    "closesOnlyPhase573DiagnosticQuestion": true,
+    "doesNotReinterpretPhase570Or571Or572": true,
+    "phase572ComparisonToleranceUnchanged": true,
+    "phase571LeverRemainsUnconfirmed": true,
+    "prospectiveSamplerPackPlanningRemainsClosed": true,
+    "reAdjudicationRequiresSeparateProspectivePhase": true,
+    "rawDirectionalSeriesRetained": true
+  },
+  "authorityFirewalls": {
+    "newSamplingPerformed": false,
+    "markovChainAdvancedBeyondCommittedReplay": false,
+    "configurationsRetained": false,
+    "phase548Or549TerminalChanged": false,
+    "phase570Or571Or572Reinterpreted": false,
+    "phase572ToleranceRelaxed": false,
+    "phase571LeverConfirmed": false,
+    "prospectivePackPlanningOpened": false,
+    "registeredBlindSeedTouched": false,
+    "protectedPhase554SeedsRead": false,
+    "registeredTargetChanged": false,
+    "directionCalledGaugeOrRedundant": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "sourceOrModelSelected": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "requiredExactBindingCount": 36,
+  "exactBindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "phase548-telemetry-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json",
+      "sha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90"
+    },
+    {
+      "id": "phase548-checkpoint-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "sha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"
+    },
+    {
+      "id": "phase548-telemetry-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json",
+      "sha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd"
+    },
+    {
+      "id": "phase548-checkpoint-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "sha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"
+    },
+    {
+      "id": "phase548-telemetry-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json",
+      "sha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db"
+    },
+    {
+      "id": "phase548-checkpoint-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "sha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"
+    },
+    {
+      "id": "phase548-telemetry-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json",
+      "sha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c"
+    },
+    {
+      "id": "phase548-checkpoint-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "sha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"
+    },
+    {
+      "id": "phase548-telemetry-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json",
+      "sha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2"
+    },
+    {
+      "id": "phase548-checkpoint-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "sha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"
+    },
+    {
+      "id": "phase548-telemetry-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json",
+      "sha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd"
+    },
+    {
+      "id": "phase548-checkpoint-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "sha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"
+    },
+    {
+      "id": "phase570-contract-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "sha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    },
+    {
+      "id": "phase570-program-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "sha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    },
+    {
+      "id": "phase570-csproj",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "sha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145"
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase572-contract-v9",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v9.json",
+      "sha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6"
+    },
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "sha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8"
+    },
+    {
+      "id": "phase572-csproj",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase572-summary",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase573-contract-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/preregistration/phase573_directional_estimator_parity_audit_contract_v2.json",
+      "sha256": "245e9ae11f3281228e4ac8a30b714a77efaa1d0be0e92b33f7b8c7365115901c"
+    },
+    {
+      "id": "phase573-program-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/ProgramV2.cs",
+      "sha256": "efed9f7f1c606bad5972ea40bb10e49f6636ee55646d53bdaa2c96f39284b753"
+    },
+    {
+      "id": "phase573-csproj",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj",
+      "sha256": "af48a5eb8994926788f62ba31cfc356f0183a40314ba4633cfb9f79c6a0167f4"
+    },
+    {
+      "id": "phase573-full",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_v2.json",
+      "sha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47"
+    },
+    {
+      "id": "phase573-summary",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_summary_v2.json",
+      "sha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47"
+    },
+    {
+      "id": "shiab-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "id": "mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "sha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    }
+  ]
+}

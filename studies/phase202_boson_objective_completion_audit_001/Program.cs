@@ -317,6 +317,7 @@ const string Phase570Path = "studies/phase570_registered_target_directional_reso
 const string Phase571Path = "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe_summary.json";
 const string Phase572Path = "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json";
 const string Phase573Path = "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_summary_v2.json";
+const string Phase574Path = "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -685,6 +686,7 @@ using var phase570 = File.Exists(Phase570Path) ? JsonDocument.Parse(File.ReadAll
 using var phase571 = File.Exists(Phase571Path) ? JsonDocument.Parse(File.ReadAllText(Phase571Path)) : null;
 using var phase572 = File.Exists(Phase572Path) ? JsonDocument.Parse(File.ReadAllText(Phase572Path)) : null;
 using var phase573 = File.Exists(Phase573Path) ? JsonDocument.Parse(File.ReadAllText(Phase573Path)) : null;
+using var phase574 = File.Exists(Phase574Path) ? JsonDocument.Parse(File.ReadAllText(Phase574Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -8896,6 +8898,58 @@ var directionalEstimatorParityAuditPassed = phase573 is not null
     && JsonBool(phase573.RootElement, "gevClaimAllowed") is false
     && JsonBool(phase573.RootElement, "externalReviewPending") is true
     && JsonInt(phase573.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var directionalRawTraceFoldOrderLocalizationPassed = phase574 is not null
+    && JsonInt(phase574.RootElement, "schemaVersion") == 1
+    && JsonInt(phase574.RootElement, "phase") == 574
+    && JsonString(phase574.RootElement, "phaseId") == "phase574-directional-raw-trace-fold-order-localization"
+    && JsonString(phase574.RootElement, "contractId") == "phase574-a38-directional-raw-trace-fold-order-localization-v1"
+    && JsonBool(phase574.RootElement, "contractValid") is true
+    && JsonBool(phase574.RootElement, "exactBindingsValid") is true
+    && phase574.RootElement.TryGetProperty("bindings", out var p574Bindings)
+    && p574Bindings.ValueKind == JsonValueKind.Array && p574Bindings.GetArrayLength() == 36
+    && phase574.RootElement.TryGetProperty("knownAnswerBattery", out var p574Battery)
+    && JsonBool(p574Battery, "passed") is true
+    && phase574.RootElement.TryGetProperty("upstream", out var p574Upstream)
+    && JsonBool(p574Upstream, "gatePassed") is true
+    && phase574.RootElement.TryGetProperty("replay", out var p574Replay)
+    && JsonBool(p574Replay, "bitIdentical") is true
+    && phase574.RootElement.TryGetProperty("reproduction", out var p574Reproduction)
+    && JsonBool(p574Reproduction, "passed") is true
+    && phase574.RootElement.TryGetProperty("comparison", out var p574Comparison)
+    && JsonInt(p574Comparison, "rowCount") == 36
+    && JsonInt(p574Comparison, "rawDifferingRowCount") == 30
+    && phase574.RootElement.TryGetProperty("hFold", out var p574HFold)
+    && JsonBool(p574HFold, "clauseARawSeriesDifferInEveryMismatchRow") is true
+    && JsonBool(p574HFold, "clauseBOrdinaryRanksAgreeOnAllRows") is true
+    && JsonBool(p574HFold, "clauseCFoldOrderDiffersInEveryMismatchRow") is true
+    && JsonBool(p574HFold, "clauseDCommittedDiagnosticsReproduceBitForBit") is true
+    && JsonBool(p574HFold, "confirmed") is true
+    && phase574.RootElement.TryGetProperty("attribution", out var p574Attribution)
+    && JsonBool(p574Attribution, "allMismatchRowsAttributed") is true
+    && p574Attribution.TryGetProperty("rows", out var p574AttributionRows)
+    && p574AttributionRows.ValueKind == JsonValueKind.Array && p574AttributionRows.GetArrayLength() == 5
+    && JsonString(phase574.RootElement, "verdictKind") == "fold-order-flip-confirmed-source-attributed"
+    && JsonString(phase574.RootElement, "terminalStatus") == "directional-raw-trace-fold-order-localization-fold-order-flip-confirmed-source-attributed"
+    && JsonBool(phase574.RootElement, "closesOnlyPhase573DiagnosticQuestion") is true
+    && JsonBool(phase574.RootElement, "phase570Or571Or572Reinterpreted") is false
+    && JsonBool(phase574.RootElement, "phase572ToleranceRelaxed") is false
+    && JsonBool(phase574.RootElement, "phase571LeverConfirmed") is false
+    && JsonBool(phase574.RootElement, "prospectivePackPlanningOpened") is false
+    && JsonBool(phase574.RootElement, "newSamplingPerformed") is false
+    && JsonBool(phase574.RootElement, "markovChainAdvancedBeyondCommittedReplay") is false
+    && JsonBool(phase574.RootElement, "configurationsRetained") is false
+    && JsonBool(phase574.RootElement, "rawDirectionalSeriesRetained") is true
+    && JsonBool(phase574.RootElement, "protectedPhase554SeedsRead") is false
+    && JsonBool(phase574.RootElement, "registeredTargetChanged") is false
+    && JsonBool(phase574.RootElement, "quotientApplied") is false
+    && JsonBool(phase574.RootElement, "gaugeFixingApplied") is false
+    && JsonBool(phase574.RootElement, "measureNormalizationApplied") is false
+    && JsonBool(phase574.RootElement, "productionAuthorized") is false
+    && JsonBool(phase574.RootElement, "launchAuthorized") is false
+    && JsonBool(phase574.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase574.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase574.RootElement, "externalReviewPending") is true
+    && JsonInt(phase574.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -12043,6 +12097,12 @@ var checklist = new[]
         directionalEstimatorParityAuditPassed ? "passed" : "failed",
         phase573 is null ? "Phase573 artifact not materialized" : $"verdictKind={JsonString(phase573.RootElement, "verdictKind")}; battery={(phase573.RootElement.TryGetProperty("knownAnswerBattery", out var p573ChecklistBattery) ? JsonBool(p573ChecklistBattery, "passed") : null)}; mismatches={(phase573.RootElement.TryGetProperty("comparison", out var p573ChecklistComparison) ? JsonInt(p573ChecklistComparison, "mismatchCount") : null)}; bulkExact={(p573ChecklistComparison.ValueKind == JsonValueKind.Object ? JsonBool(p573ChecklistComparison, "allBulkEssBitIdentical") : null)}; tailExact={(p573ChecklistComparison.ValueKind == JsonValueKind.Object ? JsonBool(p573ChecklistComparison, "allTailEssBitIdentical") : null)}; phase574DesignGate={JsonBool(phase573.RootElement, "phase574TraceDesignGateOpen")}; phase574Execution={JsonBool(phase573.RootElement, "phase574ExecutionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase573.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase573Path),
+    new ObjectiveChecklistItem(
+        "directional-raw-trace-fold-order-localization",
+        "Recover both committed raw directional series deterministically, reproduce each side's diagnostics bit-for-bit, and localize the frozen R-hat disagreement to measured fold-order flips without granting confirmation or planning authority.",
+        directionalRawTraceFoldOrderLocalizationPassed ? "passed" : "failed",
+        phase574 is null ? "Phase574 artifact not materialized" : $"verdictKind={JsonString(phase574.RootElement, "verdictKind")}; reproduction={(phase574.RootElement.TryGetProperty("reproduction", out var p574ChecklistReproduction) ? JsonBool(p574ChecklistReproduction, "passed") : null)}; rawDifferingRows={(phase574.RootElement.TryGetProperty("comparison", out var p574ChecklistComparison) ? JsonInt(p574ChecklistComparison, "rawDifferingRowCount") : null)}; hFoldConfirmed={(phase574.RootElement.TryGetProperty("hFold", out var p574ChecklistHFold) ? JsonBool(p574ChecklistHFold, "confirmed") : null)}; attributed={(phase574.RootElement.TryGetProperty("attribution", out var p574ChecklistAttribution) ? JsonBool(p574ChecklistAttribution, "allMismatchRowsAttributed") : null)}; leverConfirmed={JsonBool(phase574.RootElement, "phase571LeverConfirmed")}; promotedPhysicalMassClaimCount={JsonInt(phase574.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase574Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

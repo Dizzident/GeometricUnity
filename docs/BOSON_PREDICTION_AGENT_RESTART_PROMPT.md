@@ -1458,6 +1458,46 @@ separately registered prospective phase. Binding record: Amendment A38 in
 575+ remains unassigned. External review remains pending and
 `promotedPhysicalMassClaimCount=0`.
 
+EXECUTED A38 RESULT (2026-09-01, Phase574): the raw-trace experiment ran
+once under its prospectively frozen 36-binding contract and returned
+`fold-order-flip-confirmed-source-attributed` on the first execution. All
+six committed chains replayed with matching decisions and bit-identical
+final checkpoints; the shared position stream was measured through both
+committed observable paths ported verbatim; and one shared kernel (justified
+by Phase573's parity proof) reproduced each side's committed R-hat, bulk
+ESS, tail ESS, and pass flags bit-for-bit from its own recovered series.
+Every H-fold clause held: 30 of 36 rows differ at raw ulp scale (maximum
+scaled difference `2.9604386036136494e-15`), ordinary ranks agree on all 36
+rows, and each committed mismatch row shows a measured fold-order flip of
+two or three folded-rank entries. Attribution is measured: `eNormSquared`,
+`eMovementSquared`, and `closedMovementSquared` first diverge at projection
+accumulation; `closedGramLargest` and `closedGramSmallest` first diverge at
+the assembled Gram matrix. Thirteen non-mismatch-row fold flips were masked
+by the R-hat max rule. Both sides' raw directional series are now retained
+in the committed Phase574 output, discharging the retention gap Phase573
+identified.
+
+The Phase570/572 disagreement is therefore fully explained as an ulp-scale
+representation effect on near-tied folded ranks; it was never an estimator,
+replay, or data defect, and Phase572's fail-closed terminal was correct and
+stands at its unchanged `2e-10` tolerance. A38 grants nothing further: the
+Phase571 lever remains not independently confirmed, prospective
+sampler-pack planning remains closed, and any re-adjudication under an
+agreed rank/fold convention requires its own separately registered
+prospective phase. External review remains pending,
+`promotedPhysicalMassClaimCount=0`, and registry 575+ remains unassigned.
+
+The mandatory A38 execution checkpoint ran 91 steps and skipped 343. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 354 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran Phase574 and the
+integrity verifier pins its exact output hash, so it doubles as the two-run
+byte-reproducibility check. No scanner recorded any new path or text; the
+IMPLEMENTATION_P574.md registrations in the nine exclusion lists landed in
+the same checkpoint. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T21-19-37-838Z.json`.
+
 The mandatory A38 design checkpoint ran 49 steps and skipped 384. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
 standing failures, O4 coverage remained 31/31, the synthetic-overturn battery

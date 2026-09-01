@@ -428,6 +428,7 @@
     <PhaseProject Include="../studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj" />
     <PhaseProject Include="../studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj" />
     <PhaseProject Include="../studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj" />
+    <PhaseProject Include="../studies/phase574_directional_raw_trace_fold_order_localization_001/Phase574DirectionalRawTraceFoldOrderLocalization.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

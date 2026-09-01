@@ -442,6 +442,7 @@ dotnet run --no-build -c Release --project studies/phase570_registered_target_di
 dotnet run --no-build -c Release --project studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj
 dotnet run --no-build -c Release --project studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase574_directional_raw_trace_fold_order_localization_001/Phase574DirectionalRawTraceFoldOrderLocalization.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
