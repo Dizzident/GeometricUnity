@@ -1358,8 +1358,8 @@ independently confirmed favorable Phase572 terminal may open planning for a
 separate prospective disjoint-seed chain pack. Protected Phase554 seeds remain
 unread; external review remains pending; no O4, Phase458, Phase481, Phase561,
 production, launch, physical-unit, or GeV authority is granted; and
-`promotedPhysicalMassClaimCount=0`. Phase573 is allocated by A37; registry
-574+ remains unassigned.
+`promotedPhysicalMassClaimCount=0`. Phase573 is allocated by A37; Phase574 is
+allocated by A38 as design-only, and registry 575+ remains unassigned.
 
 Phase570 v7 replayed all six Phase548 chains bit-for-bit and returned
 `invariant-directional-under-resolution-not-localized`. Both tables remained
@@ -1417,7 +1417,8 @@ remains closed, no threshold is relaxed, and no replay, sampling, Markov
 advance, protected-seed access, target change, quotient, gauge fixing, measure
 normalization, production, launch, physical-unit, or GeV authority follows.
 External review remains pending and `promotedPhysicalMassClaimCount=0`.
-Registry 574+ remains unassigned.
+Registry 574 is now allocated design-only by Amendment A38 below; 575+
+remains unassigned.
 
 The mandatory A37 incremental checkpoint ran 91 steps and skipped 342. It
 ended at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
@@ -1429,6 +1430,42 @@ byte-reproducibility check. No scanner recorded any new path or text; the
 IMPLEMENTATION_P573.md registrations in the nine exclusion lists landed in the
 same checkpoint. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T19-27-12-745Z.json`.
+The A36/A37 checkpoint is committed and pushed at `fa684503`.
+
+PHASE574 RAW-TRACE LOCALIZATION DESIGN (2026-09-01, Amendment A38; Phase574
+allocated, DESIGN ONLY, not executed): the design pre-registers the
+falsifiable fold-order hypothesis H-fold from committed evidence alone.
+Phase573 proved kernel parity and bit-identical bulk ESS; bulk ESS consumes
+the ordinary-ranked raw series, so both sides' ordinary ranks must agree,
+and R-hat's only additional input is its folded-rank component over
+`|x - median|`. H-fold therefore predicts ulp-scale raw-value differences
+(Gram-eigensolver or accumulation-order in origin - the five mismatch series
+are two closed-sector Gram eigenvalues and three quadratic accumulations)
+that flip fold orderings without reordering the raw series, with each
+side's committed diagnostics reproduced bit-for-bit from its own recovered
+series. Bit-identical raw series with differing R-hat is a frozen integrity
+stop because it would contradict Phase573. Phase574 is deterministic and
+zero-new-sampling (both chains replay bit-for-bit from frozen contracts and
+seeds), instruments study-local reimplementations of both committed
+reconstruction paths, and mutates no committed byte. Its execution requires
+a prospectively frozen contract committed before first execution. A
+favorable terminal closes the Phase573 diagnostic question only: it does
+not reinterpret Phase570/571/572, relax the frozen `2e-10` tolerance,
+confirm the Phase571 lever, or open prospective sampler-pack planning; any
+re-adjudication under an agreed rank/fold convention requires its own
+separately registered prospective phase. Binding record: Amendment A38 in
+`docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md`. Registry 574 is allocated;
+575+ remains unassigned. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A38 design checkpoint ran 49 steps and skipped 384. It ended
+at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. No scanner recorded the A38 design text,
+so no exclusion list was extended and no scanner coverage was reduced. The
+skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T20-12-11-795Z.json`.
 
 The mandatory A30 execution checkpoint ran 88 steps and skipped 329. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 337 passed / 3 standing

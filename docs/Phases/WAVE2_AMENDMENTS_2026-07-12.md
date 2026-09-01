@@ -1597,3 +1597,67 @@ registered. Phase572 remains fail-closed and its tolerance unchanged, the
 Phase571 lever remains not independently confirmed, prospective sampler-pack
 planning remains closed, and all A36/A37 authority firewalls remain closed
 with `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A38 - directional raw-trace fold-order localization design (2026-09-01; Phase574)
+
+Phase573 localized the frozen Phase570/572 disagreement to upstream
+raw-series/rank construction but could not separate ordinary-rank, folded-rank,
+median, projector, and eigensolver-rounding effects because neither upstream
+phase retained its raw directional series. Both chains replay bit-identically
+from the frozen contracts and seeds, so the missing series are deterministic
+and recoverable at zero new sampling cost. A38 registers the DESIGN of exactly
+one phase to recover and compare them.
+
+PRE-REGISTERED PRIMARY HYPOTHESIS (H-fold): Phase573 proved the two estimator
+kernels are bit-identical and that every bulk ESS value - computed from the
+ordinary-ranked raw series - is bit-identical, while only R-hat differs. R-hat
+is the maximum of an ordinary-ranked component and a folded-rank component
+computed from `|x - median|`. H-fold therefore states: (a) the two sides' raw
+directional series differ at ulp scale in at least the five mismatch series,
+originating in Gram-eigenvalue computation or accumulation order; (b) the
+ordinary-rank vectors agree exactly on all 36 series; (c) folded-rank
+orderings differ only where R-hat differs; (d) each side's committed R-hat
+values are reproduced bit-for-bit from its own recovered raw series.
+Falsifiers, any of which defeats H-fold: a raw series pair bit-identical yet
+yielding differing R-hat (contradicts kernel parity - integrity stop);
+ordinary-rank divergence anywhere; failure to reproduce a committed
+diagnostic value; or an above-tolerance R-hat difference without a
+corresponding fold-order flip.
+
+1. **Phase574 - raw directional-series acquisition and fold-order
+   localization audit.** Exact-bind the executed Phase570 v7, Phase572 v9, and
+   Phase573 v2 programs, projects, contracts, and outputs plus the Phase548
+   lineage. Reconstruct both sides' raw directional series with instrumented
+   study-local reimplementations of the two committed reconstruction paths,
+   using RNG restricted to the committed replay exactly as Phase570/572 did
+   and mutating no committed byte. Run a known-answer battery before any
+   audited numeric read, including planted ulp-perturbation fixtures that
+   demonstrate fold-flip sensitivity with ordinary-rank stability. Then
+   compare per series: raw byte equality and first-divergence index,
+   ordinary-rank equality, median values, folded-rank ordering, bit-for-bit
+   reproduction of the committed Phase570 and Phase572 diagnostics from each
+   side's own raw series, and cross-application of each side's fold to the
+   other side's series. Attribute confirmed raw differences to
+   Gram-eigensolver versus accumulation-order origin where the
+   instrumentation supports it, without guessing. Terminal precedence and
+   numeric tolerances are frozen in the contract before first execution; the
+   taxonomy distinguishes at minimum invalid/drifted input, battery failure,
+   replay non-reproduction, committed-diagnostic non-reproduction, the
+   bit-identical-contradiction integrity stop, ordinary-rank divergence,
+   fold-order flip confirmed with source attribution, fold-order flip
+   confirmed with source unresolved, and non-localized disagreement.
+
+A favorable Phase574 terminal closes the Phase573 diagnostic question only.
+It does not reopen or reinterpret Phase570/571/572, does not relax Phase572's
+frozen `2e-10` tolerance, does not make the Phase571 lever independently
+confirmed, and does not open prospective sampler-pack planning; any future
+re-adjudication under an agreed rank/fold convention would require its own
+separately registered prospective phase. Phase574 performs no new sampling,
+Markov advance beyond committed replay reconstruction, configuration
+retention, protected Phase554 seed read, target change, quotient, gauge
+fixing, measure normalization, or production action, and grants no Phase561,
+O4, Phase458, Phase481, production, launch, physical-unit, or GeV authority.
+External review remains pending and `promotedPhysicalMassClaimCount=0`.
+Registry 574 is allocated; 575+ remains unassigned. This amendment registers
+the design only: Phase574 execution requires its prospectively frozen
+contract committed before the first execution.

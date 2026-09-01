@@ -22509,3 +22509,49 @@ remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 verifier pins its exact v1 and v2 output hashes, so it doubles as the two-run
 byte-reproducibility check. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T19-27-12-745Z.json`.
+
+## 2026-09-01 - Amendment A38, Phase574 design: the fold-order hypothesis is registered before any trace is recovered
+
+DIRECTIONAL RAW-TRACE LOCALIZATION DESIGN (2026-09-01, Amendment A38;
+Phase574 allocated, design only): the A36/A37 checkpoint was committed and
+pushed at `fa684503` after its green mandatory pass. The next machine
+experiment opened by Phase573 is designed and registered without being
+executed.
+
+The design pre-registers the falsifiable primary hypothesis H-fold, derived
+from committed evidence alone before any raw series exists in the
+repository: Phase573 proved kernel parity and bit-identical bulk ESS, and
+bulk ESS consumes the ordinary-ranked raw series, so the two sides'
+ordinary ranks must agree; R-hat alone differs, and R-hat's only additional
+input is its folded-rank component over `|x - median|`; therefore the
+disagreement should be carried by fold-order flips caused by ulp-scale raw
+value differences - plausibly Gram-eigensolver or accumulation-order
+effects, given that the five mismatch series are two closed-sector Gram
+eigenvalues and three movement/norm quadratic accumulations - that never
+reorder the raw series. Each clause of H-fold is separately falsifiable,
+and one branch (bit-identical raw series with differing R-hat) is an
+integrity stop because it would contradict Phase573's kernel-parity proof.
+
+Phase574 is deterministic and zero-new-sampling: both chains replay
+bit-for-bit from frozen contracts and seeds, as established by Phase549,
+Phase552, Phase570, and Phase572 independently. The phase will instrument
+study-local reimplementations of both committed reconstruction paths,
+recover the raw directional series, and compare raw bytes, ordinary ranks,
+medians, folded orderings, and committed-diagnostic reproduction under a
+frozen terminal taxonomy.
+
+Registry 574 is allocated under A38; 575+ remains unassigned. Execution is
+NOT performed by this checkpoint and requires the prospectively frozen
+Phase574 contract committed before first execution. No committed phase is
+reinterpreted, Phase572's tolerance is unchanged, the Phase571 lever
+remains unconfirmed, prospective sampler-pack planning remains closed,
+protected Phase554 seeds remain unread, external review remains pending,
+and `promotedPhysicalMassClaimCount=0`.
+
+The mandatory A38 design checkpoint ran 49 steps and skipped 384. It ended
+at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn
+battery remained 94/94, source deficits remained 15 W/Z and 14 Higgs
+fields, and `promotedPhysicalMassClaimCount=0`. No scanner recorded the A38
+design text. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T20-12-11-795Z.json`.
