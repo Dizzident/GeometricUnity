@@ -1,6 +1,6 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "generatedAt": "2026-08-11T19:37:44.7559085+00:00",
+  "generatedAt": "2026-09-01T19:28:52.1465567+00:00",
   "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
   "responseImageObservedProjectionRequirementAuditPassed": true,
   "targetBlindConstruction": true,
@@ -53,7 +53,7 @@
       },
       {
         "fieldId": "quadraticElectroweakMassOperatorId",
-        "candidateLineCount": 1003,
+        "candidateLineCount": 1363,
         "intakeReadyCandidateCount": 0,
         "filled": false
       },
@@ -65,7 +65,7 @@
       },
       {
         "fieldId": "wBosonSourceRowId",
-        "candidateLineCount": 162,
+        "candidateLineCount": 177,
         "intakeReadyCandidateCount": 0,
         "filled": false
       },

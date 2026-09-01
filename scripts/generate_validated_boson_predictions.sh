@@ -438,6 +438,10 @@ dotnet run --no-build -c Release --project studies/phase566_independent_finite_t
 dotnet run --no-build -c Release --project studies/phase567_path_ordered_curvature_candidate_001/Phase567PathOrderedCurvatureCandidate.csproj
 dotnet run --no-build -c Release --project studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Phase568PathOrderedCurvatureDownstreamCounterfactualAudit.csproj
 dotnet run --no-build -c Release --project studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Phase569IndependentPathOrderedCounterfactualAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj
+dotnet run --no-build -c Release --project studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj
+dotnet run --no-build -c Release --project studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

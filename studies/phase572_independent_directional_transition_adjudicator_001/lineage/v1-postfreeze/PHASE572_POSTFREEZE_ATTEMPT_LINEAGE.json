@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "post-v1-freeze-source-drift-unexecuted",
+  "programSha256": "ad26f669020da651f4d2889f03494994a2fb8b3e7b5ccfb3ca0b32e0db682e87",
+  "v1ContractExpectedProgramSha256": "862c37955dc0f5d253fb9575292fb16190659f57f85cf07a7084d2ade5d6e43b",
+  "executed": false,
+  "outputCreated": false,
+  "exactBindingMatched": false,
+  "superseded": true,
+  "reason": "Static contract-hardening edits occurred after the v1 freeze. Both independent auditors detected the exact-binding mismatch before execution. This fail-closed attempt is preserved and is not a scientific run."
+}

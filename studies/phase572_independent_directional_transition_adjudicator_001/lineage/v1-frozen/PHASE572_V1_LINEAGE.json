@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "v1-frozen-unexecuted-blocked",
+  "programSha256": "862c37955dc0f5d253fb9575292fb16190659f57f85cf07a7084d2ade5d6e43b",
+  "projectSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractSha256": "c73b0c9f9d430f1860b7d1603f088b9422ce7530d16a4ab37c9f38d8f7bb88eb",
+  "executed": false,
+  "outputCreated": false,
+  "superseded": true,
+  "reason": "Independent pre-execution review found a cperp JSON-key defect, incomplete resource derivation and output-schema controls, unreachable selector branches, an overbroad objective-gradient independence claim, and ambiguous numeric-tolerance wording. The v1 bytes were never executed and cannot support a scientific terminal."
+}

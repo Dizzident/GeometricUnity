@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "phase": 573,
+  "contractId": "phase573-a37-directional-estimator-parity-audit-v2",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "retrospectiveKnownDataAudit": true,
+  "newSamplingPerformed": false,
+  "rawDirectionalSeriesAvailableUpstream": false,
+  "lineage": {
+    "v1ExecutedAndStoppedAtBattery": true,
+    "v1UpstreamNumericRowsRead": false,
+    "v1FailureWasCompositeInvarianceFixtureOnly": true
+  },
+  "batteryRepair": {
+    "kernelParityRemainsExactRequired": true,
+    "compositeTailIndicatorAffineSignInvarianceNoLongerTerminal": true,
+    "phase572ComparisonToleranceUnchanged": true
+  },
+  "requiredExactBindingCount": 17,
+  "requiredExactBindingIds": [
+    "phase548-contract",
+    "phase548-summary",
+    "phase570-contract",
+    "phase570-program",
+    "phase570-full",
+    "phase570-summary",
+    "phase572-contract",
+    "phase572-program",
+    "phase572-full",
+    "phase572-summary",
+    "phase573-v1-contract",
+    "phase573-v1-program",
+    "phase573-v1-csproj",
+    "phase573-v1-full",
+    "phase573-v1-summary",
+    "phase573-program-v2",
+    "phase573-csproj-v2"
+  ],
+  "expectedTableRowCountPerPhase": 36,
+  "expectedRhatMismatchCount": 5,
+  "expectedRhatMismatchKeys": [
+    "complete-lattice-pilot-a|closedGramLargest",
+    "complete-lattice-pilot-a|closedMovementSquared",
+    "complete-lattice-pilot-a|eMovementSquared",
+    "complete-lattice-pilot-a|eNormSquared",
+    "complete-lattice-pilot-b|closedGramSmallest"
+  ],
+  "numericComparison": {
+    "scaledAbsoluteTolerance": 2e-10,
+    "formula": "abs(a-b)/max(1,abs(b))"
+  },
+  "scope": {
+    "estimatorParityOnly": true,
+    "doesNotReinterpretPhase570Or572": true,
+    "doesNotOpenProspectivePackPlanning": true,
+    "phase574TraceDesignOnlyIfLocalized": true
+  },
+  "terminalTaxonomy": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "a36-upstream-gate-refused",
+    "directional-row-schema-invalid",
+    "estimator-kernels-disagree-on-identical-input",
+    "non-rhat-diagnostic-disagreement-present",
+    "reported-rhat-disagreement-not-reproduced",
+    "rhat-only-disagreement-localized-input-trace-required"
+  ],
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "exactBindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "phase570-contract",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "sha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    },
+    {
+      "id": "phase570-program",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "sha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase572-contract",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v9.json",
+      "sha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6"
+    },
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "sha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8"
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase572-summary",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase573-v1-contract",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/preregistration/phase573_directional_estimator_parity_audit_contract_v1.json",
+      "sha256": "96e3b4a19ccfb771280c3314193b5188132fbe18b9ee40e8ce157964a84e44e9"
+    },
+    {
+      "id": "phase573-v1-program",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/lineage/v1/Program_v1.cs.txt",
+      "sha256": "edb3d7173e4344f4fd113652f680ef535ec8ee8fb744a41b375e34c56f020aff"
+    },
+    {
+      "id": "phase573-v1-csproj",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/lineage/v1/Phase573DirectionalEstimatorParityAudit_v1.csproj.txt",
+      "sha256": "de3a625c1165cfd59a28e857eada74b547cc8e17f617a3f2e87d7d9f0b754819"
+    },
+    {
+      "id": "phase573-v1-full",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit.json",
+      "sha256": "5acbac35129af5cc717a5bafb6cecf507d76206034c28c2ec6fafb7d9aa3ed3d"
+    },
+    {
+      "id": "phase573-v1-summary",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_summary.json",
+      "sha256": "5acbac35129af5cc717a5bafb6cecf507d76206034c28c2ec6fafb7d9aa3ed3d"
+    },
+    {
+      "id": "phase573-program-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/ProgramV2.cs",
+      "sha256": "efed9f7f1c606bad5972ea40bb10e49f6636ee55646d53bdaa2c96f39284b753"
+    },
+    {
+      "id": "phase573-csproj-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj",
+      "sha256": "af48a5eb8994926788f62ba31cfc356f0183a40314ba4633cfb9f79c6a0167f4"
+    }
+  ]
+}

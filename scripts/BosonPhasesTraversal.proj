@@ -424,6 +424,10 @@
     <PhaseProject Include="../studies/phase567_path_ordered_curvature_candidate_001/Phase567PathOrderedCurvatureCandidate.csproj" />
     <PhaseProject Include="../studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Phase568PathOrderedCurvatureDownstreamCounterfactualAudit.csproj" />
     <PhaseProject Include="../studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Phase569IndependentPathOrderedCounterfactualAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj" />
+    <PhaseProject Include="../studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj" />
+    <PhaseProject Include="../studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

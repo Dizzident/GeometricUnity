@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "phase": 571,
+  "recordFrozenBeforeFirstExecution": true,
+  "pendingScaffold": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/Program_PENDING.cs.txt",
+    "programSha256": "4c789013b20a668296576e98f8ea2b4fc5ce661979111c492ed69aecda75843d",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/phase571_bounded_reset_checkpoint_transition_probe_contract_PENDING.json",
+    "contractSha256": "d6b8542b6c655187fb43db4d8426a3f7f1be9c91ceb510f07262f7cca87bac9c",
+    "executed": false,
+    "citableAsExecutedResult": false
+  },
+  "frozenV1": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+    "programSha256": "f9d5d7ab3fc255c985e75b080a2f73a7890fd8eb4ea52f345bc3fddebb0111c4",
+    "csprojPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v1.json",
+    "executed": false
+  },
+  "phase570Gate": {
+    "contractId": "phase570-a36-registered-target-directional-resolution-replay-v7",
+    "contractSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+    "programSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+    "csprojSha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145",
+    "fullAndSummaryOutputSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+    "verdictKind": "invariant-directional-under-resolution-not-localized",
+    "phase571TransitionProbeGateOpen": true
+  },
+  "acceptedStateCarryAllowed": false,
+  "markovChainAdvanced": false,
+  "targetSamplingPerformed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

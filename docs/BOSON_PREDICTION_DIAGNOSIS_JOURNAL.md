@@ -22406,3 +22406,106 @@ all earlier terminals remain frozen. No RNG, HMC, replay, protected Phase554
 seed, quotient, gauge fixing, measure normalization, physical unit, or GeV
 claim was used. External review remains pending and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-08-27 - Amendment A36, Phases570-572: longer trajectories improve local movement, but independent directional diagnostics disagree
+
+REGISTERED-TARGET DIRECTION-RESOLVED TRANSITION TRANCHE (2026-08-27,
+Amendment A36; Phases570-572): Phase570 v7 replayed all six frozen Phase548
+chains. Every accept/reject decision and Hamiltonian difference matched, and
+all six final positions were bit-identical. The algebraic incidence dimensions
+were `E/W/C/C-perp = 240/12/252/3393`. Both tables remained under-resolved, but
+the burden was enriched in neither the closed sector nor the closed rank-one
+coordinates under the frozen rules. No aggregate drift signal was selected.
+The terminal was `invariant-directional-under-resolution-not-localized`.
+
+Phase571 v4 used two disclosed momentum seeds, antithetic signs, four frozen
+arms, and all six immutable endpoints. It emitted 96 finite, nondivergent,
+accepted reset proposals with no carried state. Same-duration step halving
+gave orders `1.976992096261708` and `1.993801143087295`; maximum reversal error
+was below `3.52e-16`. Every endpoint qualified in all four panels. Long versus
+baseline accepted movement per force evaluation ranged from `2.0152` to
+`4.9154`, producing `longer-trajectory-local-kernel-lever-supported`. This
+does not establish stationarity, mixing, sampler causality, or a production
+default.
+
+Phase572 v9 shared no Phase545/570/571 study implementation. It independently
+reconstructed the projectors, RNG, replay, leapfrog proposals, estimators, and
+movement classifier while invoking only the exact-bound production target
+evaluator. All six replay rows matched exactly, and all 96 transition rows,
+same-tau controls, movement classification, and 4,416 transition force
+evaluations agreed. The directional classification agreed too, but five
+rank-normalized table R-hat values exceeded the frozen `2e-10`
+scaled-absolute agreement tolerance. The largest discrepancy was
+`4.302812022446892e-05` for table A `closedGramLargest`; lag and drift metrics
+agreed at roundoff scale. Phase572 therefore returned
+`directional-diagnostics-disagree`. No threshold was relaxed, Phase571 is not
+independently confirmed, and later prospective-pack planning remains closed.
+
+Phase572's failed attempts were retained. V1-v3 and v5-v8 never executed after
+static review found binding, semantic-coverage, or serialization-safety gaps.
+V4 completed the calculation but exited 134 before writing output because the
+expected nonfinite `deltaH` from a planted divergence control was passed as a
+raw strict-JSON number. Its program, project, contract, and honest
+no-transcript attempt record are exact-bound by the final lineage. V9 added
+actual-production-shape nonfinite scans without changing a scientific
+threshold. It is the sole citable Phase572 result.
+
+A36 advances no Markov chain beyond committed replay, retains no new
+configuration, reads no protected Phase554 seed, and changes no registered
+operator, default, checkpoint, or earlier terminal. It applies no quotient,
+gauge fixing, or measure normalization and grants no Phase561, O4, Phase458,
+Phase481, production, launch, physical-unit, or GeV authority. External review
+remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-08-27 - Amendment A37, Phase573: the disagreement is R-hat-only and upstream of the estimator kernel
+
+DIRECTIONAL-ESTIMATOR PARITY LOCALIZATION (2026-08-27, Amendment A37;
+Phase573): the Phase572 fail-closed disagreement admitted one zero-sampling
+machine question - kernel or input. Phase573 exact-binds seventeen artifacts
+across the executed Phase548/570/572 chain and its own preserved v1 lineage,
+implements the rank-normalized split R-hat, bulk ESS, and tail ESS kernels
+twice study-locally, and requires bit-for-bit parity on identical synthetic
+inputs before reading any audited numeric row.
+
+The frozen v1 stopped at `known-answer-battery-failed` before any upstream
+numeric row was read. Both estimator implementations already matched
+bit-for-bit; the stop came from an over-strong composite sign/affine-
+invariance assertion applied to the frozen finite-sample tail-indicator ESS
+convention, whose inclusive quantile thresholds are not exactly invariant at
+finite sample size. The v1 contract, program, project, and outputs are
+preserved as non-citable lineage. V2 keeps exact kernel parity mandatory,
+records the composite invariance fixture descriptively, and changes no
+estimator formula and no Phase572 comparison threshold.
+
+Phase573 v2 passed the repaired six-row battery and compared all 36 frozen
+Phase570/572 table rows. The two kernels match bit-for-bit on identical
+inputs. Exactly five rows differ: table A `closedGramLargest`,
+`closedMovementSquared`, `eMovementSquared`, and `eNormSquared`, plus table B
+`closedGramSmallest`. Only R-hat differs; every bulk ESS value and every tail
+ESS value is bit-identical, and every pass/fail classification agrees. The
+maximum scaled R-hat difference is `4.302812022446892e-05`. The terminal is
+`rhat-only-disagreement-localized-input-trace-required`: the estimator kernel
+is excluded, and the unresolved distinction lies in upstream raw-series/rank
+construction. Because neither upstream phase retained raw directional series,
+ordinary-rank, folded-rank, median, projector, and eigensolver-rounding
+effects cannot yet be separated; that separation requires a separately
+designed raw-trace phase.
+
+Phase574 raw-trace DESIGN is open; Phase574 execution is not authorized or
+registered. Phase572 remains fail-closed with its `2e-10` tolerance unchanged,
+the Phase571 lever remains not independently confirmed, and prospective
+sampler-pack planning remains closed. Phase573 performed no replay, HMC, new
+sampling, Markov advance, configuration retention, protected Phase554 seed
+read, target change, quotient, gauge fixing, or measure normalization, and it
+grants no Phase561, O4, Phase458, Phase481, production, launch, physical-unit,
+or GeV authority. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+The mandatory A37 incremental checkpoint ran 91 steps and skipped 342. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran Phase573 and the integrity
+verifier pins its exact v1 and v2 output hashes, so it doubles as the two-run
+byte-reproducibility check. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T19-27-12-745Z.json`.

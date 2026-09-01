@@ -1,0 +1,1180 @@
+using System.Security.Cryptography;
+using System.Text.Json;
+using Gu.Core;
+using Gu.Geometry;
+using Gu.Math;
+using Gu.ReferenceCpu;
+using Phase545;
+
+const string Root = "studies/phase571_bounded_reset_checkpoint_transition_probe_001";
+const string ContractPath = Root + "/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v2.json";
+const string OutputPath = Root + "/output/bounded_reset_checkpoint_transition_probe.json";
+const string SummaryPath = Root + "/output/bounded_reset_checkpoint_transition_probe_summary.json";
+
+using var contractDocument = JsonDocument.Parse(File.ReadAllBytes(ContractPath));
+JsonElement contract = contractDocument.RootElement;
+string[] taxonomy = contract.GetProperty("terminalTaxonomyInPrecedenceOrder")
+    .EnumerateArray().Select(x => x.GetString()!).ToArray();
+
+var bindingSpecs = contract.GetProperty("exactBindings").EnumerateArray().Select(x => new BindingSpec(
+    x.GetProperty("id").GetString()!, x.GetProperty("path").GetString()!, x.GetProperty("sha256").GetString()!)).ToArray();
+var bindings = bindingSpecs.Select(x =>
+{
+    string actual = File.Exists(x.Path) ? Sha(x.Path) : "missing";
+    return new { x.Id, x.Path, x.ExpectedSha256, ActualSha256 = actual, HashMatches = actual == x.ExpectedSha256 };
+}).ToArray();
+string[] requiredBindingIds =
+[
+    "phase571-program", "phase571-csproj", "phase571-lineage", "phase571-pending-program", "phase571-pending-contract",
+    "phase571-v1-program", "phase571-v1-csproj", "phase571-v1-contract", "phase571-v1-lineage",
+    "phase570-program-v7", "phase570-csproj", "phase570-contract-v7", "phase570-result", "phase570-summary",
+    "phase545-kernel", "phase545-contract", "phase545-summary", "phase545-csproj",
+    "phase548-contract", "phase548-program", "phase548-csproj", "phase548-summary",
+    "checkpoint-a-546101", "checkpoint-a-546103", "checkpoint-a-546107",
+    "checkpoint-b-546201", "checkpoint-b-546203", "checkpoint-b-546207",
+    "shiab-operator", "shiab-family-spec", "mass-matrix", "mesh-generator", "mesh-topology-builder", "lie-algebra-factory",
+];
+bool bindingIdsUnique = bindingSpecs.Select(x => x.Id).Distinct(StringComparer.Ordinal).Count() == bindingSpecs.Length;
+bool bindingPathsUnique = bindingSpecs.Select(x => x.Path).Distinct(StringComparer.Ordinal).Count() == bindingSpecs.Length;
+bool requiredBindingIdsUnique = requiredBindingIds.Distinct(StringComparer.Ordinal).Count() == requiredBindingIds.Length;
+bool exactBindingIdsValid = bindingIdsUnique && bindingPathsUnique && requiredBindingIdsUnique
+    && bindingSpecs.Select(x => x.Id).Order(StringComparer.Ordinal)
+        .SequenceEqual(requiredBindingIds.Order(StringComparer.Ordinal), StringComparer.Ordinal);
+bool exactBindingsValid = bindingSpecs.Length == 34
+    && contract.GetProperty("requiredExactBindingCount").GetInt32() == 34
+    && exactBindingIdsValid && bindings.All(x => x.HashMatches);
+
+string[] expectedTaxonomy =
+[
+    "invalid-or-drifted-input", "upstream-directional-replay-gate-absent", "resource-refusal",
+    "projector-control-failed", "reset-integrity-stop", "transition-nonfinite-or-divergent",
+    "same-tau-energy-order-not-observed", "paired-movement-diagnostics-inconclusive",
+    "longer-trajectory-local-kernel-lever-supported", "local-kernel-response-mixed",
+    "longer-trajectory-local-kernel-lever-not-supported",
+];
+string[] expectedAuthorityFirewallKeys =
+[
+    "phase548TerminalChanged", "phase570TerminalChanged", "registeredDefaultChanged", "acceptedStateCarried",
+    "markovChainAdvanced", "targetSamplingPerformed", "configurationsRetained", "nullSpaceInterpretedAsGaugeVolume",
+    "quotientApplied", "gaugeFixingApplied", "measureNormalizationApplied", "productionDefaultSelected",
+    "productionAuthorized", "launchAuthorized", "phase458G3Satisfied", "phase458G4Satisfied",
+    "phase458G5Satisfied", "o4Discharged", "sourceContractApplicationAllowed", "physicalUnitClaimAllowed",
+    "gevClaimAllowed", "protectedPhase554SeedsRead", "allDownstreamAuthority",
+];
+string[] expectedTopLevelOutputKeys =
+[
+    "schemaVersion", "phase", "phaseId", "contractId", "contractSha256", "contractValid", "exactBindingsValid",
+    "phase570GateOpen", "resourceAccepted", "bindings", "classificationBattery", "seedNamespaceControls", "resource",
+    "projectorControls", "resetControls", "reversalControls", "sameTauEnergyOrder", "pairedMovementClassification", "rows",
+    "verdictKind", "terminalStatus", "decision", "rngUsed", "markovChainAdvanced", "targetSamplingPerformed",
+    "warmupPerformed", "adaptationPerformed", "configurationsRetained", "acceptedStateCarried",
+    "phase548TerminalChanged", "phase570TerminalChanged", "registeredDefaultChanged", "nullSpaceInterpretedAsGaugeVolume",
+    "quotientApplied", "gaugeFixingApplied", "measureNormalizationApplied", "productionDefaultSelected",
+    "productionAuthorized", "launchAuthorized", "phase458G3Satisfied", "phase458G4Satisfied", "phase458G5Satisfied",
+    "o4Discharged", "sourceContractApplicationAllowed", "physicalUnitClaimAllowed", "gevClaimAllowed",
+    "protectedPhase554SeedsRead", "allDownstreamAuthority", "authorityFirewalls", "externalReviewPending",
+    "promotedPhysicalMassClaimCount",
+];
+
+string SelectTerminal(bool invalid, bool upstream, bool resourceRefused, bool projectorFailed,
+    bool resetFailed, bool transitionFailed, bool sameTauFailed, bool movementInconclusive,
+    bool supported, bool mixed)
+{
+    string At(int index) => taxonomy.Length == expectedTaxonomy.Length ? taxonomy[index] : "invalid-taxonomy";
+    if (invalid) return At(0);
+    if (upstream) return At(1);
+    if (resourceRefused) return At(2);
+    if (projectorFailed) return At(3);
+    if (resetFailed) return At(4);
+    if (transitionFailed) return At(5);
+    if (sameTauFailed) return At(6);
+    if (movementInconclusive) return At(7);
+    if (supported) return At(8);
+    if (mixed) return At(9);
+    return At(10);
+}
+var classificationTruthRows = new[]
+{
+    new { id="invalid", actual=SelectTerminal(true,false,false,false,false,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(0) },
+    new { id="upstream", actual=SelectTerminal(false,true,false,false,false,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(1) },
+    new { id="resource", actual=SelectTerminal(false,false,true,false,false,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(2) },
+    new { id="projector", actual=SelectTerminal(false,false,false,true,false,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(3) },
+    new { id="reset", actual=SelectTerminal(false,false,false,false,true,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(4) },
+    new { id="transition", actual=SelectTerminal(false,false,false,false,false,true,false,false,false,false), expected=taxonomy.ElementAtOrDefault(5) },
+    new { id="same-tau-precedes-movement", actual=SelectTerminal(false,false,false,false,false,false,true,true,true,true), expected=taxonomy.ElementAtOrDefault(6) },
+    new { id="movement-inconclusive", actual=SelectTerminal(false,false,false,false,false,false,false,true,false,false), expected=taxonomy.ElementAtOrDefault(7) },
+    new { id="supported", actual=SelectTerminal(false,false,false,false,false,false,false,false,true,false), expected=taxonomy.ElementAtOrDefault(8) },
+    new { id="mixed", actual=SelectTerminal(false,false,false,false,false,false,false,false,false,true), expected=taxonomy.ElementAtOrDefault(9) },
+    new { id="not-supported", actual=SelectTerminal(false,false,false,false,false,false,false,false,false,false), expected=taxonomy.ElementAtOrDefault(10) },
+    new { id="reset-precedes-transition", actual=SelectTerminal(false,false,false,false,true,true,true,true,true,true), expected=taxonomy.ElementAtOrDefault(4) },
+};
+bool classificationTruthTablePassed = taxonomy.SequenceEqual(expectedTaxonomy, StringComparer.Ordinal)
+    && classificationTruthRows.All(x => x.actual == x.expected)
+    && expectedTaxonomy.All(terminal => classificationTruthRows.Any(x => x.actual == terminal));
+
+string[] fixtureEndpoints = ["endpoint-1", "endpoint-2", "endpoint-3", "endpoint-4", "endpoint-5", "endpoint-6"];
+string[] fixturePanels = ["E", "W", "C", "Cperp"];
+MovementClassificationResult supportedFixture = ClassifyMovement(
+    BuildMovementFixture(fixtureEndpoints, 4, endpoint => endpoint != "endpoint-6"
+        ? new[] { 1.30, 1.30, 1.30, 0.90 } : new[] { 1.10, 1.10, 1.10, 1.10 }),
+    fixtureEndpoints, fixturePanels, "baseline", "long", 4, 1.25, 0.8, 3, 5, true);
+MovementClassificationResult mixedFixture = ClassifyMovement(
+    BuildMovementFixture(fixtureEndpoints, 4, _ => new[] { 1.30, 1.00, 1.00, 1.00 }),
+    fixtureEndpoints, fixturePanels, "baseline", "long", 4, 1.25, 0.8, 3, 5, true);
+MovementClassificationResult notSupportedFixture = ClassifyMovement(
+    BuildMovementFixture(fixtureEndpoints, 4, _ => new[] { 1.10, 1.10, 1.10, 1.10 }),
+    fixtureEndpoints, fixturePanels, "baseline", "long", 4, 1.25, 0.8, 3, 5, true);
+bool movementClassificationBatteryPassed = supportedFixture.Supported && !supportedFixture.Mixed
+    && supportedFixture.QualifyingEndpointCount == 5
+    && !mixedFixture.Supported && mixedFixture.Mixed
+    && !notSupportedFixture.Supported && !notSupportedFixture.Mixed && notSupportedFixture.Conclusive
+    && SelectTerminal(false,false,false,false,false,false,false,false,supportedFixture.Supported,supportedFixture.Mixed) == expectedTaxonomy[8]
+    && SelectTerminal(false,false,false,false,false,false,false,false,mixedFixture.Supported,mixedFixture.Mixed) == expectedTaxonomy[9]
+    && SelectTerminal(false,false,false,false,false,false,false,false,notSupportedFixture.Supported,notSupportedFixture.Mixed) == expectedTaxonomy[10];
+var classificationBattery = new
+{
+    auditedPhase570OrPhase548NumericDataParsedBeforeBattery = false,
+    selectorRows = classificationTruthRows,
+    selectorPassed = classificationTruthTablePassed,
+    productionAggregationFixtures = new
+    {
+        supported = new { supportedFixture.Conclusive, supportedFixture.QualifyingEndpointCount, supportedFixture.Supported, supportedFixture.Mixed },
+        mixed = new { mixedFixture.Conclusive, mixedFixture.QualifyingEndpointCount, mixedFixture.Supported, mixedFixture.Mixed },
+        notSupported = new { notSupportedFixture.Conclusive, notSupportedFixture.QualifyingEndpointCount, notSupportedFixture.Supported, notSupportedFixture.Mixed },
+    },
+    passed = classificationTruthTablePassed && movementClassificationBatteryPassed,
+};
+
+JsonElement p570Requirement = contract.GetProperty("phase570Requirement");
+bool phase570GateOpen = false;
+if (exactBindingsValid && classificationTruthTablePassed && movementClassificationBatteryPassed
+    && !p570Requirement.GetProperty("bindingPending").GetBoolean()
+    && File.Exists(bindingSpecs.First(x => x.Id == "phase570-contract-v7").Path)
+    && File.Exists(bindingSpecs.First(x => x.Id == "phase570-summary").Path))
+{
+    using var p570ContractDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs.First(x => x.Id == "phase570-contract-v7").Path));
+    using var p570ResultDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs.First(x => x.Id == "phase570-result").Path));
+    using var p570SummaryDocument = JsonDocument.Parse(File.ReadAllBytes(bindingSpecs.First(x => x.Id == "phase570-summary").Path));
+    JsonElement p570Result = p570ResultDocument.RootElement;
+    JsonElement p570Summary = p570SummaryDocument.RootElement;
+    string gateField = p570Requirement.GetProperty("requiredGateField").GetString()!;
+    phase570GateOpen = p570ContractDocument.RootElement.GetProperty("contractId").GetString()
+            == p570Requirement.GetProperty("requiredContractId").GetString()
+        && p570ContractDocument.RootElement.GetProperty("schemaVersion").GetInt32() == 5
+        && p570Result.GetProperty("contractId").GetString() == p570Requirement.GetProperty("requiredContractId").GetString()
+        && p570Result.GetProperty("contractSha256").GetString() == p570Requirement.GetProperty("requiredContractSha256").GetString()
+        && p570Result.GetProperty("verdictKind").GetString() == p570Requirement.GetProperty("requiredVerdictKind").GetString()
+        && p570Result.GetProperty("terminalStatus").GetString() == p570Requirement.GetProperty("requiredTerminalStatus").GetString()
+        && p570Summary.GetProperty("terminalStatus").GetString()
+            == p570Requirement.GetProperty("requiredTerminalStatus").GetString()
+        && p570Summary.GetProperty("verdictKind").GetString() == p570Requirement.GetProperty("requiredVerdictKind").GetString()
+        && p570Summary.GetProperty("contractSha256").GetString() == p570Requirement.GetProperty("requiredContractSha256").GetString()
+        && p570Summary.GetProperty("contractValid").GetBoolean()
+        && p570Summary.GetProperty("exactBindingsValid").GetBoolean()
+        && p570Summary.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0
+        && p570Summary.TryGetProperty(gateField, out JsonElement gate)
+        && gate.ValueKind is JsonValueKind.True
+        && p570Result.GetRawText() == p570Summary.GetRawText();
+}
+
+JsonElement probeKind = contract.GetProperty("probeKind");
+JsonElement firewalls = contract.GetProperty("authorityFirewalls");
+string[] actualFirewallKeys = firewalls.EnumerateObject().Select(x => x.Name).Order(StringComparer.Ordinal).ToArray();
+JsonElement movementSpec = contract.GetProperty("pairedMovementClassification");
+JsonElement resource = contract.GetProperty("resourceRule");
+JsonElement seedNamespaceSpec = contract.GetProperty("seedNamespaceRule");
+JsonElement v1LineageSpec = contract.GetProperty("v1Lineage");
+var armSpecs = contract.GetProperty("proposalArms").EnumerateArray().Select(x => new ArmSpec(
+    x.GetProperty("id").GetString()!, x.GetProperty("stepSize").GetDouble(),
+    x.GetProperty("leapfrogSteps").GetInt32(), x.GetProperty("trajectoryLength").GetDouble())).ToArray();
+string[] checkpointOrder = contract.GetProperty("checkpointOrder").EnumerateArray().Select(x => x.GetString()!).ToArray();
+int[] momentumSeeds = contract.GetProperty("momentumPlan").GetProperty("disclosedSeeds")
+    .EnumerateArray().Select(x => x.GetInt32()).ToArray();
+int[] forbiddenSeeds = contract.GetProperty("momentumPlan").GetProperty("protectedSeedsForbidden")
+    .EnumerateArray().Select(x => x.GetInt32()).ToArray();
+int signCount = contract.GetProperty("momentumPlan").GetProperty("antitheticSigns").GetArrayLength();
+bool contractValid = contract.GetProperty("schemaVersion").GetInt32() == 1
+    && contract.GetProperty("contractId").GetString() == "phase571-a36-bounded-reset-checkpoint-transition-probe-v2"
+    && contract.GetProperty("planSection").GetString() == "WAVE2_AMENDMENTS_2026-07-12 A36"
+    && contract.GetProperty("frozenBeforeFirstExecution").GetBoolean()
+    && !contract.GetProperty("pendingContract").GetBoolean()
+    && !p570Requirement.GetProperty("bindingPending").GetBoolean()
+    && p570Requirement.GetProperty("requiredContractId").GetString() == "phase570-a36-registered-target-directional-resolution-replay-v7"
+    && p570Requirement.GetProperty("requiredContractSha256").GetString() == "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    && p570Requirement.GetProperty("requiredProgramSha256").GetString() == "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    && p570Requirement.GetProperty("requiredCsprojSha256").GetString() == "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145"
+    && p570Requirement.GetProperty("requiredOutputSha256").GetString() == "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    && p570Requirement.GetProperty("requiredVerdictKind").GetString() == "invariant-directional-under-resolution-not-localized"
+    && p570Requirement.GetProperty("requiredTerminalStatus").GetString() == "registered-target-directional-resolution-replay-invariant-directional-under-resolution-not-localized"
+    && p570Requirement.GetProperty("requiredGateField").GetString() == "phase571TransitionProbeGateOpen"
+    && p570Requirement.GetProperty("requiredGateValue").GetBoolean()
+    && exactBindingsValid
+    && bindingSpecs.Single(x => x.Id == "phase570-program-v7").ExpectedSha256 == p570Requirement.GetProperty("requiredProgramSha256").GetString()
+    && bindingSpecs.Single(x => x.Id == "phase570-csproj").ExpectedSha256 == p570Requirement.GetProperty("requiredCsprojSha256").GetString()
+    && bindingSpecs.Single(x => x.Id == "phase570-contract-v7").ExpectedSha256 == p570Requirement.GetProperty("requiredContractSha256").GetString()
+    && bindingSpecs.Single(x => x.Id == "phase570-result").ExpectedSha256 == p570Requirement.GetProperty("requiredOutputSha256").GetString()
+    && bindingSpecs.Single(x => x.Id == "phase570-summary").ExpectedSha256 == p570Requirement.GetProperty("requiredOutputSha256").GetString()
+    && probeKind.GetProperty("rngUsed").GetBoolean()
+    && !probeKind.GetProperty("markovChainAdvanced").GetBoolean()
+    && !probeKind.GetProperty("targetSamplingPerformed").GetBoolean()
+    && !probeKind.GetProperty("warmupPerformed").GetBoolean()
+    && !probeKind.GetProperty("adaptationPerformed").GetBoolean()
+    && !probeKind.GetProperty("configurationsRetained").GetBoolean()
+    && !probeKind.GetProperty("acceptedStateCarryAllowed").GetBoolean()
+    && probeKind.GetProperty("resetEveryProposalToImmutableCheckpoint").GetBoolean()
+    && probeKind.GetProperty("pairedCommonMomentumAcrossArms").GetBoolean()
+    && probeKind.GetProperty("antitheticMomentumIncluded").GetBoolean()
+    && contract.GetProperty("target").GetProperty("member").GetString() == "sd2-id0/c0.5"
+    && contract.GetProperty("target").GetProperty("source").GetString() == "phase548-contract.target"
+    && contract.GetProperty("target").GetProperty("thetaRule").GetString() == "theta-identically-zero"
+    && contract.GetProperty("target").GetProperty("beta").GetDouble() == 1.0
+    && contract.GetProperty("target").GetProperty("topologyId").GetString() == "periodic-hypercubic-4d"
+    && contract.GetProperty("target").GetProperty("dimensions").GetInt32() == 4
+    && contract.GetProperty("target").GetProperty("extent").GetInt32() == 3
+    && contract.GetProperty("target").GetProperty("degreesOfFreedom").GetInt32() == 3645
+    && contract.GetProperty("target").GetProperty("kineticMetric").GetString() == "identity"
+    && contract.GetProperty("target").GetProperty("algebra").GetString() == "su2-trace-pairing"
+    && checkpointOrder.SequenceEqual(new[]
+    {
+        "complete-lattice-pilot-a-546101", "complete-lattice-pilot-a-546103", "complete-lattice-pilot-a-546107",
+        "complete-lattice-pilot-b-546201", "complete-lattice-pilot-b-546203", "complete-lattice-pilot-b-546207",
+    }, StringComparer.Ordinal)
+    && armSpecs.SequenceEqual(new[]
+    {
+        new ArmSpec("baseline", 0.06, 8, 0.48), new ArmSpec("same-tau-fine", 0.03, 16, 0.48),
+        new ArmSpec("same-tau-finer", 0.015, 32, 0.48), new ArmSpec("long", 0.06, 32, 1.92),
+    })
+    && momentumSeeds.SequenceEqual(new[] { 571101, 571103 })
+    && forbiddenSeeds.SequenceEqual(new[] { 546109, 546209 })
+    && contract.GetProperty("momentumPlan").GetProperty("algorithm").GetString() == "xoshiro256-starstar"
+    && contract.GetProperty("momentumPlan").GetProperty("seedExpansion").GetString() == "splitmix64-four-sequential-outputs"
+    && contract.GetProperty("momentumPlan").GetProperty("normalGeneration").GetString() == "box-muller-two-uniforms-no-spare-cache"
+    && contract.GetProperty("momentumPlan").GetProperty("uniformGeneration").GetString() == "((next-u64-right-shift-11)+0.5)/2^53"
+    && contract.GetProperty("momentumPlan").GetProperty("antitheticSigns").EnumerateArray().Select(x => x.GetInt32()).SequenceEqual(new[] { 1, -1 })
+    && contract.GetProperty("momentumPlan").GetProperty("oneMomentumAndLogUniformPerSeedReusedAcrossAllCheckpointsAndArms").GetBoolean()
+    && seedNamespaceSpec.GetProperty("deriveOnlyFromExactBoundPhase548Contract").GetBoolean()
+    && seedNamespaceSpec.GetProperty("disclosedMomentumSeedsMustBeDisjointFromAllNamespaces").GetBoolean()
+    && seedNamespaceSpec.GetProperty("requiredRawSeeds").EnumerateArray().Select(x => x.GetInt32())
+        .SequenceEqual(new[] { 546101, 546103, 546107, 546201, 546203, 546207 })
+    && seedNamespaceSpec.GetProperty("requiredExecutionSeeds").EnumerateArray().Select(x => x.GetInt32())
+        .SequenceEqual(new[] { 2546101, 2546103, 2546107, 2546201, 2546203, 2546207 })
+    && seedNamespaceSpec.GetProperty("requiredProtectedSeeds").EnumerateArray().Select(x => x.GetInt32())
+        .SequenceEqual(new[] { 546109, 546209 })
+    && contract.GetProperty("acceptance").GetProperty("rule").GetString() == "injectedLogUniform <= min(0,-deltaH)"
+    && contract.GetProperty("acceptance").GetProperty("divergenceAbsoluteDeltaH").GetDouble() == 100.0
+    && contract.GetProperty("acceptance").GetProperty("acceptedStateMeasuredThenDiscarded").GetBoolean()
+    && contract.GetProperty("acceptance").GetProperty("rejectedStateMustBeBitIdenticalToResetCheckpoint").GetBoolean()
+    && contract.GetProperty("sameTauOrder").GetProperty("expectedSecondOrderBand").EnumerateArray().Select(x => x.GetDouble()).SequenceEqual(new[] { 1.25, 2.75 })
+    && contract.GetProperty("sameTauOrder").GetProperty("statistic").GetString() == "log2(rmsAbsoluteDeltaHCoarser/rmsAbsoluteDeltaHFiner) over the common checkpoint, seed, and antithetic menu"
+    && contract.GetProperty("sameTauOrder").GetProperty("comparisons").EnumerateArray().Select(x => x.GetString()!).SequenceEqual(new[] { "baseline-versus-same-tau-fine", "same-tau-fine-versus-same-tau-finer" }, StringComparer.Ordinal)
+    && contract.GetProperty("sameTauOrder").GetProperty("zeroOrNonFiniteRmsIsInconclusiveAndFailsClosed").GetBoolean()
+    && contract.GetProperty("incidenceProjectors").GetProperty("scalarE").GetString() == "orthonormal span of d0(delta_v), dimension 80"
+    && contract.GetProperty("incidenceProjectors").GetProperty("scalarW").GetString() == "orthogonal complement of E within the exhibited four periodic winding generators, dimension 4"
+    && contract.GetProperty("incidenceProjectors").GetProperty("scalarC").GetString() == "orthogonal direct sum E plus W, dimension 84"
+    && contract.GetProperty("incidenceProjectors").GetProperty("fullDimensions").GetProperty("E").GetInt32() == 240
+    && contract.GetProperty("incidenceProjectors").GetProperty("fullDimensions").GetProperty("W").GetInt32() == 12
+    && contract.GetProperty("incidenceProjectors").GetProperty("fullDimensions").GetProperty("C").GetInt32() == 252
+    && contract.GetProperty("incidenceProjectors").GetProperty("fullDimensions").GetProperty("Cperp").GetInt32() == 3393
+    && contract.GetProperty("incidenceProjectors").GetProperty("pairing").GetString() == "frozen Euclidean coefficient pairing inherited from the identity kinetic metric"
+    && contract.GetProperty("incidenceProjectors").GetProperty("projectorSymmetryTolerance").GetDouble() == 1e-12
+    && contract.GetProperty("incidenceProjectors").GetProperty("numericClosureTolerance").GetDouble() == 1e-12
+    && contract.GetProperty("incidenceProjectors").GetProperty("projectorOrthogonalityTolerance").GetDouble() == 1e-12
+    && contract.GetProperty("incidenceProjectors").GetProperty("decompositionRelativeTolerance").GetDouble() == 1e-12
+    && contract.GetProperty("incidenceProjectors").GetProperty("interpretation").GetString() == "incidence-coordinate subspaces only; no gauge, orbit, quotient, redundancy, or physical-mode claim"
+    && contract.GetProperty("closedValleyMetrics").GetProperty("coefficientMatrixShape").GetString() == "84 by 3"
+    && contract.GetProperty("closedValleyMetrics").GetProperty("gramMatrix").GetString() == "A^T A"
+    && contract.GetProperty("closedValleyMetrics").GetProperty("reported").EnumerateArray().Select(x => x.GetString()!).SequenceEqual(new[]
+    {
+        "ascending eigenvalues of A^T A", "closed norm squared", "rank-one alignment lambdaMax/trace",
+        "distance squared to the rank-one closed-coordinate set = Cperp norm squared + lambda0 + lambda1",
+    }, StringComparer.Ordinal)
+    && !contract.GetProperty("closedValleyMetrics").GetProperty("isGaugeStatement").GetBoolean()
+    && !contract.GetProperty("closedValleyMetrics").GetProperty("isQuotientStatement").GetBoolean()
+    && contract.GetProperty("reportedPerProposal").EnumerateArray().Select(x => x.GetString()!).SequenceEqual(new[]
+    {
+        "checkpointId", "momentumSeed", "antitheticSign", "arm", "deltaH", "absoluteDeltaH", "accepted", "finite", "divergent",
+        "forceEvaluationCount", "reversibilityPositionRelativeError", "reversibilityMomentumRelativeError", "totalEsjdPerForceEvaluation",
+        "EEsjdPerForceEvaluation", "WEsjdPerForceEvaluation", "CEsjdPerForceEvaluation", "CperpEsjdPerForceEvaluation",
+        "closedValleyJumpMetrics", "projectorLeakageResidual", "resetHashBefore", "resetHashAfter",
+    }, StringComparer.Ordinal)
+    && contract.GetProperty("transitionControls").GetProperty("maximumReversibilityPositionRelativeError").GetDouble() == 1e-8
+    && contract.GetProperty("transitionControls").GetProperty("maximumReversibilityMomentumRelativeError").GetDouble() == 1e-8
+    && contract.GetProperty("transitionControls").GetProperty("maximumAntitheticResidual").GetDouble() == 0.0
+    && contract.GetProperty("transitionControls").GetProperty("sameTauOrderForceAccountingReversalAntitheticAndLeakageMustPassBeforeMovementClassification").GetBoolean()
+    && classificationTruthTablePassed
+    && movementClassificationBatteryPassed
+    && contract.GetProperty("classificationTruthTableRequired").GetBoolean()
+    && movementSpec.GetProperty("baselineArm").GetString() == "baseline"
+    && movementSpec.GetProperty("comparisonArm").GetString() == "long"
+    && movementSpec.GetProperty("statistic").GetString() == "per immutable endpoint and fixed projector panel, mean accepted ESJD per forward force evaluation for long divided by the corresponding baseline mean over both disclosed momentum seeds and both antithetic signs"
+    && movementSpec.GetProperty("projectorPanels").EnumerateArray().Select(x => x.GetString()!)
+        .SequenceEqual(new[] { "E", "W", "C", "Cperp" }, StringComparer.Ordinal)
+    && !movementSpec.GetProperty("favorableProjectorSelectionAllowed").GetBoolean()
+    && movementSpec.GetProperty("improvementRatioMinimumInclusive").GetDouble() == 1.25
+    && movementSpec.GetProperty("degradationFloorInclusive").GetDouble() == 0.8
+    && movementSpec.GetProperty("improvedPanelsRequiredPerEndpoint").GetInt32() == 3
+    && movementSpec.GetProperty("qualifyingEndpointsRequired").GetInt32() == 5
+    && movementSpec.GetProperty("totalEndpoints").GetInt32() == 6
+    && movementSpec.GetProperty("supportedRule").GetString() == "at least five of six endpoints each have ratios >=1.25 in at least three of four frozen panels and no panel ratio <0.8"
+    && movementSpec.GetProperty("mixedRule").GetString() == "after support is false, improvement-threshold responses coexist or degradation-floor responses coexist with non-degraded responses"
+    && movementSpec.GetProperty("notSupportedRule").GetString() == "conclusive ratios that satisfy neither supported nor mixed"
+    && movementSpec.GetProperty("zeroBaselineOrNonFiniteRatioFailsInconclusive").GetBoolean()
+    && !movementSpec.GetProperty("establishesMixing").GetBoolean()
+    && !movementSpec.GetProperty("establishesStationarity").GetBoolean()
+    && !movementSpec.GetProperty("selectsProductionDefault").GetBoolean()
+    && contract.GetProperty("topLevelOutputSchema").EnumerateArray().Select(x => x.GetString()!).SequenceEqual(expectedTopLevelOutputKeys, StringComparer.Ordinal)
+    && contract.GetProperty("commonCompleteSchemaEveryTerminal").GetBoolean()
+    && v1LineageSpec.GetProperty("executed").ValueKind == JsonValueKind.False
+    && v1LineageSpec.GetProperty("outputExistsAtV2Freeze").ValueKind == JsonValueKind.False
+    && v1LineageSpec.GetProperty("programSha256").GetString() == "f9d5d7ab3fc255c985e75b080a2f73a7890fd8eb4ea52f345bc3fddebb0111c4"
+    && v1LineageSpec.GetProperty("csprojSha256").GetString() == "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    && v1LineageSpec.GetProperty("contractSha256").GetString() == "b8f90cf4b2ac8e968750bab098a9c14c7b815cff154a81046dccdfbe2b052dc8"
+    && v1LineageSpec.GetProperty("lineageSha256").GetString() == "e46225e62766a5a71a8abdc8d01d5849afe5f1405cbcea19f17c9aa37c951190"
+    && actualFirewallKeys.SequenceEqual(expectedAuthorityFirewallKeys.Order(StringComparer.Ordinal), StringComparer.Ordinal)
+    && firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && contract.GetProperty("externalReviewPending").GetBoolean()
+    && contract.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0
+    && exactBindingsValid;
+
+long forwardForceEvaluations = checked((long)checkpointOrder.Length * momentumSeeds.Length * signCount
+    * armSpecs.Sum(x => x.LeapfrogSteps + 1));
+long reverseForceEvaluations = forwardForceEvaluations;
+long requestedForceEvaluations = checked(forwardForceEvaluations + reverseForceEvaluations);
+int proposalCountPerArmDirection = checkpointOrder.Length * momentumSeeds.Length * signCount;
+WorkRow[] derivedWorkMenu = armSpecs.Select(arm => new WorkRow(arm.Id, proposalCountPerArmDirection,
+    arm.LeapfrogSteps + 1, checked((long)proposalCountPerArmDirection * (arm.LeapfrogSteps + 1)),
+    checked((long)proposalCountPerArmDirection * (arm.LeapfrogSteps + 1)))).ToArray();
+WorkRow[] declaredWorkMenu = resource.GetProperty("workMenu").EnumerateArray().Select(x => new WorkRow(
+    x.GetProperty("arm").GetString()!, x.GetProperty("proposalsPerDirection").GetInt32(),
+    x.GetProperty("forceEvaluationsPerProposal").GetInt32(), x.GetProperty("forwardForceEvaluations").GetInt64(),
+    x.GetProperty("reverseForceEvaluations").GetInt64())).ToArray();
+bool workMenuMatches = declaredWorkMenu.SequenceEqual(derivedWorkMenu);
+double secondsPerForceEvaluation = resource.GetProperty("estimatedSecondsPerForceEvaluation").GetDouble();
+double derivedEstimatedCpuSeconds = requestedForceEvaluations * secondsPerForceEvaluation;
+int resourceDof = contract.GetProperty("target").GetProperty("degreesOfFreedom").GetInt32();
+int resourceExtent = contract.GetProperty("target").GetProperty("extent").GetInt32();
+int resourceVertexCount = resourceExtent * resourceExtent * resourceExtent * resourceExtent;
+int resourceEdgeCount = resourceDof / 3;
+AllocationRow[] derivedAllocationMenu =
+[
+    new("mesh-topology", "edge*256", checked((long)resourceEdgeCount * 256)),
+    new("integer-and-numeric-projectors", "(vertex+4)*edge*4 + 84*edge*8", checked((long)(resourceVertexCount + 4) * resourceEdgeCount * sizeof(int) + 84L * resourceEdgeCount * sizeof(double))),
+    new("immutable-checkpoints", "6*dof*8", checked(6L * resourceDof * sizeof(double))),
+    new("momentum-menu", "2*dof*8", checked(2L * resourceDof * sizeof(double))),
+    new("kernel-and-evaluator-reserve", "128*dof*8", checked(128L * resourceDof * sizeof(double))),
+    new("proposal-row-reserve", "96*4096", 96L * 4096),
+    new("movement-diagnostic-reserve", "512*1024", 512L * 1024),
+    new("runtime-reserve", "2*1024*1024", 2L * 1024 * 1024),
+];
+AllocationRow[] declaredAllocationMenu = resource.GetProperty("allocationMenu").EnumerateArray().Select(x => new AllocationRow(
+    x.GetProperty("id").GetString()!, x.GetProperty("shape").GetString()!, x.GetProperty("bytes").GetInt64())).ToArray();
+bool allocationMenuMatches = declaredAllocationMenu.SequenceEqual(derivedAllocationMenu);
+long derivedPeakBytes = checked(derivedAllocationMenu.Sum(x => x.Bytes));
+bool resourceAccepted = requestedForceEvaluations == resource.GetProperty("requestedAggregateForceEvaluations").GetInt64()
+    && forwardForceEvaluations == resource.GetProperty("requestedForwardForceEvaluations").GetInt64()
+    && reverseForceEvaluations == resource.GetProperty("requestedReverseForceEvaluations").GetInt64()
+    && requestedForceEvaluations <= resource.GetProperty("maximumAggregateForceEvaluations").GetInt64()
+    && workMenuMatches && declaredWorkMenu.Length == 4
+    && secondsPerForceEvaluation == 0.04
+    && derivedEstimatedCpuSeconds == resource.GetProperty("estimatedAggregateCpuSeconds").GetDouble()
+    && derivedEstimatedCpuSeconds <= resource.GetProperty("maximumEstimatedAggregateCpuSeconds").GetDouble()
+    && allocationMenuMatches && declaredAllocationMenu.Length == 8
+    && derivedPeakBytes == resource.GetProperty("estimatedPeakBytes").GetInt64()
+    && derivedPeakBytes <= resource.GetProperty("maximumEstimatedPeakBytes").GetInt64()
+    && resource.GetProperty("refuseBeforeRngConstruction").GetBoolean()
+    && resource.GetProperty("refuseBeforeProposalAllocation").GetBoolean()
+    && resource.GetProperty("ceilingMayNotBeRaisedAtRuntime").GetBoolean()
+    && resource.GetProperty("maximumAggregateForceEvaluations").GetInt64() == 5000
+    && resource.GetProperty("requestedForwardForceEvaluations").GetInt64() == 2208
+    && resource.GetProperty("requestedReverseForceEvaluations").GetInt64() == 2208
+    && resource.GetProperty("requestedAggregateForceEvaluations").GetInt64() == 4416
+    && resource.GetProperty("maximumEstimatedAggregateCpuSeconds").GetDouble() == 300.0
+    && resource.GetProperty("estimatedAggregateCpuSeconds").GetDouble() == 176.64
+    && resource.GetProperty("maximumEstimatedPeakBytes").GetInt64() == 67108864
+    && resource.GetProperty("estimatedPeakBytes").GetInt64() == 8521036
+    && !resource.GetProperty("refuseOnEqualOrExceedLimit").GetBoolean()
+    && armSpecs.Length == 4
+    && checkpointOrder.Length == 6
+    && momentumSeeds.Length == 2
+    && signCount == 2
+    && momentumSeeds.Distinct().Count() == momentumSeeds.Length
+    && !momentumSeeds.Intersect(forbiddenSeeds).Any();
+
+Dictionary<string, object?> CompleteResult(string verdict, string decision, bool valid, bool gateOpen,
+    bool resourceIsAccepted, bool rngWasUsed, object seedReport, object resourceReport,
+    object projectorReport, object resetReport, object reversalReport, object sameTauReport,
+    object movementReport, object rowReport)
+{
+    var result = new Dictionary<string, object?>(StringComparer.Ordinal)
+    {
+        ["schemaVersion"] = 1,
+        ["phase"] = 571,
+        ["phaseId"] = "phase571-bounded-reset-checkpoint-transition-probe",
+        ["contractId"] = contract.GetProperty("contractId").GetString(),
+        ["contractSha256"] = Sha(ContractPath),
+        ["contractValid"] = valid,
+        ["exactBindingsValid"] = exactBindingsValid,
+        ["phase570GateOpen"] = gateOpen,
+        ["resourceAccepted"] = resourceIsAccepted,
+        ["bindings"] = bindings,
+        ["classificationBattery"] = classificationBattery,
+        ["seedNamespaceControls"] = seedReport,
+        ["resource"] = resourceReport,
+        ["projectorControls"] = projectorReport,
+        ["resetControls"] = resetReport,
+        ["reversalControls"] = reversalReport,
+        ["sameTauEnergyOrder"] = sameTauReport,
+        ["pairedMovementClassification"] = movementReport,
+        ["rows"] = rowReport,
+        ["verdictKind"] = verdict,
+        ["terminalStatus"] = "bounded-reset-checkpoint-transition-probe-" + verdict,
+        ["decision"] = decision,
+        ["rngUsed"] = rngWasUsed,
+        ["markovChainAdvanced"] = false,
+        ["targetSamplingPerformed"] = false,
+        ["warmupPerformed"] = false,
+        ["adaptationPerformed"] = false,
+        ["configurationsRetained"] = false,
+        ["acceptedStateCarried"] = false,
+        ["phase548TerminalChanged"] = false,
+        ["phase570TerminalChanged"] = false,
+        ["registeredDefaultChanged"] = false,
+        ["nullSpaceInterpretedAsGaugeVolume"] = false,
+        ["quotientApplied"] = false,
+        ["gaugeFixingApplied"] = false,
+        ["measureNormalizationApplied"] = false,
+        ["productionDefaultSelected"] = false,
+        ["productionAuthorized"] = false,
+        ["launchAuthorized"] = false,
+        ["phase458G3Satisfied"] = false,
+        ["phase458G4Satisfied"] = false,
+        ["phase458G5Satisfied"] = false,
+        ["o4Discharged"] = false,
+        ["sourceContractApplicationAllowed"] = false,
+        ["physicalUnitClaimAllowed"] = false,
+        ["gevClaimAllowed"] = false,
+        ["protectedPhase554SeedsRead"] = false,
+        ["allDownstreamAuthority"] = false,
+        ["authorityFirewalls"] = firewalls,
+        ["externalReviewPending"] = true,
+        ["promotedPhysicalMassClaimCount"] = 0,
+    };
+    if (!result.Keys.SequenceEqual(expectedTopLevelOutputKeys, StringComparer.Ordinal))
+        throw new InvalidOperationException("Phase571 complete output schema drifted.");
+    return result;
+}
+
+var unavailable = new { available = false, passed = false };
+var resourcePlanReport = new
+{
+    requestedForceEvaluations, forwardForceEvaluations, reverseForceEvaluations,
+    workMenu = derivedWorkMenu, workMenuMatches, secondsPerForceEvaluation, derivedEstimatedCpuSeconds,
+    allocationMenu = derivedAllocationMenu, allocationMenuMatches, derivedPeakBytes,
+    maximumForceEvaluations = resource.GetProperty("maximumAggregateForceEvaluations").GetInt64(),
+    maximumEstimatedCpuSeconds = resource.GetProperty("maximumEstimatedAggregateCpuSeconds").GetDouble(),
+    maximumPeakBytes = resource.GetProperty("maximumEstimatedPeakBytes").GetInt64(),
+    passed = resourceAccepted,
+};
+
+if (!contractValid || !phase570GateOpen || !resourceAccepted)
+{
+    string earlyVerdict = SelectTerminal(!contractValid, contractValid && !phase570GateOpen,
+        contractValid && phase570GateOpen && !resourceAccepted, false, false, false, false, false, false, false);
+    WriteResult(CompleteResult(earlyVerdict,
+        "The phase refused before RNG construction and before any proposal allocation.",
+        contractValid, phase570GateOpen, resourceAccepted, false,
+        unavailable, resourcePlanReport, unavailable, unavailable, unavailable, unavailable, unavailable,
+        Array.Empty<object>()));
+    Console.WriteLine($"Phase571 verdict: {earlyVerdict}");
+    return;
+}
+
+// No RNG object is constructed above this line.
+using var p548ContractDocument = JsonDocument.Parse(File.ReadAllBytes(
+    bindingSpecs.First(x => x.Id == "phase548-contract").Path));
+JsonElement p548Contract = p548ContractDocument.RootElement;
+JsonElement[] p548SeedTables = p548Contract.GetProperty("seedTables").EnumerateArray().ToArray();
+int[] derivedRawSeeds = p548SeedTables.SelectMany(x => x.GetProperty("seeds").EnumerateArray().Select(y => y.GetInt32())).ToArray();
+int[] derivedExecutionSeeds = p548SeedTables.SelectMany(x =>
+{
+    int offset = x.GetProperty("seedOffset").GetInt32();
+    return x.GetProperty("seeds").EnumerateArray().Select(y => y.GetInt32() + offset);
+}).ToArray();
+int[] derivedProtectedSeeds = p548SeedTables.Select(x => x.GetProperty("excludedFrozenSeed").GetInt32()).ToArray();
+int[] allP548SeedNamespaces = [.. derivedRawSeeds, .. derivedExecutionSeeds, .. derivedProtectedSeeds];
+bool disclosedMomentumSeedsDisjoint = !momentumSeeds.Intersect(allP548SeedNamespaces).Any();
+bool seedNamespaceControlsPassed = p548SeedTables.Length == 2
+    && p548SeedTables.Select(x => x.GetProperty("id").GetString()!).SequenceEqual(new[] { "complete-lattice-pilot-a", "complete-lattice-pilot-b" }, StringComparer.Ordinal)
+    && p548SeedTables.All(x => x.GetProperty("seedOffset").GetInt32() == 2000000)
+    && derivedRawSeeds.SequenceEqual(seedNamespaceSpec.GetProperty("requiredRawSeeds").EnumerateArray().Select(x => x.GetInt32()))
+    && derivedExecutionSeeds.SequenceEqual(seedNamespaceSpec.GetProperty("requiredExecutionSeeds").EnumerateArray().Select(x => x.GetInt32()))
+    && derivedProtectedSeeds.SequenceEqual(seedNamespaceSpec.GetProperty("requiredProtectedSeeds").EnumerateArray().Select(x => x.GetInt32()))
+    && derivedProtectedSeeds.SequenceEqual(forbiddenSeeds)
+    && allP548SeedNamespaces.Distinct().Count() == allP548SeedNamespaces.Length
+    && disclosedMomentumSeedsDisjoint
+    && seedNamespaceSpec.GetProperty("deriveOnlyFromExactBoundPhase548Contract").GetBoolean()
+    && seedNamespaceSpec.GetProperty("disclosedMomentumSeedsMustBeDisjointFromAllNamespaces").GetBoolean();
+var seedNamespaceControlsReport = new
+{
+    p548TableIds = p548SeedTables.Select(x => x.GetProperty("id").GetString()).ToArray(),
+    rawSeeds = derivedRawSeeds, executionSeeds = derivedExecutionSeeds, protectedSeeds = derivedProtectedSeeds,
+    disclosedMomentumSeeds = momentumSeeds, disclosedMomentumSeedsDisjoint, passed = seedNamespaceControlsPassed,
+};
+if (!seedNamespaceControlsPassed)
+{
+    string seedVerdict = SelectTerminal(true, false, false, false, false, false, false, false, false, false);
+    WriteResult(CompleteResult(seedVerdict,
+        "The exact-bound Phase548 raw, execution, or protected seed namespaces failed derivation or overlap controls before RNG construction.",
+        contractValid, phase570GateOpen, resourceAccepted, false,
+        seedNamespaceControlsReport, resourcePlanReport, unavailable, unavailable, unavailable, unavailable, unavailable,
+        Array.Empty<object>()));
+    Console.WriteLine($"Phase571 verdict: {seedVerdict}");
+    return;
+}
+JsonElement target = p548Contract.GetProperty("target");
+int extent = target.GetProperty("extent").GetInt32();
+int expectedDof = target.GetProperty("degreesOfFreedom").GetInt32();
+double divergenceThreshold = contract.GetProperty("acceptance").GetProperty("divergenceAbsoluteDeltaH").GetDouble();
+long maximumWorkingBytes = resource.GetProperty("maximumEstimatedPeakBytes").GetInt64();
+int maximumLeapfrogSteps = armSpecs.Max(x => x.LeapfrogSteps);
+long maximumForceEvaluationsPerProposal = maximumLeapfrogSteps + 1L;
+
+var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(extent, latticeCanonical: true);
+var member = new EinsteinianShiabFamilyMember
+{
+    Phi1 = InvariantElementSpec.Sd2,
+    Phi2 = InvariantElementSpec.Id0,
+    EinsteinCoefficient = 0.5,
+    EpsilonMode = "independent-theta",
+};
+var op = new EinsteinianShiabOperator(mesh, algebra, member, latticePeriod: extent);
+var massMatrix = new CpuMassMatrix(mesh, algebra);
+int dimG = algebra.Dimension;
+int edgeCount = mesh.EdgeCount;
+int dof = edgeCount * dimG;
+var thetaZero = new double[mesh.VertexCount * dimG];
+PilotEvaluation Evaluate(double[] omega)
+{
+    var joint = op.ComputeJointGradient(omega, thetaZero, massMatrix);
+    return new PilotEvaluation(joint.Objective, joint.GradOmega);
+}
+
+var exactBasis = new List<double[]>();
+var windingBasis = new List<double[]>();
+bool integerClosureValid = true;
+foreach (int vertex in Enumerable.Range(0, mesh.VertexCount))
+{
+    var generator = new double[edgeCount];
+    for (int e = 0; e < edgeCount; e++)
+        generator[e] = (mesh.Edges[e][1] == vertex ? 1.0 : 0.0) - (mesh.Edges[e][0] == vertex ? 1.0 : 0.0);
+    integerClosureValid &= IsClosed(generator, mesh);
+    AddOrthonormal(exactBasis, generator, 1e-8);
+}
+foreach (int axis in Enumerable.Range(0, 4))
+{
+    var generator = new double[edgeCount];
+    for (int e = 0; e < edgeCount; e++)
+    {
+        double[] c0 = mesh.GetVertexCoordinates(mesh.Edges[e][0]).ToArray();
+        double[] c1 = mesh.GetVertexCoordinates(mesh.Edges[e][1]).ToArray();
+        int difference = (int)System.Math.Round(c1[axis] - c0[axis]);
+        int wrapped = ((difference % extent) + extent) % extent;
+        generator[e] = wrapped == extent - 1 ? -1.0 : wrapped;
+    }
+    integerClosureValid &= IsClosed(generator, mesh);
+    double[] candidate = (double[])generator.Clone();
+    ProjectOut(candidate, exactBasis);
+    AddOrthonormal(windingBasis, candidate, 1e-8);
+}
+double[][] eBasis = [.. exactBasis];
+double[][] wBasis = [.. windingBasis];
+double[][] cBasis = [.. exactBasis, .. windingBasis];
+double maximumBasisDefect = MaximumBasisDefect(cBasis);
+double maximumWNumericClosureResidual = wBasis.Max(x => MaximumClosureResidual(x, mesh));
+double maximumCNumericClosureResidual = cBasis.Max(x => MaximumClosureResidual(x, mesh));
+double maximumProjectorSymmetryDefect = 0.0; // P=B B^T is symmetric by construction.
+JsonElement projectorSpec = contract.GetProperty("incidenceProjectors");
+bool projectorControlsPassed = dof == expectedDof
+    && dimG == 3
+    && exactBasis.Count == 80 && windingBasis.Count == 4 && cBasis.Length == 84
+    && exactBasis.Count * dimG == 240 && windingBasis.Count * dimG == 12
+    && cBasis.Length * dimG == 252 && dof - cBasis.Length * dimG == 3393
+    && integerClosureValid
+    && maximumWNumericClosureResidual <= projectorSpec.GetProperty("numericClosureTolerance").GetDouble()
+    && maximumCNumericClosureResidual <= projectorSpec.GetProperty("numericClosureTolerance").GetDouble()
+    && maximumProjectorSymmetryDefect <= projectorSpec.GetProperty("projectorSymmetryTolerance").GetDouble()
+    && maximumBasisDefect <= projectorSpec.GetProperty("projectorOrthogonalityTolerance").GetDouble();
+
+if (!projectorControlsPassed)
+{
+    var projectorFailureReport = new
+    {
+        dimG, dof, scalarEDimension = exactBasis.Count, scalarWDimension = windingBasis.Count,
+        scalarCDimension = cBasis.Length, fullEDimension = exactBasis.Count * dimG,
+        fullWDimension = windingBasis.Count * dimG, fullCDimension = cBasis.Length * dimG,
+        fullCperpDimension = dof - cBasis.Length * dimG, integerClosureValid,
+        maximumWNumericClosureResidual, maximumCNumericClosureResidual,
+        maximumProjectorSymmetryDefect, maximumBasisDefect, passed = false,
+    };
+    WriteResult(CompleteResult(taxonomy[3],
+        "The incidence projector controls failed before RNG construction; no proposal ran.",
+        contractValid, phase570GateOpen, resourceAccepted, false,
+        seedNamespaceControlsReport, resourcePlanReport, projectorFailureReport, unavailable, unavailable,
+        unavailable, unavailable, Array.Empty<object>()));
+    Console.WriteLine($"Phase571 verdict: {taxonomy[3]}");
+    return;
+}
+
+var checkpointList = new List<CheckpointState>();
+bool immutableCheckpointControlsPassed = true;
+foreach (string id in checkpointOrder)
+{
+    string bindingId = id.Contains("pilot-a", StringComparison.Ordinal) ? "checkpoint-a-" + id.Split('-')[^1]
+        : "checkpoint-b-" + id.Split('-')[^1];
+    string path = bindingSpecs.First(x => x.Id == bindingId).Path;
+    using var document = JsonDocument.Parse(File.ReadAllBytes(path));
+    JsonElement payload = document.RootElement.GetProperty("payload");
+    double[] position = payload.GetProperty("position").EnumerateArray().Select(x => x.GetDouble()).ToArray();
+    bool valid = payload.GetProperty("chainId").GetString() == id && position.Length == dof;
+    immutableCheckpointControlsPassed &= valid;
+    if (valid) checkpointList.Add(new CheckpointState(id, path, position, VectorHash(position)));
+}
+CheckpointState[] checkpoints = [.. checkpointList];
+if (!immutableCheckpointControlsPassed || checkpoints.Length != checkpointOrder.Length)
+{
+    string checkpointVerdict = SelectTerminal(false, false, false, false, true, false, false, false, false, false);
+    var checkpointFailureReport = new { immutableCheckpointControlsPassed = false,
+        loadedCheckpointCount = checkpoints.Length, requiredCheckpointCount = checkpointOrder.Length, passed = false };
+    WriteResult(CompleteResult(checkpointVerdict,
+        "An exact-bound immutable checkpoint payload failed its chain-id or dimension control before RNG construction.",
+        contractValid, phase570GateOpen, resourceAccepted, false,
+        seedNamespaceControlsReport, resourcePlanReport,
+        new { dimG, dof, scalarEDimension = exactBasis.Count, scalarWDimension = windingBasis.Count,
+            scalarCDimension = cBasis.Length, fullEDimension = exactBasis.Count * dimG,
+            fullWDimension = windingBasis.Count * dimG, fullCDimension = cBasis.Length * dimG,
+            fullCperpDimension = dof - cBasis.Length * dimG, integerClosureValid,
+            maximumWNumericClosureResidual, maximumCNumericClosureResidual,
+            maximumProjectorSymmetryDefect, maximumBasisDefect,
+            passed = projectorControlsPassed },
+        checkpointFailureReport, unavailable, unavailable, unavailable, Array.Empty<object>()));
+    Console.WriteLine($"Phase571 verdict: {checkpointVerdict}");
+    return;
+}
+
+// RNG construction begins only after binding, upstream, resource, projector, and
+// immutable-checkpoint controls have all passed.
+var momentumMenu = momentumSeeds.Select(seed =>
+{
+    var rng = new Xoshiro(ExpandSeed((ulong)seed));
+    var momentum = new double[dof];
+    for (int i = 0; i < dof; i++) momentum[i] = Gauss(rng);
+    double logUniform = System.Math.Log(Uniform(rng));
+    return new MomentumDraw(seed, momentum, logUniform);
+}).ToArray();
+
+var rows = new List<object>();
+var movementObservations = new List<MovementObservation>();
+var deltaByArm = armSpecs.ToDictionary(x => x.Id, _ => new List<double>());
+bool resetIntegrityPassed = true;
+bool everyTransitionFinite = true;
+bool anyDivergent = false;
+double maximumProjectorLeakage = 0.0;
+double maximumAntitheticResidual = 0.0;
+double maximumReversibilityPositionRelativeError = 0.0;
+double maximumReversibilityMomentumRelativeError = 0.0;
+long observedForwardForceEvaluations = 0;
+long observedReverseForceEvaluations = 0;
+
+foreach (CheckpointState checkpoint in checkpoints)
+foreach (MomentumDraw draw in momentumMenu)
+foreach (int sign in new[] { 1, -1 })
+foreach (ArmSpec arm in armSpecs)
+{
+    double[] reset = (double[])checkpoint.Position.Clone();
+    string resetHashBefore = VectorHash(reset);
+    double[] momentum = draw.Momentum.Select(x => sign * x).ToArray();
+    if (sign < 0)
+    {
+        double residual = 0.0;
+        for (int i = 0; i < dof; i++) residual = System.Math.Max(residual, System.Math.Abs(momentum[i] + draw.Momentum[i]));
+        maximumAntitheticResidual = System.Math.Max(maximumAntitheticResidual, residual);
+    }
+
+    PilotDecision decision = PilotKernel.RunSingleProposal(reset, momentum, arm.StepSize, arm.LeapfrogSteps,
+        draw.LogUniform, maximumWorkingBytes, maximumLeapfrogSteps, maximumForceEvaluationsPerProposal,
+        Evaluate, divergenceThreshold);
+    PilotProposal forward = decision.Proposal;
+    observedForwardForceEvaluations += forward.ForceEvaluationCount;
+
+    PilotProposal? reverse = null;
+    double reversePositionError = double.NaN;
+    double reverseMomentumError = double.NaN;
+    if (!forward.Refused && forward.Finite && forward.Position is not null && forward.Momentum is not null)
+    {
+        double[] reverseMomentum = forward.Momentum.Select(x => -x).ToArray();
+        reverse = PilotKernel.ConstructProposal(forward.Position, reverseMomentum, arm.StepSize, arm.LeapfrogSteps,
+            maximumWorkingBytes, maximumLeapfrogSteps, maximumForceEvaluationsPerProposal, Evaluate, divergenceThreshold);
+        observedReverseForceEvaluations += reverse.ForceEvaluationCount;
+        if (reverse.Finite && reverse.Position is not null && reverse.Momentum is not null)
+        {
+            reversePositionError = RelativeVectorError(reverse.Position, reset);
+            reverseMomentumError = RelativeVectorError(reverse.Momentum, momentum.Select(x => -x).ToArray());
+            maximumReversibilityPositionRelativeError = System.Math.Max(maximumReversibilityPositionRelativeError, reversePositionError);
+            maximumReversibilityMomentumRelativeError = System.Math.Max(maximumReversibilityMomentumRelativeError, reverseMomentumError);
+        }
+    }
+
+    double[] proposedJump = forward.Position is null ? new double[dof]
+        : Difference(forward.Position, reset);
+    double[] selected = decision.SelectedPosition is null ? (double[])reset.Clone() : decision.SelectedPosition;
+    double[] acceptedJump = Difference(selected, reset);
+    ProjectionSummary proposedProjection = Project(proposedJump, edgeCount, dimG, eBasis, wBasis, cBasis);
+    ProjectionSummary acceptedProjection = Project(acceptedJump, edgeCount, dimG, eBasis, wBasis, cBasis);
+    maximumProjectorLeakage = System.Math.Max(maximumProjectorLeakage,
+        System.Math.Max(proposedProjection.DecompositionRelativeResidual, acceptedProjection.DecompositionRelativeResidual));
+
+    string resetHashAfter = VectorHash(reset);
+    bool resetUnchanged = resetHashBefore == checkpoint.PositionSha256 && resetHashAfter == checkpoint.PositionSha256;
+    bool rejectedStateExact = decision.Accepted || BitIdentical(selected, reset);
+    bool rowIntegrity = resetUnchanged && rejectedStateExact;
+    resetIntegrityPassed &= rowIntegrity;
+    bool rowFinite = forward.Finite && reverse is not null && reverse.Finite;
+    everyTransitionFinite &= rowFinite;
+    anyDivergent |= forward.Divergent || (reverse?.Divergent ?? true);
+    if (double.IsFinite(forward.DeltaHamiltonian)) deltaByArm[arm.Id].Add(forward.DeltaHamiltonian);
+
+    double forceCount = System.Math.Max(1, forward.ForceEvaluationCount);
+    movementObservations.Add(new MovementObservation(checkpoint.Id, arm.Id,
+        acceptedProjection.ENormSquared / forceCount,
+        acceptedProjection.WNormSquared / forceCount,
+        acceptedProjection.CNormSquared / forceCount,
+        acceptedProjection.CperpNormSquared / forceCount));
+    rows.Add(new
+    {
+        checkpointId = checkpoint.Id,
+        momentumSeed = draw.Seed,
+        antitheticSign = sign,
+        arm = arm.Id,
+        arm.StepSize,
+        arm.LeapfrogSteps,
+        arm.TrajectoryLength,
+        injectedLogUniformThreshold = draw.LogUniform,
+        finite = rowFinite,
+        divergent = forward.Divergent || (reverse?.Divergent ?? true),
+        accepted = decision.Accepted,
+        deltaH = Reportable(forward.DeltaHamiltonian),
+        absoluteDeltaH = Reportable(System.Math.Abs(forward.DeltaHamiltonian)),
+        forceEvaluationCount = forward.ForceEvaluationCount,
+        reverseForceEvaluationCount = reverse?.ForceEvaluationCount ?? 0,
+        reversibilityPositionRelativeError = Reportable(reversePositionError),
+        reversibilityMomentumRelativeError = Reportable(reverseMomentumError),
+        totalEsjdPerForceEvaluation = acceptedProjection.TotalNormSquared / forceCount,
+        EEsjdPerForceEvaluation = acceptedProjection.ENormSquared / forceCount,
+        WEsjdPerForceEvaluation = acceptedProjection.WNormSquared / forceCount,
+        CEsjdPerForceEvaluation = acceptedProjection.CNormSquared / forceCount,
+        CperpEsjdPerForceEvaluation = acceptedProjection.CperpNormSquared / forceCount,
+        proposedJumpMetrics = proposedProjection,
+        closedValleyJumpMetrics = acceptedProjection,
+        projectorLeakageResidual = acceptedProjection.DecompositionRelativeResidual,
+        resetHashBefore,
+        resetHashAfter,
+        immutableCheckpointPositionSha256 = checkpoint.PositionSha256,
+        resetUnchanged,
+        rejectedStateBitIdentical = rejectedStateExact,
+        acceptedStateDiscarded = true,
+        rowIntegrityPassed = rowIntegrity,
+    });
+}
+
+double Rms(string id)
+{
+    double[] values = deltaByArm[id].ToArray();
+    return values.Length == checkpointOrder.Length * momentumSeeds.Length * signCount
+        ? System.Math.Sqrt(values.Sum(x => x * x) / values.Length) : double.NaN;
+}
+double rmsBaseline = Rms("baseline");
+double rmsFine = Rms("same-tau-fine");
+double rmsFiner = Rms("same-tau-finer");
+double orderBaselineFine = rmsBaseline > 0.0 && rmsFine > 0.0 ? System.Math.Log2(rmsBaseline / rmsFine) : double.NaN;
+double orderFineFiner = rmsFine > 0.0 && rmsFiner > 0.0 ? System.Math.Log2(rmsFine / rmsFiner) : double.NaN;
+double[] orderBand = contract.GetProperty("sameTauOrder").GetProperty("expectedSecondOrderBand")
+    .EnumerateArray().Select(x => x.GetDouble()).ToArray();
+bool sameTauOrderObserved = double.IsFinite(orderBaselineFine) && double.IsFinite(orderFineFiner)
+    && orderBaselineFine >= orderBand[0] && orderBaselineFine <= orderBand[1]
+    && orderFineFiner >= orderBand[0] && orderFineFiner <= orderBand[1];
+bool forceAccountingPassed = observedForwardForceEvaluations == forwardForceEvaluations
+    && observedReverseForceEvaluations == reverseForceEvaluations;
+bool leakagePassed = maximumProjectorLeakage
+    <= projectorSpec.GetProperty("decompositionRelativeTolerance").GetDouble();
+JsonElement transitionControlsSpec = contract.GetProperty("transitionControls");
+bool reversalPassed = maximumReversibilityPositionRelativeError
+        <= transitionControlsSpec.GetProperty("maximumReversibilityPositionRelativeError").GetDouble()
+    && maximumReversibilityMomentumRelativeError
+        <= transitionControlsSpec.GetProperty("maximumReversibilityMomentumRelativeError").GetDouble();
+bool antitheticPassed = maximumAntitheticResidual
+    <= transitionControlsSpec.GetProperty("maximumAntitheticResidual").GetDouble();
+bool sameTauNumericalControlsPassed = sameTauOrderObserved && forceAccountingPassed
+    && leakagePassed && reversalPassed && antitheticPassed;
+
+string[] movementPanels = movementSpec.GetProperty("projectorPanels").EnumerateArray().Select(x => x.GetString()!).ToArray();
+double improvementThreshold = movementSpec.GetProperty("improvementRatioMinimumInclusive").GetDouble();
+double degradationFloor = movementSpec.GetProperty("degradationFloorInclusive").GetDouble();
+int proposalsPerArmEndpoint = momentumSeeds.Length * signCount;
+bool movementClassificationPrerequisitesPassed = resetIntegrityPassed && everyTransitionFinite && !anyDivergent
+    && sameTauNumericalControlsPassed;
+MovementClassificationResult movementClassification = ClassifyMovement(movementObservations,
+    checkpointOrder, movementPanels, "baseline", "long", proposalsPerArmEndpoint,
+    improvementThreshold, degradationFloor,
+    movementSpec.GetProperty("improvedPanelsRequiredPerEndpoint").GetInt32(),
+    movementSpec.GetProperty("qualifyingEndpointsRequired").GetInt32(),
+    movementClassificationPrerequisitesPassed);
+bool movementDiagnosticsConclusive = movementClassification.Conclusive;
+int qualifyingEndpointCount = movementClassification.QualifyingEndpointCount;
+bool longerTrajectoryLeverSupported = movementClassification.Supported;
+bool nonuniformMovementResponse = movementClassification.Mixed;
+
+string verdict = SelectTerminal(false, false, false, false,
+    !resetIntegrityPassed,
+    !everyTransitionFinite || anyDivergent,
+    !sameTauNumericalControlsPassed,
+    !movementDiagnosticsConclusive,
+    longerTrajectoryLeverSupported,
+    nonuniformMovementResponse);
+string decisionText = verdict switch
+{
+    "reset-integrity-stop" => "An immutable checkpoint reset or rejected-state identity check failed. The attempt must be preserved and no scientific terminal may replace it.",
+    "transition-nonfinite-or-divergent" => "At least one forward or reverse reset proposal was non-finite or divergent. No sampler inference follows.",
+    "same-tau-energy-order-not-observed" => "The bounded reset menu executed, but at least one prospectively frozen energy-order, force-accounting, reversal, antithetic, or projector-leakage control failed.",
+    "paired-movement-diagnostics-inconclusive" => "At least one frozen endpoint-panel long-versus-baseline ESJD-per-force ratio was unavailable, non-finite, or had a zero baseline. No favorable panel was substituted.",
+    "longer-trajectory-local-kernel-lever-supported" => "The longer local trajectory met the frozen paired improvement rule at at least five of six immutable endpoints. This supports only a local-kernel feasibility lever, not mixing or stationarity.",
+    "local-kernel-response-mixed" => "The frozen endpoint-panel responses straddled the improvement threshold and did not meet the support rule.",
+    _ => "The longer local trajectory did not meet the prospectively frozen improvement rule, and the response was not classified as nonuniform. No local-kernel lever is supported.",
+};
+
+var finalResourceReport = new
+{
+    requestedForceEvaluations, forwardForceEvaluations, reverseForceEvaluations,
+    observedForwardForceEvaluations, observedReverseForceEvaluations, forceAccountingPassed,
+    workMenu = derivedWorkMenu, workMenuMatches, secondsPerForceEvaluation, derivedEstimatedCpuSeconds,
+    allocationMenu = derivedAllocationMenu, allocationMenuMatches, derivedPeakBytes,
+    passed = resourceAccepted && forceAccountingPassed,
+};
+var finalProjectorReport = new
+{
+    dimG, dof, scalarEDimension = exactBasis.Count, scalarWDimension = windingBasis.Count,
+    scalarCDimension = cBasis.Length, fullEDimension = exactBasis.Count * dimG,
+    fullWDimension = windingBasis.Count * dimG, fullCDimension = cBasis.Length * dimG,
+    fullCperpDimension = dof - cBasis.Length * dimG, integerClosureValid,
+    maximumWNumericClosureResidual, maximumCNumericClosureResidual,
+    maximumProjectorSymmetryDefect, maximumBasisDefect,
+    maximumProjectorLeakage, leakagePassed, passed = projectorControlsPassed && leakagePassed,
+};
+var finalResetReport = new { immutableCheckpointControlsPassed, resetIntegrityPassed,
+    maximumAntitheticResidual, antitheticPassed, acceptedStateCarryObserved = false,
+    everyProposalResetToImmutableCheckpoint = resetIntegrityPassed,
+    passed = immutableCheckpointControlsPassed && resetIntegrityPassed && antitheticPassed };
+var finalReversalReport = new { maximumReversibilityPositionRelativeError,
+    maximumReversibilityMomentumRelativeError, reversalPassed, passed = reversalPassed };
+var finalSameTauReport = new
+{
+    statistic = "log2(rmsAbsoluteDeltaHCoarser/rmsAbsoluteDeltaHFiner) over the common checkpoint, seed, and antithetic menu",
+    comparisons = new[] { "baseline-versus-same-tau-fine", "same-tau-fine-versus-same-tau-finer" },
+    rmsAbsoluteDeltaH = new { baseline = rmsBaseline, fine = rmsFine, finer = rmsFiner },
+    observedOrder = new { baselineToFine = Reportable(orderBaselineFine), fineToFiner = Reportable(orderFineFiner) },
+    expectedBand = orderBand, passed = sameTauOrderObserved,
+};
+var finalMovementReport = new
+{
+    baselineArm = "baseline", comparisonArm = "long", panels = movementPanels,
+    ratioDefinition = "mean accepted ESJD per forward force evaluation for long / corresponding baseline mean at the same immutable endpoint and fixed projector panel",
+    improvementThreshold, degradationFloor, proposalsPerArmEndpoint,
+    endpoints = movementClassification.Endpoints, movementDiagnosticsConclusive, qualifyingEndpointCount,
+    movementClassificationPrerequisitesPassed,
+    qualifyingEndpointsRequired = movementSpec.GetProperty("qualifyingEndpointsRequired").GetInt32(),
+    longerTrajectoryLeverSupported, nonuniformMovementResponse,
+    favorableProjectorSelectedAfterObservation = false,
+};
+WriteResult(CompleteResult(verdict, decisionText, contractValid, phase570GateOpen, resourceAccepted, true,
+    seedNamespaceControlsReport, finalResourceReport, finalProjectorReport, finalResetReport, finalReversalReport,
+    finalSameTauReport, finalMovementReport, rows));
+Console.WriteLine($"Phase571 verdict: {verdict}");
+
+void WriteResult(object payload)
+{
+    Directory.CreateDirectory(Path.GetDirectoryName(OutputPath)!);
+    byte[] bytes = JsonSerializer.SerializeToUtf8Bytes(payload,
+        new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+    File.WriteAllBytes(OutputPath, bytes);
+    File.WriteAllBytes(SummaryPath, bytes);
+}
+
+static MovementObservation[] BuildMovementFixture(string[] endpoints, int proposalsPerArmEndpoint,
+    Func<string, double[]> longRatios)
+{
+    var rows = new List<MovementObservation>();
+    foreach (string endpoint in endpoints)
+    {
+        double[] ratios = longRatios(endpoint);
+        for (int i = 0; i < proposalsPerArmEndpoint; i++)
+        {
+            rows.Add(new MovementObservation(endpoint, "baseline", 1.0, 1.0, 1.0, 1.0));
+            rows.Add(new MovementObservation(endpoint, "long", ratios[0], ratios[1], ratios[2], ratios[3]));
+        }
+    }
+    return [.. rows];
+}
+
+static MovementClassificationResult ClassifyMovement(IEnumerable<MovementObservation> observations,
+    string[] endpoints, string[] panels, string baselineArm, string comparisonArm,
+    int proposalsPerArmEndpoint, double improvementThreshold, double degradationFloor,
+    int improvedPanelsRequired, int qualifyingEndpointsRequired, bool prerequisitesPassed)
+{
+    MovementObservation[] source = observations.ToArray();
+    static double PanelValue(MovementObservation row, string panel) => panel switch
+    {
+        "E" => row.E, "W" => row.W, "C" => row.C, "Cperp" => row.Cperp, _ => double.NaN,
+    };
+    var endpointRows = new List<MovementEndpointRow>();
+    foreach (string endpoint in endpoints)
+    {
+        var ratios = new Dictionary<string, double>(StringComparer.Ordinal);
+        bool complete = true;
+        foreach (string panel in panels)
+        {
+            MovementObservation[] baseline = source.Where(x => x.CheckpointId == endpoint && x.Arm == baselineArm).ToArray();
+            MovementObservation[] comparison = source.Where(x => x.CheckpointId == endpoint && x.Arm == comparisonArm).ToArray();
+            complete &= baseline.Length == proposalsPerArmEndpoint && comparison.Length == proposalsPerArmEndpoint;
+            double baselineMean = baseline.Length == 0 ? double.NaN : baseline.Average(x => PanelValue(x, panel));
+            double comparisonMean = comparison.Length == 0 ? double.NaN : comparison.Average(x => PanelValue(x, panel));
+            ratios[panel] = baselineMean > 0.0 && double.IsFinite(baselineMean) && double.IsFinite(comparisonMean)
+                ? comparisonMean / baselineMean : double.NaN;
+        }
+        bool conclusive = complete && ratios.Count == 4 && ratios.Values.All(double.IsFinite);
+        int improved = conclusive ? ratios.Values.Count(x => x >= improvementThreshold) : 0;
+        bool noneBelowFloor = conclusive && ratios.Values.All(x => x >= degradationFloor);
+        bool qualifies = conclusive && improved >= improvedPanelsRequired && noneBelowFloor;
+        endpointRows.Add(new MovementEndpointRow(endpoint, ratios["E"], ratios["W"], ratios["C"], ratios["Cperp"],
+            complete, conclusive, improved, noneBelowFloor, qualifies));
+    }
+    double[] allRatios = endpointRows.SelectMany(x => new[] { x.ERatio, x.WRatio, x.CRatio, x.CperpRatio }).ToArray();
+    bool conclusiveAll = endpointRows.Count == endpoints.Length && endpointRows.All(x => x.Conclusive)
+        && allRatios.All(double.IsFinite);
+    int qualifyingCount = endpointRows.Count(x => x.Qualifies);
+    bool supported = prerequisitesPassed && conclusiveAll && qualifyingCount >= qualifyingEndpointsRequired;
+    bool mixed = prerequisitesPassed && conclusiveAll && !supported
+        && ((allRatios.Any(x => x >= improvementThreshold) && allRatios.Any(x => x < improvementThreshold))
+            || (allRatios.Any(x => x < degradationFloor) && allRatios.Any(x => x >= degradationFloor)));
+    return new MovementClassificationResult([.. endpointRows], conclusiveAll, qualifyingCount, supported, mixed);
+}
+
+static ProjectionSummary Project(double[] vector, int edgeCount, int dimG,
+    double[][] eBasis, double[][] wBasis, double[][] cBasis)
+{
+    double total = Dot(vector, vector);
+    double eSquared = ProjectedNormSquared(vector, edgeCount, dimG, eBasis);
+    double wSquared = ProjectedNormSquared(vector, edgeCount, dimG, wBasis);
+    double cSquared = ProjectedNormSquared(vector, edgeCount, dimG, cBasis);
+    double cPerpSquared = System.Math.Max(0.0, total - cSquared);
+    var gram = new double[3, 3];
+    foreach (double[] basis in cBasis)
+    {
+        var coefficient = new double[3];
+        for (int a = 0; a < dimG; a++)
+            for (int edge = 0; edge < edgeCount; edge++)
+                coefficient[a] += basis[edge] * vector[edge * dimG + a];
+        for (int a = 0; a < dimG; a++)
+            for (int b = 0; b < dimG; b++) gram[a, b] += coefficient[a] * coefficient[b];
+    }
+    double[] eigenvalues = Symmetric3Eigenvalues(gram);
+    double trace = eigenvalues.Sum();
+    double alignment = trace > 0.0 ? eigenvalues[2] / trace : 0.0;
+    double valleyDistance = cPerpSquared + eigenvalues[0] + eigenvalues[1];
+    double scale = System.Math.Max(1.0, total);
+    double residual = System.Math.Max(System.Math.Abs(cSquared - eSquared - wSquared),
+        System.Math.Abs(total - cSquared - cPerpSquared)) / scale;
+    return new ProjectionSummary(total, eSquared, wSquared, cSquared, cPerpSquared,
+        eigenvalues, alignment, valleyDistance, residual);
+}
+
+static double ProjectedNormSquared(double[] vector, int edgeCount, int dimG, double[][] basis)
+{
+    double sum = 0.0;
+    foreach (double[] direction in basis)
+        for (int a = 0; a < dimG; a++)
+        {
+            double coefficient = 0.0;
+            for (int edge = 0; edge < edgeCount; edge++) coefficient += direction[edge] * vector[edge * dimG + a];
+            sum += coefficient * coefficient;
+        }
+    return sum;
+}
+
+static double[] Symmetric3Eigenvalues(double[,] input)
+{
+    var a = (double[,])input.Clone();
+    for (int sweep = 0; sweep < 32; sweep++)
+    {
+        (int p, int q) = System.Math.Abs(a[0, 1]) >= System.Math.Abs(a[0, 2])
+            ? (System.Math.Abs(a[0, 1]) >= System.Math.Abs(a[1, 2]) ? (0, 1) : (1, 2))
+            : (System.Math.Abs(a[0, 2]) >= System.Math.Abs(a[1, 2]) ? (0, 2) : (1, 2));
+        if (System.Math.Abs(a[p, q]) <= 1e-15 * System.Math.Max(1.0,
+            System.Math.Max(System.Math.Abs(a[p, p]), System.Math.Abs(a[q, q])))) break;
+        double angle = 0.5 * System.Math.Atan2(2.0 * a[p, q], a[q, q] - a[p, p]);
+        double c = System.Math.Cos(angle), s = System.Math.Sin(angle);
+        double app = c * c * a[p, p] - 2.0 * s * c * a[p, q] + s * s * a[q, q];
+        double aqq = s * s * a[p, p] + 2.0 * s * c * a[p, q] + c * c * a[q, q];
+        for (int r = 0; r < 3; r++)
+        {
+            if (r == p || r == q) continue;
+            double arp = c * a[r, p] - s * a[r, q];
+            double arq = s * a[r, p] + c * a[r, q];
+            a[r, p] = a[p, r] = arp;
+            a[r, q] = a[q, r] = arq;
+        }
+        a[p, p] = app; a[q, q] = aqq; a[p, q] = a[q, p] = 0.0;
+    }
+    double[] result = [System.Math.Max(0.0, a[0, 0]), System.Math.Max(0.0, a[1, 1]), System.Math.Max(0.0, a[2, 2])];
+    Array.Sort(result);
+    return result;
+}
+
+static bool IsClosed(double[] generator, SimplicialMesh mesh)
+{
+    for (int face = 0; face < mesh.FaceCount; face++)
+    {
+        double sum = 0.0;
+        int[] edges = mesh.FaceBoundaryEdges[face];
+        int[] orientations = mesh.FaceBoundaryOrientations[face];
+        for (int i = 0; i < edges.Length; i++) sum += orientations[i] * generator[edges[i]];
+        if (sum != 0.0) return false;
+    }
+    return true;
+}
+
+static double MaximumClosureResidual(double[] generator, SimplicialMesh mesh)
+{
+    double maximum = 0.0;
+    for (int face = 0; face < mesh.FaceCount; face++)
+    {
+        double sum = 0.0;
+        int[] edges = mesh.FaceBoundaryEdges[face];
+        int[] orientations = mesh.FaceBoundaryOrientations[face];
+        for (int i = 0; i < edges.Length; i++) sum += orientations[i] * generator[edges[i]];
+        maximum = System.Math.Max(maximum, System.Math.Abs(sum));
+    }
+    return maximum;
+}
+
+static void AddOrthonormal(List<double[]> basis, double[] candidate, double threshold)
+{
+    ProjectOut(candidate, basis);
+    double norm = System.Math.Sqrt(Dot(candidate, candidate));
+    if (norm <= threshold) return;
+    for (int i = 0; i < candidate.Length; i++) candidate[i] /= norm;
+    basis.Add(candidate);
+}
+
+static void ProjectOut(double[] candidate, IEnumerable<double[]> basis)
+{
+    for (int pass = 0; pass < 2; pass++)
+        foreach (double[] direction in basis)
+        {
+            double coefficient = Dot(candidate, direction);
+            for (int i = 0; i < candidate.Length; i++) candidate[i] -= coefficient * direction[i];
+        }
+}
+
+static double MaximumBasisDefect(double[][] basis)
+{
+    double maximum = 0.0;
+    for (int i = 0; i < basis.Length; i++)
+        for (int j = 0; j <= i; j++)
+            maximum = System.Math.Max(maximum, System.Math.Abs(Dot(basis[i], basis[j]) - (i == j ? 1.0 : 0.0)));
+    return maximum;
+}
+
+static double[] Difference(double[] a, double[] b)
+{
+    var result = new double[a.Length];
+    for (int i = 0; i < result.Length; i++) result[i] = a[i] - b[i];
+    return result;
+}
+
+static double RelativeVectorError(double[] actual, double[] expected)
+{
+    double numerator = 0.0, denominator = 0.0;
+    for (int i = 0; i < actual.Length; i++)
+    {
+        double delta = actual[i] - expected[i];
+        numerator += delta * delta;
+        denominator += expected[i] * expected[i];
+    }
+    return System.Math.Sqrt(numerator / System.Math.Max(1.0, denominator));
+}
+
+static bool BitIdentical(double[] a, double[] b) => a.Length == b.Length
+    && a.Zip(b).All(x => BitConverter.DoubleToInt64Bits(x.First) == BitConverter.DoubleToInt64Bits(x.Second));
+static double Dot(double[] a, double[] b)
+{
+    double sum = 0.0;
+    for (int i = 0; i < a.Length; i++) sum += a[i] * b[i];
+    return sum;
+}
+static double? Reportable(double value) => double.IsFinite(value) ? value : null;
+static string Sha(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+static string VectorHash(double[] values)
+{
+    byte[] bytes = new byte[values.Length * sizeof(double)];
+    Buffer.BlockCopy(values, 0, bytes, 0, bytes.Length);
+    return Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
+}
+
+static double Uniform(Xoshiro rng) => ((rng.Next() >> 11) + 0.5) / 9007199254740992.0;
+static double Gauss(Xoshiro rng)
+{
+    double u1 = Uniform(rng), u2 = Uniform(rng);
+    return System.Math.Sqrt(-2.0 * System.Math.Log(u1)) * System.Math.Cos(2.0 * System.Math.PI * u2);
+}
+static ulong[] ExpandSeed(ulong seed)
+{
+    ulong state = seed;
+    ulong Next()
+    {
+        state += 0x9E3779B97F4A7C15UL;
+        ulong z = state;
+        z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9UL;
+        z = (z ^ (z >> 27)) * 0x94D049BB133111EBUL;
+        return z ^ (z >> 31);
+    }
+    return [Next(), Next(), Next(), Next()];
+}
+
+sealed record BindingSpec(string Id, string Path, string ExpectedSha256);
+sealed record WorkRow(string Arm, int ProposalsPerDirection, int ForceEvaluationsPerProposal,
+    long ForwardForceEvaluations, long ReverseForceEvaluations);
+sealed record AllocationRow(string Id, string Shape, long Bytes);
+sealed record ArmSpec(string Id, double StepSize, int LeapfrogSteps, double TrajectoryLength);
+sealed record CheckpointState(string Id, string Path, double[] Position, string PositionSha256);
+sealed record MomentumDraw(int Seed, double[] Momentum, double LogUniform);
+sealed record MovementObservation(string CheckpointId, string Arm, double E, double W, double C, double Cperp);
+sealed record MovementEndpointRow(string CheckpointId, double ERatio, double WRatio, double CRatio,
+    double CperpRatio, bool Complete, bool Conclusive, int ImprovedPanels, bool NoneBelowFloor, bool Qualifies);
+sealed record MovementClassificationResult(MovementEndpointRow[] Endpoints, bool Conclusive,
+    int QualifyingEndpointCount, bool Supported, bool Mixed);
+sealed record ProjectionSummary(double TotalNormSquared, double ENormSquared, double WNormSquared,
+    double CNormSquared, double CperpNormSquared, double[] ClosedGramEigenvalues,
+    double ClosedRankOneAlignment, double DistanceSquaredToRankOneClosedCoordinateSet,
+    double DecompositionRelativeResidual);
+sealed class Xoshiro(ulong[] state)
+{
+    private ulong _s0 = state[0], _s1 = state[1], _s2 = state[2], _s3 = state[3];
+    public ulong Next()
+    {
+        ulong result = RotateLeft(_s1 * 5, 7) * 9;
+        ulong t = _s1 << 17;
+        _s2 ^= _s0; _s3 ^= _s1; _s1 ^= _s2; _s0 ^= _s3; _s2 ^= t; _s3 = RotateLeft(_s3, 45);
+        return result;
+    }
+    private static ulong RotateLeft(ulong x, int k) => (x << k) | (x >> (64 - k));
+}

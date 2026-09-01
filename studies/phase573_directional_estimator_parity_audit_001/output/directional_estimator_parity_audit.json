@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "phase": 573,
+  "phaseId": "phase573-directional-estimator-parity-audit",
+  "contractId": "phase573-a37-directional-estimator-parity-audit-v1",
+  "contractSha256": "96e3b4a19ccfb771280c3314193b5188132fbe18b9ee40e8ce157964a84e44e9",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "observedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "passed": true
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "expectedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "observedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "passed": true
+    },
+    {
+      "id": "phase570-contract",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "expectedSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+      "observedSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+      "passed": true
+    },
+    {
+      "id": "phase570-program",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "expectedSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+      "observedSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+      "passed": true
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "expectedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "observedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "passed": true
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "expectedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "observedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "passed": true
+    },
+    {
+      "id": "phase572-contract",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v9.json",
+      "expectedSha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6",
+      "observedSha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6",
+      "passed": true
+    },
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "expectedSha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8",
+      "observedSha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8",
+      "passed": true
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "expectedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "observedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "passed": true
+    },
+    {
+      "id": "phase572-summary",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json",
+      "expectedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "observedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "passed": true
+    },
+    {
+      "id": "phase573-program",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/Program.cs",
+      "expectedSha256": "edb3d7173e4344f4fd113652f680ef535ec8ee8fb744a41b375e34c56f020aff",
+      "observedSha256": "edb3d7173e4344f4fd113652f680ef535ec8ee8fb744a41b375e34c56f020aff",
+      "passed": true
+    },
+    {
+      "id": "phase573-csproj",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj",
+      "expectedSha256": "de3a625c1165cfd59a28e857eada74b547cc8e17f617a3f2e87d7d9f0b754819",
+      "observedSha256": "de3a625c1165cfd59a28e857eada74b547cc8e17f617a3f2e87d7d9f0b754819",
+      "passed": true
+    }
+  ],
+  "knownAnswerBattery": {
+    "passed": false,
+    "rows": [
+      {
+        "id": "iid",
+        "a": {
+          "rhat": 1.0005009059076175,
+          "bulkEss": 1607.3528325374336,
+          "tailEss": 1459.8869597307355
+        },
+        "b": {
+          "rhat": 1.0005009059076175,
+          "bulkEss": 1607.3528325374336,
+          "tailEss": 1459.8869597307355
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": true,
+        "passed": true
+      },
+      {
+        "id": "ar-positive",
+        "a": {
+          "rhat": 1.0291539738328495,
+          "bulkEss": 160.27155640066027,
+          "tailEss": 257.9472361637451
+        },
+        "b": {
+          "rhat": 1.0291539738328495,
+          "bulkEss": 160.27155640066027,
+          "tailEss": 257.9472361637451
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": false,
+        "passed": false
+      },
+      {
+        "id": "ar-negative",
+        "a": {
+          "rhat": 1.0030471602280284,
+          "bulkEss": 5849.053548803618,
+          "tailEss": 1626.8212468254226
+        },
+        "b": {
+          "rhat": 1.0030471602280284,
+          "bulkEss": 5849.053548803618,
+          "tailEss": 1626.8212468254226
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": false,
+        "passed": false
+      },
+      {
+        "id": "separated",
+        "a": {
+          "rhat": 1.0037234811995197,
+          "bulkEss": 792.5608325999742,
+          "tailEss": 1175.445967690254
+        },
+        "b": {
+          "rhat": 1.0037234811995197,
+          "bulkEss": 792.5608325999742,
+          "tailEss": 1175.445967690254
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": true,
+        "passed": true
+      },
+      {
+        "id": "drifting",
+        "a": {
+          "rhat": 1.4996080707466086,
+          "bulkEss": 7.337967455380968,
+          "tailEss": 78.27357188625773
+        },
+        "b": {
+          "rhat": 1.4996080707466086,
+          "bulkEss": 7.337967455380968,
+          "tailEss": 78.27357188625773
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": true,
+        "passed": true
+      },
+      {
+        "id": "ties",
+        "a": {
+          "rhat": 0.9951307641578719,
+          "bulkEss": 640.1547509853898,
+          "tailEss": 1229.5139480248229
+        },
+        "b": {
+          "rhat": 0.9951307641578719,
+          "bulkEss": 640.1547509853898,
+          "tailEss": 1229.5139480248229
+        },
+        "finite": true,
+        "exactKernelParity": true,
+        "invariance": true,
+        "passed": true
+      }
+    ],
+    "twoIndependentLocalImplementationsExercised": true,
+    "signAndAffineInvarianceExercised": true
+  },
+  "estimatorParity": {
+    "identicalInputKernelParity": true,
+    "exactBoundSourceSignaturesPresent": false,
+    "rankNormalizationFormula": "Phi^-1((rank-3/8)/(N\u002B1/4))",
+    "rhatUsesMaximumRankedAndFoldedSplitComponents": true,
+    "bulkEssUsesRankedSeries": true,
+    "tailEssUsesFiveAndNinetyFivePercentIndicatorSeries": true
+  },
+  "upstream": null,
+  "comparison": null,
+  "verdictKind": "known-answer-battery-failed",
+  "terminalStatus": "directional-estimator-parity-audit-known-answer-battery-failed",
+  "phase574TraceDesignGateOpen": false,
+  "phase574ExecutionAuthorized": false,
+  "rawTraceAcquisitionPerformed": false,
+  "newSamplingPerformed": false,
+  "markovChainAdvanced": false,
+  "rngUsedForScientificData": false,
+  "phase570Or572Reinterpreted": false,
+  "phase572PlanningGateOpened": false,
+  "thresholdRelaxed": false,
+  "registeredTargetChanged": false,
+  "protectedPhase554SeedsRead": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

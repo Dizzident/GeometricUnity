@@ -1446,3 +1446,154 @@ failure. Because the candidate is source-unbound and uniformly worsens the
 audited negative inertia, no candidate-sampling pack is justified by A35.
 Further machine work should return to the separately governed registered-target
 sampler-resolution lane; model replacement requires a primary-source lowering.
+
+## Amendment A36 - registered-target direction-resolved transition tranche (2026-08-17; Phases570-572)
+
+The A35 negative result routes the next machine experiment back to the frozen
+registered target. Existing Phase548 telemetry does not retain configurations,
+but the Phase549/552 replay controls establish that all six determined chains
+can be reconstructed bit-for-bit from the frozen contracts and seeds. A36 uses
+that fact before spending new target-chain sampling currency.
+
+The primary coordinates are incidence-projector quantities in the registered
+Euclidean coefficient space: `E=im(d0)`, `W=ker(d1) intersect E-perp`,
+`C=ker(d1)=E plus W`, and `C-perp`. With the registered SU(2) factor their
+dimensions are 240, 12, 252, and 3393. These labels are algebraic only: no A36
+phase calls them gauge, redundant, orbit, or quotient directions. For the
+closed component, the phases also record the three eigenvalues of its 3 by 3
+Gram matrix, rank-one alignment, and Euclidean distance to the closed
+rank-one/commuting set exhibited by Phase550. Projector and Gram quantities,
+not arbitrary individual eigenvector signs or degenerate-subspace rotations,
+are verdict-bearing.
+
+1. **Phase570 - registered-target direction-resolved replay.** Reimplement the
+   frozen Phase548 chains, require all decisions, Hamiltonian differences, and
+   final checkpoint positions to reproduce, then compute predeclared
+   rank-normalized split R-hat, bulk/tail ESS, lag correlation, drift, and
+   accepted movement diagnostics for the incidence-projector and commuting-
+   valley series. Synthetic IID, AR(1), drifting-process, projector-rotation,
+   rank-one-valley, checksum, and replay-decoy batteries run before audited
+   numeric reads. This is retrospective reprocessing of an already determined
+   dataset, not new sampling, and cannot establish target stationarity or
+   rehabilitate Phase548.
+2. **Phase571 - bounded reset-at-checkpoint transition-kernel probe.** Consume
+   only a valid Phase570 terminal. At each of the six immutable Phase548 final
+   positions, reset to the same position for every paired proposal and compare
+   the frozen baseline with same-length step-halving and longer-trajectory
+   arms using disclosed, disjoint momentum seeds and antithetic momenta.
+   Measure energy error, reversibility, acceptance, projected jump, leakage,
+   and movement per force evaluation in the frozen projector panels. Accepted
+   states are never carried between proposals: RNG and Gaussian momenta are
+   used, but no Markov chain is advanced and no target sample or configuration
+   is retained. Any state carry is an integrity stop, not an alternate run.
+3. **Phase572 - independent replay/probe adjudicator.** Use no Phase570/571/545
+   project reference or shared implementation. Independently reconstruct the
+   target, incidence projectors, valley statistics, RNG, leapfrog proposals,
+   and diagnostics after planted controls have passed, then reproduce all six
+   chain replays and every reset proposal. A favorable terminal may justify
+   planning a later disjoint-seed prospective chain pack; it never authorizes
+   or executes that pack.
+
+Each phase refuses before allocation or RNG on binding, resource, or upstream
+drift. Phase571/572 use neither protected Phase554 seed. Phase548/549 terminals,
+the registered operator and default, and every earlier adjudication remain
+immutable. A36 performs no quotient, gauge fixing, measure normalization,
+source selection, production selection, physical-unit conversion, or GeV
+inference; it grants no Phase561, O4, Phase458, Phase481, production, or launch
+authority. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+### A36 execution record (completed 2026-08-27)
+
+Phase570 v7 reconstructed all six committed Phase548 chains with exact
+accept/reject decisions, zero Hamiltonian-difference deviation, and
+bit-identical final positions. Its incidence decomposition was
+`240/12/252/3393` for `E/W/C/C-perp`. Both tables remained under-resolved, but
+the frozen enrichment rules localized the burden to neither the closed sector
+nor the closed rank-one coordinates. No frozen aggregate drift signal was
+present, producing `invariant-directional-under-resolution-not-localized`.
+
+Phase571 v4 evaluated exactly 96 reset-at-checkpoint proposals and accounted
+for 2,208 forward plus 2,208 reverse force evaluations. Reversibility stayed
+below `3.52e-16`, and same-duration step halving gave observed orders
+`1.976992096261708` and `1.993801143087295`. The long arm improved accepted
+movement per force evaluation in all four panels at all six endpoints; its
+ratios ranged from about 2.02 to 4.92. It returned
+`longer-trajectory-local-kernel-lever-supported`, scoped only to a local
+transition probe with no carried state, chain advancement, target sample, or
+retained configuration.
+
+Phase572 v9 independently reproduced the complete six-chain replay and every
+Phase571 transition row. The transition menu, energy-order control, movement
+classification, and work accounting all agreed. Its independent directional
+classification also agreed, but five table-level rank-normalized R-hat values
+exceeded the prospectively frozen `2e-10` scaled-absolute agreement tolerance;
+the maximum deviation was `4.302812022446892e-05`. The terminal is therefore
+`directional-diagnostics-disagree`. The Phase571 lever is not independently
+confirmed, and A36 does not open prospective chain-pack planning.
+
+The failed-attempt lineage is part of the result. Phase572 v1-v3 and v5-v8
+were frozen but not executed after review found fail-closed integrity gaps.
+V4 alone executed, then exited 134 before emitting output because the expected
+nonfinite value from a planted divergence decoy was presented to strict JSON
+serialization as a raw number. V9 preserves that attempt, scans the actual
+production payload shapes for nonfinite values, and is the only citable
+Phase572 terminal. No threshold was weakened and all A36 authority firewalls
+remain closed.
+
+## Amendment A37 - directional-estimator parity localization audit (2026-08-27; Phase573)
+
+Phase572's fail-closed terminal left one machine-decidable question open at
+zero new sampling cost: is the frozen disagreement a property of the two
+diagnostic estimator implementations, or of the numeric series they were fed?
+A37 allocates exactly one phase to answer it.
+
+1. **Phase573 - directional estimator parity audit.** Exact-bind the executed
+   Phase570 v7 and Phase572 v9 programs, projects, contracts, and outputs plus
+   the Phase548 lineage. Implement the rank-normalized split R-hat, bulk ESS,
+   and tail ESS kernels twice, study-locally, and require bit-for-bit parity
+   on identical synthetic inputs through a known-answer battery that runs
+   before any audited numeric row is read. Then compare all 36 frozen
+   Phase570/572 table rows field by field and classify the disagreement:
+   estimator-kernel divergence, non-R-hat divergence, or R-hat-only divergence
+   attributable to upstream raw-series/rank construction. The upstream phases
+   did not retain raw directional series, so the phase must refuse to guess
+   among ordinary-rank, folded-rank, median, projector, and
+   eigensolver-rounding effects; a localized result opens the DESIGN of a
+   separate raw-trace phase only. No Phase572 comparison threshold may change.
+
+Phase573 performs no replay, HMC, new sampling, Markov advance, configuration
+retention, protected-seed read, target change, quotient, gauge fixing, or
+measure normalization, and grants no Phase561, O4, Phase458, Phase481,
+production, launch, physical-unit, or GeV authority. External review remains
+pending and `promotedPhysicalMassClaimCount=0`.
+
+### A37 execution record (completed 2026-08-27)
+
+The frozen v1 stopped at `known-answer-battery-failed` before reading any
+upstream numeric row. Its two estimator implementations already matched
+bit-for-bit; the failure was an over-strong composite sign/affine-invariance
+assertion applied to the frozen finite-sample tail-indicator ESS convention,
+which uses inclusive quantile thresholds and is not exactly invariant at
+finite sample size. The v1 contract, program, project, and outputs are
+preserved as non-citable lineage. V2 keeps exact kernel parity mandatory,
+demotes the composite invariance fixture to a descriptive record, and changes
+no estimator formula or comparison threshold.
+
+Phase573 v2 passed its repaired battery and established: the two estimator
+kernels match bit-for-bit on identical inputs; exactly five of the 36
+Phase570/572 rows differ (table A `closedGramLargest`, `closedMovementSquared`,
+`eMovementSquared`, `eNormSquared`; table B `closedGramSmallest`); only R-hat
+differs; every bulk ESS and tail ESS value is bit-identical; every pass/fail
+classification agrees; and the maximum scaled R-hat difference is
+`4.302812022446892e-05`. The terminal is
+`rhat-only-disagreement-localized-input-trace-required`. This excludes the
+estimator kernel and localizes the unresolved distinction to upstream
+raw-series/rank construction, which cannot be separated further without
+retained raw directional series.
+
+Phase574 raw-trace DESIGN is open; Phase574 execution is not authorized or
+registered. Phase572 remains fail-closed and its tolerance unchanged, the
+Phase571 lever remains not independently confirmed, prospective sampler-pack
+planning remains closed, and all A36/A37 authority firewalls remain closed
+with `promotedPhysicalMassClaimCount=0`.

@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 6,
+  "contractId": "phase572-a36-independent-directional-transition-adjudicator-v6",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A36",
+  "contractStatus": "frozen-before-first-execution",
+  "frozenBeforeFirstExecution": true,
+  "firstExecutionOccurred": false,
+  "upstreamResultsKnownBeforeContractFreeze": true,
+  "phase570And571AuditedNumericDataReadOnlyAfterBattery": true,
+  "phase548ExactBoundConfigurationMayBeParsedBeforeBatteryForResourceDerivation": true,
+  "exactHashesMayBeComputedBeforeBatteryWithoutParsingAuditedJson": true,
+  "compileSource": {
+    "projectPath": "studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+    "soleCompileItem": "Program.cs",
+    "defaultCompileItemsDisabled": true,
+    "warningsAsErrors": true
+  },
+  "independence": {
+    "mayReferencePhase570Project": false,
+    "mayReferencePhase571Project": false,
+    "mayReferencePhase545Project": false,
+    "mayIncludePhase570Source": false,
+    "mayIncludePhase571Source": false,
+    "mayIncludePhase545Source": false,
+    "sharedPhase545570571StudyImplementationAllowed": false,
+    "meshIncidenceReconstructed": true,
+    "projectorsReconstructed": true,
+    "registeredTargetIndependentlyConfigured": true,
+    "objectiveAndGradientFormulaIndependentlyReimplemented": false,
+    "usesExactBoundProductionEvaluator": true,
+    "rngAndGaussianTransformReconstructed": true,
+    "leapfrogAndAcceptanceReconstructed": true,
+    "estimatorsReconstructed": true
+  },
+  "batteryRule": {
+    "mustCompleteBeforeAuditedNumericRead": true,
+    "projectorRankAndRotationRequired": true,
+    "rankOneValleyRequired": true,
+    "iidAr1AndDriftEstimatorsRequired": true,
+    "harmonicOscillatorEnergyAndReversalRequired": true,
+    "nonconvexDivergenceRequired": true,
+    "wrongAcceptanceSignDecoyRequired": true,
+    "classificationTruthTableRequired": true,
+    "terminalSelectorAndPrecedenceRequired": true,
+    "replayComparatorTamperRequired": true,
+    "plantedRngSeeds": [
+      572001,
+      572003,
+      572007
+    ],
+    "numericTolerance": 1E-9,
+    "projectorTolerance": 1E-12,
+    "reversalTolerance": 2E-9,
+    "nonconvexMustBeNonfiniteDivergentAndRejected": true,
+    "recursiveSerializationSafetyRequired": true,
+    "nonfinitePayloadValuesMustBeNullWithFiniteFlag": true,
+    "namedFloatingPointLiteralsAllowed": false,
+    "plantedSerializationNonfinitePaths": [
+      "$.nan",
+      "$.positiveInfinity",
+      "$.negativeInfinity",
+      "$.nested[1]"
+    ],
+    "expectedPreconvertedNonfiniteAllowlist": [
+      "$.independentBattery.nonconvexDivergence.deltaH"
+    ],
+    "unexpectedNonfiniteUsesEarliestTerminalPrecedence": true,
+    "emittedAndPrintedTerminalMustMatch": true,
+    "productionScientificNonfinitesMustRemainDetectable": true,
+    "unexpectedNonfiniteCannotOverrideEarlierTerminal": true,
+    "unexpectedNonfiniteUnknownPathMapsInvalid": true
+  },
+  "replayRule": {
+    "committedChainCount": 6,
+    "requireEveryPhase548Decision": true,
+    "requireEveryFinalPositionBitIdentical": true,
+    "requireEveryTelemetryDeltaH": true,
+    "deltaHScaledAbsoluteTolerance": 1E-12,
+    "scaledAbsoluteDifferenceFormula": "abs(actual-expected)/max(1,abs(expected))",
+    "mayUseCommittedSeedsOnly": true,
+    "newMarkovChainAdvanceAllowed": false
+  },
+  "directionalRule": {
+    "series": [
+      "actionDensity",
+      "forceNormSquared",
+      "configurationNormSquared",
+      "eNormSquared",
+      "wNormSquared",
+      "closedNormSquared",
+      "closedPerpNormSquared",
+      "closedGramLargest",
+      "closedGramMiddle",
+      "closedGramSmallest",
+      "closedRankOneAlignment",
+      "withinClosedRankOneDistanceSquared",
+      "withinClosedRankOneRelativeDistance",
+      "fullRankOneDistanceSquared",
+      "eMovementSquared",
+      "wMovementSquared",
+      "closedMovementSquared",
+      "closedPerpMovementSquared"
+    ],
+    "tableDiagnosticRowCount": 36,
+    "lagRowCount": 108,
+    "driftRowCount": 108,
+    "maximumRhat": 1.01,
+    "minimumEss": 100,
+    "batchCount": 20,
+    "absoluteDriftZThreshold": 3,
+    "scaledAbsoluteTolerance": 2E-10,
+    "scaledAbsoluteDifferenceFormula": "abs(actual-expected)/max(1,abs(expected))",
+    "chainsRequiredForDrift": 3,
+    "driftDecisionSeries": [
+      "closedNormSquared",
+      "closedPerpNormSquared",
+      "closedGramLargest",
+      "withinClosedRankOneDistanceSquared",
+      "withinClosedRankOneRelativeDistance"
+    ],
+    "closedMovementConcentrationFactor": 0.75,
+    "recomputeClassificationWithoutCoordinateDirectionObjects": true
+  },
+  "transitionRule": {
+    "requireEveryPhase571ProposalRow": true,
+    "checkpointOrder": [
+      "complete-lattice-pilot-a-546101",
+      "complete-lattice-pilot-a-546103",
+      "complete-lattice-pilot-a-546107",
+      "complete-lattice-pilot-b-546201",
+      "complete-lattice-pilot-b-546203",
+      "complete-lattice-pilot-b-546207"
+    ],
+    "momentumSeeds": [
+      571101,
+      571103
+    ],
+    "antitheticSigns": [
+      1,
+      -1
+    ],
+    "arms": [
+      {
+        "id": "baseline",
+        "stepSize": 0.06,
+        "leapfrogSteps": 8,
+        "trajectoryLength": 0.48
+      },
+      {
+        "id": "same-tau-fine",
+        "stepSize": 0.03,
+        "leapfrogSteps": 16,
+        "trajectoryLength": 0.48
+      },
+      {
+        "id": "same-tau-finer",
+        "stepSize": 0.015,
+        "leapfrogSteps": 32,
+        "trajectoryLength": 0.48
+      },
+      {
+        "id": "long",
+        "stepSize": 0.06,
+        "leapfrogSteps": 32,
+        "trajectoryLength": 1.92
+      }
+    ],
+    "requiredUniqueCartesianRows": 96,
+    "resetAtCheckpointRequired": true,
+    "crossProposalStateCarryAllowed": false,
+    "requireRegeneratedMomentumFromFrozenSeeds": true,
+    "requireRegeneratedThresholdBitIdentity": true,
+    "momentumBytesNotReportedAndNotClaimed": true,
+    "requireAcceptanceDecisionIdentity": true,
+    "requireEnergyReversalAndValleyMetricAgreement": true,
+    "improvementRatioMinimumInclusive": 1.25,
+    "degradationFloorInclusive": 0.8,
+    "improvedPanelsRequiredPerEndpoint": 3,
+    "qualifyingEndpointsRequired": 5,
+    "totalEndpoints": 6,
+    "sameTauExpectedOrderBand": [
+      1.25,
+      2.75
+    ],
+    "scaledAbsoluteTolerance": 2E-10,
+    "scaledAbsoluteDifferenceFormula": "abs(actual-expected)/max(1,abs(expected))",
+    "establishesMixing": false,
+    "establishesStationarity": false
+  },
+  "resourceRule": {
+    "requestedReplayForceEvaluations": 21600,
+    "maximumReplayForceEvaluations": 23000,
+    "requestedTransitionForwardForceEvaluations": 2208,
+    "requestedTransitionReverseForceEvaluations": 2208,
+    "requestedTransitionForceEvaluations": 4416,
+    "maximumTransitionForceEvaluations": 5000,
+    "requestedTotalForceEvaluations": 26016,
+    "millisecondsPerForceEvaluation": 40,
+    "requestedEstimatedCpuMilliseconds": 1040640,
+    "maximumEstimatedCpuMilliseconds": 1200000,
+    "requestedEstimatedPeakBytes": 241715848,
+    "maximumEstimatedPeakBytes": 268435456,
+    "allocationMenu": [
+      {
+        "id": "mesh",
+        "shape": "1215*256",
+        "bytes": 311040
+      },
+      {
+        "id": "retained-full-directions",
+        "shape": "264*3645*8",
+        "bytes": 7698240
+      },
+      {
+        "id": "projector-temporary",
+        "shape": "371*3645*8",
+        "bytes": 10818360
+      },
+      {
+        "id": "replay-transition-vectors",
+        "shape": "24*3645*8",
+        "bytes": 699840
+      },
+      {
+        "id": "evaluator-reserve",
+        "shape": "128*3645*8",
+        "bytes": 3732480
+      },
+      {
+        "id": "retained-series",
+        "shape": "6*18*340*8",
+        "bytes": 293760
+      },
+      {
+        "id": "momentum-menu",
+        "shape": "2*3645*8",
+        "bytes": 58320
+      },
+      {
+        "id": "bound-json",
+        "shape": "8*1024*1024",
+        "bytes": 8388608
+      },
+      {
+        "id": "diagnostics-output",
+        "shape": "8*1024*1024",
+        "bytes": 8388608
+      },
+      {
+        "id": "managed-object-reserve",
+        "shape": "64*1024*1024",
+        "bytes": 67108864
+      },
+      {
+        "id": "runtime-reserve",
+        "shape": "128*1024*1024",
+        "bytes": 134217728
+      }
+    ],
+    "maximumCommittedChainCount": 6,
+    "maximumDenseHessianAssemblies": 0,
+    "refusalBeforeBatteryMeshRngOrScientificAllocation": true,
+    "ceilingMayBeRaisedAtRuntime": false
+  },
+  "requiredUpstreamTerminals": {
+    "phase570": [
+      "invariant-directional-under-resolution-not-localized"
+    ],
+    "phase571": [
+      "longer-trajectory-local-kernel-lever-supported"
+    ]
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "resource-refusal",
+    "independent-battery-failed",
+    "upstream-identity-or-terminal-mismatch",
+    "committed-replay-disagrees",
+    "directional-diagnostics-disagree",
+    "transition-reconstruction-disagrees",
+    "adjudication-confirms-bounded-longer-trajectory-local-lever-without-directional-localization"
+  ],
+  "topLevelOutputSchema": [
+    "authority",
+    "bindings",
+    "committedReplay",
+    "contractId",
+    "contractSha256",
+    "contractValid",
+    "decision",
+    "directionalAdjudication",
+    "exactBindingsValid",
+    "externalReviewPending",
+    "independence",
+    "independentBattery",
+    "laterExecutionAuthorized",
+    "laterProspectivePackPlanningAllowed",
+    "phase",
+    "phaseId",
+    "projectors",
+    "promotedPhysicalMassClaimCount",
+    "resource",
+    "resourceAccepted",
+    "rngUsage",
+    "schemaVersion",
+    "serializationSafety",
+    "terminalStatus",
+    "transitionAdjudication",
+    "upstream",
+    "verdictKind",
+    "workbenchRelativeLatticeUnitsOnly"
+  ],
+  "authorityFirewalls": {
+    "allDownstreamAuthority": false,
+    "checkpointMutationAllowed": false,
+    "directionGaugeInterpretationAllowed": false,
+    "gaugeFixingAllowed": false,
+    "gevClaimAllowed": false,
+    "launchAuthorized": false,
+    "markovAdvanceAllowed": false,
+    "measureNormalizationAllowed": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481PackMutationAllowed": false,
+    "phase535Reopened": false,
+    "phase548ConfigurationMutationAllowed": false,
+    "phase548Or549ReinterpretationAllowed": false,
+    "phase561Opened": false,
+    "physicalUnitClaimAllowed": false,
+    "productionAuthorized": false,
+    "productionDefaultSelectionAllowed": false,
+    "protectedPhase554SeedAccessAllowed": false,
+    "quotientAllowed": false,
+    "registeredOperatorMutationAllowed": false,
+    "runtimeRngSeedSelectionAllowed": false,
+    "retainedConfigurationAllowed": false,
+    "sourceContractApplicationAllowed": false,
+    "targetSamplingAllowed": false
+  },
+  "laterProspectivePackPlanningOnly": true,
+  "laterExecutionAuthorized": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "lineage": {
+    "v1FrozenUnexecutedBlocked": true,
+    "postFreezeSourceDriftUnexecuted": true,
+    "v2FrozenUnexecutedBlocked": true,
+    "v3FrozenUnexecutedBlocked": true,
+    "v4ExecutedSerializationStopped": true,
+    "v5FrozenUnexecutedBlocked": true
+  },
+  "requiredExactBindingCount": 63,
+  "requiredExactBindingIds": [
+    "phase572-program",
+    "phase570-contract",
+    "phase570-program",
+    "phase570-summary",
+    "phase570-full",
+    "phase571-contract",
+    "phase571-program",
+    "phase571-summary",
+    "phase571-full",
+    "phase548-contract",
+    "phase548-program",
+    "phase548-summary",
+    "checkpoint-a-546101",
+    "checkpoint-a-546103",
+    "checkpoint-a-546107",
+    "checkpoint-b-546201",
+    "checkpoint-b-546203",
+    "checkpoint-b-546207",
+    "telemetry-a-546101",
+    "telemetry-a-546103",
+    "telemetry-a-546107",
+    "telemetry-b-546201",
+    "telemetry-b-546203",
+    "telemetry-b-546207",
+    "phase549-summary",
+    "phase550-summary",
+    "phase551-summary",
+    "phase552-summary",
+    "registered-operator",
+    "registered-curvature",
+    "registered-mass-matrix",
+    "mesh-generator",
+    "mesh-topology",
+    "lie-algebra",
+    "lie-algebra-factory",
+    "phase572-csproj",
+    "phase570-csproj",
+    "phase571-csproj",
+    "phase571-v3-contract-lineage",
+    "phase571-v3-program-lineage",
+    "phase571-v3-csproj-lineage",
+    "phase571-v3-lineage",
+    "phase571-v3-stop-full",
+    "phase571-v3-stop-summary",
+    "registered-family-spec",
+    "phase572-v1-program-lineage",
+    "phase572-v1-project-lineage",
+    "phase572-v1-contract-lineage",
+    "phase572-v1-lineage-record",
+    "phase572-postfreeze-program-lineage",
+    "phase572-postfreeze-lineage-record",
+    "phase572-v3-program-lineage",
+    "phase572-v3-project-lineage",
+    "phase572-v3-contract-original",
+    "phase572-v3-lineage-record",
+    "phase572-v4-program-lineage",
+    "phase572-v4-project-lineage",
+    "phase572-v4-contract-lineage",
+    "phase572-v4-execution-attempt",
+    "phase572-v5-program-lineage",
+    "phase572-v5-project-lineage",
+    "phase572-v5-contract-lineage",
+    "phase572-v5-lineage-record"
+  ],
+  "exactBindings": [
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "sha256": "abe79e50e024bb3e0d3391f534f3e334d59d402186b7a732c6dc200130d316ee"
+    },
+    {
+      "id": "phase570-contract",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "sha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    },
+    {
+      "id": "phase570-program",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "sha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase571-contract",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v4.json",
+      "sha256": "83416598aef3e072d33049b98c5319f5b79a96c08e41ddfcd1ae391573dc591d"
+    },
+    {
+      "id": "phase571-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+      "sha256": "79150999c12d0832f58189c8cc6a4c0b066d2d0f3b4d0876a7ce920aa2d3a62f"
+    },
+    {
+      "id": "phase571-summary",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe_summary.json",
+      "sha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d"
+    },
+    {
+      "id": "phase571-full",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe.json",
+      "sha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d"
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "checkpoint-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "sha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"
+    },
+    {
+      "id": "checkpoint-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "sha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"
+    },
+    {
+      "id": "checkpoint-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "sha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"
+    },
+    {
+      "id": "checkpoint-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "sha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"
+    },
+    {
+      "id": "checkpoint-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "sha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"
+    },
+    {
+      "id": "checkpoint-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "sha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"
+    },
+    {
+      "id": "telemetry-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546101_trajectories.json",
+      "sha256": "e95b929673291e90c3b14f076029bbea4e57bbe3d1372ea46c7255af19978e90"
+    },
+    {
+      "id": "telemetry-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546103_trajectories.json",
+      "sha256": "4dfd8da895e0abe04fa2ddf5149ee9319940dea2031131d3bf9ef92bcef94bbd"
+    },
+    {
+      "id": "telemetry-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-a-546107_trajectories.json",
+      "sha256": "f9fb7796482604f2fac057b2dd7bbb264babab5a5f6c98878c99b8c42898e3db"
+    },
+    {
+      "id": "telemetry-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546201_trajectories.json",
+      "sha256": "a00ae0b5646947f789a7d7251f0885a8f70e9a957b2ea09b989eaae1d4baa18c"
+    },
+    {
+      "id": "telemetry-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546203_trajectories.json",
+      "sha256": "6aa59d10eba694233763ac1a9c850c79df798d6f6b688b7a7177b26ffdba87d2"
+    },
+    {
+      "id": "telemetry-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/telemetry/complete-lattice-pilot-b-546207_trajectories.json",
+      "sha256": "20bff6a1b5a011cf83408740b999d2193b344e641f72cd8ceeb37292407d30cd"
+    },
+    {
+      "id": "phase549-summary",
+      "path": "studies/phase549_bounded_pilot_independent_result_adjudicator_001/output/bounded_pilot_independent_result_adjudicator_summary.json",
+      "sha256": "76436a1a52aaea1ef32c8dcce02c81577c3d2c17447d10f65e754d8463bd79ee"
+    },
+    {
+      "id": "phase550-summary",
+      "path": "studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json",
+      "sha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"
+    },
+    {
+      "id": "phase551-summary",
+      "path": "studies/phase551_flat_sector_independent_spectral_adjudicator_001/output/flat_sector_independent_spectral_adjudicator_summary.json",
+      "sha256": "9ca20dafbb425a682e17ec74da5800c41b4a0d806e550aa7be4da2a02dbfd1f0"
+    },
+    {
+      "id": "phase552-summary",
+      "path": "studies/phase552_committed_chain_stationarity_reanalysis_001/output/committed_chain_stationarity_reanalysis_summary.json",
+      "sha256": "0739f3bfcf893688cd97e38ce64eec64df9d56c9ea6952532defbea58a6264b8"
+    },
+    {
+      "id": "registered-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "id": "registered-curvature",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "id": "registered-mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "sha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "mesh-topology",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "sha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec"
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    },
+    {
+      "id": "phase572-csproj",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase570-csproj",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "sha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145"
+    },
+    {
+      "id": "phase571-csproj",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+      "sha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    },
+    {
+      "id": "phase571-v3-contract-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/phase571_bounded_reset_checkpoint_transition_probe_contract_v3.json",
+      "sha256": "e2be12f30049ff76ac2db7843c955e4b9fc2e8120aeff906a2128bba46d9b2bc"
+    },
+    {
+      "id": "phase571-v3-program-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/Program_v3.cs.txt",
+      "sha256": "55a29b7ef409807af6adc3eee495b944ebe0088f112a658ef395effcf602f5f1"
+    },
+    {
+      "id": "phase571-v3-csproj-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/Phase571BoundedResetCheckpointTransitionProbe_v3.csproj.txt",
+      "sha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    },
+    {
+      "id": "phase571-v3-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/PHASE571_LINEAGE_v3.json",
+      "sha256": "2b9d8e90d913de574e74e92407cda027bd7ca6a2f88fd292714d0639b89b292d"
+    },
+    {
+      "id": "phase571-v3-stop-full",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/execution-attempt/bounded_reset_checkpoint_transition_probe.json",
+      "sha256": "9bd3aa94eb1a829d97dc14bed9f0b9ec056b21e97e3404e5040ec0b4efb1c1ae"
+    },
+    {
+      "id": "phase571-v3-stop-summary",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/execution-attempt/bounded_reset_checkpoint_transition_probe_summary.json",
+      "sha256": "9bd3aa94eb1a829d97dc14bed9f0b9ec056b21e97e3404e5040ec0b4efb1c1ae"
+    },
+    {
+      "id": "registered-family-spec",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "sha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef"
+    },
+    {
+      "id": "phase572-v1-program-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-frozen/Program_v1.cs.txt",
+      "sha256": "862c37955dc0f5d253fb9575292fb16190659f57f85cf07a7084d2ade5d6e43b"
+    },
+    {
+      "id": "phase572-v1-project-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v1.csproj.txt",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-v1-contract-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-frozen/phase572_independent_directional_transition_adjudicator_contract_v1.json",
+      "sha256": "c73b0c9f9d430f1860b7d1603f088b9422ce7530d16a4ab37c9f38d8f7bb88eb"
+    },
+    {
+      "id": "phase572-v1-lineage-record",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-frozen/PHASE572_V1_LINEAGE.json",
+      "sha256": "8e1db073780f449ada5f7641fda6022d5a558bbf7c7edfeec058f9347bc771b3"
+    },
+    {
+      "id": "phase572-postfreeze-program-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-postfreeze/Program_ad26f669.cs.txt",
+      "sha256": "ad26f669020da651f4d2889f03494994a2fb8b3e7b5ccfb3ca0b32e0db682e87"
+    },
+    {
+      "id": "phase572-postfreeze-lineage-record",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v1-postfreeze/PHASE572_POSTFREEZE_ATTEMPT_LINEAGE.json",
+      "sha256": "b39c3ab469858dd96417de9643968f1161c994dec97bc577edbfcc47fdc1d5c2"
+    },
+    {
+      "id": "phase572-v3-program-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v3-frozen/Program_v3.cs.txt",
+      "sha256": "11aca2cd044c85ad9a5e0428fb34abce72d377b73a236337a1c803b41375ec67"
+    },
+    {
+      "id": "phase572-v3-project-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v3-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v3.csproj.txt",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-v3-contract-original",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v3.json",
+      "sha256": "3d144d106b078fde7350b837bcd063e241c6e74be19e5cf2379b5902e545a708"
+    },
+    {
+      "id": "phase572-v3-lineage-record",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v3-frozen/PHASE572_V3_LINEAGE.json",
+      "sha256": "637aa7a02d4921e27fdb28132e001e18ae95547986968dea2e3eac7c208d2f54"
+    },
+    {
+      "id": "phase572-v4-program-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v4-frozen/Program_v4.cs.txt",
+      "sha256": "cc5457ff52a3a4a611d371755ebf49dde85a42f7c8915bc0541e4a666886d77a"
+    },
+    {
+      "id": "phase572-v4-project-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v4-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v4.csproj.txt",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-v4-contract-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v4-frozen/phase572_independent_directional_transition_adjudicator_contract_v4.json",
+      "sha256": "559b13071f85a21393b9f4653a3cde4580dc3f0e98ac63ebd6161df6b9643349"
+    },
+    {
+      "id": "phase572-v4-execution-attempt",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v4-frozen/PHASE572_V4_EXECUTION_ATTEMPT.json",
+      "sha256": "7c9fa42f797ac462b5044b9c4f1514ecbc7b4fe3dc2d0cdd888a9a2aedb60a94"
+    },
+    {
+      "id": "phase572-v5-program-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v5-frozen/Program_v5.cs.txt",
+      "sha256": "2096ea8a95a9227447735fd8492f4c47fbbf6fd13dc9bf76b78ae5d3c94218e7"
+    },
+    {
+      "id": "phase572-v5-project-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v5-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v5.csproj.txt",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-v5-contract-lineage",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v5-frozen/phase572_independent_directional_transition_adjudicator_contract_v5.json",
+      "sha256": "708d418bc3b21dcfcbd2f14f259b6fbc29275938eb313e5fbe97ce9633af9e21"
+    },
+    {
+      "id": "phase572-v5-lineage-record",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v5-frozen/PHASE572_V5_LINEAGE.json",
+      "sha256": "362ab7d61a4abc3bc5ee37d8c63885976711cce43ad577fbc21444ee700fd15c"
+    }
+  ],
+  "v4ExecutionAttempt": {
+    "exitCode": 134,
+    "transcriptCaptured": false,
+    "fullOutputCreated": false,
+    "summaryOutputCreated": false,
+    "exceptionType": "System.ArgumentException",
+    "firstNonfinitePayloadPath": "independentBattery.nonconvexDivergence.deltaH"
+  }
+}

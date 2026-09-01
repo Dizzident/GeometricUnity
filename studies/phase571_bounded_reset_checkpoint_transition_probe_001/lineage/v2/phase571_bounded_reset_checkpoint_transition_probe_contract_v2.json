@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase571-a36-bounded-reset-checkpoint-transition-probe-v2",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A36",
+  "frozenBeforeFirstExecution": true,
+  "pendingContract": false,
+  "pendingReason": "V2 repaired prospectively after adversarial review of unexecuted v1; no Phase571 terminal output existed at freeze.",
+  "phase570Requirement": {
+    "bindingPending": false,
+    "requiredContractId": "phase570-a36-registered-target-directional-resolution-replay-v7",
+    "requiredContractSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+    "requiredProgramSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+    "requiredCsprojSha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145",
+    "requiredOutputSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+    "requiredVerdictKind": "invariant-directional-under-resolution-not-localized",
+    "requiredTerminalStatus": "registered-target-directional-resolution-replay-invariant-directional-under-resolution-not-localized",
+    "requiredGateField": "phase571TransitionProbeGateOpen",
+    "requiredGateValue": true
+  },
+  "probeKind": {
+    "rngUsed": true,
+    "markovChainAdvanced": false,
+    "targetSamplingPerformed": false,
+    "warmupPerformed": false,
+    "adaptationPerformed": false,
+    "configurationsRetained": false,
+    "acceptedStateCarryAllowed": false,
+    "resetEveryProposalToImmutableCheckpoint": true,
+    "pairedCommonMomentumAcrossArms": true,
+    "antitheticMomentumIncluded": true
+  },
+  "target": {
+    "source": "phase548-contract.target",
+    "member": "sd2-id0/c0.5",
+    "thetaRule": "theta-identically-zero",
+    "beta": 1,
+    "topologyId": "periodic-hypercubic-4d",
+    "dimensions": 4,
+    "extent": 3,
+    "degreesOfFreedom": 3645,
+    "kineticMetric": "identity",
+    "algebra": "su2-trace-pairing"
+  },
+  "checkpointOrder": [
+    "complete-lattice-pilot-a-546101",
+    "complete-lattice-pilot-a-546103",
+    "complete-lattice-pilot-a-546107",
+    "complete-lattice-pilot-b-546201",
+    "complete-lattice-pilot-b-546203",
+    "complete-lattice-pilot-b-546207"
+  ],
+  "proposalArms": [
+    {
+      "id": "baseline",
+      "stepSize": 0.06,
+      "leapfrogSteps": 8,
+      "trajectoryLength": 0.48
+    },
+    {
+      "id": "same-tau-fine",
+      "stepSize": 0.03,
+      "leapfrogSteps": 16,
+      "trajectoryLength": 0.48
+    },
+    {
+      "id": "same-tau-finer",
+      "stepSize": 0.015,
+      "leapfrogSteps": 32,
+      "trajectoryLength": 0.48
+    },
+    {
+      "id": "long",
+      "stepSize": 0.06,
+      "leapfrogSteps": 32,
+      "trajectoryLength": 1.92
+    }
+  ],
+  "momentumPlan": {
+    "algorithm": "xoshiro256-starstar",
+    "seedExpansion": "splitmix64-four-sequential-outputs",
+    "normalGeneration": "box-muller-two-uniforms-no-spare-cache",
+    "uniformGeneration": "((next-u64-right-shift-11)+0.5)/2^53",
+    "disclosedSeeds": [
+      571101,
+      571103
+    ],
+    "protectedSeedsForbidden": [
+      546109,
+      546209
+    ],
+    "oneMomentumAndLogUniformPerSeedReusedAcrossAllCheckpointsAndArms": true,
+    "antitheticSigns": [
+      1,
+      -1
+    ]
+  },
+  "acceptance": {
+    "rule": "injectedLogUniform <= min(0,-deltaH)",
+    "divergenceAbsoluteDeltaH": 100,
+    "acceptedStateMeasuredThenDiscarded": true,
+    "rejectedStateMustBeBitIdenticalToResetCheckpoint": true
+  },
+  "incidenceProjectors": {
+    "scalarE": "orthonormal span of d0(delta_v), dimension 80",
+    "scalarW": "orthogonal complement of E within the exhibited four periodic winding generators, dimension 4",
+    "scalarC": "orthogonal direct sum E plus W, dimension 84",
+    "fullDimensions": {
+      "E": 240,
+      "W": 12,
+      "C": 252,
+      "Cperp": 3393
+    },
+    "pairing": "frozen Euclidean coefficient pairing inherited from the identity kinetic metric",
+    "projectorSymmetryTolerance": 1E-12,
+    "numericClosureTolerance": 1E-12,
+    "projectorOrthogonalityTolerance": 1E-12,
+    "decompositionRelativeTolerance": 1E-12,
+    "interpretation": "incidence-coordinate subspaces only; no gauge, orbit, quotient, redundancy, or physical-mode claim"
+  },
+  "closedValleyMetrics": {
+    "coefficientMatrixShape": "84 by 3",
+    "gramMatrix": "A^T A",
+    "reported": [
+      "ascending eigenvalues of A^T A",
+      "closed norm squared",
+      "rank-one alignment lambdaMax/trace",
+      "distance squared to the rank-one closed-coordinate set = Cperp norm squared + lambda0 + lambda1"
+    ],
+    "isGaugeStatement": false,
+    "isQuotientStatement": false
+  },
+  "reportedPerProposal": [
+    "checkpointId",
+    "momentumSeed",
+    "antitheticSign",
+    "arm",
+    "deltaH",
+    "absoluteDeltaH",
+    "accepted",
+    "finite",
+    "divergent",
+    "forceEvaluationCount",
+    "reversibilityPositionRelativeError",
+    "reversibilityMomentumRelativeError",
+    "totalEsjdPerForceEvaluation",
+    "EEsjdPerForceEvaluation",
+    "WEsjdPerForceEvaluation",
+    "CEsjdPerForceEvaluation",
+    "CperpEsjdPerForceEvaluation",
+    "closedValleyJumpMetrics",
+    "projectorLeakageResidual",
+    "resetHashBefore",
+    "resetHashAfter"
+  ],
+  "sameTauOrder": {
+    "statistic": "log2(rmsAbsoluteDeltaHCoarser/rmsAbsoluteDeltaHFiner) over the common checkpoint, seed, and antithetic menu",
+    "comparisons": [
+      "baseline-versus-same-tau-fine",
+      "same-tau-fine-versus-same-tau-finer"
+    ],
+    "expectedSecondOrderBand": [
+      1.25,
+      2.75
+    ],
+    "zeroOrNonFiniteRmsIsInconclusiveAndFailsClosed": true
+  },
+  "resourceRule": {
+    "maximumAggregateForceEvaluations": 5000,
+    "requestedForwardForceEvaluations": 2208,
+    "requestedReverseForceEvaluations": 2208,
+    "requestedAggregateForceEvaluations": 4416,
+    "workMenu": [
+      {
+        "arm": "baseline",
+        "proposalsPerDirection": 24,
+        "forceEvaluationsPerProposal": 9,
+        "forwardForceEvaluations": 216,
+        "reverseForceEvaluations": 216
+      },
+      {
+        "arm": "same-tau-fine",
+        "proposalsPerDirection": 24,
+        "forceEvaluationsPerProposal": 17,
+        "forwardForceEvaluations": 408,
+        "reverseForceEvaluations": 408
+      },
+      {
+        "arm": "same-tau-finer",
+        "proposalsPerDirection": 24,
+        "forceEvaluationsPerProposal": 33,
+        "forwardForceEvaluations": 792,
+        "reverseForceEvaluations": 792
+      },
+      {
+        "arm": "long",
+        "proposalsPerDirection": 24,
+        "forceEvaluationsPerProposal": 33,
+        "forwardForceEvaluations": 792,
+        "reverseForceEvaluations": 792
+      }
+    ],
+    "estimatedSecondsPerForceEvaluation": 0.04,
+    "maximumEstimatedAggregateCpuSeconds": 300,
+    "estimatedAggregateCpuSeconds": 176.64,
+    "allocationMenu": [
+      {
+        "id": "mesh-topology",
+        "shape": "edge*256",
+        "bytes": 311040
+      },
+      {
+        "id": "integer-and-numeric-projectors",
+        "shape": "(vertex+4)*edge*4 + 84*edge*8",
+        "bytes": 1229580
+      },
+      {
+        "id": "immutable-checkpoints",
+        "shape": "6*dof*8",
+        "bytes": 174960
+      },
+      {
+        "id": "momentum-menu",
+        "shape": "2*dof*8",
+        "bytes": 58320
+      },
+      {
+        "id": "kernel-and-evaluator-reserve",
+        "shape": "128*dof*8",
+        "bytes": 3732480
+      },
+      {
+        "id": "proposal-row-reserve",
+        "shape": "96*4096",
+        "bytes": 393216
+      },
+      {
+        "id": "movement-diagnostic-reserve",
+        "shape": "512*1024",
+        "bytes": 524288
+      },
+      {
+        "id": "runtime-reserve",
+        "shape": "2*1024*1024",
+        "bytes": 2097152
+      }
+    ],
+    "maximumEstimatedPeakBytes": 67108864,
+    "estimatedPeakBytes": 8521036,
+    "refuseBeforeRngConstruction": true,
+    "refuseBeforeProposalAllocation": true,
+    "refuseOnEqualOrExceedLimit": false,
+    "ceilingMayNotBeRaisedAtRuntime": true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "upstream-directional-replay-gate-absent",
+    "resource-refusal",
+    "projector-control-failed",
+    "reset-integrity-stop",
+    "transition-nonfinite-or-divergent",
+    "same-tau-energy-order-not-observed",
+    "paired-movement-diagnostics-inconclusive",
+    "longer-trajectory-local-kernel-lever-supported",
+    "local-kernel-response-mixed",
+    "longer-trajectory-local-kernel-lever-not-supported"
+  ],
+  "authorityFirewalls": {
+    "phase548TerminalChanged": false,
+    "phase570TerminalChanged": false,
+    "registeredDefaultChanged": false,
+    "acceptedStateCarried": false,
+    "markovChainAdvanced": false,
+    "targetSamplingPerformed": false,
+    "configurationsRetained": false,
+    "nullSpaceInterpretedAsGaugeVolume": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "phase458G3Satisfied": false,
+    "phase458G4Satisfied": false,
+    "phase458G5Satisfied": false,
+    "o4Discharged": false,
+    "sourceContractApplicationAllowed": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false,
+    "allDownstreamAuthority": false,
+    "protectedPhase554SeedsRead": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "exactBindings": [
+    {
+      "id": "phase571-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+      "sha256": "325739b718a04b185fdd5f1aaf823019f72a40913716c037c81dd51372460691"
+    },
+    {
+      "id": "phase571-csproj",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+      "sha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    },
+    {
+      "id": "phase571-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/PHASE571_LINEAGE.json",
+      "sha256": "68c9fa299d3dc1fc8eacbaff634150c8854be6a126216ad19eb01bee51965c92"
+    },
+    {
+      "id": "phase571-pending-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/Program_PENDING.cs.txt",
+      "sha256": "4c789013b20a668296576e98f8ea2b4fc5ce661979111c492ed69aecda75843d"
+    },
+    {
+      "id": "phase571-pending-contract",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/phase571_bounded_reset_checkpoint_transition_probe_contract_PENDING.json",
+      "sha256": "d6b8542b6c655187fb43db4d8426a3f7f1be9c91ceb510f07262f7cca87bac9c"
+    },
+    {
+      "id": "phase571-v1-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/Program_v1.cs.txt",
+      "sha256": "f9d5d7ab3fc255c985e75b080a2f73a7890fd8eb4ea52f345bc3fddebb0111c4"
+    },
+    {
+      "id": "phase571-v1-csproj",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/Phase571BoundedResetCheckpointTransitionProbe_v1.csproj.txt",
+      "sha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    },
+    {
+      "id": "phase571-v1-contract",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/phase571_bounded_reset_checkpoint_transition_probe_contract_v1.json",
+      "sha256": "b8f90cf4b2ac8e968750bab098a9c14c7b815cff154a81046dccdfbe2b052dc8"
+    },
+    {
+      "id": "phase571-v1-lineage",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/PHASE571_LINEAGE_v1.json",
+      "sha256": "e46225e62766a5a71a8abdc8d01d5849afe5f1405cbcea19f17c9aa37c951190"
+    },
+    {
+      "id": "phase570-program-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "sha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    },
+    {
+      "id": "phase570-csproj",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "sha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145"
+    },
+    {
+      "id": "phase570-contract-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "sha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    },
+    {
+      "id": "phase570-result",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase545-kernel",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/PilotKernel.cs",
+      "sha256": "420b36345fd43089b10c684589cfd6c478f081099af6701c325ce4a050bf78aa"
+    },
+    {
+      "id": "phase545-contract",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/preregistration/phase545_injectable_deterministic_hmc_kernel_repair_contract_v3.json",
+      "sha256": "cca30d77a1b3c5431e18e79af8d0766ad03a64c2518115a3ad3f26904fc934e9"
+    },
+    {
+      "id": "phase545-summary",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/output/injectable_deterministic_hmc_kernel_summary.json",
+      "sha256": "16bac956fbbfa5a7d9b4e8e778d3121ecfda7726916a65e37ed7d01e9ee37c0d"
+    },
+    {
+      "id": "phase545-csproj",
+      "path": "studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj",
+      "sha256": "bef06e163ceed3d221069be2c3965cd5323602fabf8e61825d135868f2c818c4"
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"
+    },
+    {
+      "id": "phase548-csproj",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj",
+      "sha256": "2e4ee43a0fd4c03b5dd12f1e48ac088a9f4de031f0681c38baa307a1cb91e66a"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "checkpoint-a-546101",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546101.json",
+      "sha256": "eb362dbdc3bd8424688b833ce16d14b31a8ef0fc9cae80676e93a82ab4b213d5"
+    },
+    {
+      "id": "checkpoint-a-546103",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546103.json",
+      "sha256": "5c012b9e5767a4015dbbb315dcdee60b0a8527e5807239961aa021e0bcaab7ba"
+    },
+    {
+      "id": "checkpoint-a-546107",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-a-546107.json",
+      "sha256": "7ebe1b1a849eed20f4707a41026a9ff932666fcd1e14e96cee1d023633e5df76"
+    },
+    {
+      "id": "checkpoint-b-546201",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546201.json",
+      "sha256": "9cf9d09e1c1346c8e870907f87609dab10701acc63d0e693146d210cbf231252"
+    },
+    {
+      "id": "checkpoint-b-546203",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546203.json",
+      "sha256": "6511fa5598179ed9906d9a33f8d0dc2b54e62dee9a1c6295b47a4ce3c345f974"
+    },
+    {
+      "id": "checkpoint-b-546207",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/checkpoints/complete-lattice-pilot-b-546207.json",
+      "sha256": "ab8aa88a61356916c24b2e26885c56023a6fd180d45f760de97ecb9655e5acab"
+    },
+    {
+      "id": "shiab-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "id": "shiab-family-spec",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "sha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef"
+    },
+    {
+      "id": "mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "sha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    }
+  ],
+  "requiredExactBindingCount": 34,
+  "classificationTruthTableRequired": true,
+  "transitionControls": {
+    "maximumReversibilityPositionRelativeError": 1E-8,
+    "maximumReversibilityMomentumRelativeError": 1E-8,
+    "maximumAntitheticResidual": 0,
+    "sameTauOrderForceAccountingReversalAntitheticAndLeakageMustPassBeforeMovementClassification": true
+  },
+  "pairedMovementClassification": {
+    "baselineArm": "baseline",
+    "comparisonArm": "long",
+    "statistic": "per immutable endpoint and fixed projector panel, mean accepted ESJD per forward force evaluation for long divided by the corresponding baseline mean over both disclosed momentum seeds and both antithetic signs",
+    "projectorPanels": [
+      "E",
+      "W",
+      "C",
+      "Cperp"
+    ],
+    "favorableProjectorSelectionAllowed": false,
+    "improvementRatioMinimumInclusive": 1.25,
+    "degradationFloorInclusive": 0.8,
+    "improvedPanelsRequiredPerEndpoint": 3,
+    "qualifyingEndpointsRequired": 5,
+    "totalEndpoints": 6,
+    "supportedRule": "at least five of six endpoints each have ratios >=1.25 in at least three of four frozen panels and no panel ratio <0.8",
+    "mixedRule": "after support is false, improvement-threshold responses coexist or degradation-floor responses coexist with non-degraded responses",
+    "notSupportedRule": "conclusive ratios that satisfy neither supported nor mixed",
+    "zeroBaselineOrNonFiniteRatioFailsInconclusive": true,
+    "establishesMixing": false,
+    "establishesStationarity": false,
+    "selectsProductionDefault": false
+  },
+  "v1Lineage": {
+    "executed": false,
+    "outputExistsAtV2Freeze": false,
+    "programSha256": "f9d5d7ab3fc255c985e75b080a2f73a7890fd8eb4ea52f345bc3fddebb0111c4",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractSha256": "b8f90cf4b2ac8e968750bab098a9c14c7b815cff154a81046dccdfbe2b052dc8",
+    "lineageSha256": "e46225e62766a5a71a8abdc8d01d5849afe5f1405cbcea19f17c9aa37c951190"
+  },
+  "seedNamespaceRule": {
+    "deriveOnlyFromExactBoundPhase548Contract": true,
+    "requiredRawSeeds": [
+      546101,
+      546103,
+      546107,
+      546201,
+      546203,
+      546207
+    ],
+    "requiredExecutionSeeds": [
+      2546101,
+      2546103,
+      2546107,
+      2546201,
+      2546203,
+      2546207
+    ],
+    "requiredProtectedSeeds": [
+      546109,
+      546209
+    ],
+    "disclosedMomentumSeedsMustBeDisjointFromAllNamespaces": true
+  },
+  "topLevelOutputSchema": [
+    "schemaVersion",
+    "phase",
+    "phaseId",
+    "contractId",
+    "contractSha256",
+    "contractValid",
+    "exactBindingsValid",
+    "phase570GateOpen",
+    "resourceAccepted",
+    "bindings",
+    "classificationBattery",
+    "seedNamespaceControls",
+    "resource",
+    "projectorControls",
+    "resetControls",
+    "reversalControls",
+    "sameTauEnergyOrder",
+    "pairedMovementClassification",
+    "rows",
+    "verdictKind",
+    "terminalStatus",
+    "decision",
+    "rngUsed",
+    "markovChainAdvanced",
+    "targetSamplingPerformed",
+    "warmupPerformed",
+    "adaptationPerformed",
+    "configurationsRetained",
+    "acceptedStateCarried",
+    "phase548TerminalChanged",
+    "phase570TerminalChanged",
+    "registeredDefaultChanged",
+    "nullSpaceInterpretedAsGaugeVolume",
+    "quotientApplied",
+    "gaugeFixingApplied",
+    "measureNormalizationApplied",
+    "productionDefaultSelected",
+    "productionAuthorized",
+    "launchAuthorized",
+    "phase458G3Satisfied",
+    "phase458G4Satisfied",
+    "phase458G5Satisfied",
+    "o4Discharged",
+    "sourceContractApplicationAllowed",
+    "physicalUnitClaimAllowed",
+    "gevClaimAllowed",
+    "protectedPhase554SeedsRead",
+    "allDownstreamAuthority",
+    "authorityFirewalls",
+    "externalReviewPending",
+    "promotedPhysicalMassClaimCount"
+  ],
+  "commonCompleteSchemaEveryTerminal": true
+}

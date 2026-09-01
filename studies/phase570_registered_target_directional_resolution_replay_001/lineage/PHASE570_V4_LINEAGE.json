@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "phase": 570,
+  "recordFrozenBeforeV4Execution": true,
+  "v1": {
+    "contractSha256": "11d69600ebf48bdf4506cdcda6f99593c73e23f78380872f193986786a0992a9",
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v1/Program_v1.cs.txt",
+    "programSha256": "da43a95ea29ab4f9b9d45eaa024ae88c1c8fa74c4bad2ca9d2d76fc1bb9f85de",
+    "programBytesExactlyRecovered": true,
+    "executed": false
+  },
+  "v2": {
+    "contractSha256": "48e08d8dd0f441e42be27bb56e192366f79afcf3428c5fcb356f013bb33bae43",
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v2/Program_v2.cs.txt",
+    "programSha256": "1ba9651d1cd45cb4a80bd4b01cf2dd4255324ca882ed786dd92762f12afdad3f",
+    "executed": false
+  },
+  "v3": {
+    "contractSha256": "58bda5aa28f28b6703be4e655b5ea033b8727f9f13919ec8b9f208d1b1f43b7f",
+    "liveProgramPath": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV3.cs",
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v3/Program_v3.cs.txt",
+    "programSha256": "727c1cb956c0cee72bccb51d61db1e60baf895b7e985dc9d6f92ece84961e80c",
+    "liveAndLineageBytesMatch": true,
+    "executed": false
+  },
+  "v4": {
+    "programPath": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV4.cs",
+    "contractPath": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v4.json",
+    "csprojPath": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+    "executionAllowedOnlyAfterExactBindingValidation": true
+  },
+  "promotedPhysicalMassClaimCount": 0
+}

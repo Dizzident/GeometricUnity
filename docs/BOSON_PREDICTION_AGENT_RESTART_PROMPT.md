@@ -1297,7 +1297,7 @@ phase samples, reads Phase554 protected seeds, source-selects the candidate,
 or grants O4, Phase458, Phase481, production, launch, physical-unit, or GeV
 authority. External review remains pending and
 `promotedPhysicalMassClaimCount=0`; registry 567-569 is allocated under A35 and
-570+ remains unassigned.
+the next block was not yet allocated at that A35 checkpoint.
 
 EXECUTED A35 RESULT: Phase567 established the exact study-local composable BCH2
 candidate and opened only its downstream workbench gate. The correction
@@ -1331,7 +1331,104 @@ per-direction sampler-resolution design; the alternative model lane remains
 hard-gated on a primary source that selects a discrete lowering. Do not mutate
 the registered operator, infer sampler causality from preserved endpoints, or
 relabel the candidate as a repair. Registry 567-569 is complete under A35 and
-570+ remains unassigned.
+570-572 are now allocated under A36.
+
+COMPLETED A36 EXECUTION (2026-08-27; Phases570-572): recover the already
+determined Phase548 chains by bit-identical replay and diagnose resolution in
+projector-invariant incidence coordinates before spending another target-chain
+run. Phase570 reconstructs all retained positions and reports diagnostics for
+`E=im(d0)`, the four winding directions `W`, `C=ker(d1)=E plus W`, `C-perp`,
+and closed-sector rank-one/commuting-valley Gram statistics. These are
+Euclidean coefficient-space and incidence statements only, never gauge,
+redundancy, orbit, or quotient claims. Phase571 uses paired antithetic momenta
+at the six immutable endpoints to compare baseline, fixed-length step-halving,
+and longer-trajectory reset proposals. It resets for every proposal, advances
+no chain, retains no sampled configuration, and stops if state is carried.
+Phase572 independently reconstructs and adjudicates both experiments without a
+Phase570/571/545 reference or shared implementation. Strict dependency order is
+570 then 571 then 572; implementation scaffolds may be prepared in parallel,
+but downstream contracts bind executed upstream bytes before first execution.
+
+A36 may determine whether under-resolution is reproducibly concentrated in a
+registered incidence sector and whether ordinary step error or trajectory
+length changes local movement efficiency at the audited endpoints. It cannot
+prove stationarity or convergence, reinterpret Phase548, select a sampler
+default, or establish sampler causality from reset proposals. Only an
+independently confirmed favorable Phase572 terminal may open planning for a
+separate prospective disjoint-seed chain pack. Protected Phase554 seeds remain
+unread; external review remains pending; no O4, Phase458, Phase481, Phase561,
+production, launch, physical-unit, or GeV authority is granted; and
+`promotedPhysicalMassClaimCount=0`. Phase573 is allocated by A37; registry
+574+ remains unassigned.
+
+Phase570 v7 replayed all six Phase548 chains bit-for-bit and returned
+`invariant-directional-under-resolution-not-localized`. Both tables remained
+under-resolved across the frozen incidence panels, but neither the closed
+sector nor its rank-one coordinates carried a reproducibly enriched burden.
+No drift was detected by the frozen aggregate rule. Phase571 v4 then ran 96
+reset-only proposals. Its same-duration step-halving orders were
+`1.976992096261708` and `1.993801143087295`; all six endpoints qualified in all
+four panels under the frozen longer-trajectory rule, yielding
+`longer-trajectory-local-kernel-lever-supported`. This is local movement
+evidence only: every proposal reset to an immutable checkpoint, no chain was
+advanced, and no configuration was retained.
+
+Phase572 v9 independently reproduced all six committed replays and all 96
+Phase571 transition rows. Replay decisions, Hamiltonian differences, and final
+positions agreed exactly; the transition menu, same-tau controls, movement
+classification, and 4,416-force-evaluation accounting also agreed. The
+directional classification agreed, but five rank-normalized R-hat values did
+not reproduce within the frozen `2e-10` scaled-absolute tolerance. The largest
+deviation was `4.302812022446892e-05`, so the fail-closed terminal is
+`directional-diagnostics-disagree`. Do not relax that threshold or cite the
+Phase571 result as independently confirmed. The later prospective-pack
+planning gate is false.
+
+Phase572's v1-v3 and v5-v8 freezes were stopped before execution when review
+found binding, contract-coverage, or serialization-safety gaps. V4 executed
+the calculations but exited 134 before writing output because an expected
+nonfinite divergence-decoy value was embedded as a raw JSON number. The exact
+v4 program/project/contract and an honest no-transcript execution-attempt
+record are preserved; it has no terminal. V9 is the sole citable Phase572
+scientific result. Registry 570-572 is complete.
+
+Phase573 v2 is the completed A37 estimator-parity localization audit. Its
+frozen v1 attempt stopped at the known-answer battery before reading upstream
+numeric rows because a composite sign/affine-invariance assertion was too
+strong for the frozen finite-sample tail-indicator convention. V2 preserves
+that failure, keeps exact estimator-kernel parity mandatory, and changes no
+Phase572 comparison threshold.
+
+Both study-local estimator implementations matched bit-for-bit on identical
+inputs. Across the exact 36 Phase570/572 table rows, exactly five R-hat values
+differed: table A `closedGramLargest`, `closedMovementSquared`,
+`eMovementSquared`, and `eNormSquared`, plus table B
+`closedGramSmallest`. Every bulk ESS and tail ESS value was bit-identical and
+every pass/fail classification agreed. Phase573 returned
+`rhat-only-disagreement-localized-input-trace-required`. This excludes the
+estimator kernel itself and localizes the unresolved difference to upstream
+raw-series/rank construction, but the raw series were not retained upstream,
+so ordinary rank, folded rank, median, projector, and eigensolver rounding are
+not yet separated.
+
+Phase574 raw-trace design is open; Phase574 execution is not authorized or
+registered. Phase572 remains fail-closed, prospective sampler-pack planning
+remains closed, no threshold is relaxed, and no replay, sampling, Markov
+advance, protected-seed access, target change, quotient, gauge fixing, measure
+normalization, production, launch, physical-unit, or GeV authority follows.
+External review remains pending and `promotedPhysicalMassClaimCount=0`.
+Registry 574+ remains unassigned.
+
+The mandatory A37 incremental checkpoint ran 91 steps and skipped 342. It
+ended at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
+standing failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran Phase573 and the integrity
+verifier pins its exact v1 and v2 output hashes, so it doubles as the two-run
+byte-reproducibility check. No scanner recorded any new path or text; the
+IMPLEMENTATION_P573.md registrations in the nine exclusion lists landed in the
+same checkpoint. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T19-27-12-745Z.json`.
 
 The mandatory A30 execution checkpoint ran 88 steps and skipped 329. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 337 passed / 3 standing

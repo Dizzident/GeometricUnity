@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "phase": 570,
+  "recordFrozenBeforeV5Execution": true,
+  "v1ProgramSha256": "da43a95ea29ab4f9b9d45eaa024ae88c1c8fa74c4bad2ca9d2d76fc1bb9f85de",
+  "v2ProgramSha256": "1ba9651d1cd45cb4a80bd4b01cf2dd4255324ca882ed786dd92762f12afdad3f",
+  "v3ProgramSha256": "727c1cb956c0cee72bccb51d61db1e60baf895b7e985dc9d6f92ece84961e80c",
+  "v4": {
+    "contractPath": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v4.json",
+    "contractSha256": "78b5f51044f308c52c2d17de5280e51bee5ccb471f7e19f6441d6c48e425ba0e",
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v4/Program_v4.cs.txt",
+    "programSha256": "907bdb2b1f9343251470e4f61ef632ff30181775d708af451526db1925941eb8",
+    "csprojLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v4/Phase570RegisteredTargetDirectionalResolutionReplay_v4.csproj.txt",
+    "csprojSha256": "802ad813cfc3acf60dcfc94b1bf69b0b38f29eac8a321b0d53e24c97a277fb96",
+    "fullOutputLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v4/execution-attempt/registered_target_directional_resolution_replay_v4.json",
+    "summaryOutputLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v4/execution-attempt/registered_target_directional_resolution_replay_summary_v4.json",
+    "outputSha256": "f7a750818402e77e9efd53ab05efa6a96eaec53cdbb05d1d3683b0a06ffc6274",
+    "fullAndSummaryBytesIdentical": true,
+    "executed": true,
+    "verdictKind": "known-answer-battery-failed",
+    "auditedNumericDataParsed": false,
+    "rngUsed": false,
+    "diagnosis": "all Diagnose and Drift absolute bands passed; the auxiliary sinusoidal innovation fixture failed only its unchanged negative-AR lag threshold"
+  },
+  "v5": {
+    "programPath": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV5.cs",
+    "contractPath": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v5.json",
+    "csprojPath": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+    "executionAllowedOnlyAfterExactBindingValidation": true
+  },
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attemptId": "phase572-v6-frozen-unexecuted-production-preconversion-block",
+  "programSha256": "abe79e50e024bb3e0d3391f534f3e334d59d402186b7a732c6dc200130d316ee",
+  "csprojSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractSha256": "2c716985f2ec80fbdae577f489f4b863e7b18e141e9080a40ef9c93c0f61584e",
+  "frozenBeforeFirstExecution": true,
+  "executed": false,
+  "outputCreated": false,
+  "citableAsExecutedScientificResult": false,
+  "blocker": "Post-freeze self-audit found that lag-one and drift-Z production diagnostics were still preconverted through Reportable, contrary to the exact planted-decoy-only preconversion rule.",
+  "postFreezeDriftDetectedBeforeExecution": true,
+  "postFreezeCandidateProgramSha256": "e7190e35631e2568f2ee5f4b0e7a696df98ad72d705885873448755f1d3d5d0a",
+  "gateOrThresholdWeakened": false,
+  "promotedPhysicalMassClaimCount": 0
+}

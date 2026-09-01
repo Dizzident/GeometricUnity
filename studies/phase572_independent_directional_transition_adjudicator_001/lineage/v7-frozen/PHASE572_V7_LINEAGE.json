@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "v7-frozen-unexecuted-blocked",
+  "programLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v7-frozen/Program_v7.cs.txt",
+  "programSha256": "37245ac1edcebaa2ced1eef8efa3f5da6d7b98e50bfcebefbb939b371e347b09",
+  "projectLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v7-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v7.csproj.txt",
+  "projectSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v7-frozen/phase572_independent_directional_transition_adjudicator_contract_v7.json",
+  "contractSha256": "970e5f58c760380b7c6680a8a4af3d8ee460e73cf7488615a85cc8ce0d3dbb94",
+  "executed": false,
+  "outputCreated": false,
+  "superseded": true,
+  "reason": "Final pre-execution audit found that v7 did not place its independently reconstructed raw directional rows or raw same-tau scientific diagnostics in the assembled production payload, so its recursive nonfinite scan could not inspect those production values. The v7 bytes were never executed and cannot support a scientific terminal."
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attemptId": "phase572-v4-first-execution-serialization-stop",
+  "frozenContractId": "phase572-a36-independent-directional-transition-adjudicator-v4",
+  "attemptObservedAt": "2026-08-17T13:17:54.3593726-04:00",
+  "timestampBasis": "filesystem creation time of the empty output directory created immediately before serialization",
+  "workingDirectory": "/home/josh/Documents/GitHub/GeometricUnity",
+  "launchCommandCaptured": false,
+  "transcriptCaptured": false,
+  "exitCode": 134,
+  "programSha256": "cc5457ff52a3a4a611d371755ebf49dde85a42f7c8915bc0541e4a666886d77a",
+  "csprojSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractSha256": "559b13071f85a21393b9f4653a3cde4580dc3f0e98ac63ebd6161df6b9643349",
+  "exception": {
+    "type": "System.ArgumentException",
+    "messageObserved": ".NET number values such as positive and negative infinity cannot be written as valid JSON. To make it work when using JsonSerializer, consider specifying JsonNumberHandling.AllowNamedFloatingPointLiterals.",
+    "stackLocationsObserved": [
+      "System.Text.Json.ThrowHelper.ThrowArgumentException_ValueNotSupported()",
+      "System.Text.Json.Utf8JsonWriter.WriteNumberValue(Double value)",
+      "Program.<<Main>$>g__WriteResult|0_44(Object payload) at Program.cs:1342"
+    ]
+  },
+  "diagnosis": {
+    "firstNonfinitePayloadPath": "independentBattery.nonconvexDivergence.deltaH",
+    "valueKind": "NaN",
+    "scientificControlPassed": true,
+    "cause": "The deliberately divergent nonconvex planted control set finalHamiltonian and deltaH to NaN; v4 embedded deltaH as a raw double in the audit payload.",
+    "failureClass": "serialization-reporting-defect",
+    "gateOrThresholdWeakened": false
+  },
+  "outputDirectoryCreated": true,
+  "fullOutputCreated": false,
+  "summaryOutputCreated": false,
+  "terminalResultExists": false,
+  "executionCompleted": false,
+  "citableAsExecutedScientificResult": false,
+  "rerunPerformedToReconstructTranscript": false,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "phase": 570,
+  "recordFrozenBeforeV6Execution": true,
+  "lineageDiagnosisCorrectionOnly": true,
+  "v4Execution": {
+    "contractSha256": "78b5f51044f308c52c2d17de5280e51bee5ccb471f7e19f6441d6c48e425ba0e",
+    "programSha256": "907bdb2b1f9343251470e4f61ef632ff30181775d708af451526db1925941eb8",
+    "outputSha256": "f7a750818402e77e9efd53ab05efa6a96eaec53cdbb05d1d3683b0a06ffc6274",
+    "verdictKind": "known-answer-battery-failed",
+    "allDiagnoseAndDriftAbsoluteBandsPassed": true,
+    "failedAuxiliaryControls": [
+      "ar05Lag > 0.25",
+      "arNegativeLag < -0.2"
+    ],
+    "observedAr05Lag": 0.136753127809769,
+    "observedArNegativeLag": -0.11591142080861074,
+    "correctedDiagnosis": "all Diagnose and Drift absolute bands passed; the auxiliary sinusoidal innovation fixture failed both unchanged controls ar05Lag > 0.25 and arNegativeLag < -0.2"
+  },
+  "v5Preservation": {
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v5/Program_v5.cs.txt",
+    "programSha256": "e89813f729bd679faaeca537fef2090f116363382aabdedf7289220b991b988a",
+    "csprojLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v5/Phase570RegisteredTargetDirectionalResolutionReplay_v5.csproj.txt",
+    "csprojSha256": "ad7000babb9c78817befb0d49b3c4aeb46ff977daba98d6f36cd8c6a91eabf74",
+    "contractLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v5/phase570_registered_target_directional_resolution_replay_contract_v5.json",
+    "contractSha256": "54c49b5196ff82f89023427003e9372def2686acdb81edf29ff7c5025ad0c04c",
+    "lineageCopyPath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v5/PHASE570_V5_LINEAGE.json",
+    "lineageSha256": "fdc28b789a049ca8178330318b77d6c26e150593d09653ce17ad9df700f12181",
+    "executed": false
+  },
+  "v6": {
+    "programPath": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV6.cs",
+    "contractPath": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v6.json",
+    "csprojPath": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+    "productionLogicChanged": false,
+    "thresholdsChanged": false,
+    "fixtureChanged": false,
+    "outputSchemaChanged": false,
+    "outputsChanged": false
+  },
+  "promotedPhysicalMassClaimCount": 0
+}

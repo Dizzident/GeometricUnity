@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 4,
+  "phase": 571,
+  "recordFrozenBeforeFirstExecution": true,
+  "pendingScaffold": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/Program_PENDING.cs.txt",
+    "programSha256": "4c789013b20a668296576e98f8ea2b4fc5ce661979111c492ed69aecda75843d",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/pending/phase571_bounded_reset_checkpoint_transition_probe_contract_PENDING.json",
+    "contractSha256": "d6b8542b6c655187fb43db4d8426a3f7f1be9c91ceb510f07262f7cca87bac9c",
+    "executed": false,
+    "citableAsExecutedResult": false
+  },
+  "frozenV1": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/Program_v1.cs.txt",
+    "programSha256": "f9d5d7ab3fc255c985e75b080a2f73a7890fd8eb4ea52f345bc3fddebb0111c4",
+    "csprojPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/Phase571BoundedResetCheckpointTransitionProbe_v1.csproj.txt",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/phase571_bounded_reset_checkpoint_transition_probe_contract_v1.json",
+    "contractSha256": "b8f90cf4b2ac8e968750bab098a9c14c7b815cff154a81046dccdfbe2b052dc8",
+    "lineagePath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v1/PHASE571_LINEAGE_v1.json",
+    "lineageSha256": "e46225e62766a5a71a8abdc8d01d5849afe5f1405cbcea19f17c9aa37c951190",
+    "executed": false,
+    "terminalOutputExists": false
+  },
+  "frozenV2": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v2/Program_v2.cs.txt",
+    "programSha256": "325739b718a04b185fdd5f1aaf823019f72a40913716c037c81dd51372460691",
+    "csprojPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v2/Phase571BoundedResetCheckpointTransitionProbe_v2.csproj.txt",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v2/phase571_bounded_reset_checkpoint_transition_probe_contract_v2.json",
+    "contractSha256": "9ca0d52bc880145de27df0d51e6e2893c509749ae9d7fbafdf8430d49bb952be",
+    "lineagePath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v2/PHASE571_LINEAGE_v2.json",
+    "lineageSha256": "68c9fa299d3dc1fc8eacbaff634150c8854be6a126216ad19eb01bee51965c92",
+    "executed": false,
+    "terminalOutputExists": false
+  },
+  "frozenV3": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/Program_v3.cs.txt",
+    "programSha256": "55a29b7ef409807af6adc3eee495b944ebe0088f112a658ef395effcf602f5f1",
+    "csprojPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/Phase571BoundedResetCheckpointTransitionProbe_v3.csproj.txt",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/phase571_bounded_reset_checkpoint_transition_probe_contract_v3.json",
+    "contractSha256": "e2be12f30049ff76ac2db7843c955e4b9fc2e8120aeff906a2128bba46d9b2bc",
+    "lineagePath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/PHASE571_LINEAGE_v3.json",
+    "lineageSha256": "2b9d8e90d913de574e74e92407cda027bd7ca6a2f88fd292714d0639b89b292d",
+    "fullOutputPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/execution-attempt/bounded_reset_checkpoint_transition_probe.json",
+    "summaryOutputPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/lineage/v3/execution-attempt/bounded_reset_checkpoint_transition_probe_summary.json",
+    "fullAndSummaryOutputSha256": "9bd3aa94eb1a829d97dc14bed9f0b9ec056b21e97e3404e5040ec0b4efb1c1ae",
+    "executed": true,
+    "rngUsed": false,
+    "terminalStatus": "bounded-reset-checkpoint-transition-probe-resource-refusal",
+    "diagnosis": "IEEE-754 multiplication produced 176.64000000000001 and exact comparison to frozen 176.64 failed closed before RNG construction."
+  },
+  "frozenV4": {
+    "programPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+    "programSha256": "79150999c12d0832f58189c8cc6a4c0b066d2d0f3b4d0876a7ce920aa2d3a62f",
+    "csprojPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+    "csprojSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+    "contractPath": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v4.json",
+    "executed": false
+  },
+  "phase570Gate": {
+    "contractId": "phase570-a36-registered-target-directional-resolution-replay-v7",
+    "contractSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+    "programSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+    "csprojSha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145",
+    "fullAndSummaryOutputSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+    "verdictKind": "invariant-directional-under-resolution-not-localized",
+    "phase571TransitionProbeGateOpen": true
+  },
+  "acceptedStateCarryAllowed": false,
+  "markovChainAdvanced": false,
+  "targetSamplingPerformed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

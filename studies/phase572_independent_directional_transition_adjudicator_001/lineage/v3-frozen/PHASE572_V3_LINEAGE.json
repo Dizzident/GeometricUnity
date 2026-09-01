@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "v3-frozen-unexecuted-blocked",
+  "programLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v3-frozen/Program_v3.cs.txt",
+  "programSha256": "11aca2cd044c85ad9a5e0428fb34abce72d377b73a236337a1c803b41375ec67",
+  "projectLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v3-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v3.csproj.txt",
+  "projectSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractPreservedAtOriginalPreregistrationPath": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v3.json",
+  "contractSha256": "3d144d106b078fde7350b837bcd063e241c6e74be19e5cf2379b5902e545a708",
+  "executed": false,
+  "outputCreated": false,
+  "superseded": true,
+  "reason": "Final lineage audit found five unasserted contract semantics covering the two pre-battery parsing permissions and the three preserved-attempt lineage declarations. The v3 bytes were never executed and cannot support a scientific terminal."
+}

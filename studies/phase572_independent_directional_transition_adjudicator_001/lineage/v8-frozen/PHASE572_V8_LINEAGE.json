@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "v8-frozen-unexecuted-blocked",
+  "programLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v8-frozen/Program_v8.cs.txt",
+  "programSha256": "9a97881a674d3f56d0245b38b44e444dd89883e16e2c396a79a429c2d2a55fb3",
+  "projectLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v8-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v8.csproj.txt",
+  "projectSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v8-frozen/phase572_independent_directional_transition_adjudicator_contract_v8.json",
+  "contractSha256": "39c2534c8234484af5afb92f761b3a051f32a4d658bffb333bae1bc46d129ab0",
+  "executed": false,
+  "outputCreated": false,
+  "superseded": true,
+  "reason": "Final pre-execution audit found that v8 did not enforce all frozen directional nested-schema coverage fields and used handwritten replay, transition-row, and movement nonfinite path strings instead of recursively scanning assembled production-shape fixtures. The v8 bytes were never executed and cannot support a scientific terminal."
+}

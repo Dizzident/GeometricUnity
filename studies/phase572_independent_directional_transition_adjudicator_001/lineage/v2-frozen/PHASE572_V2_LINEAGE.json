@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attempt": "v2-frozen-unexecuted-blocked",
+  "programLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v2-frozen/Program_v2.cs.txt",
+  "programSha256": "8dc6a511c1603a7fdc668b92933370fa4407a23caeab3da6b923fd979477ac50",
+  "projectLineagePath": "studies/phase572_independent_directional_transition_adjudicator_001/lineage/v2-frozen/Phase572IndependentDirectionalTransitionAdjudicator_v2.csproj.txt",
+  "projectSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractPreservedAtOriginalPreregistrationPath": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v2.json",
+  "contractSha256": "f415adcb189b2c021121ba0da4df614a9c0a21406edbce5007326174e1905daf",
+  "executed": false,
+  "outputCreated": false,
+  "superseded": true,
+  "reason": "Final pre-execution audit found four unasserted v2 contract semantics: replay scaled-difference formula, directional invariant-only reclassification, and the no-mixing/no-stationarity claim firewalls. The v2 bytes were never executed and cannot support a scientific terminal."
+}

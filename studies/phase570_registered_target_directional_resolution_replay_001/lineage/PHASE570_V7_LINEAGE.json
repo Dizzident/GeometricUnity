@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "phase": 570,
+  "recordFrozenBeforeV7Execution": true,
+  "bindingIntegrityRepairOnly": true,
+  "v6": {
+    "programLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v6/Program_v6.cs.txt",
+    "programSha256": "cd2c6ea7911cedf34c1410ff2d623d5d2af7c89b36d6a16ea60bee790c3ed438",
+    "csprojLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v6/Phase570RegisteredTargetDirectionalResolutionReplay_v6.csproj.txt",
+    "csprojSha256": "9e845e20064d69edf1daa0a1a0882e1c8e66d86f36e77e2f6d8831a5d295bd1c",
+    "contractLineagePath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v6/phase570_registered_target_directional_resolution_replay_contract_v6.json",
+    "contractSha256": "f235ed76c352169d976c8272c9c8ca55055a35fbca63f9a3d3c399edb6550be0",
+    "lineageCopyPath": "studies/phase570_registered_target_directional_resolution_replay_001/lineage/v6/PHASE570_V6_LINEAGE.json",
+    "lineageSha256": "3885ea42b25b5293556f90d3ab95fc4a40456d2ae280d091e4326e8932012217",
+    "executed": false,
+    "declaredBindingRows": 53,
+    "uniqueBindingIds": 52,
+    "duplicateIdRemovedByV7": "phase570-v5-lineage-record"
+  },
+  "v7": {
+    "expectedUniqueBaseBindingCount": 52,
+    "additionalLineageBindingCount": 5,
+    "expectedFinalBindingCount": 57,
+    "bindingIdsMustBeUnique": true,
+    "bindingPathsMustBeUnique": true,
+    "fullAndSummaryOutputPathsAreDistinct": true,
+    "programPath": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+    "contractPath": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+    "csprojPath": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+    "scientificConfigurationUnchangedFromV6": true,
+    "outputSchemaChanged": false,
+    "outputsChanged": false
+  },
+  "promotedPhysicalMassClaimCount": 0
+}

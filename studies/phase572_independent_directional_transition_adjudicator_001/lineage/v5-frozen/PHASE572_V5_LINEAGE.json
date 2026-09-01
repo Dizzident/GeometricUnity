@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "phase": 572,
+  "attemptId": "phase572-v5-frozen-unexecuted-precedence-block",
+  "programSha256": "2096ea8a95a9227447735fd8492f4c47fbbf6fd13dc9bf76b78ae5d3c94218e7",
+  "csprojSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+  "contractSha256": "708d418bc3b21dcfcbd2f14f259b6fbc29275938eb313e5fbe97ce9633af9e21",
+  "frozenBeforeFirstExecution": true,
+  "executed": false,
+  "outputCreated": false,
+  "citableAsExecutedScientificResult": false,
+  "blocker": "The pre-write nonfinite route could overwrite an earlier terminal with a later disagreement, hide preconverted production nonfinites, and leave the printed terminal stale relative to emitted output.",
+  "gateOrThresholdWeakened": false,
+  "promotedPhysicalMassClaimCount": 0
+}
