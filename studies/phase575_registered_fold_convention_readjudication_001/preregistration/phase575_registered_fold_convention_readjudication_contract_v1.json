@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "phase": 575,
+  "contractId": "phase575-a39-registered-fold-convention-readjudication-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A39",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "retrospectiveKnownDataAudit": true,
+  "newSamplingPerformed": false,
+  "replayPerformed": false,
+  "rngUsed": false,
+  "batteryRehearsal": {
+    "performedOutsideRepositoryBeforeFreeze": true,
+    "deterministicFixturesOnly": true,
+    "upstreamNumericRowsRead": false,
+    "repositoryBytesWritten": false
+  },
+  "requiredUpstreamVerdicts": {
+    "phase570": "invariant-directional-under-resolution-not-localized",
+    "phase571": "longer-trajectory-local-kernel-lever-supported",
+    "phase572": "directional-diagnostics-disagree",
+    "phase573": "rhat-only-disagreement-localized-input-trace-required",
+    "phase574": "fold-order-flip-confirmed-source-attributed"
+  },
+  "rowConvention": {
+    "essBitIdenticalRequired": true,
+    "classificationAgreementRequired": true,
+    "rhatThreshold": 1.01,
+    "minimumEss": 100.0,
+    "differenceMustBeInPhase574FoldFlipSet": true,
+    "marginSafetyFactor": 10.0,
+    "marginRule": "min(|rhatA-1.01|,|rhatB-1.01|) > 10 * scaledAbsoluteDifference(rhatA,rhatB) on every differing row",
+    "scaledAbsoluteFormula": "abs(a-b)/max(1,abs(b))",
+    "evaluatorSharedByBatteryAndProduction": true
+  },
+  "sideConsistencyRule": {
+    "sideATracesMustReproduce": "phase570-full tableDiagnostics.rows bit-for-bit",
+    "sideBTracesMustReproduce": "phase572-full directionalAdjudication.tableRows bit-for-bit",
+    "kernelJustification": "phase573 proved bit-for-bit estimator-kernel parity on identical inputs"
+  },
+  "confirmationRule": {
+    "phase572CommittedReplayMustHaveAgreed": true,
+    "phase572CommittedTransitionAdjudicationMustHaveAgreed": true,
+    "expectedTransitionRowCount": 96,
+    "expectedTableRowCount": 36,
+    "expectedFoldFlipRowCount": 5
+  },
+  "expectedFoldFlipKeys": [
+    "complete-lattice-pilot-a|closedGramLargest",
+    "complete-lattice-pilot-a|closedMovementSquared",
+    "complete-lattice-pilot-a|eMovementSquared",
+    "complete-lattice-pilot-a|eNormSquared",
+    "complete-lattice-pilot-b|closedGramSmallest"
+  ],
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "a39-upstream-gate-refused",
+    "side-consistency-not-reproduced",
+    "classification-disagreement-present",
+    "unexplained-rhat-difference-present",
+    "threshold-margin-insufficient",
+    "transition-or-replay-confirmation-missing",
+    "evidence-independently-confirmed-under-registered-fold-convention"
+  ],
+  "favorableTerminalAuthority": {
+    "opensProspectiveChainPackPlanningGate": true,
+    "authorizesOnly": "registration and prospective freezing of a separate disjoint-seed chain-pack design phase",
+    "samplingAuthorized": false,
+    "executionAuthorized": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false
+  },
+  "scope": {
+    "phase572TerminalAndToleranceNeverRewritten": true,
+    "phase571ScopeUnchangedLocalMovementOnly": true,
+    "confirmationIsUnderRegisteredConventionOnly": true
+  },
+  "authorityFirewalls": {
+    "newSamplingPerformed": false,
+    "replayPerformed": false,
+    "markovChainAdvanced": false,
+    "configurationsRetained": false,
+    "phase548Or549TerminalChanged": false,
+    "phase570Or571Or572Reinterpreted": false,
+    "phase572ToleranceRelaxed": false,
+    "registeredBlindSeedTouched": false,
+    "protectedPhase554SeedsRead": false,
+    "registeredTargetChanged": false,
+    "directionCalledGaugeOrRedundant": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "sourceOrModelSelected": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "requiredExactBindingCount": 25,
+  "exactBindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "phase570-contract-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "sha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0"
+    },
+    {
+      "id": "phase570-program-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "sha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58"
+    },
+    {
+      "id": "phase570-csproj",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "sha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145"
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase571-contract-v4",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v4.json",
+      "sha256": "83416598aef3e072d33049b98c5319f5b79a96c08e41ddfcd1ae391573dc591d"
+    },
+    {
+      "id": "phase571-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+      "sha256": "79150999c12d0832f58189c8cc6a4c0b066d2d0f3b4d0876a7ce920aa2d3a62f"
+    },
+    {
+      "id": "phase571-csproj",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+      "sha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc"
+    },
+    {
+      "id": "phase571-full",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe.json",
+      "sha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d"
+    },
+    {
+      "id": "phase571-summary",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe_summary.json",
+      "sha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d"
+    },
+    {
+      "id": "phase572-contract-v9",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v9.json",
+      "sha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6"
+    },
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "sha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8"
+    },
+    {
+      "id": "phase572-csproj",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+      "sha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1"
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase572-summary",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase573-contract-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/preregistration/phase573_directional_estimator_parity_audit_contract_v2.json",
+      "sha256": "245e9ae11f3281228e4ac8a30b714a77efaa1d0be0e92b33f7b8c7365115901c"
+    },
+    {
+      "id": "phase573-program-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/ProgramV2.cs",
+      "sha256": "efed9f7f1c606bad5972ea40bb10e49f6636ee55646d53bdaa2c96f39284b753"
+    },
+    {
+      "id": "phase573-full",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_v2.json",
+      "sha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47"
+    },
+    {
+      "id": "phase574-contract-v1",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/preregistration/phase574_directional_raw_trace_fold_order_localization_contract_v1.json",
+      "sha256": "db2c78f3b910131b3375a69034d6bd30560e8a3368fbb63a7cd6ed1c8c2ab90e"
+    },
+    {
+      "id": "phase574-program",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/Program.cs",
+      "sha256": "54de2eb408539268302868513769f308811ce1870c6beb35a0cfc87062f61cd1"
+    },
+    {
+      "id": "phase574-csproj",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/Phase574DirectionalRawTraceFoldOrderLocalization.csproj",
+      "sha256": "dc9904ef746331d48d4111bb2bc52d5cfec3ec3094fe9ee008e42dae9e3a1eff"
+    },
+    {
+      "id": "phase574-full",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization.json",
+      "sha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e"
+    },
+    {
+      "id": "phase574-summary",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization_summary.json",
+      "sha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e"
+    }
+  ]
+}

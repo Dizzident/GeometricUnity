@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": 1,
+  "phase": 575,
+  "phaseId": "phase575-registered-fold-convention-readjudication",
+  "contractId": "phase575-a39-registered-fold-convention-readjudication-v1",
+  "contractSha256": "800b5baa128798d52ab9a98f6d0a065417f4c05f00c612bb0a0b4dd098105397",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "expectedSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "actualSha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "expectedSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "actualSha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase570-contract-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/preregistration/phase570_registered_target_directional_resolution_replay_contract_v7.json",
+      "expectedSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+      "actualSha256": "650f5f3191c10b3f2ba2ed2fdaf2be48501ddeeb5f948d6674f1093cd75a1bd0",
+      "hashMatches": true
+    },
+    {
+      "id": "phase570-program-v7",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/ProgramV7.cs",
+      "expectedSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+      "actualSha256": "058c29aa3c3d04b02b14ec707e34007ed5201f1be94da0c8393d5a25a1da0f58",
+      "hashMatches": true
+    },
+    {
+      "id": "phase570-csproj",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "expectedSha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145",
+      "actualSha256": "722aa80cc0fe7ec9eac33522ec3cb93109e5a143b2a99382a5b429a2c440c145",
+      "hashMatches": true
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "expectedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "actualSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase570-summary",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay_summary.json",
+      "expectedSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "actualSha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase571-contract-v4",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v4.json",
+      "expectedSha256": "83416598aef3e072d33049b98c5319f5b79a96c08e41ddfcd1ae391573dc591d",
+      "actualSha256": "83416598aef3e072d33049b98c5319f5b79a96c08e41ddfcd1ae391573dc591d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase571-program",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Program.cs",
+      "expectedSha256": "79150999c12d0832f58189c8cc6a4c0b066d2d0f3b4d0876a7ce920aa2d3a62f",
+      "actualSha256": "79150999c12d0832f58189c8cc6a4c0b066d2d0f3b4d0876a7ce920aa2d3a62f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase571-csproj",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+      "expectedSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+      "actualSha256": "09e950d97b94d4063a06f308160ed368c02c646322b6a92bdca01618f690debc",
+      "hashMatches": true
+    },
+    {
+      "id": "phase571-full",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe.json",
+      "expectedSha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d",
+      "actualSha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase571-summary",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe_summary.json",
+      "expectedSha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d",
+      "actualSha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase572-contract-v9",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/preregistration/phase572_independent_directional_transition_adjudicator_contract_v9.json",
+      "expectedSha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6",
+      "actualSha256": "c576972fbd6a5b5dbb628e7df99c7492a14a7caac1bf3ae5c7c3fc63afce03e6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase572-program",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Program.cs",
+      "expectedSha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8",
+      "actualSha256": "c97fc125afc207bcaff173b27f80e82f4526f995622937491baf5389a14bc5f8",
+      "hashMatches": true
+    },
+    {
+      "id": "phase572-csproj",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+      "expectedSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+      "actualSha256": "d4e94dff23d6c5bc44a132c31baf0dafe8b8bb0705cc0770095e5c482c99d6b1",
+      "hashMatches": true
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "expectedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "actualSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase572-summary",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator_summary.json",
+      "expectedSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "actualSha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase573-contract-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/preregistration/phase573_directional_estimator_parity_audit_contract_v2.json",
+      "expectedSha256": "245e9ae11f3281228e4ac8a30b714a77efaa1d0be0e92b33f7b8c7365115901c",
+      "actualSha256": "245e9ae11f3281228e4ac8a30b714a77efaa1d0be0e92b33f7b8c7365115901c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase573-program-v2",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/ProgramV2.cs",
+      "expectedSha256": "efed9f7f1c606bad5972ea40bb10e49f6636ee55646d53bdaa2c96f39284b753",
+      "actualSha256": "efed9f7f1c606bad5972ea40bb10e49f6636ee55646d53bdaa2c96f39284b753",
+      "hashMatches": true
+    },
+    {
+      "id": "phase573-full",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_v2.json",
+      "expectedSha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47",
+      "actualSha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47",
+      "hashMatches": true
+    },
+    {
+      "id": "phase574-contract-v1",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/preregistration/phase574_directional_raw_trace_fold_order_localization_contract_v1.json",
+      "expectedSha256": "db2c78f3b910131b3375a69034d6bd30560e8a3368fbb63a7cd6ed1c8c2ab90e",
+      "actualSha256": "db2c78f3b910131b3375a69034d6bd30560e8a3368fbb63a7cd6ed1c8c2ab90e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase574-program",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/Program.cs",
+      "expectedSha256": "54de2eb408539268302868513769f308811ce1870c6beb35a0cfc87062f61cd1",
+      "actualSha256": "54de2eb408539268302868513769f308811ce1870c6beb35a0cfc87062f61cd1",
+      "hashMatches": true
+    },
+    {
+      "id": "phase574-csproj",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/Phase574DirectionalRawTraceFoldOrderLocalization.csproj",
+      "expectedSha256": "dc9904ef746331d48d4111bb2bc52d5cfec3ec3094fe9ee008e42dae9e3a1eff",
+      "actualSha256": "dc9904ef746331d48d4111bb2bc52d5cfec3ec3094fe9ee008e42dae9e3a1eff",
+      "hashMatches": true
+    },
+    {
+      "id": "phase574-full",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization.json",
+      "expectedSha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e",
+      "actualSha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase574-summary",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization_summary.json",
+      "expectedSha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e",
+      "actualSha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e",
+      "hashMatches": true
+    }
+  ],
+  "knownAnswerBattery": {
+    "auditedNumericDataParsedBeforeBattery": false,
+    "rehearsedOutsideRepositoryBeforeFreeze": true,
+    "evaluatorSharedWithProduction": true,
+    "rows": [
+      {
+        "id": "healthy-zero-diff",
+        "expectedOk": true,
+        "observedOk": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true
+      },
+      {
+        "id": "healthy-fold-flip",
+        "expectedOk": true,
+        "observedOk": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true
+      },
+      {
+        "id": "threshold-straddle",
+        "expectedOk": false,
+        "observedOk": false,
+        "essBitIdentical": true,
+        "classificationAgrees": false,
+        "explained": true,
+        "marginSufficient": false
+      },
+      {
+        "id": "unexplained-diff",
+        "expectedOk": false,
+        "observedOk": false,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": false,
+        "marginSufficient": true
+      },
+      {
+        "id": "tight-margin",
+        "expectedOk": false,
+        "observedOk": false,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": false
+      },
+      {
+        "id": "ess-mismatch",
+        "expectedOk": false,
+        "observedOk": false,
+        "essBitIdentical": false,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true
+      }
+    ],
+    "classificationTruthTable": {
+      "rows": [
+        {
+          "id": "invalid",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        },
+        {
+          "id": "battery",
+          "actual": "known-answer-battery-failed",
+          "expected": "known-answer-battery-failed"
+        },
+        {
+          "id": "gate",
+          "actual": "a39-upstream-gate-refused",
+          "expected": "a39-upstream-gate-refused"
+        },
+        {
+          "id": "side-consistency",
+          "actual": "side-consistency-not-reproduced",
+          "expected": "side-consistency-not-reproduced"
+        },
+        {
+          "id": "classification",
+          "actual": "classification-disagreement-present",
+          "expected": "classification-disagreement-present"
+        },
+        {
+          "id": "unexplained",
+          "actual": "unexplained-rhat-difference-present",
+          "expected": "unexplained-rhat-difference-present"
+        },
+        {
+          "id": "margin",
+          "actual": "threshold-margin-insufficient",
+          "expected": "threshold-margin-insufficient"
+        },
+        {
+          "id": "confirmation",
+          "actual": "transition-or-replay-confirmation-missing",
+          "expected": "transition-or-replay-confirmation-missing"
+        },
+        {
+          "id": "confirmed",
+          "actual": "evidence-independently-confirmed-under-registered-fold-convention",
+          "expected": "evidence-independently-confirmed-under-registered-fold-convention"
+        },
+        {
+          "id": "side-precedes-classification",
+          "actual": "side-consistency-not-reproduced",
+          "expected": "side-consistency-not-reproduced"
+        },
+        {
+          "id": "early-precedence",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        }
+      ],
+      "everyTerminalReached": true,
+      "passed": true
+    },
+    "checksumTamperDetected": true,
+    "passed": true
+  },
+  "upstream": {
+    "gatePassed": true,
+    "phase570Verdict": "invariant-directional-under-resolution-not-localized",
+    "phase571Verdict": "longer-trajectory-local-kernel-lever-supported",
+    "phase572Verdict": "directional-diagnostics-disagree",
+    "phase573Verdict": "rhat-only-disagreement-localized-input-trace-required",
+    "phase574Verdict": "fold-order-flip-confirmed-source-attributed",
+    "phase574HFoldConfirmed": true
+  },
+  "convention": {
+    "rhatThreshold": 1.01,
+    "minimumEss": 100,
+    "marginSafetyFactor": 10,
+    "scaledAbsoluteFormula": "abs(a-b)/max(1,abs(b))",
+    "registeredBeforeAuditedReads": true,
+    "inputIsPhase574RetainedRawTraces": true,
+    "replayPerformed": false,
+    "rngUsed": false
+  },
+  "adjudication": {
+    "rowCount": 36,
+    "differingRowCount": 5,
+    "sideConsistencyPassed": true,
+    "classificationDisagreementPresent": false,
+    "unexplainedDifferencePresent": false,
+    "marginInsufficientPresent": false,
+    "rows": [
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "actionDensity",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0074488749733528,
+          "bulkEss": 212.33365196307267,
+          "tailEss": 380.3968923177437
+        },
+        "sideB": {
+          "rhat": 1.0074488749733528,
+          "bulkEss": 212.33365196307267,
+          "tailEss": 380.3968923177437
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "forceNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.002567581821562,
+          "bulkEss": 393.53585678545556,
+          "tailEss": 467.543113138811
+        },
+        "sideB": {
+          "rhat": 1.002567581821562,
+          "bulkEss": 393.53585678545556,
+          "tailEss": 467.543113138811
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "configurationNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0386631823268684,
+          "bulkEss": 72.15228305551715,
+          "tailEss": 157.5970422001069
+        },
+        "sideB": {
+          "rhat": 1.0386631823268684,
+          "bulkEss": 72.15228305551715,
+          "tailEss": 157.5970422001069
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "eNormSquared",
+        "inFoldFlipSet": true,
+        "sideA": {
+          "rhat": 1.0151115186636972,
+          "bulkEss": 97.70859175755247,
+          "tailEss": 170.63965557412334
+        },
+        "sideB": {
+          "rhat": 1.0150727149205117,
+          "bulkEss": 97.70859175755247,
+          "tailEss": 170.63965557412334
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 3.822755021898451E-05,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "wNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0788227432132342,
+          "bulkEss": 29.031348184562493,
+          "tailEss": 69.07493417966975
+        },
+        "sideB": {
+          "rhat": 1.0788227432132342,
+          "bulkEss": 29.031348184562493,
+          "tailEss": 69.07493417966975
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0310282815968517,
+          "bulkEss": 81.0056083455973,
+          "tailEss": 174.78154575348503
+        },
+        "sideB": {
+          "rhat": 1.0310282815968517,
+          "bulkEss": 81.0056083455973,
+          "tailEss": 174.78154575348503
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedPerpNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0187856214950126,
+          "bulkEss": 63.648996539207936,
+          "tailEss": 138.18938888511215
+        },
+        "sideB": {
+          "rhat": 1.0187856214950126,
+          "bulkEss": 63.648996539207936,
+          "tailEss": 138.18938888511215
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedGramLargest",
+        "inFoldFlipSet": true,
+        "sideA": {
+          "rhat": 1.0175000500458948,
+          "bulkEss": 80.56055120758447,
+          "tailEss": 101.35352831371605
+        },
+        "sideB": {
+          "rhat": 1.0175438311603766,
+          "bulkEss": 80.56055120758447,
+          "tailEss": 101.35352831371605
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 4.302626888499853E-05,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedGramMiddle",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.027588022573934,
+          "bulkEss": 103.25910333927739,
+          "tailEss": 167.9617240521511
+        },
+        "sideB": {
+          "rhat": 1.027588022573934,
+          "bulkEss": 103.25910333927739,
+          "tailEss": 167.9617240521511
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedGramSmallest",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0121573083358448,
+          "bulkEss": 96.46551543469985,
+          "tailEss": 221.47205846433087
+        },
+        "sideB": {
+          "rhat": 1.0121573083358448,
+          "bulkEss": 96.46551543469985,
+          "tailEss": 221.47205846433087
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedRankOneAlignment",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0217833231971585,
+          "bulkEss": 112.3556843938779,
+          "tailEss": 175.8475840455516
+        },
+        "sideB": {
+          "rhat": 1.0217833231971585,
+          "bulkEss": 112.3556843938779,
+          "tailEss": 175.8475840455516
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "withinClosedRankOneDistanceSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0219982618155572,
+          "bulkEss": 91.48141517116873,
+          "tailEss": 180.6136425763802
+        },
+        "sideB": {
+          "rhat": 1.0219982618155572,
+          "bulkEss": 91.48141517116873,
+          "tailEss": 180.6136425763802
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "withinClosedRankOneRelativeDistance",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0217833231971587,
+          "bulkEss": 112.35568439387725,
+          "tailEss": 175.8475840455516
+        },
+        "sideB": {
+          "rhat": 1.0217833231971587,
+          "bulkEss": 112.35568439387725,
+          "tailEss": 175.8475840455516
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "fullRankOneDistanceSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0283762911126466,
+          "bulkEss": 61.026052910559876,
+          "tailEss": 102.819918994936
+        },
+        "sideB": {
+          "rhat": 1.0283762911126466,
+          "bulkEss": 61.026052910559876,
+          "tailEss": 102.819918994936
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "eMovementSquared",
+        "inFoldFlipSet": true,
+        "sideA": {
+          "rhat": 1.0002896581608844,
+          "bulkEss": 988.5428715077499,
+          "tailEss": 970.3066364367586
+        },
+        "sideB": {
+          "rhat": 1.000249075577991,
+          "bulkEss": 988.5428715077499,
+          "tailEss": 970.3066364367586
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 4.057247728029334E-05,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "wMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 0.9996804770453057,
+          "bulkEss": 1103.7549739344781,
+          "tailEss": 877.1004159895201
+        },
+        "sideB": {
+          "rhat": 0.9996804770453057,
+          "bulkEss": 1103.7549739344781,
+          "tailEss": 877.1004159895201
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedMovementSquared",
+        "inFoldFlipSet": true,
+        "sideA": {
+          "rhat": 0.9998793853780484,
+          "bulkEss": 1005.2782384267709,
+          "tailEss": 932.7998998157383
+        },
+        "sideB": {
+          "rhat": 0.9998713076543203,
+          "bulkEss": 1005.2782384267709,
+          "tailEss": 932.7998998157383
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 8.077723728128205E-06,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-a",
+        "series": "closedPerpMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 0.9980829278971733,
+          "bulkEss": 959.2550117929134,
+          "tailEss": 1031.0894848213009
+        },
+        "sideB": {
+          "rhat": 0.9980829278971733,
+          "bulkEss": 959.2550117929134,
+          "tailEss": 1031.0894848213009
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "actionDensity",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.012441780041052,
+          "bulkEss": 286.9641233206607,
+          "tailEss": 465.8319770113334
+        },
+        "sideB": {
+          "rhat": 1.012441780041052,
+          "bulkEss": 286.9641233206607,
+          "tailEss": 465.8319770113334
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "forceNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0141212353898779,
+          "bulkEss": 420.4942377427681,
+          "tailEss": 668.6737938708526
+        },
+        "sideB": {
+          "rhat": 1.0141212353898779,
+          "bulkEss": 420.4942377427681,
+          "tailEss": 668.6737938708526
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "configurationNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0150545860220823,
+          "bulkEss": 99.7310011218456,
+          "tailEss": 246.14099431592578
+        },
+        "sideB": {
+          "rhat": 1.0150545860220823,
+          "bulkEss": 99.7310011218456,
+          "tailEss": 246.14099431592578
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "eNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0173173241762863,
+          "bulkEss": 77.62108533146373,
+          "tailEss": 157.65221678054866
+        },
+        "sideB": {
+          "rhat": 1.0173173241762863,
+          "bulkEss": 77.62108533146373,
+          "tailEss": 157.65221678054866
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "wNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.298780826216857,
+          "bulkEss": 9.163099524251676,
+          "tailEss": 52.1580833930111
+        },
+        "sideB": {
+          "rhat": 1.298780826216857,
+          "bulkEss": 9.163099524251676,
+          "tailEss": 52.1580833930111
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0473477160926188,
+          "bulkEss": 70.15251094623618,
+          "tailEss": 144.79331623919978
+        },
+        "sideB": {
+          "rhat": 1.0473477160926188,
+          "bulkEss": 70.15251094623618,
+          "tailEss": 144.79331623919978
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedPerpNormSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0134189590103568,
+          "bulkEss": 127.60778418214335,
+          "tailEss": 278.32886565735015
+        },
+        "sideB": {
+          "rhat": 1.0134189590103568,
+          "bulkEss": 127.60778418214335,
+          "tailEss": 278.32886565735015
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedGramLargest",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.064295367132706,
+          "bulkEss": 69.20260064081042,
+          "tailEss": 168.5666656246548
+        },
+        "sideB": {
+          "rhat": 1.064295367132706,
+          "bulkEss": 69.20260064081042,
+          "tailEss": 168.5666656246548
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedGramMiddle",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0267249837105163,
+          "bulkEss": 115.46432133573813,
+          "tailEss": 248.68325854826418
+        },
+        "sideB": {
+          "rhat": 1.0267249837105163,
+          "bulkEss": 115.46432133573813,
+          "tailEss": 248.68325854826418
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedGramSmallest",
+        "inFoldFlipSet": true,
+        "sideA": {
+          "rhat": 1.0045608702988233,
+          "bulkEss": 112.18066201703297,
+          "tailEss": 236.88393810164825
+        },
+        "sideB": {
+          "rhat": 1.004546355206346,
+          "bulkEss": 112.18066201703297,
+          "tailEss": 236.88393810164825
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 1.4449400370692444E-05,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedRankOneAlignment",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0257217891171162,
+          "bulkEss": 101.78202593987076,
+          "tailEss": 121.4706826074158
+        },
+        "sideB": {
+          "rhat": 1.0257217891171162,
+          "bulkEss": 101.78202593987076,
+          "tailEss": 121.4706826074158
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "withinClosedRankOneDistanceSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0158444578830224,
+          "bulkEss": 92.96386748347287,
+          "tailEss": 209.83644888253306
+        },
+        "sideB": {
+          "rhat": 1.0158444578830224,
+          "bulkEss": 92.96386748347287,
+          "tailEss": 209.83644888253306
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "withinClosedRankOneRelativeDistance",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0257217891171164,
+          "bulkEss": 101.78202593987055,
+          "tailEss": 121.4706826074158
+        },
+        "sideB": {
+          "rhat": 1.0257217891171164,
+          "bulkEss": 101.78202593987055,
+          "tailEss": 121.4706826074158
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "fullRankOneDistanceSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0095847132281044,
+          "bulkEss": 122.3704767515988,
+          "tailEss": 236.4450461831897
+        },
+        "sideB": {
+          "rhat": 1.0095847132281044,
+          "bulkEss": 122.3704767515988,
+          "tailEss": 236.4450461831897
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "eMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.001803157709588,
+          "bulkEss": 886.1879953513895,
+          "tailEss": 800.3910511642974
+        },
+        "sideB": {
+          "rhat": 1.001803157709588,
+          "bulkEss": 886.1879953513895,
+          "tailEss": 800.3910511642974
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "wMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 0.9990140852418444,
+          "bulkEss": 1030.8100438743515,
+          "tailEss": 800.3910511642974
+        },
+        "sideB": {
+          "rhat": 0.9990140852418444,
+          "bulkEss": 1030.8100438743515,
+          "tailEss": 800.3910511642974
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 1.0013459224482348,
+          "bulkEss": 959.8674840307117,
+          "tailEss": 800.3910511642974
+        },
+        "sideB": {
+          "rhat": 1.0013459224482348,
+          "bulkEss": 959.8674840307117,
+          "tailEss": 800.3910511642974
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      },
+      {
+        "table": "complete-lattice-pilot-b",
+        "series": "closedPerpMovementSquared",
+        "inFoldFlipSet": false,
+        "sideA": {
+          "rhat": 0.9989450849979076,
+          "bulkEss": 790.5159822471666,
+          "tailEss": 800.3910511642974
+        },
+        "sideB": {
+          "rhat": 0.9989450849979076,
+          "bulkEss": 790.5159822471666,
+          "tailEss": 800.3910511642974
+        },
+        "sideAReproducesCommitted": true,
+        "sideBReproducesCommitted": true,
+        "essBitIdentical": true,
+        "classificationAgrees": true,
+        "explained": true,
+        "marginSufficient": true,
+        "scaledRhatDifference": 0,
+        "conventionSatisfied": true
+      }
+    ]
+  },
+  "confirmation": {
+    "phase570ReplayBitIdentical": true,
+    "phase572ReplayAgreed": true,
+    "phase572TransitionRowCount": 96,
+    "phase572TransitionAgreed": true,
+    "phase572MovementClassificationAgreed": true,
+    "present": true
+  },
+  "verdictKind": "evidence-independently-confirmed-under-registered-fold-convention",
+  "terminalStatus": "registered-fold-convention-readjudication-evidence-independently-confirmed-under-registered-fold-convention",
+  "directionalEvidenceIndependentlyConfirmedUnderRegisteredFoldConvention": true,
+  "phase571LeverIndependentlyConfirmedUnderRegisteredFoldConvention": true,
+  "phase571LeverScopeUnchangedLocalMovementOnly": true,
+  "prospectiveChainPackPlanningGateOpen": true,
+  "prospectiveChainPackPlanningGateAuthorizesOnly": "registration and prospective freezing of a separate disjoint-seed chain-pack design phase",
+  "phase572TerminalAndToleranceNeverRewritten": true,
+  "newSamplingPerformed": false,
+  "replayPerformed": false,
+  "rngUsed": false,
+  "markovChainAdvanced": false,
+  "configurationsRetained": false,
+  "phase548Or549TerminalChanged": false,
+  "phase570Or571Or572Reinterpreted": false,
+  "phase572ToleranceRelaxed": false,
+  "registeredBlindSeedTouched": false,
+  "protectedPhase554SeedsRead": false,
+  "registeredTargetChanged": false,
+  "directionCalledGaugeOrRedundant": false,
+  "quotientApplied": false,
+  "gaugeFixingApplied": false,
+  "measureNormalizationApplied": false,
+  "sourceOrModelSelected": false,
+  "phase561Opened": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481PackCreatedOrMutated": false,
+  "productionDefaultSelected": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1696,3 +1696,81 @@ Phase571 lever remains not independently confirmed, prospective sampler-pack
 planning remains closed, and any re-adjudication under an agreed rank/fold
 convention requires its own separately registered prospective phase.
 External review remains pending and `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A39 - registered fold-convention re-adjudication (2026-09-01; Phase575)
+
+Phase574 fully explained the Phase572 disagreement as an ulp-scale
+representation effect on near-tied folded ranks and retained both sides' raw
+directional series as committed artifacts. The A36 record allowed only "an
+independently confirmed favorable Phase572 terminal" to open prospective
+chain-pack planning; Phase572's fail-closed terminal is frozen and stands.
+A39 supersedes that gate clause by labeled amendment, as the standing plan
+provides: the planning gate may now open only on a favorable terminal of the
+separately registered Phase575, which re-adjudicates the same evidence under
+a prospectively frozen fold-tie-robust comparison convention instead of raw
+bit equality of R-hat. Nothing else in A36 changes, and Phase572's terminal,
+tolerance, and record are never rewritten.
+
+1. **Phase575 - registered fold-convention re-adjudicator.** Exact-bind the
+   executed Phase570/571/572/573/574 contract/program/output chains and the
+   Phase548 lineage. Consume no replay and no RNG: all numeric input is the
+   Phase574-retained raw directional series and the committed upstream
+   outputs. Freeze the row convention before any audited read: for each of
+   the 36 table rows, (i) bulk and tail ESS must be bit-identical across
+   sides; (ii) both sides' pass/fail classifications must agree; (iii) any
+   cross-side R-hat difference must lie in Phase574's measured fold-flip
+   set; and (iv) on differing rows the smaller distance to the frozen 1.01
+   R-hat threshold must exceed ten times the scaled cross-side difference,
+   so the ulp effect provably cannot flip a decision. Require in addition
+   that the shared kernel over the side-A traces reproduces every committed
+   Phase570 diagnostic bit-for-bit and over the side-B traces every
+   committed Phase572 diagnostic bit-for-bit, and that Phase572's committed
+   replay and 96-row transition adjudications agreed in full. A known-answer
+   battery over designed convention rows (healthy, fold-flip, threshold-
+   straddle, unexplained-difference, tight-margin, and ESS-mismatch
+   fixtures) runs before any audited numeric read; its evaluator is the
+   production evaluator.
+
+A favorable terminal records that the Phase570 directional evidence and the
+Phase571 local-kernel-lever evidence are independently confirmed UNDER THE
+REGISTERED CONVENTION and opens `prospectiveChainPackPlanningGateOpen`. That
+gate authorizes only the registration and prospective freezing of a separate
+disjoint-seed chain-pack DESIGN phase; it grants no sampling, execution,
+production, or launch authority. Phase571's scope is unchanged: local
+movement evidence only, never mixing, convergence, or stationarity. Phase575
+performs no new sampling, Markov advance, configuration retention,
+protected Phase554 seed read, target change, quotient, gauge fixing, or
+measure normalization, and grants no Phase561, O4, Phase458, Phase481,
+production, launch, physical-unit, or GeV authority. External review
+remains pending and `promotedPhysicalMassClaimCount=0`. Registry 575 is
+allocated; 576+ remains unassigned.
+
+### A39 execution record (completed 2026-09-01)
+
+Phase575 v1 executed once under its prospectively frozen 25-binding contract
+and returned `evidence-independently-confirmed-under-registered-fold-convention`
+on the first execution. The battery - rehearsed deterministically outside
+the repository before the freeze, evaluator shared verbatim with production -
+passed, including the threshold-straddle, unexplained-difference,
+tight-margin, and ESS-mismatch refusal fixtures.
+
+Side consistency reproduced all 72 committed diagnostic rows bit-for-bit
+from the Phase574-retained raw traces alone: an independent third
+reproduction of both the Phase570 and Phase572 diagnostics, this time with
+no replay and no RNG. Exactly the five known rows differ across sides; every
+difference lies in Phase574's measured fold-flip set; and the smallest
+threshold margin exceeds the frozen factor-ten rule by a further factor
+above thirteen, so the ulp effect provably cannot flip any frozen decision.
+Phase572's committed replay and 96-row transition adjudications had agreed
+in full, so the confirmation inputs were present.
+
+Under the registered convention, the Phase570 directional evidence and the
+Phase571 longer-trajectory local-kernel lever are independently confirmed,
+and `prospectiveChainPackPlanningGateOpen` is true. That gate authorizes
+only the registration and prospective freezing of a separate disjoint-seed
+chain-pack DESIGN phase. Phase571's scope is unchanged - local movement
+evidence only, never mixing, convergence, or stationarity - and Phase572's
+terminal and `2e-10` tolerance are never rewritten. No sampling, execution,
+production, launch, physical-unit, or GeV authority follows. External
+review remains pending, `promotedPhysicalMassClaimCount=0`, and registry
+576+ remains unassigned.

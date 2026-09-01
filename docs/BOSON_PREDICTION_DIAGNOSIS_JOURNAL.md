@@ -22609,3 +22609,50 @@ fields, and `promotedPhysicalMassClaimCount=0`. The pass re-ran Phase574
 and the integrity verifier pins its exact output hash, so it doubles as the
 two-run byte-reproducibility check. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T21-19-37-838Z.json`.
+
+## 2026-09-01 - Amendment A39, Phase575: the directional and transition evidence is independently confirmed under the registered fold convention
+
+REGISTERED FOLD-CONVENTION RE-ADJUDICATION (2026-09-01, Amendment A39;
+Phase575 executed): A39 supersedes A36's planning-gate clause by labeled
+amendment, as the standing plan provides: with Phase572's fail-closed
+terminal frozen and fully explained by Phase574, the prospective chain-pack
+planning gate may open only on a favorable terminal of the separately
+registered Phase575, which re-adjudicates the same evidence under a
+prospectively frozen fold-tie-robust convention instead of raw bit equality
+of R-hat.
+
+Phase575 is deterministic, zero-replay, and zero-RNG: its numeric input is
+the Phase574-retained raw directional series plus committed upstream
+outputs. Its frozen row convention requires bit-identical bulk/tail ESS,
+identical classifications, membership of any R-hat difference in the
+measured five-row fold-flip set, and a factor-ten threshold margin. On the
+first frozen execution it reproduced all 72 committed Phase570/572
+diagnostic rows bit-for-bit from the retained traces - an independent third
+reproduction - found exactly the five known differing rows, all explained
+and margin-safe with the smallest margin ratio above thirteen times the
+frozen rule, and verified that Phase572's committed replay and 96-row
+transition adjudications had agreed in full. The terminal is
+`evidence-independently-confirmed-under-registered-fold-convention`.
+
+Consequences, stated precisely: the Phase570 directional evidence and the
+Phase571 longer-trajectory local-kernel lever are independently confirmed
+UNDER THE REGISTERED CONVENTION, and the prospective disjoint-seed
+chain-pack PLANNING gate is open. That gate authorizes only the
+registration and prospective freezing of a separate chain-pack DESIGN
+phase; it grants no sampling, execution, production, or launch authority.
+Phase571's scope is unchanged (local movement evidence only, never mixing,
+convergence, or stationarity), Phase572's terminal and `2e-10` tolerance
+stand unrewritten, protected Phase554 seeds remain unread, external review
+remains pending, and `promotedPhysicalMassClaimCount=0`. Registry 575 is
+complete under A39; 576+ remains unassigned.
+
+The mandatory A39 checkpoint ran 93 steps and skipped 342. It ended at
+`boson-claim-integrity-verified`: Phase202 reported 355 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran Phase575 and the
+integrity verifier pins its exact output hash, so it doubles as the two-run
+byte-reproducibility check. No scanner recorded any new path or text; the
+IMPLEMENTATION_P575.md registrations in the nine exclusion lists landed in
+the same checkpoint. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T22-58-13-033Z.json`.
