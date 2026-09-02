@@ -1612,6 +1612,24 @@ so the entire 561000-force-evaluation sampling result is proven
 byte-reproducible across two full runs. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-02T03-05-39-270Z.json`.
 
+O4 INTERNAL ASSESSMENT (2026-09-02, non-authoritative): at user direction,
+all thirteen O4 items were assessed on their merits in
+`docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md`
+(registered in all nine scanner exclusion lists). Phase485 already records
+that eleven of thirteen items are machine-falsifiable, and several
+falsifiers have been executed and committed. Proposed dispositions: eight
+resolved-supporting (one conditional on the not-yet-run
+collective-coordinate Jacobian self-check), two not-applicable via
+consumer retirement, three insufficient-basis deferrals including both
+human-interpretation items. NO ruling is authored, no intake touched, no
+flag changed; `mayAuthorRuling: false` is honored throughout, and the
+external signer's independence remains the binding requirement for
+authority. The remaining human session is thereby reduced to two judgment
+calls plus sign-off over evidence-backed proposals; the one open machine
+item is the collective-coordinate self-check, available as a small future
+phase if directed.
+
+
 
 
 

@@ -22746,3 +22746,35 @@ Phase577 chain pack and the integrity verifier pins its exact output hash,
 so the entire 561000-force-evaluation sampling result is proven
 byte-reproducible across two full runs. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-02T03-05-39-270Z.json`.
+
+## 2026-09-02 - O4 internal scientific assessment prepared (non-authoritative; no ruling authored)
+
+At user direction, the thirteen O4 items were assessed on their scientific
+merits and the result committed as
+`docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md`. The
+committed Phase485 census already records
+`externalInterpretationStillRequired: false` for eleven of thirteen items,
+and several registered falsifiers have since been executed (Phases 487-492,
+413, 446, 453 in substance). The assessment proposes dispositions with
+evidence pointers: eight resolved-supporting (one conditional on the single
+not-yet-run collective-coordinate self-check), two not-applicable through
+consumer retirement, and three insufficient-basis deferrals, including both
+items Phase485 flags as requiring external interpretation.
+
+Every `mayAuthorRuling: false` boundary is honored: no memo exists, no
+intake was touched, no disposition field was filled, all 31 review-pending
+artifacts remain review-pending, G4 remains missing, and
+`promotedPhysicalMassClaimCount=0`. The document reduces the cost of the
+external engagement without substituting for its independence, which the
+assessing system cannot supply for a program it helped build. The new
+adjudication document is registered in all nine scanner exclusion lists in
+this same checkpoint.
+
+The mandatory O4-assessment checkpoint ran 62 steps and skipped 375. It
+ended at `boson-claim-integrity-verified`: Phase202 remained 357 passed / 3
+standing failures, O4 coverage remained 31/31 with every artifact still
+review-pending, the synthetic-overturn battery remained 94/94, source
+deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. No scanner recorded the new
+adjudication document. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-02T12-06-27-242Z.json`.
