@@ -410,6 +410,7 @@ const string Phase572IndependentDirectionalTransitionAdjudicatorPath = "studies/
 const string Phase573DirectionalEstimatorParityAuditPath = "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_summary_v2.json";
 const string Phase574DirectionalRawTraceFoldOrderLocalizationPath = "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization_summary.json";
 const string Phase575RegisteredFoldConventionReadjudicationPath = "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication_summary.json";
+const string Phase576DisjointSeedChainPackDesignPath = "studies/phase576_disjoint_seed_chain_pack_design_001/output/disjoint_seed_chain_pack_design_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -860,6 +861,7 @@ using var phase572 = TryParseJson(Phase572IndependentDirectionalTransitionAdjudi
 using var phase573 = TryParseJson(Phase573DirectionalEstimatorParityAuditPath);
 using var phase574 = TryParseJson(Phase574DirectionalRawTraceFoldOrderLocalizationPath);
 using var phase575 = TryParseJson(Phase575RegisteredFoldConventionReadjudicationPath);
+using var phase576 = TryParseJson(Phase576DisjointSeedChainPackDesignPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -10354,6 +10356,52 @@ var package = new
                 && JsonBool(phase575.RootElement, "externalReviewPending") is true
                 && JsonInt(phase575.RootElement, "promotedPhysicalMassClaimCount") == 0,
             promotedPhysicalMassClaimCount = JsonInt(phase575.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        disjointSeedChainPackDesign = phase576 is null ? null : new
+        {
+            status = JsonString(phase576.RootElement, "terminalStatus"),
+            verdictKind = JsonString(phase576.RootElement, "verdictKind"),
+            expectedTerminalMatched = JsonString(phase576.RootElement, "verdictKind")
+                == "chain-pack-design-frozen-execution-unauthorized",
+            phaseAndSchemaMatched = JsonInt(phase576.RootElement, "phase") == 576
+                && JsonInt(phase576.RootElement, "schemaVersion") == 1
+                && JsonString(phase576.RootElement, "phaseId") == "phase576-disjoint-seed-chain-pack-design",
+            contractIdMatched = JsonString(phase576.RootElement, "contractId")
+                == "phase576-a40-disjoint-seed-chain-pack-design-v1",
+            contractValid = JsonBool(phase576.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase576.RootElement, "exactBindingsValid"),
+            bindingCount = phase576.RootElement.TryGetProperty("bindings", out var p576MirrorBindings)
+                && p576MirrorBindings.ValueKind == JsonValueKind.Array ? (int?)p576MirrorBindings.GetArrayLength() : null,
+            knownAnswerBatteryPassed = phase576.RootElement.TryGetProperty("knownAnswerBattery", out var p576MirrorBattery)
+                ? JsonBool(p576MirrorBattery, "passed") : null,
+            retainedPerChain = phase576.RootElement.TryGetProperty("derivation", out var p576MirrorDerivation)
+                ? JsonInt(p576MirrorDerivation, "retainedPerChain") : null,
+            estimatedForceEvaluations = p576MirrorDerivation.ValueKind == JsonValueKind.Object
+                ? JsonInt(p576MirrorDerivation, "estimatedForceEvaluations") : null,
+            seedsDisjoint = p576MirrorDerivation.ValueKind == JsonValueKind.Object
+                ? JsonBool(p576MirrorDerivation, "seedsDisjoint") : null,
+            withinCeiling = p576MirrorDerivation.ValueKind == JsonValueKind.Object
+                ? JsonBool(p576MirrorDerivation, "withinCeiling") : null,
+            chainPackExecutionAuthorized = JsonBool(phase576.RootElement, "chainPackExecutionAuthorized"),
+            packTargetsResolutionNotConvergence = JsonBool(phase576.RootElement, "packTargetsResolutionNotConvergence"),
+            phase572TerminalAndToleranceNeverRewritten =
+                JsonBool(phase576.RootElement, "phase572TerminalAndToleranceNeverRewritten"),
+            strictNoAuthorityOrClaimPassed =
+                JsonBool(phase576.RootElement, "chainPackExecutionAuthorized") is false
+                && JsonBool(phase576.RootElement, "newSamplingPerformed") is false
+                && JsonBool(phase576.RootElement, "replayPerformed") is false
+                && JsonBool(phase576.RootElement, "rngUsed") is false
+                && JsonBool(phase576.RootElement, "markovChainAdvanced") is false
+                && JsonBool(phase576.RootElement, "configurationsRetained") is false
+                && JsonBool(phase576.RootElement, "protectedPhase554SeedsRead") is false
+                && JsonBool(phase576.RootElement, "registeredTargetChanged") is false
+                && JsonBool(phase576.RootElement, "productionAuthorized") is false
+                && JsonBool(phase576.RootElement, "launchAuthorized") is false
+                && JsonBool(phase576.RootElement, "physicalUnitClaimAllowed") is false
+                && JsonBool(phase576.RootElement, "gevClaimAllowed") is false
+                && JsonBool(phase576.RootElement, "externalReviewPending") is true
+                && JsonInt(phase576.RootElement, "promotedPhysicalMassClaimCount") == 0,
+            promotedPhysicalMassClaimCount = JsonInt(phase576.RootElement, "promotedPhysicalMassClaimCount"),
         },
     },
     branchLocalDirectInvariantCensus = phase282 is not null

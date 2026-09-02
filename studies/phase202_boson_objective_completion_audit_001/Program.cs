@@ -319,6 +319,7 @@ const string Phase572Path = "studies/phase572_independent_directional_transition
 const string Phase573Path = "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_summary_v2.json";
 const string Phase574Path = "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization_summary.json";
 const string Phase575Path = "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication_summary.json";
+const string Phase576Path = "studies/phase576_disjoint_seed_chain_pack_design_001/output/disjoint_seed_chain_pack_design_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -689,6 +690,7 @@ using var phase572 = File.Exists(Phase572Path) ? JsonDocument.Parse(File.ReadAll
 using var phase573 = File.Exists(Phase573Path) ? JsonDocument.Parse(File.ReadAllText(Phase573Path)) : null;
 using var phase574 = File.Exists(Phase574Path) ? JsonDocument.Parse(File.ReadAllText(Phase574Path)) : null;
 using var phase575 = File.Exists(Phase575Path) ? JsonDocument.Parse(File.ReadAllText(Phase575Path)) : null;
+using var phase576 = File.Exists(Phase576Path) ? JsonDocument.Parse(File.ReadAllText(Phase576Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -8996,6 +8998,49 @@ var registeredFoldConventionReadjudicationPassed = phase575 is not null
     && JsonBool(phase575.RootElement, "gevClaimAllowed") is false
     && JsonBool(phase575.RootElement, "externalReviewPending") is true
     && JsonInt(phase575.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var disjointSeedChainPackDesignPassed = phase576 is not null
+    && JsonInt(phase576.RootElement, "schemaVersion") == 1
+    && JsonInt(phase576.RootElement, "phase") == 576
+    && JsonString(phase576.RootElement, "phaseId") == "phase576-disjoint-seed-chain-pack-design"
+    && JsonString(phase576.RootElement, "contractId") == "phase576-a40-disjoint-seed-chain-pack-design-v1"
+    && JsonBool(phase576.RootElement, "contractValid") is true
+    && JsonBool(phase576.RootElement, "exactBindingsValid") is true
+    && phase576.RootElement.TryGetProperty("bindings", out var p576Bindings)
+    && p576Bindings.ValueKind == JsonValueKind.Array && p576Bindings.GetArrayLength() == 12
+    && phase576.RootElement.TryGetProperty("knownAnswerBattery", out var p576Battery)
+    && JsonBool(p576Battery, "passed") is true
+    && phase576.RootElement.TryGetProperty("upstream", out var p576Upstream)
+    && JsonBool(p576Upstream, "gatePassed") is true
+    && JsonBool(p576Upstream, "phase575PlanningGateOpen") is true
+    && phase576.RootElement.TryGetProperty("derivation", out var p576Derivation)
+    && JsonBool(p576Derivation, "armMatchesContract") is true
+    && JsonInt(p576Derivation, "retainedPerChain") == 1847
+    && JsonInt(p576Derivation, "warmupPerChain") == 278
+    && JsonInt(p576Derivation, "trajectoriesPerChain") == 2125
+    && JsonBool(p576Derivation, "seedsDisjoint") is true
+    && JsonBool(p576Derivation, "withinCeiling") is true
+    && JsonInt(p576Derivation, "estimatedForceEvaluations") == 561000
+    && phase576.RootElement.TryGetProperty("frozenChainPack", out var p576Pack)
+    && JsonString(p576Pack, "packId") == "a40-disjoint-seed-chain-pack-v1"
+    && JsonString(phase576.RootElement, "verdictKind") == "chain-pack-design-frozen-execution-unauthorized"
+    && JsonString(phase576.RootElement, "terminalStatus") == "disjoint-seed-chain-pack-design-chain-pack-design-frozen-execution-unauthorized"
+    && JsonBool(phase576.RootElement, "chainPackExecutionAuthorized") is false
+    && JsonBool(phase576.RootElement, "packTargetsResolutionNotConvergence") is true
+    && JsonBool(phase576.RootElement, "phase571LeverScopeUnchangedLocalMovementOnly") is true
+    && JsonBool(phase576.RootElement, "phase572TerminalAndToleranceNeverRewritten") is true
+    && JsonBool(phase576.RootElement, "newSamplingPerformed") is false
+    && JsonBool(phase576.RootElement, "replayPerformed") is false
+    && JsonBool(phase576.RootElement, "rngUsed") is false
+    && JsonBool(phase576.RootElement, "markovChainAdvanced") is false
+    && JsonBool(phase576.RootElement, "configurationsRetained") is false
+    && JsonBool(phase576.RootElement, "protectedPhase554SeedsRead") is false
+    && JsonBool(phase576.RootElement, "registeredTargetChanged") is false
+    && JsonBool(phase576.RootElement, "productionAuthorized") is false
+    && JsonBool(phase576.RootElement, "launchAuthorized") is false
+    && JsonBool(phase576.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase576.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase576.RootElement, "externalReviewPending") is true
+    && JsonInt(phase576.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -12155,6 +12200,12 @@ var checklist = new[]
         registeredFoldConventionReadjudicationPassed ? "passed" : "failed",
         phase575 is null ? "Phase575 artifact not materialized" : $"verdictKind={JsonString(phase575.RootElement, "verdictKind")}; sideConsistency={(phase575.RootElement.TryGetProperty("adjudication", out var p575ChecklistAdjudication) ? JsonBool(p575ChecklistAdjudication, "sideConsistencyPassed") : null)}; differingRows={(p575ChecklistAdjudication.ValueKind == JsonValueKind.Object ? JsonInt(p575ChecklistAdjudication, "differingRowCount") : null)}; planningGate={JsonBool(phase575.RootElement, "prospectiveChainPackPlanningGateOpen")}; samplingAuthorized=False; promotedPhysicalMassClaimCount={JsonInt(phase575.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase575Path),
+    new ObjectiveChecklistItem(
+        "disjoint-seed-chain-pack-design",
+        "Derive and freeze the disjoint-seed chain pack from committed bytes only, seed-blind, with mandatory raw-trace retention and refusal ceilings, granting no execution or sampling authority.",
+        disjointSeedChainPackDesignPassed ? "passed" : "failed",
+        phase576 is null ? "Phase576 artifact not materialized" : $"verdictKind={JsonString(phase576.RootElement, "verdictKind")}; retained={(phase576.RootElement.TryGetProperty("derivation", out var p576ChecklistDerivation) ? JsonInt(p576ChecklistDerivation, "retainedPerChain") : null)}; forceEvals={(p576ChecklistDerivation.ValueKind == JsonValueKind.Object ? JsonInt(p576ChecklistDerivation, "estimatedForceEvaluations") : null)}; seedsDisjoint={(p576ChecklistDerivation.ValueKind == JsonValueKind.Object ? JsonBool(p576ChecklistDerivation, "seedsDisjoint") : null)}; executionAuthorized={JsonBool(phase576.RootElement, "chainPackExecutionAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase576.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase576Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

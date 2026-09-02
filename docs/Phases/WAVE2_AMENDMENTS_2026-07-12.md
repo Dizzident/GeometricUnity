@@ -1774,3 +1774,77 @@ terminal and `2e-10` tolerance are never rewritten. No sampling, execution,
 production, launch, physical-unit, or GeV authority follows. External
 review remains pending, `promotedPhysicalMassClaimCount=0`, and registry
 576+ remains unassigned.
+
+## Amendment A40 - disjoint-seed chain-pack design (2026-09-01; Phase576)
+
+Phase575 opened `prospectiveChainPackPlanningGateOpen`, which authorizes
+exactly one act: registration and prospective freezing of a disjoint-seed
+chain-pack DESIGN phase. A40 registers that phase. Phase576 is deterministic
+and zero-sampling: every pack quantity is derived from committed bytes, no
+scratch calibration exists anywhere, and the pack is therefore constructed
+seed-blind (`pristineSeedBlindPreregistration=true`), repairing the disclosed
+Phase548 tune-then-confirm weakness.
+
+1. **Phase576 - chain-pack design and pack construction.** Exact-bind the
+   Phase548/550 records and the executed Phase570-575 chain. Derive from the
+   bound bytes only: the proposal arm is the Phase571-supported long arm
+   verbatim (step `0.06`, 32 leapfrog steps, trajectory length `1.92`); the
+   retained trajectory count per chain is
+   `ceil(1.25 * slowestModeTrajectoryLengthEstimate / 1.92)` against
+   Phase548's committed spectral bound; warmup is `ceil(0.15 * retained)`;
+   eight chains run as two four-chain tables with a fresh `900xxx` seed
+   namespace whose disjointness from every committed seed table is
+   machine-verified (protected Phase554 seeds remain unread; namespace
+   separation is asserted, never checked by reading them). The pack mandates
+   raw directional series retention from the start, periodic and final
+   checkpoints, the hardened split rank-normalized R-hat/ESS gates, and
+   names the A39 registered fold convention as the adjudication rule for any
+   future cross-implementation comparison. Refusal ceilings (force
+   evaluations and peak bytes) are frozen with the pack and any derived
+   configuration exceeding them refuses. A known-answer battery over the
+   derivation arithmetic, a planted seed-collision fixture, an over-ceiling
+   refusal fixture, and the terminal truth table runs before any audited
+   numeric read.
+
+The favorable terminal `chain-pack-design-frozen-execution-unauthorized`
+freezes the pack bytes and nothing else. Chain-pack EXECUTION requires a
+separately registered, prospectively frozen phase in a future registry
+extension plus explicit written user sampling authorization; A40 grants no
+sampling, execution, production, or launch authority. The pack targets
+improved resolution of the already-diagnosed under-resolution; it cannot
+promise convergence, and a future execution failing its ESS floors would be
+a preserved first-class negative. Phase571's scope, Phase572's terminal and
+tolerance, protected Phase554 seeds, O4, Phase458, Phase481, and every
+physical-unit and GeV firewall are unchanged. External review remains
+pending and `promotedPhysicalMassClaimCount=0`. Registry 576 is allocated;
+577+ remains unassigned.
+
+### A40 execution record (completed 2026-09-01)
+
+Phase576 v1 executed once under its prospectively frozen 12-binding contract
+and returned `chain-pack-design-frozen-execution-unauthorized` on the first
+execution. The battery passed; the upstream gate verified Phase575's
+favorable terminal with the planning gate open; and every pack quantity was
+derived from committed bytes with no scratch calibration anywhere, so the
+pack is seed-blind by construction.
+
+The frozen pack `a40-disjoint-seed-chain-pack-v1`: the Phase571 long arm
+verbatim (step `0.06`, 32 leapfrog steps, trajectory length `1.92`); eight
+chains in two tables on the fresh `900xxx` namespace, machine-verified
+disjoint from every committed seed with protected Phase554 seeds unread;
+`1847` retained plus `278` warmup trajectories per chain from
+`ceil(1.25 * 2835.7692118162986 / 1.92)` against Phase548's committed
+spectral bound, giving retained integration time `3546.24` per chain;
+`561000` estimated force evaluations within the frozen `620000` ceiling;
+mandatory raw directional series retention; checkpoints every 250
+trajectories plus final; hardened R-hat `1.01` / ESS `100` gates; and the
+A39 registered fold convention named for any future cross-implementation
+adjudication.
+
+The pack targets improved resolution of the diagnosed under-resolution and
+cannot promise convergence; a future execution failing its ESS floors is a
+preserved first-class negative. Chain-pack EXECUTION remains unauthorized:
+it requires a separately registered, prospectively frozen phase in a future
+registry extension plus explicit written user sampling authorization. All
+A40 firewalls are closed, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`.

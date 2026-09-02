@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "phase": 576,
+  "contractId": "phase576-a40-disjoint-seed-chain-pack-design-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A40",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "pristineSeedBlindPreregistration": true,
+  "requiredUpstreamVerdicts": {
+    "phase548": "pilot-executed-diagnostics-invalid",
+    "phase571": "longer-trajectory-local-kernel-lever-supported",
+    "phase575": "evidence-independently-confirmed-under-registered-fold-convention"
+  },
+  "derivationRules": {
+    "armSource": "phase571-contract-v4 proposalArms id long, verbatim",
+    "expectedArm": {
+      "stepSize": 0.06,
+      "leapfrogSteps": 32,
+      "trajectoryLength": 1.92
+    },
+    "retainedRule": "ceil(coverageFactor * slowestModeTrajectoryLengthEstimate / trajectoryLength)",
+    "coverageFactor": 1.25,
+    "warmupRule": "ceil(warmupFraction * retainedPerChain)",
+    "warmupFraction": 0.15,
+    "slowestModeSource": "phase548-summary deterministicPrechecks.slowestModeTrajectoryLengthEstimate",
+    "divergenceThresholdSource": "phase548-contract defaultConfiguration.divergenceAbsoluteDeltaH"
+  },
+  "seedPlan": {
+    "namespace": "900xxx",
+    "tables": [
+      {
+        "id": "chain-pack-a",
+        "seedOffset": 2000000,
+        "seeds": [
+          900101,
+          900103,
+          900107,
+          900109
+        ],
+        "initialScales": [
+          0.015,
+          0.03,
+          0.06,
+          0.12
+        ]
+      },
+      {
+        "id": "chain-pack-b",
+        "seedOffset": 2000000,
+        "seeds": [
+          900201,
+          900203,
+          900207,
+          900209
+        ],
+        "initialScales": [
+          0.02,
+          0.04,
+          0.08,
+          0.16
+        ]
+      }
+    ],
+    "disjointnessVerifiedAgainst": "every seed and excluded seed in the bound phase548 contract and every disclosed phase571 momentum seed",
+    "protectedPhase554SeedsRead": false,
+    "protectedPhase554SeparationBasis": "namespace assertion only; the protected seeds are never read"
+  },
+  "diagnostics": {
+    "estimator": "split rank-normalized and folded R-hat, Geyer bulk ESS, and pooled-rank 5/95-percent indicator tail ESS",
+    "maximumRhat": 1.01,
+    "minimumEss": 100.0,
+    "rawDirectionalSeriesRetentionMandatory": true,
+    "checkpointEveryTrajectories": 250,
+    "finalCheckpointMandatory": true,
+    "adjudicationConvention": "A39 registered fold convention (phase575-contract-v1 rowConvention)"
+  },
+  "resourceRefusal": {
+    "forceEvaluationFormula": "chains * (warmup+retained) * (leapfrogSteps+1)",
+    "maximumForceEvaluations": 620000,
+    "maximumPeakBytes": 536870912,
+    "refuseBeforeFreeze": true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "a40-upstream-gate-refused",
+    "seed-disjointness-violated",
+    "derived-configuration-out-of-ceiling",
+    "chain-pack-design-frozen-execution-unauthorized"
+  ],
+  "authority": {
+    "favorableTerminalFreezesPackOnly": true,
+    "chainPackExecutionAuthorized": false,
+    "executionRequires": "separately registered prospectively frozen phase in a future registry extension plus explicit written user sampling authorization",
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false
+  },
+  "scope": {
+    "packTargetsResolutionNotConvergence": true,
+    "futureEssFloorFailureIsFirstClassNegative": true,
+    "phase571ScopeUnchangedLocalMovementOnly": true,
+    "phase572TerminalAndToleranceNeverRewritten": true
+  },
+  "authorityFirewalls": {
+    "newSamplingPerformed": false,
+    "replayPerformed": false,
+    "rngUsed": false,
+    "markovChainAdvanced": false,
+    "configurationsRetained": false,
+    "phase548Or549TerminalChanged": false,
+    "phase570Or571Or572Reinterpreted": false,
+    "phase572ToleranceRelaxed": false,
+    "registeredBlindSeedTouched": false,
+    "protectedPhase554SeedsRead": false,
+    "registeredTargetChanged": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "sourceOrModelSelected": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "requiredExactBindingCount": 12,
+  "exactBindings": [
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "phase548-summary",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/output/bounded_complete_lattice_pilot_execution_summary.json",
+      "sha256": "ac46846df92c145fff040a8e3efd88a7fe0549f8a5164398e6442e756c5577be"
+    },
+    {
+      "id": "phase550-summary",
+      "path": "studies/phase550_complete_lattice_flat_sector_census_001/output/complete_lattice_flat_sector_census_summary.json",
+      "sha256": "0c0e103317c23436b4617dc470e0bceadcded77acdf2c3c13cc524c9550971cf"
+    },
+    {
+      "id": "phase570-full",
+      "path": "studies/phase570_registered_target_directional_resolution_replay_001/output/registered_target_directional_resolution_replay.json",
+      "sha256": "37c1b815bb7b8af0cbda7bcb6f5bab4cafc69cd38f4dcd6cfa496651c23f809c"
+    },
+    {
+      "id": "phase571-contract-v4",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/preregistration/phase571_bounded_reset_checkpoint_transition_probe_contract_v4.json",
+      "sha256": "83416598aef3e072d33049b98c5319f5b79a96c08e41ddfcd1ae391573dc591d"
+    },
+    {
+      "id": "phase571-full",
+      "path": "studies/phase571_bounded_reset_checkpoint_transition_probe_001/output/bounded_reset_checkpoint_transition_probe.json",
+      "sha256": "fc5ff726ac4ccdf534be7ba5a9f800557bdb85f58ecb931f66fbc4451172807d"
+    },
+    {
+      "id": "phase572-full",
+      "path": "studies/phase572_independent_directional_transition_adjudicator_001/output/independent_directional_transition_adjudicator.json",
+      "sha256": "f94d2178ffed4b140d967473562429065d0c05436ef8baf2e48bef7f800d9bb5"
+    },
+    {
+      "id": "phase573-full",
+      "path": "studies/phase573_directional_estimator_parity_audit_001/output/directional_estimator_parity_audit_v2.json",
+      "sha256": "e0851f8ee4a17637d49dbd62c706b4f9a776ad46328f169d7265c93347d16f47"
+    },
+    {
+      "id": "phase574-full",
+      "path": "studies/phase574_directional_raw_trace_fold_order_localization_001/output/directional_raw_trace_fold_order_localization.json",
+      "sha256": "74e4d2e6c2a0933879a6f67aa3cba65abb92cfee86363b81238d1451c325364e"
+    },
+    {
+      "id": "phase575-contract-v1",
+      "path": "studies/phase575_registered_fold_convention_readjudication_001/preregistration/phase575_registered_fold_convention_readjudication_contract_v1.json",
+      "sha256": "800b5baa128798d52ab9a98f6d0a065417f4c05f00c612bb0a0b4dd098105397"
+    },
+    {
+      "id": "phase575-full",
+      "path": "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication.json",
+      "sha256": "21e94c9e292804c4b810785747d10c345b30b0b4578b5f45b04ac1c80a20ff10"
+    },
+    {
+      "id": "phase575-summary",
+      "path": "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication_summary.json",
+      "sha256": "21e94c9e292804c4b810785747d10c345b30b0b4578b5f45b04ac1c80a20ff10"
+    }
+  ]
+}

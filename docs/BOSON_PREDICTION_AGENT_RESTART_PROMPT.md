@@ -1539,6 +1539,47 @@ IMPLEMENTATION_P575.md registrations in the nine exclusion lists landed in
 the same checkpoint. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T22-58-13-033Z.json`.
 
+DISJOINT-SEED CHAIN-PACK DESIGN (2026-09-01, Amendment A40; Phase576
+executed): the single authority the Phase575 planning gate granted is
+exercised and closed. Phase576 is deterministic, zero-sampling, and
+zero-RNG; every pack quantity derives from committed bytes only, so the
+pack is seed-blind by construction (`pristineSeedBlindPreregistration=true`),
+repairing the disclosed Phase548 tune-then-confirm weakness. The frozen
+pack `a40-disjoint-seed-chain-pack-v1`: the confirmed Phase571 long arm
+verbatim (`0.06 x 32`, trajectory length `1.92`); eight chains in two
+tables on a fresh `900xxx` namespace machine-verified disjoint from every
+committed seed (protected Phase554 seeds unread); `278` warmup plus `1847`
+retained trajectories per chain from
+`ceil(1.25 * 2835.7692118162986 / 1.92)` against Phase548's committed
+slowest-mode estimate - retained integration time `3546.24` per chain,
+eighteen times the pilot's `192`; `561000` force evaluations within the
+frozen `620000` ceiling; mandatory raw directional series retention;
+checkpoints every 250 trajectories plus final; hardened R-hat `1.01` /
+ESS `100` gates; and the A39 registered fold convention named for any
+future cross-implementation adjudication. The terminal is
+`chain-pack-design-frozen-execution-unauthorized`.
+
+THE PROGRAM'S NEXT SAMPLING DECISION NOW RESTS WITH THE USER: chain-pack
+EXECUTION requires a separately registered, prospectively frozen phase in
+a future registry extension (577+) plus explicit written user sampling
+authorization. The pack targets improved resolution of the diagnosed
+under-resolution and cannot promise convergence; an execution failing its
+ESS floors would be a preserved first-class negative. Phase571's scope,
+Phase572's terminal and tolerance, protected Phase554 seeds, O4, Phase458,
+Phase481, and every physical-unit and GeV firewall are unchanged. External
+review remains pending, `promotedPhysicalMassClaimCount=0`, and registry
+577+ remains unassigned.
+
+The mandatory A40 checkpoint ran 93 steps and skipped 343. It ended at
+`boson-claim-integrity-verified`: Phase202 reported 356 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-ran Phase576 and the
+integrity verifier pins its exact output hash, so it doubles as the two-run
+byte-reproducibility check. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-01T23-56-56-057Z.json`.
+
+
 
 The mandatory A38 design checkpoint ran 49 steps and skipped 384. It ended
 at `boson-claim-integrity-verified`: Phase202 reported 353 passed / 3
