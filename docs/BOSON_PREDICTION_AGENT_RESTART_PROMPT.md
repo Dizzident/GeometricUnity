@@ -1629,6 +1629,82 @@ calls plus sign-off over evidence-backed proposals; the one open machine
 item is the collective-coordinate self-check, available as a small future
 phase if directed.
 
+NEXT WORK QUEUE (2026-09-02, user-directed; three items for the next
+session; latest commit `b0a2bb89`):
+
+Registry 578+ is unassigned. Before creating any directory, extend
+`docs/Phases/PHASE_NUMBER_REGISTRY.md` and register a new labeled
+amendment in `docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md` (suggested: one
+amendment A42 allocating 578-580 to the three items below). Every new
+phase must be wired across ALL validation surfaces in the same checkpoint
+(generator, traversal, the NINE scanner exclusions including the new
+IMPLEMENTATION_PNNN.md paths, Phase101 mirror, Phase202 checklist row and
+count, integrity-verifier exact asserts including the Phase101-mirror
+assert and Phase202 count, implementation doc, registry, amendment,
+journal, this restart prompt), validated with the incremental pass, and
+committed without model attribution per the user's standing instruction.
+Recent exemplars to copy for structure: Phases 573-577.
+
+ITEM 1 - Phase578, consolidated conditional electroweak-sector ledger.
+Deterministic, zero-sampling. Exact-bind the committed sources of every
+number: the derived ratio chain (phase404/429 tan^2 = 3/5, sin^2 = 3/8),
+the conditional tree ratio (phase429 mW/mZ = sqrt(5/8), conditional on the
+missing breaking sector), the two-loop running result (phase451 predicted
+0.2076-0.2106 vs measured 0.23122, the 115x honest-band miss), the
+conditional extraction templates (phase433/434), the anchor adjudication
+(phase461 zero anchors; phase464 blocked-upstream-ambiguous with its
+pre-committed no-claim sentence), and the missing-field counts (15/14).
+Assemble ONE ledger artifact: every row carries its value, its complete
+assumption list named at the point of entry, its committed source binding,
+and where a measured comparison exists, the side-by-side value and the
+miss. Include the two known misses explicitly. Hard constraints: every
+row is labeled conditional or derived, never predictional; no unit
+anchor is introduced; `promotedPhysicalMassClaimCount=0` on every branch;
+the ledger's terminal must state that completing the chain to absolute
+masses requires source content adjudicated absent (anchor, extraction
+map, quartic). This is the honest, finished form of the
+assumption-labeled electroweak computation, misses included.
+
+ITEM 2 - Phase579, collective-coordinate Jacobian self-check. The single
+O4 falsifier never executed (Phase485 row O4-F1-COLLECTIVE-COORDINATE,
+self-check "collective-coordinate Jacobian and solvable-limit
+comparison"). Deterministic, zero-sampling. Exact-bind the phase450
+contract and binding-condition record. Reconstruct the collective
+coordinate and its Jacobian on the committed reduced setting; verify the
+Jacobian against an independent finite-difference construction; compare
+against an exactly solvable limit (a Gaussian or free target where the
+constrained integral is known in closed form); verify gauge invariance of
+the coordinate under the registered exact transformations at machine
+precision. Terminals: the falsifier passes (upgrading the
+O4_INTERNAL_ASSESSMENT_2026-09-02.md item from conditional to
+evidence-backed - update that document's row in the same checkpoint) or
+fails (a preserved first-class negative that flags the phase450-lineage
+convention as defective; do NOT touch phase450's committed record). No
+ruling is authored either way; `mayAuthorRuling:false` stands.
+
+ITEM 3 - Phase580, external review packet assembly. Zero-compute,
+following the Phase555 packet pattern. Assemble into one committed packet
+directory: the O4 internal assessment
+(`docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md`, updated
+by Item 2 if that ran first), the coverage register, the memo
+schema/template and signing instructions, the Phase555 escalation packet
+reference, the Phase485 falsifier census, the Item-1 ledger (if built),
+and a short reviewer guide stating exactly what is asked of the signer:
+two genuine judgment calls (O4-P455-SB-MODEL, O4-C3-WS3-MPROBE-SCOPE)
+plus adjudication of the eleven evidence-backed proposals. The packet
+must state plainly that the internal assessment is machine-authored and
+non-authoritative, and that the signer may overturn any proposal. Bind
+every referenced artifact by hash. The packet phase's terminal is
+readiness-only; it satisfies nothing and changes no flag.
+
+Sequencing: Item 2 before Item 3 is preferred (the packet then carries
+the completed falsifier); Item 1 is independent and may run in parallel
+worktrees only for drafting, with root owning integration and all
+validation passes. Standing rules bind throughout: no gate weakened, no
+GeV or physical-unit claim, failed runs preserved, commit only validated
+green checkpoints, no model attribution in commit messages.
+
+
 
 
 
