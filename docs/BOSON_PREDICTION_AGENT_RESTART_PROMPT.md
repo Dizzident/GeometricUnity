@@ -1579,6 +1579,41 @@ integrity verifier pins its exact output hash, so it doubles as the two-run
 byte-reproducibility check. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T23-56-56-057Z.json`.
 
+FIRST FULLY RESOLVED DIRECTIONAL RESULT (2026-09-02, Amendment A41;
+Phase577 executed): the frozen pack `a40-disjoint-seed-chain-pack-v1` ran
+once under the user's written sampling authorization of 2026-09-01
+(recorded verbatim in Amendment A41 and the frozen contract), with the
+contract frozen before the first registered seed was drawn - pristine
+seed-blind preregistration end to end. All eight chains completed with
+zero non-finite and zero divergent trajectories, acceptance
+`0.9327`-`0.9511`, and exactly the budgeted `561000` force evaluations.
+All 36 frozen resolution gates pass decisively: worst R-hat
+`1.0018908422618333`, minimum bulk ESS `1623.52`, minimum tail ESS
+`2713.67`. Telemetry, checkpoints, and all raw directional series are
+retained. The terminal is
+`pack-executed-all-frozen-resolution-gates-pass`: the Phase548
+under-resolution is removed at eighteen times the pilot's integration
+time, as the confirmed Phase571 lever predicted. Workbench-relative
+lattice units only - no stationarity, spectral, physical-unit, or GeV
+claim; Phase458/O4/Phase481/source contracts untouched;
+`promotedPhysicalMassClaimCount=0`. Registry 577 complete; 578+
+unassigned. Candidate next moves (user decision): a separately registered
+stationarity-oriented adjudication lane over the retained artifacts, or
+return to the program's standing human critical path (the O4 external
+engagement).
+
+The mandatory A41 checkpoint ran 93 steps and skipped 344. It ended at
+`boson-claim-integrity-verified`: Phase202 reported 357 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-executed the complete
+Phase577 chain pack and the integrity verifier pins its exact output hash,
+so the entire 561000-force-evaluation sampling result is proven
+byte-reproducible across two full runs. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-02T03-05-39-270Z.json`.
+
+
+
 
 
 The mandatory A38 design checkpoint ran 49 steps and skipped 384. It ended

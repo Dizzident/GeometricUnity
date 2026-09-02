@@ -1848,3 +1848,74 @@ it requires a separately registered, prospectively frozen phase in a future
 registry extension plus explicit written user sampling authorization. All
 A40 firewalls are closed, external review remains pending, and
 `promotedPhysicalMassClaimCount=0`.
+
+## Amendment A41 - chain-pack execution (2026-09-01; Phase577)
+
+USER SAMPLING AUTHORIZATION (recorded verbatim, 2026-09-01): "Perform the
+next step when you're ready, I'll run it over night". This is the explicit
+written user sampling authorization that Phase576's frozen pack requires,
+and its scope is a single execution of `a40-disjoint-seed-chain-pack-v1`.
+
+1. **Phase577 - chain-pack execution.** Freeze the contract before the
+   first registered seed is drawn; the pack was itself derived seed-blind
+   from committed bytes, so this execution is pristine seed-blind
+   preregistration end to end. Exact-bind the Phase576 pack chain and the
+   registered platform sources. Run the estimator known-answer battery and
+   deterministic prechecks (exact origin action and gradient, a directional
+   finite-difference gradient check, and machine reversibility on a frozen
+   deterministic trajectory) before any registered seed is used. Then
+   execute the pack exactly: eight chains in two tables on the frozen
+   `900xxx` seeds, `2125` trajectories per chain at step `0.06` with 32
+   leapfrog steps, per-trajectory telemetry, checkpoints every 250
+   trajectories plus final, and mandatory retention of all 18 raw
+   directional series per chain. Compute the hardened per-table
+   diagnostics (split rank-normalized R-hat at most `1.01`, bulk and tail
+   ESS at least `100`, per series) over the `1847` retained draws per
+   chain. Terminal precedence: invalid input, battery failure, upstream
+   gate, resource refusal, incomplete execution, inconclusive diagnostics,
+   `pack-executed-under-resolved`, and
+   `pack-executed-all-frozen-resolution-gates-pass`.
+
+Both scientific terminals are first-class. A passing terminal establishes
+workbench-relative lattice-unit resolution of the audited directional
+series only: it is never stationarity, sampling correctness beyond the
+frozen gates, a spectral or physical quantity, or a production benchmark,
+and it does not satisfy Phase458, O4, Phase481, a source contract, or any
+physical-unit or GeV claim. An under-resolved terminal is a preserved
+negative that closes the Phase571 lever's transfer question at this pack
+scale. Protected Phase554 seeds remain unread, Phase572's terminal and
+tolerance stand, external review remains pending, and
+`promotedPhysicalMassClaimCount=0`. Registry 577 is allocated; 578+
+remains unassigned.
+
+### A41 execution record (completed 2026-09-02)
+
+Phase577 v1 executed once under its prospectively frozen 11-binding
+contract, which was frozen before the first registered seed was drawn and
+records the user's written sampling authorization verbatim. The estimator
+battery and the deterministic prechecks (exact origin, directional gradient
+error `1.10e-11`, reversibility `3.60e-16`) passed before any registered
+seed was used, and the pack was consumed verbatim with hash-refuse-to-run.
+
+All eight chains completed their 2,125 trajectories at the confirmed long
+arm with zero non-finite and zero divergent trajectories, acceptance
+`0.9327`-`0.9511`, largest absolute energy error `0.7206`, and exactly the
+budgeted `561000` force evaluations. All 36 frozen resolution gates pass
+decisively: worst split rank-normalized R-hat `1.0018908422618333` against
+the `1.01` threshold, minimum bulk ESS `1623.52` and minimum tail ESS
+`2713.67` against the `100` floors. Every mandated artifact is retained:
+per-trajectory telemetry, checkpoints every 250 trajectories plus final,
+and all 18 raw directional series per chain. The terminal is
+`pack-executed-all-frozen-resolution-gates-pass`.
+
+This is the first fully resolved directional diagnostic result on the
+registered target. It removes the Phase548 pilot's under-resolution at
+eighteen times the pilot's integration time, exactly as the independently
+confirmed Phase571 lever predicted, and it validates the A36-A40 chain that
+produced the pack. The claim boundary is unchanged: workbench-relative
+lattice units only; no stationarity, sampling-correctness-beyond-gates,
+spectral, physical-unit, or GeV claim follows; Phase458, O4, Phase481, and
+the source contracts are untouched; Phase572's terminal and tolerance
+stand; protected Phase554 seeds remain unread; external review remains
+pending; and `promotedPhysicalMassClaimCount=0`. Registry 577 is complete
+under A41; 578+ remains unassigned.

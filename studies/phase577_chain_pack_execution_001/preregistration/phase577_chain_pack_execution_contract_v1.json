@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "phase": 577,
+  "contractId": "phase577-a41-chain-pack-execution-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A41",
+  "frozenBeforeFirstExecution": true,
+  "frozenBeforeFirstRegisteredSeedDrawn": true,
+  "pristineSeedBlindPreregistration": true,
+  "userSamplingAuthorization": {
+    "grantedBy": "user",
+    "date": "2026-09-01",
+    "quote": "Perform the next step when you're ready, I'll run it over night",
+    "scope": "single execution of a40-disjoint-seed-chain-pack-v1"
+  },
+  "requiredUpstreamVerdicts": {
+    "phase575": "evidence-independently-confirmed-under-registered-fold-convention",
+    "phase576": "chain-pack-design-frozen-execution-unauthorized"
+  },
+  "packSource": "phase576-full frozenChainPack, consumed verbatim with hash-refuse-to-run",
+  "observablePath": "phase570 scalar edge-space basis and 40-sweep descending unclamped Jacobi (side A), declared; the A39 registered fold convention governs any future cross-implementation adjudication",
+  "prechecks": {
+    "originActionMustBeExactZero": true,
+    "originGradientMustBeExactZero": true,
+    "directionalGradientMaximumScaledError": 1e-06,
+    "reversibilityMaximumRelativeError": 1e-12
+  },
+  "estimatorBattery": {
+    "iidRhat": {
+      "minimumInclusive": 0.99,
+      "maximumInclusive": 1.03
+    },
+    "iidBulkEss": {
+      "minimumInclusive": 800.0,
+      "maximumInclusive": 2200.0
+    },
+    "iidTailEss": {
+      "minimumInclusive": 500.0,
+      "maximumInclusive": 2200.0
+    },
+    "ar1Phi09Rhat": {
+      "minimumInclusive": 1.0,
+      "maximumInclusive": 1.2
+    },
+    "ar1Phi09BulkEss": {
+      "minimumInclusive": 20.0,
+      "maximumInclusive": 400.0
+    },
+    "ar1Phi09TailEss": {
+      "minimumInclusive": 20.0,
+      "maximumInclusive": 600.0
+    },
+    "separatedRhatMinimumExclusive": 1.1
+  },
+  "diagnostics": {
+    "maximumRhat": 1.01,
+    "minimumEss": 100.0,
+    "seriesCount": 18,
+    "tableRowCount": 36
+  },
+  "retention": {
+    "rawDirectionalSeriesRetentionMandatory": true,
+    "telemetryPerTrajectory": true,
+    "checkpointEveryTrajectories": 250,
+    "finalCheckpointMandatory": true
+  },
+  "resourceRefusal": {
+    "forceEvaluationFormula": "chains * trajectories * (leapfrogSteps+1)",
+    "expectedForceEvaluations": 561000,
+    "maximumForceEvaluations": 620000,
+    "maximumPeakBytes": 536870912,
+    "refuseBeforeAllocation": true,
+    "noDenseHessianAllocated": true
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "a41-upstream-gate-refused",
+    "resource-refusal",
+    "pack-execution-incomplete",
+    "pack-diagnostics-inconclusive",
+    "pack-executed-under-resolved",
+    "pack-executed-all-frozen-resolution-gates-pass"
+  ],
+  "claimBoundary": {
+    "workbenchRelativeLatticeUnitsOnly": true,
+    "establishesStationarity": false,
+    "establishesSamplingCorrectnessBeyondFrozenGates": false,
+    "establishesSpectralOrPhysicalQuantity": false,
+    "isProductionBenchmark": false,
+    "underResolvedTerminalIsFirstClassNegative": true
+  },
+  "authorityFirewalls": {
+    "phase548Or549TerminalChanged": false,
+    "phase570Or571Or572Reinterpreted": false,
+    "phase572ToleranceRelaxed": false,
+    "registeredBlindSeedTouched": false,
+    "protectedPhase554SeedsRead": false,
+    "registeredTargetChanged": false,
+    "directionCalledGaugeOrRedundant": false,
+    "quotientApplied": false,
+    "gaugeFixingApplied": false,
+    "measureNormalizationApplied": false,
+    "sourceOrModelSelected": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481PackCreatedOrMutated": false,
+    "productionDefaultSelected": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "requiredExactBindingCount": 11,
+  "exactBindings": [
+    {
+      "id": "phase576-contract-v1",
+      "path": "studies/phase576_disjoint_seed_chain_pack_design_001/preregistration/phase576_disjoint_seed_chain_pack_design_contract_v1.json",
+      "sha256": "8c67c5e80c32833b8c5f1443871bc6b92a81ad8242ae7b861144c5af9f23a74a"
+    },
+    {
+      "id": "phase576-full",
+      "path": "studies/phase576_disjoint_seed_chain_pack_design_001/output/disjoint_seed_chain_pack_design.json",
+      "sha256": "6d178b1cd0738b3655cd5c031cafec9943ebab66d0902a54399c00a5cd60f202"
+    },
+    {
+      "id": "phase576-summary",
+      "path": "studies/phase576_disjoint_seed_chain_pack_design_001/output/disjoint_seed_chain_pack_design_summary.json",
+      "sha256": "6d178b1cd0738b3655cd5c031cafec9943ebab66d0902a54399c00a5cd60f202"
+    },
+    {
+      "id": "phase575-full",
+      "path": "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication.json",
+      "sha256": "21e94c9e292804c4b810785747d10c345b30b0b4578b5f45b04ac1c80a20ff10"
+    },
+    {
+      "id": "phase548-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "shiab-operator",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "id": "mass-matrix",
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "sha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "mesh-topology-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "id": "lie-algebra-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    }
+  ]
+}

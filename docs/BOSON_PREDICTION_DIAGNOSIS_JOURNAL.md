@@ -22701,3 +22701,48 @@ remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
 integrity verifier pins its exact output hash, so it doubles as the two-run
 byte-reproducibility check. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-01T23-56-56-057Z.json`.
+
+## 2026-09-02 - Amendment A41, Phase577: the chain pack executes clean and every frozen resolution gate passes
+
+CHAIN-PACK EXECUTION (2026-09-02, Amendment A41; Phase577 executed): the
+single execution the user's written authorization of 2026-09-01 permitted
+has run and completed. The contract was frozen before the first registered
+seed was drawn; the pack itself was derived seed-blind from committed
+bytes; and no scratch calibration exists anywhere in the lineage, so this
+is the program's first pristine seed-blind preregistered sampling result
+end to end.
+
+All eight chains completed their 2,125 trajectories at the confirmed long
+arm (step `0.06`, 32 leapfrog steps, trajectory length `1.92`) with zero
+non-finite and zero divergent trajectories, acceptance `0.9327`-`0.9511`,
+largest absolute energy error `0.7206`, and exactly the budgeted `561000`
+force evaluations. All 36 frozen per-table resolution gates pass
+decisively: worst split rank-normalized R-hat `1.0018908422618333`
+(threshold `1.01`), minimum bulk ESS `1623.52`, minimum tail ESS `2713.67`
+(floors `100`). Per-trajectory telemetry, periodic and final checkpoints,
+and all 18 raw directional series per chain are retained as committed
+artifacts, so any future adjudicator can replay, recompute, or apply the
+A39 fold convention without re-sampling.
+
+The scientific meaning is exactly this and no more: the Phase548 pilot's
+diagnosed under-resolution is removed at eighteen times the pilot's
+integration time, as the independently confirmed Phase571 lever predicted,
+and the A36-A40 diagnostic-and-design chain is validated by a clean
+prospective test. The result is workbench-relative and in lattice units.
+It establishes no stationarity, no sampling correctness beyond the frozen
+gates, no spectral or physical quantity, and no production benchmark; it
+does not satisfy Phase458, O4, Phase481, or a source contract; and it
+supports no physical-unit or GeV claim. Phase572's terminal and tolerance
+stand, protected Phase554 seeds remain unread, external review remains
+pending, and `promotedPhysicalMassClaimCount=0`. Registry 577 is complete
+under A41; 578+ remains unassigned.
+
+The mandatory A41 checkpoint ran 93 steps and skipped 344. It ended at
+`boson-claim-integrity-verified`: Phase202 reported 357 passed / 3 standing
+failures, O4 coverage remained 31/31, the synthetic-overturn battery
+remained 94/94, source deficits remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The pass re-executed the complete
+Phase577 chain pack and the integrity verifier pins its exact output hash,
+so the entire 561000-force-evaluation sampling result is proven
+byte-reproducible across two full runs. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-02T03-05-39-270Z.json`.
