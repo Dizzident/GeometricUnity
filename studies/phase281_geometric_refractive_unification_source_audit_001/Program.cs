@@ -779,6 +779,45 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P575.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P576.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P577.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P578.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P579.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P580.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P581.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P582.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P583.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P584.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P585.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P586.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P587.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P588.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P589.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P590.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P591.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P592.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P593.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/SIGNED-SECTION-ACTION-LEADS-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/RECONSTRUCTION-ACTION-SECTION-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/SOURCE-CLIFFORD-CONTRACTION-20260908.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/CHIRAL-COMPANION-ASSUMPTIONS-20260908.md"
+    || normalizedPath.StartsWith("studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase579_collective_coordinate_jacobian_self_check_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase580_external_review_packet_assembly_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase581_collective_coordinate_assumption_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase582_relative_transport_observable_control_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase583_biconnection_convention_reconciliation_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase584_signed_spatial_curvature_consistency_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase585_quotient_section_measure_controls_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase586_action_restriction_pairing_controls_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase587_exact_residual_factorization_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase588_fixed_domain_action_force_consistency_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase589_section_density_joint_lift_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase590_source_clifford_tensor_controls_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase591_source_hodge_curvature_branch_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase592_companion_tensor_chirality_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase593_companion_action_first_variation_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "phase461-electroweak-anchor-evidence-snapshot-v1",
+  "sourcePhase": 461,
+  "sourcePath": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+  "sourceSha256AtExtraction": "33991dceb1114074ca7cd6c89bdb00a246fcdb845d372ee9aa0c54be1c44f1e3",
+  "projectionPolicy": "Canonical projection of scientific fields only; volatile generatedAt metadata is intentionally excluded.",
+  "verdictKind": "declared-comparison-consistency-only",
+  "importCleanTrialsSurvivingHitCount": 0,
+  "comparisonWindowsGeV": {
+    "massW": 80.377,
+    "massZ": 91.1876
+  },
+  "reconstructedRefereeReading": {
+    "readingId": "M(1,1)-full",
+    "windowId": "vevEw246",
+    "convention": "cc-plane-squared",
+    "killFactor": 451.10527021047886,
+    "killBandLo": 300,
+    "killBandHi": 700,
+    "windowRole": "referee-reconstruction-only",
+    "windowBannedFromLiveVerdicts": true
+  },
+  "promotional": false,
+  "promotedPhysicalMassClaimCount": 0
+}

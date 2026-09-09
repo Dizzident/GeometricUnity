@@ -1,0 +1,3490 @@
+{
+  "schemaVersion": 1,
+  "phase": 593,
+  "phaseId": "phase593-companion-action-first-variation-audit",
+  "contractId": "phase593-a49-companion-action-first-variation-v1",
+  "contractSha256": "cde88414f1af7790f472d81419250b826f1c25fd9dd844639ebcf98919001fa4",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "bindingCount": 10,
+  "uniqueBindingIdCount": 10,
+  "uniqueBindingPathCount": 10,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Program.cs",
+      "sha256": "6ca291a18e95e95228188e55f47d17af1d662d75662c7a3b834373929ccce788",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj",
+      "sha256": "c421dc2a581d894ec92b236e16750a358a9dd5d2711488331f35e1ce6436f12c",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/STUDY.md",
+      "sha256": "210c5daf97a9c3f7ae99901a6ed8f64031db60db2a63ea936ab535c0c928e40a",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-program",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Program.cs",
+      "sha256": "c2be95aafa4aeabb794615f4350539c1667783de00f54523a933fa30eea40987",
+      "hashMatches": true
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "companion-action-variation-mismatch-certified-source-choice-open",
+  "terminalStatus": "companion-action-variation-mismatch-certified-source-choice-open",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "wordsPassed": true,
+    "hodgePassed": true,
+    "polynomialKnownAnswerPassed": true,
+    "wordCases": 256,
+    "hodgeCases": 16384,
+    "chainPassed": true,
+    "realFormPassed": true,
+    "variationPassed": true,
+    "dualPairingPassed": true,
+    "massPassed": true,
+    "csPassed": true,
+    "operatorWitnessRows": 5,
+    "coefficientRows": 10,
+    "polynomialRows": 20,
+    "nonzeroMismatchRows": 10,
+    "zeroFormalCRows": 10,
+    "amplitudeChecks": 100,
+    "zeroAmplitudeChecks": 40,
+    "massChecks": 15,
+    "tensorRows": [
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 0,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [
+          {
+            "formMask": 2,
+            "cliffordMask": 4,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "rawAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 1,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [],
+        "rawAction": [],
+        "force": []
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [
+          {
+            "formMask": 2,
+            "cliffordMask": 4,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 2,
+            "cliffordMask": 16379,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "rawAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [],
+        "rawAction": [],
+        "force": []
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [
+          {
+            "formMask": 2,
+            "cliffordMask": 4,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 2,
+            "cliffordMask": 16379,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "rawAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [],
+        "rawAction": [],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [
+          {
+            "formMask": 0,
+            "cliffordMask": 4,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "lowered": [
+          {
+            "formMask": 1,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 8,
+            "cliffordMask": 12,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 16,
+            "cliffordMask": 20,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 32,
+            "cliffordMask": 36,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 64,
+            "cliffordMask": 68,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 128,
+            "cliffordMask": 132,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 256,
+            "cliffordMask": 260,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 512,
+            "cliffordMask": 516,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 1024,
+            "cliffordMask": 1028,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 2048,
+            "cliffordMask": 2052,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 4096,
+            "cliffordMask": 4100,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 8192,
+            "cliffordMask": 8196,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "rawAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-4",
+            "imaginary": "0"
+          }
+        ],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [],
+        "rawAction": [],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [
+          {
+            "formMask": 0,
+            "cliffordMask": 4,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "lowered": [
+          {
+            "formMask": 1,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 8,
+            "cliffordMask": 12,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 16,
+            "cliffordMask": 20,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 32,
+            "cliffordMask": 36,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 64,
+            "cliffordMask": 68,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 128,
+            "cliffordMask": 132,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 256,
+            "cliffordMask": 260,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 512,
+            "cliffordMask": 516,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 1024,
+            "cliffordMask": 1028,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 2048,
+            "cliffordMask": 2052,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 4096,
+            "cliffordMask": 4100,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 8192,
+            "cliffordMask": 8196,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-4",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "rawAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "curvaturePassed": true,
+        "typed": true,
+        "fullTensorPassed": true,
+        "curvature": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "innerLower": [],
+        "lowered": [],
+        "rawAction": [],
+        "force": []
+      }
+    ],
+    "rows": [
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 0,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 0,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 1,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "cSlot": 1,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "4",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "-8",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-4/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 0,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "cSlot": 1,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 0,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "derivativeAtZ0": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "candidateAtZ0": [],
+        "mismatch": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "-16/3",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "encoding": 1,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "cSlot": 1,
+        "encoding": 2,
+        "expectedPassed": true,
+        "action": [],
+        "derivativeAtZ0": [],
+        "candidateAtZ0": [],
+        "mismatch": [],
+        "amplitudeRows": [
+          {
+            "x": 1,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "zero": false,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "zero": true,
+            "passed": true,
+            "derivative": {
+              "real": "0",
+              "imaginary": "0"
+            },
+            "force": {
+              "real": "0",
+              "imaginary": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "massRows": [
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "derivative": [],
+        "force": []
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "canonical",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "derivative": [],
+        "force": []
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "derivative": [],
+        "force": []
+      },
+      {
+        "witness": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "derivative": [],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "derivative": [],
+        "force": []
+      },
+      {
+        "witness": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "derivative": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 1,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ]
+      }
+    ],
+    "csRows": [
+      {
+        "encoding": 1,
+        "passed": true,
+        "normalizedAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "directDerivative": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "literalOneThirdDerivative": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "encoding": 2,
+        "passed": true,
+        "normalizedAction": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "directDerivative": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "force": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "literalOneThirdDerivative": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ]
+      }
+    ],
+    "reweightingRows": [
+      {
+        "h": -1,
+        "passed": true,
+        "firstSlope": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "firstTarget": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "secondSlope": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-4",
+            "imaginary": "0"
+          }
+        ],
+        "secondTarget": [],
+        "firstRequiredAlpha": "1",
+        "secondRequiredAlpha": "0",
+        "compatible": false
+      },
+      {
+        "h": 1,
+        "passed": true,
+        "firstSlope": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "firstTarget": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "secondSlope": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "4",
+            "imaginary": "0"
+          }
+        ],
+        "secondTarget": [],
+        "firstRequiredAlpha": "1",
+        "secondRequiredAlpha": "0",
+        "compatible": false
+      }
+    ],
+    "sourceChoiceOpen": true,
+    "registeredCoreChanged": false
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

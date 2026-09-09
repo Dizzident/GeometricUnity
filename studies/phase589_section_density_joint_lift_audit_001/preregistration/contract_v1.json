@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "phase": 589,
+  "contractId": "phase589-a47-section-density-joint-lift-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Compact local density/FP identifiability and twelve fixed actual-code Ward tests for one projected literal joint completion; section-before-discretization remains open",
+  "fixtures": {
+    "signs": [
+      -1,
+      1
+    ],
+    "profiles": [
+      "zero",
+      "commuting-constant",
+      "periodic-noncommuting"
+    ],
+    "profileDefinition": "p0=0; p1=(Jx/8)dx0; p2=(Jx/8+cos(k*x0)Jy/16)dx0+(Jy/4+sin(k*x0)Jz/8)dx1",
+    "generators": [
+      "constant-z",
+      "periodic-z"
+    ],
+    "generatorDefinition": "alpha0=Jz; alpha1=(sin(k*x0)+cos(k*x1)/2)Jz; k=2*pi/3",
+    "meshExtent": 3,
+    "expectedVertices": 81,
+    "expectedEdges": 1215,
+    "expectedFaces": 4050,
+    "expectedCells": 1944,
+    "member": "sd2/id0; EinsteinCoefficient=0.5; independent-theta; LowestIndex; default CpuMassMatrix",
+    "expectedWardCases": 12,
+    "expectedGlobalCases": 6,
+    "expectedOriginCases": 4,
+    "ordinaryReference": "A0=0; proposed omega=p; theta tangent equals alpha at vertices",
+    "steps": [
+      0.0000152587890625,
+      0.00000762939453125
+    ],
+    "arithmeticTolerance": 1e-12,
+    "integralTolerance": 2e-12,
+    "derivativeTolerance": 2e-7,
+    "wardZeroMaximum": 1e-10,
+    "wardDecisiveMinimumExclusive": 0.000001,
+    "gaussOrder": 16,
+    "gaussNewtonIterations": 20,
+    "gaussianHalfWidth": 12,
+    "gaussianSimpsonPanels": 4096,
+    "gaussianTolerance": 2e-10,
+    "gaussianPrecisions": [
+      1,
+      2
+    ],
+    "gaussianExpectedRadialMoments": [
+      3,
+      1.5
+    ],
+    "chartRadiiPiMultipliers": [
+      0,
+      0.5,
+      1
+    ],
+    "toyBackground": [
+      1,
+      0,
+      0
+    ],
+    "toyPoint": [
+      2,
+      1,
+      -1
+    ],
+    "toyAnglePiMultiplier": 0.3333333333333333,
+    "toyGaugeAxisAnglePiMultipliers": [
+      0,
+      0.5,
+      0
+    ],
+    "toyWrongShiftMinimumDefect": 1,
+    "trigControlFrequencyPairs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "closedPeriodIntegralExpected": 0,
+    "equalEndpointCosineIntegralExpected": 3,
+    "coreFileCount": 726,
+    "estimatedCpuSeconds": 45,
+    "maximumEstimatedCpuSeconds": 60,
+    "estimatedPeakBytes": 268435456,
+    "maximumEstimatedPeakBytes": 536870912
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Local derivative Log(exp(alpha)) at identity is I independently of action invariance or a global section; FP-measure use needs separate gauge premises",
+    "Right-trivialized exponential differential determinant is sinc(r/2)^2: 1,8/pi^2,4/pi^2 at r=0,pi/2,pi; the last is a boundary limit",
+    "For C_h=R(h)^-1B-B, Phi=R(e)(c*p+B)-B is right invariant; opposite affine shift fails the declared nonstabilizing gauge fixture",
+    "Equal Jacobians and invariance allow densities yielding radial Gaussian moments 3 and 3/2; the registered density is not selected",
+    "Exact Fourier integrals and independent direct-trig Gauss integrals agree, including periodic lifts, reversal, derivative endpoints and closed face displacements",
+    "The six global-generator rows and four origin rows are mandatory controls; no nonzero Ward row is presumed for the remaining menu",
+    "Any controlled ratio above1e-6 rejects only this literal projected completion; all ratios <=1e-10 survive only this bounded test; intermediate rows without a witness remain unresolved",
+    "Derivative and mandatory control failures dominate all scientific outcomes; a controlled existential witness dominates intermediate rows; no old sampled slice is rejected or changed"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "mandatory-control-failed",
+    "numerical-derivative-control-failed",
+    "density-nonselection-proved-literal-joint-lift-rejected-section-first-open",
+    "unresolved-numerical-sensitivity",
+    "density-nonselection-proved-joint-lift-survives-bounded-test-section-first-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/Program.cs",
+      "sha256": "ead03c8f5055d258aaebdb12715877c2cebbc76fb951db414f627cfefc9039d6"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/Phase589SectionDensityJointLiftAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "proof",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/STUDY.md",
+      "sha256": "cce7a69e3777bd2371e99d347b258f87000a07bbd393702ad0e650b1a8a07b39"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70"
+    },
+    {
+      "id": "phase585-summary",
+      "path": "studies/phase585_quotient_section_measure_controls_001/output/quotient_section_measure_controls_summary.json",
+      "sha256": "0538c3e58949fd6d575b74505e198723e9d7ed092a238542f70790bd92a7ca08"
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97"
+    },
+    {
+      "id": "pilot-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"
+    },
+    {
+      "id": "pilot-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49"
+    },
+    {
+      "id": "pack-program",
+      "path": "studies/phase577_chain_pack_execution_001/Program.cs",
+      "sha256": "f71523518bb1c8cd801bfe612a72db987a543051e4305b0d5a7e99e2af73af9f"
+    },
+    {
+      "id": "pack-contract",
+      "path": "studies/phase577_chain_pack_execution_001/preregistration/phase577_chain_pack_execution_contract_v1.json",
+      "sha256": "b3dd65f4726f3cb85b8454db1124dba4307cba58c358874ba2857e2fd3e109df"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

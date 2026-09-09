@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "phase": 586,
+  "contractId": "phase586-a46-action-restriction-pairing-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "amplitudes": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "couplings": [
+      -2,
+      0,
+      2
+    ],
+    "signs": [
+      -1,
+      1
+    ],
+    "reference": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "relative": [
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        -1,
+        0,
+        1
+      ]
+    ],
+    "referenceCurl": [
+      1,
+      -1,
+      2
+    ],
+    "relativeCurl": [
+      -2,
+      1,
+      1
+    ],
+    "direction": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        0
+      ]
+    ],
+    "directionCurl": [
+      1,
+      2,
+      -1
+    ],
+    "eta": [
+      1,
+      -1,
+      1
+    ],
+    "etaDerivative": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        -1
+      ]
+    ],
+    "step": 0.0000152587890625,
+    "exactTolerance": 1e-12,
+    "derivativeTolerance": 2e-7,
+    "nonzeroFloor": 0.01,
+    "meshExtent": 1,
+    "metric": "positive-euclidean",
+    "carrier": "R6: K(f)=(f,0), C(t1,t2)=(t1,t2)",
+    "linearMaps": [
+      [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    ],
+    "fieldRedefinition": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "hessian": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "degreeAmplitudes": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "mathematical-control-failed",
+    "action-restriction-controls-pass-pairing-bridge-unresolved"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/Program.cs",
+      "sha256": "b9f8f9230e612e57c5b270ed5fc15fab7e8ff07b94ec09cd6db4d8254c1dc54e"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/Phase586ActionRestrictionPairingControls.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70"
+    },
+    {
+      "id": "curvature-core",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "id": "shiab-core",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "id": "torsion-core",
+      "path": "src/Gu.ReferenceCpu/TrivialTorsionCpu.cs",
+      "sha256": "363d0d628ca54184bf09da03b90ab740984df5dad54976a33f0f0781d7184064"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/STUDY.md",
+      "sha256": "f35938cf119f271f579b9590937c3a96525631886e88dec89dab315e55f9d1bf"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

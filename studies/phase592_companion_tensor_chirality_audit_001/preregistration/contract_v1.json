@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "phase": 592,
+  "contractId": "phase592-a49-companion-tensor-chirality-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Exact formal companion-tensor tied-branch identities on the full algebraic Riemann space; universal matching, diagnostic null pairing and opposite input/output chirality only, with source choices open",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "phi1": "(a+b*Omega)*G",
+    "phi2": "(c+i*d*Omega)*Gamma2",
+    "parameters": "a,b,c,d formal real",
+    "curvature": "F_ab=(1/2) sum_(c<d) R_abcd sigma_c sigma_d gamma_c gamma_d",
+    "hodge": "star(theta^I)=shuffle(I,Icomplement)*product_sigma(I)*theta^Icomplement",
+    "chain": "star1_inverse([Phi1 wedge star(F)]_first-(1/2)*star([Phi1 wedge star([Phi2 wedge star(F)]_inner)]_outer))",
+    "brackets": {
+      "C": "XY-YX",
+      "A": "i*(XY+YX)"
+    },
+    "branches": [
+      "CCC",
+      "CCA",
+      "AAC",
+      "AAA"
+    ],
+    "formalMonomials": [
+      "a",
+      "b",
+      "ac",
+      "bc",
+      "ad",
+      "bd"
+    ],
+    "basis": {
+      "diagonalCount": 91,
+      "sharedIndexCount": 1092,
+      "quadrupleCount": 1001,
+      "bianchiRowCount": 2002,
+      "totalCount": 3185,
+      "quadrupleCoordinates": "t1=R_abcd,t2=R_acbd,t3=R_adbc; t1-t2+t3=0",
+      "quadrupleRows": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    "anchors": [
+      "flat",
+      "positive-plane-01",
+      "mixed-plane-07",
+      "constant-K1",
+      "nonzero-Weyl-01021323"
+    ],
+    "weylDiagonalPlanes": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        -1
+      ],
+      [
+        1,
+        3,
+        -1
+      ],
+      [
+        2,
+        3,
+        1
+      ]
+    ],
+    "parameterRows": [
+      {
+        "id": "chiral-d-plus",
+        "a": 1,
+        "b": -1,
+        "c": 2,
+        "d": 1,
+        "matches": true,
+        "invertible": false
+      },
+      {
+        "id": "chiral-d-minus",
+        "a": 1,
+        "b": 1,
+        "c": -3,
+        "d": -1,
+        "matches": true,
+        "invertible": false
+      },
+      {
+        "id": "canonical-invertible",
+        "a": 1,
+        "b": 0,
+        "c": 1,
+        "d": 0,
+        "matches": false,
+        "invertible": true
+      },
+      {
+        "id": "mixed-invertible",
+        "a": 2,
+        "b": 1,
+        "c": -2,
+        "d": 1,
+        "matches": false,
+        "invertible": true
+      },
+      {
+        "id": "null-wrong-d",
+        "a": 1,
+        "b": 1,
+        "c": 0,
+        "d": 1,
+        "matches": false,
+        "invertible": false
+      },
+      {
+        "id": "trivial-zero",
+        "a": 0,
+        "b": 0,
+        "c": 7,
+        "d": 3,
+        "matches": true,
+        "invertible": false
+      }
+    ],
+    "matchingEquations": [
+      "a+b*d=0",
+      "b+a*d=0"
+    ],
+    "normPolynomial": "14*(-a^2+b^2)",
+    "scalarFlatRicciPlanes": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        -1
+      ]
+    ],
+    "chiralitySigns": [
+      -1,
+      1
+    ],
+    "axisCount": 14,
+    "expectedChiralityCases": 28,
+    "negativeControls": [
+      "opposite-companion-sign",
+      "same-input-output-projector",
+      "null-wrong-d",
+      "invertible-universal-match",
+      "self-pairing-implies-mixed-pairing-zero",
+      "scalar-flat-enforces-parameters"
+    ],
+    "knownAnswerGrades": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "expectedCliffordWordCases": 44944,
+    "expectedHodgeCases": 16384,
+    "expectedBasisBranchCases": 12740,
+    "expectedBasisCoefficientCases": 76440,
+    "expectedAnchorCases": 5,
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 30,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 536870912
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Omega squared is +1; it commutes with even and anticommutes with odd Clifford elements under the bound (7,7) convention",
+    "The 3185 independent sparse basis rows span algebraic Riemann curvature only; six formal slots in four tied branches give 76440 coefficient comparisons",
+    "CCC=-(a+bOmega)J; CCA=-(a+bOmega)J-(dR/2)(b+aOmega)G; AAC=0; AAA=(cR/2)(a+bOmega)G",
+    "Universal CCA matching to -(a+bOmega)(J-RG/2) is equivalent to a+bd=b+ad=0; the positive-plane scalar2 and distinct grades1/13 prove necessity",
+    "Nontrivial solutions have a!=0,d=+/-1,b=-da,c arbitrary; trivial a=b=0 permits any c,d; invertible a^2!=b^2 cannot match universally",
+    "Exact polynomial certificates dE2-E1=a(d^2-1), dE1-E2=b(d^2-1), aE1-bE2=a^2-b^2 and both formal sign substitutions pass",
+    "The declared norm polynomial is14(-a^2+b^2); nullity neither suffices for matching nor establishes source inadmissibility",
+    "Chiral matching tensors proportional to Pi_-d gamma map input S_d to output S_-d; 28 incorrect same-sign input controls are detected",
+    "Same-chiral odd coefficient products vanish but opposite traces equal64 sigma_a; Omega dagger H=-H Omega and Pi_h dagger H Pi_h=0",
+    "Scalar-flat nonzero-Ricci input matches even the canonical invertible row; equations are necessary for all-curvature matching, not for a fixed scalar-flat input",
+    "Source Eq9.4 mixed torsion/contraction trace is not a residual self-square; no zero-action, kinetic, physical projection or source-choice conclusion follows"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "riemann-basis-control-failed",
+    "companion-branch-control-failed",
+    "parameter-chirality-control-failed",
+    "companion-tensor-chirality-controls-pass-source-choice-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Program.cs",
+      "sha256": "c2be95aafa4aeabb794615f4350539c1667783de00f54523a933fa30eea40987"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Phase592CompanionTensorChiralityAudit.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/STUDY.md",
+      "sha256": "722dc3a89cd5331ed9005723beebae5705a55375406b473d8be408d76cd17e3c"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase590-summary",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/output/source_clifford_tensor_controls_summary.json",
+      "sha256": "21d3e4b1bbcb54a030f4c2de56eef909503405a9f414eac713ed9134a7ae365d"
+    },
+    {
+      "id": "phase590-contract",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/preregistration/contract_v1.json",
+      "sha256": "028664b9aba7241c2c63da46fe13799d444b893bef08634cc4cd15cb48a4a4ac"
+    },
+    {
+      "id": "phase591-summary",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json",
+      "sha256": "0de24e16dbafee7ec713f8cabc8a69ca45f14a3a080da98031a5b9b366d1c797"
+    },
+    {
+      "id": "phase591-contract",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/preregistration/contract_v1.json",
+      "sha256": "0ff70e732c234cb1426c6a3b16f948b7a84cec6250bf70003d61ab0d8a84683f"
+    },
+    {
+      "id": "phase591-program",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/Program.cs",
+      "sha256": "d46532729600526cb2a19f0a9a553dcc4078478ecfa9400b21137ebfe9c096b9"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

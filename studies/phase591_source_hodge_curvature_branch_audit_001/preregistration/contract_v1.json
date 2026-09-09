@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "phase": 591,
+  "contractId": "phase591-a48-source-hodge-curvature-branch-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Canonical invariant subfamily only; exact literal source-inspired signed Hodge curvature chain on the full algebraic Riemann space with conditional bracket and normalization choices",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "canonicalPhi1": "lambda1 sum_a theta^a gamma_a",
+    "canonicalPhi2": "lambda2 sum_(a<b) theta^ab gamma_a gamma_b",
+    "curvature": "F_ab=(1/2) sum_(c<d) R_abcd sigma_c sigma_d gamma_c gamma_d",
+    "hodge": "star(theta^I)=shuffle(I,Icomplement)*product_sigma(I)*theta^Icomplement",
+    "chain": "star1_inverse([Phi1 wedge star(F)]_first-(1/2)*star([Phi1 wedge star([Phi2 wedge star(F)]_inner)]_outer))",
+    "brackets": {
+      "C": "XY-YX",
+      "A": "i*(XY+YX)"
+    },
+    "primaryBranches": [
+      "CCC",
+      "CCA",
+      "AAC",
+      "AAA"
+    ],
+    "enlargedBranches": [
+      "CCC",
+      "CCA",
+      "CAC",
+      "CAA",
+      "ACC",
+      "ACA",
+      "AAC",
+      "AAA"
+    ],
+    "formalMonomials": [
+      "lambda1",
+      "lambda1*lambda2"
+    ],
+    "basis": {
+      "diagonalCount": 91,
+      "sharedIndexCount": 1092,
+      "quadrupleCount": 1001,
+      "bianchiRowsPerQuadruple": 2,
+      "bianchiRowCount": 2002,
+      "totalCount": 3185,
+      "quadrupleCoordinates": "t1=R_abcd,t2=R_acbd,t3=R_adbc; t1-t2+t3=0",
+      "quadrupleRows": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "pivotRule": "diagonal or shared coordinate; quadruple row1 t1 and row2 t3"
+    },
+    "anchors": [
+      "flat",
+      "positive-plane-01",
+      "mixed-plane-07",
+      "constant-K1",
+      "nonzero-Weyl-01021323"
+    ],
+    "weylDiagonalPlanes": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        -1
+      ],
+      [
+        1,
+        3,
+        -1
+      ],
+      [
+        2,
+        3,
+        1
+      ]
+    ],
+    "constantCurvatureExpectedRaisedRicci": 13,
+    "constantCurvatureExpectedScalar": 182,
+    "offRiemannDecoys": [
+      "M_01_02=1 only; no symmetric transpose",
+      "M_01_23=M_23_01=1; other disjoint coordinates zero"
+    ],
+    "expectedBasisBranchCases": 25480,
+    "expectedBasisPrimaryCases": 12740,
+    "expectedAnchorCases": 5,
+    "knownAnswerCliffordLeftMaximumGrade": 2,
+    "knownAnswerCliffordRightMaximumGrade": 4,
+    "expectedCliffordWordCases": 155926,
+    "expectedHodgeCases": 16384,
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 45,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 536870912
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "The 91 diagonal,1092 shared-index and2002 Bianchi rows have unique pivot coordinates and span the3185-dimensional algebraic Riemann space",
+    "Signed Hodge squares are (-1)^(r*(14-r)+7), star(top)=-1 and inverse star on degree1 is star on degree13",
+    "With the declared curvature half-factor, first C is minus Ricci with its Clifford index raised; first A is zero by Bianchi",
+    "Inner C vanishes by pair symmetry; inner A is (i/2)*Scal times identity, with grade4 removed by Bianchi",
+    "CCC/CCA/CAC give -lambda1*RicGamma; CAA adds lambda1*lambda2*Scal*Gamma/2; ACC/ACA/AAC vanish; AAA is lambda1*lambda2*Scal*Gamma/2",
+    "The primary tied-Phi1 family is CCC,CCA,AAC,AAA by our explicit restriction; independent CAA is enlarged diagnostic, not author-selected",
+    "Flat vanishes; positive plane has scalar2; mixed plane R0707=1 has scalar-2; constant K1 has raised Ricci13 and scalar182; the fixed nonzero Weyl anchor has zero Ricci/scalar",
+    "Pair-asymmetric and Bianchi-violating inputs retain nonzero Clifford grades2,3,4, rejecting extrapolation of restricted identities to arbitrary gauge curvature",
+    "Canonical and volume-dual invariant directions are not exhausted by bracket/normalization choices here; no source action, pairing, physical particle or mass is selected"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "riemann-basis-control-failed",
+    "literal-contraction-control-failed",
+    "canonical-source-hodge-curvature-branches-pass-choice-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/Program.cs",
+      "sha256": "d46532729600526cb2a19f0a9a553dcc4078478ecfa9400b21137ebfe9c096b9"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/Phase591SourceHodgeCurvatureBranchAudit.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/STUDY.md",
+      "sha256": "bc7d251bb386115bc793907ac9ea41f84e83aeca2decc7aa2789746960d33385"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase590-summary",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/output/source_clifford_tensor_controls_summary.json",
+      "sha256": "21d3e4b1bbcb54a030f4c2de56eef909503405a9f414eac713ed9134a7ae365d"
+    },
+    {
+      "id": "phase590-contract",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/preregistration/contract_v1.json",
+      "sha256": "028664b9aba7241c2c63da46fe13799d444b893bef08634cc4cd15cb48a4a4ac"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

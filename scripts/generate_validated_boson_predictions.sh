@@ -446,6 +446,22 @@ dotnet run --no-build -c Release --project studies/phase574_directional_raw_trac
 dotnet run --no-build -c Release --project studies/phase575_registered_fold_convention_readjudication_001/Phase575RegisteredFoldConventionReadjudication.csproj
 dotnet run --no-build -c Release --project studies/phase576_disjoint_seed_chain_pack_design_001/Phase576DisjointSeedChainPackDesign.csproj
 dotnet run --no-build -c Release --project studies/phase577_chain_pack_execution_001/Phase577ChainPackExecution.csproj
+dotnet run --no-build -c Release --project studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/Phase578ConsolidatedConditionalElectroweakSectorLedger.csproj
+dotnet run --no-build -c Release --project studies/phase579_collective_coordinate_jacobian_self_check_001/Phase579CollectiveCoordinateJacobianSelfCheck.csproj
+dotnet run --no-build -c Release --project studies/phase580_external_review_packet_assembly_001/Phase580ExternalReviewPacketAssembly.csproj
+dotnet run --no-build -c Release --project studies/phase581_collective_coordinate_assumption_audit_001/Phase581CollectiveCoordinateAssumptionAudit.csproj
+dotnet run --no-build -c Release --project studies/phase582_relative_transport_observable_control_001/Phase582RelativeTransportObservableControl.csproj
+dotnet run --no-build -c Release --project studies/phase583_biconnection_convention_reconciliation_001/Phase583BiconnectionConventionReconciliation.csproj
+dotnet run --no-build -c Release --project studies/phase584_signed_spatial_curvature_consistency_001/Phase584SignedSpatialCurvatureConsistency.csproj
+dotnet run --no-build -c Release --project studies/phase585_quotient_section_measure_controls_001/Phase585QuotientSectionMeasureControls.csproj
+dotnet run --no-build -c Release --project studies/phase586_action_restriction_pairing_controls_001/Phase586ActionRestrictionPairingControls.csproj
+dotnet run --no-build -c Release --project studies/phase587_exact_residual_factorization_audit_001/Phase587ExactResidualFactorizationAudit.csproj
+dotnet run --no-build -c Release --project studies/phase588_fixed_domain_action_force_consistency_001/Phase588FixedDomainActionForceConsistency.csproj
+dotnet run --no-build -c Release --project studies/phase589_section_density_joint_lift_audit_001/Phase589SectionDensityJointLiftAudit.csproj
+dotnet run --no-build -c Release --project studies/phase590_source_clifford_tensor_controls_001/Phase590SourceCliffordTensorControls.csproj
+dotnet run --no-build -c Release --project studies/phase591_source_hodge_curvature_branch_audit_001/Phase591SourceHodgeCurvatureBranchAudit.csproj
+dotnet run --no-build -c Release --project studies/phase592_companion_tensor_chirality_audit_001/Phase592CompanionTensorChiralityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "phase": 578,
+  "contractId": "phase578-a42-consolidated-conditional-electroweak-sector-ledger-v4",
+  "supersedesContractId": "phase578-a42-consolidated-conditional-electroweak-sector-ledger-v3",
+  "refreezeReason": "Phase207 required an enumeration-time filter for the integrity verifier and the already-registered Phase578-580 generated diagnostics, rather than blocker-only classification; that final scanner fix regenerated Phase213 after v3 execution, so v4 changes only the Phase213 binding and preserves v3 in lineage.",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A42 item 1",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "comparisonPolicy": {
+    "knownElectroweakMissCount": 2,
+    "knownElectroweakMissRowIds": [
+      "conditional-tree-w-z-mass-ratio",
+      "conditional-running-weak-angle"
+    ],
+    "anchorReconstructionIsSeparateNonPromotionalEvidence": true,
+    "measuredValuesAreComparisonOnly": true,
+    "measuredValuesNeverSupplyAUnitAnchor": true
+  },
+  "requiredRows": [
+    "derived-embedding-tan-squared",
+    "derived-embedding-sin-squared",
+    "conditional-tree-w-z-mass-ratio",
+    "conditional-running-content-template",
+    "conditional-running-weak-angle",
+    "conditional-photon-extraction-template",
+    "conditional-z-extraction-template",
+    "conditional-w-plus-extraction-template",
+    "conditional-w-minus-extraction-template",
+    "conditional-electric-charge-template",
+    "conditional-mass-squared-ratio-template",
+    "derived-anchor-menu-status",
+    "derived-anchor-adjudication-status",
+    "derived-source-lineage-missing-field-counts"
+  ],
+  "requiredAssumptionIdsByRow": {
+    "derived-embedding-tan-squared": [
+      "compact-d5-embedding-chain",
+      "tree-level-unification-point",
+      "hypercharge-normalization-from-committed-kernel",
+      "no-running-or-threshold-content"
+    ],
+    "derived-embedding-sin-squared": [
+      "committed-three-fifths-kernel-ratio",
+      "exact-sin-from-tan-identity",
+      "tree-level-unification-point",
+      "no-running-or-threshold-content"
+    ],
+    "conditional-tree-w-z-mass-ratio": [
+      "committed-three-eighths-tree-angle",
+      "custodial-tree-level-limit",
+      "one-complex-doublet-breaking-sector-exists",
+      "vev-amplitude-cancels-only-after-breaking-sector-is-assumed",
+      "no-pole-running-or-threshold-corrections",
+      "measured-mass-values-are-declared-comparison-imports-only"
+    ],
+    "conditional-running-content-template": [
+      "three-families-imported-structural-parameter",
+      "one-complex-higgs-doublet-conditional",
+      "asymptotic-freedom-positive-one-loop-convention",
+      "gut-normalized-hypercharge",
+      "breaking-sector-not-established"
+    ],
+    "conditional-running-weak-angle": [
+      "committed-three-eighths-unification-boundary",
+      "three-families-imported-structural-parameter",
+      "one-complex-higgs-doublet-conditional",
+      "alpha-em-and-alpha-s-are-declared-low-energy-inputs",
+      "observed-sin-squared-is-falsification-target-only",
+      "two-loop-yukawa-traces-omitted",
+      "declared-matching-and-step-threshold-band-only",
+      "generic-unification-not-gu-specific"
+    ],
+    "conditional-photon-extraction-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "committed-three-eighths-angle",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "conditional-z-extraction-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "committed-three-eighths-angle",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "conditional-w-plus-extraction-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "charged-basis-convention",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "conditional-w-minus-extraction-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "charged-basis-convention",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "conditional-electric-charge-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "committed-three-eighths-angle",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "conditional-mass-squared-ratio-template": [
+      "one-complex-doublet-breaking-sector-exists",
+      "tree-level-custodial-limit",
+      "committed-three-eighths-angle",
+      "vev-amplitude-cancels-only-after-breaking-sector-is-assumed",
+      "conditional-template-not-extraction-theorem"
+    ],
+    "derived-anchor-menu-status": [
+      "finite-preregistered-reading-menu",
+      "declared-comparison-imports-only",
+      "look-elsewhere-correction-applied",
+      "banned-vev-window-used-for-referee-reconstruction-only",
+      "no-import-clean-trials-surviving-anchor"
+    ],
+    "derived-anchor-adjudication-status": [
+      "committed-thirty-three-symbol-grading",
+      "no-physicist-ruling-on-record",
+      "phase461-reading-menu-has-zero-surviving-anchors",
+      "partial-closure-is-uncitable",
+      "ambiguous-does-not-mean-forbidden"
+    ],
+    "derived-source-lineage-missing-field-counts": [
+      "phase213-contract-field-definitions",
+      "no-later-artifact-fills-a-source-lineage-field",
+      "counts-are-deficits-not-candidate-values",
+      "promotion-remains-closed"
+    ]
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "source-values-or-statuses-inconsistent",
+    "ledger-shape-or-assumption-coverage-invalid",
+    "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent"
+  ],
+  "terminalStatement": "The assumption-labeled electroweak chain is complete only as a derived/conditional ledger, misses included; completing it to absolute masses requires source content adjudicated absent: a unit anchor, an observed-field extraction map/theorem, and quartic/breaking-sector content.",
+  "requiredExactBindingCount": 8,
+  "exactBindings": [
+    {
+      "id": "phase404-full",
+      "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+      "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+    },
+    {
+      "id": "phase429-full",
+      "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+      "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+    },
+    {
+      "id": "phase433-full",
+      "path": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger.json",
+      "sha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87"
+    },
+    {
+      "id": "phase434-full",
+      "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+      "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+    },
+    {
+      "id": "phase451-full",
+      "path": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger.json",
+      "sha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6"
+    },
+    {
+      "id": "phase461-full",
+      "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+      "sha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820"
+    },
+    {
+      "id": "phase464-full",
+      "path": "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract.json",
+      "sha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551"
+    },
+    {
+      "id": "phase213-full",
+      "path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json",
+      "sha256": "53789a3407424503d3156307a0c0de9bff99c471f4a5d4a1c0eca3d0c6f01b36"
+    }
+  ],
+  "authorityFirewalls": {
+    "samplingAuthorized": false,
+    "samplingPerformed": false,
+    "rngUsed": false,
+    "unitAnchorIntroduced": false,
+    "absoluteMassComputed": false,
+    "predictionalRowAllowed": false,
+    "sourceContractFieldFilled": false,
+    "phase201OrPhase256Mutated": false,
+    "o4Discharged": false,
+    "physicistRulingAuthored": false,
+    "productionAuthorized": false,
+    "launchAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

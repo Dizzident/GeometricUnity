@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "phase": 586,
+  "phaseId": "phase586-action-restriction-pairing-controls",
+  "contractId": "phase586-a46-action-restriction-pairing-v1",
+  "contractSha256": "23d9906b61c2cc901251865c5a489efbd99648255cc4879c2bf32c3aeaa3f462",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "bindingCount": 10,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/Program.cs",
+      "sha256": "b9f8f9230e612e57c5b270ed5fc15fab7e8ff07b94ec09cd6db4d8254c1dc54e",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/Phase586ActionRestrictionPairingControls.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-core",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "shiab-core",
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112",
+      "hashMatches": true
+    },
+    {
+      "id": "torsion-core",
+      "path": "src/Gu.ReferenceCpu/TrivialTorsionCpu.cs",
+      "sha256": "363d0d628ca54184bf09da03b90ab740984df5dad54976a33f0f0781d7184064",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/STUDY.md",
+      "sha256": "f35938cf119f271f579b9590937c3a96525631886e88dec89dab315e55f9d1bf",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "action-restriction-controls-pass-pairing-bridge-unresolved",
+  "terminalStatus": "action-restriction-controls-pass-pairing-bridge-unresolved",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "sourceAnchorsPresent": true,
+    "actionRestriction": {
+      "commutingPassed": true,
+      "commutingRows": [
+        {
+          "t": -2,
+          "kappa": -2,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 8,
+          "expected": 8,
+          "rowPassed": true
+        },
+        {
+          "t": -2,
+          "kappa": 0,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": -2,
+          "kappa": 2,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 8,
+          "expected": 8,
+          "rowPassed": true
+        },
+        {
+          "t": -1,
+          "kappa": -2,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 2,
+          "expected": 2,
+          "rowPassed": true
+        },
+        {
+          "t": -1,
+          "kappa": 0,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": -1,
+          "kappa": 2,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 2,
+          "expected": 2,
+          "rowPassed": true
+        },
+        {
+          "t": 0,
+          "kappa": -2,
+          "coefficientNorm": 0,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": 0,
+          "kappa": 0,
+          "coefficientNorm": 0,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": 0,
+          "kappa": 2,
+          "coefficientNorm": 0,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": 1,
+          "kappa": -2,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 2,
+          "expected": 2,
+          "rowPassed": true
+        },
+        {
+          "t": 1,
+          "kappa": 0,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": 1,
+          "kappa": 2,
+          "coefficientNorm": 5.196152422706632,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 2,
+          "expected": 2,
+          "rowPassed": true
+        },
+        {
+          "t": 2,
+          "kappa": -2,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 8,
+          "expected": 8,
+          "rowPassed": true
+        },
+        {
+          "t": 2,
+          "kappa": 0,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 0,
+          "expected": 0,
+          "rowPassed": true
+        },
+        {
+          "t": 2,
+          "kappa": 2,
+          "coefficientNorm": 10.392304845413264,
+          "curvatureNorm": 0,
+          "registeredObjective": 0,
+          "gradientNorm": 0,
+          "toyObjective": 8,
+          "expected": 8,
+          "rowPassed": true
+        }
+      ],
+      "registeredFixture": "open n=1 mesh, theta=0, sd2/id0, no periodic ensemble equivalence",
+      "torsionContributionOmissionIsNotRelativeFieldConstraint": true,
+      "sourceDiscussesZeroCoupling": true,
+      "sourceCouplingSelected": false
+    },
+    "referenceVariation": {
+      "variationsPassed": true,
+      "referenceIdentityError": 0,
+      "referenceOmissionDefect": 4.58257569495584,
+      "referenceCurvatureNorm": 3,
+      "variationRows": [
+        {
+          "c": -1,
+          "kappa": -2,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.862645149230957E-09,
+          "epsilonResidualDerivativeError": 4.656612873077393E-10,
+          "epsilonActionDerivativeError": 0,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.862645149230957E-09,
+          "rowPassed": true
+        },
+        {
+          "c": -1,
+          "kappa": 0,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.6298145055770874E-09,
+          "epsilonResidualDerivativeError": 0,
+          "epsilonActionDerivativeError": 0,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.6298145055770874E-09,
+          "rowPassed": true
+        },
+        {
+          "c": -1,
+          "kappa": 2,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.862645149230957E-09,
+          "epsilonResidualDerivativeError": 4.656612873077393E-10,
+          "epsilonActionDerivativeError": 4.6566128730773926E-09,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.862645149230957E-09,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "kappa": -2,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.862645149230957E-09,
+          "epsilonResidualDerivativeError": 4.656612873077393E-10,
+          "epsilonActionDerivativeError": 0,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.862645149230957E-09,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "kappa": 0,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.6298145055770874E-09,
+          "epsilonResidualDerivativeError": 0,
+          "epsilonActionDerivativeError": 0,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.6298145055770874E-09,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "kappa": 2,
+          "pResidualDerivativeError": 0,
+          "pActionDerivativeError": 1.862645149230957E-09,
+          "epsilonResidualDerivativeError": 4.656612873077393E-10,
+          "epsilonActionDerivativeError": 4.6566128730773926E-09,
+          "referenceResidualDerivativeError": 0,
+          "referenceActionDerivativeError": 1.862645149230957E-09,
+          "rowPassed": true
+        }
+      ],
+      "carrier": "R6: K(F12)=(F12,0); C(T1,T2)=(T1,T2)",
+      "carrierIsIllustrative": true,
+      "epsilonDependentSourceKNotInstantiated": true
+    },
+    "quadraticForms": {
+      "pairingPassed": true,
+      "pairingRows": [
+        {
+          "mapIndex": 0,
+          "q": 0,
+          "isometry": false,
+          "sourceHessian": 1,
+          "registeredHessian": 1,
+          "finiteHessian": 1.0000000009313226,
+          "rowPassed": true
+        },
+        {
+          "mapIndex": 0,
+          "q": 1,
+          "isometry": false,
+          "sourceHessian": 25,
+          "registeredHessian": 7,
+          "finiteHessian": 25,
+          "rowPassed": true
+        },
+        {
+          "mapIndex": 1,
+          "q": 0,
+          "isometry": true,
+          "sourceHessian": 1,
+          "registeredHessian": 1,
+          "finiteHessian": 1.0000000002328306,
+          "rowPassed": true
+        },
+        {
+          "mapIndex": 1,
+          "q": 1,
+          "isometry": true,
+          "sourceHessian": 7,
+          "registeredHessian": 7,
+          "finiteHessian": 7,
+          "rowPassed": true
+        }
+      ],
+      "spectrumControlsPassed": true,
+      "referenceEigen": [
+        1,
+        1
+      ],
+      "nonIsoEigen": [
+        1,
+        4
+      ],
+      "isoEigen": [
+        1,
+        1
+      ],
+      "originalEigen": [
+        1.381966011250105,
+        3.618033988749895
+      ],
+      "ordinaryTransformedEigen": [
+        6.2638974728778845,
+        28.736102527122114
+      ],
+      "generalizedEigen": [
+        1.381966011250105,
+        3.618033988749895
+      ],
+      "degreeControlsPassed": true,
+      "degreeRows": [
+        {
+          "t": 0,
+          "registeredObjective": 0,
+          "mappedObjective": 0
+        },
+        {
+          "t": 1,
+          "registeredObjective": 1,
+          "mappedObjective": 0.5
+        },
+        {
+          "t": 2,
+          "registeredObjective": 10,
+          "mappedObjective": 2
+        },
+        {
+          "t": 3,
+          "registeredObjective": 45,
+          "mappedObjective": 4.5
+        }
+      ],
+      "fourthDifference": 6,
+      "mappedFourthDifference": 0,
+      "sourceLinearMapSpecified": false,
+      "physicalPoleExtractionPerformed": false
+    },
+    "nextRequirement": "Specify actual source carrier maps and pulled-back pairing, reference/epsilon dependence, and compatible first-order variational identities before any action or spectral bridge."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

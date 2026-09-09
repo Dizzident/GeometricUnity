@@ -1919,3 +1919,393 @@ the source contracts are untouched; Phase572's terminal and tolerance
 stand; protected Phase554 seeds remain unread; external review remains
 pending; and `promotedPhysicalMassClaimCount=0`. Registry 577 is complete
 under A41; 578+ remains unassigned.
+## Amendment A42 - conditional electroweak ledger, collective-coordinate self-check, and review packet (2026-09-02; Phases578-580)
+
+The Phase577 chain pack has removed the registered directional-resolution
+deficit without creating stationarity, spectral, physical-unit, or GeV
+authority. The non-authoritative O4 internal assessment has reduced the
+remaining external engagement to two genuine judgment calls, eleven proposed
+evidence-backed dispositions, and one outstanding machine falsifier. A42
+allocates three deterministic, zero-sampling phases to finish the honest
+conditional electroweak record, execute that falsifier, and assemble the
+external review materials. No phase in this amendment authors an O4 ruling,
+changes an intake or pending flag, or grants sampling, production, launch,
+physical-unit, or GeV authority.
+
+1. **Phase578 - consolidated conditional electroweak-sector ledger.**
+   Exact-bind every committed numeric and status source used by the derived
+   coupling-ratio chain, conditional tree mass ratio, two-loop running
+   comparison, conditional extraction templates, anchor adjudication, and
+   source-lineage missing-field counts. Each ledger row must carry its value,
+   complete assumptions at the point of entry, exact source binding, and any
+   available measured comparison and miss. Both known misses are explicit.
+   Every row is labeled conditional or derived, never predictional; no unit
+   anchor is introduced; every branch preserves
+   `promotedPhysicalMassClaimCount=0`. The terminal must record that absolute
+   masses still require source content already adjudicated absent: an anchor,
+   observed-field extraction map, and quartic/breaking-sector content.
+
+2. **Phase579 - collective-coordinate Jacobian self-check.** Exact-bind the
+   Phase450 contract and binding-condition record, reconstruct the committed
+   reduced-setting collective coordinate and its Jacobian, compare that
+   Jacobian with an independent finite-difference construction, compare the
+   constrained construction with an exactly solvable Gaussian/free limit,
+   and verify coordinate invariance under the registered exact
+   transformations at machine precision. A passing falsifier may update the
+   internal assessment's conditional proposal to evidence-backed; failure is
+   a preserved first-class negative against the Phase450-lineage convention.
+   Phase450 itself remains immutable and `mayAuthorRuling:false` holds in all
+   terminals.
+
+3. **Phase580 - external-review packet assembly.** After Phases578 and 579,
+   assemble one zero-compute packet containing the updated non-authoritative
+   O4 internal assessment, coverage register, memo schema/template and signing
+   instructions, Phase555 escalation-packet reference, Phase485 falsifier
+   census, Phase578 ledger, and a reviewer guide. The guide asks for two
+   genuine judgment calls (`O4-P455-SB-MODEL` and
+   `O4-C3-WS3-MPROBE-SCOPE`) plus adjudication of the eleven evidence-backed
+   proposals, states that the internal assessment is machine-authored and
+   non-authoritative, and makes clear that the independent signer may overturn
+   any proposal. Every referenced artifact is hash-bound. The terminal is
+   readiness-only: it satisfies nothing and changes no flag.
+
+Registry 578-580 is allocated by this amendment; its 581+ frontier is superseded by A43 below.
+External review remains pending and `promotedPhysicalMassClaimCount=0`.
+
+### A42 execution record (completed 2026-09-02)
+
+Phase578 exact-bound eight committed sources and emitted a fourteen-row
+derived/conditional ledger. It records the tree-ratio miss
+`0.7905694150420949` versus `0.8814466001956406` and the two-loop weak-angle
+miss `0.21063705618289308` versus `0.23122` (115.125 honest bands), while
+classifying Phase461's `451.10527021047886` anchor kill separately. The
+source-lineage deficits remain 15 W/Z and 14 Higgs; no unit anchor or absolute
+mass is introduced. Its terminal is
+`conditional-ledger-complete-absolute-masses-blocked`.
+
+Phase579 reconstructed the Phase450 reduced coordinate, passed the analytic
+versus finite-difference Jacobian check (`2.1526e-11`) and the free-Gaussian
+solvable limit (`8.2601e-14`), but failed the decisive active fixed-ray
+gauge-invariance gate: exact global adjoint rotations changed the coordinate
+by `0.018092493622111343` on the frozen generic state and
+`0.9157447490058648` on the registered ray against `5e-14`. Simultaneously
+rotating the ray and field preserved the pairing to `1.3878e-17`, but that is
+passive covariance and cannot satisfy active invariance. The preserved
+terminal is `phase450-lineage-convention-defective-preserved-negative`;
+Phase450 is unchanged and the O4 internal proposal returns to defer.
+
+Phase580 exact-bound twelve review artifacts and assembled the committed
+reviewer guide plus byte-identical full/summary packet manifests. The packet
+presents exactly two genuine judgment calls and eleven evidence-backed
+proposals, explicitly treating Phase579 as adverse evidence rather than
+support. It discloses the empty reviewer registry and strict Phase480 signing
+prerequisites. Its terminal is
+`external-review-packet-assembled-readiness-only`: no memo is authenticated or
+consumed, no ruling is authored, and no flag changes. External review remains
+pending and `promotedPhysicalMassClaimCount=0`.
+
+### A43 - Collective-coordinate assumption audit (2026-09-08)
+
+The user requests continuation and a fresh challenge to the assumptions without
+requiring an external physicist for further investigation. Allocate Phase581
+for a deterministic mathematical successor to the Phase579 negative. This is
+within the exploratory self-audit lane; no external ruling is manufactured.
+
+Before execution, freeze program/project and Phase450/579 input hashes, exact
+integer rotation fixtures, tolerances, controls, and terminal precedence. Prove
+that orthogonality to one's own adjoint-orbit tangents is automatic, and that
+no nonzero fixed linear functional on a direct sum of adjoint triples is
+invariant under all global rotations. Test a nonlinear alternative using the
+24 proper signed permutation matrices, independently checking their first
+and second moments and the resulting quadratic Gram formula. Distinguish
+global invariance from local connection invariance with a pure-gauge link
+control on a triangle; this control selects no lowering for registered fields.
+Use an exactly solvable isotropic Gaussian radial distribution to distinguish
+a nonzero probability-density mode from dynamical symmetry breaking. Include
+the Jacobian and compare radius versus squared-radius density conventions.
+
+These checks may narrow what Phase450-lineage evidence can establish and
+specify requirements for an observable successor. They cannot repair or
+reinterpret frozen outputs, select an action, supply a Higgs field, establish
+local gauge symmetry, normalize the registered measure, or determine a pole.
+No sampler, replay, protected seed, production allocation, or intake is used.
+No phase opens through this result; O4 and existing physical gates remain.
+Registry 581 is allocated; its 582+ frontier is superseded by A44 below. Every terminal retains
+`promotedPhysicalMassClaimCount=0`.
+
+### A44 - Relative two-connection transport observable control (2026-09-08)
+
+The user requests continuation of the Phase581 follow-up. Allocate Phase582
+for a deterministic, zero-sampling construction motivated by the primary
+draft's two-connection difference in Eq. 12.6. This is our declared compact
+link-model derivation, not a claim that the author specified this lattice
+operator or that the registered variables already implement it.
+
+Before first execution freeze source/program/project hashes, fixtures, analytic
+limits, tolerances, and terminal precedence. Use U and V on a common oriented
+edge, transforming at both endpoints, and R=UV^-1. Test covariance of V built
+from a reference transport and two epsilon endpoints; test conjugation of R,
+invariance of q=(3-Tr_Ad R)/4, independent complex-matrix products, pure-gauge
+controls, a stale-reference decoy, and arbitrary SU(2) sign lifts. The
+fundamental trace is a deliberately rejected SO(3)-descent control.
+
+Test 4q/a^2 against the directional norm of A-B using constant noncommuting
+fields and centered affine profiles, with frozen spacing and midpoint ladders.
+Distinguish this classical one-edge consistency check from an action-level or
+quantum continuum limit. Derive and integrate the conditional Haar density of
+q; do not equate it with the registered noncompact coefficient measure.
+
+The result may provide a locally invariant candidate within its declared link
+model. It cannot establish the registered transformation bridge, select its
+measure, replace its action, identify a physical Higgs, open Phase561, discharge
+O4, satisfy Phase458, modify Phase481, authorize sampling/production, or create
+a physical mass claim. Preserve all existing inputs and terminals. No sampler,
+protected seed, or saved configuration is used. Registry 582 is allocated;
+583+ was unassigned at A44. Every terminal has promotedPhysicalMassClaimCount=0.
+
+### A45 - Bi-connection convention reconciliation (2026-09-08)
+
+The user asks to move to the next task. Allocate Phase583 for a prospective,
+zero-sampling audit of the conflicting signs in draft Eqs. 6.11, 6.13 and
+6.18-6.20. Freeze program/project, primary text and upstream hashes before
+first execution. Enumerate all eight triples (c,s,r) in {+1,-1}^3 for
+A=A0+c p, tau_s(h)=(h,s h^-1 d0 h), and
+pi_r=epsilon p epsilon^-1+r(d0 epsilon)epsilon^-1. The original group product,
+right connection action, and B=A0 dot epsilon remain fixed in this menu.
+
+Analytic predictions: common connection covariance requires c*s=1; quotient
+invariance requires s+r=0; the original right-action stabilizer requires
+s=-1. Exactly two triples satisfy the first two, related by p -> -p.
+Use exact integer SO(3) matrices and independently composed first jets with a
+nonzero reference connection to check product-rule cocycles, every residual,
+and the compatible dictionary c*pi_r=epsilon(A-B)epsilon^-1. Include a
+nonconstant Cartan gauge witness with A=B initially: the printed mixed signs
+give a nonzero difference, while either consistent family retains zero.
+
+This is a bounded convention repair menu, not an exhaustive repair theorem
+for the draft, a choice of author intent, or an equivalence proof for actions.
+Neither branch identifies registered omega with p or T. A coefficient sign
+flip has finite-dimensional absolute Jacobian one only; it neither supplies
+an interacting measure nor permits replacing the registered measure by Haar.
+No registered code or source text changes, no old terminal is reinterpreted,
+no review ruling is authored, and no physical, sampling or production gate
+opens. Every terminal retains promotedPhysicalMassClaimCount=0. Registry
+583 is allocated; its 584+ frontier is superseded by A46 below.
+
+### A46 - Parallel concrete research-lead controls (2026-09-08)
+
+The user explicitly requests pushing the concrete research leads in parallel.
+Allocate Phase584 for actual-assembler signed spatial consistency, Phase585
+for conditional quotient-section/measure and regulated-cocycle controls, and
+Phase586 for source-action restriction and omitted-map quadratic-form controls.
+Three workers may implement disjoint study directories; the coordinating agent
+owns registry, shared integration, reference ledger, restart and journal.
+
+Each study must freeze program/project, exact input bindings, fixture menu,
+analytic predictions, thresholds and terminal precedence before first scientific
+execution. Workers submit the prospective pack for coordinator review before
+running. Build-only checks may precede freezing. Preserve any failed frozen run
+and use a versioned successor for scientific changes. No core operator changes.
+
+Phase584 tests both omega=+A and omega=-A/output=-F conventions using genuine
+smooth edge integrals and spatial refinement through the registered assembler,
+including affine noncommuting profiles, vertex permutations and the original
+fixed-mesh weak-field decoy. The identity Q_reg+Q_loop=[x,x+y+z] motivates
+paired-sign leading spatial consistency but cannot remove the fixed-mesh
+O(t^2) defect or prove a quantum limit for rough sampled fields.
+
+Phase585 tests the section epsilon=I and finite affine-coordinate Jacobian
+under declared assumptions, distinguishes right tilted, background-frame and
+left actions, and challenges regulator closure/cocycle assumptions explicitly.
+Do not call a first-jet gauge group compact or replace its derivative fibers
+by normalized Haar. A compact finite toy cocycle must be labeled as such;
+naive finite differences need not satisfy the product rule. The existing
+Phase548/577 targets already freeze theta=0; no off-slice test alone rejects
+their conditional quotient interpretation. No registered measure is selected.
+
+Phase586 distinguishes removal of a torsion contribution from T=0, carries
+nonzero-reference terms/variations in a declared compatible carrier, and tests
+when omitted field-independent linear maps preserve quadratic forms, generalized
+eigenvalues and polynomial degree. Compact positive-pairing controls are not
+the full source action; source section12.4's zero-coupling discussion is not
+author selection of that member. No arbitrary carrier map may be promoted.
+
+All results are exploratory deterministic mathematics, not source-action or
+particle identification, full-theory adjudication, a new O4 ruling, sampling,
+production, or a mass prediction. Phase561 stays closed, existing negatives
+remain unchanged, all authority flags remain false, and every terminal retains
+promotedPhysicalMassClaimCount=0. Registry 584-586 allocated; the 587+ frontier
+is superseded by A47 below.
+
+### A47 - Parallel reconstruction, action and section-density tests (2026-09-08)
+
+The user requests continued concrete progress, retaining parallel research.
+Allocate Phase587 to the exact single-simplex residual-factorization test,
+Phase588 to fixed-domain smooth action and signed directional-force controls,
+and Phase589 to conditional section-density and literal joint-lift controls.
+Workers own only their study directories and implementation notes; the main
+agent owns shared integration. The A46 research note and reviewed temporary
+proposals supply prospective leads, not executed results or fixed source choices.
+
+Before first scientific execution, freeze each program/project/proof, exact
+input/source-tree bindings, complete fixtures, analytic predictions, tolerances,
+resource bounds and terminal precedence. Build-only checks may precede freezing.
+Submit each pack for coordinator review and explicit first-run approval. Preserve
+every failed frozen run; scientific repair requires a versioned successor.
+
+Phase587 uses a single oriented standard4-simplex, exact rational W,Q,P,R,M
+and incidence D. Preserve PD=D as a positive flat-tangent control. Thirty
+fixed polarized noncommuting face/Lie coefficients, commuting decoys and the
+tetrahedral boundary witness test whether any field-independent linear N can
+satisfy M F(A)=N QF(A) for all retained edge coefficients. Compare actual
+registered assembly/contraction independently. Any obstruction is directional
+and scoped to this constant-two-form residual reconstruction, not all maps
+from registered residuals to source residuals, scalar-action equivalence or a
+continuum theory. Retain the literal Eq9.3 typed correction without editing
+historical bound artifacts or choosing the author's lost final operator.
+
+Phase588 tests open meshes n=1,2,4 rebuilt on fixed [0,1]^4 and separate
+shrinking-domain homotheties. Use actual default face weights and both identity
+and sd2/id0 coefficient1/2 members. Freeze constant-curvature basis/pair-sum
+fixtures, direct per-face residual checks, independently derived finite-mesh
+quadratic forms, signed directional derivatives, zero anchors and two affine
+noncommuting challenges. Test the candidate self-dual cancellation rather than
+rejecting that sector from full-form anisotropy alone. Distinguish Gram checks
+from residual checks; freeze both ratio-four Richardson comparisons. Prove
+smooth remainder bounds with bounded global incidence/averaging, not a fitted
+three-point slope. No continuum kinetic/quantum or physical spectrum claim.
+
+Phase589 separates section-before-discretization from a literal finite joint
+model interpretation. Compact local FP/density controls demonstrate that unit
+Jacobians and invariance do not select the measure. The actual periodic n=3
+joint-gradient Ward battery uses twelve fixed smooth/sign/generator cases,
+exact lifted-edge integrals, origin/global controls and fixed derivative steps.
+Local chart identities are not global gauge-fixing theorems. Freeze separate
+zero/intermediate/decisive bands; a controlled decisive existential witness
+outweighs unrelated intermediate rows, while invalid inputs and mandatory
+control failures retain precedence. Both accepted scientific outcomes leave
+section-first discretization and source/measure selection unresolved. No
+Phase561 source-bound test is substituted or opened.
+
+All phases are deterministic and use no new chains, protected seeds or target
+fitting. No core operator changes, old-terminal rewrites, source selection,
+review ruling, sampling, production or mass authority follow. Retain the
+fourteen false authority flags, externalReviewPending=true, Phase561 closed,
+O4 pending and promotedPhysicalMassClaimCount=0. Registry587-589 allocated;
+The 590+ frontier is superseded by A48 below.
+
+### A48 - Constructive source tensors and typed Hodge contraction (2026-09-08)
+
+The user asks to execute the next concrete step. Allocate590 to independent
+mixed-signature Clifford/tensor controls and591 to the literal source-inspired
+curvature-contraction family. Two workers implement separate studies while
+a third reviews the algebra independently; the coordinator owns integration.
+No scientific execution precedes reviewed frozen program/project/proof,
+complete fixtures and predictions, exact input/core-tree bindings, resource
+estimates, tolerances and terminal precedence. Release build-only checks may
+precede freezing; explicit coordinator approval precedes each first run.
+Preserve every failed frozen run; scientific repairs require versioning.
+
+Phase590 compares the existing14D gamma builder against independent exact
+Clifford arithmetic. Test the candidate Hermitian form H, balanced signature,
+grade adjoints, raw and normalized chirality, canonical Phi1/Phi2 simultaneous
+Spin invariance and declared trace-pairing norms. Formal normalizations and
+invariant-space completeness remain unselected; no convenience-factory or
+core chirality repair follows from the expected mixed-signature decoy.
+Pre-run independent review also identifies volume-dual companion tensors:
+Omega gamma_a at degree1 and i Omega gamma_a gamma_b at degree2. Include
+their real-form/invariance/independence controls in590, establishing only an
+at-least-two lower bound at each degree. Phase591 remains the explicitly
+canonical subfamily, not an exhaustion of admitted invariant tensor choices.
+
+Phase591 binds passed590 evidence and tests the explicit signed Hodge/wedge
+chain against independent Ricci/scalar contractions on the3185-dimensional
+algebraic Riemann space. Freeze a proved basis, arithmetic controls, flat,
+single-plane, constant-curvature and nonzero Weyl fixtures, plus off-subspace
+decoys. Four tied-Phi1 bracket branches are the primary declared family;
+eight independent-occurrence branches form an explicitly enlarged diagnostic.
+Eq8.1 permits commutator/i-anticommutator tools but Eq9.3 does not select all
+occurrence choices or canonical normalizations. In particular the proposed
+Einstein-shaped CAA branch cannot be silently treated as author-selected.
+Test typed outputs before any action, kinetic pairing or spectral interpretation.
+
+Keep all fourteen authority flags false, externalReviewPending=true, O4
+pending, Phase561 closed and promotedPhysicalMassClaimCount=0. No source
+selection, historical-terminal rewriting, core changes, new sampling, target
+fitting, production or physical-unit claims. Registry590-591 allocated;
+The 592+ frontier is superseded by A49 below.
+
+### A49 - Companion parameters, chirality and parallel assumption checks (2026-09-08)
+
+The user asks to execute the next step and pursue independent investigations
+while waiting. Allocate592 to the exact companion-tensor parameter/chirality
+audit proposed after590/591. One worker implements the phase; a separate
+reviewer challenges its algebra and final frozen pack; another investigates
+additional concrete assumptions without modifying existing scientific artifacts.
+The coordinator owns shared integration and records reviewed follow-up leads.
+
+Before first scientific execution, freeze program/project/proof, complete
+parameter-polynomial fixtures, independent literal-contraction comparisons,
+input/core-tree bindings, predictions, tolerances, resource estimates and
+terminal precedence. Build-only Release checks may precede freezing. Explicit
+coordinator approval precedes the first run. Preserve failures; scientific
+repairs require versioned successors, never rewritten frozen evidence.
+
+For Phi1=(a+b Omega)gamma and Phi2=(c+i d Omega)Gamma2, test the declared
+tied contraction family against independent formal coefficient formulas.
+Retain all parameters and distinguish full Clifford-valued identity from
+one-chirality output. Test both prospective chiral matching witnesses, exact
+matching equations, invertible decoys and the declared indefinite pairing.
+Nullity under that pairing is not source inadmissibility. Neither chirality
+projection nor an Einstein-shaped algebraic expression supplies an action,
+positive kinetic pairing, physical dimension reduction or boson prediction.
+
+Parallel investigations remain read-only until a concrete follow-up is
+reviewed and separately registered. Do not expand the current scientific
+fixture menu after first execution. O4 pending, Phase561 closed, all fourteen
+authority flags false and promotedPhysicalMassClaimCount=0 throughout.
+No core changes, old-terminal replacement, new sampling, target fitting,
+source selection, physical units, production, commit or push. Registry592
+allocated; the successor frontier is updated below.
+
+#### A49 extension: independently derived full-branch variation witness
+
+Before any Phase593 scientific execution, allocate593 to a minimal exact
+first-variation test. Two independent reviewers and the coordinator derive
+the same prospective witness: T0=x gamma01, T1=y gamma12+z gamma2,
+on positive axes0,1,2, with epsilon/metric/tensors held fixed. Its curvature
+F01=2xy gamma02 is independent of z. The complete CCA inner contraction
+vanishes and the lowered output K1=-4xy(a+b Omega)gamma2. The candidate
+force pairing is4a xy while direct differentiation of the cubic action
+gives gamma/3 times that value, for bracket conventions gamma=1 or2.
+This tests BOTH matching chiral branches, not the partial-first-term
+counterexample which cancels on the earlier grade-one-curvature fixture.
+
+Freeze complete literal Hodge/Clifford evaluation, independently evaluated
+formal action polynomial, exact derivative and typed real-form checks,
+canonical/zero/mass controls, an ordinary Chern-Simons positive control,
+both bracket conventions, all source/core/input bindings, resource ceiling
+and explicit accepted negative scientific terminal before the first run.
+Use constant forms on a declared flat unit-volume(7,7)14-torus to remove
+boundary/derivative ambiguities; additionally explain that the cubic
+coefficient is a necessary local algebraic variational identity and is not
+repaired by lower-degree F_B, D_B T or mass terms. This is a conditional
+operator/action-family test, not a source-wide no-go, global physical
+spacetime construction or a change to the registered4D model.
+
+One worker owns593, the independent reviewer checks its complete frozen
+pack, and the coordinator retains shared integration and run approval.
+All A49 freeze/failure/authority restrictions remain unchanged. No broad
+48-cubed census or additional scientific fixture is authorized by this
+allocation. Registry592-593 allocated;594+ free.
+
+Pre-freeze independent review also approves one complementary constant
+fixture: for Phi1=(1+h Omega)G, Phi2=(c-i h Omega)Gamma2,
+T0=x gamma02, T1=y gamma1, T2=z Omega. At z=0 curvature vanishes,
+but the proposed cubic action has a nonzero z derivative (h=+/-1).
+This grade14 direction is admitted by590's real-form check. Include this
+second tiny fixture before freezing to distinguish the fixed1/3 or2/3
+mismatch from an arbitrary-common-cubic-prefactor repair: the first
+witness needs prefactor1, the second needs prefactor0. No one common
+prefactor repairs both. Explicit signs, full-chain coefficients, typing
+and independence of c require code/proof review before execution.

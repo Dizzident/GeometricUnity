@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "phase": 585,
+  "phaseId": "phase585-quotient-section-measure-controls",
+  "contractId": "phase585-a46-quotient-section-measure-v1",
+  "contractSha256": "d8094acb1655fd268648d45092648c28ffdb3e21165ef94c1a0ec001d1a735c4",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindingCount": 7,
+  "uniqueBindingIdCount": 7,
+  "uniqueBindingPathCount": 7,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase585_quotient_section_measure_controls_001/Program.cs",
+      "sha256": "763500c00368c01b90cde7d75428380012f519898980076b6365b71f606144d9",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase585_quotient_section_measure_controls_001/Phase585QuotientSectionMeasureControls.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "prior-sign-controls",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "hashMatches": true
+    },
+    {
+      "id": "sampled-pilot-slice",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "hashMatches": true
+    },
+    {
+      "id": "sampled-pack-slice",
+      "path": "studies/phase577_chain_pack_execution_001/Program.cs",
+      "sha256": "f71523518bb1c8cd801bfe612a72db987a543051e4305b0d5a7e99e2af73af9f",
+      "hashMatches": true
+    },
+    {
+      "id": "build-properties",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "conditional-section-measure-controls-pass-source-regulator-unresolved",
+  "terminalStatus": "conditional-section-measure-controls-pass-source-regulator-unresolved",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "fixturesValid": true,
+    "firstJetControls": {
+      "jetCaseCount": 3456,
+      "sectionResidual": 0,
+      "rightResidual": 0,
+      "leftResidual": 0,
+      "backgroundResidual": 0,
+      "cocycleResidual": 0,
+      "inverseDerivativeResidual": 0,
+      "sectionFormula": "h=epsilon^-1; p_section=c*Phi; B_section=A0; Phi=c*Ad(epsilon)p-(d0 epsilon)epsilon^-1",
+      "uniqueSectionConditionalOnAllowedInverse": true,
+      "fullFirstJetGroupCompact": false,
+      "normalizedHaarOnDerivativeFibersAvailable": false,
+      "rightActionIsRedundancy": true,
+      "leftActionSymmetryEstablished": false
+    },
+    "compactToy": {
+      "toyCocycleCaseCount": 576,
+      "toyCocycleResidual": 0,
+      "toyAverageResidual": 0,
+      "formula": "C_h=Ad(h^-1)B-B",
+      "compactGroupCocyclesAreCoboundariesUnderContinuityAndFiniteDimension": true,
+      "sourceSpatialDerivativeImplemented": false,
+      "finiteRotationCensusIsHaarIntegration": false
+    },
+    "finiteJacobian": {
+      "jacobianCaseCount": 48,
+      "exactJacobianResidual": 0,
+      "numericJacobianResidual": 1.4102496947998588E-11,
+      "numericJacobianEntryResidual": 4.696021349559487E-11,
+      "jetJacobianResidual": 0,
+      "jacobianRows": [
+        {
+          "c": -1,
+          "rotation": "-1,0,0,0,-1,0,0,0,1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -0.9999999999863468,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "-1,0,0,0,1,0,0,0,-1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -0.9999999999863468,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "1,0,0,0,-1,0,0,0,-1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "1,0,0,0,1,0,0,0,1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "-1,0,0,0,0,-1,0,-1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -0.9999999999863468,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "-1,0,0,0,0,1,0,1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -0.9999999999863468,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "1,0,0,0,0,-1,0,1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "1,0,0,0,0,1,0,-1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,-1,0,-1,0,0,0,0,-1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,-1,0,1,0,0,0,0,1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,1,0,-1,0,0,0,0,1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,1,0,1,0,0,0,0,-1",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,-1,0,0,0,-1,1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,-1,0,0,0,1,-1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,1,0,0,0,-1,-1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,1,0,0,0,1,1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,-1,-1,0,0,0,1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,-1,1,0,0,0,-1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,1,-1,0,0,0,-1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,1,1,0,0,0,1,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,-1,0,-1,0,-1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,-1,0,1,0,1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000085514,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,1,0,-1,0,1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": -1,
+          "rotation": "0,0,1,0,1,0,-1,0,0",
+          "permutationDeterminant": -1,
+          "eliminationDeterminant": -1,
+          "numericalDeterminant": -1.0000000000141025,
+          "jetDeterminant": -1
+        },
+        {
+          "c": 1,
+          "rotation": "-1,0,0,0,-1,0,0,0,1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "-1,0,0,0,1,0,0,0,-1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "1,0,0,0,-1,0,0,0,-1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "1,0,0,0,1,0,0,0,1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "-1,0,0,0,0,-1,0,-1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "-1,0,0,0,0,1,0,1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "1,0,0,0,0,-1,0,1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "1,0,0,0,0,1,0,-1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,-1,0,-1,0,0,0,0,-1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,-1,0,1,0,0,0,0,1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,1,0,-1,0,0,0,0,1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,1,0,1,0,0,0,0,-1",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,-1,0,0,0,-1,1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,-1,0,0,0,1,-1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,1,0,0,0,-1,-1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,1,0,0,0,1,1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,-1,-1,0,0,0,1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,-1,1,0,0,0,-1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,1,-1,0,0,0,-1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,1,1,0,0,0,1,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,-1,0,-1,0,-1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,-1,0,1,0,1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000141025,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,1,0,-1,0,1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        },
+        {
+          "c": 1,
+          "rotation": "0,0,1,0,1,0,-1,0,0",
+          "permutationDeterminant": 1,
+          "eliminationDeterminant": 1,
+          "numericalDeterminant": 1.0000000000085514,
+          "jetDeterminant": 1
+        }
+      ],
+      "retainedDimension": 3,
+      "compactToyCoordinateDimension": 6,
+      "firstJetCoordinateDimension": 9,
+      "fullTriangularJacobianEvaluated": true,
+      "conditionalLebesguePreservation": true,
+      "continuumFunctionalDeterminantEstablished": false,
+      "normalizedCompactToyHaarMayIntegrateOutOnlyForDescendingIntegrands": true,
+      "exponentiatedCoefficientsAreHaar": false
+    },
+    "adversarialControls": {
+      "projectedJacobianDeterminant": 0,
+      "closureLeak": 1,
+      "cutoffPhi": [
+        1,
+        -2,
+        0
+      ],
+      "restoredP": [
+        -1,
+        0,
+        0
+      ],
+      "cutoffDecoyPassed": true,
+      "graphProductRuleResidual": 2,
+      "graphCocycleResidual": 2,
+      "twistedProductRuleResidual": 0,
+      "graphLieAlgebraResidual": 2,
+      "naiveIndependentSiteDifferenceRejected": true,
+      "allPossibleRegulatorsExcluded": false
+    },
+    "sampledSliceBoundary": {
+      "sampledSliceAnchorsPresent": true,
+      "phase548And577AlreadyFreezeThetaZero": true,
+      "offSliceThetaDependenceRejectsSampledSlice": false,
+      "sourceActionDescentEstablished": false,
+      "registeredMeasureSelected": false
+    },
+    "nextRequirement": "Supply an exact source-compatible regulator, allowed global section, retained-space and domain control, and descending action before identifying the registered measure."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

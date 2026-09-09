@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "phase": 590,
+  "contractId": "phase590-a48-source-clifford-tensor-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Exact source-motivated Cl(7,7) real-form and four invariant tensor directions; at-least-two lower bounds, not completeness, normalization or source operator selection",
+  "fixtures": {
+    "dimension": 14,
+    "positive": 7,
+    "negative": 7,
+    "spinorDimension": 128,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "gammaConvention": "dirac-tensor-product-v1",
+    "basisIndex": "seven-bit tensor-product column, left factor most significant",
+    "independentGammaRule": "flip bit6-floor(mu/2); trailing-Z parity; odd-mu Y phase i*(-1)^bit; multiply negative directions by i",
+    "bladeMasks": "all integers0..16383, generators in increasing index order",
+    "bladeCount": 16384,
+    "rightGeneratorProducts": 229376,
+    "hMask": 16256,
+    "hFormula": "gamma7 gamma8 gamma9 gamma10 gamma11 gamma12 gamma13",
+    "volumeMask": 16383,
+    "rawBuilderChiralityPhase": 3,
+    "normalizingDiagnosticPhase": 1,
+    "spinGenerator": "Sigma_ab=gamma_a gamma_b/2; exact tests use twice generator",
+    "spinPairs": "all a<b in0..13",
+    "spinGeneratorCount": 91,
+    "mixedGeneratorCount": 49,
+    "tensorMenu": [
+      {
+        "id": "canonical-one",
+        "formGrade": 1,
+        "volumeCompanion": false,
+        "extraPhase": 0,
+        "expectedNorm": -14,
+        "cliffordGrade": 1
+      },
+      {
+        "id": "canonical-two",
+        "formGrade": 2,
+        "volumeCompanion": false,
+        "extraPhase": 0,
+        "expectedNorm": 91,
+        "cliffordGrade": 2
+      },
+      {
+        "id": "volume-one",
+        "formGrade": 1,
+        "volumeCompanion": true,
+        "extraPhase": 0,
+        "expectedNorm": 14,
+        "cliffordGrade": 13
+      },
+      {
+        "id": "volume-two",
+        "formGrade": 2,
+        "volumeCompanion": true,
+        "extraPhase": 1,
+        "expectedNorm": -91,
+        "cliffordGrade": 12
+      }
+    ],
+    "formConvention": "theta^a is dual to vector generator gamma_a; infinitesimal covectors use minus transpose of metric-index vector action",
+    "formPairing": "ordered increasing multi-index, product of signature entries; no extra factorial",
+    "matrixPairing": "-ReTr(XY)/128",
+    "formalCoefficients": "four independent real formal coefficients; none assigned",
+    "realAntiHermitianGrades": [
+      1,
+      2,
+      5,
+      6,
+      9,
+      10,
+      13,
+      14
+    ],
+    "imaginaryAntiHermitianGrades": [
+      0,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12
+    ],
+    "realAntiHermitianBladeCount": 8128,
+    "imaginaryAntiHermitianBladeCount": 8256,
+    "gradeCounts": [
+      1,
+      14,
+      91,
+      364,
+      1001,
+      2002,
+      3003,
+      3432,
+      3003,
+      2002,
+      1001,
+      364,
+      91,
+      14,
+      1
+    ],
+    "tensorInvarianceRows": 364,
+    "matrixCommutatorChecks": 19110,
+    "wrongDualRejectedPerTensor": 91,
+    "wrongMetricRejectedPerTensor": 49,
+    "wrongMetricDecoy": "only on mixed-signature pairs replace both metric entries by +1 in dual-form action; same-signature pairs retain correct law",
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 20,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 536870912
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Existing14D dense gammas equal independent signed Gaussian-unit bit permutations exactly",
+    "H=gamma7...gamma13 is Hermitian,H^2=I,TrH=0 and balanced64/64; all gammas are H-antiHermitian",
+    "Every r-blade satisfies Bdagger H=(-1)^(r(r+1)/2)HB;8128 real and8256 imaginary antiHermitian basis directions",
+    "Raw volume Omega^2=I, builder raw chirality=-i Omega squares to-I; diagnostic i rephasing equals Omega",
+    "All91 Spin generators preserve canonical one/two-form tensors and their volume-dual companions by simultaneous dual-form/adjoint action",
+    "Canonical norms(-14,91), companion norms(14,-91), cross pairings0 under declared form metric and -ReTr/128",
+    "Disjoint Clifford grades prove at least2 independent invariant directions at each degree, not full classification",
+    "Wrong dual sign fails91 times per tensor; explicitly mixed-only Euclidean-metric decoy fails49 times per tensor"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "mixed-signature-matrix-control-failed",
+    "tensor-invariance-or-pairing-control-failed",
+    "mixed-signature-clifford-tensor-controls-pass-source-choice-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/Program.cs",
+      "sha256": "1641f49ddcd59eea6795774694475f885c2d75b3701c21ff79ab8d67f5cb79fd"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/Phase590SourceCliffordTensorControls.csproj",
+      "sha256": "7917e20da17e5878f93387b20e207d47dc978276f6dfff9fb1a39f9fd05eb4b8"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/STUDY.md",
+      "sha256": "3ce0dd9a1fe7cb731933715a1d014720a5f1eb1e2d89947ea4fc98507688158a"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase587-summary",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/output/exact_residual_factorization_audit_summary.json",
+      "sha256": "f5096d6765eada94cdca6f24c43cd9e35d6b8a8a9897532e32324b5ce0a9c9eb"
+    },
+    {
+      "id": "phase587-contract",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/preregistration/contract_v1.json",
+      "sha256": "104b2c9ed428afb6ee5041e7fab9cc4a6f12a05825bcf6bace1b5af301f55130"
+    },
+    {
+      "id": "phase588-summary",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/output/fixed_domain_action_force_consistency_summary.json",
+      "sha256": "7dec161d84073ff72fdfadbacd63534538b7f829690edaa7ce775d2227caeef4"
+    },
+    {
+      "id": "phase588-contract",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/preregistration/contract_v1.json",
+      "sha256": "6fb8daa6abe002d5a67e0d5df605ca1e259e65e85f7c9f12e3c7c1144cce5061"
+    },
+    {
+      "id": "phase589-summary",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/output/section_density_joint_lift_audit_summary.json",
+      "sha256": "7e448c82d4f0492ebab2dbf111cb90293f353b64a9fc4990d28e9f5d47e29c3a"
+    },
+    {
+      "id": "phase589-contract",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/preregistration/contract_v1.json",
+      "sha256": "242a4888a56e918db3a967487b277a50bb5579740cdce229df19acc63f16d166"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

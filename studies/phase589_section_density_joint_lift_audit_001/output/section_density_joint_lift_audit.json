@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 1,
+  "phase": 589,
+  "phaseId": "phase589-section-density-joint-lift-audit",
+  "contractId": "phase589-a47-section-density-joint-lift-v1",
+  "contractSha256": "242a4888a56e918db3a967487b277a50bb5579740cdce229df19acc63f16d166",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "coreTreeSha256": "d1d3222a5521fa8dc9720fd8169d5981610403f477ed2e8e38dc734273ae7f99",
+  "bindingCount": 13,
+  "uniqueBindingIdCount": 13,
+  "uniqueBindingPathCount": 13,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/Program.cs",
+      "sha256": "ead03c8f5055d258aaebdb12715877c2cebbc76fb951db414f627cfefc9039d6",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/Phase589SectionDensityJointLiftAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366",
+      "hashMatches": true
+    },
+    {
+      "id": "proof",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/STUDY.md",
+      "sha256": "cce7a69e3777bd2371e99d347b258f87000a07bbd393702ad0e650b1a8a07b39",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "hashMatches": true
+    },
+    {
+      "id": "phase585-summary",
+      "path": "studies/phase585_quotient_section_measure_controls_001/output/quotient_section_measure_controls_summary.json",
+      "sha256": "0538c3e58949fd6d575b74505e198723e9d7ed092a238542f70790bd92a7ca08",
+      "hashMatches": true
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97",
+      "hashMatches": true
+    },
+    {
+      "id": "pilot-program",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177",
+      "hashMatches": true
+    },
+    {
+      "id": "pilot-contract",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/preregistration/phase548_bounded_complete_lattice_pilot_execution_contract_v1.json",
+      "sha256": "a55b9b9d909ee10b52b802297f11b19e39c99c42b0d6f0ca304aee9b3f067b49",
+      "hashMatches": true
+    },
+    {
+      "id": "pack-program",
+      "path": "studies/phase577_chain_pack_execution_001/Program.cs",
+      "sha256": "f71523518bb1c8cd801bfe612a72db987a543051e4305b0d5a7e99e2af73af9f",
+      "hashMatches": true
+    },
+    {
+      "id": "pack-contract",
+      "path": "studies/phase577_chain_pack_execution_001/preregistration/phase577_chain_pack_execution_contract_v1.json",
+      "sha256": "b3dd65f4726f3cb85b8454db1124dba4307cba58c358874ba2857e2fd3e109df",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase589_section_density_joint_lift_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "density-nonselection-proved-literal-joint-lift-rejected-section-first-open",
+  "terminalStatus": "density-nonselection-proved-literal-joint-lift-rejected-section-first-open",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "sourceAnchorsPresent": true,
+    "sampledSliceAnchorsPresent": true,
+    "mandatoryControlsPassed": true,
+    "derivativeControlsPassed": true,
+    "compactLocalControls": {
+      "compactControlsPassed": true,
+      "fpRows": [
+        {
+          "step": 1.52587890625E-05,
+          "entryError": 0,
+          "determinant": 1
+        },
+        {
+          "step": 7.62939453125E-06,
+          "entryError": 0,
+          "determinant": 1
+        }
+      ],
+      "fpError": 0,
+      "fpStepAgreement": 0,
+      "haarRows": [
+        {
+          "r": 0,
+          "multiplier": 0,
+          "predicted": 1,
+          "integratedDeterminant": 1.0000000000000007,
+          "closedDeterminant": 1,
+          "error": 2.220446049250313E-16,
+          "piIsChartBoundary": false
+        },
+        {
+          "r": 1.5707963267948966,
+          "multiplier": 0.5,
+          "predicted": 0.8105694691387022,
+          "integratedDeterminant": 0.8105694691387026,
+          "closedDeterminant": 0.8105694691387022,
+          "error": 2.220446049250313E-16,
+          "piIsChartBoundary": false
+        },
+        {
+          "r": 3.141592653589793,
+          "multiplier": 1,
+          "predicted": 0.4052847345693511,
+          "integratedDeterminant": 0.4052847345693515,
+          "closedDeterminant": 0.40528473456935116,
+          "error": 2.220446049250313E-16,
+          "piIsChartBoundary": true
+        }
+      ],
+      "dexpError": 6.661338147750939E-16,
+      "toyRows": [
+        {
+          "c": -1,
+          "phi": [
+            -0.6339745962155615,
+            -1.3660254037844388,
+            1
+          ],
+          "movedPhi": [
+            -0.6339745962155616,
+            -1.3660254037844388,
+            0.9999999999999999
+          ],
+          "jacobian": -1,
+          "wrongShiftDefect": 2.82842712474619,
+          "flatDensity": 1,
+          "tiltedInvariantDensity": 0.1951523787251588
+        },
+        {
+          "c": 1,
+          "phi": [
+            -0.36602540378443815,
+            3.098076211353316,
+            -1
+          ],
+          "movedPhi": [
+            -0.36602540378443804,
+            3.098076211353316,
+            -1
+          ],
+          "jacobian": 1,
+          "wrongShiftDefect": 2.8284271247461903,
+          "flatDensity": 1,
+          "tiltedInvariantDensity": 0.0046726664133505515
+        }
+      ],
+      "toyJacobianError": 0,
+      "toyInvariantError": 1.5700924586837752E-16,
+      "toyWrongShiftMinimumDefect": 2.82842712474619,
+      "densityRows": [
+        {
+          "precision": 1,
+          "oneDimensionalIntegral": 2.5066282746310007,
+          "normalization": 2.5066282746310002,
+          "radialMoment": 2.999999999999994,
+          "expectedRadialMoment": 3
+        },
+        {
+          "precision": 2,
+          "oneDimensionalIntegral": 1.7724538509055112,
+          "normalization": 1.7724538509055159,
+          "radialMoment": 1.5000000000000047,
+          "expectedRadialMoment": 1.5
+        }
+      ],
+      "densityError": 6.217248937900877E-15,
+      "unitJacobianDoesNotSelectDensity": true,
+      "localDerivativeIdentityRequiresActionInvariance": false,
+      "interpretingDeterminantAsFpMeasureRequiresGaugePremises": true,
+      "globalSectionEstablished": false,
+      "firstJetGroupCompact": false
+    },
+    "geometryControls": {
+      "topologyPassed": true,
+      "VertexCount": 81,
+      "EdgeCount": 1215,
+      "FaceCount": 4050,
+      "CellCount": 1944,
+      "seamEdgeCount": 671,
+      "closureError": 0
+    },
+    "integralControls": {
+      "integralControlsPassed": true,
+      "quadraturePolynomialError": 2.220446049250313E-16,
+      "trigError": 2.220446049250313E-16,
+      "periodIntegralError": 1.4321650971663677E-32,
+      "equalEndpointCosineIntegral": 3,
+      "maxIntegralError": 4.443601777255714E-16,
+      "maxReversalError": 1.3380375466713835E-15,
+      "maxPeriodicShiftError": 1.682878481418498E-15,
+      "maxExactDerivativeError": 5.551115123125783E-16,
+      "maxImaginaryResidual": 3.469446951953614E-18,
+      "continuumDerivativeIntegratedExactly": true,
+      "naiveIndependentSiteProductRuleUsed": false
+    },
+    "jointLift": {
+      "caseCount": 12,
+      "globalCases": 6,
+      "originCases": 4,
+      "originControlsPassed": true,
+      "globalControlsPassed": true,
+      "derivativeControlsPassed": true,
+      "maxDerivativeError": 2.0199195251009165E-09,
+      "zeroBand": 1E-10,
+      "decisiveBand": 1E-06,
+      "zeroCount": 10,
+      "intermediateCount": 0,
+      "decisiveCount": 2,
+      "outcome": "rejected",
+      "wardRows": [
+        {
+          "profile": 0,
+          "generator": 0,
+          "c": -1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 0,
+          "directionNorm": 0,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 0,
+          "generator": 0,
+          "c": 1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 0,
+          "directionNorm": 0,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 0,
+          "generator": 1,
+          "c": -1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 0,
+          "directionNorm": 34.856850115866706,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 5.860799556780565E-40,
+              "minus": 5.860799556780565E-40,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 1.4651998891951413E-40,
+              "minus": 1.4651998891951413E-40,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 0,
+          "generator": 1,
+          "c": 1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 0,
+          "directionNorm": 34.856850115866706,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 5.860799556780565E-40,
+              "minus": 5.860799556780565E-40,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 1.4651998891951413E-40,
+              "minus": 1.4651998891951413E-40,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 1,
+          "generator": 0,
+          "c": -1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 3.181980515339464,
+          "directionNorm": 3.181980515339464,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 1,
+          "generator": 0,
+          "c": 1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 3.181980515339464,
+          "directionNorm": 3.181980515339464,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0,
+              "minus": 0,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 1,
+          "generator": 1,
+          "c": -1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 3.181980515339464,
+          "directionNorm": 34.92174020828663,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 3.1923496623780967E-12,
+              "minus": 3.1923496623780967E-12,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 7.980874147866457E-13,
+              "minus": 7.980874147866457E-13,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 1,
+          "generator": 1,
+          "c": 1,
+          "objective": 0,
+          "omegaTerm": 0,
+          "thetaTerm": 0,
+          "ward": 0,
+          "denominator": 1,
+          "ratio": 0,
+          "classification": "zero-band",
+          "omegaNorm": 3.181980515339464,
+          "directionNorm": 34.92174020828663,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 1.1460410380345691E-10,
+              "minus": 1.1460410380345691E-10,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 2.865102595010368E-11,
+              "minus": 2.865102595010368E-11,
+              "centered": 0,
+              "error": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 2,
+          "generator": 0,
+          "c": -1,
+          "objective": 0.5730905947182944,
+          "omegaTerm": 6.478107980600889E-17,
+          "thetaTerm": -1.7194768829262297E-19,
+          "ward": 6.460913211771627E-17,
+          "denominator": 5.9690488300981706,
+          "ratio": 1.0824024724330101E-17,
+          "classification": "zero-band",
+          "omegaNorm": 7.466793228468832,
+          "directionNorm": 7.175693952891891,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0.5730905947304594,
+              "minus": 0.5730905947304594,
+              "centered": 0,
+              "error": 6.460913211771627E-17,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0.573090594721371,
+              "minus": 0.573090594721371,
+              "centered": 0,
+              "error": 6.460913211771627E-17,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 2,
+          "generator": 0,
+          "c": 1,
+          "objective": 0.5730905947182944,
+          "omegaTerm": 6.478107980600889E-17,
+          "thetaTerm": -1.7194768829262297E-19,
+          "ward": 6.460913211771627E-17,
+          "denominator": 5.9690488300981706,
+          "ratio": 1.0824024724330101E-17,
+          "classification": "zero-band",
+          "omegaNorm": 7.466793228468832,
+          "directionNorm": 7.175693952891891,
+          "thetaDirectionNorm": 9,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0.5730905947304594,
+              "minus": 0.5730905947304594,
+              "centered": 0,
+              "error": 6.460913211771627E-17,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0.573090594721371,
+              "minus": 0.573090594721371,
+              "centered": 0,
+              "error": 6.460913211771627E-17,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 2,
+          "generator": 1,
+          "c": -1,
+          "objective": 0.5730905947182944,
+          "omegaTerm": -4.739264536368637E-15,
+          "thetaTerm": -0.0003872717259397229,
+          "ward": -0.00038727172594446216,
+          "denominator": 25.357141696364575,
+          "ratio": 1.5272688482865752E-05,
+          "classification": "decisive-witness",
+          "omegaNorm": 7.466793228468832,
+          "directionNorm": 35.22868204268519,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0.5730905888730987,
+              "minus": 0.5730906006916924,
+              "centered": -0.00038727167702745646,
+              "error": 4.8898068860472096E-11,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0.573090591779702,
+              "minus": 0.5730905976889957,
+              "centered": -0.00038727147330064327,
+              "error": 2.525460149660347E-10,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "profile": 2,
+          "generator": 1,
+          "c": 1,
+          "objective": 0.5730905947182944,
+          "omegaTerm": -5.002942504717112E-15,
+          "thetaTerm": -0.0003872717259397229,
+          "ward": -0.00038727172594472584,
+          "denominator": 25.357141696364575,
+          "ratio": 1.527268848287615E-05,
+          "classification": "decisive-witness",
+          "omegaNorm": 7.466793228468832,
+          "directionNorm": 35.22868204268519,
+          "thetaDirectionNorm": 7.11512473537885,
+          "rowDerivativePassed": true,
+          "finite": true,
+          "fdRows": [
+            {
+              "step": 1.52587890625E-05,
+              "plus": 0.5730905907752133,
+              "minus": 0.5730906025938375,
+              "centered": -0.0003872726774716284,
+              "error": 9.51158545760594E-10,
+              "passed": true
+            },
+            {
+              "step": 7.62939453125E-06,
+              "plus": 0.5730905922552523,
+              "minus": 0.573090598164519,
+              "centered": -0.000387269705242943,
+              "error": 2.0199195251009165E-09,
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "testedMap": "omega=p; deltaOmega=integral([p,alpha]\u002Bc*dalpha); deltaTheta=alpha(vertices); A0=0",
+      "literalProjectedCompletionRejected": true,
+      "existentialWitnessDominatesIntermediateRows": true,
+      "exactFiniteGroupActionProved": false
+    },
+    "boundaries": {
+      "sectionBeforeDiscretizationRemainsOpen": true,
+      "offSliceFailureRejectsExistingSampledSlice": false,
+      "registeredThetaSliceChanged": false,
+      "sourceMeasureSelected": false,
+      "phase561SubstitutedOrOpened": false,
+      "invariantDensityMayBeArbitraryPositiveFunctionOfPhi": true
+    },
+    "nextRequirement": "Supply source-compatible carrier/pairing/reference and induced density plus global field class; a literal joint-lift Ward test neither supplies them nor rejects section-before-discretization."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

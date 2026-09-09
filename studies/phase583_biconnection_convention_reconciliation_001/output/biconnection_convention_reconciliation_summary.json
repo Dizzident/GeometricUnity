@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "phase": 583,
+  "phaseId": "phase583-biconnection-convention-reconciliation",
+  "contractId": "phase583-a45-biconnection-signs-v1",
+  "contractSha256": "73e7b9b1e7fe75508b56991d9582c2ce3e2b68c716cfdf721ebd2fd510681b6a",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/Program.cs",
+      "sha256": "db446bb701403ff193c2039d76c7642f87c675f31f7db04e4bf0c07b122dc456",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/Phase583BiconnectionConventionReconciliation.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "bridge-status",
+      "path": "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json",
+      "sha256": "5e2fd70f50e7c70dce8ebfc8400d9ab312dabb0e4b6e66d01e2bd791b936f790",
+      "hashMatches": true
+    },
+    {
+      "id": "prior-observable",
+      "path": "studies/phase582_relative_transport_observable_control_001/output/relative_transport_observable_control_summary.json",
+      "sha256": "946de50d95c96bc9bb41af89adaa8168e4023bc4e83fdb7ccd90e0da94b1cc27",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "printed-sign-conflict-proved-two-compatible-families-registered-map-unresolved",
+  "terminalStatus": "printed-sign-conflict-proved-two-compatible-families-registered-map-unresolved",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "upstreamValid": true,
+    "controlsPassed": true,
+    "sourceAnchorsPresent": true,
+    "signCensus": {
+      "rows": [
+        {
+          "c": -1,
+          "s": -1,
+          "r": -1,
+          "connectionDefectCoefficient": 0,
+          "quotientDefectCoefficient": -2,
+          "stabilizerDefectCoefficient": 0,
+          "connectionResidual": 0,
+          "quotientResidual": 6,
+          "dictionaryResidual": 6,
+          "compatible": false,
+          "originalRightActionStabilizer": true,
+          "rowPassed": true
+        },
+        {
+          "c": -1,
+          "s": -1,
+          "r": 1,
+          "connectionDefectCoefficient": 0,
+          "quotientDefectCoefficient": 0,
+          "stabilizerDefectCoefficient": 0,
+          "connectionResidual": 0,
+          "quotientResidual": 0,
+          "dictionaryResidual": 0,
+          "compatible": true,
+          "originalRightActionStabilizer": true,
+          "rowPassed": true
+        },
+        {
+          "c": -1,
+          "s": 1,
+          "r": -1,
+          "connectionDefectCoefficient": -2,
+          "quotientDefectCoefficient": 0,
+          "stabilizerDefectCoefficient": 2,
+          "connectionResidual": 6,
+          "quotientResidual": 0,
+          "dictionaryResidual": 6,
+          "compatible": false,
+          "originalRightActionStabilizer": false,
+          "rowPassed": true
+        },
+        {
+          "c": -1,
+          "s": 1,
+          "r": 1,
+          "connectionDefectCoefficient": -2,
+          "quotientDefectCoefficient": 2,
+          "stabilizerDefectCoefficient": 2,
+          "connectionResidual": 6,
+          "quotientResidual": 6,
+          "dictionaryResidual": 0,
+          "compatible": false,
+          "originalRightActionStabilizer": false,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "s": -1,
+          "r": -1,
+          "connectionDefectCoefficient": -2,
+          "quotientDefectCoefficient": -2,
+          "stabilizerDefectCoefficient": 0,
+          "connectionResidual": 6,
+          "quotientResidual": 6,
+          "dictionaryResidual": 0,
+          "compatible": false,
+          "originalRightActionStabilizer": true,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "s": -1,
+          "r": 1,
+          "connectionDefectCoefficient": -2,
+          "quotientDefectCoefficient": 0,
+          "stabilizerDefectCoefficient": 0,
+          "connectionResidual": 6,
+          "quotientResidual": 0,
+          "dictionaryResidual": 6,
+          "compatible": false,
+          "originalRightActionStabilizer": true,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "s": 1,
+          "r": -1,
+          "connectionDefectCoefficient": 0,
+          "quotientDefectCoefficient": 0,
+          "stabilizerDefectCoefficient": 2,
+          "connectionResidual": 0,
+          "quotientResidual": 0,
+          "dictionaryResidual": 0,
+          "compatible": true,
+          "originalRightActionStabilizer": false,
+          "rowPassed": true
+        },
+        {
+          "c": 1,
+          "s": 1,
+          "r": 1,
+          "connectionDefectCoefficient": 0,
+          "quotientDefectCoefficient": 2,
+          "stabilizerDefectCoefficient": 2,
+          "connectionResidual": 0,
+          "quotientResidual": 6,
+          "dictionaryResidual": 6,
+          "compatible": false,
+          "originalRightActionStabilizer": false,
+          "rowPassed": true
+        }
+      ],
+      "compatibleCount": 2,
+      "stabilizerCompatibleCount": 1,
+      "menuExhaustive": true,
+      "allPossibleSourceRepairsExhausted": false
+    },
+    "exactJetControls": {
+      "rotationCount": 24,
+      "jetCount": 13824,
+      "cocycleResidual": 0,
+      "referenceRecoveryResidual": 0,
+      "maxFormulaResidual": 0,
+      "maxSignRelabelResidual": 0,
+      "arithmetic": "checked-int64-exact",
+      "nonzeroReferenceConnection": true,
+      "independentProductRule": true
+    },
+    "printedWitness": {
+      "witnessPassed": true,
+      "initialRelativeFieldZero": true,
+      "printedWitnessNormSquared": 24,
+      "formula": "At h=epsilon=I, A0=p=0, dh=C: printed A\u0027=-C, B\u0027=\u002BC, T\u0027=-2C",
+      "simultaneousPrintedDefinitionsIncompatible": true,
+      "wholeTheoryFalsified": false
+    },
+    "dictionary": {
+      "formula": "For c*s=1 and r=-s: T=c*p-epsilon^-1*d0(epsilon); c*pi_r=epsilon*T*epsilon^-1",
+      "compatibleTriples": [
+        [
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1
+        ]
+      ],
+      "translation": "(p,c,s,r) -\u003E (-p,-c,-s,-r)",
+      "finiteCoefficientSignFlipAbsoluteJacobian": 1,
+      "physicalActionEquivalenceEstablished": false,
+      "registeredOmegaIdentificationEstablished": false,
+      "interactingMeasureDerived": false,
+      "authorIntentSelected": false
+    },
+    "nextRequirement": "Derive the two-connection action in T and B, distinguish dropping its torsion term from constraining T=0, and compare with registered omega/curvature/measure. No sampling before that dictionary."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

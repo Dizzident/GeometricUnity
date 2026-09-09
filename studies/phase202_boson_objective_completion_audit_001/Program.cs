@@ -321,6 +321,22 @@ const string Phase574Path = "studies/phase574_directional_raw_trace_fold_order_l
 const string Phase575Path = "studies/phase575_registered_fold_convention_readjudication_001/output/registered_fold_convention_readjudication_summary.json";
 const string Phase576Path = "studies/phase576_disjoint_seed_chain_pack_design_001/output/disjoint_seed_chain_pack_design_summary.json";
 const string Phase577Path = "studies/phase577_chain_pack_execution_001/output/chain_pack_execution_summary.json";
+const string Phase578Path = "studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/output/consolidated_conditional_electroweak_sector_ledger_summary.json";
+const string Phase579Path = "studies/phase579_collective_coordinate_jacobian_self_check_001/output/collective_coordinate_jacobian_self_check_summary.json";
+const string Phase580Path = "studies/phase580_external_review_packet_assembly_001/output/packet/o4_external_review_packet_summary.json";
+const string Phase581Path = "studies/phase581_collective_coordinate_assumption_audit_001/output/collective_coordinate_assumption_audit_summary.json";
+const string Phase582Path = "studies/phase582_relative_transport_observable_control_001/output/relative_transport_observable_control_summary.json";
+const string Phase583Path = "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json";
+const string Phase584Path = "studies/phase584_signed_spatial_curvature_consistency_001/output/signed_spatial_curvature_consistency_summary.json";
+const string Phase585Path = "studies/phase585_quotient_section_measure_controls_001/output/quotient_section_measure_controls_summary.json";
+const string Phase586Path = "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json";
+const string Phase587Path = "studies/phase587_exact_residual_factorization_audit_001/output/exact_residual_factorization_audit_summary.json";
+const string Phase588Path = "studies/phase588_fixed_domain_action_force_consistency_001/output/fixed_domain_action_force_consistency_summary.json";
+const string Phase589Path = "studies/phase589_section_density_joint_lift_audit_001/output/section_density_joint_lift_audit_summary.json";
+const string Phase590Path = "studies/phase590_source_clifford_tensor_controls_001/output/source_clifford_tensor_controls_summary.json";
+const string Phase591Path = "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json";
+const string Phase592Path = "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json";
+const string Phase593Path = "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -693,6 +709,22 @@ using var phase574 = File.Exists(Phase574Path) ? JsonDocument.Parse(File.ReadAll
 using var phase575 = File.Exists(Phase575Path) ? JsonDocument.Parse(File.ReadAllText(Phase575Path)) : null;
 using var phase576 = File.Exists(Phase576Path) ? JsonDocument.Parse(File.ReadAllText(Phase576Path)) : null;
 using var phase577 = File.Exists(Phase577Path) ? JsonDocument.Parse(File.ReadAllText(Phase577Path)) : null;
+using var phase578 = File.Exists(Phase578Path) ? JsonDocument.Parse(File.ReadAllText(Phase578Path)) : null;
+using var phase579 = File.Exists(Phase579Path) ? JsonDocument.Parse(File.ReadAllText(Phase579Path)) : null;
+using var phase580 = File.Exists(Phase580Path) ? JsonDocument.Parse(File.ReadAllText(Phase580Path)) : null;
+using var phase581 = File.Exists(Phase581Path) ? JsonDocument.Parse(File.ReadAllText(Phase581Path)) : null;
+using var phase582 = File.Exists(Phase582Path) ? JsonDocument.Parse(File.ReadAllText(Phase582Path)) : null;
+using var phase583 = File.Exists(Phase583Path) ? JsonDocument.Parse(File.ReadAllText(Phase583Path)) : null;
+using var phase584 = File.Exists(Phase584Path) ? JsonDocument.Parse(File.ReadAllText(Phase584Path)) : null;
+using var phase585 = File.Exists(Phase585Path) ? JsonDocument.Parse(File.ReadAllText(Phase585Path)) : null;
+using var phase586 = File.Exists(Phase586Path) ? JsonDocument.Parse(File.ReadAllText(Phase586Path)) : null;
+using var phase587 = File.Exists(Phase587Path) ? JsonDocument.Parse(File.ReadAllText(Phase587Path)) : null;
+using var phase588 = File.Exists(Phase588Path) ? JsonDocument.Parse(File.ReadAllText(Phase588Path)) : null;
+using var phase589 = File.Exists(Phase589Path) ? JsonDocument.Parse(File.ReadAllText(Phase589Path)) : null;
+using var phase590 = File.Exists(Phase590Path) ? JsonDocument.Parse(File.ReadAllText(Phase590Path)) : null;
+using var phase591 = File.Exists(Phase591Path) ? JsonDocument.Parse(File.ReadAllText(Phase591Path)) : null;
+using var phase592 = File.Exists(Phase592Path) ? JsonDocument.Parse(File.ReadAllText(Phase592Path)) : null;
+using var phase593 = File.Exists(Phase593Path) ? JsonDocument.Parse(File.ReadAllText(Phase593Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -9090,6 +9122,353 @@ var chainPackExecutionPassed = phase577 is not null
     && JsonBool(phase577.RootElement, "gevClaimAllowed") is false
     && JsonBool(phase577.RootElement, "externalReviewPending") is true
     && JsonInt(phase577.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var consolidatedConditionalElectroweakSectorLedgerPassed = phase578 is not null
+    && JsonInt(phase578.RootElement, "schemaVersion") == 1
+    && JsonInt(phase578.RootElement, "phase") == 578
+    && JsonString(phase578.RootElement, "phaseId") == "phase578-consolidated-conditional-electroweak-sector-ledger"
+    && JsonString(phase578.RootElement, "contractId") == "phase578-a42-consolidated-conditional-electroweak-sector-ledger-v5"
+    && JsonBool(phase578.RootElement, "contractValid") is true
+    && JsonBool(phase578.RootElement, "exactBindingsValid") is true
+    && JsonInt(phase578.RootElement, "exactBindingCount") == 9
+    && phase578.RootElement.TryGetProperty("knownAnswerBattery", out var p578Battery)
+    && JsonBool(p578Battery, "passed") is true
+    && JsonBool(phase578.RootElement, "sourceValuesAndStatusesConsistent") is true
+    && JsonInt(phase578.RootElement, "ledgerRowCount") == 14
+    && JsonBool(phase578.RootElement, "rowShapeAndAssumptionCoverageValid") is true
+    && phase578.RootElement.TryGetProperty("comparisonAccounting", out var p578Comparisons)
+    && JsonInt(p578Comparisons, "knownElectroweakMissCount") == 2
+    && p578Comparisons.TryGetProperty("anchorReconstruction", out var p578Anchor)
+    && JsonString(p578Anchor, "classification") == "separate-non-promotional-anchor-evidence"
+    && JsonBool(p578Anchor, "countedAsKnownElectroweakMiss") is false
+    && phase578.RootElement.TryGetProperty("missingSourceContent", out var p578Missing)
+    && p578Missing.TryGetProperty("unitAnchor", out var p578UnitAnchor)
+    && JsonBool(p578UnitAnchor, "available") is false
+    && p578Missing.TryGetProperty("observedFieldExtractionMapOrTheorem", out var p578Extraction)
+    && JsonBool(p578Extraction, "available") is false
+    && p578Missing.TryGetProperty("quarticOrBreakingSectorContent", out var p578Quartic)
+    && JsonBool(p578Quartic, "available") is false
+    && JsonBool(phase578.RootElement, "noUnitAnchorIntroduced") is true
+    && JsonBool(phase578.RootElement, "absoluteMassComputed") is false
+    && JsonBool(phase578.RootElement, "everyRowDerivedOrConditionalNeverPredictional") is true
+    && JsonBool(phase578.RootElement, "everyBranchPromotedPhysicalMassClaimCountZero") is true
+    && JsonInt(phase578.RootElement, "sourceContractFieldFilledCount") == 0
+    && JsonString(phase578.RootElement, "terminalStatus") == "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent"
+    && JsonBool(phase578.RootElement, "externalReviewPending") is true
+    && JsonInt(phase578.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var collectiveCoordinateJacobianSelfCheckPassed = phase579 is not null
+    && JsonInt(phase579.RootElement, "schemaVersion") == 1
+    && JsonInt(phase579.RootElement, "phase") == 579
+    && JsonString(phase579.RootElement, "phaseId") == "phase579-collective-coordinate-jacobian-self-check"
+    && JsonString(phase579.RootElement, "contractId") == "phase579-a42-collective-coordinate-jacobian-self-check-v2"
+    && JsonBool(phase579.RootElement, "contractValid") is true
+    && JsonBool(phase579.RootElement, "exactBindingsValid") is true
+    && phase579.RootElement.TryGetProperty("bindings", out var p579Bindings)
+    && p579Bindings.ValueKind == JsonValueKind.Array && p579Bindings.GetArrayLength() == 7
+    && phase579.RootElement.TryGetProperty("knownAnswerBattery", out var p579Battery)
+    && JsonBool(p579Battery, "passed") is true
+    && phase579.RootElement.TryGetProperty("reconstruction", out var p579Reconstruction)
+    && JsonBool(p579Reconstruction, "passed") is true
+    && phase579.RootElement.TryGetProperty("jacobian", out var p579Jacobian)
+    && JsonBool(p579Jacobian, "passed") is true
+    && phase579.RootElement.TryGetProperty("exactlySolvableLimit", out var p579Solvable)
+    && JsonBool(p579Solvable, "passed") is true
+    && phase579.RootElement.TryGetProperty("exactTransformationInvariance", out var p579Invariance)
+    && JsonBool(p579Invariance, "passed") is false
+    && JsonDouble(p579Invariance, "activeFixedRayCoordinateMaximumAbsoluteError") > JsonDouble(p579Invariance, "tolerance")
+    && JsonDouble(p579Invariance, "activeFixedRayOnRegisteredRayMaximumAbsoluteError") > JsonDouble(p579Invariance, "tolerance")
+    && JsonDouble(p579Invariance, "passiveCovarianceCoordinateMaximumAbsoluteError") <= JsonDouble(p579Invariance, "tolerance")
+    && JsonString(phase579.RootElement, "verdictKind") == "phase450-lineage-convention-defective-preserved-negative"
+    && JsonBool(phase579.RootElement, "falsifierPassed") is false
+    && JsonBool(phase579.RootElement, "preservedFirstClassNegative") is true
+    && JsonBool(phase579.RootElement, "evidenceBackedInternalProposalAllowed") is false
+    && JsonBool(phase579.RootElement, "mayAuthorRuling") is false
+    && JsonBool(phase579.RootElement, "humanRulingAuthored") is false
+    && JsonBool(phase579.RootElement, "o4Discharged") is false
+    && JsonBool(phase579.RootElement, "phase450RecordMutated") is false
+    && JsonBool(phase579.RootElement, "newSamplingPerformed") is false
+    && JsonBool(phase579.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase579.RootElement, "phase458Satisfied") is false
+    && JsonBool(phase579.RootElement, "noGevPromotion") is true
+    && JsonBool(phase579.RootElement, "externalReviewPending") is true
+    && JsonInt(phase579.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var collectiveCoordinateAssumptionAuditPassed = phase581 is not null
+    && JsonInt(phase581.RootElement, "schemaVersion") == 1
+    && JsonInt(phase581.RootElement, "phase") == 581
+    && JsonString(phase581.RootElement, "contractId") == "phase581-a43-assumption-audit-v1"
+    && JsonString(phase581.RootElement, "verdictKind") == "linear-coordinate-obstruction-proved-nonlinear-controls-scoped"
+    && JsonBool(phase581.RootElement, "auditPassed") is true
+    && JsonBool(phase581.RootElement, "contractValid") is true
+    && JsonBool(phase581.RootElement, "exactBindingsValid") is true
+    && phase581.RootElement.TryGetProperty("evidence", out var p581Evidence)
+    && JsonBool(p581Evidence, "knownAnswerPassed") is true
+    && JsonBool(p581Evidence, "controlsPassed") is true
+    && phase581.RootElement.TryGetProperty("authorityFirewalls", out var p581Firewalls)
+    && p581Firewalls.EnumerateObject().Count() == 11
+    && p581Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase581.RootElement, "externalReviewPending") is true
+    && JsonInt(phase581.RootElement, "promotedPhysicalMassClaimCount") == 0;
+
+var relativeTransportObservableControlPassed = phase582 is not null
+    && JsonInt(phase582.RootElement, "schemaVersion") == 1
+    && JsonInt(phase582.RootElement, "phase") == 582
+    && JsonString(phase582.RootElement, "contractId") == "phase582-a44-relative-transport-v1"
+    && JsonString(phase582.RootElement, "verdictKind") == "local-relative-observable-controls-pass-registered-bridge-open"
+    && JsonBool(phase582.RootElement, "auditPassed") is true
+    && JsonBool(phase582.RootElement, "contractValid") is true
+    && JsonBool(phase582.RootElement, "exactBindingsValid") is true
+    && phase582.RootElement.TryGetProperty("evidence", out var p582Evidence)
+    && JsonBool(p582Evidence, "knownAnswerPassed") is true
+    && JsonBool(p582Evidence, "controlsPassed") is true
+    && phase582.RootElement.TryGetProperty("authorityFirewalls", out var p582Firewalls)
+    && p582Firewalls.EnumerateObject().Count() == 14
+    && p582Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase582.RootElement, "externalReviewPending") is true
+    && JsonInt(phase582.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var biconnectionConventionReconciliationPassed = phase583 is not null
+    && JsonInt(phase583.RootElement, "schemaVersion") == 1
+    && JsonInt(phase583.RootElement, "phase") == 583
+    && JsonString(phase583.RootElement, "contractId") == "phase583-a45-biconnection-signs-v1"
+    && JsonString(phase583.RootElement, "verdictKind") == "printed-sign-conflict-proved-two-compatible-families-registered-map-unresolved"
+    && JsonBool(phase583.RootElement, "auditPassed") is true
+    && JsonBool(phase583.RootElement, "contractValid") is true
+    && JsonBool(phase583.RootElement, "exactBindingsValid") is true
+    && phase583.RootElement.TryGetProperty("evidence", out var p583Evidence)
+    && JsonBool(p583Evidence, "knownAnswerPassed") is true
+    && JsonBool(p583Evidence, "controlsPassed") is true
+    && phase583.RootElement.TryGetProperty("authorityFirewalls", out var p583Firewalls)
+    && p583Firewalls.EnumerateObject().Count() == 14
+    && p583Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase583.RootElement, "externalReviewPending") is true
+    && JsonInt(phase583.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var signedSpatialCurvatureConsistencyPassed = phase584 is not null
+    && JsonInt(phase584.RootElement, "schemaVersion") == 1
+    && JsonInt(phase584.RootElement, "phase") == 584
+    && JsonString(phase584.RootElement, "contractId") == "phase584-a46-signed-spatial-curvature-v1"
+    && JsonString(phase584.RootElement, "verdictKind") == "paired-sign-smooth-spatial-consistency-fixed-mesh-obstruction-preserved"
+    && JsonBool(phase584.RootElement, "auditPassed") is true
+    && JsonBool(phase584.RootElement, "contractValid") is true
+    && JsonBool(phase584.RootElement, "exactBindingsValid") is true
+    && phase584.RootElement.TryGetProperty("evidence", out var p584Evidence)
+    && JsonBool(p584Evidence, "knownAnswerPassed") is true
+    && JsonBool(p584Evidence, "controlsPassed") is true
+    && phase584.RootElement.TryGetProperty("authorityFirewalls", out var p584Firewalls)
+    && p584Firewalls.EnumerateObject().Count() == 14
+    && p584Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase584.RootElement, "externalReviewPending") is true
+    && JsonInt(phase584.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var quotientSectionMeasureControlsPassed = phase585 is not null
+    && JsonInt(phase585.RootElement, "schemaVersion") == 1
+    && JsonInt(phase585.RootElement, "phase") == 585
+    && JsonString(phase585.RootElement, "contractId") == "phase585-a46-quotient-section-measure-v1"
+    && JsonString(phase585.RootElement, "verdictKind") == "conditional-section-measure-controls-pass-source-regulator-unresolved"
+    && JsonBool(phase585.RootElement, "auditPassed") is true
+    && JsonBool(phase585.RootElement, "contractValid") is true
+    && JsonBool(phase585.RootElement, "exactBindingsValid") is true
+    && phase585.RootElement.TryGetProperty("evidence", out var p585Evidence)
+    && JsonBool(p585Evidence, "knownAnswerPassed") is true
+    && JsonBool(p585Evidence, "controlsPassed") is true
+    && phase585.RootElement.TryGetProperty("authorityFirewalls", out var p585Firewalls)
+    && p585Firewalls.EnumerateObject().Count() == 14
+    && p585Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase585.RootElement, "externalReviewPending") is true
+    && JsonInt(phase585.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var actionRestrictionPairingControlsPassed = phase586 is not null
+    && JsonInt(phase586.RootElement, "schemaVersion") == 1
+    && JsonInt(phase586.RootElement, "phase") == 586
+    && JsonString(phase586.RootElement, "contractId") == "phase586-a46-action-restriction-pairing-v1"
+    && JsonString(phase586.RootElement, "verdictKind") == "action-restriction-controls-pass-pairing-bridge-unresolved"
+    && JsonBool(phase586.RootElement, "auditPassed") is true
+    && JsonBool(phase586.RootElement, "contractValid") is true
+    && JsonBool(phase586.RootElement, "exactBindingsValid") is true
+    && phase586.RootElement.TryGetProperty("evidence", out var p586Evidence)
+    && JsonBool(p586Evidence, "knownAnswerPassed") is true
+    && JsonBool(p586Evidence, "controlsPassed") is true
+    && phase586.RootElement.TryGetProperty("authorityFirewalls", out var p586Firewalls)
+    && p586Firewalls.EnumerateObject().Count() == 14
+    && p586Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase586.RootElement, "externalReviewPending") is true
+    && JsonInt(phase586.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var exactResidualFactorizationAuditPassed = phase587 is not null
+    && JsonInt(phase587.RootElement, "schemaVersion") == 1
+    && JsonInt(phase587.RootElement, "phase") == 587
+    && JsonString(phase587.RootElement, "contractId") == "phase587-a47-exact-residual-factorization-v1"
+    && (JsonString(phase587.RootElement, "verdictKind") == "nonlinear-residual-factorization-obstructed-flat-tangent-control-passes")
+    && JsonBool(phase587.RootElement, "auditPassed") is true
+    && JsonBool(phase587.RootElement, "contractValid") is true
+    && JsonBool(phase587.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase587.RootElement, "coreSourceTreeValid") is true
+    && phase587.RootElement.TryGetProperty("evidence", out var p587Evidence)
+    && JsonBool(p587Evidence, "knownAnswerPassed") is true
+    && JsonBool(p587Evidence, "controlsPassed") is true
+    && phase587.RootElement.TryGetProperty("authorityFirewalls", out var p587Firewalls)
+    && p587Firewalls.EnumerateObject().Count() == 14
+    && p587Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase587.RootElement, "externalReviewPending") is true
+    && JsonInt(phase587.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var fixedDomainActionForceConsistencyPassed = phase588 is not null
+    && JsonInt(phase588.RootElement, "schemaVersion") == 1
+    && JsonInt(phase588.RootElement, "phase") == 588
+    && JsonString(phase588.RootElement, "contractId") == "phase588-a47-fixed-domain-action-force-v1"
+    && (JsonString(phase588.RootElement, "verdictKind") == "fixed-domain-action-force-controls-pass-induced-pairing-scoped")
+    && JsonBool(phase588.RootElement, "auditPassed") is true
+    && JsonBool(phase588.RootElement, "contractValid") is true
+    && JsonBool(phase588.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase588.RootElement, "coreSourceTreeValid") is true
+    && phase588.RootElement.TryGetProperty("evidence", out var p588Evidence)
+    && JsonBool(p588Evidence, "knownAnswerPassed") is true
+    && JsonBool(p588Evidence, "controlsPassed") is true
+    && phase588.RootElement.TryGetProperty("authorityFirewalls", out var p588Firewalls)
+    && p588Firewalls.EnumerateObject().Count() == 14
+    && p588Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase588.RootElement, "externalReviewPending") is true
+    && JsonInt(phase588.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var sectionDensityJointLiftAuditPassed = phase589 is not null
+    && JsonInt(phase589.RootElement, "schemaVersion") == 1
+    && JsonInt(phase589.RootElement, "phase") == 589
+    && JsonString(phase589.RootElement, "contractId") == "phase589-a47-section-density-joint-lift-v1"
+    && (JsonString(phase589.RootElement, "verdictKind") == "density-nonselection-proved-literal-joint-lift-rejected-section-first-open" || JsonString(phase589.RootElement, "verdictKind") == "density-nonselection-proved-joint-lift-survives-bounded-test-section-first-open")
+    && JsonBool(phase589.RootElement, "auditPassed") is true
+    && JsonBool(phase589.RootElement, "contractValid") is true
+    && JsonBool(phase589.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase589.RootElement, "coreSourceTreeValid") is true
+    && phase589.RootElement.TryGetProperty("evidence", out var p589Evidence)
+    && JsonBool(p589Evidence, "knownAnswerPassed") is true
+    && JsonBool(p589Evidence, "controlsPassed") is true
+    && phase589.RootElement.TryGetProperty("authorityFirewalls", out var p589Firewalls)
+    && p589Firewalls.EnumerateObject().Count() == 14
+    && p589Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase589.RootElement, "externalReviewPending") is true
+    && JsonInt(phase589.RootElement, "promotedPhysicalMassClaimCount") == 0;
+
+var sourceCliffordTensorControlsPassed = phase590 is not null
+    && JsonInt(phase590.RootElement, "schemaVersion") == 1
+    && JsonInt(phase590.RootElement, "phase") == 590
+    && JsonString(phase590.RootElement, "contractId") == "phase590-a48-source-clifford-tensor-v1"
+    && JsonString(phase590.RootElement, "verdictKind") == "mixed-signature-clifford-tensor-controls-pass-source-choice-open"
+    && JsonBool(phase590.RootElement, "auditPassed") is true
+    && JsonBool(phase590.RootElement, "contractValid") is true
+    && JsonBool(phase590.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase590.RootElement, "coreSourceTreeValid") is true
+    && phase590.RootElement.TryGetProperty("evidence", out var p590Evidence)
+    && JsonBool(p590Evidence, "knownAnswerPassed") is true
+    && JsonBool(p590Evidence, "controlsPassed") is true
+    && phase590.RootElement.TryGetProperty("authorityFirewalls", out var p590Firewalls)
+    && p590Firewalls.EnumerateObject().Count() == 14
+    && p590Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase590.RootElement, "externalReviewPending") is true
+    && JsonInt(phase590.RootElement, "promotedPhysicalMassClaimCount") == 0;
+
+var sourceHodgeCurvatureBranchAuditPassed = phase591 is not null
+    && JsonInt(phase591.RootElement, "schemaVersion") == 1
+    && JsonInt(phase591.RootElement, "phase") == 591
+    && JsonString(phase591.RootElement, "contractId") == "phase591-a48-source-hodge-curvature-branch-v1"
+    && JsonString(phase591.RootElement, "verdictKind") == "canonical-source-hodge-curvature-branches-pass-choice-open"
+    && JsonBool(phase591.RootElement, "auditPassed") is true
+    && JsonBool(phase591.RootElement, "contractValid") is true
+    && JsonBool(phase591.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase591.RootElement, "coreSourceTreeValid") is true
+    && phase591.RootElement.TryGetProperty("evidence", out var p591Evidence)
+    && JsonBool(p591Evidence, "knownAnswerPassed") is true
+    && JsonBool(p591Evidence, "controlsPassed") is true
+    && phase591.RootElement.TryGetProperty("authorityFirewalls", out var p591Firewalls)
+    && p591Firewalls.EnumerateObject().Count() == 14
+    && p591Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase591.RootElement, "externalReviewPending") is true
+    && JsonInt(phase591.RootElement, "promotedPhysicalMassClaimCount") == 0;
+
+var companionTensorChiralityAuditPassed = phase592 is not null
+    && JsonInt(phase592.RootElement, "schemaVersion") == 1
+    && JsonInt(phase592.RootElement, "phase") == 592
+    && JsonString(phase592.RootElement, "contractId") == "phase592-a49-companion-tensor-chirality-v1"
+    && JsonString(phase592.RootElement, "verdictKind") == "companion-tensor-chirality-controls-pass-source-choice-open"
+    && JsonBool(phase592.RootElement, "auditPassed") is true
+    && JsonBool(phase592.RootElement, "contractValid") is true
+    && JsonBool(phase592.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase592.RootElement, "coreSourceTreeValid") is true
+    && phase592.RootElement.TryGetProperty("evidence", out var p592Evidence)
+    && JsonBool(p592Evidence, "knownAnswerPassed") is true
+    && JsonBool(p592Evidence, "controlsPassed") is true
+    && phase592.RootElement.TryGetProperty("authorityFirewalls", out var p592Firewalls)
+    && p592Firewalls.EnumerateObject().Count() == 14
+    && p592Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase592.RootElement, "externalReviewPending") is true
+    && JsonInt(phase592.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var companionActionFirstVariationAuditPassed = phase593 is not null
+    && JsonInt(phase593.RootElement, "schemaVersion") == 1
+    && JsonInt(phase593.RootElement, "phase") == 593
+    && JsonString(phase593.RootElement, "contractId") == "phase593-a49-companion-action-first-variation-v1"
+    && JsonString(phase593.RootElement, "verdictKind") == "companion-action-variation-mismatch-certified-source-choice-open"
+    && JsonBool(phase593.RootElement, "auditPassed") is true
+    && JsonBool(phase593.RootElement, "contractValid") is true
+    && JsonBool(phase593.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase593.RootElement, "coreSourceTreeValid") is true
+    && phase593.RootElement.TryGetProperty("evidence", out var p593Evidence)
+    && JsonBool(p593Evidence, "knownAnswerPassed") is true
+    && JsonBool(p593Evidence, "controlsPassed") is true
+    && phase593.RootElement.TryGetProperty("authorityFirewalls", out var p593Firewalls)
+    && p593Firewalls.EnumerateObject().Count() == 14
+    && p593Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase593.RootElement, "externalReviewPending") is true
+    && JsonInt(phase593.RootElement, "promotedPhysicalMassClaimCount") == 0;
+
+var externalReviewPacketAssemblyPassed = phase580 is not null
+    && JsonInt(phase580.RootElement, "schemaVersion") == 1
+    && JsonInt(phase580.RootElement, "phase") == 580
+    && JsonString(phase580.RootElement, "phaseId") == "phase580-external-review-packet-assembly"
+    && JsonString(phase580.RootElement, "contractId") == "phase580-a42-external-review-packet-assembly-v5"
+    && JsonBool(phase580.RootElement, "contractValid") is true
+    && JsonBool(phase580.RootElement, "exactBindingsValid") is true
+    && phase580.RootElement.TryGetProperty("knownAnswerBattery", out var p580Battery)
+    && JsonBool(p580Battery, "passed") is true
+    && phase580.RootElement.TryGetProperty("hashManifest", out var p580Manifest)
+    && JsonInt(p580Manifest, "artifactCount") == 12
+    && JsonBool(p580Manifest, "allHashesMatch") is true
+    && phase580.RootElement.TryGetProperty("inputValidation", out var p580Inputs)
+    && JsonBool(p580Inputs, "assessmentValid") is true
+    && JsonBool(p580Inputs, "coverageValid") is true
+    && JsonInt(p580Inputs, "coverageReviewItemCount") == 13
+    && JsonInt(p580Inputs, "coverageEntryCount") == 31
+    && JsonBool(p580Inputs, "memoMaterialsValid") is true
+    && JsonBool(p580Inputs, "signingMaterialsValid") is true
+    && JsonBool(p580Inputs, "phase555Valid") is true
+    && JsonBool(p580Inputs, "phase485Valid") is true
+    && JsonBool(p580Inputs, "phase578Valid") is true
+    && JsonBool(p580Inputs, "phase579Valid") is true
+    && phase580.RootElement.TryGetProperty("reviewerRequest", out var p580Request)
+    && JsonInt(p580Request, "judgmentCallCount") == 2
+    && JsonInt(p580Request, "evidenceBackedProposalCount") == 11
+    && JsonInt(p580Request, "preservedImplementationNegativeProposalCount") == 1
+    && JsonString(p580Request, "preservedImplementationNegativeRulingId") == "O4-F1-COLLECTIVE-COORDINATE"
+    && JsonBool(p580Request, "phase579NegativeIsEvidenceNotSupport") is true
+    && JsonBool(p580Request, "allThirteenItemsPresented") is true
+    && JsonBool(p580Request, "signerMayOverturnAnyProposal") is true
+    && phase580.RootElement.TryGetProperty("signingAndIntake", out var p580Signing)
+    && JsonBool(p580Signing, "reviewerRegistryEmpty") is true
+    && JsonBool(p580Signing, "signingPrerequisitesCurrentlySatisfied") is false
+    && JsonBool(p580Signing, "phase480IntakeReady") is false
+    && JsonBool(phase580.RootElement, "packetContentValid") is true
+    && JsonBool(phase580.RootElement, "packetReadyForIndependentReview") is true
+    && JsonBool(phase580.RootElement, "readinessOnly") is true
+    && JsonString(phase580.RootElement, "verdictKind") == "external-review-packet-assembled-readiness-only"
+    && JsonBool(phase580.RootElement, "internalAssessmentMachineAuthored") is true
+    && JsonBool(phase580.RootElement, "internalAssessmentNonAuthoritative") is true
+    && JsonBool(phase580.RootElement, "independentSignerMayOverturnAnyProposal") is true
+    && JsonBool(phase580.RootElement, "authorsO4Ruling") is false
+    && JsonBool(phase580.RootElement, "consumesO4Memo") is false
+    && JsonBool(phase580.RootElement, "verifiesSignature") is false
+    && JsonBool(phase580.RootElement, "changesIntake") is false
+    && JsonBool(phase580.RootElement, "changesPendingFlag") is false
+    && JsonBool(phase580.RootElement, "o4Discharged") is false
+    && JsonBool(phase580.RootElement, "phase458Satisfied") is false
+    && JsonBool(phase580.RootElement, "phase481Changed") is false
+    && JsonBool(phase580.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase580.RootElement, "samplingAuthorized") is false
+    && JsonBool(phase580.RootElement, "productionAuthorized") is false
+    && JsonBool(phase580.RootElement, "launchAuthorized") is false
+    && JsonBool(phase580.RootElement, "physicalUnitClaimAllowed") is false
+    && JsonBool(phase580.RootElement, "gevClaimAllowed") is false
+    && JsonBool(phase580.RootElement, "externalReviewPending") is true
+    && JsonInt(phase580.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -12261,6 +12640,102 @@ var checklist = new[]
         chainPackExecutionPassed ? "passed" : "failed",
         phase577 is null ? "Phase577 artifact not materialized" : $"verdictKind={JsonString(phase577.RootElement, "verdictKind")}; complete={(phase577.RootElement.TryGetProperty("execution", out var p577ChecklistExecution) ? JsonBool(p577ChecklistExecution, "complete") : null)}; nonFinite={(p577ChecklistExecution.ValueKind == JsonValueKind.Object ? JsonInt(p577ChecklistExecution, "totalNonFiniteTrajectories") : null)}; allGatesPass={(phase577.RootElement.TryGetProperty("tableDiagnostics", out var p577ChecklistDiagnostics) ? JsonBool(p577ChecklistDiagnostics, "allGatesPass") : null)}; stationarityClaimed={JsonBool(phase577.RootElement, "establishesStationarity")}; promotedPhysicalMassClaimCount={JsonInt(phase577.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase577Path),
+    new ObjectiveChecklistItem(
+        "consolidated-conditional-electroweak-sector-ledger",
+        "Consolidate every committed conditional or derived electroweak number, assumption, source binding, comparison miss, anchor status, and missing-field count without introducing a unit anchor or physical claim.",
+        consolidatedConditionalElectroweakSectorLedgerPassed ? "passed" : "failed",
+        phase578 is null ? "Phase578 artifact not materialized" : $"verdictKind={JsonString(phase578.RootElement, "verdictKind")}; rows={JsonInt(phase578.RootElement, "ledgerRowCount")}; misses={(phase578.RootElement.TryGetProperty("comparisonAccounting", out var p578ChecklistComparisons) ? JsonInt(p578ChecklistComparisons, "knownElectroweakMissCount") : null)}; noUnitAnchor={JsonBool(phase578.RootElement, "noUnitAnchorIntroduced")}; absoluteMassComputed={JsonBool(phase578.RootElement, "absoluteMassComputed")}; promotedPhysicalMassClaimCount={JsonInt(phase578.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase578Path),
+    new ObjectiveChecklistItem(
+        "collective-coordinate-jacobian-self-check",
+        "Reconstruct the Phase450 reduced collective coordinate, verify its Jacobian and solvable limit, and preserve the active fixed-ray gauge-invariance failure without rewriting Phase450 or authoring an O4 ruling.",
+        collectiveCoordinateJacobianSelfCheckPassed ? "passed" : "failed",
+        phase579 is null ? "Phase579 artifact not materialized" : $"verdictKind={JsonString(phase579.RootElement, "verdictKind")}; jacobianPassed={(phase579.RootElement.TryGetProperty("jacobian", out var p579ChecklistJacobian) ? JsonBool(p579ChecklistJacobian, "passed") : null)}; solvableLimitPassed={(phase579.RootElement.TryGetProperty("exactlySolvableLimit", out var p579ChecklistSolvable) ? JsonBool(p579ChecklistSolvable, "passed") : null)}; activeInvariancePassed={(phase579.RootElement.TryGetProperty("exactTransformationInvariance", out var p579ChecklistInvariance) ? JsonBool(p579ChecklistInvariance, "passed") : null)}; preservedNegative={JsonBool(phase579.RootElement, "preservedFirstClassNegative")}; promotedPhysicalMassClaimCount={JsonInt(phase579.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase579Path),
+    new ObjectiveChecklistItem(
+        "external-review-packet-assembly",
+        "Assemble the exact-hash-bound O4 review packet and reviewer guide with two judgment calls and eleven evidence-backed proposals, preserving Phase579's negative and granting readiness only.",
+        externalReviewPacketAssemblyPassed ? "passed" : "failed",
+        phase580 is null ? "Phase580 artifact not materialized" : $"verdictKind={JsonString(phase580.RootElement, "verdictKind")}; ready={JsonBool(phase580.RootElement, "packetReadyForIndependentReview")}; judgmentCalls={(phase580.RootElement.TryGetProperty("reviewerRequest", out var p580ChecklistRequest) ? JsonInt(p580ChecklistRequest, "judgmentCallCount") : null)}; evidenceBacked={(p580ChecklistRequest.ValueKind == JsonValueKind.Object ? JsonInt(p580ChecklistRequest, "evidenceBackedProposalCount") : null)}; reviewerRegistryEmpty={(phase580.RootElement.TryGetProperty("signingAndIntake", out var p580ChecklistSigning) ? JsonBool(p580ChecklistSigning, "reviewerRegistryEmpty") : null)}; promotedPhysicalMassClaimCount={JsonInt(phase580.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase580Path),
+    new ObjectiveChecklistItem(
+        "collective-coordinate-assumption-audit",
+        "Prove the fixed linear global-adjoint obstruction and validate scoped nonlinear, local-transport, and radial-measure controls without source selection or physical claims.",
+        collectiveCoordinateAssumptionAuditPassed ? "passed" : "failed",
+        phase581 is null ? "Phase581 artifact not materialized" : $"verdictKind={JsonString(phase581.RootElement, "verdictKind")}; auditPassed={JsonBool(phase581.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase581.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase581Path),
+    new ObjectiveChecklistItem(
+        "relative-transport-observable-control",
+        "Validate the declared two-connection link observable, SO(3) descent, classical local consistency, and conditional Haar control without identifying the registered action or a physical particle.",
+        relativeTransportObservableControlPassed ? "passed" : "failed",
+        phase582 is null ? "Phase582 artifact not materialized" : $"verdictKind={JsonString(phase582.RootElement, "verdictKind")}; auditPassed={JsonBool(phase582.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase582.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase582Path),
+    new ObjectiveChecklistItem(
+        "biconnection-convention-reconciliation",
+        "Prove the printed sign conflict and validate the two compatible convention families and relative-field dictionary without selecting author intent or changing registered physics.",
+        biconnectionConventionReconciliationPassed ? "passed" : "failed",
+        phase583 is null ? "Phase583 artifact not materialized" : $"verdictKind={JsonString(phase583.RootElement, "verdictKind")}; auditPassed={JsonBool(phase583.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase583.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase583Path),
+    new ObjectiveChecklistItem(
+        "signed-spatial-curvature-consistency",
+        "Test both signed field dictionaries through the actual curvature assembler under smooth spatial refinement while preserving the fixed-mesh weak-field negative.",
+        signedSpatialCurvatureConsistencyPassed ? "passed" : "failed",
+        phase584 is null ? "Phase584 artifact not materialized" : $"verdictKind={JsonString(phase584.RootElement, "verdictKind")}; auditPassed={JsonBool(phase584.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase584.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase584Path),
+    new ObjectiveChecklistItem(
+        "quotient-section-measure-controls",
+        "Validate a conditional quotient section and affine measure identity while exposing finite-difference cocycle and retained-space failures without selecting the registered measure.",
+        quotientSectionMeasureControlsPassed ? "passed" : "failed",
+        phase585 is null ? "Phase585 artifact not materialized" : $"verdictKind={JsonString(phase585.RootElement, "verdictKind")}; auditPassed={JsonBool(phase585.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase585.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase585Path),
+    new ObjectiveChecklistItem(
+        "action-restriction-pairing-controls",
+        "Distinguish torsion coupling omission from the zero-relative-field constraint and test reference variations and omitted-map quadratic forms without claiming source or spectral equivalence.",
+        actionRestrictionPairingControlsPassed ? "passed" : "failed",
+        phase586 is null ? "Phase586 artifact not materialized" : $"verdictKind={JsonString(phase586.RootElement, "verdictKind")}; auditPassed={JsonBool(phase586.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase586.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase586Path),
+    new ObjectiveChecklistItem(
+        "exact-residual-factorization-audit",
+        "Test exact single-simplex nonlinear residual factorization with a preserved flat-tangent control, without excluding other reconstructions or claiming physical equivalence.",
+        exactResidualFactorizationAuditPassed ? "passed" : "failed",
+        phase587 is null ? "Phase587 artifact not materialized" : $"verdictKind={JsonString(phase587.RootElement, "verdictKind")}; auditPassed={JsonBool(phase587.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase587.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase587Path),
+    new ObjectiveChecklistItem(
+        "fixed-domain-action-force-consistency",
+        "Validate fixed-domain smooth action and signed directional derivatives through the registered operator with an independently identified induced pairing and scoped classical bounds.",
+        fixedDomainActionForceConsistencyPassed ? "passed" : "failed",
+        phase588 is null ? "Phase588 artifact not materialized" : $"verdictKind={JsonString(phase588.RootElement, "verdictKind")}; auditPassed={JsonBool(phase588.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase588.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase588Path),
+    new ObjectiveChecklistItem(
+        "section-density-joint-lift-audit",
+        "Prove conditional density nonselection and adjudicate a bounded literal joint-lift Ward test without rejecting section-first discretization or selecting a source measure.",
+        sectionDensityJointLiftAuditPassed ? "passed" : "failed",
+        phase589 is null ? "Phase589 artifact not materialized" : $"verdictKind={JsonString(phase589.RootElement, "verdictKind")}; auditPassed={JsonBool(phase589.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase589.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase589Path),
+    new ObjectiveChecklistItem(
+        "source-clifford-tensor-controls",
+        "Validate a declared mixed-signature real form and canonical invariant tensors without selecting source normalizations or a physical model.",
+        sourceCliffordTensorControlsPassed ? "passed" : "failed",
+        phase590 is null ? "Phase590 artifact not materialized" : $"verdictKind={JsonString(phase590.RootElement, "verdictKind")}; auditPassed={JsonBool(phase590.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase590.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase590Path),
+    new ObjectiveChecklistItem(
+        "source-hodge-curvature-branch-audit",
+        "Compare a literal typed contraction with independent curvature formulas, distinguishing tied and enlarged bracket families without source selection.",
+        sourceHodgeCurvatureBranchAuditPassed ? "passed" : "failed",
+        phase591 is null ? "Phase591 artifact not materialized" : $"verdictKind={JsonString(phase591.RootElement, "verdictKind")}; auditPassed={JsonBool(phase591.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase591.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase591Path),
+    new ObjectiveChecklistItem(
+        "companion-tensor-chirality-audit",
+        "Test formal companion-tensor contractions and chiral matching conditions without selecting source normalization, a physical projection or an action.",
+        companionTensorChiralityAuditPassed ? "passed" : "failed",
+        phase592 is null ? "Phase592 artifact not materialized" : $"verdictKind={JsonString(phase592.RootElement, "verdictKind")}; auditPassed={JsonBool(phase592.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase592.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase592Path),
+    new ObjectiveChecklistItem(
+        "companion-action-first-variation-audit",
+        "Test the full companion action first variation against candidate curvature force with exact counterexamples and cyclic positive controls.",
+        companionActionFirstVariationAuditPassed ? "passed" : "failed",
+        phase593 is null ? "Phase593 artifact not materialized" : $"verdictKind={JsonString(phase593.RootElement, "verdictKind")}; auditPassed={JsonBool(phase593.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase593.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase593Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

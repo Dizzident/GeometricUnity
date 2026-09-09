@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "phase": 593,
+  "contractId": "phase593-a49-companion-action-first-variation-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Two exact full-CCA action/force first-variation witnesses, including both matching chiral branches; arbitrary c coefficientwise; conditional variational mismatch and no common cubic reweighting; no source selection",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "flat constant unit-volume (7,7) fourteen-torus; epsilon=I; B=0; dT=0",
+    "branch": "CCA",
+    "phi1": "(a+b*Omega)*gamma",
+    "phi2": "(c+i*d*Omega)*Gamma2",
+    "chain": "K(F)=[Phi1 wedge star(F)]_C-(1/2)*star([Phi1 wedge star([Phi2 wedge star(F)]_A)]_C)",
+    "hodge": "star(theta^I)=shuffle(I,Icomplement)*product_sigma(I)*theta^Icomplement",
+    "pairing": "-ReTr(U wedge K(F))/128; equivalent signed one-form trace pairing with star1_inverse K",
+    "curvature": "Q(T)=T wedge T; F=Q; graded bracket equals 2Q",
+    "bracketEncodings": [
+      1,
+      2
+    ],
+    "sourceCubicPrefactor": "gamma/3 on B(T,L(Q))",
+    "operatorRows": [
+      {
+        "id": "canonical",
+        "a": 1,
+        "b": 0,
+        "d": 0
+      },
+      {
+        "id": "chiral-minus",
+        "a": 1,
+        "b": -1,
+        "d": 1
+      },
+      {
+        "id": "chiral-plus",
+        "a": 1,
+        "b": 1,
+        "d": -1
+      }
+    ],
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "witnesses": [
+      {
+        "id": "curvature-stationary",
+        "operatorIds": [
+          "canonical",
+          "chiral-minus",
+          "chiral-plus"
+        ],
+        "T": "x theta0 Gamma01+y theta1 Gamma12+z theta1 gamma2",
+        "V": "theta1 gamma2",
+        "Q": "2xy theta01 Gamma02",
+        "forceAtZ0": "4xy",
+        "action": "(4gamma/3)xyz",
+        "derivativeAtZ0": "(4gamma/3)xy"
+      },
+      {
+        "id": "commuting-background",
+        "operatorIds": [
+          "chiral-minus",
+          "chiral-plus"
+        ],
+        "T": "x theta0 Gamma02+y theta1 gamma1+z theta2 Omega",
+        "V": "theta2 Omega",
+        "Q": "-2yz theta12 Omega gamma1",
+        "forceAtZ0": "0",
+        "action": "(4hgamma/3)xyz",
+        "derivativeAtZ0": "(4hgamma/3)xy"
+      }
+    ],
+    "amplitudes": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "evaluationZ": 0,
+    "massKappa": [
+      -1,
+      0,
+      1
+    ],
+    "mass": "(kappa/2)B(T,T); derivative=-kappa*z; equals kappa*B(V,T)",
+    "chernSimons": {
+      "A": "x theta0 Gamma01+y theta1 Gamma12+z theta2 Gamma02",
+      "V": "theta2 Gamma02",
+      "nu11Mask": 16376,
+      "K": "F wedge nu11",
+      "normalizedPrefactor": "1/(3gamma) on bracket_gamma",
+      "normalizedAction": "2xyz",
+      "force": "2xy",
+      "literalSourceDerivative": "2gamma*xy"
+    },
+    "predictedCounts": {
+      "operatorWitnessRows": 5,
+      "coefficientRows": 10,
+      "polynomialRows": 20,
+      "nonzeroMismatchRows": 10,
+      "zeroFormalCRows": 10,
+      "amplitudeChecks": 100,
+      "zeroAmplitudeChecks": 40,
+      "massChecks": 15,
+      "chernSimonsRows": 2,
+      "globalReweightingCertificates": 2
+    },
+    "knownAnswer": {
+      "carrierMasks": "subsets of axes0,1,2 and their Omega complements",
+      "maskCount": 16,
+      "wordProductCases": 256,
+      "hodgeCases": 16384
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 5,
+      "maximumEstimatedCpuSeconds": 15,
+      "estimatedPeakBytes": 67108864,
+      "maximumEstimatedPeakBytes": 134217728
+    }
+  },
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Program.cs",
+      "sha256": "6ca291a18e95e95228188e55f47d17af1d662d75662c7a3b834373929ccce788"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj",
+      "sha256": "c421dc2a581d894ec92b236e16750a358a9dd5d2711488331f35e1ce6436f12c"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/STUDY.md",
+      "sha256": "210c5daf97a9c3f7ae99901a6ed8f64031db60db2a63ea936ab535c0c928e40a"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be"
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6"
+    },
+    {
+      "id": "phase592-program",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Program.cs",
+      "sha256": "c2be95aafa4aeabb794615f4350539c1667783de00f54523a933fa30eea40987"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "literal-chain-control-failed",
+    "independent-variation-control-failed",
+    "positive-control-failed",
+    "companion-action-variation-mismatch-certified-source-choice-open"
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

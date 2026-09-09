@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "phase": 585,
+  "contractId": "phase585-a46-quotient-section-measure-v1",
+  "frozenBeforeFirstExecution": true,
+  "arithmetic": "checked-int64-exact-and-declared-double-jacobian-control",
+  "scope": "Conditional section and finite measure controls; compact coboundary toy and independent-site derivative counterexample; no source regulator or registered measure selected",
+  "fixtures": {
+    "signs": [-1, 1],
+    "rotations": "all 24 proper signed permutation 3x3 matrices",
+    "referenceLieVector": [1, -2, 1],
+    "pLieVector": [2, 1, -1],
+    "epsilonCovariantDerivativeLieVectors": [[1, 2, -1], [-2, 1, 3], [3, -1, 2]],
+    "hCovariantDerivativeLieVector": [2, -1, 3],
+    "leftOrdinaryDerivativeLieVector": [2, -1, 1],
+    "toyBackgroundLieVector": [1, 0, 0],
+    "graphEndpointRotation": "positive quarter turn about z at site 1; identity at site 0",
+    "cutoffPoint": [-1, 0, 0],
+    "cutoffHalfWidth": 1,
+    "expectedJetCaseCount": 3456,
+    "expectedToyCocycleCaseCount": 576,
+    "expectedJacobianCaseCount": 48,
+    "exactTolerance": 0,
+    "numericalDerivativeStep": 1e-5,
+    "numericalDeterminantTolerance": 1e-8,
+    "numericalJacobianEntryTolerance": 1e-8,
+    "graphProductRuleExpectedMaxResidual": 2,
+    "graphCocycleExpectedMaxResidual": 2,
+    "projectedJacobianExpectedDeterminant": 0,
+    "shiftedCutoffExpectedPoint": [1, -2, 0]
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Both c=s compatible signs admit h=epsilon^-1 when that inverse belongs to the allowed gauge group; section epsilon=I has p=c Phi and B=A0",
+    "Right tilted action fixes Phi; background change transforms Phi tensorially; left seed action has affine connection law and is not proved an action symmetry",
+    "Full finite triangular Jacobians have determinant c and absolute determinant one on retained adjoint-closed R^3; compact-toy 6x6 and full-first-jet-coordinate 9x9 controls agree",
+    "First-jet derivative fibers are noncompact; no normalized Haar probability on the full first-jet group is available",
+    "Compact continuous finite-dimensional affine cocycles are coboundaries C_h=m-R(h)^-1 m; toy mean is -B",
+    "Graph ordinary same-site product rule and source-form cocycle fail with maximum residual 2; shifted-site product rule passes exactly",
+    "Projected x-only Jacobian under a quarter turn has determinant zero; stale unit cube loses the point mapped to (1,-2,0)",
+    "Phase548 and Phase577 already freeze theta=0; off-slice dependence alone does not reject the sampled slice"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "mathematical-control-failed",
+    "conditional-section-measure-controls-pass-source-regulator-unresolved"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase585_quotient_section_measure_controls_001/Program.cs",
+      "sha256": "763500c00368c01b90cde7d75428380012f519898980076b6365b71f606144d9"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase585_quotient_section_measure_controls_001/Phase585QuotientSectionMeasureControls.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "prior-sign-controls",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70"
+    },
+    {
+      "id": "sampled-pilot-slice",
+      "path": "studies/phase548_bounded_complete_lattice_pilot_execution_001/Program.cs",
+      "sha256": "6423d5e0fc1f7351a57f72e0ab368f8e82a61adeefdecbcaaa69119932803177"
+    },
+    {
+      "id": "sampled-pack-slice",
+      "path": "studies/phase577_chain_pack_execution_001/Program.cs",
+      "sha256": "f71523518bb1c8cd801bfe612a72db987a543051e4305b0d5a7e99e2af73af9f"
+    },
+    {
+      "id": "build-properties",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

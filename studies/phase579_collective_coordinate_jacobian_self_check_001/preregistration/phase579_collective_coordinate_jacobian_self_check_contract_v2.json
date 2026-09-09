@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "phase": 579,
+  "contractId": "phase579-a42-collective-coordinate-jacobian-self-check-v2",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A42 item 2",
+  "frozenBeforeFirstExecution": true,
+  "deterministic": true,
+  "newSamplingPerformed": false,
+  "rngUsedOnlyToReconstructRegisteredPhase450Ray": true,
+  "registeredRaySeed": 20260703,
+  "committedReducedSetting": {
+    "torusSize": 3,
+    "latticeCanonical": true,
+    "lieAlgebraId": "su2-trace-pairing",
+    "coefficientMetric": "plain-euclidean-not-mass-weighted",
+    "coordinate": "Phi=<u_inv,omega>",
+    "edgeTypesUsed": 15,
+    "registeredCoefficientSlots": 48,
+    "globalSu2DirectionsProjected": 3
+  },
+  "jacobianCheck": {
+    "analyticGradient": "u_inv",
+    "coareaJacobian": "norm(grad Phi)",
+    "constraintMeasureFactor": "1/norm(grad Phi)",
+    "finiteDifferenceSteps": [0.0001, 0.000001, 0.00000001],
+    "finiteDifferenceMaximumAbsoluteError": 0.00000002,
+    "unitNormMaximumAbsoluteError": 0.00000000000005
+  },
+  "solvableLimit": {
+    "target": "isotropic-free-gaussian",
+    "alpha": 1.75,
+    "coordinateValues": [-1.5, -0.75, 0.0, 0.5, 1.25],
+    "closedFormRelativePotential": "U(Phi)-U(0)=alpha*Phi^2/2",
+    "construction": "orthogonal collective-plus-transverse decomposition with deterministic tensor Simpson integration in a four-dimensional fixture",
+    "maximumAbsolutePotentialError": 0.00000000005
+  },
+  "registeredExactTransformations": {
+    "allLatticeTranslations": "all 81 elements of (Z_3)^4 using the phase450 oSign base-to-tip representation",
+    "globalAdjointGaugeRotations": "active SO(3) adjoint action on omega with the registered Phase450 u_inv held fixed; Phi must be invariant for the coordinate itself to be gauge invariant",
+    "passiveCovarianceDiagnostic": "simultaneous SO(3) adjoint action on u_inv and omega; preservation of the Euclidean pairing is recorded but cannot satisfy the active gauge-invariance gate",
+    "globalOrbitTangents": "the three phase450 [e_l,u] directions",
+    "maximumAbsoluteCoordinateError": 0.00000000000005,
+    "maximumProjectedTangentOverlap": 0.00000000000005
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "phase450-lineage-convention-defective-preserved-negative",
+    "collective-coordinate-jacobian-self-check-passed-evidence-backed"
+  ],
+  "authorityFirewalls": {
+    "mayAuthorRuling": false,
+    "humanRulingAuthored": false,
+    "o4Discharged": false,
+    "phase450RecordMutated": false,
+    "samplingPerformed": false,
+    "sourceContractApplicationAllowed": false,
+    "phase458Satisfied": false,
+    "productionAuthorized": false,
+    "physicalUnitClaimAllowed": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "requiredExactBindingCount": 7,
+  "exactBindings": [
+    {
+      "id": "phase450-contract-study",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/STUDY.md",
+      "sha256": "1a7f2986c2403b3cbd54954d55e4b217554a0c979f1e9744df41d5ec34314ef9"
+    },
+    {
+      "id": "phase450-program",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/Program.cs",
+      "sha256": "df4eab4e6c1258a8f4f3835269519ea27bb448597408a085c167eaec2e1bac5e"
+    },
+    {
+      "id": "phase450-binding-condition-record-full",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe.json",
+      "sha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e"
+    },
+    {
+      "id": "phase450-binding-condition-record-summary",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
+      "sha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e"
+    },
+    {
+      "id": "phase450-implementation-record",
+      "path": "docs/Phases/Implementation/IMPLEMENTATION_P450.md",
+      "sha256": "75c397d9b65a577d2ccd4e5cc79916c8a16c1ed92d459fe2bff60423a36d4986"
+    },
+    {
+      "id": "phase485-falsifier-census-full",
+      "path": "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census.json",
+      "sha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886"
+    },
+    {
+      "id": "phase485-falsifier-census-summary",
+      "path": "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json",
+      "sha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886"
+    }
+  ]
+}

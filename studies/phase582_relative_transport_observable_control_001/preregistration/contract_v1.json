@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "phase": 582,
+  "contractId": "phase582-a44-relative-transport-v1",
+  "frozenBeforeFirstExecution": true,
+  "scope": "Prospective deterministic declared link-model construction; not an independent-model adjudication or a registered-field repair",
+  "floatingTolerance": 1e-11,
+  "midpointSubdivisions": 64,
+  "subdivisionControl": 128,
+  "simpsonIntervals": 8192,
+  "spacingLadder": [0.2, 0.1, 0.05, 0.025],
+  "refinementRatioInterval": [3.8, 4.2],
+  "lastSpacingAbsoluteErrorCeiling": 0.001,
+  "subdivisionDifferenceCeiling": 0.0001,
+  "fixtures": {
+    "a0": [0.8, -0.3, 0.4], "b0": [-0.2, 0.5, 0.1],
+    "da": [0.2, 0.1, -0.15], "db": [-0.1, 0.3, 0.2],
+    "epsilonVectors": [[0.2,-0.4,0.1],[-0.3,0.1,0.5],[0.4,0.2,-0.2]],
+    "gaugeVectors": [[0.7,0.1,-0.2],[-0.4,0.8,0.3],[0.2,-0.5,0.6]],
+    "edgeRule": "i=0,1,2; j=(i+1)%3; U=exp([0.8+0.1*i,-0.3,0.4]); V0=exp([-0.2,0.5+0.1*i,0.1])",
+    "commutingCoefficients": [0.7, -0.2]
+  },
+  "terminalPrecedence": ["invalid-or-drifted-input", "known-answer-battery-failed", "mathematical-control-failed", "local-relative-observable-controls-pass-registered-bridge-open"],
+  "analyticPredictionsBeforeExecution": [
+    "R=UV^-1 transforms by conjugation when U,V share their endpoint transformations",
+    "V=epsilon_i^-1 V0 epsilon_j has this law under epsilon_i'=epsilon_i g_i^-1",
+    "q=(3-Tr_Ad R)/4=quaternion vector norm squared is invariant under R -> -R",
+    "1-Re Tr_fundamental R/2 is not invariant under R -> -R",
+    "A=B yields R=identity even for nontrivial pure-gauge links",
+    "4q/a^2 tends to |A_mu-B_mu|^2=1.73 with second-order error for the frozen centered profiles",
+    "Conditional Haar U given V implies Haar UV^-1 and q density (2/pi)*sqrt(q/(1-q))",
+    "Haar q moments of orders zero, one, two are 1, 3/4, 5/8"
+  ],
+  "exactBindings": [
+    {"id":"program","path":"studies/phase582_relative_transport_observable_control_001/Program.cs","sha256":"73e56b4cd8b52ad7009e8e2c851642412b4f32d857e1ff90a63736a7a9791266"},
+    {"id":"project","path":"studies/phase582_relative_transport_observable_control_001/Phase582RelativeTransportObservableControl.csproj","sha256":"cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"},
+    {"id":"gu-source","path":"docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt","sha256":"062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"},
+    {"id":"bridge-status","path":"studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json","sha256":"5e2fd70f50e7c70dce8ebfc8400d9ab312dabb0e4b6e66d01e2bd791b936f790"},
+    {"id":"prior-audit","path":"studies/phase581_collective_coordinate_assumption_audit_001/output/collective_coordinate_assumption_audit_summary.json","sha256":"c2b803a2cc4a6d0748ccc47e5e7e26cae967fb2f16a8ed00daa8e8556e7b6bbf"},
+    {"id":"registered-so3-convention","path":"studies/phase450_constraint_effective_potential_hmc_probe_001/Program.cs","sha256":"df4eab4e6c1258a8f4f3835269519ea27bb448597408a085c167eaec2e1bac5e"}
+  ],
+  "authorityFirewalls": {
+    "registeredTransformationBridgeEstablished": false, "registeredActionChanged": false,
+    "registeredMeasureSelected": false, "fullGuObservableEstablished": false,
+    "physicalHiggsIdentified": false, "sourceContractApplicationAllowed": false,
+    "phase561Opened": false, "o4Discharged": false, "phase458Satisfied": false,
+    "phase481Changed": false, "samplingPerformed": false, "samplingAuthorized": false,
+    "productionAuthorized": false, "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

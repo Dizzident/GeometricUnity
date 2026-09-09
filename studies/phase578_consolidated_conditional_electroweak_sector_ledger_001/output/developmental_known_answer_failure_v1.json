@@ -1,0 +1,26 @@
+{
+  "phaseId": "phase578-consolidated-conditional-electroweak-sector-ledger",
+  "verdictKind": "known-answer-battery-failed",
+  "terminalStatus": "known-answer-battery-failed",
+  "deterministic": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "failureStage": "pre-audited-read known-answer battery",
+  "failureCause": "developmental fixture literals for 80.377/91.1876 and its scaled miss were transcribed incorrectly; computed values were 0.8814466001956406 and 0.10310004614389022",
+  "auditedNumericDataParsedBeforeBattery": false,
+  "knownAnswerBatteryPassed": false,
+  "noUnitAnchorIntroduced": true,
+  "absoluteMassComputed": false,
+  "branches": [
+    {
+      "id": "fail-closed",
+      "promotedPhysicalMassClaimCount": 0
+    }
+  ],
+  "everyBranchPromotedPhysicalMassClaimCountZero": true,
+  "sourceContractFieldFilledCount": 0,
+  "promotedPhysicalMassClaimCount": 0,
+  "externalReviewPending": true
+}

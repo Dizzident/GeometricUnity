@@ -1,0 +1,215 @@
+{
+  "phaseId": "phase579-collective-coordinate-jacobian-self-check",
+  "schemaVersion": 1,
+  "phase": 579,
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A42",
+  "amendmentOrder": 2,
+  "contractId": "phase579-a42-collective-coordinate-jacobian-self-check-v2",
+  "contractSha256": "5144e66f9dd1e703d3883a6463aac5b5650bb6e5e4a7f3f40ba38688a89e5b49",
+  "terminalStatus": "phase450-lineage-convention-defective-preserved-negative",
+  "verdictKind": "phase450-lineage-convention-defective-preserved-negative",
+  "applicationSubjectKind": "o4-f1-collective-coordinate-falsifier",
+  "rulingId": "O4-F1-COLLECTIVE-COORDINATE",
+  "selfCheckMethod": "collective-coordinate Jacobian and solvable-limit comparison",
+  "deterministic": true,
+  "newSamplingPerformed": false,
+  "registeredRayPrngReconstructionOnly": true,
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "phase450-contract-study",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/STUDY.md",
+      "expectedSha256": "1a7f2986c2403b3cbd54954d55e4b217554a0c979f1e9744df41d5ec34314ef9",
+      "actualSha256": "1a7f2986c2403b3cbd54954d55e4b217554a0c979f1e9744df41d5ec34314ef9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase450-program",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/Program.cs",
+      "expectedSha256": "df4eab4e6c1258a8f4f3835269519ea27bb448597408a085c167eaec2e1bac5e",
+      "actualSha256": "df4eab4e6c1258a8f4f3835269519ea27bb448597408a085c167eaec2e1bac5e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase450-binding-condition-record-full",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe.json",
+      "expectedSha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e",
+      "actualSha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase450-binding-condition-record-summary",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
+      "expectedSha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e",
+      "actualSha256": "c5d5c4a1fc2fe92e1749d180cf557074f1ffe3945c24d818177727c181050b3e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase450-implementation-record",
+      "path": "docs/Phases/Implementation/IMPLEMENTATION_P450.md",
+      "expectedSha256": "75c397d9b65a577d2ccd4e5cc79916c8a16c1ed92d459fe2bff60423a36d4986",
+      "actualSha256": "75c397d9b65a577d2ccd4e5cc79916c8a16c1ed92d459fe2bff60423a36d4986",
+      "hashMatches": true
+    },
+    {
+      "id": "phase485-falsifier-census-full",
+      "path": "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census.json",
+      "expectedSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+      "actualSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+      "hashMatches": true
+    },
+    {
+      "id": "phase485-falsifier-census-summary",
+      "path": "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json",
+      "expectedSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+      "actualSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+      "hashMatches": true
+    }
+  ],
+  "knownAnswerBattery": {
+    "auditedScientificJsonParsedBeforeBattery": false,
+    "deterministicFixturesOnly": true,
+    "finiteDifferenceJacobianMaximumAbsoluteError": 1.5868417690967362E-11,
+    "gaussianRelativePotentialMaximumAbsoluteError": 2.0816681711721685E-17,
+    "checksumTamperDetected": true,
+    "passed": true
+  },
+  "phase450BindingConditions": [
+    "(i) gauge-invariant invariant-ray collective coordinate (oSign lattice gauge; global-su(2) zero modes projected; projector recorded; random rays forbidden)",
+    "(ii) theta-Haar measure (per-vertex SO(3) rotations, symmetric Metropolis; axis-angle fundamental-domain chart documented and battery-asserted)",
+    "(iii) ergodicity control (tau_int(S_B), tau_int(Phi) per window; N_eff \u003E= 100 gate; adaptive trajectory count)",
+    "(iv) theta=0 slice results are sampler demos, never physics verdicts -- the physics run is the joint (omega, theta-Haar) ensemble (the identity control is exactly theta-independent, GradTheta == 0 asserted, so its omega marginal IS its joint ensemble)"
+  ],
+  "reconstruction": {
+    "passed": true,
+    "n": 3,
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "nOmega": 3645,
+    "orbitMapOk": true,
+    "registeredCoefficientCount": 48,
+    "activeEdgeTypeCount": 15,
+    "globalSu2OrthonormalDirectionCount": 3,
+    "uInvNormRaw": 15.579849825913325,
+    "committedUInvNormRaw": 15.579849825913325,
+    "uInvNormAfterProjectionBeforeRenormalization": 1.0000000000000007,
+    "committedUInvNormAfterProjection": 1.0000000000000007,
+    "uInvFinalNorm": 1,
+    "projectorOverlapsBefore": [
+      1.3552103639595178E-17,
+      -5.5345132773595984E-18,
+      -5.963111948670274E-19
+    ],
+    "projectorOverlapsAfter": [
+      -1.7359940253976885E-18,
+      6.676313690258395E-18,
+      1.031050855045297E-18
+    ]
+  },
+  "jacobian": {
+    "passed": true,
+    "analyticDefinition": "dPhi/domega=u_inv; sqrt(det(J J^T))=norm(u_inv)",
+    "finiteDifferenceConstruction": "centered coordinate-wise differences over all 3645 omega coefficients; no shared analytic derivative code",
+    "componentCount": 3645,
+    "coareaJacobian": 1,
+    "constraintMeasureFactor": 1,
+    "finiteDifferenceRows": [
+      {
+        "step": 0.0001,
+        "maximumAbsoluteError": 4.218847493575595E-15,
+        "worstIndex": 598
+      },
+      {
+        "step": 1E-06,
+        "maximumAbsoluteError": 2.1608756450852695E-13,
+        "worstIndex": 3197
+      },
+      {
+        "step": 1E-08,
+        "maximumAbsoluteError": 2.1525757305101978E-11,
+        "worstIndex": 1676
+      }
+    ],
+    "finiteDifferenceMaximumAbsoluteError": 2.1525757305101978E-11,
+    "finiteDifferenceTolerance": 2E-08
+  },
+  "exactlySolvableLimit": {
+    "passed": true,
+    "target": "exp(-alpha*norm(omega)^2/2), with delta(Phi-\u003Cu,omega\u003E)",
+    "alpha": 1.75,
+    "fixtureDimension": 4,
+    "fixtureBasisGramMaximumAbsoluteError": 4.3021142204224816E-16,
+    "deterministicQuadrature": {
+      "rule": "tensor-composite-Simpson",
+      "transverseDimensions": 3,
+      "intervalsPerDimension": 24,
+      "transverseLimit": 4.535573676110727
+    },
+    "gaussianRows": [
+      {
+        "phi": -1.5,
+        "constructedRelativePotential": 1.9687499999999263,
+        "closedFormRelativePotential": 1.96875,
+        "absoluteError": 7.37188088351104E-14
+      },
+      {
+        "phi": -0.75,
+        "constructedRelativePotential": 0.4921874999999174,
+        "closedFormRelativePotential": 0.4921875,
+        "absoluteError": 8.260059303211165E-14
+      },
+      {
+        "phi": 0,
+        "constructedRelativePotential": -0,
+        "closedFormRelativePotential": 0,
+        "absoluteError": 0
+      },
+      {
+        "phi": 0.5,
+        "constructedRelativePotential": 0.2187499999999813,
+        "closedFormRelativePotential": 0.21875,
+        "absoluteError": 1.8707257964933888E-14
+      },
+      {
+        "phi": 1.25,
+        "constructedRelativePotential": 1.3671874999999287,
+        "closedFormRelativePotential": 1.3671875,
+        "absoluteError": 7.127631818093505E-14
+      }
+    ],
+    "maximumAbsolutePotentialError": 8.260059303211165E-14,
+    "tolerance": 5E-11,
+    "fullReducedSettingLogConstrainedNormalizationAtZero": 2328.992049379487,
+    "fullReducedSettingRelativePotentialFormula": "alpha*Phi^2/2",
+    "coareaFactorIncluded": true
+  },
+  "exactTransformationInvariance": {
+    "passed": false,
+    "latticeTranslationCount": 81,
+    "latticeTranslationRayMaximumAbsoluteError": 0,
+    "latticeTranslationCoordinateMaximumAbsoluteError": 5.637851296924623E-17,
+    "globalAdjointRotationCount": 3,
+    "decisiveGlobalAdjointSemantics": "active exact SO(3) adjoint action on omega with the registered Phase450 u_inv fixed",
+    "activeFixedRayCoordinateMaximumAbsoluteError": 0.018092493622111343,
+    "activeFixedRayOnRegisteredRayMaximumAbsoluteError": 0.9157447490058648,
+    "passiveCovarianceSemantics": "simultaneous SO(3) adjoint action on u_inv and omega; diagnostic only, not the gauge-invariance gate",
+    "passiveCovarianceCoordinateMaximumAbsoluteError": 1.3877787807814457E-17,
+    "globalAdjointNormMaximumAbsoluteError": 6.772360450213455E-15,
+    "projectedGlobalOrbitTangentMaximumAbsoluteOverlap": 6.676313690258395E-18,
+    "tolerance": 5E-14
+  },
+  "falsifierPassed": false,
+  "evidenceBackedInternalProposalAllowed": false,
+  "preservedFirstClassNegative": true,
+  "phase450RecordMutated": false,
+  "mayAuthorRuling": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "externalReviewPending": true,
+  "phase458Satisfied": false,
+  "sourceContractApplicationAllowed": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "At least one frozen Jacobian, solvable-limit, reconstruction, or exact-transformation gate failed. The Phase450-lineage collective-coordinate convention is preserved as a first-class negative; Phase450 is unchanged and no ruling is authored."
+}

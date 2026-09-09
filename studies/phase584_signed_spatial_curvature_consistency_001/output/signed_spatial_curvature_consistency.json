@@ -1,0 +1,7024 @@
+{
+  "schemaVersion": 1,
+  "phase": 584,
+  "phaseId": "phase584-signed-spatial-curvature-consistency",
+  "contractId": "phase584-a46-signed-spatial-curvature-v1",
+  "contractSha256": "eaeb353c92d35ee9a63627048fc70870742ee703dda676d0df78c467b2eab0fa",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/Program.cs",
+      "sha256": "09e1ea74010db4099002caceb8779ea10465fa4083e7b71cef5fcf4b6f978262",
+      "actualSha256": "09e1ea74010db4099002caceb8779ea10465fa4083e7b71cef5fcf4b6f978262",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/Phase584SignedSpatialCurvatureConsistency.csproj",
+      "sha256": "b1161dd602129a54dae555279b63a957ec1e26840f5ac6522df03fa6f01b2814",
+      "actualSha256": "b1161dd602129a54dae555279b63a957ec1e26840f5ac6522df03fa6f01b2814",
+      "hashMatches": true
+    },
+    {
+      "id": "proof",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/STUDY.md",
+      "sha256": "67ed8f050bf07ece5d4a0291fce405c8a18e03e5c78ab3a5e73bc2ac08f4d1ea",
+      "actualSha256": "67ed8f050bf07ece5d4a0291fce405c8a18e03e5c78ab3a5e73bc2ac08f4d1ea",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "actualSha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "actualSha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-summary",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json",
+      "sha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "actualSha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-program",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/Program.cs",
+      "sha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "actualSha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3",
+      "hashMatches": true
+    },
+    {
+      "id": "phase565-contract",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/preregistration/phase565_registered_finite_transport_bch_control_contract_v1.json",
+      "sha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "actualSha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad",
+      "hashMatches": true
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "actualSha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "actualSha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25",
+      "hashMatches": true
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "actualSha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce",
+      "hashMatches": true
+    },
+    {
+      "id": "simplicial-mesh",
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "sha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "actualSha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871",
+      "hashMatches": true
+    },
+    {
+      "id": "connection-field",
+      "path": "src/Gu.ReferenceCpu/ConnectionField.cs",
+      "sha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72",
+      "actualSha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "sha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "actualSha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec",
+      "hashMatches": true
+    },
+    {
+      "id": "lie-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "actualSha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "actualSha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    },
+    {
+      "id": "core-project",
+      "path": "src/Gu.Core/Gu.Core.csproj",
+      "sha256": "3702bcd64b09004893c0afdb530b6b91249de567d2b8708f8ac16dab0c9dd561",
+      "actualSha256": "3702bcd64b09004893c0afdb530b6b91249de567d2b8708f8ac16dab0c9dd561",
+      "hashMatches": true
+    },
+    {
+      "id": "geometry-project",
+      "path": "src/Gu.Geometry/Gu.Geometry.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279",
+      "actualSha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279",
+      "hashMatches": true
+    },
+    {
+      "id": "math-project",
+      "path": "src/Gu.Math/Gu.Math.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279",
+      "actualSha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279",
+      "hashMatches": true
+    },
+    {
+      "id": "cpu-project",
+      "path": "src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj",
+      "sha256": "7e3af6147af4de39188a6a8c0ceae83cbbe6b343d78e081aac5911ea3e7dc530",
+      "actualSha256": "7e3af6147af4de39188a6a8c0ceae83cbbe6b343d78e081aac5911ea3e7dc530",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "paired-sign-smooth-spatial-consistency-fixed-mesh-obstruction-preserved",
+  "terminalStatus": "paired-sign-smooth-spatial-consistency-fixed-mesh-obstruction-preserved",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "exactAlgebra": {
+      "identityCases": 19683,
+      "identityResidual": 0,
+      "bracketResidual": 0,
+      "quaternionError": 0,
+      "formula": "Q_reg\u002BQ_loop=[x,x\u002By\u002Bz]"
+    },
+    "spatial": {
+      "spatialPassed": true,
+      "constantControlsPassed": true,
+      "permutationControlsPassed": true,
+      "sameSignDecoyRejected": true,
+      "spatialRowCount": 168,
+      "assemblyCount": 336,
+      "maxLeadingResidual": 0,
+      "maxPolynomialResidual": 0,
+      "maxAssemblyIdentityResidual": 0,
+      "maxStokesResidual": 0,
+      "rows": [
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -0
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            0
+          ],
+          "pairedError": 0,
+          "sameError": 0,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            0,
+            0,
+            -1
+          ],
+          "pairedNormalized": [
+            -0,
+            -0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            1
+          ],
+          "sameLimit": [
+            0,
+            0,
+            -1
+          ],
+          "sameNormalized": [
+            -0,
+            -0,
+            -1
+          ],
+          "pairedNormalized": [
+            0,
+            0,
+            1
+          ],
+          "pairedError": 0,
+          "sameError": 2,
+          "errorBound": 0,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.125,
+            0.125,
+            0
+          ],
+          "pairedNormalized": [
+            0.125,
+            -0.125,
+            2
+          ],
+          "pairedError": 0.1767766952966369,
+          "sameError": 2.0077973005261263,
+          "errorBound": 0.1767766952966369,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0625,
+            0.0625,
+            0
+          ],
+          "pairedNormalized": [
+            0.0625,
+            -0.0625,
+            2
+          ],
+          "pairedError": 0.08838834764831845,
+          "sameError": 2.0019521722558706,
+          "errorBound": 0.08838834764831845,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.03125,
+            0.03125,
+            0
+          ],
+          "pairedNormalized": [
+            0.03125,
+            -0.03125,
+            2
+          ],
+          "pairedError": 0.04419417382415922,
+          "sameError": 2.0004882216599027,
+          "errorBound": 0.04419417382415922,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.015625,
+            0.015625,
+            0
+          ],
+          "pairedNormalized": [
+            0.015625,
+            -0.015625,
+            2
+          ],
+          "pairedError": 0.02209708691207961,
+          "sameError": 2.000122066587437,
+          "errorBound": 0.02209708691207961,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0078125,
+            0.0078125,
+            0
+          ],
+          "pairedNormalized": [
+            0.0078125,
+            -0.0078125,
+            2
+          ],
+          "pairedError": 0.011048543456039806,
+          "sameError": 2.000030517345298,
+          "errorBound": 0.011048543456039806,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.00390625,
+            0.00390625,
+            0
+          ],
+          "pairedNormalized": [
+            0.00390625,
+            -0.00390625,
+            2
+          ],
+          "pairedError": 0.005524271728019903,
+          "sameError": 2.0000076293799793,
+          "errorBound": 0.005524271728019903,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.001953125,
+            0.001953125,
+            0
+          ],
+          "pairedNormalized": [
+            0.001953125,
+            -0.001953125,
+            2
+          ],
+          "pairedError": 0.0027621358640099515,
+          "sameError": 2.0000019073477233,
+          "errorBound": 0.0027621358640099515,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.125,
+            0.125,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.125,
+            -0.125,
+            2
+          ],
+          "pairedError": 0.1767766952966369,
+          "sameError": 2.0077973005261263,
+          "errorBound": 0.1767766952966369,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.0625,
+            0.0625,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.0625,
+            -0.0625,
+            2
+          ],
+          "pairedError": 0.08838834764831845,
+          "sameError": 2.0019521722558706,
+          "errorBound": 0.08838834764831845,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.03125,
+            0.03125,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.03125,
+            -0.03125,
+            2
+          ],
+          "pairedError": 0.04419417382415922,
+          "sameError": 2.0004882216599027,
+          "errorBound": 0.04419417382415922,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.015625,
+            0.015625,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.015625,
+            -0.015625,
+            2
+          ],
+          "pairedError": 0.02209708691207961,
+          "sameError": 2.000122066587437,
+          "errorBound": 0.02209708691207961,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.0078125,
+            0.0078125,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.0078125,
+            -0.0078125,
+            2
+          ],
+          "pairedError": 0.011048543456039806,
+          "sameError": 2.000030517345298,
+          "errorBound": 0.011048543456039806,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.00390625,
+            0.00390625,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.00390625,
+            -0.00390625,
+            2
+          ],
+          "pairedError": 0.005524271728019903,
+          "sameError": 2.0000076293799793,
+          "errorBound": 0.005524271728019903,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.001953125,
+            0.001953125,
+            -0
+          ],
+          "pairedNormalized": [
+            -0.001953125,
+            -0.001953125,
+            2
+          ],
+          "pairedError": 0.0027621358640099515,
+          "sameError": 2.0000019073477233,
+          "errorBound": 0.0027621358640099515,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.125,
+            0.375,
+            -0
+          ],
+          "pairedNormalized": [
+            0.125,
+            -0.375,
+            2
+          ],
+          "pairedError": 0.39528470752104744,
+          "sameError": 2.038688303787511,
+          "errorBound": 0.39528470752104744,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0625,
+            0.1875,
+            -0
+          ],
+          "pairedNormalized": [
+            0.0625,
+            -0.1875,
+            2
+          ],
+          "pairedError": 0.19764235376052372,
+          "sameError": 2.009741898851691,
+          "errorBound": 0.19764235376052372,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.03125,
+            0.09375,
+            -0
+          ],
+          "pairedNormalized": [
+            0.03125,
+            -0.09375,
+            2
+          ],
+          "pairedError": 0.09882117688026186,
+          "sameError": 2.0024399179500993,
+          "errorBound": 0.09882117688026186,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.015625,
+            0.046875,
+            -0
+          ],
+          "pairedNormalized": [
+            0.015625,
+            -0.046875,
+            2
+          ],
+          "pairedError": 0.04941058844013093,
+          "sameError": 2.0006102584586536,
+          "errorBound": 0.04941058844013093,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0078125,
+            0.0234375,
+            -0
+          ],
+          "pairedNormalized": [
+            0.0078125,
+            -0.0234375,
+            2
+          ],
+          "pairedError": 0.024705294220065465,
+          "sameError": 2.000152582070303,
+          "errorBound": 0.024705294220065465,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.00390625,
+            0.01171875,
+            -0
+          ],
+          "pairedNormalized": [
+            0.00390625,
+            -0.01171875,
+            2
+          ],
+          "pairedError": 0.012352647110032733,
+          "sameError": 2.0000381466088655,
+          "errorBound": 0.012352647110032733,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.001953125,
+            0.005859375,
+            -0
+          ],
+          "pairedNormalized": [
+            0.001953125,
+            -0.005859375,
+            2
+          ],
+          "pairedError": 0.006176323555016366,
+          "sameError": 2.0000095367204267,
+          "errorBound": 0.006176323555016366,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.125,
+            0.125,
+            0
+          ],
+          "pairedNormalized": [
+            -0.125,
+            -0.125,
+            2
+          ],
+          "pairedError": 0.1767766952966369,
+          "sameError": 2.0077973005261263,
+          "errorBound": 0.1767766952966369,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.0625,
+            0.0625,
+            0
+          ],
+          "pairedNormalized": [
+            -0.0625,
+            -0.0625,
+            2
+          ],
+          "pairedError": 0.08838834764831845,
+          "sameError": 2.0019521722558706,
+          "errorBound": 0.08838834764831845,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.03125,
+            0.03125,
+            0
+          ],
+          "pairedNormalized": [
+            -0.03125,
+            -0.03125,
+            2
+          ],
+          "pairedError": 0.04419417382415922,
+          "sameError": 2.0004882216599027,
+          "errorBound": 0.04419417382415922,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.015625,
+            0.015625,
+            0
+          ],
+          "pairedNormalized": [
+            -0.015625,
+            -0.015625,
+            2
+          ],
+          "pairedError": 0.02209708691207961,
+          "sameError": 2.000122066587437,
+          "errorBound": 0.02209708691207961,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.0078125,
+            0.0078125,
+            0
+          ],
+          "pairedNormalized": [
+            -0.0078125,
+            -0.0078125,
+            2
+          ],
+          "pairedError": 0.011048543456039806,
+          "sameError": 2.000030517345298,
+          "errorBound": 0.011048543456039806,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.00390625,
+            0.00390625,
+            0
+          ],
+          "pairedNormalized": [
+            -0.00390625,
+            -0.00390625,
+            2
+          ],
+          "pairedError": 0.005524271728019903,
+          "sameError": 2.0000076293799793,
+          "errorBound": 0.005524271728019903,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            0.001953125,
+            0.001953125,
+            0
+          ],
+          "pairedNormalized": [
+            -0.001953125,
+            -0.001953125,
+            2
+          ],
+          "pairedError": 0.0027621358640099515,
+          "sameError": 2.0000019073477233,
+          "errorBound": 0.0027621358640099515,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.125,
+            0.375,
+            0
+          ],
+          "pairedNormalized": [
+            0.125,
+            -0.375,
+            2
+          ],
+          "pairedError": 0.39528470752104744,
+          "sameError": 2.038688303787511,
+          "errorBound": 0.39528470752104744,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0625,
+            0.1875,
+            0
+          ],
+          "pairedNormalized": [
+            0.0625,
+            -0.1875,
+            2
+          ],
+          "pairedError": 0.19764235376052372,
+          "sameError": 2.009741898851691,
+          "errorBound": 0.19764235376052372,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.03125,
+            0.09375,
+            0
+          ],
+          "pairedNormalized": [
+            0.03125,
+            -0.09375,
+            2
+          ],
+          "pairedError": 0.09882117688026186,
+          "sameError": 2.0024399179500993,
+          "errorBound": 0.09882117688026186,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.015625,
+            0.046875,
+            0
+          ],
+          "pairedNormalized": [
+            0.015625,
+            -0.046875,
+            2
+          ],
+          "pairedError": 0.04941058844013093,
+          "sameError": 2.0006102584586536,
+          "errorBound": 0.04941058844013093,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0078125,
+            0.0234375,
+            0
+          ],
+          "pairedNormalized": [
+            0.0078125,
+            -0.0234375,
+            2
+          ],
+          "pairedError": 0.024705294220065465,
+          "sameError": 2.000152582070303,
+          "errorBound": 0.024705294220065465,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.00390625,
+            0.01171875,
+            0
+          ],
+          "pairedNormalized": [
+            0.00390625,
+            -0.01171875,
+            2
+          ],
+          "pairedError": 0.012352647110032733,
+          "sameError": 2.0000381466088655,
+          "errorBound": 0.012352647110032733,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.001953125,
+            0.005859375,
+            0
+          ],
+          "pairedNormalized": [
+            0.001953125,
+            -0.005859375,
+            2
+          ],
+          "pairedError": 0.006176323555016366,
+          "sameError": 2.0000095367204267,
+          "errorBound": 0.006176323555016366,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.125,
+            0.125,
+            -0
+          ],
+          "pairedNormalized": [
+            0.125,
+            -0.125,
+            2
+          ],
+          "pairedError": 0.1767766952966369,
+          "sameError": 2.0077973005261263,
+          "errorBound": 0.1767766952966369,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0625,
+            0.0625,
+            -0
+          ],
+          "pairedNormalized": [
+            0.0625,
+            -0.0625,
+            2
+          ],
+          "pairedError": 0.08838834764831845,
+          "sameError": 2.0019521722558706,
+          "errorBound": 0.08838834764831845,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.03125,
+            0.03125,
+            -0
+          ],
+          "pairedNormalized": [
+            0.03125,
+            -0.03125,
+            2
+          ],
+          "pairedError": 0.04419417382415922,
+          "sameError": 2.0004882216599027,
+          "errorBound": 0.04419417382415922,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.015625,
+            0.015625,
+            -0
+          ],
+          "pairedNormalized": [
+            0.015625,
+            -0.015625,
+            2
+          ],
+          "pairedError": 0.02209708691207961,
+          "sameError": 2.000122066587437,
+          "errorBound": 0.02209708691207961,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.0078125,
+            0.0078125,
+            -0
+          ],
+          "pairedNormalized": [
+            0.0078125,
+            -0.0078125,
+            2
+          ],
+          "pairedError": 0.011048543456039806,
+          "sameError": 2.000030517345298,
+          "errorBound": 0.011048543456039806,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.00390625,
+            0.00390625,
+            -0
+          ],
+          "pairedNormalized": [
+            0.00390625,
+            -0.00390625,
+            2
+          ],
+          "pairedError": 0.005524271728019903,
+          "sameError": 2.0000076293799793,
+          "errorBound": 0.005524271728019903,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            0,
+            0,
+            2
+          ],
+          "sameLimit": [
+            0,
+            0,
+            0
+          ],
+          "sameNormalized": [
+            -0.001953125,
+            0.001953125,
+            -0
+          ],
+          "pairedNormalized": [
+            0.001953125,
+            -0.001953125,
+            2
+          ],
+          "pairedError": 0.0027621358640099515,
+          "sameError": 2.0000019073477233,
+          "errorBound": 0.0027621358640099515,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.90625,
+            -1.234375,
+            -1.0625
+          ],
+          "pairedNormalized": [
+            7.90625,
+            -2.765625,
+            5.0625
+          ],
+          "pairedError": 0.9381508157673797,
+          "sameError": 12.602286576376725,
+          "errorBound": 0.9901613987773769,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.4453125,
+            -1.12109375,
+            -1.046875
+          ],
+          "pairedNormalized": [
+            7.4453125,
+            -2.87890625,
+            5.046875
+          ],
+          "pairedError": 0.46385793576300116,
+          "sameError": 12.214726324587478,
+          "errorBound": 0.47718001308026714,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.220703125,
+            -1.0615234375,
+            -1.02734375
+          ],
+          "pairedNormalized": [
+            7.220703125,
+            -2.9384765625,
+            5.02734375
+          ],
+          "pairedError": 0.23074376136884944,
+          "sameError": 12.022867230133196,
+          "errorBound": 0.23411483496302826,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.10986328125,
+            -1.031005859375,
+            -1.0146484375
+          ],
+          "pairedNormalized": [
+            7.10986328125,
+            -2.968994140625,
+            5.0146484375
+          ],
+          "pairedError": 0.11509074942752907,
+          "sameError": 11.927374787358021,
+          "errorBound": 0.1159386245872378,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0548095703125,
+            -1.01556396484375,
+            -1.007568359375
+          ],
+          "pairedNormalized": [
+            7.0548095703125,
+            -2.98443603515625,
+            5.007568359375
+          ],
+          "pairedError": 0.0574770046464455,
+          "sameError": 11.879733139487525,
+          "errorBound": 0.05768961407004982,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.027374267578125,
+            -1.0077972412109375,
+            -1.00384521484375
+          ],
+          "pairedNormalized": [
+            7.027374267578125,
+            -2.9922027587890625,
+            5.00384521484375
+          ],
+          "pairedError": 0.02872164990272883,
+          "sameError": 11.855937917263944,
+          "errorBound": 0.02877488247913264,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0136795043945312,
+            -1.0039024353027344,
+            -1.0019378662109375
+          ],
+          "pairedNormalized": [
+            7.013679504394531,
+            -2.9960975646972656,
+            5.0019378662109375
+          ],
+          "pairedError": 0.014356641920153911,
+          "sameError": 11.844046641852529,
+          "errorBound": 0.014369960100593252,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.28125,
+            0.203125,
+            -1.25
+          ],
+          "pairedNormalized": [
+            6.28125,
+            -4.203125,
+            5.25
+          ],
+          "pairedError": 1.4235909974866376,
+          "sameError": 11.638905074281043,
+          "errorBound": 1.5662513092419554,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.6640625,
+            -0.38671875,
+            -1.09375
+          ],
+          "pairedNormalized": [
+            6.6640625,
+            -3.61328125,
+            5.09375
+          ],
+          "pairedError": 0.7055189281711813,
+          "sameError": 11.719945902520532,
+          "errorBound": 0.7423432073205458,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.837890625,
+            -0.6904296875,
+            -1.0390625
+          ],
+          "pairedNormalized": [
+            6.837890625,
+            -3.3095703125,
+            5.0390625
+          ],
+          "pairedError": 0.351623529858979,
+          "sameError": 11.772360972071425,
+          "errorBound": 0.360975991835165,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.92041015625,
+            -0.844482421875,
+            -1.017578125
+          ],
+          "pairedNormalized": [
+            6.92041015625,
+            -3.155517578125,
+            5.017578125
+          ],
+          "pairedError": 0.17558260395759745,
+          "sameError": 11.801357557006419,
+          "errorBound": 0.1779390929613055,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.9605712890625,
+            -0.92205810546875,
+            -1.00830078125
+          ],
+          "pairedNormalized": [
+            6.9605712890625,
+            -3.07794189453125,
+            5.00830078125
+          ],
+          "pairedError": 0.08774089775397664,
+          "sameError": 11.816535075880479,
+          "errorBound": 0.0883323207415835,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.980377197265625,
+            -0.9609832763671875,
+            -1.0040283203125
+          ],
+          "pairedNormalized": [
+            6.980377197265625,
+            -3.0390167236328125,
+            5.0040283203125
+          ],
+          "pairedError": 0.043858710363296874,
+          "sameError": 11.824291702680059,
+          "errorBound": 0.04400685393602444,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.9902114868164062,
+            -0.9804801940917969,
+            -1.001983642578125
+          ],
+          "pairedNormalized": [
+            6.990211486816406,
+            -3.019519805908203,
+            5.001983642578125
+          ],
+          "pairedError": 0.021926528473907143,
+          "sameError": 11.828211760175304,
+          "errorBound": 0.021963600359320393,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -4.46875,
+            -0.234375,
+            0.5
+          ],
+          "pairedNormalized": [
+            8.46875,
+            -3.765625,
+            3.5
+          ],
+          "pairedError": 2.2345935207829184,
+          "sameError": 12.626595273593155,
+          "errorBound": 2.241195806646647,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.7109375,
+            -0.62109375,
+            -0.28125
+          ],
+          "pairedNormalized": [
+            7.7109375,
+            -3.37890625,
+            4.28125
+          ],
+          "pairedError": 1.0796312507959893,
+          "sameError": 12.176821368390657,
+          "errorBound": 1.0813405766783202,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.349609375,
+            -0.8115234375,
+            -0.6484375
+          ],
+          "pairedNormalized": [
+            7.349609375,
+            -3.1884765625,
+            4.6484375
+          ],
+          "pairedError": 0.5304208905255873,
+          "sameError": 11.992026103670137,
+          "errorBound": 0.5308559566779092,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.17333984375,
+            -0.906005859375,
+            -0.826171875
+          ],
+          "pairedNormalized": [
+            7.17333984375,
+            -3.093994140625,
+            4.826171875
+          ],
+          "pairedError": 0.2628646361611282,
+          "sameError": 11.909069390781301,
+          "errorBound": 0.26297439542364187,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0863037109375,
+            -0.95306396484375,
+            -0.91357421875
+          ],
+          "pairedNormalized": [
+            7.0863037109375,
+            -3.04693603515625,
+            4.91357421875
+          ],
+          "pairedError": 0.13084623640917284,
+          "sameError": 11.86987066997604,
+          "errorBound": 0.13087380198299275,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.043060302734375,
+            -0.9765472412109375,
+            -0.9569091796875
+          ],
+          "pairedNormalized": [
+            7.043060302734375,
+            -3.0234527587890625,
+            4.9569091796875
+          ],
+          "pairedError": 0.06527664484023465,
+          "sameError": 11.850830700269722,
+          "errorBound": 0.06528355205928933,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0215072631835938,
+            -0.9882774353027344,
+            -0.978485107421875
+          ],
+          "pairedNormalized": [
+            7.021507263183594,
+            -3.0117225646972656,
+            4.978485107421875
+          ],
+          "pairedError": 0.032601710006964414,
+          "sameError": 11.841449222245512,
+          "errorBound": 0.0326034387965929,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.28125,
+            0.203125,
+            -1.25
+          ],
+          "pairedNormalized": [
+            6.28125,
+            -4.203125,
+            5.25
+          ],
+          "pairedError": 1.4235909974866376,
+          "sameError": 11.638905074281043,
+          "errorBound": 1.5662513092419554,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.6640625,
+            -0.38671875,
+            -1.09375
+          ],
+          "pairedNormalized": [
+            6.6640625,
+            -3.61328125,
+            5.09375
+          ],
+          "pairedError": 0.7055189281711813,
+          "sameError": 11.719945902520532,
+          "errorBound": 0.7423432073205458,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.837890625,
+            -0.6904296875,
+            -1.0390625
+          ],
+          "pairedNormalized": [
+            6.837890625,
+            -3.3095703125,
+            5.0390625
+          ],
+          "pairedError": 0.351623529858979,
+          "sameError": 11.772360972071425,
+          "errorBound": 0.360975991835165,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.92041015625,
+            -0.844482421875,
+            -1.017578125
+          ],
+          "pairedNormalized": [
+            6.92041015625,
+            -3.155517578125,
+            5.017578125
+          ],
+          "pairedError": 0.17558260395759745,
+          "sameError": 11.801357557006419,
+          "errorBound": 0.1779390929613055,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.9605712890625,
+            -0.92205810546875,
+            -1.00830078125
+          ],
+          "pairedNormalized": [
+            6.9605712890625,
+            -3.07794189453125,
+            5.00830078125
+          ],
+          "pairedError": 0.08774089775397664,
+          "sameError": 11.816535075880479,
+          "errorBound": 0.0883323207415835,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.980377197265625,
+            -0.9609832763671875,
+            -1.0040283203125
+          ],
+          "pairedNormalized": [
+            6.980377197265625,
+            -3.0390167236328125,
+            5.0040283203125
+          ],
+          "pairedError": 0.043858710363296874,
+          "sameError": 11.824291702680059,
+          "errorBound": 0.04400685393602444,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -2.9902114868164062,
+            -0.9804801940917969,
+            -1.001983642578125
+          ],
+          "pairedNormalized": [
+            6.990211486816406,
+            -3.019519805908203,
+            5.001983642578125
+          ],
+          "pairedError": 0.021926528473907143,
+          "sameError": 11.828211760175304,
+          "errorBound": 0.021963600359320393,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.25,
+          "signedArea": 0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -4.46875,
+            -0.234375,
+            0.5
+          ],
+          "pairedNormalized": [
+            8.46875,
+            -3.765625,
+            3.5
+          ],
+          "pairedError": 2.2345935207829184,
+          "sameError": 12.626595273593155,
+          "errorBound": 2.241195806646647,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.125,
+          "signedArea": 0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.7109375,
+            -0.62109375,
+            -0.28125
+          ],
+          "pairedNormalized": [
+            7.7109375,
+            -3.37890625,
+            4.28125
+          ],
+          "pairedError": 1.0796312507959893,
+          "sameError": 12.176821368390657,
+          "errorBound": 1.0813405766783202,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0625,
+          "signedArea": 0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.349609375,
+            -0.8115234375,
+            -0.6484375
+          ],
+          "pairedNormalized": [
+            7.349609375,
+            -3.1884765625,
+            4.6484375
+          ],
+          "pairedError": 0.5304208905255873,
+          "sameError": 11.992026103670137,
+          "errorBound": 0.5308559566779092,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.03125,
+          "signedArea": 0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.17333984375,
+            -0.906005859375,
+            -0.826171875
+          ],
+          "pairedNormalized": [
+            7.17333984375,
+            -3.093994140625,
+            4.826171875
+          ],
+          "pairedError": 0.2628646361611282,
+          "sameError": 11.909069390781301,
+          "errorBound": 0.26297439542364187,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.015625,
+          "signedArea": 0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0863037109375,
+            -0.95306396484375,
+            -0.91357421875
+          ],
+          "pairedNormalized": [
+            7.0863037109375,
+            -3.04693603515625,
+            4.91357421875
+          ],
+          "pairedError": 0.13084623640917284,
+          "sameError": 11.86987066997604,
+          "errorBound": 0.13087380198299275,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.0078125,
+          "signedArea": 3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.043060302734375,
+            -0.9765472412109375,
+            -0.9569091796875
+          ],
+          "pairedNormalized": [
+            7.043060302734375,
+            -3.0234527587890625,
+            4.9569091796875
+          ],
+          "pairedError": 0.06527664484023465,
+          "sameError": 11.850830700269722,
+          "errorBound": 0.06528355205928933,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "a": 0.00390625,
+          "signedArea": 7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0215072631835938,
+            -0.9882774353027344,
+            -0.978485107421875
+          ],
+          "pairedNormalized": [
+            7.021507263183594,
+            -3.0117225646972656,
+            4.978485107421875
+          ],
+          "pairedError": 0.032601710006964414,
+          "sameError": 11.841449222245512,
+          "errorBound": 0.0326034387965929,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.25,
+          "signedArea": -0.03125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.90625,
+            -1.234375,
+            -1.0625
+          ],
+          "pairedNormalized": [
+            7.90625,
+            -2.765625,
+            5.0625
+          ],
+          "pairedError": 0.9381508157673797,
+          "sameError": 12.602286576376725,
+          "errorBound": 0.9901613987773769,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.125,
+          "signedArea": -0.0078125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.4453125,
+            -1.12109375,
+            -1.046875
+          ],
+          "pairedNormalized": [
+            7.4453125,
+            -2.87890625,
+            5.046875
+          ],
+          "pairedError": 0.46385793576300116,
+          "sameError": 12.214726324587478,
+          "errorBound": 0.47718001308026714,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0625,
+          "signedArea": -0.001953125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.220703125,
+            -1.0615234375,
+            -1.02734375
+          ],
+          "pairedNormalized": [
+            7.220703125,
+            -2.9384765625,
+            5.02734375
+          ],
+          "pairedError": 0.23074376136884944,
+          "sameError": 12.022867230133196,
+          "errorBound": 0.23411483496302826,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.03125,
+          "signedArea": -0.00048828125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.10986328125,
+            -1.031005859375,
+            -1.0146484375
+          ],
+          "pairedNormalized": [
+            7.10986328125,
+            -2.968994140625,
+            5.0146484375
+          ],
+          "pairedError": 0.11509074942752907,
+          "sameError": 11.927374787358021,
+          "errorBound": 0.1159386245872378,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.015625,
+          "signedArea": -0.0001220703125,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0548095703125,
+            -1.01556396484375,
+            -1.007568359375
+          ],
+          "pairedNormalized": [
+            7.0548095703125,
+            -2.98443603515625,
+            5.007568359375
+          ],
+          "pairedError": 0.0574770046464455,
+          "sameError": 11.879733139487525,
+          "errorBound": 0.05768961407004982,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.0078125,
+          "signedArea": -3.0517578125E-05,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.027374267578125,
+            -1.0077972412109375,
+            -1.00384521484375
+          ],
+          "pairedNormalized": [
+            7.027374267578125,
+            -2.9922027587890625,
+            5.00384521484375
+          ],
+          "pairedError": 0.02872164990272883,
+          "sameError": 11.855937917263944,
+          "errorBound": 0.02877488247913264,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "a": 0.00390625,
+          "signedArea": -7.62939453125E-06,
+          "target": [
+            7,
+            -3,
+            5
+          ],
+          "sameLimit": [
+            -3,
+            -1,
+            -1
+          ],
+          "sameNormalized": [
+            -3.0136795043945312,
+            -1.0039024353027344,
+            -1.0019378662109375
+          ],
+          "pairedNormalized": [
+            7.013679504394531,
+            -2.9960975646972656,
+            5.0019378662109375
+          ],
+          "pairedError": 0.014356641920153911,
+          "sameError": 11.844046641852529,
+          "errorBound": 0.014369960100593252,
+          "polynomialResidual": 0,
+          "assemblyIdentityResidual": 0,
+          "stokesResidual": 0,
+          "topologyPassed": true
+        }
+      ],
+      "refinementRows": [
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-commuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "constant-noncommuting",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "firstError": 0,
+          "lastError": 0,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0,
+            0,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "firstError": 0.1767766952966369,
+          "lastError": 0.0027621358640099515,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0.5,
+            -0.5,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "firstError": 0.1767766952966369,
+          "lastError": 0.0027621358640099515,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0.5,
+            -0.5,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "firstError": 0.39528470752104744,
+          "lastError": 0.006176323555016366,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0.5,
+            -1.5,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "firstError": 0.1767766952966369,
+          "lastError": 0.0027621358640099515,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -0.5,
+            -0.5,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "firstError": 0.39528470752104744,
+          "lastError": 0.006176323555016366,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0.5,
+            -1.5,
+            -0
+          ],
+          "quadraticNormalizedRemainder": [
+            -0,
+            -0,
+            -0
+          ]
+        },
+        {
+          "profile": "affine-witness",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "firstError": 0.1767766952966369,
+          "lastError": 0.0027621358640099515,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            0.5,
+            -0.5,
+            0
+          ],
+          "quadraticNormalizedRemainder": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "firstError": 0.9381508157673797,
+          "lastError": 0.014356641920153911,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            3.5,
+            1,
+            0.5
+          ],
+          "quadraticNormalizedRemainder": [
+            0.5,
+            -0.25,
+            -1
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            0,
+            2,
+            1
+          ],
+          "firstError": 1.4235909974866376,
+          "lastError": 0.021926528473907143,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -2.5,
+            -5,
+            0.5
+          ],
+          "quadraticNormalizedRemainder": [
+            -1.5,
+            0.75,
+            2
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            0,
+            2
+          ],
+          "firstError": 2.2345935207829184,
+          "lastError": 0.032601710006964414,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            5.5,
+            -3,
+            -5.5
+          ],
+          "quadraticNormalizedRemainder": [
+            1.5,
+            -0.25,
+            -2
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            1,
+            2,
+            0
+          ],
+          "firstError": 1.4235909974866376,
+          "lastError": 0.021926528473907143,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            -2.5,
+            -5,
+            0.5
+          ],
+          "quadraticNormalizedRemainder": [
+            -1.5,
+            0.75,
+            2
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            0,
+            1
+          ],
+          "firstError": 2.2345935207829184,
+          "lastError": 0.032601710006964414,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            5.5,
+            -3,
+            -5.5
+          ],
+          "quadraticNormalizedRemainder": [
+            1.5,
+            -0.25,
+            -2
+          ]
+        },
+        {
+          "profile": "affine-general",
+          "permutation": [
+            2,
+            1,
+            0
+          ],
+          "firstError": 0.9381508157673797,
+          "lastError": 0.014356641920153911,
+          "refinementPassed": true,
+          "linearNormalizedRemainder": [
+            3.5,
+            1,
+            0.5
+          ],
+          "quadraticNormalizedRemainder": [
+            0.5,
+            -0.25,
+            -1
+          ]
+        }
+      ],
+      "smoothClassicalLeadingConsistencyOnly": true,
+      "finiteMeshPermutationInvarianceClaimed": false
+    },
+    "fixedMesh": {
+      "VertexCount": 16,
+      "EdgeCount": 65,
+      "FaceCount": 110,
+      "rows": [
+        {
+          "t": 1,
+          "sameResidual": 0.008917580152995071,
+          "pairedResidual": 0.012162577517559265,
+          "arrayResidual": 0.00016254766189338027
+        },
+        {
+          "t": 0.5,
+          "sameResidual": 0.002229292564048853,
+          "pairedResidual": 0.003040547156950777,
+          "arrayResidual": 2.0318193931975623E-05
+        },
+        {
+          "t": 0.25,
+          "sameResidual": 0.0005573156759981199,
+          "pairedResidual": 0.0007601281667916751,
+          "arrayResidual": 2.5397702066802678E-06
+        },
+        {
+          "t": 0.125,
+          "sameResidual": 0.00013932831969998147,
+          "pairedResidual": 0.00019003118444595077,
+          "arrayResidual": 3.174714119935591E-07
+        },
+        {
+          "t": 0.0625,
+          "sameResidual": 3.483202587434008E-05,
+          "pairedResidual": 4.750770273868623E-05,
+          "arrayResidual": 3.968394713661763E-08
+        },
+        {
+          "t": 0.03125,
+          "sameResidual": 8.70800101609401E-06,
+          "pairedResidual": 1.187691487455496E-05,
+          "arrayResidual": 4.960495060475373E-09
+        },
+        {
+          "t": 0.015625,
+          "sameResidual": 2.1769996539522963E-06,
+          "pairedResidual": 2.969227421217548E-06,
+          "arrayResidual": 6.200619985432161E-10
+        },
+        {
+          "t": 0.0078125,
+          "sameResidual": 5.442498435723806E-07,
+          "pairedResidual": 7.423066964919776E-07,
+          "arrayResidual": 7.750775743580545E-11
+        },
+        {
+          "t": 0.00390625,
+          "sameResidual": 1.3606245247191185E-07,
+          "pairedResidual": 1.8557665448181265E-07,
+          "arrayResidual": 9.68847013012379E-12
+        }
+      ],
+      "sameSlope": 2.000016126988648,
+      "pairedSlope": 2.000012839777975,
+      "arraySlope": 3.000002799864725,
+      "sameCoefficientError": 0.00018426766555846463,
+      "pairedCoefficientError": 0.00013510272440782806,
+      "sameDefectNorm": 0.00891698834722137,
+      "pairedDefectNorm": 0.012161950350098724,
+      "fixedMeshObstructionPreserved": true,
+      "originalPhase565NegativePreserved": true
+    },
+    "fixedSmoothAmplitude": {
+      "fixedA": 0.25,
+      "witnessDefect": [
+        0,
+        -0.0078125,
+        0
+      ],
+      "expectedWitnessDefect": [
+        0,
+        -0.0078125,
+        0
+      ],
+      "witnessResidual": 0,
+      "fixedSmoothAmplitudePassed": true,
+      "defectOrderInAmplitude": 2
+    },
+    "interpretation": {
+      "pairedInput": "omega=-A",
+      "pairedOutput": "F_physical=-F_registered",
+      "pairedTransport": "exp(-omega)",
+      "sameSignLeading": "dA-A wedge A",
+      "pairedSignLeading": "dA\u002BA wedge A",
+      "unnormalizedSpatialDefectOrder": 3,
+      "areaNormalizedSpatialErrorOrder": 1,
+      "signFlipIsLieAlgebraAutomorphism": false,
+      "fullSourceActionBridgeEstablished": false,
+      "roughFieldQuantumLimitEstablished": false,
+      "sourceChoosesDictionary": false,
+      "oldSampleOutputsReinterpreted": false
+    },
+    "nextRequirement": "Propagate the complete signed variable, residual, derivative and pairing dictionary through the action; classical smooth consistency does not validate rough-field ensembles or poles."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

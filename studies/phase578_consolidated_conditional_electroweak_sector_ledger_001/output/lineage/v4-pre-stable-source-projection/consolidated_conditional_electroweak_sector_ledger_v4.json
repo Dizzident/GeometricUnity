@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 1,
+  "phase": 578,
+  "phaseId": "phase578-consolidated-conditional-electroweak-sector-ledger",
+  "contractId": "phase578-a42-consolidated-conditional-electroweak-sector-ledger-v4",
+  "contractSha256": "365eade46f40e2f7863d277cdc62d920fbb77e024e1f3bb6a5385b8d750cfa1f",
+  "contractValid": true,
+  "verdictKind": "conditional-ledger-complete-absolute-masses-blocked",
+  "terminalStatus": "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent",
+  "terminalStatement": "The assumption-labeled electroweak chain is complete only as a derived/conditional ledger, misses included; completing it to absolute masses requires source content adjudicated absent: a unit anchor, an observed-field extraction map/theorem, and quartic/breaking-sector content.",
+  "deterministic": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "exactBindingCount": 8,
+  "exactBindingsValid": true,
+  "exactBindings": [
+    {
+      "id": "phase404-full",
+      "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+      "expectedSha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671",
+      "actualSha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671",
+      "hashMatches": true
+    },
+    {
+      "id": "phase429-full",
+      "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+      "expectedSha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9",
+      "actualSha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase433-full",
+      "path": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger.json",
+      "expectedSha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87",
+      "actualSha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87",
+      "hashMatches": true
+    },
+    {
+      "id": "phase434-full",
+      "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+      "expectedSha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce",
+      "actualSha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce",
+      "hashMatches": true
+    },
+    {
+      "id": "phase451-full",
+      "path": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger.json",
+      "expectedSha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6",
+      "actualSha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase461-full",
+      "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+      "expectedSha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820",
+      "actualSha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820",
+      "hashMatches": true
+    },
+    {
+      "id": "phase464-full",
+      "path": "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract.json",
+      "expectedSha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551",
+      "actualSha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551",
+      "hashMatches": true
+    },
+    {
+      "id": "phase213-full",
+      "path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json",
+      "expectedSha256": "53789a3407424503d3156307a0c0de9bff99c471f4a5d4a1c0eca3d0c6f01b36",
+      "actualSha256": "53789a3407424503d3156307a0c0de9bff99c471f4a5d4a1c0eca3d0c6f01b36",
+      "hashMatches": true
+    }
+  ],
+  "knownAnswerBattery": {
+    "auditedNumericDataParsedBeforeBattery": false,
+    "exactRatioArithmetic": {
+      "tanSquared": 0.6,
+      "sinSquared": 0.37499999999999994,
+      "treeMassRatio": 0.7905694150420949,
+      "declaredComparisonRatio": 0.8814466001956406,
+      "scaledMiss": 0.10310004614389022,
+      "passed": true
+    },
+    "classificationTruthTable": {
+      "rows": [
+        {
+          "id": "invalid",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        },
+        {
+          "id": "battery",
+          "actual": "known-answer-battery-failed",
+          "expected": "known-answer-battery-failed"
+        },
+        {
+          "id": "source",
+          "actual": "source-values-or-statuses-inconsistent",
+          "expected": "source-values-or-statuses-inconsistent"
+        },
+        {
+          "id": "shape",
+          "actual": "ledger-shape-or-assumption-coverage-invalid",
+          "expected": "ledger-shape-or-assumption-coverage-invalid"
+        },
+        {
+          "id": "complete",
+          "actual": "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent",
+          "expected": "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent"
+        },
+        {
+          "id": "precedence",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        }
+      ],
+      "everyTerminalReached": true,
+      "passed": true
+    },
+    "checksumTamperDetected": true,
+    "passed": true
+  },
+  "sourceValuesAndStatusesConsistent": true,
+  "ledgerRowCount": 14,
+  "rowShapeAndAssumptionCoverageValid": true,
+  "ledger": [
+    {
+      "rowId": "derived-embedding-tan-squared",
+      "classification": "derived",
+      "predictional": false,
+      "value": {
+        "decimalValue": 0.6,
+        "exactForm": "3/5",
+        "quantity": "tan^2(theta_W) at the unification point"
+      },
+      "assumptions": [
+        "compact-d5-embedding-chain",
+        "tree-level-unification-point",
+        "hypercharge-normalization-from-committed-kernel",
+        "no-running-or-threshold-content"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "derived-embedding-sin-squared",
+      "classification": "derived",
+      "predictional": false,
+      "value": {
+        "decimalValue": 0.37499999999999994,
+        "exactForm": "3/8",
+        "quantity": "sin^2(theta_W) at the unification point"
+      },
+      "assumptions": [
+        "committed-three-fifths-kernel-ratio",
+        "exact-sin-from-tan-identity",
+        "tree-level-unification-point",
+        "no-running-or-threshold-content"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-tree-w-z-mass-ratio",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "decimalValue": 0.7905694150420949,
+        "exactForm": "sqrt(5/8)",
+        "quantity": "m_W/m_Z in the tree-level custodial limit"
+      },
+      "assumptions": [
+        "committed-three-eighths-tree-angle",
+        "custodial-tree-level-limit",
+        "one-complex-doublet-breaking-sector-exists",
+        "vev-amplitude-cancels-only-after-breaking-sector-is-assumed",
+        "no-pole-running-or-threshold-corrections",
+        "measured-mass-values-are-declared-comparison-imports-only"
+      ],
+      "sourceBindingIds": [
+        "phase429-full",
+        "phase461-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase461-full",
+          "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+          "sha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820"
+        }
+      ],
+      "measuredComparison": {
+        "comparisonOnly": true,
+        "derivedValue": 0.7905694150420949,
+        "measuredValue": 0.8814466001956406,
+        "measuredInputs": {
+          "massW": 80.377,
+          "massZ": 91.1876,
+          "sourceUnits": "declared comparison imports only; no unit anchor adopted"
+        },
+        "signedMiss": -0.0908771851535457,
+        "absoluteMiss": 0.0908771851535457,
+        "scaledAbsoluteMiss": 0.10310004614389022,
+        "withinComparison": false
+      },
+      "knownElectroweakMiss": true,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-running-content-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "familyCount": 3,
+        "higgsIncluded": true,
+        "betaCoefficientsAfPositive": {
+          "b3": "7",
+          "b2": "19/6",
+          "b1": "-41/10"
+        },
+        "conditionalHiggsContribution": {
+          "deltaB3": "0",
+          "deltaB2": "-1/6",
+          "deltaB1": "-1/10"
+        }
+      },
+      "assumptions": [
+        "three-families-imported-structural-parameter",
+        "one-complex-higgs-doublet-conditional",
+        "asymptotic-freedom-positive-one-loop-convention",
+        "gut-normalized-hypercharge",
+        "breaking-sector-not-established"
+      ],
+      "sourceBindingIds": [
+        "phase433-full",
+        "phase451-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase433-full",
+          "path": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger.json",
+          "sha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87"
+        },
+        {
+          "id": "phase451-full",
+          "path": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger.json",
+          "sha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-running-weak-angle",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "quantity": "sin^2(theta_W) at the declared low-energy comparison point",
+        "oneLoop": 0.20758851977298845,
+        "twoLoop": 0.21063705618289308,
+        "honestBandTwoLoop": 0.0001787877823472006
+      },
+      "assumptions": [
+        "committed-three-eighths-unification-boundary",
+        "three-families-imported-structural-parameter",
+        "one-complex-higgs-doublet-conditional",
+        "alpha-em-and-alpha-s-are-declared-low-energy-inputs",
+        "observed-sin-squared-is-falsification-target-only",
+        "two-loop-yukawa-traces-omitted",
+        "declared-matching-and-step-threshold-band-only",
+        "generic-unification-not-gu-specific"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full",
+        "phase433-full",
+        "phase451-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase433-full",
+          "path": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger.json",
+          "sha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87"
+        },
+        {
+          "id": "phase451-full",
+          "path": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger.json",
+          "sha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6"
+        }
+      ],
+      "measuredComparison": {
+        "comparisonOnly": true,
+        "observed": 0.23122,
+        "oneLoopSignedMiss": -0.02363148022701156,
+        "twoLoopSignedMiss": -0.02058294381710693,
+        "twoLoopAbsoluteMiss": 0.02058294381710693,
+        "twoLoopHonestBand": 0.0001787877823472006,
+        "missOverHonestBand": 115.1250020940215,
+        "withinHonestBand": false
+      },
+      "knownElectroweakMiss": true,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-photon-extraction-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "photon-eigenstate",
+        "field": "A = sin(theta_W) W3 \u002B cos(theta_W) B",
+        "terms": [
+          {
+            "basisComponent": "W3",
+            "coefficientExactForm": "(1/4)*sqrt(6)",
+            "coefficientValue": 0.6123724356957945,
+            "coefficientVerified": true,
+            "note": "sin theta_W = sqrt(6)/4"
+          },
+          {
+            "basisComponent": "B",
+            "coefficientExactForm": "(1/4)*sqrt(10)",
+            "coefficientValue": 0.7905694150420949,
+            "coefficientVerified": true,
+            "note": "cos theta_W = sqrt(10)/4"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "committed-three-eighths-angle",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full",
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-z-extraction-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "z-eigenstate",
+        "field": "Z = cos(theta_W) W3 - sin(theta_W) B",
+        "terms": [
+          {
+            "basisComponent": "W3",
+            "coefficientExactForm": "(1/4)*sqrt(10)",
+            "coefficientValue": 0.7905694150420949,
+            "coefficientVerified": true,
+            "note": "cos theta_W = sqrt(10)/4"
+          },
+          {
+            "basisComponent": "B",
+            "coefficientExactForm": "(-1/4)*sqrt(6)",
+            "coefficientValue": -0.6123724356957945,
+            "coefficientVerified": true,
+            "note": "-sin theta_W = -sqrt(6)/4"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "committed-three-eighths-angle",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full",
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-w-plus-extraction-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "w-plus-eigenstate",
+        "field": "W\u002B = (W1 - i W2)/sqrt(2)",
+        "terms": [
+          {
+            "basisComponent": "W1",
+            "coefficientExactForm": "(1/2)*sqrt(2)",
+            "coefficientValue": 0.7071067811865476,
+            "coefficientVerified": true,
+            "note": "1/sqrt(2) = sqrt(2)/2"
+          },
+          {
+            "basisComponent": "-i*W2",
+            "coefficientExactForm": "(1/2)*sqrt(2)",
+            "coefficientValue": 0.7071067811865476,
+            "coefficientVerified": true,
+            "note": "coefficient of -i W2 is 1/sqrt(2)"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "charged-basis-convention",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-w-minus-extraction-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "w-minus-eigenstate",
+        "field": "W- = (W1 \u002B i W2)/sqrt(2)",
+        "terms": [
+          {
+            "basisComponent": "W1",
+            "coefficientExactForm": "(1/2)*sqrt(2)",
+            "coefficientValue": 0.7071067811865476,
+            "coefficientVerified": true,
+            "note": "1/sqrt(2) = sqrt(2)/2"
+          },
+          {
+            "basisComponent": "\u002Bi*W2",
+            "coefficientExactForm": "(1/2)*sqrt(2)",
+            "coefficientValue": 0.7071067811865476,
+            "coefficientVerified": true,
+            "note": "coefficient of \u002Bi W2 is 1/sqrt(2)"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "charged-basis-convention",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-electric-charge-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "electric-charge-relation",
+        "field": "e = g sin(theta_W)  (e^2 = (3/8) g^2)",
+        "terms": [
+          {
+            "basisComponent": "g",
+            "coefficientExactForm": "(1/4)*sqrt(6)",
+            "coefficientValue": 0.6123724356957945,
+            "coefficientVerified": true,
+            "note": "e/g = sin theta_W = sqrt(6)/4, so e^2/g^2 = 3/8"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "committed-three-eighths-angle",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase404-full",
+        "phase429-full",
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase404-full",
+          "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+          "sha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671"
+        },
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "conditional-mass-squared-ratio-template",
+      "classification": "conditional",
+      "predictional": false,
+      "value": {
+        "sourceRowId": "w-z-mass-ratio",
+        "field": "m_W^2/m_Z^2 = g^2/(g^2\u002BgPrime^2) = cos^2 theta_W = 5/8",
+        "terms": [
+          {
+            "basisComponent": "m_W^2/m_Z^2",
+            "coefficientExactForm": "5/8",
+            "coefficientValue": 0.625,
+            "coefficientVerified": true,
+            "note": "5/8 (rational; VEV-independent)"
+          }
+        ],
+        "category": "conditionally-determined",
+        "requiresVevAmplitude": false
+      },
+      "assumptions": [
+        "one-complex-doublet-breaking-sector-exists",
+        "tree-level-custodial-limit",
+        "committed-three-eighths-angle",
+        "vev-amplitude-cancels-only-after-breaking-sector-is-assumed",
+        "conditional-template-not-extraction-theorem"
+      ],
+      "sourceBindingIds": [
+        "phase429-full",
+        "phase434-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase429-full",
+          "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+          "sha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9"
+        },
+        {
+          "id": "phase434-full",
+          "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+          "sha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "derived-anchor-menu-status",
+      "classification": "derived",
+      "predictional": false,
+      "value": {
+        "importCleanTrialsSurvivingAnchorCount": 0,
+        "verdictKind": "declared-comparison-consistency-only",
+        "refereeReconstruction": {
+          "killFactor": 451.10527021047886,
+          "preregisteredBand": {
+            "lo": 300,
+            "hi": 700
+          },
+          "role": "referee-reconstruction-only",
+          "bannedFromLiveVerdicts": true,
+          "classification": "separate-non-promotional-anchor-evidence-not-an-electroweak-comparison-miss"
+        }
+      },
+      "assumptions": [
+        "finite-preregistered-reading-menu",
+        "declared-comparison-imports-only",
+        "look-elsewhere-correction-applied",
+        "banned-vev-window-used-for-referee-reconstruction-only",
+        "no-import-clean-trials-surviving-anchor"
+      ],
+      "sourceBindingIds": [
+        "phase461-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase461-full",
+          "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+          "sha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "derived-anchor-adjudication-status",
+      "classification": "derived",
+      "predictional": false,
+      "value": {
+        "verdictKind": "blocked-upstream-ambiguous",
+        "pendingProseStatements": 31,
+        "physicistRulings": 0,
+        "emittedSentence": "The audited corpus neither supplies nor forbids a dimensionful anchor at theorem grade: 31 of 31 prose-only statements remain unadjudicated under the committed 33-symbol grading; no reading-menu anchor survives (phase461); every dimensionful anchor in use is a labeled convention adoption pending adjudication; no anchor theorem is claimed and none may be cited.",
+        "precommittedNoClaimSentence": "Partial closure is uncitable: the B1 anchor-adjudication conjunction is not fully satisfied on the committed inputs (no physicist ruling is on record and/or a conjunct is unmet); no anchor theorem is claimed in either direction and no partial-closure statement may be cited."
+      },
+      "assumptions": [
+        "committed-thirty-three-symbol-grading",
+        "no-physicist-ruling-on-record",
+        "phase461-reading-menu-has-zero-surviving-anchors",
+        "partial-closure-is-uncitable",
+        "ambiguous-does-not-mean-forbidden"
+      ],
+      "sourceBindingIds": [
+        "phase461-full",
+        "phase464-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase461-full",
+          "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+          "sha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820"
+        },
+        {
+          "id": "phase464-full",
+          "path": "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract.json",
+          "sha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "rowId": "derived-source-lineage-missing-field-counts",
+      "classification": "derived",
+      "predictional": false,
+      "value": {
+        "wzAbsoluteSourceLineageMissingFieldCount": 15,
+        "higgsScalarSourceLineageMissingFieldCount": 14,
+        "countsMatchEnumeratedMissingFields": true
+      },
+      "assumptions": [
+        "phase213-contract-field-definitions",
+        "no-later-artifact-fills-a-source-lineage-field",
+        "counts-are-deficits-not-candidate-values",
+        "promotion-remains-closed"
+      ],
+      "sourceBindingIds": [
+        "phase213-full"
+      ],
+      "sourceBindings": [
+        {
+          "id": "phase213-full",
+          "path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json",
+          "sha256": "53789a3407424503d3156307a0c0de9bff99c471f4a5d4a1c0eca3d0c6f01b36"
+        }
+      ],
+      "measuredComparison": null,
+      "knownElectroweakMiss": false,
+      "promotedPhysicalMassClaimCount": 0
+    }
+  ],
+  "comparisonAccounting": {
+    "knownElectroweakMissCount": 2,
+    "knownElectroweakMissRowIds": [
+      "conditional-tree-w-z-mass-ratio",
+      "conditional-running-weak-angle"
+    ],
+    "treeMassRatioMiss": {
+      "derived": 0.7905694150420949,
+      "measured": 0.8814466001956406,
+      "signed": -0.0908771851535457,
+      "absolute": 0.0908771851535457,
+      "scaledAbsolute": 0.10310004614389022
+    },
+    "runningWeakAngleMiss": {
+      "twoLoop": 0.21063705618289308,
+      "measured": 0.23122,
+      "signed": -0.02058294381710693,
+      "honestBandFactor": 115.1250020940215
+    },
+    "anchorReconstruction": {
+      "killFactor": 451.10527021047886,
+      "classification": "separate-non-promotional-anchor-evidence",
+      "countedAsKnownElectroweakMiss": false
+    }
+  },
+  "missingSourceContent": {
+    "unitAnchor": {
+      "available": false,
+      "phase461ImportCleanTrialsSurvivingAnchorCount": 0,
+      "phase464Verdict": "blocked-upstream-ambiguous"
+    },
+    "observedFieldExtractionMapOrTheorem": {
+      "available": false,
+      "phase434SourceDefinedFieldCount": 0,
+      "conditionalTemplatesDoNotFillContract": true
+    },
+    "quarticOrBreakingSectorContent": {
+      "available": false,
+      "phase433BreakingSectorEstablished": false,
+      "phase434CandidateVevExistenceEstablished": false
+    }
+  },
+  "noUnitAnchorIntroduced": true,
+  "absoluteMassComputed": false,
+  "everyRowDerivedOrConditionalNeverPredictional": true,
+  "branches": [
+    {
+      "id": "derived-ratio-chain",
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "id": "conditional-tree-ratio-and-comparison",
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "id": "conditional-running-and-comparison",
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "id": "conditional-extraction-templates",
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "id": "anchor-menu-and-adjudication",
+      "promotedPhysicalMassClaimCount": 0
+    },
+    {
+      "id": "source-lineage-deficits",
+      "promotedPhysicalMassClaimCount": 0
+    }
+  ],
+  "everyBranchPromotedPhysicalMassClaimCountZero": true,
+  "sourceContractFieldFilledCount": 0,
+  "promotedPhysicalMassClaimCount": 0,
+  "externalReviewPending": true
+}

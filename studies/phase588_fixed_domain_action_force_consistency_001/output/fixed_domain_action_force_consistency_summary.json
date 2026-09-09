@@ -1,0 +1,5910 @@
+{
+  "schemaVersion": 1,
+  "phase": 588,
+  "phaseId": "phase588-fixed-domain-action-force-consistency",
+  "contractId": "phase588-a47-fixed-domain-action-force-v1",
+  "contractSha256": "6fb8daa6abe002d5a67e0d5df605ca1e259e65e85f7c9f12e3c7c1144cce5061",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "bindingCount": 12,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/Program.cs",
+      "sha256": "674c7b6db0d2368f554494e937cd69a5ed281e69977b6fd971ca414b9540cdc5",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/Phase588FixedDomainActionForceConsistency.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/STUDY.md",
+      "sha256": "c5d2e4116879e17052aac6115e6fb1044fbef9e5205cef753821e5393113f4ef",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70",
+      "hashMatches": true
+    },
+    {
+      "id": "phase583-contract",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/preregistration/contract_v1.json",
+      "sha256": "73e7b9b1e7fe75508b56991d9582c2ce3e2b68c716cfdf721ebd2fd510681b6a",
+      "hashMatches": true
+    },
+    {
+      "id": "phase584-summary",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/output/signed_spatial_curvature_consistency_summary.json",
+      "sha256": "80ce1c203d1e6207119da1423e11336ce5df6ea18d8057473db27eca8aff64b7",
+      "hashMatches": true
+    },
+    {
+      "id": "phase584-contract",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/preregistration/contract_v1.json",
+      "sha256": "eaeb353c92d35ee9a63627048fc70870742ee703dda676d0df78c467b2eab0fa",
+      "hashMatches": true
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97",
+      "hashMatches": true
+    },
+    {
+      "id": "phase586-contract",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/preregistration/contract_v1.json",
+      "sha256": "23d9906b61c2cc901251865c5a489efbd99648255cc4879c2bf32c3aeaa3f462",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "fixed-domain-action-force-controls-pass-induced-pairing-scoped",
+  "terminalStatus": "fixed-domain-action-force-controls-pass-induced-pairing-scoped",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "coreSourceTreeValid": true,
+    "metricIdentityError": 0,
+    "eigenspacesPassed": true,
+    "momentError": 0,
+    "topologyPassed": true,
+    "countControlsPassed": true,
+    "topologyRows": [
+      {
+        "n": 1,
+        "VertexCount": 16,
+        "EdgeCount": 65,
+        "FaceCount": 110,
+        "CellCount": 24,
+        "censusPassed": true,
+        "countPassed": true,
+        "physicalDomain": "[0,1]^4"
+      },
+      {
+        "n": 2,
+        "VertexCount": 81,
+        "EdgeCount": 544,
+        "FaceCount": 1232,
+        "CellCount": 384,
+        "censusPassed": true,
+        "countPassed": true,
+        "physicalDomain": "[0,1]^4"
+      },
+      {
+        "n": 4,
+        "VertexCount": 625,
+        "EdgeCount": 5936,
+        "FaceCount": 16064,
+        "CellCount": 6144,
+        "censusPassed": true,
+        "countPassed": true,
+        "physicalDomain": "[0,1]^4"
+      }
+    ],
+    "exactPassed": true,
+    "constantRows": [
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 0,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 1,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 2,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 3,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 4,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 5,
+        "predicted": 4,
+        "actual": 4,
+        "physicalDerivative": 8,
+        "derivativePrediction": 8,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 6,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 7,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 8,
+        "predicted": 6,
+        "actual": 6,
+        "physicalDerivative": 12,
+        "derivativePrediction": 12,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 9,
+        "predicted": 6,
+        "actual": 6,
+        "physicalDerivative": 12,
+        "derivativePrediction": 12,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 10,
+        "predicted": 8,
+        "actual": 8,
+        "physicalDerivative": 16,
+        "derivativePrediction": 16,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 11,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 12,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 13,
+        "predicted": 8,
+        "actual": 8,
+        "physicalDerivative": 16,
+        "derivativePrediction": 16,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 14,
+        "predicted": 6,
+        "actual": 6,
+        "physicalDerivative": 12,
+        "derivativePrediction": 12,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 15,
+        "predicted": 8,
+        "actual": 8,
+        "physicalDerivative": 16,
+        "derivativePrediction": 16,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 16,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 17,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 18,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 19,
+        "predicted": 6,
+        "actual": 6,
+        "physicalDerivative": 12,
+        "derivativePrediction": 12,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 20,
+        "predicted": 10,
+        "actual": 10,
+        "physicalDerivative": 20,
+        "derivativePrediction": 20,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "predicted": 0.5,
+        "actual": 0.5,
+        "physicalDerivative": 1,
+        "derivativePrediction": 1,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "predicted": 0.5,
+        "actual": 0.5,
+        "physicalDerivative": 1.0000000000000002,
+        "derivativePrediction": 1,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "predicted": 0.5,
+        "actual": 0.5000000000000001,
+        "physicalDerivative": 1.0000000000000004,
+        "derivativePrediction": 1,
+        "actionError": 1.1102230246251565E-16,
+        "derivativeError": 4.440892098500624E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "predicted": 0.5,
+        "actual": 0.5,
+        "physicalDerivative": 1.0000000000000002,
+        "derivativePrediction": 1,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "predicted": 0.5,
+        "actual": 0.49999999999999994,
+        "physicalDerivative": 1,
+        "derivativePrediction": 1,
+        "actionError": 5.551115123125783E-17,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "predicted": 0.5,
+        "actual": 0.5,
+        "physicalDerivative": 1.0000000000000002,
+        "derivativePrediction": 1,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 6,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 7,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2.0000000000000004,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 8,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 9,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 10,
+        "predicted": 2,
+        "actual": 2,
+        "physicalDerivative": 4,
+        "derivativePrediction": 4,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 11,
+        "predicted": 1,
+        "actual": 1.0000000000000002,
+        "physicalDerivative": 2.000000000000001,
+        "derivativePrediction": 2,
+        "actionError": 2.2204460492503126E-16,
+        "derivativeError": 4.440892098500624E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 12,
+        "predicted": 1,
+        "actual": 1.0000000000000002,
+        "physicalDerivative": 2.0000000000000004,
+        "derivativePrediction": 2,
+        "actionError": 2.2204460492503126E-16,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 13,
+        "predicted": 0,
+        "actual": 3.8624006772287782E-31,
+        "physicalDerivative": 7.765349535769335E-31,
+        "derivativePrediction": 0,
+        "actionError": 3.8624006772287782E-31,
+        "derivativeError": 7.765349535769335E-31,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 14,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2.0000000000000004,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 15,
+        "predicted": 2,
+        "actual": 2.0000000000000004,
+        "physicalDerivative": 4,
+        "derivativePrediction": 4,
+        "actionError": 2.2204460492503126E-16,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 16,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2.0000000000000004,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 2.2204460492503126E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 17,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2.000000000000001,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 4.440892098500624E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 18,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 19,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 20,
+        "predicted": 1,
+        "actual": 1,
+        "physicalDerivative": 2,
+        "derivativePrediction": 2,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 0,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 1,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 2,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 3,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 4,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 5,
+        "predicted": 3.0625,
+        "actual": 3.0625,
+        "physicalDerivative": 6.125,
+        "derivativePrediction": 6.125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 6,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 7,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 8,
+        "predicted": 4.375,
+        "actual": 4.375,
+        "physicalDerivative": 8.75,
+        "derivativePrediction": 8.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 9,
+        "predicted": 4.375,
+        "actual": 4.375,
+        "physicalDerivative": 8.75,
+        "derivativePrediction": 8.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 10,
+        "predicted": 6.125,
+        "actual": 6.125,
+        "physicalDerivative": 12.25,
+        "derivativePrediction": 12.25,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 11,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 12,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 13,
+        "predicted": 6.125,
+        "actual": 6.125,
+        "physicalDerivative": 12.25,
+        "derivativePrediction": 12.25,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 14,
+        "predicted": 4.375,
+        "actual": 4.375,
+        "physicalDerivative": 8.75,
+        "derivativePrediction": 8.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 15,
+        "predicted": 6.125,
+        "actual": 6.125,
+        "physicalDerivative": 12.25,
+        "derivativePrediction": 12.25,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 16,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 17,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 18,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 19,
+        "predicted": 4.375,
+        "actual": 4.375,
+        "physicalDerivative": 8.75,
+        "derivativePrediction": 8.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 20,
+        "predicted": 7.875,
+        "actual": 7.875,
+        "physicalDerivative": 15.75,
+        "derivativePrediction": 15.75,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.7656250000000001,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 1.1102230246251565E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.7656250000000002,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 2.220446049250313E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.7656250000000003,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 3.3306690738754696E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.7656250000000003,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 3.3306690738754696E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.765625,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "predicted": 0.3828125,
+        "actual": 0.3828125,
+        "physicalDerivative": 0.7656250000000002,
+        "derivativePrediction": 0.765625,
+        "actionError": 0,
+        "derivativeError": 2.220446049250313E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 6,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312499999999993,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 4.3502616475108174E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 7,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000004,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 2.9001744316738776E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 8,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312499999999993,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 4.3502616475108174E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 9,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312499999999993,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 4.3502616475108174E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 10,
+        "predicted": 1.53125,
+        "actual": 1.53125,
+        "physicalDerivative": 3.0625000000000004,
+        "derivativePrediction": 3.0625,
+        "actionError": 0,
+        "derivativeError": 1.450087215836939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 11,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000002,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 1.450087215836939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 12,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000004,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 2.9001744316738776E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 13,
+        "predicted": 0,
+        "actual": 2.3276075443205923E-31,
+        "physicalDerivative": 5.219270149289409E-31,
+        "derivativePrediction": 0,
+        "actionError": 2.3276075443205923E-31,
+        "derivativeError": 5.219270149289409E-31,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 14,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312499999999987,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 8.700523295021635E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 15,
+        "predicted": 1.53125,
+        "actual": 1.53125,
+        "physicalDerivative": 3.0625,
+        "derivativePrediction": 3.0625,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 16,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312499999999998,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 1.450087215836939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 17,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000002,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 1.450087215836939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 18,
+        "predicted": 0.765625,
+        "actual": 0.7656250000000001,
+        "physicalDerivative": 1.53125,
+        "derivativePrediction": 1.53125,
+        "actionError": 1.1102230246251565E-16,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 19,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000009,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 5.800348863347753E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 20,
+        "predicted": 0.765625,
+        "actual": 0.765625,
+        "physicalDerivative": 1.5312500000000007,
+        "derivativePrediction": 1.53125,
+        "actionError": 0,
+        "derivativeError": 4.3502616475108154E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 0,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 1,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 2,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 3,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 4,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 5,
+        "predicted": 2.640625,
+        "actual": 2.640625,
+        "physicalDerivative": 5.28125,
+        "derivativePrediction": 5.28125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 6,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 7,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 8,
+        "predicted": 3.65625,
+        "actual": 3.65625,
+        "physicalDerivative": 7.3125,
+        "derivativePrediction": 7.3125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 9,
+        "predicted": 3.65625,
+        "actual": 3.65625,
+        "physicalDerivative": 7.3125,
+        "derivativePrediction": 7.3125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 10,
+        "predicted": 5.28125,
+        "actual": 5.28125,
+        "physicalDerivative": 10.5625,
+        "derivativePrediction": 10.5625,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 11,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 12,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 13,
+        "predicted": 5.28125,
+        "actual": 5.28125,
+        "physicalDerivative": 10.5625,
+        "derivativePrediction": 10.5625,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 14,
+        "predicted": 3.65625,
+        "actual": 3.65625,
+        "physicalDerivative": 7.3125,
+        "derivativePrediction": 7.3125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 15,
+        "predicted": 5.28125,
+        "actual": 5.28125,
+        "physicalDerivative": 10.5625,
+        "derivativePrediction": 10.5625,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 16,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 17,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 18,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 19,
+        "predicted": 3.65625,
+        "actual": 3.65625,
+        "physicalDerivative": 7.3125,
+        "derivativePrediction": 7.3125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 20,
+        "predicted": 6.90625,
+        "actual": 6.90625,
+        "physicalDerivative": 13.8125,
+        "derivativePrediction": 13.8125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000006,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 5.551115123125783E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000001,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 1.1102230246251565E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000004,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 4.440892098500626E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000007,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 6.661338147750939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000007,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 6.661338147750939E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "predicted": 0.330078125,
+        "actual": 0.330078125,
+        "physicalDerivative": 0.6601562500000006,
+        "derivativePrediction": 0.66015625,
+        "actionError": 0,
+        "derivativeError": 5.551115123125783E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 6,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 7,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125000000004,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 3.36351590892355E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 8,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203124999999978,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 1.6817579544617755E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 9,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203124999999993,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 5.045273863385327E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 10,
+        "predicted": 1.3203125,
+        "actual": 1.3203125,
+        "physicalDerivative": 2.6406249999999996,
+        "derivativePrediction": 2.640625,
+        "actionError": 0,
+        "derivativeError": 1.6817579544617755E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 11,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.320312499999997,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 2.354461136246486E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 12,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125000000004,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 3.36351590892355E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 13,
+        "predicted": 0,
+        "actual": 1.7754800419955037E-31,
+        "physicalDerivative": 2.717005669044293E-31,
+        "derivativePrediction": 0,
+        "actionError": 1.7754800419955037E-31,
+        "derivativeError": 2.717005669044293E-31,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 14,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203124999999978,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 1.6817579544617755E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 15,
+        "predicted": 1.3203125,
+        "actual": 1.3203125,
+        "physicalDerivative": 2.640624999999996,
+        "derivativePrediction": 2.640625,
+        "actionError": 0,
+        "derivativeError": 1.513582159015598E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 16,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125000000002,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 1.6817579544617753E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 17,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 0,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 18,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203124999999978,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 1.6817579544617755E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 19,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203125000000009,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 6.727031817847098E-16,
+        "decoyRejected": true,
+        "rowPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 20,
+        "predicted": 0.66015625,
+        "actual": 0.66015625,
+        "physicalDerivative": 1.3203124999999987,
+        "derivativePrediction": 1.3203125,
+        "actionError": 0,
+        "derivativeError": 1.0090547726770654E-15,
+        "decoyRejected": true,
+        "rowPassed": true
+      }
+    ],
+    "directRows": [
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 0,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 1,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 2,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 3,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 4,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "index": 5,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "residualError": 1.3877787807814457E-16,
+        "assembledResidualError": 1.3877787807814457E-16,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "residualError": 1.6653345369377348E-16,
+        "assembledResidualError": 1.6653345369377348E-16,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "residualError": 2.220446049250313E-16,
+        "assembledResidualError": 2.220446049250313E-16,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "residualError": 1.3877787807814457E-16,
+        "assembledResidualError": 1.3877787807814457E-16,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "residualError": 1.3877787807814457E-16,
+        "assembledResidualError": 1.3877787807814457E-16,
+        "directPassed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "residualError": 1.1102230246251565E-16,
+        "assembledResidualError": 1.1102230246251565E-16,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 0,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 1,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 2,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 3,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 4,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "index": 5,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "residualError": 3.469446951953614E-17,
+        "assembledResidualError": 3.469446951953614E-17,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "residualError": 4.163336342344337E-17,
+        "assembledResidualError": 4.163336342344337E-17,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "residualError": 5.551115123125783E-17,
+        "assembledResidualError": 5.551115123125783E-17,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "residualError": 3.469446951953614E-17,
+        "assembledResidualError": 3.469446951953614E-17,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "residualError": 3.469446951953614E-17,
+        "assembledResidualError": 3.469446951953614E-17,
+        "directPassed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "residualError": 2.7755575615628914E-17,
+        "assembledResidualError": 2.7755575615628914E-17,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 0,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 1,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 2,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 3,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 4,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "index": 5,
+        "residualError": 0,
+        "assembledResidualError": 0,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 0,
+        "residualError": 8.673617379884035E-18,
+        "assembledResidualError": 8.673617379884035E-18,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 1,
+        "residualError": 1.0408340855860843E-17,
+        "assembledResidualError": 1.0408340855860843E-17,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 2,
+        "residualError": 1.3877787807814457E-17,
+        "assembledResidualError": 1.3877787807814457E-17,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 3,
+        "residualError": 8.673617379884035E-18,
+        "assembledResidualError": 8.673617379884035E-18,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 4,
+        "residualError": 8.673617379884035E-18,
+        "assembledResidualError": 8.673617379884035E-18,
+        "directPassed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "index": 5,
+        "residualError": 6.938893903907228E-18,
+        "assembledResidualError": 6.938893903907228E-18,
+        "directPassed": true
+      }
+    ],
+    "crossRows": [
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 0,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 3,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 4,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 0,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 1,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 3,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 4,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 1,
+        "direction": 5,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 0,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 2,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 3,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 2,
+        "direction": 5,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 0,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 2,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 3,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 3,
+        "direction": 5,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 0,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 1,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 3,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 4,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 4,
+        "direction": 5,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 0,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 1,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 3,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 5,
+        "direction": 5,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 0,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 1,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 3,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 4,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "direction": 5,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 0,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 1,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 2,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 3,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 4,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 7,
+        "direction": 5,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 0,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 1,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 3,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 4,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 8,
+        "direction": 5,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 0,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 3,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 4,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 9,
+        "direction": 5,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 0,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 1,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 3,
+        "observed": -4,
+        "expected": -4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 4,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 10,
+        "direction": 5,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 0,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 1,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 2,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 3,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 11,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 0,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 1,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 3,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 12,
+        "direction": 5,
+        "observed": -4,
+        "expected": -4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 0,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 1,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 3,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 4,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 13,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 0,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 1,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 3,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 4,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 14,
+        "direction": 5,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 0,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 1,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 2,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 3,
+        "observed": 8,
+        "expected": 8,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 4,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 15,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 0,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 2,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 3,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 4,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 16,
+        "direction": 5,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 0,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 1,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 2,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 3,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 4,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 17,
+        "direction": 5,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 0,
+        "observed": -4,
+        "expected": -4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 1,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 3,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 4,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 18,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 0,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 1,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 2,
+        "observed": 2,
+        "expected": 2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 3,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 4,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 19,
+        "direction": 5,
+        "observed": 6,
+        "expected": 6,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 0,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 1,
+        "observed": -2,
+        "expected": -2,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 2,
+        "observed": 4,
+        "expected": 4,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 3,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 4,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "identity",
+        "index": 20,
+        "direction": 5,
+        "observed": 10,
+        "expected": 10,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 0,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 1,
+        "observed": -6.331740687315346E-17,
+        "expected": 0,
+        "error": 6.331740687315346E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 2,
+        "observed": 1.5959455978986625E-16,
+        "expected": 0,
+        "error": 1.5959455978986625E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 3,
+        "observed": -5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 4,
+        "observed": 2.7755575615628914E-17,
+        "expected": 0,
+        "error": 2.7755575615628914E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 0,
+        "observed": -4.163336342344337E-17,
+        "expected": 0,
+        "error": 4.163336342344337E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 1,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 2,
+        "observed": 1.249000902703301E-16,
+        "expected": 0,
+        "error": 1.249000902703301E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 3,
+        "observed": 2.498001805406602E-16,
+        "expected": 0,
+        "error": 2.498001805406602E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 4,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 1,
+        "direction": 5,
+        "observed": -1.3877787807814457E-16,
+        "expected": 0,
+        "error": 1.3877787807814457E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 0,
+        "observed": 1.8735013540549517E-16,
+        "expected": 0,
+        "error": 1.8735013540549517E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 1,
+        "observed": 1.5265566588595902E-16,
+        "expected": 0,
+        "error": 1.5265566588595902E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 3,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 4,
+        "observed": 1.9081958235744878E-16,
+        "expected": 0,
+        "error": 1.9081958235744878E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 2,
+        "direction": 5,
+        "observed": 8.326672684688674E-17,
+        "expected": 0,
+        "error": 8.326672684688674E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 0,
+        "observed": -1.5265566588595902E-16,
+        "expected": 0,
+        "error": 1.5265566588595902E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 1,
+        "observed": 3.0531133177191805E-16,
+        "expected": 0,
+        "error": 3.0531133177191805E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 3,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 4,
+        "observed": 7.546047120499111E-17,
+        "expected": 0,
+        "error": 7.546047120499111E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 3,
+        "direction": 5,
+        "observed": -1.249000902703301E-16,
+        "expected": 0,
+        "error": 1.249000902703301E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 0,
+        "observed": -6.938893903907228E-17,
+        "expected": 0,
+        "error": 6.938893903907228E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 1,
+        "observed": -1.0000000000000002,
+        "expected": -1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 2,
+        "observed": 1.8735013540549517E-16,
+        "expected": 0,
+        "error": 1.8735013540549517E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 3,
+        "observed": -1.3877787807814457E-17,
+        "expected": 0,
+        "error": 1.3877787807814457E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 4,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 4,
+        "direction": 5,
+        "observed": 5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 1,
+        "observed": -1.0321604682062002E-16,
+        "expected": 0,
+        "error": 1.0321604682062002E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 2,
+        "observed": 1.6653345369377348E-16,
+        "expected": 0,
+        "error": 1.6653345369377348E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 3,
+        "observed": -9.71445146547012E-17,
+        "expected": 0,
+        "error": 9.71445146547012E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 4,
+        "observed": 2.7755575615628914E-17,
+        "expected": 0,
+        "error": 2.7755575615628914E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 5,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 0,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 1,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 2,
+        "observed": 3.608224830031759E-16,
+        "expected": 0,
+        "error": 3.608224830031759E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 3,
+        "observed": 1.0755285551056204E-16,
+        "expected": 0,
+        "error": 1.0755285551056204E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 4,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "direction": 5,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 1,
+        "observed": 8.326672684688674E-17,
+        "expected": 0,
+        "error": 8.326672684688674E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 3,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 4,
+        "observed": 1.249000902703301E-16,
+        "expected": 0,
+        "error": 1.249000902703301E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 7,
+        "direction": 5,
+        "observed": 0.9999999999999999,
+        "expected": 1,
+        "error": 1.1102230246251565E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 0,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 1,
+        "observed": 1.249000902703301E-16,
+        "expected": 0,
+        "error": 1.249000902703301E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 2,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 3,
+        "observed": 0.9999999999999998,
+        "expected": 1,
+        "error": 2.220446049250313E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 4,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 8,
+        "direction": 5,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 1,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 2,
+        "observed": 3.7470027081099033E-16,
+        "expected": 0,
+        "error": 3.7470027081099033E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 3,
+        "observed": -8.326672684688674E-17,
+        "expected": 0,
+        "error": 8.326672684688674E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 4,
+        "observed": 0.9999999999999998,
+        "expected": 1,
+        "error": 2.220446049250313E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 9,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 0,
+        "observed": 2.0000000000000004,
+        "expected": 2,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 1,
+        "observed": -2.6020852139652106E-16,
+        "expected": 0,
+        "error": 2.6020852139652106E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 2,
+        "observed": 3.608224830031759E-16,
+        "expected": 0,
+        "error": 3.608224830031759E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 3,
+        "observed": -2.7755575615628914E-16,
+        "expected": 0,
+        "error": 2.7755575615628914E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 4,
+        "observed": 8.326672684688674E-17,
+        "expected": 0,
+        "error": 8.326672684688674E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 10,
+        "direction": 5,
+        "observed": 2.0000000000000004,
+        "expected": 2,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 0,
+        "observed": 2.636779683484747E-16,
+        "expected": 0,
+        "error": 2.636779683484747E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 1,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 2,
+        "observed": 1.0000000000000007,
+        "expected": 1,
+        "error": 6.661338147750935E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 3,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 4,
+        "observed": -0.9999999999999999,
+        "expected": -1,
+        "error": 1.1102230246251565E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 11,
+        "direction": 5,
+        "observed": -0,
+        "expected": 0,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 0,
+        "observed": -1.1796119636642288E-16,
+        "expected": 0,
+        "error": 1.1796119636642288E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 1,
+        "observed": 1.0000000000000007,
+        "expected": 1,
+        "error": 6.661338147750935E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 3,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 4,
+        "observed": -0.9999999999999999,
+        "expected": -1,
+        "error": 1.1102230246251565E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 12,
+        "direction": 5,
+        "observed": -1.942890293094024E-16,
+        "expected": 0,
+        "error": 1.942890293094024E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 0,
+        "observed": -8.659161350917557E-17,
+        "expected": 0,
+        "error": 8.659161350917557E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 1,
+        "observed": 9.266314567509486E-17,
+        "expected": 0,
+        "error": 9.266314567509486E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 2,
+        "observed": 2.7191790485936486E-16,
+        "expected": 0,
+        "error": 2.7191790485936486E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 3,
+        "observed": 2.7191790485936486E-16,
+        "expected": 0,
+        "error": 2.7191790485936486E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 4,
+        "observed": -9.266314567509408E-17,
+        "expected": 0,
+        "error": 9.266314567509408E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 13,
+        "direction": 5,
+        "observed": -8.659161350917575E-17,
+        "expected": 0,
+        "error": 8.659161350917575E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 0,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 1,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 2,
+        "observed": 2.914335439641036E-16,
+        "expected": 0,
+        "error": 2.914335439641036E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 3,
+        "observed": 1.3183898417423734E-16,
+        "expected": 0,
+        "error": 1.3183898417423734E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 4,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 14,
+        "direction": 5,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 0,
+        "observed": 5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 1,
+        "observed": 4.440892098500626E-16,
+        "expected": 0,
+        "error": 4.440892098500626E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 2,
+        "observed": 2.0000000000000004,
+        "expected": 2,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 3,
+        "observed": 2.0000000000000004,
+        "expected": 2,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 4,
+        "observed": 3.937822290467352E-16,
+        "expected": 0,
+        "error": 3.937822290467352E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 15,
+        "direction": 5,
+        "observed": 5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 0,
+        "observed": 5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 1,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 3,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 4,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 16,
+        "direction": 5,
+        "observed": 2.5673907444456745E-16,
+        "expected": 0,
+        "error": 2.5673907444456745E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 1,
+        "observed": -6.938893903907228E-17,
+        "expected": 0,
+        "error": 6.938893903907228E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 3,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 4,
+        "observed": 6.938893903907228E-17,
+        "expected": 0,
+        "error": 6.938893903907228E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 17,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 0,
+        "observed": -8.326672684688674E-17,
+        "expected": 0,
+        "error": 8.326672684688674E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 1,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 2,
+        "observed": 1.0000000000000007,
+        "expected": 1,
+        "error": 6.661338147750935E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 3,
+        "observed": 1,
+        "expected": 1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 4,
+        "observed": 0.9999999999999998,
+        "expected": 1,
+        "error": 2.220446049250313E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 18,
+        "direction": 5,
+        "observed": -5.551115123125783E-17,
+        "expected": 0,
+        "error": 5.551115123125783E-17,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 1,
+        "observed": 1.5265566588595902E-16,
+        "expected": 0,
+        "error": 1.5265566588595902E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 2,
+        "observed": 1.0000000000000004,
+        "expected": 1,
+        "error": 4.440892098500624E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 3,
+        "observed": 0.9999999999999999,
+        "expected": 1,
+        "error": 1.1102230246251565E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 4,
+        "observed": 1.6653345369377348E-16,
+        "expected": 0,
+        "error": 1.6653345369377348E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 19,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 0,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 1,
+        "observed": -1,
+        "expected": -1,
+        "error": 0,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 2,
+        "observed": 3.0531133177191805E-16,
+        "expected": 0,
+        "error": 3.0531133177191805E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 3,
+        "observed": -2.7755575615628914E-16,
+        "expected": 0,
+        "error": 2.7755575615628914E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 4,
+        "observed": 0.9999999999999998,
+        "expected": 1,
+        "error": 2.220446049250313E-16,
+        "passed": true
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 20,
+        "direction": 5,
+        "observed": 1.0000000000000002,
+        "expected": 1,
+        "error": 2.2204460492503126E-16,
+        "passed": true
+      }
+    ],
+    "anchorRows": [
+      {
+        "n": 1,
+        "member": "identity",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 1,
+        "member": "identity",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 1,
+        "member": "sd2-id0-half",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 2,
+        "member": "identity",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 2,
+        "member": "sd2-id0-half",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 4,
+        "member": "identity",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "anchor": "zero",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      },
+      {
+        "n": 4,
+        "member": "sd2-id0-half",
+        "anchor": "constant-flat-Jx-dx0",
+        "curvature": 0,
+        "objective": 0,
+        "gradient": 0,
+        "passed": true
+      }
+    ],
+    "homothetyRows": [
+      {
+        "member": "identity",
+        "index": 0,
+        "scale": 1,
+        "domainVolume": 1,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 4,
+        "expected": 4,
+        "derivative": 8,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "scale": 1,
+        "domainVolume": 1,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 10,
+        "expected": 10,
+        "derivative": 20,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "scale": 0.5,
+        "domainVolume": 0.0625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.25,
+        "expected": 0.25,
+        "derivative": 0.5,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "scale": 0.5,
+        "domainVolume": 0.0625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.625,
+        "expected": 0.625,
+        "derivative": 1.25,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "scale": 0.25,
+        "domainVolume": 0.00390625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.015625,
+        "expected": 0.015625,
+        "derivative": 0.03125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "scale": 0.25,
+        "domainVolume": 0.00390625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.0390625,
+        "expected": 0.0390625,
+        "derivative": 0.078125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 0,
+        "scale": 0.125,
+        "domainVolume": 0.000244140625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.0009765625,
+        "expected": 0.0009765625,
+        "derivative": 0.001953125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "identity",
+        "index": 6,
+        "scale": 0.125,
+        "domainVolume": 0.000244140625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.00244140625,
+        "expected": 0.00244140625,
+        "derivative": 0.0048828125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "scale": 1,
+        "domainVolume": 1,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.5,
+        "expected": 0.5,
+        "derivative": 1,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "scale": 1,
+        "domainVolume": 1,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 1,
+        "expected": 1,
+        "derivative": 2,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "scale": 0.5,
+        "domainVolume": 0.0625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.03125,
+        "expected": 0.03125,
+        "derivative": 0.0625,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "scale": 0.5,
+        "domainVolume": 0.0625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.0625,
+        "expected": 0.0625,
+        "derivative": 0.125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "scale": 0.25,
+        "domainVolume": 0.00390625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.001953125,
+        "expected": 0.001953125,
+        "derivative": 0.00390625,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "scale": 0.25,
+        "domainVolume": 0.00390625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.00390625,
+        "expected": 0.00390625,
+        "derivative": 0.0078125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 0,
+        "scale": 0.125,
+        "domainVolume": 0.000244140625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.0001220703125,
+        "expected": 0.0001220703125,
+        "derivative": 0.000244140625,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      },
+      {
+        "member": "sd2-id0-half",
+        "index": 6,
+        "scale": 0.125,
+        "domainVolume": 0.000244140625,
+        "CellCount": 24,
+        "FaceCount": 110,
+        "objective": 0.000244140625,
+        "expected": 0.000244140625,
+        "derivative": 0.00048828125,
+        "mapError": 0,
+        "passed": true,
+        "isFixedDomainRefinement": false
+      }
+    ],
+    "maxHomothetyMapError": 0,
+    "forcePassed": true,
+    "smoothPassed": true,
+    "smoothRows": [
+      {
+        "n": 1,
+        "h": 1,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 18,
+        "oracleS": 17.11111111111112,
+        "limitS": 9.75,
+        "observedD": 56,
+        "oracleD": 52.44444444444446,
+        "limitD": 30,
+        "actionError": 8.25,
+        "directionError": 26,
+        "actionBound": 175733662.5,
+        "directionBound": 702738150,
+        "localResidual": 0.5,
+        "localDirectionalResidual": 1,
+        "localBound": 1782,
+        "localDirectionalBound": 3564,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 702738150,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.8888888888888786,
+        "curvatureInsertionDirectionalError": 3.555555555555543,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          56.00048828125,
+          56.000030517578125,
+          56.00000190734863
+        ],
+        "extrapolated": [
+          56,
+          56
+        ],
+        "richardsonErrors": [
+          0,
+          0
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 18,
+        "oracleS": 17.11111111111112,
+        "limitS": 9.75,
+        "observedD": 1.078125,
+        "oracleD": 1.0746527777777777,
+        "limitD": 0.8125,
+        "actionError": 8.25,
+        "directionError": 0.265625,
+        "actionBound": 175733662.5,
+        "directionBound": 774014912.5,
+        "localResidual": 0.5,
+        "localDirectionalResidual": 0.625,
+        "localBound": 1782,
+        "localDirectionalBound": 3927,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 774014912.5,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.8888888888888786,
+        "curvatureInsertionDirectionalError": 0.003472222222222321,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          1.0781551897525787,
+          1.0781268868595362,
+          1.078125117928721
+        ],
+        "extrapolated": [
+          1.078125,
+          1.078125
+        ],
+        "richardsonErrors": [
+          0,
+          0
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 29.279296875,
+        "oracleS": 27.935221354166686,
+        "limitS": 16.7841796875,
+        "observedD": 99.4921875,
+        "oracleD": 94.11588541666676,
+        "limitD": 56.89453125,
+        "actionError": 12.4951171875,
+        "directionError": 42.59765625,
+        "actionBound": 1074259263.75,
+        "directionBound": 4296308325,
+        "localResidual": 0.953125,
+        "localDirectionalResidual": 1.90625,
+        "localBound": 4405.5,
+        "localDirectionalBound": 8811,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 4296308325,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 1.3440755208333144,
+        "curvatureInsertionDirectionalError": 5.376302083333243,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          99.49330508708954,
+          99.4922573491931,
+          99.49219186557457
+        ],
+        "extrapolated": [
+          99.4921875,
+          99.4921875
+        ],
+        "richardsonErrors": [
+          0,
+          0
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 29.279296875,
+        "oracleS": 27.935221354166686,
+        "limitS": 16.7841796875,
+        "observedD": -6.0166015625,
+        "oracleD": -6.059516059027779,
+        "limitD": -3.59375,
+        "actionError": 12.4951171875,
+        "directionError": 2.4228515625,
+        "actionBound": 1074259263.75,
+        "directionBound": 3031359535,
+        "localResidual": 0.953125,
+        "localDirectionalResidual": 0.9375,
+        "localBound": 4405.5,
+        "localDirectionalBound": 6220.5,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 3031359535,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 1.3440755208333144,
+        "curvatureInsertionDirectionalError": 0.04291449652777857,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          -6.016542702913284,
+          -6.01659788377583,
+          -6.016601332579739
+        ],
+        "extrapolated": [
+          -6.0166015625,
+          -6.0166015625
+        ],
+        "richardsonErrors": [
+          0,
+          0
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 2.234375,
+        "oracleS": 2.137152777777779,
+        "limitS": 1.21875,
+        "observedD": 6.937499999999999,
+        "oracleD": 6.548611111111117,
+        "limitD": 3.75,
+        "actionError": 1.015625,
+        "directionError": 3.187499999999999,
+        "actionBound": 175193308.125,
+        "directionBound": 700675102.5,
+        "localResidual": 0.25,
+        "localDirectionalResidual": 0.5000000000000001,
+        "localBound": 1782,
+        "localDirectionalBound": 3564,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 700675102.5,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.09722222222222099,
+        "curvatureInsertionDirectionalError": 0.3888888888888822,
+        "directDerivativeError": 1.28025718154973E-16,
+        "centralDerivatives": [
+          6.937560081481934,
+          6.9375037550923935,
+          6.937500234693289
+        ],
+        "extrapolated": [
+          6.9374999999997575,
+          6.937500000000015
+        ],
+        "richardsonErrors": [
+          3.482299533815266E-14,
+          2.304462926789509E-15
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 2.234375,
+        "oracleS": 2.137152777777779,
+        "limitS": 1.21875,
+        "observedD": 9.43689570931383E-16,
+        "oracleD": -0.0026475694444444394,
+        "limitD": 0,
+        "actionError": 1.015625,
+        "directionError": 9.43689570931383E-16,
+        "actionBound": 175193308.125,
+        "directionBound": 771891139.375,
+        "localResidual": 0.25,
+        "localDirectionalResidual": 0.2656250000000001,
+        "localBound": 1782,
+        "localDirectionalBound": 3927,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 771891139.375,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.09722222222222099,
+        "curvatureInsertionDirectionalError": 0.002647569444445383,
+        "directDerivativeError": 9.575673587391975E-16,
+        "centralDerivatives": [
+          -7.361188636423321E-08,
+          -4.600906322593801E-09,
+          -2.901288098655641E-10
+        ],
+        "extrapolated": [
+          -1.7431981783981126E-13,
+          -2.7436423503483335E-12
+        ],
+        "richardsonErrors": [
+          1.7526350741074264E-13,
+          2.744586039919265E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 3.0761132812500005,
+        "oracleS": 2.8270838758680568,
+        "limitS": 1.5692138671875,
+        "observedD": 10.3542578125,
+        "oracleD": 9.372398003472233,
+        "limitD": 5.18701171875,
+        "actionError": 1.5068994140625005,
+        "directionError": 5.16724609375,
+        "actionBound": 1070858681.25,
+        "directionBound": 4283070815.625,
+        "localResidual": 0.3046874999999999,
+        "localDirectionalResidual": 0.609375,
+        "localBound": 4405.5,
+        "localDirectionalBound": 8811,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 4283070815.625,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.24902940538194374,
+        "curvatureInsertionDirectionalError": 0.9818598090277675,
+        "directDerivativeError": 3.4311620814690813E-16,
+        "centralDerivatives": [
+          10.354373456835617,
+          10.354265040270548,
+          10.354258264225791
+        ],
+        "extrapolated": [
+          10.354257812499544,
+          10.354257812489474
+        ],
+        "richardsonErrors": [
+          4.409043274687771E-14,
+          1.016653324739289E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 1,
+        "h": 1,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 3.0761132812500005,
+        "oracleS": 2.8270838758680568,
+        "limitS": 1.5692138671875,
+        "observedD": -0.8477246093749997,
+        "oracleD": -0.823668077256944,
+        "limitD": -0.443115234375,
+        "actionError": 1.5068994140625005,
+        "directionError": 0.4046093749999997,
+        "actionBound": 1070858681.25,
+        "directionBound": 3022916096.875,
+        "localResidual": 0.3046874999999999,
+        "localDirectionalResidual": 0.31249999999999994,
+        "localBound": 4405.5,
+        "localDirectionalBound": 6220.5,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 3022916096.875,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.24902940538194374,
+        "curvatureInsertionDirectionalError": 0.024056532118055696,
+        "directDerivativeError": 2.220446049250313E-16,
+        "centralDerivatives": [
+          -0.8477244585749872,
+          -0.8477245999513343,
+          -0.847724608785029
+        ],
+        "extrapolated": [
+          -0.8477246093764241,
+          -0.847724609373942
+        ],
+        "richardsonErrors": [
+          1.4244161405940758E-12,
+          1.0577094755603866E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 13.3984375,
+        "oracleS": 13.228298611110999,
+        "limitS": 9.75,
+        "observedD": 41.34375,
+        "oracleD": 40.663194444444215,
+        "limitD": 30,
+        "actionError": 3.6484375,
+        "directionError": 11.34375,
+        "actionBound": 87866831.25,
+        "directionBound": 351369075,
+        "localResidual": 0.0625,
+        "localDirectionalResidual": 0.125,
+        "localBound": 222.75,
+        "localDirectionalBound": 445.5,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 702738150,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.1701388888890012,
+        "curvatureInsertionDirectionalError": 0.6805555555557845,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          41.34410047531128,
+          41.343771904706045,
+          41.343751369044185
+        ],
+        "extrapolated": [
+          41.34374999999903,
+          41.343750000000064
+        ],
+        "richardsonErrors": [
+          2.35451198304783E-14,
+          1.5467596968927327E-15
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 13.3984375,
+        "oracleS": 13.228298611110999,
+        "limitS": 9.75,
+        "observedD": 0.947265625,
+        "oracleD": 0.946180555555556,
+        "limitD": 0.8125,
+        "actionError": 3.6484375,
+        "directionError": 0.134765625,
+        "actionBound": 87866831.25,
+        "directionBound": 387007456.25,
+        "localResidual": 0.0625,
+        "localDirectionalResidual": 0.08203125,
+        "localBound": 222.75,
+        "localDirectionalBound": 490.875,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 774014912.5,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.1701388888890012,
+        "curvatureInsertionDirectionalError": 0.0010850694444439757,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          0.9472917504608631,
+          0.947267257841304,
+          0.9472657269761839
+        ],
+        "extrapolated": [
+          0.947265625,
+          0.9472656249185093
+        ],
+        "richardsonErrors": [
+          0,
+          8.149070307439388E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 22.342958450317383,
+        "oracleS": 22.076173888312496,
+        "limitS": 16.7841796875,
+        "observedD": 75.68628692626953,
+        "oracleD": 74.61914867824947,
+        "limitD": 56.89453125,
+        "actionError": 5.558778762817383,
+        "directionError": 18.79175567626953,
+        "actionBound": 537129631.875,
+        "directionBound": 2148154162.5,
+        "localResidual": 0.1240234375,
+        "localDirectionalResidual": 0.248046875,
+        "localBound": 550.6875,
+        "localDirectionalBound": 1101.375,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 4296308325,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.26678456200488654,
+        "curvatureInsertionDirectionalError": 1.0671382480200577,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          75.6871293002032,
+          75.68633957464044,
+          75.68629021730885
+        ],
+        "extrapolated": [
+          75.68628692626959,
+          75.68628692682007
+        ],
+        "richardsonErrors": [
+          7.510398669204435E-16,
+          7.27400887103832E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 22.342958450317383,
+        "oracleS": 22.076173888312496,
+        "limitS": 16.7841796875,
+        "observedD": -4.729034423828125,
+        "oracleD": -4.738847520616318,
+        "limitD": -3.59375,
+        "actionError": 5.558778762817383,
+        "directionError": 1.135284423828125,
+        "actionBound": 537129631.875,
+        "directionBound": 1515679767.5,
+        "localResidual": 0.1240234375,
+        "localDirectionalResidual": 0.1171875,
+        "localBound": 550.6875,
+        "localDirectionalBound": 777.5625,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 3031359535,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.26678456200488654,
+        "curvatureInsertionDirectionalError": 0.009813096788192865,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          -4.728982929140329,
+          -4.729031205410138,
+          -4.729034222633345
+        ],
+        "extrapolated": [
+          -4.729034423828125,
+          -4.729034423781559
+        ],
+        "richardsonErrors": [
+          0,
+          9.84689519954112E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 1.667643229166666,
+        "oracleS": 1.6530430169752988,
+        "limitS": 1.21875,
+        "observedD": 5.139322916666667,
+        "oracleD": 5.080922067901192,
+        "limitD": 3.75,
+        "actionError": 0.4488932291666661,
+        "directionError": 1.389322916666667,
+        "actionBound": 87596654.0625,
+        "directionBound": 350337551.25,
+        "localResidual": 0.03125000000000002,
+        "localDirectionalResidual": 0.06250000000000004,
+        "localBound": 222.75,
+        "localDirectionalBound": 445.5,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 700675102.5,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.014600212191367312,
+        "curvatureInsertionDirectionalError": 0.05840084876547458,
+        "directDerivativeError": 5.184603696450693E-16,
+        "centralDerivatives": [
+          5.139366288979772,
+          5.139325627435255,
+          5.139323086088552
+        ],
+        "extrapolated": [
+          5.139322916665621,
+          5.139322916665439
+        ],
+        "richardsonErrors": [
+          2.035821051472972E-13,
+          2.3901023040637694E-13
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 1.667643229166666,
+        "oracleS": 1.6530430169752988,
+        "limitS": 1.21875,
+        "observedD": 0.004828559027777386,
+        "oracleD": -0.0007937584394289815,
+        "limitD": 0,
+        "actionError": 0.4488932291666661,
+        "directionError": 0.004828559027777386,
+        "actionBound": 87596654.0625,
+        "directionBound": 385945569.6875,
+        "localResidual": 0.03125000000000002,
+        "localDirectionalResidual": 0.0341796875,
+        "localBound": 222.75,
+        "localDirectionalBound": 490.875,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 771891139.375,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.014600212191367312,
+        "curvatureInsertionDirectionalError": 0.005622317467206367,
+        "directDerivativeError": 4.145989107584569E-16,
+        "centralDerivatives": [
+          0.0048286213830124325,
+          0.004828562926036284,
+          0.004828559278394096
+        ],
+        "extrapolated": [
+          0.004828559028904541,
+          0.00482855903521795
+        ],
+        "richardsonErrors": [
+          1.1271547931124282E-12,
+          7.440563790095389E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 2.1850100882848142,
+        "oracleS": 2.142938254909752,
+        "limitS": 1.5692138671875,
+        "observedD": 7.254287993113206,
+        "oracleD": 7.088770977538315,
+        "limitD": 5.18701171875,
+        "actionError": 0.6157962210973142,
+        "directionError": 2.0672762743632056,
+        "actionBound": 535429340.625,
+        "directionBound": 2141535407.8125,
+        "localResidual": 0.03955078125,
+        "localDirectionalResidual": 0.07910156250000006,
+        "localBound": 550.6875,
+        "localDirectionalBound": 1101.375,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 4283070815.625,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.04207183337506226,
+        "curvatureInsertionDirectionalError": 0.16551701557489018,
+        "directDerivativeError": 2.816003951386554E-15,
+        "centralDerivatives": [
+          7.254366486023741,
+          7.254292898922131,
+          7.254288299784093
+        ],
+        "extrapolated": [
+          7.254287993115357,
+          7.2542879931748905
+        ],
+        "richardsonErrors": [
+          2.9653745957635786E-13,
+          8.50323001852544E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 2,
+        "h": 0.5,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 2.1850100882848142,
+        "oracleS": 2.142938254909752,
+        "limitS": 1.5692138671875,
+        "observedD": -0.6064532661437992,
+        "oracleD": -0.6078333860562192,
+        "limitD": -0.443115234375,
+        "actionError": 0.6157962210973142,
+        "directionError": 0.16333803176879924,
+        "actionBound": 535429340.625,
+        "directionBound": 1511458048.4375,
+        "localResidual": 0.03955078125,
+        "localDirectionalResidual": 0.03906250000000003,
+        "localBound": 550.6875,
+        "localDirectionalBound": 777.5625,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 3022916096.875,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.04207183337506226,
+        "curvatureInsertionDirectionalError": 0.0013801199124199304,
+        "directDerivativeError": 5.551115123125783E-16,
+        "centralDerivatives": [
+          -0.6064531539247469,
+          -0.6064532591246916,
+          -0.6064532657082964
+        ],
+        "extrapolated": [
+          -0.6064532661380213,
+          -0.6064532661472034
+        ],
+        "richardsonErrors": [
+          5.777933687056702E-12,
+          3.404165838105655E-12
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 11.47021484375,
+        "oracleS": 11.43353949652813,
+        "limitS": 9.75,
+        "observedD": 35.318359375,
+        "oracleD": 35.17165798611268,
+        "limitD": 30,
+        "actionError": 1.72021484375,
+        "directionError": 5.318359375,
+        "actionBound": 43933415.625,
+        "directionBound": 175684537.5,
+        "localResidual": 0.0078125,
+        "localDirectionalResidual": 0.015625,
+        "localBound": 27.84375,
+        "localDirectionalBound": 55.6875,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 702738150,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.036675347221869714,
+        "curvatureInsertionDirectionalError": 0.14670138888732254,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          35.31865653395653,
+          35.318377947432054,
+          35.318360530323844
+        ],
+        "extrapolated": [
+          35.31835937499709,
+          35.3183593691833
+        ],
+        "richardsonErrors": [
+          8.248472658892896E-14,
+          1.6469343111717497E-10
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "identity",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 11.47021484375,
+        "oracleS": 11.43353949652813,
+        "limitS": 9.75,
+        "observedD": 0.880126953125,
+        "oracleD": 0.8798285590277767,
+        "limitD": 0.8125,
+        "actionError": 1.72021484375,
+        "directionError": 0.067626953125,
+        "actionBound": 43933415.625,
+        "directionBound": 193503728.125,
+        "localResidual": 0.0078125,
+        "localDirectionalResidual": 0.010498046875,
+        "localBound": 27.84375,
+        "localDirectionalBound": 61.359375,
+        "boundCoefficients": {
+          "action": 175733662.5,
+          "direction": 774014912.5,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.036675347221869714,
+        "curvatureInsertionDirectionalError": 0.0002983940972233201,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          0.8801511325871161,
+          0.8801284641531311,
+          0.8801270469957672
+        ],
+        "extrapolated": [
+          0.8801269529241987,
+          0.8801269525186096
+        ],
+        "richardsonErrors": [
+          2.0080126450494618E-10,
+          6.063903823516625E-10
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 19.41245236992836,
+        "oracleS": 19.353697569833923,
+        "limitS": 16.7841796875,
+        "observedD": 65.74795401096344,
+        "oracleD": 65.51293481058086,
+        "limitD": 56.89453125,
+        "actionError": 2.62827268242836,
+        "directionError": 8.85342276096344,
+        "actionBound": 268564815.9375,
+        "directionBound": 1074077081.25,
+        "localResidual": 0.015869140625,
+        "localDirectionalResidual": 0.03173828125,
+        "localBound": 68.8359375,
+        "localDirectionalBound": 137.671875,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 4296308325,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.05875480009443734,
+        "curvatureInsertionDirectionalError": 0.23501920038258106,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          65.74868468796922,
+          65.74799967714534,
+          65.74795686417201
+        ],
+        "extrapolated": [
+          65.74795400975708,
+          65.74795400997378
+        ],
+        "richardsonErrors": [
+          1.8348243301568568E-11,
+          1.505230311891314E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "identity",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 19.41245236992836,
+        "oracleS": 19.353697569833923,
+        "limitS": 16.7841796875,
+        "observedD": -4.142061233520508,
+        "oracleD": -4.144400066799619,
+        "limitD": -3.59375,
+        "actionError": 2.62827268242836,
+        "directionError": 0.5483112335205078,
+        "actionBound": 268564815.9375,
+        "directionBound": 757839883.75,
+        "localResidual": 0.015869140625,
+        "localDirectionalResidual": 0.0146484375,
+        "localBound": 68.8359375,
+        "localDirectionalBound": 97.1953125,
+        "boundCoefficients": {
+          "action": 1074259263.75,
+          "direction": 3031359535,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.05875480009443734,
+        "curvatureInsertionDirectionalError": 0.002338833279111441,
+        "directDerivativeError": 0,
+        "centralDerivatives": [
+          -4.142013494390085,
+          -4.142058249537513,
+          -4.142061046826711
+        ],
+        "extrapolated": [
+          -4.142061233214008,
+          -4.142061233312658
+        ],
+        "richardsonErrors": [
+          7.399690569928396E-11,
+          5.0180266708593266E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "self",
+        "actualAction": 1.4324340820312382,
+        "oracleS": 1.4298457392940778,
+        "limitS": 1.21875,
+        "observedD": 4.409423828125051,
+        "oracleD": 4.399070457176071,
+        "limitD": 3.75,
+        "actionError": 0.21368408203123823,
+        "directionError": 0.6594238281250506,
+        "actionBound": 43798327.03125,
+        "directionBound": 175168775.625,
+        "localResidual": 0.003906250000000007,
+        "localDirectionalResidual": 0.007812500000000014,
+        "localBound": 27.84375,
+        "localDirectionalBound": 55.6875,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 700675102.5,
+          "residual": 1782,
+          "residualDirection": 3564,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 3,
+          "directionDerivativeNorm": 1,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.002588342737160465,
+        "curvatureInsertionDirectionalError": 0.010353370948979368,
+        "directDerivativeError": 2.1351295805975147E-14,
+        "centralDerivatives": [
+          4.409460891036986,
+          4.409426144561394,
+          4.409423971927026
+        ],
+        "extrapolated": [
+          4.409423828129688,
+          4.409423827084735
+        ],
+        "richardsonErrors": [
+          1.0516520321026322E-12,
+          2.3593000581015507E-10
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "sd2-id0-half",
+        "profile": "affine-witness",
+        "direction": "independent-affine",
+        "actualAction": 1.4324340820312382,
+        "oracleS": 1.4298457392940778,
+        "limitS": 1.21875,
+        "observedD": 0.0016072591145826003,
+        "oracleD": -0.0002685264304831531,
+        "limitD": 0,
+        "actionError": 0.21368408203123823,
+        "directionError": 0.0016072591145826003,
+        "actionBound": 43798327.03125,
+        "directionBound": 192972784.84375,
+        "localResidual": 0.003906250000000007,
+        "localDirectionalResidual": 0.00433349609375,
+        "localBound": 27.84375,
+        "localDirectionalBound": 61.359375,
+        "boundCoefficients": {
+          "action": 175193308.125,
+          "direction": 771891139.375,
+          "residual": 1782,
+          "residualDirection": 3927,
+          "fieldNorm": 3,
+          "fieldDerivativeNorm": 1,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.002588342737160465,
+        "curvatureInsertionDirectionalError": 0.0018757855450657534,
+        "directDerivativeError": 7.418111264145821E-16,
+        "centralDerivatives": [
+          0.0016072824642776595,
+          0.0016072605748149726,
+          0.001607259225238522
+        ],
+        "extrapolated": [
+          0.0016072591155174602,
+          0.0016072591352667587
+        ],
+        "richardsonErrors": [
+          9.348598284386611E-13,
+          2.0684158379136175E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "self",
+        "actualAction": 1.853248104328933,
+        "oracleS": 1.8449590010757666,
+        "limitS": 1.5692138671875,
+        "observedD": 6.133450257281486,
+        "oracleD": 6.100892878896109,
+        "limitD": 5.18701171875,
+        "actionError": 0.28403423714143305,
+        "directionError": 0.9464385385314857,
+        "actionBound": 267714670.3125,
+        "directionBound": 1070767703.90625,
+        "localResidual": 0.005035400390625009,
+        "localDirectionalResidual": 0.010070800781250016,
+        "localBound": 68.8359375,
+        "localDirectionalBound": 137.671875,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 4283070815.625,
+          "residual": 4405.5,
+          "residualDirection": 8811,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 5,
+          "directionDerivativeNorm": 1.5,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.008289103253166452,
+        "curvatureInsertionDirectionalError": 0.03255737838537698,
+        "directDerivativeError": 1.4336084888912752E-14,
+        "centralDerivatives": [
+          6.13351613009965,
+          6.133454374347139,
+          6.133450514424567
+        ],
+        "extrapolated": [
+          6.133450257296971,
+          6.133450257096396
+        ],
+        "richardsonErrors": [
+          2.5247438387632964E-12,
+          3.017716907328523E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      },
+      {
+        "n": 4,
+        "h": 0.25,
+        "member": "sd2-id0-half",
+        "profile": "affine-four-component",
+        "direction": "independent-affine",
+        "actualAction": 1.853248104328933,
+        "oracleS": 1.8449590010757666,
+        "limitS": 1.5692138671875,
+        "observedD": -0.5194004161159207,
+        "oracleD": -0.5204827213342543,
+        "limitD": -0.443115234375,
+        "actionError": 0.28403423714143305,
+        "directionError": 0.0762851817409207,
+        "actionBound": 267714670.3125,
+        "directionBound": 755729024.21875,
+        "localResidual": 0.005035400390625009,
+        "localDirectionalResidual": 0.004882812500000009,
+        "localBound": 68.8359375,
+        "localDirectionalBound": 97.1953125,
+        "boundCoefficients": {
+          "action": 1070858681.25,
+          "direction": 3022916096.875,
+          "residual": 4405.5,
+          "residualDirection": 6220.5,
+          "fieldNorm": 5,
+          "fieldDerivativeNorm": 1.5,
+          "directionNorm": 2.75,
+          "directionDerivativeNorm": 1.25,
+          "cellRowL1": 132
+        },
+        "curvatureInsertionActionError": 0.008289103253166452,
+        "curvatureInsertionDirectionalError": 0.0010823052183336346,
+        "directDerivativeError": 3.219646771412954E-15,
+        "centralDerivatives": [
+          -0.519400376283869,
+          -0.5194004136149033,
+          -0.5194004159397991
+        ],
+        "extrapolated": [
+          -0.519400416103639,
+          -0.5194004160947922
+        ],
+        "richardsonErrors": [
+          1.2281731187613332E-11,
+          2.112854335933889E-11
+        ],
+        "parityPassed": true,
+        "boundPassed": true
+      }
+    ],
+    "richardsonPairs": 48,
+    "pairing": {
+      "identityFormAnisotropic": true,
+      "selfDualRestrictedScalarFactor": 4.5,
+      "finiteSelfDualFactor": "4.5\u002B3h\u002B0.5h^2",
+      "metric": "G_h=(1.5\u002B2h\u002B0.5h^2)I\u002B(1.5\u002B0.5h)B^T B",
+      "sourcePairingIdentified": false
+    },
+    "scope": {
+      "fixedPhysicalDomainRefined": true,
+      "homothetySeparated": true,
+      "smoothDirectionalCovectorsOnly": true,
+      "pointwiseForceConvergenceClaimed": false,
+      "sourceActionBridgeEstablished": false,
+      "quantumLimitEstablished": false,
+      "oldSampleOutputsReinterpreted": false,
+      "thetaHeldFixed": true
+    }
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

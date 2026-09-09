@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "phase": 584,
+  "contractId": "phase584-a46-signed-spatial-curvature-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Conditional classical spatial consistency on smooth single-triangle 2D meshes; original rough 4D fixed-mesh obstruction retained; no source-action bridge or quantum claim",
+  "fixtures": {
+    "spatialLadder": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625,
+      0.0078125,
+      0.00390625
+    ],
+    "unitVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "vertexPermutations": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "dictionaries": [
+      {
+        "id": "same",
+        "inputSign": 1,
+        "outputSign": 1
+      },
+      {
+        "id": "paired",
+        "inputSign": -1,
+        "outputSign": -1
+      }
+    ],
+    "profiles": [
+      {
+        "id": "constant-commuting",
+        "X": [
+          1,
+          0,
+          0
+        ],
+        "Y": [
+          2,
+          0,
+          0
+        ],
+        "P": [
+          0,
+          0,
+          0
+        ],
+        "Q": [
+          0,
+          0,
+          0
+        ],
+        "R": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "constant-noncommuting",
+        "X": [
+          1,
+          0,
+          0
+        ],
+        "Y": [
+          0,
+          1,
+          0
+        ],
+        "P": [
+          0,
+          0,
+          0
+        ],
+        "Q": [
+          0,
+          0,
+          0
+        ],
+        "R": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "affine-witness",
+        "X": [
+          1,
+          0,
+          0
+        ],
+        "Y": [
+          0,
+          1,
+          0
+        ],
+        "P": [
+          0,
+          0,
+          0
+        ],
+        "Q": [
+          0,
+          0,
+          0
+        ],
+        "R": [
+          0,
+          0,
+          1
+        ],
+        "U": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "affine-general",
+        "X": [
+          1,
+          2,
+          -1
+        ],
+        "Y": [
+          -1,
+          1,
+          2
+        ],
+        "P": [
+          1,
+          0,
+          1
+        ],
+        "Q": [
+          0,
+          1,
+          -1
+        ],
+        "R": [
+          2,
+          -1,
+          1
+        ],
+        "U": [
+          -1,
+          2,
+          0
+        ]
+      }
+    ],
+    "algebra": "CreateSu2WithTracePairing; bracket independently checked against cross product",
+    "edgeIntegration": "exact straight-edge affine integral by midpoint, no path-order claim",
+    "spatialComparison": "signed-area-normalized curvature at origin; exact polynomial remainder",
+    "spatialRowCount": 168,
+    "dictionaryAssemblyCount": 336,
+    "algebraIdentityMenu": "all triples of vectors in {-1,0,1}^3",
+    "algebraIdentityCaseCount": 19683,
+    "fixedMesh": "CreateUniform4D(1)",
+    "fixedMeshWaveScale": 0.031,
+    "fixedMeshWaveFrequency": 0.419,
+    "fixedMeshWaveCosineWeight": 0.37,
+    "fixedMeshWaveCosineFrequencyRatio": 1.7,
+    "amplitudeLadder": [
+      1,
+      0.5,
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625,
+      0.0078125,
+      0.00390625
+    ],
+    "slopePrefixLength": 6,
+    "coefficientIndex": 6,
+    "exactTolerance": 0,
+    "floatingTolerance": 2e-12,
+    "slopeTolerance": 0.2,
+    "coefficientRelativeTolerance": 0.003,
+    "spatialEndpointErrorRatioMaximum": 0.03,
+    "constantSameSignError": 2,
+    "affineWitnessSameSignMinimumError": 1.9,
+    "positiveDefectMinimum": 1e-8,
+    "estimatedAggregateCpuSeconds": 10,
+    "maximumEstimatedAggregateCpuSeconds": 60,
+    "estimatedPeakBytes": 80000000,
+    "maximumEstimatedPeakBytes": 400000000
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Qreg+Qloop=[x,x+y+z] in every Lie algebra",
+    "Smooth edges give x=O(a), S=O(a^2); paired defect O(a^3), normalized O(a)",
+    "Same leading dA-A wedge A; paired leading dA+A wedge A",
+    "All vertex permutations share signed leading limit, not exact finite-mesh invariance",
+    "Constant noncommuting same-sign error 2, paired error zero",
+    "Both rough fixed-mesh amplitude defects have leading order t^2; original array remainder order t^3",
+    "Smooth affine witness [x,S]=-a^3 Jy/2 still scales as t^2 at fixed a"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "mathematical-control-failed",
+    "paired-sign-smooth-spatial-consistency-fixed-mesh-obstruction-preserved"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/Program.cs",
+      "sha256": "09e1ea74010db4099002caceb8779ea10465fa4083e7b71cef5fcf4b6f978262"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/Phase584SignedSpatialCurvatureConsistency.csproj",
+      "sha256": "b1161dd602129a54dae555279b63a957ec1e26840f5ac6522df03fa6f01b2814"
+    },
+    {
+      "id": "proof",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/STUDY.md",
+      "sha256": "67ed8f050bf07ece5d4a0291fce405c8a18e03e5c78ab3a5e73bc2ac08f4d1ea"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70"
+    },
+    {
+      "id": "phase565-summary",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/output/registered_finite_transport_bch_control_summary.json",
+      "sha256": "bcd29494512677c9bb13f44ecfd9529f2b782fc9f53e86ec1923c9139848a420"
+    },
+    {
+      "id": "phase565-program",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/Program.cs",
+      "sha256": "3c6936ee7729a82b6a18d01a718ea9ade32009bf74d955ca83e124732f45a7a3"
+    },
+    {
+      "id": "phase565-contract",
+      "path": "studies/phase565_registered_finite_transport_bch_control_001/preregistration/phase565_registered_finite_transport_bch_control_contract_v1.json",
+      "sha256": "1b4e3f67739130ea0b0275ad3dfa946edcc3c07f258f76596bfe093e17d844ad"
+    },
+    {
+      "id": "curvature-assembler",
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "id": "mesh-builder",
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "id": "mesh-generator",
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "id": "simplicial-mesh",
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "sha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871"
+    },
+    {
+      "id": "connection-field",
+      "path": "src/Gu.ReferenceCpu/ConnectionField.cs",
+      "sha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72"
+    },
+    {
+      "id": "lie-algebra",
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "sha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec"
+    },
+    {
+      "id": "lie-factory",
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "core-project",
+      "path": "src/Gu.Core/Gu.Core.csproj",
+      "sha256": "3702bcd64b09004893c0afdb530b6b91249de567d2b8708f8ac16dab0c9dd561"
+    },
+    {
+      "id": "geometry-project",
+      "path": "src/Gu.Geometry/Gu.Geometry.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "id": "math-project",
+      "path": "src/Gu.Math/Gu.Math.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "id": "cpu-project",
+      "path": "src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj",
+      "sha256": "7e3af6147af4de39188a6a8c0ceae83cbbe6b343d78e081aac5911ea3e7dc530"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

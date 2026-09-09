@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "phase": 583,
+  "contractId": "phase583-a45-biconnection-signs-v1",
+  "frozenBeforeFirstExecution": true,
+  "arithmetic": "checked-int64-exact",
+  "scope": "Bounded sign reconciliation with original semidirect product/right action/B fixed; no source selection or registered field identification",
+  "fixtures": {
+    "signs": [
+      -1,
+      1
+    ],
+    "rotations": "all 24 proper signed permutation 3x3 matrices",
+    "referenceLieVector": [
+      1,
+      -2,
+      1
+    ],
+    "pLieVector": [
+      2,
+      1,
+      -1
+    ],
+    "epsilonCovariantDerivativeLieVector": [
+      -1,
+      2,
+      3
+    ],
+    "hCovariantDerivativeLieVectors": [
+      [
+        1,
+        2,
+        -1
+      ],
+      [
+        -2,
+        1,
+        3
+      ],
+      [
+        3,
+        -1,
+        2
+      ]
+    ],
+    "witnessLieVector": [
+      1,
+      2,
+      -1
+    ],
+    "expectedCaseCount": 13824,
+    "exactTolerance": 0
+  },
+  "analyticPredictionsBeforeExecution": [
+    "C_eh=Ad(h^-1)C_e+C_h; either sign yields a homomorphism",
+    "A_c'-A_c dot h=(c*s-1)C_h; B'-B dot h=0",
+    "pi_r'-pi_r=(s+r)Ad(e*h)C_h",
+    "Exactly two compatible triples: (-1,-1,+1),(+1,+1,-1)",
+    "Only negative s is the original right-action stabilizer",
+    "c*pi_r=e*(A-B)*e^-1 for both survivors",
+    "Negating p,c,s,r preserves A,B,T,c*pi; finite coefficient sign flip has absolute determinant one",
+    "Printed (+1,-1,+1) sends initial T=0 to -2C; witness squared Lie norm 24"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-battery-failed",
+    "mathematical-control-failed",
+    "printed-sign-conflict-proved-two-compatible-families-registered-map-unresolved"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/Program.cs",
+      "sha256": "db446bb701403ff193c2039d76c7642f87c675f31f7db04e4bf0c07b122dc456"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/Phase583BiconnectionConventionReconciliation.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "bridge-status",
+      "path": "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json",
+      "sha256": "5e2fd70f50e7c70dce8ebfc8400d9ab312dabb0e4b6e66d01e2bd791b936f790"
+    },
+    {
+      "id": "prior-observable",
+      "path": "studies/phase582_relative_transport_observable_control_001/output/relative_transport_observable_control_summary.json",
+      "sha256": "946de50d95c96bc9bb41af89adaa8168e4023bc4e83fdb7ccd90e0da94b1cc27"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

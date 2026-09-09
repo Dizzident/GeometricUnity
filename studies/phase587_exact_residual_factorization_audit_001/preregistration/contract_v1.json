@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "phase": 587,
+  "contractId": "phase587-a47-exact-residual-factorization-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "vertices": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "cell": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "faces": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "boundaryEdges": [
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        1,
+        2,
+        7
+      ],
+      [
+        1,
+        3,
+        8
+      ],
+      [
+        2,
+        3,
+        9
+      ],
+      [
+        4,
+        5,
+        7
+      ],
+      [
+        4,
+        6,
+        8
+      ],
+      [
+        5,
+        6,
+        9
+      ],
+      [
+        7,
+        8,
+        9
+      ]
+    ],
+    "boundarySigns": [
+      1,
+      -1,
+      1
+    ],
+    "formPairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "starRows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "generatorCycles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ]
+    ],
+    "witnessFaceCoefficients": [
+      -1,
+      1,
+      0,
+      -1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "witnessLieIndex": 2,
+    "mixedCoefficient": "-1/2",
+    "member": {
+      "phi1": "sd2",
+      "phi2": "id0",
+      "coefficient": 0.5,
+      "theta": 0
+    },
+    "expected": {
+      "wRank": 6,
+      "qRank": 6,
+      "pRank": 6,
+      "dRank": 6,
+      "mRank": 7,
+      "linearResidualRank": 3,
+      "mixedRankWithLie": 30,
+      "noncommutingCases": 30,
+      "commutingCases": 30,
+      "actualLinearColumns": 30,
+      "actualContractionColumns": 30,
+      "witnessNormSquared": 4,
+      "coreFileCount": 726
+    },
+    "exactTolerance": 0,
+    "comparisonTolerance": 1e-12,
+    "estimatedSeconds": 5,
+    "maximumEstimatedSeconds": 10,
+    "estimatedPeakBytes": 134217728,
+    "maximumEstimatedPeakBytes": 268435456
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "registered-map-or-polynomial-control-failed",
+    "nonlinear-residual-factorization-obstructed-flat-tangent-control-passes",
+    "expected-factorization-obstruction-not-confirmed"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/Program.cs",
+      "sha256": "885b3649e3a3120e15437651fe5dc5c3d3e789735ff4fd2dc2412216b5d1f260"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/Phase587ExactResidualFactorizationAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/STUDY.md",
+      "sha256": "543057ca0ff9386eef74225ec8e1e66672a35b5bfc50f19956426fd664ac3ca6"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

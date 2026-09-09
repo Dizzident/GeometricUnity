@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "phase": 578,
+  "phaseId": "phase578-consolidated-conditional-electroweak-sector-ledger",
+  "contractId": "phase578-a42-consolidated-conditional-electroweak-sector-ledger-v1",
+  "contractSha256": "ce4d11d585570a3acc561600c92445a9f3566f64668f72961a86076177dc6cd0",
+  "verdictKind": "invalid-or-drifted-input",
+  "terminalStatus": "invalid-or-drifted-input",
+  "deterministic": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "contractValid": false,
+  "exactBindingsValid": false,
+  "exactBindings": [
+    {
+      "id": "phase404-full",
+      "path": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration.json",
+      "expectedSha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671",
+      "actualSha256": "fd4c9bd444763f6ca74736bd8bfe26751208fd35909be594ac175e5283375671",
+      "hashMatches": true
+    },
+    {
+      "id": "phase429-full",
+      "path": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger.json",
+      "expectedSha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9",
+      "actualSha256": "a5f4de365c87c756b9f87fca14563804b04b01f938a5ee8133afdb4bf98b90c9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase433-full",
+      "path": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger.json",
+      "expectedSha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87",
+      "actualSha256": "6ab7323e7891cdf5dd3562512172c1f52e52f45cca1f992e48eda47377663a87",
+      "hashMatches": true
+    },
+    {
+      "id": "phase434-full",
+      "path": "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger.json",
+      "expectedSha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce",
+      "actualSha256": "c58ee110f8944d8100d952b3fb5c91436e8fbd5a2534a63d714c86a98f2aa9ce",
+      "hashMatches": true
+    },
+    {
+      "id": "phase451-full",
+      "path": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger.json",
+      "expectedSha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6",
+      "actualSha256": "3a8806fc49e715ae3f939d33148667a5a7b92f4542f75de65806ecc5c78a1dd6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase461-full",
+      "path": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json",
+      "expectedSha256": "8c84e1b2a6de363a7fc0856c09556e58063350c32f5036f7cbf9ff2086ae09d7",
+      "actualSha256": "acce494ea4223f9cf765f3b2317d357389e01aab00c4cac33e3aab3154ff6820",
+      "hashMatches": false
+    },
+    {
+      "id": "phase464-full",
+      "path": "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract.json",
+      "expectedSha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551",
+      "actualSha256": "2ee39140e1102aae17ecd1ef73a45484bac5e2547f90d7e6baba3f978eabe551",
+      "hashMatches": true
+    },
+    {
+      "id": "phase213-full",
+      "path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json",
+      "expectedSha256": "3a3e2c71f7ba5096a8e8ac081fb50bec48c3227fd0ceafc4adeedacf8be808d1",
+      "actualSha256": "bbab964892df0b9ef7e38dd6a6707f5db2c59f1082b5ad907175519a92bccd35",
+      "hashMatches": false
+    }
+  ],
+  "knownAnswerBattery": {
+    "auditedNumericDataParsedBeforeBattery": false,
+    "exactRatioArithmetic": {
+      "tanSquared": 0.6,
+      "sinSquared": 0.37499999999999994,
+      "treeMassRatio": 0.7905694150420949,
+      "declaredComparisonRatio": 0.8814466001956406,
+      "scaledMiss": 0.10310004614389022,
+      "passed": true
+    },
+    "classificationTruthTable": {
+      "rows": [
+        {
+          "id": "invalid",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        },
+        {
+          "id": "battery",
+          "actual": "known-answer-battery-failed",
+          "expected": "known-answer-battery-failed"
+        },
+        {
+          "id": "source",
+          "actual": "source-values-or-statuses-inconsistent",
+          "expected": "source-values-or-statuses-inconsistent"
+        },
+        {
+          "id": "shape",
+          "actual": "ledger-shape-or-assumption-coverage-invalid",
+          "expected": "ledger-shape-or-assumption-coverage-invalid"
+        },
+        {
+          "id": "complete",
+          "actual": "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent",
+          "expected": "conditional-electroweak-sector-ledger-complete-absolute-masses-blocked-source-content-absent"
+        },
+        {
+          "id": "precedence",
+          "actual": "invalid-or-drifted-input",
+          "expected": "invalid-or-drifted-input"
+        }
+      ],
+      "everyTerminalReached": true,
+      "passed": true
+    },
+    "checksumTamperDetected": true,
+    "passed": true
+  },
+  "noUnitAnchorIntroduced": true,
+  "absoluteMassComputed": false,
+  "branches": [
+    {
+      "id": "fail-closed",
+      "promotedPhysicalMassClaimCount": 0
+    }
+  ],
+  "everyBranchPromotedPhysicalMassClaimCountZero": true,
+  "sourceContractFieldFilledCount": 0,
+  "promotedPhysicalMassClaimCount": 0,
+  "externalReviewPending": true
+}

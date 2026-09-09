@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": 1,
+  "phase": 587,
+  "phaseId": "phase587-exact-residual-factorization-audit",
+  "contractId": "phase587-a47-exact-residual-factorization-v1",
+  "contractSha256": "104b2c9ed428afb6ee5041e7fab9cc4a6f12a05825bcf6bace1b5af301f55130",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "bindingCount": 7,
+  "uniqueBindingIdCount": 7,
+  "uniqueBindingPathCount": 7,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/Program.cs",
+      "sha256": "885b3649e3a3120e15437651fe5dc5c3d3e789735ff4fd2dc2412216b5d1f260",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/Phase587ExactResidualFactorizationAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/STUDY.md",
+      "sha256": "543057ca0ff9386eef74225ec8e1e66672a35b5bfc50f19956426fd664ac3ca6",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase587_exact_residual_factorization_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "nonlinear-residual-factorization-obstructed-flat-tangent-control-passes",
+  "terminalStatus": "nonlinear-residual-factorization-obstructed-flat-tangent-control-passes",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "upstreamValid": true,
+    "sourceAnchorsPresent": true,
+    "resourceAccepted": true,
+    "topologyPassed": true,
+    "exactMatrices": {
+      "matrixIdentitiesPassed": true,
+      "ranksPassed": true,
+      "wRank": 6,
+      "qRank": 6,
+      "pRank": 6,
+      "dRank": 6,
+      "mRank": 7,
+      "linearResidualRank": 3,
+      "w": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "1"
+        ]
+      ],
+      "q": [
+        [
+          "3/5",
+          "1/5",
+          "1/5",
+          "-1/5",
+          "-1/5",
+          "0",
+          "1/5",
+          "1/5",
+          "0",
+          "0"
+        ],
+        [
+          "1/5",
+          "3/5",
+          "1/5",
+          "1/5",
+          "0",
+          "-1/5",
+          "-1/5",
+          "0",
+          "1/5",
+          "0"
+        ],
+        [
+          "1/5",
+          "1/5",
+          "3/5",
+          "0",
+          "1/5",
+          "1/5",
+          "0",
+          "-1/5",
+          "-1/5",
+          "0"
+        ],
+        [
+          "-1/5",
+          "1/5",
+          "0",
+          "3/5",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "0",
+          "0",
+          "1/5"
+        ],
+        [
+          "-1/5",
+          "0",
+          "1/5",
+          "1/5",
+          "3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "0",
+          "-1/5"
+        ],
+        [
+          "0",
+          "-1/5",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "3/5",
+          "0",
+          "0",
+          "1/5",
+          "1/5"
+        ]
+      ],
+      "p": [
+        [
+          "3/5",
+          "1/5",
+          "1/5",
+          "-1/5",
+          "-1/5",
+          "0",
+          "1/5",
+          "1/5",
+          "0",
+          "0"
+        ],
+        [
+          "1/5",
+          "3/5",
+          "1/5",
+          "1/5",
+          "0",
+          "-1/5",
+          "-1/5",
+          "0",
+          "1/5",
+          "0"
+        ],
+        [
+          "1/5",
+          "1/5",
+          "3/5",
+          "0",
+          "1/5",
+          "1/5",
+          "0",
+          "-1/5",
+          "-1/5",
+          "0"
+        ],
+        [
+          "-1/5",
+          "1/5",
+          "0",
+          "3/5",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "0",
+          "0",
+          "1/5"
+        ],
+        [
+          "-1/5",
+          "0",
+          "1/5",
+          "1/5",
+          "3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "0",
+          "-1/5"
+        ],
+        [
+          "0",
+          "-1/5",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "3/5",
+          "0",
+          "0",
+          "1/5",
+          "1/5"
+        ],
+        [
+          "1/5",
+          "-1/5",
+          "0",
+          "1/5",
+          "0",
+          "0",
+          "3/5",
+          "1/5",
+          "-1/5",
+          "1/5"
+        ],
+        [
+          "1/5",
+          "0",
+          "-1/5",
+          "0",
+          "1/5",
+          "0",
+          "1/5",
+          "3/5",
+          "1/5",
+          "-1/5"
+        ],
+        [
+          "0",
+          "1/5",
+          "-1/5",
+          "0",
+          "0",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "3/5",
+          "1/5"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "1/5",
+          "-1/5",
+          "1/5",
+          "3/5"
+        ]
+      ],
+      "r": [
+        [
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4"
+        ],
+        [
+          "0",
+          "1/4",
+          "0",
+          "0",
+          "-1/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/4",
+          "0",
+          "0",
+          "1/4",
+          "0"
+        ],
+        [
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4"
+        ]
+      ],
+      "m": [
+        [
+          "11/20",
+          "-1/5",
+          "-1/10",
+          "1/10",
+          "1/5",
+          "3/20",
+          "-3/20",
+          "-3/20",
+          "1/20",
+          "1/20"
+        ],
+        [
+          "-1/10",
+          "11/20",
+          "-1/5",
+          "-1/5",
+          "-3/20",
+          "1/10",
+          "3/20",
+          "-1/20",
+          "-3/20",
+          "1/20"
+        ],
+        [
+          "-1/5",
+          "-1/10",
+          "11/20",
+          "3/20",
+          "-1/10",
+          "-1/5",
+          "1/20",
+          "3/20",
+          "3/20",
+          "1/20"
+        ],
+        [
+          "1/5",
+          "-1/10",
+          "3/20",
+          "11/20",
+          "-1/10",
+          "1/5",
+          "-3/20",
+          "-1/20",
+          "-1/20",
+          "-3/20"
+        ],
+        [
+          "1/10",
+          "-3/20",
+          "-1/5",
+          "-1/5",
+          "11/20",
+          "-1/10",
+          "1/20",
+          "-3/20",
+          "-1/20",
+          "3/20"
+        ],
+        [
+          "3/20",
+          "1/5",
+          "-1/10",
+          "1/10",
+          "-1/5",
+          "11/20",
+          "1/20",
+          "1/20",
+          "-3/20",
+          "-3/20"
+        ],
+        [
+          "-3/20",
+          "3/20",
+          "1/4",
+          "-3/20",
+          "1/4",
+          "1/4",
+          "11/20",
+          "-3/20",
+          "3/20",
+          "-3/20"
+        ],
+        [
+          "-3/20",
+          "-1/4",
+          "3/20",
+          "-1/4",
+          "-3/20",
+          "1/4",
+          "-3/20",
+          "11/20",
+          "-3/20",
+          "3/20"
+        ],
+        [
+          "1/4",
+          "-3/20",
+          "3/20",
+          "-1/4",
+          "-1/4",
+          "-3/20",
+          "3/20",
+          "-3/20",
+          "11/20",
+          "-3/20"
+        ],
+        [
+          "1/4",
+          "1/4",
+          "1/4",
+          "-3/20",
+          "3/20",
+          "-3/20",
+          "-3/20",
+          "3/20",
+          "-3/20",
+          "11/20"
+        ]
+      ],
+      "d": [
+        [
+          "1",
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1",
+          "1"
+        ]
+      ],
+      "arithmetic": "normalized-BigInteger-rationals",
+      "exactTolerance": 0
+    },
+    "actualOperators": {
+      "actualControlsPassed": true,
+      "actualLinearColumns": 30,
+      "actualContractionColumns": 30,
+      "actualLinearMaximumError": 0,
+      "actualContractionMaximumError": 1.1102230246251565E-16,
+      "actualMemberMaximumError": 0,
+      "polarizationMaximumError": 0,
+      "commutingMaximumError": 0,
+      "actualWitnessError": 2.220446049250313E-16,
+      "actualWitnessPairing": 4,
+      "tolerance": 1E-12
+    },
+    "polynomialCoefficients": {
+      "coefficientControlsPassed": true,
+      "cases": 30,
+      "commutingCases": 30,
+      "mixedRank": 30,
+      "exactPolarizationPassed": true,
+      "mixedRows": [
+        {
+          "faceIndex": 0,
+          "face": [
+            0,
+            1,
+            2
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 0,
+          "face": [
+            0,
+            1,
+            2
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 0,
+          "face": [
+            0,
+            1,
+            2
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 1,
+          "face": [
+            0,
+            1,
+            3
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 1,
+          "face": [
+            0,
+            1,
+            3
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 1,
+          "face": [
+            0,
+            1,
+            3
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 2,
+          "face": [
+            0,
+            1,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 2,
+          "face": [
+            0,
+            1,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 2,
+          "face": [
+            0,
+            1,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 3,
+          "face": [
+            0,
+            2,
+            3
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 3,
+          "face": [
+            0,
+            2,
+            3
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 3,
+          "face": [
+            0,
+            2,
+            3
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 4,
+          "face": [
+            0,
+            2,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 4,
+          "face": [
+            0,
+            2,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 4,
+          "face": [
+            0,
+            2,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 5,
+          "face": [
+            0,
+            3,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 5,
+          "face": [
+            0,
+            3,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 5,
+          "face": [
+            0,
+            3,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 6,
+          "face": [
+            1,
+            2,
+            3
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 6,
+          "face": [
+            1,
+            2,
+            3
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 6,
+          "face": [
+            1,
+            2,
+            3
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 7,
+          "face": [
+            1,
+            2,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 7,
+          "face": [
+            1,
+            2,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 7,
+          "face": [
+            1,
+            2,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 8,
+          "face": [
+            1,
+            3,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 8,
+          "face": [
+            1,
+            3,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 8,
+          "face": [
+            1,
+            3,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 9,
+          "face": [
+            2,
+            3,
+            4
+          ],
+          "firstGenerator": 0,
+          "secondGenerator": 1,
+          "outputGenerator": 2,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 9,
+          "face": [
+            2,
+            3,
+            4
+          ],
+          "firstGenerator": 1,
+          "secondGenerator": 2,
+          "outputGenerator": 0,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        },
+        {
+          "faceIndex": 9,
+          "face": [
+            2,
+            3,
+            4
+          ],
+          "firstGenerator": 2,
+          "secondGenerator": 0,
+          "outputGenerator": 1,
+          "predictedCoefficient": "-1/2",
+          "exactPassed": true,
+          "actualError": 0
+        }
+      ],
+      "everyLinearCombinationClaimedRealizableAsSingleCurvature": false
+    },
+    "factorization": {
+      "obstructionConfirmed": true,
+      "witnessPassed": true,
+      "witness": [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "assembledWitness": [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "qWitness": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "mWitness": [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "projectedWitness": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "witnessNormSquared": "4",
+      "direction": "reconstruct full registered M F(A) from Q F(A)",
+      "excludedMapClass": "field-independent linear N, with M F(A)=N Q F(A) for every retained A",
+      "flatTangentFactorizationPassed": true,
+      "projectedControlPassed": true,
+      "quadraticSplitPassed": true,
+      "allMapsFromRegisteredToSourceExcluded": false,
+      "nonlinearMapExcluded": false,
+      "allScalarActionEquivalencesExcluded": false,
+      "sourceOperatorSelected": false
+    },
+    "nextRequirement": "Determine a source-compatible retained reconstruction and literal carrier/pairing; this coefficient obstruction does not select one or establish physical spectral equivalence."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

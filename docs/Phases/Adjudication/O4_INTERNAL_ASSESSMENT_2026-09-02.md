@@ -9,18 +9,19 @@ external signer can adjudicate the 13 items quickly. Where committed
 machine evidence already decides an item's falsifier, that is stated; where
 genuine interpretation is required, the proposal is to defer.**
 
-Prepared at user direction (2026-09-02) after the A41 checkpoint. Basis:
+Prepared at user direction (2026-09-02) after the A41 checkpoint and updated
+with the A42 Phase579 self-check. Basis:
 the committed Phase485 falsifier census (`externalInterpretationStillRequired`
 is false for 11 of 13 items), the A6/A7 falsifier executions (Phases
-487-492), and the later committed negatives that retired or narrowed
-several items' consumers.
+487-492), the Phase579 collective-coordinate self-check, and the later
+committed negatives that retired or narrowed several items' consumers.
 
 ## Summary table
 
 | rulingId | proposed disposition | falsifier evidence status |
 |---|---|---|
 | O4-F1-INVARIANT-RAYS | resolved-supporting (probe-menu scope) | run: phase454 beyond-ray candidate confirms recorded non-exhaustiveness |
-| O4-F1-COLLECTIVE-COORDINATE | resolved-supporting, conditional | falsifier defined, NOT yet executed |
+| O4-F1-COLLECTIVE-COORDINATE | defer; Phase450-lineage implementation convention falsified | run: phase579 active finite gauge-invariance gate fails |
 | O4-F1-FP-NORMALIZATION | resolved-supporting as recorded workbench convention | run: phase446 constant-immune direct measurement |
 | O4-F2-POSITIVE-MODE-IR | not-applicable (consumer retired) | consumer object retired unconditionally 2026-07-04 |
 | O4-F3-THETA-HAAR | resolved-supporting | run: phase487 independent quadrature/moment batteries pass |
@@ -50,12 +51,22 @@ high; this is standard variational reasoning plus committed evidence.
 Binding the constraint-potential analysis to a gauge-invariant collective
 coordinate is the standard cure for the Elitzur obstruction: a
 gauge-variant coordinate measures orbit volume, not physics. The principle
-is sound; the specific Jacobian treatment is what the defined falsifier
-(Jacobian and solvable-limit comparison) checks, and that falsifier has
-NOT yet been executed. Proposed: resolved-supporting conditional on a
-one-time execution of the registered self-check; until then the honest
-disposition is defer-with-plan. Confidence in the principle: high;
-in the implementation: unverified by design.
+is sound, but the defined falsifier has now rejected the Phase450-lineage
+implementation convention. Phase579 exactly reconstructed the Phase450 `n=3`
+coordinate and obtained coarea Jacobian 1; its independent all-3,645-component
+centered finite-difference row agreed to `2.16e-11`, and the constrained
+free-Gaussian comparison agreed with its closed form to `8.27e-14`. The
+decisive finite test nevertheless fails: with Phase450's registered `u_inv`
+held fixed, active global adjoint rotations change `Phi` by as much as
+`1.81e-2` on the frozen generic state and `9.16e-1` on the registered ray,
+against `5e-14`. Simultaneously rotating both `u_inv` and `omega` preserves
+their pairing to `1.39e-17`, but that is passive covariance, not invariance of
+the fixed coordinate. Likewise, the machine-zero projected orbit-tangent
+overlap proves only the infinitesimal statement at the ray and does not cure
+the finite failure. Proposed: defer; treat the Phase450-lineage convention as
+defective pending a genuinely gauge-invariant replacement. Phase450's
+committed record remains untouched and this is not an O4 ruling. Confidence:
+high in the falsifier result.
 
 ### O4-F1-FP-NORMALIZATION
 Phase446 resolved the live question this convention fed: the phase445
@@ -155,10 +166,11 @@ It changes nothing machine-readable: no memo exists, no intake was
 touched, every disposition field in the template remains unfilled, all 31
 review-pending artifacts remain review-pending, G4 remains missing, and
 `promotedPhysicalMassClaimCount=0`. What it changes is the cost of the
-human engagement: eleven items arrive with evidence-backed proposed
-dispositions (two of them not-applicable through consumer retirement, one
-requiring a single not-yet-run self-check), and two arrive honestly framed
-as the judgment calls they are. The external signer's independence - the
+human engagement: all eleven machine-proposed dispositions now carry
+executed evidence - ten supporting/not-applicable proposals and one preserved
+implementation negative from Phase579 - and two arrive honestly framed as
+the judgment calls they are. None is thereby authoritative. The external
+signer's independence - the
 property this program cannot manufacture internally, because the assessor
 above helped build the system under review - remains the binding
 requirement for authority.

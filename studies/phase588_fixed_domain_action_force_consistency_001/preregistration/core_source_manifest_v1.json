@@ -1,0 +1,2911 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "sha256-sorted-path-space-sha256-newline-cs-csproj-excluding-bin-obj-v1",
+  "treeSha256": "d1d3222a5521fa8dc9720fd8169d5981610403f477ed2e8e38dc734273ae7f99",
+  "files": [
+    {
+      "path": "src/Gu.Artifacts/ArtifactEvidenceTier.cs",
+      "sha256": "1e3351b866cec88c415493e2b4816857b91677426ceef2bea6ed72422c6cd1dd"
+    },
+    {
+      "path": "src/Gu.Artifacts/FileHashManifest.cs",
+      "sha256": "81c253aaa474880a4391b2a9f3649b9e88c90366c2e99e4d1475165cd1f41110"
+    },
+    {
+      "path": "src/Gu.Artifacts/Gu.Artifacts.csproj",
+      "sha256": "bafb05f3700302b6e394369c8318ab6a3fc2f59b58765876af78d7755d22edf2"
+    },
+    {
+      "path": "src/Gu.Artifacts/IntegrityHasher.cs",
+      "sha256": "6ede5159a9e2a73ed58028cc89143268892c2ab76276e22bc135ab193fca970e"
+    },
+    {
+      "path": "src/Gu.Artifacts/ReplayContractValidator.cs",
+      "sha256": "1fe3264cc6dbf17f2c55288cb8008465b08ff0fb4a82ae04ce0a7c2343bd034a"
+    },
+    {
+      "path": "src/Gu.Artifacts/ReplayReport.cs",
+      "sha256": "5c87d0c6e508f6b773f976a6e268b5f70974fefb6b75a9d72c845daaed815f58"
+    },
+    {
+      "path": "src/Gu.Artifacts/ReplayTier.cs",
+      "sha256": "ddf88dad1d4a759128c2dea1612f4392dcf41915726ddad7e7cb4d730faf82fd"
+    },
+    {
+      "path": "src/Gu.Artifacts/ReplayValidator.cs",
+      "sha256": "1f5cfa4ca019d27b8aaf1c2ce6874a6042f954c2b9a7a86223b5671c81e1bba1"
+    },
+    {
+      "path": "src/Gu.Artifacts/ReproducibilityBundle.cs",
+      "sha256": "d3148f5b51d15f9b610f0ad1ab996276650359f51a585a9b51594089fe8eedf7"
+    },
+    {
+      "path": "src/Gu.Artifacts/RunFolderLayout.cs",
+      "sha256": "c09322d0ff66952101fb9b48a2e1d95f775807eeadb7a6401387148aa3b275f0"
+    },
+    {
+      "path": "src/Gu.Artifacts/RunFolderReader.cs",
+      "sha256": "ea914e9bb83174e0e455808fdefb298395253fc16be2ae32673989c8efb97cfd"
+    },
+    {
+      "path": "src/Gu.Artifacts/RunFolderWriter.cs",
+      "sha256": "5069b6d32ad56050db11b1581b79bc41e68dfd08dac3b5a6736fdb803ba221a6"
+    },
+    {
+      "path": "src/Gu.Artifacts/RuntimeInfo.cs",
+      "sha256": "b054bbe79876a819de5d03eeb627ce1358d048521f6b6e1e730167dc8901e87b"
+    },
+    {
+      "path": "src/Gu.Artifacts/SolveRunClassification.cs",
+      "sha256": "d8e08bc0642942a07428a59d4c0ceb86cd7b3aef72d31a8b48f3c2971e30034a"
+    },
+    {
+      "path": "src/Gu.Branching/BranchManifestValidator.cs",
+      "sha256": "81b897e7ca96162ad320d1e73a2709c00fa3da9a21c5cd0ca9f99b3e4535fba0"
+    },
+    {
+      "path": "src/Gu.Branching/BranchOperatorRegistry.cs",
+      "sha256": "1d0fbde55286dec1fd0730c77c14e493579b6a9488f7bc12de11c5fa8a62e69f"
+    },
+    {
+      "path": "src/Gu.Branching/Conventions/ConventionDescriptor.cs",
+      "sha256": "d348e954cd1b97e2c81b8d42fca8d6957e8f909ba2dffd28b90b0bcee3fd102d"
+    },
+    {
+      "path": "src/Gu.Branching/Conventions/ConventionRegistry.cs",
+      "sha256": "785558a6d2b95d371c32842e7a5983df9dd46d3ad2d912dab1367e64dcd81308"
+    },
+    {
+      "path": "src/Gu.Branching/Gu.Branching.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "path": "src/Gu.Branching/IBiConnectionStrategy.cs",
+      "sha256": "2bdf97ae243cc919049ff098ee04a29bac73ab0d5ac30a3d450e88333f0fc3eb"
+    },
+    {
+      "path": "src/Gu.Branching/ILinearOperator.cs",
+      "sha256": "4b6c01efce7c8582932d30b0d2ff3e839b22be46e7431d16d0a13aa847247144"
+    },
+    {
+      "path": "src/Gu.Branching/IShiabBranchOperator.cs",
+      "sha256": "041d633a457087e83ec13fb195174f8a8854a966e697252eb52ad9d497a7dbf8"
+    },
+    {
+      "path": "src/Gu.Branching/ITorsionBranchOperator.cs",
+      "sha256": "7ddca0d2c96c7c25f3f40f3ef08a56e9909dca0c1dcf36f9e6297aafc77c3dee"
+    },
+    {
+      "path": "src/Gu.Branching/InsertedAssumptionLedger.cs",
+      "sha256": "fa41bcfc728dcc0fcc3e51351bb57c5912f2959a4536e27691e1961302a3a7d7"
+    },
+    {
+      "path": "src/Gu.Branching/TensorSignatureEnforcer.cs",
+      "sha256": "5b877371c33618ec1fb787c4d0d875d3f0d64bc59a7e7205d3f41e51e9145f24"
+    },
+    {
+      "path": "src/Gu.Core/ArtifactBundle.cs",
+      "sha256": "97d1556b4d20ef267bddf9c96d78604206bb6f11a643d7754b9384eb6bc21363"
+    },
+    {
+      "path": "src/Gu.Core/BoundaryConditionBundle.cs",
+      "sha256": "6ff9238c88dc8e7d222086fb128eb9613de401d6848df7fd034749ecf9ec9974"
+    },
+    {
+      "path": "src/Gu.Core/BranchManifest.cs",
+      "sha256": "4ab0c9143cc68b3f4558bc9b2b9300027b9f331dfba4ccbeb6bd10e0612d16aa"
+    },
+    {
+      "path": "src/Gu.Core/BranchRef.cs",
+      "sha256": "b15e5652631dd74712cbbf980bcb56468800f71ed0cf59a676a3baa8ef378d3f"
+    },
+    {
+      "path": "src/Gu.Core/DerivedState.cs",
+      "sha256": "24a4b7056ab143c66e545ae7e630885718be0c2e49e75265e1b2e0cbb87a9695"
+    },
+    {
+      "path": "src/Gu.Core/DiscreteState.cs",
+      "sha256": "1693e84cbae35b05b67b9387943cfb3410095776c4808253607cfbdba25b95a5"
+    },
+    {
+      "path": "src/Gu.Core/EnvironmentSpec.cs",
+      "sha256": "12653c2a18a1590acaf22b459a81cddb0475a7282634ec285a73a7f8e2f3a731"
+    },
+    {
+      "path": "src/Gu.Core/Factories/BranchManifestFactory.cs",
+      "sha256": "930e5f25de770d1f26df3cc75250833fada976ec7dc61007b2ce15f54783051b"
+    },
+    {
+      "path": "src/Gu.Core/Factories/EnvironmentSpecFactory.cs",
+      "sha256": "5fd5f2126ccb00856f9e18e994adbe68c3ba9e9da2649fcb12e874e55d2accf4"
+    },
+    {
+      "path": "src/Gu.Core/FieldTensor.cs",
+      "sha256": "f72cd4f4e73795b085847e88563f9756dfb45b164b95a7fae1041f27f22f0832"
+    },
+    {
+      "path": "src/Gu.Core/GaugeConditionBundle.cs",
+      "sha256": "4a8e149b977be81c8b8e7d3b6201890aea3210f9979a0f02056264d0c6277e2c"
+    },
+    {
+      "path": "src/Gu.Core/GeometryBinding.cs",
+      "sha256": "d432b51d1ee48fcb927aa7c07c8f353f701d85c3637dffabc9c2f825ac0b85c3"
+    },
+    {
+      "path": "src/Gu.Core/GeometryContext.cs",
+      "sha256": "42c1813bb70493ff31550b182f1b0daab6e7b80fd373315f1201df8c58dbb91a"
+    },
+    {
+      "path": "src/Gu.Core/Gu.Core.csproj",
+      "sha256": "3702bcd64b09004893c0afdb530b6b91249de567d2b8708f8ac16dab0c9dd561"
+    },
+    {
+      "path": "src/Gu.Core/InitialConditionBundle.cs",
+      "sha256": "d70e34150442ff0ff0109622537c00fd95dd2a17c5b524c23fc507d1ed73333d"
+    },
+    {
+      "path": "src/Gu.Core/InsertedAssumption.cs",
+      "sha256": "f1d2c69f66fed698a1c1ee4c054b8842e59c1d5ace54c94b15e266adb1bc5294"
+    },
+    {
+      "path": "src/Gu.Core/IntegrityBundle.cs",
+      "sha256": "26f61c79b9d052ab1e45d8c2f0dd73365a4336f36bb538865a009b2b941b3244"
+    },
+    {
+      "path": "src/Gu.Core/LinearOperatorModel.cs",
+      "sha256": "4b46ff09d4698a8e038d3c0d3b6778a26ebf33f65993eaca955e1fe23be5f9e5"
+    },
+    {
+      "path": "src/Gu.Core/LinearizationState.cs",
+      "sha256": "020c442ac5e81878177af4f7449332f4d8e8a3fc4aff22614e14e5dd1691e43a"
+    },
+    {
+      "path": "src/Gu.Core/NormalizationMeta.cs",
+      "sha256": "fd2fb08ce3973f4071afd35a957392fb89827f06c49a2f6a49f2b1f6e8768292"
+    },
+    {
+      "path": "src/Gu.Core/ObservableRequest.cs",
+      "sha256": "34b8d47bb3dceada2afcaeee6e4ccee88fa18049f613b709045cc33cc98bd7be"
+    },
+    {
+      "path": "src/Gu.Core/ObservableSnapshot.cs",
+      "sha256": "e30a0e6cda455b4852a108236a8de72999ca64c0edb950d6ccef1b4793f332c5"
+    },
+    {
+      "path": "src/Gu.Core/ObservationProvenance.cs",
+      "sha256": "611f1aaf071a0aaee514ee9ec133e689b843af444fd932a39c70302af50e1063"
+    },
+    {
+      "path": "src/Gu.Core/ObservedState.cs",
+      "sha256": "1fa63aefa7185da34cd78802b25e2f147317722ad5515f91a089f03ab6372af4"
+    },
+    {
+      "path": "src/Gu.Core/OutputType.cs",
+      "sha256": "acf4df10c1fe9030d87adc14338552d7d0e0b8fc214643685417d48288c12d36"
+    },
+    {
+      "path": "src/Gu.Core/PatchInfo.cs",
+      "sha256": "be30fbd34d7f40eb1db4e1f02e17db8da35c9e59b42ef41c61bd07873086b7e9"
+    },
+    {
+      "path": "src/Gu.Core/ProvenanceMeta.cs",
+      "sha256": "7bbd78139317d50a0b215af26be3f5eb72b22c04915090bf91b0ff69c2e057f6"
+    },
+    {
+      "path": "src/Gu.Core/ReplayContract.cs",
+      "sha256": "33f7a6e039468ec1a6e21bd905c629be6b110b4aca4713151c6aa9825fba9fbb"
+    },
+    {
+      "path": "src/Gu.Core/ResidualBundle.cs",
+      "sha256": "1d1297e93a0afdbb7439778dce75812d60bd95e7ca80676f76c849c657f141ab"
+    },
+    {
+      "path": "src/Gu.Core/ResidualComponent.cs",
+      "sha256": "4e8f3fd99a96733bb13e84a04f37dff66106c80627657b47ee33409f410e65e4"
+    },
+    {
+      "path": "src/Gu.Core/Serialization/GuJsonDefaults.cs",
+      "sha256": "70a6308c9dfed784c66ce30dec072a4f10a1d0336c0df60a185eb324762329d2"
+    },
+    {
+      "path": "src/Gu.Core/SpaceRef.cs",
+      "sha256": "16a02c88bdf739fc9fa7441fcfb6d1a81d60e29ac83d041b93cb64e0a6444b5a"
+    },
+    {
+      "path": "src/Gu.Core/TensorSignature.cs",
+      "sha256": "4bb5b798204836139beabb5053139b73ee1551d1f7528d56a62ef8b4e8386d81"
+    },
+    {
+      "path": "src/Gu.Core/ValidationBundle.cs",
+      "sha256": "cd08c460675b7d2750ff041c3e75c0fe8582e9444debddba84271ef49b75db74"
+    },
+    {
+      "path": "src/Gu.Core/ValidationRecord.cs",
+      "sha256": "6e16e8893bd249ea7114144c425dc09b8e3b346140a9a31ac5e80d4a1d09e436"
+    },
+    {
+      "path": "src/Gu.Core/ValidationStamp.cs",
+      "sha256": "f4234a65cd2d9401de5232a70aad4d599809c2d349cd8469fed6b6240c2e26f3"
+    },
+    {
+      "path": "src/Gu.Discretization/BasisFamily.cs",
+      "sha256": "867465d0164526cdf99aa40934bc4d48b3ccfe11323f44a83cd1815d2fb8e397"
+    },
+    {
+      "path": "src/Gu.Discretization/Gu.Discretization.csproj",
+      "sha256": "5f1a564c9d0eba26f64ed3a9f4f329a5044df248daf3241d4e95499d160f81f3"
+    },
+    {
+      "path": "src/Gu.Discretization/QuadratureRule.cs",
+      "sha256": "6140fa431a88f0a58f04aba2a8492faf6d7e93abbe8e68ccec6268d1ff8552fd"
+    },
+    {
+      "path": "src/Gu.Discretization/ReferenceElement.cs",
+      "sha256": "8a01c2830a48e1571f9b2d159921749414a58de6add5c73cb4d92153ecf902f7"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonEngine.cs",
+      "sha256": "b3f85af9638d18f65f251cb742b3693bf8d082e37fc3815c1c8286882dc20ffc"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonOutcome.cs",
+      "sha256": "cdf9945e98d2deba067a1764fa6bb1ad0763e8aa233775637940960208c963fa"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonRecord.cs",
+      "sha256": "46a353091ec6949931218d3ff86a824e61916e4d2b05228d6f9deb91d849eec6"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonScopeKind.cs",
+      "sha256": "b620f71bb3fde443de3b2a6273d827b0c5de9737225beb54cc23fec85410b735"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonTemplate.cs",
+      "sha256": "843449c030b9e4a76b72cb125c0da5c159cc6a2b8559e7a13938a4e44a2e6140"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonTemplateRegistry.cs",
+      "sha256": "4a67ca7c1d427e794f1aaa1fd6f94301bc43f177254aa25bcdab528bad1c274b"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/ComparisonValidationBridge.cs",
+      "sha256": "37b6a31ee14bb6c7ad93c5ba93990e140ad5a240a950b811be34dc0dd2a852f0"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/CuratedReferenceTableAdapter.cs",
+      "sha256": "1455b29a30dceffad8538cdba8a1c7d3baac18c32a033b69d77740f45ab6e550"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/FalsifierCheck.cs",
+      "sha256": "b012f20cadd49579c216926331ba0cb5c0a839bd0996771b35d429d5b474be54"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/FalsifierRegistry.cs",
+      "sha256": "dd9c9aebecc539244b91003185f3228a57ec99ff692e3e79ea020e82923d5aae"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/Gu.ExternalComparison.csproj",
+      "sha256": "f01a6a11db925598f3b5085b3b74b1dbb032f5455cb21c67699a31f0cd921db5"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/IComparisonAdapter.cs",
+      "sha256": "48e0a79f8eb30cff1088f268bed0f19cfa2dc7a1fa12cdd06d9fffa4bc040199"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/IReferenceDataSource.cs",
+      "sha256": "f4a7cca1562f45d74c4ad90756be9b830ead238caa4646bcb424a82021524bf8"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/SimulatedBenchmarkAdapter.cs",
+      "sha256": "8433121d73abe7635fc8a53adf8c934b70b6104d1e7bd726faacf9d091bb304a"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/StructuralFactAdapter.cs",
+      "sha256": "e6a5123c58a3932ef8bf4e32cc97a4896e4c6697962709a88ee5add1aab2a8f1"
+    },
+    {
+      "path": "src/Gu.ExternalComparison/TolerancePolicy.cs",
+      "sha256": "c2cda93aedd4eaa81e0d939437d7b3138033faa41672eca5cc9c0df542777e61"
+    },
+    {
+      "path": "src/Gu.Geometry/DiscreteExteriorDerivative.cs",
+      "sha256": "a72fe7777534d973b33966cc39cb23afc4f1f75e0b3f709f6b503048c4c63715"
+    },
+    {
+      "path": "src/Gu.Geometry/FiberBundleMesh.cs",
+      "sha256": "0d8965cabe5d8203fe06f1743e04abc687161c7fd18e90e590621d76ecf047b6"
+    },
+    {
+      "path": "src/Gu.Geometry/Gu.Geometry.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "path": "src/Gu.Geometry/MeshTopologyBuilder.cs",
+      "sha256": "792d7f2f367fa7e551a4d23df8f87f11a207320bfec4f74128e460f8c5151b25"
+    },
+    {
+      "path": "src/Gu.Geometry/ProductBundleMesh.cs",
+      "sha256": "09f6901dda2da0caec7f942b23a5cc63561ce847ecd4543259ff8d3d569819d6"
+    },
+    {
+      "path": "src/Gu.Geometry/PullbackOperator.cs",
+      "sha256": "25657867aa28d96782d30d9a03373bc5e378beaf8ef63fe5531709004b52d13b"
+    },
+    {
+      "path": "src/Gu.Geometry/SimplicialMesh.cs",
+      "sha256": "46cd076fa56031878ddc01ea993a3b2e8d0b973bde45c66877ed823434c97871"
+    },
+    {
+      "path": "src/Gu.Geometry/SimplicialMeshGenerator.cs",
+      "sha256": "e5c6137dea6bc93decbe89658e06f63f24d8ffde7fc1add02b27736b6023dfce"
+    },
+    {
+      "path": "src/Gu.Geometry/ThreeFormField.cs",
+      "sha256": "9ab558609a73fbf4e216cfacf354d3ffc6de728e3b86476e705c53d292435c8b"
+    },
+    {
+      "path": "src/Gu.Geometry/ToyGeometryFactory.cs",
+      "sha256": "fa5914612c99c8c906aac1a4067d3e6066642f75c92df0bffdfe2e87588a6c8f"
+    },
+    {
+      "path": "src/Gu.Interop/AlgebraUploadData.cs",
+      "sha256": "6418da3536779cb6ee0f204be13227c98422236c00e5e675e5c4be5d5c9b2443"
+    },
+    {
+      "path": "src/Gu.Interop/BufferLayoutDescriptor.cs",
+      "sha256": "f2c6b298b876c0bfee9dcae01c18e9dcf813a8845634a188ff769e482e6c6916"
+    },
+    {
+      "path": "src/Gu.Interop/ComponentDescriptor.cs",
+      "sha256": "41fcc52a375cb63217e998b3b678d6bbfb7659fd11b38f1c15102a36cd9a0f73"
+    },
+    {
+      "path": "src/Gu.Interop/CpuReferenceBackend.cs",
+      "sha256": "1651975fa1d59b4f10d01e74f6ed9a8c1e38d5bc7270919f441d693a82094e72"
+    },
+    {
+      "path": "src/Gu.Interop/CudaNativeBackend.cs",
+      "sha256": "a65de75732fc9af406294d27ab4f33afdefc6a9e2c3589d89f5373f748051eca"
+    },
+    {
+      "path": "src/Gu.Interop/CudaSolverBackend.cs",
+      "sha256": "6612674902ae01e8706e5da17fcc4de5e696860fd571d79e1206d9f647e31b42"
+    },
+    {
+      "path": "src/Gu.Interop/ErrorPacket.cs",
+      "sha256": "9d1f37b655f94f4684e91730d74de744a9fcb39c9ae2bfa934395bc2eefa892b"
+    },
+    {
+      "path": "src/Gu.Interop/FieldPacker.cs",
+      "sha256": "b136ceeed7fa67cc8eb72cdf10f32027e8bfbc16f9e977af218c71ea0b08e7d6"
+    },
+    {
+      "path": "src/Gu.Interop/GpuKrylovSolver.cs",
+      "sha256": "d12410aafa1c516f4abe4a435c5992ddd724c0068338a00258ea91763b9b04be"
+    },
+    {
+      "path": "src/Gu.Interop/GpuLinearOperator.cs",
+      "sha256": "2dd9280e26e6f643b8595e63ba8c52b73d7fdae7fb9c02e3bd2052acec9b0f18"
+    },
+    {
+      "path": "src/Gu.Interop/GpuSolverBackend.cs",
+      "sha256": "96dd1f7a53f804897e7cef1360afcc6fcc8f9fea1c44d3fed7276b256ae7f313"
+    },
+    {
+      "path": "src/Gu.Interop/Gu.Interop.csproj",
+      "sha256": "cff4309e5315adbfdc16c2160a11b284408a87bd26d29f2b6bb2b31072c83042"
+    },
+    {
+      "path": "src/Gu.Interop/INativeBackend.cs",
+      "sha256": "d8da37626f8a61d60f5d47e9e7fb3af636da2eba5a66d2112cf673a148b174d3"
+    },
+    {
+      "path": "src/Gu.Interop/InteropVersion.cs",
+      "sha256": "2a902b8468e2726f2e8e29fce3cad7c6490b0e8fa5653cadd5d973cebdd842c2"
+    },
+    {
+      "path": "src/Gu.Interop/ManifestSnapshot.cs",
+      "sha256": "1791f2e524d2cf4ee9c5d5879239f0662a69c75b5ed046bf35b97ea8c982b0dc"
+    },
+    {
+      "path": "src/Gu.Interop/MeshTopologyData.cs",
+      "sha256": "278779a6ad3a9da88b198ab829cdbbea374ce7f11bbcb6b87e82cb4ce9ae07bb"
+    },
+    {
+      "path": "src/Gu.Interop/NativeBindings.cs",
+      "sha256": "95d76824633f08363eacd331aabc9ff9882e2e5527122ecd4f88fc1b43eda100"
+    },
+    {
+      "path": "src/Gu.Interop/NativeFieldBuffer.cs",
+      "sha256": "90b27bf8d97bed9876fb5e3ea0c2864b26ecf15aef1328e80757b37a75a72354"
+    },
+    {
+      "path": "src/Gu.Interop/NativeMeshDescriptor.cs",
+      "sha256": "51c8a4f6fa83a9fba2149dd1ba8e814728d4b6dda51468066893b66cb413ddf8"
+    },
+    {
+      "path": "src/Gu.Interop/PackedBuffer.cs",
+      "sha256": "5b21dc56b7e2e6d284b0259948782ed08a4e5fce33fe850d88c34dcd0c9472dd"
+    },
+    {
+      "path": "src/Gu.Interop/ParityChecker.cs",
+      "sha256": "ffca7f25b23ec498bfbf02eb62da1a345cd1a2bd73b2161dac8a1dd09de74f64"
+    },
+    {
+      "path": "src/Gu.Interop/ParityRecord.cs",
+      "sha256": "8e4c99838b35caf454b1fd6bedb68d4c1d1e70e5a056d6930dd40fdc7afcc5e2"
+    },
+    {
+      "path": "src/Gu.Math/Gu.Math.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "path": "src/Gu.Math/LieAlgebra.cs",
+      "sha256": "294800a187c6950d28bb0e966ba99e0a9a6009adb4d562bb7100fca298e8c3ec"
+    },
+    {
+      "path": "src/Gu.Math/LieAlgebraFactory.cs",
+      "sha256": "e2f4d9b224531f11d782640a0854e6f6f101fcf4306212284436a25f27ea8ca5"
+    },
+    {
+      "path": "src/Gu.Observation/DimensionlessNormalizationPolicy.cs",
+      "sha256": "927a362482353d9404f380681299db5e1a8f608abeace011dad0138130fa2232"
+    },
+    {
+      "path": "src/Gu.Observation/Gu.Observation.csproj",
+      "sha256": "5f1a564c9d0eba26f64ed3a9f4f329a5044df248daf3241d4e95499d160f81f3"
+    },
+    {
+      "path": "src/Gu.Observation/IDerivedObservableTransform.cs",
+      "sha256": "9b687fecfc453d1c93148bea85dad617212a7fb25672cc51efd1096b2d79a59f"
+    },
+    {
+      "path": "src/Gu.Observation/INormalizationPolicy.cs",
+      "sha256": "6f2432206117e82d31826c28fb00a1add18ff430e9b43709a567f9293148cf51"
+    },
+    {
+      "path": "src/Gu.Observation/ObservationPipeline.cs",
+      "sha256": "41ef794cfc531fbb4615582ae37722dedcb0a99ebb0507d25305b0f3150e39b1"
+    },
+    {
+      "path": "src/Gu.Observation/PulledBackFields.cs",
+      "sha256": "2b5ef5aa7fde3d47e7e8ec2d5c1a70c2e0a9180d0e291fe8616899fd8b4b8280"
+    },
+    {
+      "path": "src/Gu.Observation/Transforms/CurvatureNormTransform.cs",
+      "sha256": "c81df7ad025ab47a0057cffce8299f284965873b2ad011a9e4ce1270a6c46357"
+    },
+    {
+      "path": "src/Gu.Observation/Transforms/ObjectivePassthroughTransform.cs",
+      "sha256": "05d04253ace8266288ff737602489e6b32af816a7bf772142cbc65f65b4ecb42"
+    },
+    {
+      "path": "src/Gu.Observation/Transforms/ResidualNormTransform.cs",
+      "sha256": "69f5aa9b3e6996a56d62042c69b7192abe37efa8d754a43150ac62ce71931a53"
+    },
+    {
+      "path": "src/Gu.Observation/Transforms/TopologicalChargeTransform.cs",
+      "sha256": "8e20f96fb3ca7314ff34350611bb40fc331f25280f660e093a9f3395fc5cc24a"
+    },
+    {
+      "path": "src/Gu.Phase2.Branches/BranchFamilyValidator.cs",
+      "sha256": "316556fce7a0e92609818852bdd2f68473a694d771f4168e6d3a3045d7343c4f"
+    },
+    {
+      "path": "src/Gu.Phase2.Branches/BranchVariantOperatorDispatch.cs",
+      "sha256": "bde872b251f4c0b77880e45dd9e8d37095a1e8181f189a09643e3ce6ef08518c"
+    },
+    {
+      "path": "src/Gu.Phase2.Branches/BranchVariantResolver.cs",
+      "sha256": "04770fc486da94217ed0234b0cff39cadbd68ae5d67a74c3e7967af114fa2223"
+    },
+    {
+      "path": "src/Gu.Phase2.Branches/Gu.Phase2.Branches.csproj",
+      "sha256": "5fedac0e4b0843e3240cef6ba79943accbb83c5714d2c478e50aef5bac4250f8"
+    },
+    {
+      "path": "src/Gu.Phase2.Branches/ObservationVariantDispatch.cs",
+      "sha256": "4fcaf297be42bc9b6a2677af1d5f48bb7b45544bfd364cc7a3d6b86e04ea2e4e"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/AdmissibilityAgreementMatrix.cs",
+      "sha256": "7c8ea4bb742aabf86137d700f69b04a7b80f7ca8d8126d9e2d46fc3b99ea217e"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/CanonicityAnalyzer.cs",
+      "sha256": "b348a3e92a9246a1ecd68ad82a7f08f0089bd9849714bcc3f0d62e3bdd9e1abe"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/CanonicityDocket.cs",
+      "sha256": "0484bc562800b37e0a792df49980e9369a6f15371aa70eb9c79024d88549c309"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/CanonicityDocketBuilder.cs",
+      "sha256": "c1f66083acc88eea6213cae5ec119364f1d186c6b783055f2c6ba155ac6aa3be"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/DocketStatus.cs",
+      "sha256": "11197c554f200f8d3dc6bde689272c8aa9f36aa67417b60c9492f94899c7cf3c"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/ExtractionAgreementMatrix.cs",
+      "sha256": "8d446d05920bed270dbd21f0838e7ac15367827e8621c60db0e1036e239b8c1a"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/FailureModeMatrix.cs",
+      "sha256": "518578640f263d239c13a7183122abb8d6db9dca2c25b97a672dff7457b4cdfd"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/FragilityReport.cs",
+      "sha256": "20040b2518515d271602486577be06830efc08fe7241290bdebd0043bac2acd6"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/Gu.Phase2.Canonicity.csproj",
+      "sha256": "b75946a90dc6d10bf87a1ed57f0db89e8f602e5039fd50ca18e93955c3018a56"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/PairwiseDistanceMatrix.cs",
+      "sha256": "8e45dbb80e4e1bfe6c6aef1345c46bc9918db599bb1482e10274684effeea394"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/QualitativeClass.cs",
+      "sha256": "9125d2fcc226f107647df7e06278d0cf78a6f25bb905b79fb1ab1e00351b439e"
+    },
+    {
+      "path": "src/Gu.Phase2.Canonicity/QualitativeClassificationAgreementMatrix.cs",
+      "sha256": "42f725b7d83317234c347861252476e349af18e75d7dd08175ee40ddf6dd40f3"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/CalibrationRecord.cs",
+      "sha256": "ccec3c84231b737d77341ff09f929d521ae58e73e92dba9cf78818784783f207"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/CampaignRunner.cs",
+      "sha256": "8fd4b8fe2c8b2850dea8e362f680fe4444c90ab82d8e5c46bfadea2513914f98"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/CampaignRunnerResult.cs",
+      "sha256": "dd076034a31c04340691d76130cd85a6ac68e636a842a75dd9b046cc18c3d2ed"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/ComparisonCampaignResult.cs",
+      "sha256": "3586f1a5c3bd218a023c08793aa0dcbfc9e82a4031cabbc992029818ad27bef3"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/ComparisonCampaignSpec.cs",
+      "sha256": "4b1f71d951f7d1390cd523520d9bc9c11bf45b0478fd24d7336f854e3721c468"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/ComparisonFailureRecord.cs",
+      "sha256": "ffb2bf864caf911ba52216264ca9b0910bce834e33c11dbf456b6ce41b4f05e8"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/ComparisonRunRecord.cs",
+      "sha256": "8ecccbfbfe1f034c0987d8de586da44a85f863fb28af361bfc7faa572e80787e"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/ComparisonStrategyFactory.cs",
+      "sha256": "90ec53bd7e3551fed7064ba1c7c0353b53eea196ee23e162e197210395bf1329"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/Gu.Phase2.Comparison.csproj",
+      "sha256": "4c53ef2d93702100402d522d29654f565c8f8ea08eff177d547af2beca387582"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/IComparisonStrategy.cs",
+      "sha256": "d15e7f5b0085f1750594621cb8043ea0c979144553b26391882ea01720c66d14"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/IExternalDatasetAdapter.cs",
+      "sha256": "99e7230a250b7b8a5d711e3b35552e6a6bbc4735994a943f0fc3898428e6b31d"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/InMemoryDatasetAdapter.cs",
+      "sha256": "6d5fe4a0ec60bbbb18baf93e9607acddbefe94d1b15c1b247dd910efa578f540"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/JsonFileDatasetAdapter.cs",
+      "sha256": "9538cc03c287acc416fc5cfe1af4ba15d4bc779e6cd2f90f43cc519b0d434adb"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/NegativeResultArtifact.cs",
+      "sha256": "d75744b05a7def606ea51d77fb98d18d9bee18467869769ca44aec7843e65d52"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/QuantitativeComparisonStrategy.cs",
+      "sha256": "d5f2656d684a9c2ca3d79ffd2127c5f7e0a2ef518366b836a1f2685d0d56ec1b"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/SemiQuantitativeComparisonStrategy.cs",
+      "sha256": "f244d755d31253281d24ed1d19cb719553f9cec08d88da78896b478a128931f9"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/StructuralComparisonStrategy.cs",
+      "sha256": "c919fefc512c05d7e08af15fbea1efda865e9017e1621c03c40df092fedab826"
+    },
+    {
+      "path": "src/Gu.Phase2.Comparison/UncertaintyDecomposer.cs",
+      "sha256": "d7d7a5d5eec791303f76a883b2271f391b08c3f52498b0c6045d374e3d1fb5ba"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/BifurcationIndicatorRecord.cs",
+      "sha256": "82b98bf7ebd253ca04756048229aaf2ce1d25ebc3da049ea9b4ce19e79a4e18e"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/ContinuationEvent.cs",
+      "sha256": "b16ab49c6adee0ddb9358ae4c7f857fd4452185b33c53e0718f45e5220f02212"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/ContinuationResult.cs",
+      "sha256": "d54f1e335756d947228edcadbe15eb114771feea37fea6d4c7ccf15581502661"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/ContinuationRunner.cs",
+      "sha256": "b6cda8f8b83cb773511626f08f0e4e9c9ec0e04510660e4b077475c070e61224"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/ContinuationSpec.cs",
+      "sha256": "08a829c3ed4a31e90c82aa0cbd14ab08c4dfd23f93b3b216bf0578e23faafe7e"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/ContinuationStep.cs",
+      "sha256": "8587e3f5c3095217aba97e03ae75404e401f8f21d4ec7eda8c8ad4ff21da7765"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/Gu.Phase2.Continuation.csproj",
+      "sha256": "09894c4823191516dccc7199c68e95f8eb22aa819fcb7657ae20fe26801631f2"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/StabilityAtlas.cs",
+      "sha256": "c371afbcf268f1d8f6e6e33eb72ea9b405d09ecf3506edf36178b5340e5ef312"
+    },
+    {
+      "path": "src/Gu.Phase2.Continuation/StabilityAtlasBuilder.cs",
+      "sha256": "8d0c5908badfe5c5846fbd27de8239aa6394be44284de82de4b27cec06fe74b9"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/Gu.Phase2.CudaInterop.csproj",
+      "sha256": "f6653c3104f197108e1f8254f513d6199d7223e6cf92cc27b7b302edaf658c4b"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/IPhase2BatchKernel.cs",
+      "sha256": "16d6cd716561604dc13f84b1d3be53d14eb510305b8e16016cdddf56ed28e699"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/IPhase2HessianKernel.cs",
+      "sha256": "7f0eddc9de92f3f13d8d1e836bc16227bc7741e1d48c99f3646d732a85ca87ea"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/IPhase2JacobianKernel.cs",
+      "sha256": "e2df59d5fe3b7dcf1b3f2077900efbfb371a33e6fdc1629b873d3ac1b1021b0b"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/Phase2CudaBackend.cs",
+      "sha256": "098436e7e3caef5b7c4bb23ed75fcd8f8161926bfae2296d016c054148cca68e"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/Phase2NativeBindings.cs",
+      "sha256": "8dd3e10d8e8a44677924dac4b6279454ea6a72029e2472a29ecab0cc8827effa"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/Phase2ParityChecker.cs",
+      "sha256": "d2e031a14fd701b5300f14d0eb4d56a2012b8a418064b71c54d0630cbf953241"
+    },
+    {
+      "path": "src/Gu.Phase2.CudaInterop/Phase2ResidualKernelArgs.cs",
+      "sha256": "7521fb3b0083c87abae89aad53d089ea49109d09324e880c714f129069f7e6da"
+    },
+    {
+      "path": "src/Gu.Phase2.Execution/BranchRunRecord.cs",
+      "sha256": "25838e8a101665c328b3088f1849d48d5318fbfd214e2a50591ecbebdb3b954d"
+    },
+    {
+      "path": "src/Gu.Phase2.Execution/Gu.Phase2.Execution.csproj",
+      "sha256": "4b8973a8b15138a2ce90f714559ce6a72a3528002c97a4102378569632252218"
+    },
+    {
+      "path": "src/Gu.Phase2.Execution/Phase2BranchSweepResult.cs",
+      "sha256": "fa78aa996942b77326a5fcc7756506c16139d5f10f8fbdf9f466be1f1d64c0b3"
+    },
+    {
+      "path": "src/Gu.Phase2.Execution/Phase2BranchSweepRunner.cs",
+      "sha256": "ced0f734096faa8a6b576081dd84cea59c5dd7daa237cacbccdd72a24bb65d7f"
+    },
+    {
+      "path": "src/Gu.Phase2.Predictions/ComparisonAsset.cs",
+      "sha256": "5c99632bc8917001f294cac094cffa62478dcb9f44d2cb76f9880471645ec414"
+    },
+    {
+      "path": "src/Gu.Phase2.Predictions/Gu.Phase2.Predictions.csproj",
+      "sha256": "d113fb38cdc8e81216083a492225b61ae6805a78c7937a1d6f26c5e0e698a982"
+    },
+    {
+      "path": "src/Gu.Phase2.Predictions/PredictionTestRecord.cs",
+      "sha256": "589b5c6ca89a821f1c994e5b4529cfb6f0997667cf12ea4e91227a45053486ac"
+    },
+    {
+      "path": "src/Gu.Phase2.Predictions/PredictionValidator.cs",
+      "sha256": "7d955c2e872c9fb5469a729b4a587b192e093d2f51d2afc2a5dab002635a98d4"
+    },
+    {
+      "path": "src/Gu.Phase2.Predictions/UncertaintyRecord.cs",
+      "sha256": "1009fedf0dcd3456b130d69166f18f2ec540df9621d05e1bc936cae529037e58"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/ExtractionProjectorRecord.cs",
+      "sha256": "410bc2c3f312c08c9f50e7cce830f9f40ac905e85cd10ee0af2e3e76062be926"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/Gu.Phase2.Recovery.csproj",
+      "sha256": "566e6bda2b90d816c74423ce5ccc722e46d5365a97d1ef6dd09f37df10bc0558"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/IdentificationGate.cs",
+      "sha256": "3b0d7a9be1417774cbd6397814f1f13a4c832375c738f2cca50853f269135849"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/ObservedOutputKind.cs",
+      "sha256": "35bd533d538c3d1e20af84bdf8368e6884140f0c166cdd011c707caebf439822"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/ObservedOutputRecord.cs",
+      "sha256": "082b272b9d989966090dc3fba779b2f27b43c2b23aee84a335a1ffe3568ac50c"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/PhysicalIdentificationRecord.cs",
+      "sha256": "5405dfe930dd0ae0d10a1f727af5ba383da1f50772d0f682f520d796f5a8418d"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/RecoveryEdge.cs",
+      "sha256": "9df481a4bb4f4d1b9b90ca0133e38408ff9af6e4d255f713b7800b644dddf269"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/RecoveryGraph.cs",
+      "sha256": "f5b7d4ce559a7d36530521dbec858f913d5b5110986537b4f473ac0b40339c88"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/RecoveryNode.cs",
+      "sha256": "8ef551879864a5eaddc5abbb8f4da06317f33b6479d3d80472c6c20955a535b2"
+    },
+    {
+      "path": "src/Gu.Phase2.Recovery/RecoveryNodeKind.cs",
+      "sha256": "e5bf8b1821758ef67fcd06e4b2a9edcd47afebe6d56794621a4b147c39610381"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/BranchSweepArtifact.cs",
+      "sha256": "d298de38cc6197c5145c72d1b2c53eb69b518bb315b0aa85d50554e742a367bd"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/CanonicityDocketArtifact.cs",
+      "sha256": "99dcc05db4a60a20cd86c2494ee00aae10c00ce0906909d72c7ae3bb3351d2bd"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/ComparisonCampaignArtifact.cs",
+      "sha256": "b15fcb0612c20c2339bdc454a427253ea432403aac403f58464555edcefbeb3c"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/ContinuationArtifact.cs",
+      "sha256": "a2daa81ae34624b5de637241c417a21fa3185fb0d22008bd5cd9c2106f716cc4"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/PredictionMatrixArtifact.cs",
+      "sha256": "80c7da770e3e264125361fc4664d527495524dcc286ea587147c9a86b1c62929"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/RecoveryGraphArtifact.cs",
+      "sha256": "c93ee98d48a6b97cb48463960ce7938a5e998936ebe407b3e779d600a449f9b3"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Artifacts/StabilityAtlasArtifact.cs",
+      "sha256": "8dc864e7141a961568adedcf0f635149d3f7a35e13087b848b676e8b89d79ffb"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/BatchDashboardExport.cs",
+      "sha256": "ec36930a94b8fc3dbaa375166523ba7c36deea65a2991895b4ba1215b3432433"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/DashboardExport.cs",
+      "sha256": "c9497abfae1401b2efb21a27000fd11df5b09b35805f9f519441bae657ddbc64"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/Gu.Phase2.Reporting.csproj",
+      "sha256": "bac6937b8831dd94deb5630d1e6eb4d2cbbd81adf4078a8193bebcd2a6965177"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/ReportArtifactManifest.cs",
+      "sha256": "c222b4348b9bea01ce1aa873a39545f168cc58771e70af69da93361bbe6e6e31"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/ResearchBatchResult.cs",
+      "sha256": "ae4fac23fababe9cff24ff44b5dd6751f6051ae4a0f8ae9983cddf830c090f68"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/ResearchBatchRunner.cs",
+      "sha256": "030f35909f802141e63f0931846daebbac7c61b8e2656162f1819b08e6f17aaa"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/ResearchReport.cs",
+      "sha256": "f5880b1c55a043bc90953e4485d04d3f8441500115bbc6334bbd63f3a7c2bfd4"
+    },
+    {
+      "path": "src/Gu.Phase2.Reporting/ResearchReportGenerator.cs",
+      "sha256": "c919783035d0f7a3ad86fb84a3ae95c3ca9245c913296bfcffa5f2e389c9e068"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/BranchFamilyManifest.cs",
+      "sha256": "98df35fa2c595d41aa503576f28b6696d29169044abfdf2b7fbc9a088e400e82"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/BranchFieldLayout.cs",
+      "sha256": "852465c136169341408f17c3379c95c6b39c30563cec0965a1dce3c843370aad"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/BranchVariantManifest.cs",
+      "sha256": "40bcae3e25eb71113cd193baaa197e74933976581232929492162ae23a035cc6"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/CanonicityEvidenceRecord.cs",
+      "sha256": "fd9603f461ef86e0f37926a894f50726ca64c8251946062b130306976c0fdb3e"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/ClaimClass.cs",
+      "sha256": "de95e6e0694921006a4b05924414bae967b4d2d6791a23b6ae28eae5761c50a2"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/ComparisonMode.cs",
+      "sha256": "b28bcbf2b8775e0931df9317621b2db414f2dc3f5114db85cdd5aded8156c560"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/EquivalenceSpec.cs",
+      "sha256": "d32713aadb4b8072ee0c37136eabd3ad6de77f5ce4c7f2f0d3eb29b09d1bfcfa"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/Gu.Phase2.Semantics.csproj",
+      "sha256": "fd3b1c7d8b5cb39a011fd157e6c3110cf20e77fba26b89d8ff8192ea5a87e279"
+    },
+    {
+      "path": "src/Gu.Phase2.Semantics/StudySpecs.cs",
+      "sha256": "29e2ed794a74905443b1b4b398bee906a64871903bca62366f8a5ebb1617a520"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/BackgroundStateRecord.cs",
+      "sha256": "96bf36485e3682ee42d4f593948760c686675cea4013e51fd598f7e8758bb710"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/CoulombSliceOperator.cs",
+      "sha256": "5c56b7cc6345659cf087c75ec52de1c95fcbe7958f806ee1da9ad8548ad9d8d5"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/GaugeFixedLinearOperator.cs",
+      "sha256": "7d6a368b9bab73a787246eec594782f9b90026fe315485b63cc12ac56e1aeddf"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/GaugeFixedLinearizationRecord.cs",
+      "sha256": "483b56ffb390df414211d102640c17e85f77ece21f6df889035dc1bb77fcd034"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/GaugeJacobianRecord.cs",
+      "sha256": "3cb47fee5024c7371b85d0d40569e5745b264bc0e46b992e76accd099a9dd381"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/Gu.Phase2.Stability.csproj",
+      "sha256": "c3f7d35e6c104d8f70a8a35503a7d029d85f7c88d33c0704e940cab5883d2be2"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/HessianOperator.cs",
+      "sha256": "6493b6abfb75b57585a698e5973d9ea72884fc4d843f70a0b8b6db120979cacb"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/HessianRecord.cs",
+      "sha256": "61add9fe7aad4c68a917185db7e5b6dc3b383388476a761cfced9d6c8d4d7e22"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/HessianSummary.cs",
+      "sha256": "11dcce829f56aeff7c0b6c6bb21023f9ab8825c4fcac7040db8ccfbedbc93046"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/IGaugeConstraintOperator.cs",
+      "sha256": "7c203a17351673d34a2a189c70927b839c78ced944435111052f89abc17595f2"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/ISpectrumProbe.cs",
+      "sha256": "c2ff61484936716c4f490a3641ce7351545882564a959d865ebaa189e7caa9e8"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/InfinitesimalGaugeMap.cs",
+      "sha256": "057ad70b5376897f34b9a131ef06750f12adfa6b083ca3c5b8eb432facd5a78c"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/LanczosSpectrumProbe.cs",
+      "sha256": "d553a0905f34669db5f7365b7b768b07482a881657492084d0ba8b89f36d700f"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/LinearizationRecord.cs",
+      "sha256": "4470b8bcb68c75a3e564200b9ee0037d8e31967c035188bd9fa47e6c107109c7"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/LinearizationWorkbench.cs",
+      "sha256": "a2f496889844e43ee2c20e54912e54c94cb56f0ab2175e0f4b16d2d8121b40ed"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/LobpcgSpectrumProbe.cs",
+      "sha256": "db35731246dbbfe628ddf35370df4006f243858e66e06aaa0012cb09fbb2cc73"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/PdeClassification.cs",
+      "sha256": "88c8bd41c8d8f5638174c3da19558a96979931bfe934f7ef91fd53dd25942e7a"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/PrincipalSymbolRecord.cs",
+      "sha256": "45038bdac929ae849dbc1868cacdc40a24904b6c4b5878692add300a5506c207"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/PrincipalSymbolSampler.cs",
+      "sha256": "6d135227e55281041fdb4f9e6e3287258e2fc0517bb9a022312ecd9fd7f279c2"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/RandomizedSvdProbe.cs",
+      "sha256": "88ff0f798dc2d31e7e043dac6c9aae7f9b9d02689bf5fea65c6f2874467efa9f"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/SpectrumRecord.cs",
+      "sha256": "69d6e7bb7a6d4fc0fed1318346ecd1843a7cada4f30c3c530db7fc4eb3a0e88e"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/StabilityStudySpec.cs",
+      "sha256": "294798aebedebe48cab3e602dee91e5240d4d38926253bb1a27cf80755172b1a"
+    },
+    {
+      "path": "src/Gu.Phase2.Stability/SymbolStudyReport.cs",
+      "sha256": "d75e7b26d20fbc09965e34465e0d588be1175f14d76ad10e693a6a0a4a592255"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/BranchOverlayView.cs",
+      "sha256": "5f54867c52f31d4c0c9bf693a17a60f40a0740a90afdf2e7a8491848b789bdc0"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/CanonicityHeatmap.cs",
+      "sha256": "21cf38361d849af6ed7c856b6a88a1ec7d7a9a4502bb046bdb886bff65823c0a"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/ContinuationPathView.cs",
+      "sha256": "140ad6d145d414f3321ce7c51da9a5a2002226e617d1a76f6229e65aa96ca128"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/Gu.Phase2.Viz.csproj",
+      "sha256": "9e2d9fa06aff967762aa441050859a35574024aec1a7eca9d136b65ce5c62c21"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/IVulkanDiagnosticPanel.cs",
+      "sha256": "f0838c090f16311da759ec00880c3ece5d4395ff9b809263724aeac45f658267"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/Phase2ViewPayloads.cs",
+      "sha256": "c8d48c831b1dc3fc12818f2b16cf8b91d73e311140d7fc5a10539670839471f3"
+    },
+    {
+      "path": "src/Gu.Phase2.Viz/SpectrumDashboard.cs",
+      "sha256": "001d6f132b581e194f1879d858f6e7cf5eced4526e06ec03fba193990a4c8ead"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/AdmissibilityGrader.cs",
+      "sha256": "032a09fb412ce37fe642c04c8b702648b4ffce3044b8c4c8ab1971c43f9f9f0d"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/AdmissibilityLevel.cs",
+      "sha256": "8dd14453526ec4ec93ba108bc542196970d33cd30e7fe2e4181e0c2f5349cccd"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundAtlas.cs",
+      "sha256": "7eb1960caea5989e9f2725fc15e6b30f6bc817272d4eb2f0dc1f022c466d70d8"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundAtlasBuilder.cs",
+      "sha256": "5fd0342c5052166961920bf99f216ad911e1673462707c22ba967ab67ebbd9de"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundAtlasSerializer.cs",
+      "sha256": "cbf21598a776e7e06a1bbdfd9d2dbbb16789c0b4e4ef319a045aac89a6fc64c2"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundMetrics.cs",
+      "sha256": "5dd5b7cc6a916899a622971fe6d18e1be806d18a24211e758977e7241313497f"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundRecord.cs",
+      "sha256": "9f9757b65f21fbd5577e7c872ee372d3804f48da71206afc9677afefe8c258cc"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundSeed.cs",
+      "sha256": "04ebc85c78a858296f902cc2c680e3e4f428f984ed194ee987dbe283dd4bc017"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundSeedKind.cs",
+      "sha256": "5f82a63af2c3147f5190135159f95f4d00ec6d2190e1ab43e4e3df699eb557d3"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundSolveOptions.cs",
+      "sha256": "f387ac55806e223de849e4d957ff5f426350d934318b6a1a4f87bf917ebe60e9"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundSpec.cs",
+      "sha256": "9bea4a956dfdc2aa1aab8c07bae140134267b11999210451c0f73424eb91b2b4"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/BackgroundStudySpec.cs",
+      "sha256": "e666aa7c25756609753c859d5b932f2c9d90c19898d8f4164384a95c8bb8a045"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/Gu.Phase3.Backgrounds.csproj",
+      "sha256": "7a79f56c9b9406f6df4abd1a0fe0101b8bcd9055568ca501dc2336cfb6f36549"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/ManifestResolver.cs",
+      "sha256": "ae852bd14a49aeb515b72250fdf189d1c42c4110398bd0ac079e0e797b2beb22"
+    },
+    {
+      "path": "src/Gu.Phase3.Backgrounds/StationarityEvaluator.cs",
+      "sha256": "86ddc7c60b59e861b34193d1f6f242924a1560ad06e1da8fe5731976d19c00ea"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonCampaignResult.cs",
+      "sha256": "fa75b4cb49d21c001a90bbdec08fe362268ab1dffd556879194b9e8f81b7bd98"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonCampaignRunner.cs",
+      "sha256": "7c4eac7349d5df1f1104d2764692bc5435649ec91407cf81538439adefb0b631"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonCampaignSpec.cs",
+      "sha256": "57a75f9f059f8ea1f522e5b7920448c08001069f33ed6162073fbebd76510072"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonComparisonCampaign.cs",
+      "sha256": "175781a28ef15f12f3d1d6deaec8cc57bbba4ce324ad2f7741ef95f5c4e29574"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonComparisonResult.cs",
+      "sha256": "acacfa6d837a329ce41ff0a30021e0fc5c8221894ae5c290e6d57ce23a8ebbcf"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonProfileMatcher.cs",
+      "sha256": "9fcf811cdb1986991e3d26f610a3349c625f1835ab307cb4e5ad5e1dcf9eaf64"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/BosonTargetProfile.cs",
+      "sha256": "36d4df1bb9d37b429743278c4d531863937d1aa3bc288581251a2c3a97656331"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/CampaignResult.cs",
+      "sha256": "244d1c7a581d50ccfd6e4e63d9e66bf91597c07db3911e33a7d642b1693f4b28"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/CampaignRunner.cs",
+      "sha256": "f800062c949f357767b3cbd3969512cf8f7f7c4558420011ef0874074617bc8b"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/ComparisonOutcome.cs",
+      "sha256": "287043666a90da4948be0b3493fc89b6ba767568065af9fddca04b1a73ee09a8"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/ComparisonResult.cs",
+      "sha256": "c0f572a30f3d331fdbb44465c3fc8a81f64a40c37b904e4a982409e759be488b"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/ExternalAnalogyDescriptor.cs",
+      "sha256": "f759797668ef4803297b7dbc238c745ea1f5c470983c6e593cf68f861b14d603"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/ExternalTargetProfile.cs",
+      "sha256": "14170f59e6be8f957f1703887ff1a1e4ee0d034683a53440d96874256ef287f8"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/Gu.Phase3.Campaigns.csproj",
+      "sha256": "0e440dbf32e74becbcda841e5dc994d3d08acc272642247e27fa00e112103fc9"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/InternalTargetProfile.cs",
+      "sha256": "56e5d163bf8b418c1864376645dda72211cd48a8959be9c0eb448ce7b2097712"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/TargetProfile.cs",
+      "sha256": "56675df19227e5ff5f8e5671528462ca1b3de24271e15c22feda5fd0dce87373"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/TargetTolerances.cs",
+      "sha256": "7ebd322ece86875f6160c9e4c9ecdebff1452de1425dd74e945360dce7cbde18"
+    },
+    {
+      "path": "src/Gu.Phase3.Campaigns/UncertaintyBudget.cs",
+      "sha256": "7f81f93605230a4cea31e23763d16674b3e996e940bdf73819b2ab0e920d9b71"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/CpuSpectralKernel.cs",
+      "sha256": "d2f941498462923aea58d8d1cf2ce829ec331734cc112953ea0274ef565fcedc"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/CudaSpectralConfig.cs",
+      "sha256": "4c4960a310008b540b8b797492fe08afde569ed45c419dce1a0238cf183f6e13"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/CudaVerificationStatus.cs",
+      "sha256": "12d42f1df4958987e6cb20539c57cf5879bf46ada604d2c6bfb735231f36d628"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/GpuSpectralKernel.cs",
+      "sha256": "7e1f1ab4cf8b4dc7006c0207b6ed2a5cd3370db5337c897c102fbf0188499d09"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/Gu.Phase3.CudaSpectra.csproj",
+      "sha256": "b859e2a5011f6bddb557f781afc9d19e166feed2c5fdaec88c9da273005e0df0"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/ISpectralKernel.cs",
+      "sha256": "12d5423163da29c18e74687a773c3286b8458a3775c0e3727d982bb6555d6a0a"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/LobpcgSolver.cs",
+      "sha256": "9775321022b61e8df43afe48047a6e9616612fd96d7f2955187e1fd5309d1112"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/SpectralBenchmarkArtifact.cs",
+      "sha256": "dcd97a2698920a5398e234eaf884f10c030aa49500455205a0cb668404a3d7ef"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/SpectralBenchmarkRunner.cs",
+      "sha256": "67cddec8aacae134495f44b32ace75f30a5cdeff3b85418c27685b3e130d8dd2"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/SpectralKernelFactory.cs",
+      "sha256": "83c0e279ee3fabf690e50c33c01b4628b4df363bb4b46413f46027f37d61311d"
+    },
+    {
+      "path": "src/Gu.Phase3.CudaSpectra/SpectralParityChecker.cs",
+      "sha256": "bf83c5122d53c5437a7b5d78d534736abadc3ae47f9f0a15d3b0fb8f0fc7c34f"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/ConstraintDefectReport.cs",
+      "sha256": "9f7bf2bc3315eb8b555c7f581a325b56f50b813c90fe950915751ee289716ba8"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/DiagonalOperator.cs",
+      "sha256": "b8c6183e5a42b36692e16399e4e2b7be49a3034e4c99f6e7c1ba19263ea17b66"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs",
+      "sha256": "02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeBasis.cs",
+      "sha256": "e0c50fe951daaa36208333ee43e1274d2caae165eec3da48d8440966efae2fd1"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeLeakDiagnostics.cs",
+      "sha256": "f6d9028e02e7c26884b00be35cbdb96f72eabc04f0ad88450364d775bf1185ca"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeLeakReport.cs",
+      "sha256": "18d0c32eaf44cd48a37b7929cad5a8c72c1fa47b197859649b462bf954168876"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeProjector.cs",
+      "sha256": "3eb3883a7396f4952bc29d76b822f08e7d3fb08484f803a8482b1e811724af24"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeReductionDiagnostics.cs",
+      "sha256": "f43f84d3f5fced74e328d7f9cff533572e8887341ff06d3596fd047de59ce179"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeReductionResult.cs",
+      "sha256": "2f84f945ba1f376f322eaa9ae74bd1c3724053ab16c97dcec5b2e0014c39c33d"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeReductionWorkbench.cs",
+      "sha256": "c79fe65fd701ee7d8f14d09141214e7a5c4dbb9ec6d8bf86922f02ae025d06e2"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/Gu.Phase3.GaugeReduction.csproj",
+      "sha256": "9c8bdf269c4c47c02ac7db911f26693c8fb113947c16070b40ba5e1f8cba07bf"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/PhysicalProjectedOperator.cs",
+      "sha256": "155d4dc570a7b5f3904528397b7238cdf3351a7784d277fc96b10fb0457dcfdd"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/PhysicalProjector.cs",
+      "sha256": "1509f869cb0dd673fd3be2079dff519c6d9627c5992fd58b08c2df9c8c4bb6d5"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ContinuationModeTrack.cs",
+      "sha256": "375ec2a3f2252c82a9ee6daf662b00cd860855a9c34d405873610e2b49281a91"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/CrossBranchModeMap.cs",
+      "sha256": "8076149b809b150752ad3499b9246c79ace7d1a9d4e58f81de0e27b9771abcf2"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/Gu.Phase3.ModeTracking.csproj",
+      "sha256": "2a94511cd9b52833296992ec8d65185b996cf0d52397cb2039d90afe753b08a4"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/HungarianAlgorithm.cs",
+      "sha256": "e1f58fc901e22535453c957e89163587e3c81453a94a25be33e810b55792c744"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ModeAlignmentRecord.cs",
+      "sha256": "f454e459f0f7ce8bc930f0bcd94a2966f3e9f30daa8a7a7a82c1296ff129da25"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ModeFamilyRecord.cs",
+      "sha256": "a8cb6061d2019873fc83a68f10086aa7e4eba0cab2e9332cdb296bddbdae1601"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ModeFeatureVector.cs",
+      "sha256": "de4d9f7dc34eff1d87529ab095553562dc2d3f8f2093f5f06007e11cbf89e32f"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ModeMatchMetricSet.cs",
+      "sha256": "d807814c3c7502554dafa7e9794928eab0369658e544b7c55aabbda382ff6f8b"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/ModeMatchingEngine.cs",
+      "sha256": "29edc4b76cedfc91147e9a33eccd212be7a21eb44281fb53bdef4a0528d1a281"
+    },
+    {
+      "path": "src/Gu.Phase3.ModeTracking/TrackingContext.cs",
+      "sha256": "a34d07e095aec65891529ecbf433d2c70f480372d228ecf9d4b2dbe8ac3e0f67"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/FiniteDifferenceObservation.cs",
+      "sha256": "147d97f9e26d2575b7f54aa2de07e4bd4c3797187c64367c623e8420a507aa59"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/Gu.Phase3.Observables.csproj",
+      "sha256": "e76f9418f5694a28fb95106eef50f436f189b527b68100281be9bbbbb0cbeeab"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/LinearizationMethod.cs",
+      "sha256": "b0f261e49f599d4f93f1c198002e50757868736eabfcfcd19ea30369de9d7e28"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/LinearizedObservationOperator.cs",
+      "sha256": "e841a2d2a3115c207685ec511ddefe44cd23a20268881e96cdc9bd017325279a"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservationLinearizationValidator.cs",
+      "sha256": "ecd8f71edc6082fe74d28322659fbdb5d96a3fe9afdb4ffbc2418d8169335b6b"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservationPipeline.cs",
+      "sha256": "c773f1353dfa9722cfe0ae5650397464d1c3e847b80cec4a0c2a92b6d62c4194"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservedModeMapper.cs",
+      "sha256": "5fc33374bde5dbd101cd5a93198f3a2c8078c1343194584ad934c68ef8f05284"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservedModeSignature.cs",
+      "sha256": "6a96fd3652f7ded4f60285c942b139bae256c95c5eefe11389f8a47b1d5e3b2b"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservedOverlapComputer.cs",
+      "sha256": "fde7fbc6f988e08a5a2427c24b7eeba5c4ed430b656a412010817da2821316d1"
+    },
+    {
+      "path": "src/Gu.Phase3.Observables/ObservedOverlapMetrics.cs",
+      "sha256": "14158f824e94a542a4c2e98695ec8508cc0fd781a642cb2d47c04d160050ad69"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/BosonPropertyVector.cs",
+      "sha256": "f646cad6c4ebe58f3ba80c82f34cc0c847542883bc374b0212325ffabd8fbcce"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/DispersionFitMassExtractor.cs",
+      "sha256": "7ab2c05d08e7299c475f8d56175eacc3a098a3ccbe06e5bf79d06957a51be930"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/GaugeLeakExtractor.cs",
+      "sha256": "2cc4efd1430ee9145eb855969d2ccdc98bd3e2dbe9ee9d36f34174d1f8ed66dc"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/Gu.Phase3.Properties.csproj",
+      "sha256": "14b3cd52fba540b1d923855753e90bc8a7d84ebdcffcfd1736843c4095efbe7b"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/InteractionProxyComputer.cs",
+      "sha256": "63b185355262800b71d45b7d62f3fb641c1dab3c6ba911213319430066d6d02f"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/InteractionProxyRecord.cs",
+      "sha256": "a6f1d0fc530e1898c46f84395fd37a5b177ade7bb40e9e2370ffef88e2f9f682"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/LinearInterpolationMassExtractor.cs",
+      "sha256": "dc72b2e746bf11fb703ca9478f8c706097a438c951f4af809a96f5066369ce11"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/MassLikeScaleExtractor.cs",
+      "sha256": "375d9f9a89dc5c0b1311137781fa77ba071232677f040fadc6c898c840cb77a5"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/MassLikeScaleRecord.cs",
+      "sha256": "3a5c203cc2951846e4f31af420f41343f5c33e7b8fb3a31b18c7ba1bb6056ae0"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/PolarizationDescriptor.cs",
+      "sha256": "1931a0b22d33a41c015e903291e10155781015438b755d1cc15598520dcccf89"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/PolarizationExtractor.cs",
+      "sha256": "18660be26fa997ebfa1d212c784d7b8ecafc89f2e6eda31dd3a8820bf4f601bf"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/PropertyExtractor.cs",
+      "sha256": "9e1febc010246461bb7da60db195d8549d084eed0f5033578f02f5319d23f22f"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/PropertyVectorBuilder.cs",
+      "sha256": "ff5d94e635ec81444ad1baf3f81eeec21661c220a16656ad583ada12232b51e1"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/SimpleInteractionProxyComputer.cs",
+      "sha256": "b1830154f0ced6125f52a92e79a7e6b68062612fcf50442e6212ace0fa7546d9"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/StabilityScoreCard.cs",
+      "sha256": "9790e85857bd58c977e58a5dbb3796c839081bf1f8b29ce7b00b8b08dac0a486"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/StabilityScoreComputer.cs",
+      "sha256": "b4e06c96418b9ad1ae372c1e67a3d15d834828916344b9e5989db671c501b4ea"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/StabilityScorer.cs",
+      "sha256": "ba3b96431e5290662b52c6b8759fe534cd8b746fb1e633e53df5fbd314f1ec1d"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/SymmetryDescriptor.cs",
+      "sha256": "5afa9138ceabe2d3d067569c1cdf2b2ec3402b05ffdb2b7a03d03c3b4e92d9f5"
+    },
+    {
+      "path": "src/Gu.Phase3.Properties/SymmetryExtractor.cs",
+      "sha256": "d10cd996ed6523e7af21b833275b293929806d1e671566b8ff4239d353b94687"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/BosonClaimClass.cs",
+      "sha256": "919652f854f646a07564047407891e9cb08dfc53ad20f4f4fdd5b183746ec17c"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/BosonDemotionRecord.cs",
+      "sha256": "66d52d3e843a0360cb8451dec02e26dea9b15ff7c99c24389bb6c8b000245c88"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/BosonRegistry.cs",
+      "sha256": "75b1c242f97debcdda5f206754437c5def8a6f9080e9539d77a6aa08a45d3941"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/CandidateBosonBuilder.cs",
+      "sha256": "65bb5c7d14435a20c190f2e813e80cec73d15247b9460410a3e913f65dc9c12b"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/CandidateBosonRecord.cs",
+      "sha256": "cf13902ec6366d9e2a6cfa995127a1138b4bf50952dc658d60842ee547c8834d"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/DemotionEngine.cs",
+      "sha256": "18be0765c9a51bf09119500ab9264e9cc7c69b8509bc1d88d089a50444ff900a"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/Gu.Phase3.Registry.csproj",
+      "sha256": "c28762934d8fc85b5ac93104162794826b9d26a955ea5840560f3a7e6cb5efda"
+    },
+    {
+      "path": "src/Gu.Phase3.Registry/RegistryDiff.cs",
+      "sha256": "6813e364f6a280dd01f3baf3adfff5b8eee61284a7c02ef7492df5e250dc3739"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/AmbiguityMapEntry.cs",
+      "sha256": "802110915c6feb08004a8608e2c017723861bdfe68425cb1c980020939a3bab5"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/BosonAtlasReport.cs",
+      "sha256": "290ac10797c5c0a4fc497a347d8c7ac157d8fa4cf011028ed6bd1c6bf6c57623"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/BosonAtlasReportGenerator.cs",
+      "sha256": "96da640ded7569d5f8eb000f3d3d0517b1503684e6b905b0bfccd846bb824897"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/Gu.Phase3.Reporting.csproj",
+      "sha256": "35f3f913414d14f5aaea978a213e4fddc6b271b118eca09edfabc63945d1eb36"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/NegativeResultEntry.cs",
+      "sha256": "23db3d83024a275a342bfe12a1e34a185f9b4a16d4e122f8d2cc9a9e6e57ffff"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/NegativeResultSummary.cs",
+      "sha256": "6bbbee6ab73e7e9ff7bc8f7e3c17eb356fb3f50c395a87c88ebfde4c37c42180"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/RegistrySummary.cs",
+      "sha256": "ad3c11449940216c87aa4aa1bf9c72cbf969ae3a077859549df4f8194d4d6d07"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/ReportBuilder.cs",
+      "sha256": "02eadd5ac37f2a5f77498f642775e5b6b3760ef66798cb5258c69e792e3ab98c"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/SpectrumSheet.cs",
+      "sha256": "cb80fbe95ddb3ba63d22cd0c026365b3e509a4f2a556d53e1d3cf6205958e587"
+    },
+    {
+      "path": "src/Gu.Phase3.Reporting/StabilitySummary.cs",
+      "sha256": "b5acaa2922b4e1f1a8a8613b5a2c30f13fb0fda055cb1f6869067cd402de65c4"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/DenseEigensolver.cs",
+      "sha256": "198c681c333b1e49744eec05ec8ebff2b160ac18a997ec0f5add280829cbd12b"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/EigensolverPipeline.cs",
+      "sha256": "741d3cba4a35a4aec88554781f03563a9a98b52c4a8bca7f752666c5f53f0953"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/FullHessianOperator.cs",
+      "sha256": "5f49e51897743e062eef828c968e60135628cdcee1670067fef8c0f9858f73cb"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/GeneralizedEigenproblemSpec.cs",
+      "sha256": "41467a41571db4e4dd5ba96d34ff758ff4e661bd47bdc6709036aac39794cb6c"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/Gu.Phase3.Spectra.csproj",
+      "sha256": "eff53c4b712b24dda11c719ed4ada5ac055ceb1af1496f4fa3360c017f3346f6"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/LanczosSolver.cs",
+      "sha256": "da0a8fe70080f48bbf135ade6769e0ec3849aff990a5f42d9cca344f793ecfaf"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/LinearizedOperatorBundle.cs",
+      "sha256": "d79bd4ea876ab37fe19e23886c96c2f6243f5f0f562b65f1ecfebc9ec50f1eca"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/LinearizedOperatorSpec.cs",
+      "sha256": "585eb258a33f7f07fbe06a25707e39551752bf084519e530ad70d27fc8642922"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/ModeCluster.cs",
+      "sha256": "059f9fea3427e0928592e599c5875a683e71a3a565b810eabe8d6b7c0ace1bfe"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/ModeNormalizer.cs",
+      "sha256": "2d3060b6dec619f8d3a687e57532d90a526cc7aaa91d9acccb0a01961d3c204f"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/ModeRecord.cs",
+      "sha256": "da3a41ad89318a031fd06053532f23deaa9e6145e6ca5e48c8d85501ff42b33a"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/NullModeDiagnoser.cs",
+      "sha256": "fa22faee87d910c8393a6dc972a7931c5bcaeeaa043d7a073bf970834156aa58"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/NullModeDiagnosis.cs",
+      "sha256": "1b252440257fa5d3bad3fc3e1b75706e6fe03a3fbbd873ca85ec2878b1629b80"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/OperatorBundleArtifact.cs",
+      "sha256": "f7438f308529ec7dfbf8297e24ff609d44d2c1e53a4ec59f8cdd80b3581e6a85"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/OperatorBundleBuilder.cs",
+      "sha256": "c4abb2701cf17a90c733885025c753c278809881aed263a928be333ab14781af"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/OperatorBundleSerializer.cs",
+      "sha256": "579bc4b0273b23f4e88e4279874b7832513401b95065b33247c92dfec98ab16b"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/OperatorSelfCheckReport.cs",
+      "sha256": "4c2d9ccbdd24f55017b094d09c3d39bc0319a6af3f12e6770ed411e258138ed7"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/OrthogonalityChecker.cs",
+      "sha256": "80857504c8505c81c0e3f3284b728a3a8b12cbffd3d919862993d6524acdc850"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/PhysicalModeFormulation.cs",
+      "sha256": "dc59630bf65db613d7ef290be388eb838761a3ebfff70e638150ae172b3a6437"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/SpectralClusterer.cs",
+      "sha256": "f66a45f74f7cc25401b52757f6efc255db8434270fe41a843c114b879f51560f"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/SpectralClustering.cs",
+      "sha256": "75abcfa611f06b2da9643c5a7074f2df2b5c873bcc25dd4d5b853b2577e74df6"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/SpectralOperatorBundleBuilder.cs",
+      "sha256": "e76f4594dfff9b2adba43d2b606151d59514c8a59dd5ac4df8508b40f1198ac1"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/SpectralOperatorType.cs",
+      "sha256": "8c42a1ba54e4d0d25844ce968e408d2dfc8dd34bff25a1220a116c610440541a"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/SpectrumBundle.cs",
+      "sha256": "14d07c89f9b4f4340aaa86311efa490cc36f116da19f29dbd57bfc54f4773703"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/StateMassOperator.cs",
+      "sha256": "af5de17fac4ce6b1cbf17b9f812fbf1db4f34df2c483bfd351e82b06d18787e0"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/BackgroundReplayFilter.cs",
+      "sha256": "4a1ea8b988fc665d4d09b4a2922c1e17cb77f9aa89a7321b6690fd43032e8182"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/ChiralityAnalyzer.cs",
+      "sha256": "5ac38d363b68dd13902c8282a2f14cbd4a4b0a2664b33454cca8d122ce0e11e2"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/ChiralityDecomposition.cs",
+      "sha256": "bcfdc0bc47f36dcebaee6cc08970cbb8a2a87d3724e9f26baa8cf56723743f56"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/ConjugationAnalyzer.cs",
+      "sha256": "941c4ae3b2053b4001652b7a97f3a0963c5010b4fd3ef1633add3ee3a0fd9385"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/ConjugationPairRecord.cs",
+      "sha256": "73df1e422dcfb4ce6e02c5644a33c4c453f1e343c1daa20f92fb4d5f5cce2b2c"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/FermionChiralityRecord.cs",
+      "sha256": "e5d7b4418157771fc944a270ac08e1c4da81551f8d406cd87ac6252d2df117a5"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/FermionSpectralBundle.cs",
+      "sha256": "f3ac9850525fe379b7ed15319bc0475be4a0d686ff66ae7d1730071820ab40ed"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/FermionSpectralBundleBuilder.cs",
+      "sha256": "fa34b33f96ca77bde68605b4f61ec611c62d23866bb808f777fd42e4c76d7df1"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/FermionStabilityRecord.cs",
+      "sha256": "020af85eeddc78ad7bf324fe864fc13d44d38fe64ee24328c9b846ec074a4c44"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/GaugeLeakSummary.cs",
+      "sha256": "cbff6b4d56e4155fb4b3b9f6d8c51c307e15a58e7a372e59b9f20ad5a338b40e"
+    },
+    {
+      "path": "src/Gu.Phase4.Chirality/Gu.Phase4.Chirality.csproj",
+      "sha256": "ab9a63ec1dcf24c36296e143cef63999889ba6ca5603baa4b547cfc7c5a102dc"
+    },
+    {
+      "path": "src/Gu.Phase4.Comparison/FermionCandidateReference.cs",
+      "sha256": "19872d53cad17e52480cb0e37aa0c1b3938303ddbde68b3ec708db6cda18de93"
+    },
+    {
+      "path": "src/Gu.Phase4.Comparison/FermionComparisonAdapter.cs",
+      "sha256": "a69bfbb7731c32577a794e21e361d09c1846b3242740f3868da348b1e9166a4e"
+    },
+    {
+      "path": "src/Gu.Phase4.Comparison/FermionComparisonCampaign.cs",
+      "sha256": "29e0506283cda2b850e1f882602b7c84e2a7817b9f4955d90d4c65362af23fd7"
+    },
+    {
+      "path": "src/Gu.Phase4.Comparison/FermionComparisonRecord.cs",
+      "sha256": "09d6b196f78b36aa014d89747e18237e252f6e6ff018787a2cd1f2137639dbf1"
+    },
+    {
+      "path": "src/Gu.Phase4.Comparison/Gu.Phase4.Comparison.csproj",
+      "sha256": "fc84c33dbdb95e387ca174bd281fd49b01f62edc95bf3b1d9069162aef6672dc"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/BosonFermionCouplingRecord.cs",
+      "sha256": "29084aea674930e38f5faf07cb1aee958f1dd6119d92a7cc18409393302212f8"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/CouplingAtlas.cs",
+      "sha256": "521abc2522578dded5e1b36ff2bfe287dc5f2bda5348fe6eda51f0e4bbfc3eec"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/CouplingExtractionConfig.cs",
+      "sha256": "305a22844a49bb96c934032ea174e181f04013d6972f986714b45aa18e037920"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/CouplingProxyEngine.cs",
+      "sha256": "e7eb5aa0abcd7f2e156e6c3f27a3bbfbe7caeccdd5f8071cc7700821a6202b83"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/DiracVariationBundle.cs",
+      "sha256": "564424ab0a19cd9ff6930c4177542f234123c6aa2f6a9f89f44079b3e39d8040"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/DiracVariationComputer.cs",
+      "sha256": "f6f0ea1fe26d596bc40c16ac14ad7d507258831745708d743b46261a97c128a4"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/FiniteDifferenceDiracVariationBuilder.cs",
+      "sha256": "489327a86265e24e12f2ae6d5266755454a12fac2ee93fcb3fb4e5d4a9ab494b"
+    },
+    {
+      "path": "src/Gu.Phase4.Couplings/Gu.Phase4.Couplings.csproj",
+      "sha256": "d4ae8d0cfa1025fcbbea7b9ef09f8b58efd0575c1b3027e3c19298f9a9720eba"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/CpuDiracKernel.cs",
+      "sha256": "fb75f91ecce1d8b43f14dfbab2bbdde0ab9f015b808a17b45302b37ba55fd38b"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/DiracBenchmarkArtifact.cs",
+      "sha256": "ab352042d3da960917c407424a7c71f921316812282ce00bbc4b8704ff57c902"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/DiracKernelFactory.cs",
+      "sha256": "2aaa422e5924aa2d9a3aec5526b85159266e45e4bbc286ec92604fafab5358f2"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/DiracParityChecker.cs",
+      "sha256": "db7a8ed3e0165709496ea2a568df46ca574a9290255462193f3aab84f1c5a8a3"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/GpuDiracKernelStub.cs",
+      "sha256": "c18674879bf0dc692eb8ff24f2cbeebfc8470a303678a33a28f3eaf5d9004a03"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/Gu.Phase4.CudaAcceleration.csproj",
+      "sha256": "b6a5f9fe4a5210b5988f850d8a129d579505b0e15b782b7cbabdd1a2a550dfb7"
+    },
+    {
+      "path": "src/Gu.Phase4.CudaAcceleration/IDiracKernel.cs",
+      "sha256": "5864cb1f373cdb6e91ac89183f94508e7f8bb879c421b5a622d305b000013ba7"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/BackgroundSelector.cs",
+      "sha256": "b0687d5d8b783eb68de3ff2013ec82da22460e6305ab002b9d704d24e7267869"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/CpuDiracKernel.cs",
+      "sha256": "59eef9c49d6b04819ca0403bac89bc6172b3d0394e33d316c181e403aca49246"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/CpuDiracOperatorAssembler.cs",
+      "sha256": "0be0e9a0fa1e730da7796ece90adf248b2323350d3094232c199fdf2abfb4b25"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/CpuSpinConnectionBuilder.cs",
+      "sha256": "404c84d0602bed9ac99ccb83df1ab5b372ffeef97b2a4c4f73024ae974aacfb2"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracGaugeReductionProjector.cs",
+      "sha256": "4fdc4423fa05de443012ad094a2cc8c5d334f90c9f123fce732875c92b11349d"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracNativeBindings.cs",
+      "sha256": "5c06b741396ac289cb7150e28e18270068482c93b599a34fc585f43a9977185e"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracOperatorBundle.cs",
+      "sha256": "0af01c87b5e3d8aecb3f4d7264a89fc66b11fc01b59bb9f83a159c2d3aa113e8"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracOperatorValidator.cs",
+      "sha256": "db47473fc14fdcbe480b22da8ed9b4ea4ca33f6cf97d47c779d2fc4e9debf3a8"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracParityChecker.cs",
+      "sha256": "6f3363f5ba5f56cea06e61b0e73041037f83e96584b9e243cf5fbfa6ce5130af"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/FermionSpectralConfig.cs",
+      "sha256": "cafe6b90f39ed1c716b1f64cbb16b64013bc05766c964c2d860b20dff00e9cfa"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/FermionSpectralResult.cs",
+      "sha256": "7ddb1e53943539e228cdefb8cd856c35c2dfe6d7214abda2ed7970a5250e6c82"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/FermionSpectralSolver.cs",
+      "sha256": "19233d26b1cb93362575ba65376b2597086da363d49d22f17d1fa3845acd3f70"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/GammaEdgeScheme.cs",
+      "sha256": "2ecdd702f81bf00cf59b2ed00088f66eedd65dc25689f92d099b1ad692227606"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/GpuDiracKernel.cs",
+      "sha256": "49cb7aa0571023543f3e8daed586913eb783cdbd10882269c5b4fee41abb8bf6"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/Gu.Phase4.Dirac.csproj",
+      "sha256": "2a28d52152c57238f89697ee10dca7c647777c2fb6c6f70ca81bee5a7b323cd4"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/IDiracKernel.cs",
+      "sha256": "a408faaad7a09bd485876f2ee3bb332970a830dd9e5e164f1b7dfa766c4b074a"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/IDiracOperatorAssembler.cs",
+      "sha256": "f2d84c261c24ff072a37d87312597efa6fc42beac93fc9f28d939642c5047979"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/ISpinConnectionBuilder.cs",
+      "sha256": "d1b83b70498f6db962bd78c4e9e0985dc2f05262e4f25a0eef29b185aa2d4d4e"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/MassPsiWeightsBuilder.cs",
+      "sha256": "5089a9fe591464b488c06088dce46a564bdfe995afa66aeb2697b81ae82d2369"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/SpinConnectionBundle.cs",
+      "sha256": "c6ad59d7fae7f6e3bb16f35cd7a6a67955656508c946b333f70c7aa04c5ff992"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/SpinorSpecResolver.cs",
+      "sha256": "43dbe02feb02fe07f962d14567933487924a663bd89f607bf10bb40cea71f8ed"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FamilyClusterRecord.cs",
+      "sha256": "382b502be1f1168802fcad09ba8cb90de7d4dce5f0d8c288e11be336682f0d47"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FamilyClusterReport.cs",
+      "sha256": "a57aafca7dad3611f21a9667ae5d2f99a93838619c548b591dce8572badbf55f"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FamilyClusterReportBuilder.cs",
+      "sha256": "481ee9beca1ace4f94e51cb01174fe49fd2a08d1194f35be248c8d272491f3ed"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FamilyClusteringConfig.cs",
+      "sha256": "a66b3090542193dffdf33785b8a8a94ea1f8be30311a26f3f921cc0fa47ac6b6"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FamilyClusteringEngine.cs",
+      "sha256": "2fabda12a37aaaaa7e59d549bdfd5c0d2a8ff12abeef7090c0f70a64a8b103ea"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionFamilyAtlas.cs",
+      "sha256": "eb5f16929e8ebab0e8331e3a7a997aef59ca9fb86e8763299e10c4ab34381d06"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionFamilyAtlasBuilder.cs",
+      "sha256": "c6fe4a391e6d5d9c4e5b7907da4cc6d727b070c7a77a920cb5aaa778145db498"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionFamilyBuilder.cs",
+      "sha256": "c24eec373a88e72d12378faa3a83edc1ffc5b66c59683b7b792875e390ac5b3c"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionModeFamilyRecord.cs",
+      "sha256": "fb8cd377fabc5083b34586922d4d116858e4390549059a69b70686a2a385658c"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionModeMatchRecord.cs",
+      "sha256": "ee16a6a3c15d13b8668bf01f2dc3f11f5c78efde943a63c1e08e351477325613"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionModeTracker.cs",
+      "sha256": "aa40e46ae5efe8d03312b6ecdb45e1590c080f9668b07b45239276775cc6234b"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/FermionTrackingConfig.cs",
+      "sha256": "1f60ae5681888018820bb42fcc3cb513dd00a4457060c455ec20524ca4de04cf"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/Gu.Phase4.FamilyClustering.csproj",
+      "sha256": "70c92137821adef466f02fbffa51ee7d73c6ac609b56fda8c39c920c0aeed521"
+    },
+    {
+      "path": "src/Gu.Phase4.FamilyClustering/NamedSpectralResult.cs",
+      "sha256": "ad7a483d36cef343cfa46c21dbebc1206b205467e41ada3ce33daccd79ccfa57"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/DiscreteFermionState.cs",
+      "sha256": "a19604df753a5d5b0ba8f6621dbcebfb7865729291938a7c769f27b15c70b824"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionBackgroundRecord.cs",
+      "sha256": "500df9236453a26b7f1eec4e6d96a9cd38062ada3e94de690fbfe8b7e24de297"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionFieldLayout.cs",
+      "sha256": "3671898e5e7ddd7380e03fa4684838200b4dbb4bf5d01da9ad8ab80ac427d765"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionFieldLayoutFactory.cs",
+      "sha256": "84cce930a51824beb0b5f93c55aaf9f25522a6c1cfc5c214bafb40644c281c7e"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionModeFamily.cs",
+      "sha256": "4375d8ba025b95e125fe863215f65a307a11847b5eb7a906502d973967758133"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionModeRecord.cs",
+      "sha256": "aefbcb80f16c159d0d7e9cc9a8bef26d73e50d8d327c3e65f3b1b97e5b810a0e"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionStateBinaryStorage.cs",
+      "sha256": "26d8712e5551df77b5ff86943118660f6539ffcd0bf16c3ae16aed0f5a46242a"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/FermionStateSerializer.cs",
+      "sha256": "ea5546bf80131cd12f7c756a2d8f82001a3f86b9d5e134749d67ef8d4d3b305d"
+    },
+    {
+      "path": "src/Gu.Phase4.Fermions/Gu.Phase4.Fermions.csproj",
+      "sha256": "801adcb84b18ee468226d1a2360e1db78e84aa1edfaa6271c501bcf7690a412c"
+    },
+    {
+      "path": "src/Gu.Phase4.Observation/FermionObservationBuilder.cs",
+      "sha256": "b021538d3decbb0eac8e4b4ca3528cac8b2ecaaf421a4358daf6f9c79b96ca40"
+    },
+    {
+      "path": "src/Gu.Phase4.Observation/FermionObservationPipeline.cs",
+      "sha256": "a2f6831e5bfca4eb743889cd11704dab08ba343baee1807b154f8f59d668e85e"
+    },
+    {
+      "path": "src/Gu.Phase4.Observation/FermionObservationSummary.cs",
+      "sha256": "0097b78c0694a7758e477a578abc070d2b9adc7785925021ebb89a3f6debd63a"
+    },
+    {
+      "path": "src/Gu.Phase4.Observation/Gu.Phase4.Observation.csproj",
+      "sha256": "b0c67fce49e0921cab14dc4541a6500074b2138a7d7aba7942ffefb9efda98c4"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/CandidateFermionRecord.cs",
+      "sha256": "5142af0973e119cb80f7fd2b3a77f89082d89a084825ba72957e6879e6e7e178"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/CandidateInteractionRecord.cs",
+      "sha256": "a72416e8366294ee8e02a816e3510f368710ce4a1e99aef627cc16aa44eb54e2"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/Gu.Phase4.Registry.csproj",
+      "sha256": "62e8b474920ef09671c2fab5d4a0a581020b7e9f8a81fed056e16d45022c3599"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/ParticleClaimDemotion.cs",
+      "sha256": "76d711b197f9b916558702b26a8ebebc5d63483d5cca4ddfa3c7f51bac10d572"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/ParticleClaimRecord.cs",
+      "sha256": "68ba657ef7ef4426ad29481c43386a76016428265365fab70ec2922f56c1c9a8"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/RegistryMergeConfig.cs",
+      "sha256": "129e773ee3a4999c6ea7706b0268d80f1f239a3501d02631e663cf47fa2743a3"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/RegistryMergeEngine.cs",
+      "sha256": "6bc87b8a1ea4376d5a99950693f73fb76d9a68b3d9931ad6d94cc46834f1ff74"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/UnifiedParticleRecord.cs",
+      "sha256": "625e657b9168efc1fdee43f0f9aaeb894061185c9b2ea7d7de39c8de3de157bf"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/UnifiedParticleRegistry.cs",
+      "sha256": "059e5e6d598bb4baa41b708f7e93ba5bd6d43044049d1c415a867704ac6b001d"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/UnifiedRegistryBuilder.cs",
+      "sha256": "f7ea14c531ad93e26d6b3b76009d86138bc9ece7a483b7c2fedce0b36d438fad"
+    },
+    {
+      "path": "src/Gu.Phase4.Registry/UnifiedRegistryConfig.cs",
+      "sha256": "412b32d04bb9984742b7c2530c11fa95503334b60794f1c7087acf6fd112c35f"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/CouplingAtlasSummary.cs",
+      "sha256": "9e56e8bda463a7392603fb31b45d483aba1809e405b36a3b3368b000b204d34d"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/FermionAtlasSummary.cs",
+      "sha256": "51d1594cc2f6d263bf3e1dcb90de11ce4189cc4debbdce8428d7ad49ce65b754"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/Gu.Phase4.Reporting.csproj",
+      "sha256": "f60494408b5c7c6689801eaec5c158310b185400380dddbd99bf1392d1eadf64"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/NegativeResultDashboard.cs",
+      "sha256": "58b74ac7280be9ea093677cfc146750710924b12dec87c0bfeee81548cd9fc90"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/NegativeResultDashboardBuilder.cs",
+      "sha256": "fad5e3cb143ed5d347aeb0f6f8a2609deaa9cdf7cab3f953800fde4fdeaf1a16"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/Phase4Report.cs",
+      "sha256": "6a49df1ecce2ad82552026984f1402dada9d6eae8232f2d4708f486c1d1856df"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/Phase4ReportBuilder.cs",
+      "sha256": "403bca3052fb1d59599b489f0051297d9e686bb032dd17217d0a4d2d6a48faa5"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/Phase4ReportGenerator.cs",
+      "sha256": "6763e5ba41d3fb7a6a3d11c90395961c2f07bad61df866ba0bee5030b7f8f659"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/Phase4ReportSerializer.cs",
+      "sha256": "4c3583f54d052d92a8d6e87e97e42ce4fd04b02fbee2a76f3dde93fe94da617e"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/ReportSummaryFormatter.cs",
+      "sha256": "0a7213d7e275a821e224516d4a68563bdb0efc4d242ad16e7098eb3861c6fb9d"
+    },
+    {
+      "path": "src/Gu.Phase4.Reporting/UnifiedRegistrySummary.cs",
+      "sha256": "2ac70beba252a8927293bdd22eb22797703f136d0b2779745677ff66147c9aa8"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/ChiralityConventionSpec.cs",
+      "sha256": "71aaa4a67e0ec7522e49d0290f0b4ccf074df3855879b0cbc70b5925a55f3d3e"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/CliffordAlgebraFactory.cs",
+      "sha256": "e63483c04a78bb05fd7cdc3d4a5ea0d0932a1fb69152c56dd05939d27c6c04c2"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/CliffordAlgebraValidator.cs",
+      "sha256": "62aac1d9c8de260a412205daeddc78b450f0ba71de992ffc648ab57c85bc0d3e"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/CliffordSignature.cs",
+      "sha256": "db26e1e2a440ece4cd68875632f2239567d3eae6cda5fbdc4f3775795120c6ee"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/CliffordValidationResult.cs",
+      "sha256": "71bc28558a2103559c0651309aef35d9fa78d480d8a8b62132e394ebd3b71d3e"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/ConjugationConventionSpec.cs",
+      "sha256": "30902214b06a24bb37acf8881bd71da2b1c40eec5485654d4c60fa3812741e95"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/EdgeGammaContraction.cs",
+      "sha256": "fa4d30fb4d3c45640e78f6127f17863509cd793352dd5a601e5bc5ab2698f118"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/GammaConventionSpec.cs",
+      "sha256": "d72f423c9166911a65c33e6614dd8a196e1e83495532b4ce70b644e56a67ffca"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/GammaMatrixBuilder.cs",
+      "sha256": "381f97240b3c4647dea943399c08b50e620b7f56c8aa5e670c2f0b57688054ba"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/GammaOperatorBundle.cs",
+      "sha256": "017c2905183b64baed762c87c345eff5efcfc5254f4e5c0019c5969a7b715d05"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/Gu.Phase4.Spin.csproj",
+      "sha256": "93cdfd2b33998a8beee7b40d189bca9219d6b9b38ab11b84c7ba755b9d1d17b0"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/IInvariantBasisProjector.cs",
+      "sha256": "0fb71197aff1f06e95b37ba99ea7103858fd69d80da7ac96a7fbb6ca87fe624f"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/ReducedCliffordSliceProjector.cs",
+      "sha256": "d6e60a47c7d80ec03f9b1ea0dd86cb650a4ee0576b773e83fdaeef3d9efa38c6"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/SpinorDiracOperator.cs",
+      "sha256": "22fe927acab04cf04a4c06cdc6cb68f434db0200a171e5b1ce79fc3c94f5fcff"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/SpinorField.cs",
+      "sha256": "5ad908a7ed366c2746db62c4add9a29daf7e2d0bb8dafe23fe6dd7b45a829080"
+    },
+    {
+      "path": "src/Gu.Phase4.Spin/SpinorRepresentationSpec.cs",
+      "sha256": "cfec5c3f8c63b3cad2efd73b26241fd41c86ebb6c31b514fa8e61e322bdd334c"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/BranchDistanceMatrix.cs",
+      "sha256": "f32a5c75829df5987ae0e7cbc754cde8755776308d34d8b1adbc3a72ad16faf1"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/BranchEquivalenceClass.cs",
+      "sha256": "35f84f83c435f2a30b04c012626143a71679ed9bf7a80d5de01986eaf539e957"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/BranchRobustnessEngine.cs",
+      "sha256": "646f7aca2bf810f2344f392120cbe5a16d63c0cbfe3d0eade2da58b327d7c253"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/BranchRobustnessRecord.cs",
+      "sha256": "cad199024daf68689a95c0f378aaa4ee63b551c7fa0bf6518b47f3d444ef61cb"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/BranchRobustnessStudySpec.cs",
+      "sha256": "2fb2a2baceafcc950414cb6eabba7a0d635f08870a08a913c0c0e39fe0e0117d"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/FragilityRecord.cs",
+      "sha256": "e80b38592c48180dbef30dce187313b78f3b2960cda0154195afb0f9939a4b5e"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/Gu.Phase5.BranchIndependence.csproj",
+      "sha256": "6e38eb1c9c6a665c068b4402d0848d2c3a0aea77bdf0b30ed83abe1c9f76ba18"
+    },
+    {
+      "path": "src/Gu.Phase5.BranchIndependence/InvarianceCandidateRecord.cs",
+      "sha256": "e6360b1a162bb15258f74de78398b63ec5948ef4bbab09c36fef3ff4efae5ceb"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/ContinuumEstimateRecord.cs",
+      "sha256": "b847bee9535af25148f7ac813d0fb59a43a9b9218c065ca7a6d4962366b7bbf5"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/ConvergenceClassifier.cs",
+      "sha256": "7817fee1500b369a896638d4eb14d9d0aad072eb8cbcc6521c9a3a093bee9569"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/ConvergenceFailureRecord.cs",
+      "sha256": "b8bece2922bacfcbd64d44288e3623661d69dccdf9982349a226e2998eb86d9f"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/Gu.Phase5.Convergence.csproj",
+      "sha256": "8dcaffe61bce7936ebf0f22408607c7350bb1c8deaeb0fa6a4a5fe2f0394e1b3"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementLevel.cs",
+      "sha256": "94d4cb8ce3a2d3afaea5a59f16faa13469abcaa05ebad471989d9f1cb5113368"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementQuantityValueTable.cs",
+      "sha256": "6b9c42ea371192c72f19459b1694b46e36360f17e5bae0ae319cc629c2e528a0"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementRunRecord.cs",
+      "sha256": "f20bc3b35e7c0422a208a677eb847ae2ef3dd9961fed577a49452e4262dc6a6c"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementStudyResult.cs",
+      "sha256": "6b2969f77466345dc48a48fcb6f70bc2718084b99b22ff2b1fc27c998fe2dd84"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementStudyRunner.cs",
+      "sha256": "6e43e689c27ec29d68126ac5bf7c2dfdc78a0e78bcc9b6a14bdbfa1a0c1e0d95"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RefinementStudySpec.cs",
+      "sha256": "7cc68a7e03b8f5329fd8fc78879578e3e479e592fa3a218d7ee3b1ee0f8017c8"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RichardsonExtrapolator.cs",
+      "sha256": "622136c5f990361332802c7acbd3d66684d2a79c899b5f80bac58daf5740bb3a"
+    },
+    {
+      "path": "src/Gu.Phase5.Convergence/RichardsonFitRecord.cs",
+      "sha256": "960fdb18829c71468e43e391f1461438433cfbd3d3c61a7f06114ce5b6b33eda"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/ClaimEscalationRecord.cs",
+      "sha256": "a90f807a1e742d0b09a5cec7ee539990d46740b750e70c87f5f4b3285351e5db"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/DossierAssembler.cs",
+      "sha256": "08a01bf4f468ddb64d04a7d0d8b27143199f888c6419c1eee779313ee0efea91"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/DossierIndex.cs",
+      "sha256": "f6d97822d97a3fe57e810151dc168b14e3c1df1fbc6d3ad0f806a5dd9be4e364"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/EscalationGates.cs",
+      "sha256": "949ecc75179897aaee14b0b2e71d99b0222c790ef0f247ea4ec1cffd624fcd82"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/Gu.Phase5.Dossiers.csproj",
+      "sha256": "cbc39cc66f4f52157a2430d6f0144692d4e1aa74de36bc4491d4fb6875910f47"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/NegativeResultLedger.cs",
+      "sha256": "f6bca7e1682bdac0e8f78521477f5aa2e611fc166ca4b37d7e938ae71fbbd548"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/Phase5DossierAssembler.cs",
+      "sha256": "b0d34f617444cc3faff0f18f9bb88f30d8dc15f2552eb33d4cfcea16e47266f7"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/Phase5ValidationDossier.cs",
+      "sha256": "d8796704a72d27242470b11573fd6c183c704e06d0a01d78ae08920769761b63"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/StudyManifest.cs",
+      "sha256": "8c6d43f0c6f0069263ef02d153aa112ee993068ef71fb1f5676b6653c9476e8b"
+    },
+    {
+      "path": "src/Gu.Phase5.Dossiers/ValidationDossier.cs",
+      "sha256": "9da36f5f699c749cd7651885e5d1c0a0c24dd1059fc07903ef80bf984b00fa68"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/AdmissibilityCheck.cs",
+      "sha256": "366b14b5bb985b0797531606b0db861cb5ce6cd743af996a415bf3e6eb3bbbaa"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentAdmissibilityChecker.cs",
+      "sha256": "a88005701d265fe91b232838c0a36a522929439f2aa238e74edca83614eeaf8e"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentAdmissibilityReport.cs",
+      "sha256": "0a1003a75f8d3f53a87b58ffa5458377f1624e38b41a2be12737600b10c7f381"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentCampaignSpec.cs",
+      "sha256": "abdacf4070614637fd57564e76b0c26d0b2e103a96d23cf79ccc255ff7b78407"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentImportSpec.cs",
+      "sha256": "b7c153f4fad4e876738d8bc2e1b842015559451462ebfa9a79cf0e3df18147ab"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentImporter.cs",
+      "sha256": "422c022b638b0d8d288bf3c78b317bd58ed8f82f7c91fe0dc267094909a0b1d0"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/EnvironmentRecord.cs",
+      "sha256": "12e4d1386b07ce7837dd63ad6daebba5b9702a2ae53f2bfda15ff6f13166563f"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/Gu.Phase5.Environments.csproj",
+      "sha256": "40e7202cc75305b11bb5807ce9d73ce9eb0f01f459288f05b0dc971f2a53d21f"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/StructuredEnvironmentGenerator.cs",
+      "sha256": "5d0d685f91156defb2dffb01faf7881c3ff70dc422526278fffe0f7f7bb2c655"
+    },
+    {
+      "path": "src/Gu.Phase5.Environments/StructuredEnvironmentSpec.cs",
+      "sha256": "ad71ce38cbe493725d06e6981e7a4d7775c567893e383241d5473cda29fb7bbd"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/CouplingConsistencyRecord.cs",
+      "sha256": "7017e0ac41c8f2e4ba9345d6d18bc6594ee5c7b7d6424c3d25cfd8778125cb6e"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/EnvironmentVarianceRecord.cs",
+      "sha256": "b707ba2dc48f23688217face495015ec260ffaf1ac369660a0c9a8381d3b4d9e"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsificationPolicy.cs",
+      "sha256": "4058889d9f4fe6b4d73d45cc1e4f60e9b1cf91d27619ef51dae17a6d1022fffb"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsifierEvaluator.cs",
+      "sha256": "a940a4b4bd3610a1ec8ee571b256d44ce31ab8363184236d413546bde0a83465"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsifierRecord.cs",
+      "sha256": "8793a49157b9a0fc72115179647dd9f55b9a91415649be59127e7d1a271ca9a7"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsifierSeverity.cs",
+      "sha256": "158f4e79e95597f4ae2c1223962c6eb0ac79eaae4a2861b58ce02b4e5b561f91"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsifierSummary.cs",
+      "sha256": "6425709e8f5536c20a86e21944e285393244f8fabd8497c44b1b9dd1a4f371f5"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/FalsifierTypes.cs",
+      "sha256": "0569ecfcd80ba9cb470849f37bcad7357df820f695758d55fa3934b23848c300"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/Gu.Phase5.Falsification.csproj",
+      "sha256": "f0a822218977764b4496c7a90acc3c92dd5c88ddddbe5592b65cb4def09b199e"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/ISidecarEvidenceRecord.cs",
+      "sha256": "2ede5f5f99239e943ef6757595860b415d80c6a9d5726237a86bae491f351c9c"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/ObservationChainRecord.cs",
+      "sha256": "58af7282f3e3a696d6195e24af5b53bc4069821f32c7ada2cac3c94d7f740a1f"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/RegistryDemotionIntegrator.cs",
+      "sha256": "db7c97850636a77958bf8039c346183bcef10f27660af6b08728563be5f5128f"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/RepresentationContentRecord.cs",
+      "sha256": "2fa2fbab24efe299acf6c98039b292d223ee8719abb38f564d50d43866e54755"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/SidecarGenerator.cs",
+      "sha256": "7a36c360c85529ff867b75bddd60aee146b83616e9bed26d7ffbd76368c45b03"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/SidecarSummary.cs",
+      "sha256": "d98afea16f0c48be8d7d97d7a2b0fd61b028e311d8ce89e5ba480f0933bd3329"
+    },
+    {
+      "path": "src/Gu.Phase5.Falsification/SidecarUpstreamArtifacts.cs",
+      "sha256": "5598c66f3890a502535b309db03ab1a2481ceb4ed586194d15b0a9ead2e28b07"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/CalibrationPolicy.cs",
+      "sha256": "55285e4adb2c4e9a2fb10cf346cfb34d35eaa401ab80d250e1e4bf2e571d76b4"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/CandidateModeExtractionRecord.cs",
+      "sha256": "fb96f7416de5c77fd35a1f3aae90ff676dde688704e57adc9b2575c202a0e9f8"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/CandidateModeExtractor.cs",
+      "sha256": "c789f82af22695ad1eb4236d78242447a77f6f7ee90d72daf5a3ba9fa0678657"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ConsistencyScoreCard.cs",
+      "sha256": "27caa0ce4180d12c76c3e0feefd38eddf40759a1143587bcbd2a053baa57a7b1"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ElectroweakChargeSectorAssignmentApplier.cs",
+      "sha256": "8dca5e8bf898c127bd7f8be4ca69419bfcf2b047d90b2d60881eb11156dc67ca"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ElectroweakMixingConventionReadinessEvaluator.cs",
+      "sha256": "7ecbde8f46bca343ab57e91e2b4a7bafc8a93b82ba970be331babcbc4defae0a"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ExternalTarget.cs",
+      "sha256": "e7c7355db8883730456ef35f1df39a19288891ad1dd8ce6c9f2645017e1fa1f4"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ExternalTargetTable.cs",
+      "sha256": "20c9213cc416d11be5bd81ee2e4b8fa6db23a65119dacff33c3568b5edcf67df"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/Gu.Phase5.QuantitativeValidation.csproj",
+      "sha256": "a9aa5b6be0ad24128fedeea9a343dbf55116cfada55a8646ed83b559c830b89e"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/IdentifiedPhysicalModeRecord.cs",
+      "sha256": "1aef8adda72910fa4ab9e28aca76ff178b862f1659afc7f76d7317ac058bbc5f"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceCandidate.cs",
+      "sha256": "677cb1ba2864853b3e178aeb025f983cc37d6b01e95e4d5a8e607d487071f84e"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceCandidateAdapter.cs",
+      "sha256": "f743d917710e3098f06ab7074a0c3b9cfe2444836dbee592389c536901d39d23"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceMatrixCampaign.cs",
+      "sha256": "055ae3a027a1e8ecf413f6ae8e0114a2dd97ad7635e2222be6953576c1208d1e"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceReadiness.cs",
+      "sha256": "9ec797f553bc3add0d000cb33a1e32762c59242c409c7b03cd288169b20069f1"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceReadinessValidator.cs",
+      "sha256": "d5cda480a0a3f8941e9788468f72fd0905b5044ef292cec61a534b362bec3784"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceSpectrum.cs",
+      "sha256": "467309781a3d3563f59f76093a36b82bda0792ae4d9b4151e8e4f7400b90c5ba"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/InternalVectorBosonSourceUncertaintyEstimator.cs",
+      "sha256": "9ffc549b54638953bb94b65c9157702cc5ae4410236892e20d90d28aac05a940"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/ModeIdentificationEvidenceRecord.cs",
+      "sha256": "479ddcfa7f2aea5208d3939c5bbc414a99b833153a44e64c49ed97e497c9a60b"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/PhysicalModeEvidenceValidator.cs",
+      "sha256": "6de7c9487ad6f2b30499d46678efdd861aef55ded127858b2acbb4c5b7462040"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/QuantitativeObservableRecord.cs",
+      "sha256": "b367036cb3bbfccdfdf7f1668bc3775399f9a2a75b514e0a1d0f56b0f52fe8b4"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/QuantitativeUncertainty.cs",
+      "sha256": "c037411bb710afe7f49a7affc9bfe35424858b6daa3cca490557b9a4f413824c"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/QuantitativeValidationRunner.cs",
+      "sha256": "369f0119e353a560207ed48d73e7b20f8e2f0bf8c4acb07da1fa640ac6aad99e"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/SpectrumObservableExtractor.cs",
+      "sha256": "07d011906ec5d36440822bc630e7d17cbc256aa2b736a98d5a8d5ccd9b1f278b"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/TargetCoverageRecord.cs",
+      "sha256": "b4034692a3ac35872ce5e064095abd2f5a4a1c9c195b5809012ea6fb9100ae92"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/TargetMatchRecord.cs",
+      "sha256": "db29b57628408ff7d2a7791d2114a73dbfe629814d1a1d65bb79750e3d38949b"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/TargetMatcher.cs",
+      "sha256": "5a42624f9f9a7d1316672f0619492f4fef49490faa9b2f02e8cb75b71594b943"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/UncertaintyPropagator.cs",
+      "sha256": "e2a7b07479a25a2e1ce560ef095a605358278e28afc13b09aa0995ff312a58f1"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/VectorBosonIdentityFeatureExtractor.cs",
+      "sha256": "b54eac03fc84b6899d48fe96cbc52802a3fac7a3f5847c36f13f899f27f7017a"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/VectorBosonIdentityHypothesisGenerator.cs",
+      "sha256": "8b074146808027938226ed428e05c1be48dd4a0305fd9dec848ca92c0affc31f"
+    },
+    {
+      "path": "src/Gu.Phase5.QuantitativeValidation/VectorBosonIdentityRuleReadinessEvaluator.cs",
+      "sha256": "0b234b64628d5b5650c6a40e1c88b65818347e6ea14ac783e87ff79adec6d413"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/AnalyticWeakCouplingReplayHarness.cs",
+      "sha256": "08dfa5212d478ae35be678e468a61e4e9798f912a5c392bec7724a1cc03a21de"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BackgroundRecordBranchVariantBridge.cs",
+      "sha256": "19036c385fa9ba75a299de57137e288eb4f0547f59cd2eda8f5c9656df76d579"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BosonPerturbationVectorMaterializer.cs",
+      "sha256": "871c4282528a6ba544d581ff2e7f686b293e550a9b450777456932085c24be75"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BosonPredictionReadinessAuditor.cs",
+      "sha256": "ee46e028f4f90a468203615aa96fbadee926643ac56729429ed2794542289dde"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BranchIndependenceAtlas.cs",
+      "sha256": "648fc89a37fef87caf5ed16ee5b54e1b9ab88bd0c8080de7ba409e8213b7519f"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BridgeManifest.cs",
+      "sha256": "41234d145f8ae5b78d056b4564984733a4050c40f5f6e36876d5961181da44f8"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/BridgeValueExporter.cs",
+      "sha256": "1fbb18015ffbe1322b1c53f25f04b3e23e4714d494501607bd5c8ab6954e2221"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/CandidateProvenanceLinkRecord.cs",
+      "sha256": "948b702553c0a8d34c3ca23c9c2eb09d535af90ff2592c52fc4d26dc1d7c00e9"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/CandidateProvenanceLinker.cs",
+      "sha256": "2100163fde3bda298bdab59be08e2fd984f340f6f65ee3a497a073ec6215dcb5"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ConvergenceAtlas.cs",
+      "sha256": "43fe610a5c649e6c4fdc8d8a58a71ffb8593766ab00f51ab63fba63ffd97005a"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/DimensionlessWeakCouplingAmplitudeExtractor.cs",
+      "sha256": "ac647320d0353f0c9d2cb8abafa0d8ac173743d9266f605a70d1e8a879d81d32"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/DirectRefinementValueExporter.cs",
+      "sha256": "f25bca6804767d26535df7a2023ab3b088468eb125368f5759abf8469d7826d1"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ElectroweakAbsoluteScaleCalibrationBuilder.cs",
+      "sha256": "420192b021b658a022056d8522eef6ca84f813a77002915059d3a4345223d1a8"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ElectroweakBridgeDerivationInputAuditor.cs",
+      "sha256": "f6401e58c42629a7574bd7b447db456cfc26d8ae55e1e3c6249e34bebe7a07a3"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ElectroweakBridgeRecord.cs",
+      "sha256": "161d5798afb004104ec92a38dd795147b19663e9df098bddcaa1fa11798c2d07"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ElectroweakMassGenerationRelationDeriver.cs",
+      "sha256": "e13ff3d5b53cb2671412dc15a68e9bff6f573d3e54bab3b3d4d2894677c50880"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/FalsificationDashboard.cs",
+      "sha256": "3cf96395508d657cece7521b6e1239178083984ea141e15843e1cf03c117aebc"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/FermionGaugeReductionReadinessAuditor.cs",
+      "sha256": "d04e37261ac829b1c855815783d67f3a3ee998f735b27f641733b4b52b649923"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/FullAnalyticWeakCouplingReplayPackageBuilder.cs",
+      "sha256": "98584a9f27c69efcb9ee82e8cf7bf63b65ad2769ec8c7c57e597d81d1912fc20"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/GeometryEvidenceClassifier.cs",
+      "sha256": "443c3820e71f2cbee693fac11614741a1a8e3b5ad64e078c0f7ee87985c1ef03"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Gu.Phase5.Reporting.csproj",
+      "sha256": "1f7fc71cce6b78eb4a3264cf46f68fae5ae4d315b6cf9a46c7a1b09ecd5ff5cf"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/NonProxyFermionCurrentMatrixElementDeriver.cs",
+      "sha256": "d1bddda53946b7eacb7a9b0990245422d1e07883e6a9a7116164624cfe5f93d4"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/NormalizedWeakCouplingCandidatePromoter.cs",
+      "sha256": "e10e3b043cdb9062a75b3afd70428f71b7430311d0e0d899cc8ec93126d1f71e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/NormalizedWeakCouplingInputAuditor.cs",
+      "sha256": "022927fe3c5afd70fae025b9bf1c5aac550e8badf1ddba78c4b26280aa6ae3ca"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ObservableClassification.cs",
+      "sha256": "89beb814bdb127f10033af766566b211e0ce69015276d0a082c8d083410aed09"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5CampaignArtifactLoader.cs",
+      "sha256": "8549239ba39abd632bd49c0da85399f6f662f8e95488b5a2286d038a8b5e3a24"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5CampaignResult.cs",
+      "sha256": "04527bc5104f4f783cb65f5cd9d7fcf6dbacbe7ad8a616ea4faeb6db968643f4"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5CampaignRunner.cs",
+      "sha256": "c2fc634661529b8605847f1e76fce9d3705a5b51d630ad2180e4186b3588f9f8"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5CampaignSpec.cs",
+      "sha256": "ac05d27fe92b63dcd58c3bf147e63b1fe65c28cf5db6ad590011bd750fa144b9"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5CampaignSpecValidator.cs",
+      "sha256": "b228c9f7fc43f6b001640adb3aa050253673b8275c8ecf57572a68a041d2f5fe"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5Report.cs",
+      "sha256": "ae92c2be0c4770adf34661cd84114b4bf52b64d33d1d364e01eb9ff290f7505e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Phase5ReportGenerator.cs",
+      "sha256": "5181acd62cc1aef7ef0067359e521f2d25d94bd017590215f845a6b2e1078722"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/PhysicalCalibrationRecord.cs",
+      "sha256": "05d3a84d6ddcd64202c7c29f436074f0bdbd761179d85aed259954c8d4da9f0b"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/PhysicalClaimGate.cs",
+      "sha256": "a72fbfac143ac12c2630137c60ca940fef52caae0acd40fb4345fc8829d69e97"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/PhysicalObservableMapping.cs",
+      "sha256": "1ce6b501c40d3ccbe7f79f46e093e81e86ab387b0031ee7c58b8ae64b5810876"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/PhysicalPredictionProjector.cs",
+      "sha256": "2335d4cfa42792d8eadc90f27effff01ac3462ad5d35cb5b763fe399acc14f82"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/PhysicalPredictionTerminalStatus.cs",
+      "sha256": "b45c93e93229b0245051590db8d4fdc34ef8f59b6bcbe4ae85fb807537d2c302"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ProductionAnalyticReplayInputMaterializationAuditor.cs",
+      "sha256": "1374a3f24b76577989c1579992486b7254201855f954e204c9a9c00cadddcd76"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/RawWeakCouplingMatrixElementEvidenceValidator.cs",
+      "sha256": "a66ceb611499108fe837e0ae5643b2afa3b0b0de556f51f405fb22574e21c912"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/RefinementEvidenceManifest.cs",
+      "sha256": "e194e5bf77399e86b103e49236a889f533740412836e670c83835e6be044793a"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ReplayedRawWeakCouplingMatrixElementEvidenceBuilder.cs",
+      "sha256": "6d446aabd2f7a8d8749c540e0658dfcae6b6375e71bac623292f89089bfa653e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/RepresentationContentStabilizationRecord.cs",
+      "sha256": "aca48a84044931b05ad83136f52fb3f06e2c60efce972f804323387f6d7e95d9"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ScalarSectorBridgeEvidenceBuilder.cs",
+      "sha256": "ba85763484649ce88d5d762142bb224bd9f98aff37df812001a4b1456ca7fd58"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/SharedWzScaleBridgeBuilder.cs",
+      "sha256": "db44e2c13bfdd173b9425dc46d12f3f4b02a937f4ccbb34313cd041fc2e23179"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ShiabFamilyScopeChecker.cs",
+      "sha256": "0d340b521e6d581c981acba8ef63af7fa615ef6f9c02e9a9053b004908eeaab4"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ShiabFamilyScopeClassifier.cs",
+      "sha256": "fdec6a5008b12175f53d684ba8d7b7919483782e6edc87bba9de33e0d626efa6"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/ShiabFamilyScopeRecord.cs",
+      "sha256": "ff94a57f4f5d7bf9a5178cbf679e6bb2a11cd357e8853f06026733e982466a36"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/SourceBackedAnalyticReplayPackageRunner.cs",
+      "sha256": "76cfdd60fa06669d9c07a13f506a625a68402b419a27585e7cf6d9e1084d16db"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/Su2GeneratorNormalizationDeriver.cs",
+      "sha256": "048497c75d95797851ecfdc7fabeea03670be1f20127d8257d9992afec86ab2b"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/TargetCoverageBlockerRecord.cs",
+      "sha256": "945d36859c4f2d05f6986d90287c184a51af4bfd6327fa095963aef9b0708065"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WeakCouplingAmplitudeNormalizationAudit.cs",
+      "sha256": "5ea48b5ac8a1520ee77131f01e0c27f96b82c9a1b2ffbc92001a15dbf5b2cd30"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WeakCouplingBranchStabilityBuilder.cs",
+      "sha256": "e58d019a55398dc928100524e1594be137b57450a330379e33566876375f3052"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WeakCouplingOperatorDerivationAuditor.cs",
+      "sha256": "9148ddc5c0203e949e394bdd578af22a77293f092269073c32255c436c383dff"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WeakCouplingUncertaintyPropagator.cs",
+      "sha256": "002af6b42248b9d0f95104710d30565ef5baaff0e8206b41157e4f26f350ae3b"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzAbsoluteMassMissDiagnostic.cs",
+      "sha256": "6dfa341764c0092d861e6a6bf4f65896b57661bfc7f849c852980b1d2e2e2825"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzAbsoluteMassObservableProjector.cs",
+      "sha256": "cab32fa5efcfa4e4efe22045ea78a2d587738f199c7bcb71fe123b15a155b0e6"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzAbsoluteMassTargetComparator.cs",
+      "sha256": "ebf6fac294928cf86313fdcb0b0d410603349f545843d191f9bab7cb580b14da"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzCanonicalOperatorNormalizationDeriver.cs",
+      "sha256": "3cccde46422afec53515b09cea984b0a3d7b60a4316b6aa13736698f25499c86"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzEnvironmentSourceClosureAudit.cs",
+      "sha256": "23b0639e8a8484f2d348c52e920b50304fe01a1858297901a425396dbf1f0d8f"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzNormalizationClosureDiagnostic.cs",
+      "sha256": "8c57ee22e865cddadb7e82ddf73c635056da9d69b33978f83984eb603deb4463"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzOperatorNormalizationSourceAudit.cs",
+      "sha256": "f186aa41f4d769c25363dbbe631070e3ad6e8aa428d4c6b9ebb17abe939792bd"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzOperatorSpectrumPathDiagnostic.cs",
+      "sha256": "98093f0f89ea50f1697fe518f89a78b5ccea30124e7215d6a4b5cdc51a4eda6e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzPhysicalClaimFalsifierRelevanceAudit.cs",
+      "sha256": "f4dc5e3a1caab87ded24dcf4901388d95230ae4e1115d6535038f94560f64c25"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzPhysicalPredictionArtifactPromoter.cs",
+      "sha256": "de208871faa04d03c0d1ad8795af371bf23d6393de14393dfc03b4b05002cd41"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzRatioFailureDiagnostic.cs",
+      "sha256": "083c4fa9bf95ccaedaf93105fb3e5c6f503d5a2d3a6b7b318e9ad98f017f5ce9"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorCellBundleMaterializer.cs",
+      "sha256": "da6eeb369d905e1956fa27ffcc5ef7aa1405b283d5caa9fe278d204ff2583e5e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorCellMaterializationAudit.cs",
+      "sha256": "faa22bdec8bfac60f38e45159634f7e082ecfd963fe5d747d6138a2d147255da"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorEigenOperatorTermAudit.cs",
+      "sha256": "9c814376c1429cc9cf811d3b38c0833a1d5a60aa93697cf65c697ca6ff9158c2"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorMaterializationMapAudit.cs",
+      "sha256": "dc011493c6dcd96c89f6f49aa0946ab0e6108fed1cd2b6872ea4beb3c4439f4e"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorSpectrumIndependenceAudit.cs",
+      "sha256": "15e63f609e09c1d2808d3c17636ac04f0e07f8adc857e99733d8212f256e42f9"
+    },
+    {
+      "path": "src/Gu.Phase5.Reporting/WzSelectorVariationDiagnostic.cs",
+      "sha256": "abc9472ea7881e885c08957441469eafce40a3441994cc081c4c20c601292bed"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/AugmentedTorsionCpu.cs",
+      "sha256": "99edd71b9cde866958224e65358867e054f2c182592f6108eb113b1438b0a802"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/BiConnectionBuilder.cs",
+      "sha256": "17237817fa79475a75e91ace7f667a562dd435b7ae2a6dc1d7ed85064f8e0ab3"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/ConnectionField.cs",
+      "sha256": "27c18de302cf35c0e662a8496f99abb5e8ce07c19c84174dd8d0b26f91efeb72"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CpuLocalJacobian.cs",
+      "sha256": "01d17ded7c5cd8a645625fa5120ca7b94d98a8c6f92a4fae05080b088ec0394e"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CpuMassMatrix.cs",
+      "sha256": "6dd4e560bf9210967425777e1515b9ebc7c1377d81b34f91ac300d3dab6eae16"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CpuResidualAssembler.cs",
+      "sha256": "f3ee4c63506d9e01430cc7883e60b659f666346b7cb89a2139a26f3fea16177e"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CpuSolverBackend.cs",
+      "sha256": "5cc02fb3c14f23f3854cc444eca55393b6eec85ed14b8d4b0f9b6ea807982b50"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CpuSolverPipeline.cs",
+      "sha256": "fcf062065936e8d57515cad42424db8a022f75af0e34c6a8562b5a351de23fe9"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/CurvatureAssembler.cs",
+      "sha256": "ee13dc17252e90b721675e7c30dbd63703f5841261aeafd8b43fad86d377bfcb"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/DebugPrinter.cs",
+      "sha256": "62a03654c9538c3643dc4d6e01add20fad09330109ed6c626cffe8c4e0d1938d"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabBatteries.cs",
+      "sha256": "1a4822cc9d17228b3e54ad3f9b7769be326526e85a51c302a2674024ece7de43"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabFamilySpec.cs",
+      "sha256": "c64b7ddcd7bb20b23557fcf960f5116cb081ae111feb8566c0348530d5ae61ef"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/EinsteinianShiabOperator.cs",
+      "sha256": "a21f812b514ac406862edb3dff87e5d3f10202ac146f57a105687045c3836112"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/FieldTensorOps.cs",
+      "sha256": "f2a38ea1d775e22fdc63ec92a081f3a6199a5b57d79205b9db2dda108a38bd34"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/FiniteDifferenceVerifier.cs",
+      "sha256": "2f4746b57fef68f0da6dc960a220ad8711b76b8f0c71f5599f0df08d08ef9e75"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/FirstOrderShiabOperator.cs",
+      "sha256": "b8bf9791211ee5e69b912545b7824e02391abfd45ad341cb00c6a22ad40786eb"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj",
+      "sha256": "7e3af6147af4de39188a6a8c0ceae83cbbe6b343d78e081aac5911ea3e7dc530"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/IdentityShiabCpu.cs",
+      "sha256": "09c5baf57b312b40b3a9a3e80f8b32d6c028d2358ee44b7257676125eaea3328"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/Lambda2Algebra.cs",
+      "sha256": "ddd48fd984717aa8c9731272df969ab713b2997490bc2001d76231f164d0133d"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/LocalAlgebraicTorsionOperator.cs",
+      "sha256": "f520e3c83bb5e42548100f560543afd2b0384f462566e8b1d35a9cc7ab578f8e"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/MetricScaledShiabOperator.cs",
+      "sha256": "49106621edf38cf36474ad81a333820f9cf52193cfc6a0a56d6d2d86d028ca08"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/SimpleBiConnectionCpu.cs",
+      "sha256": "8ecdf6ccf8790ccfcd15020e0c484c4bd20964161d415183ed1bd3a6f6d82977"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/TorsionDraftAlignmentChecker.cs",
+      "sha256": "fd1d48fe77505a7e7672798f53edce80cbb8c82495041fdd3b62f297e095a18e"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/TorsionDraftAlignmentRecord.cs",
+      "sha256": "080e51badffef58a3e54b57d45e587584969311a35a5af659c741601b117f89e"
+    },
+    {
+      "path": "src/Gu.ReferenceCpu/TrivialTorsionCpu.cs",
+      "sha256": "363d0d628ca54184bf09da03b90ab740984df5dad54976a33f0f0781d7184064"
+    },
+    {
+      "path": "src/Gu.Solvers/BranchSensitivityRunner.cs",
+      "sha256": "02769979da966eae564d64525c654f2bd6549fa81748b69d228395f2ef7b03fb"
+    },
+    {
+      "path": "src/Gu.Solvers/BranchSweepRunner.cs",
+      "sha256": "8f14bb99e738d0a1dfc80e5c4998ae4d7f9871b5c00212af489d33d3e772e565"
+    },
+    {
+      "path": "src/Gu.Solvers/BranchSweepTypes.cs",
+      "sha256": "e031d8780df1907790fb82866636a15c30c7e03b46a8cc1477eef918d8fa8f2b"
+    },
+    {
+      "path": "src/Gu.Solvers/ConvergenceDiagnostics.cs",
+      "sha256": "270913ec7dd31d4631c956fd7d2ac5ac4352a860148762095eb37ab44861ab5d"
+    },
+    {
+      "path": "src/Gu.Solvers/CoulombGaugePenalty.cs",
+      "sha256": "e6729d2aff7ab30cf3e29ebb4a3d035f505f22985e5421720f2f4d7c217a58a5"
+    },
+    {
+      "path": "src/Gu.Solvers/GaugePenaltyTerm.cs",
+      "sha256": "f2a276c2ee296c68ae6a284c211e7ee53002499611f064ceeeb3557a48ed1640"
+    },
+    {
+      "path": "src/Gu.Solvers/Gu.Solvers.csproj",
+      "sha256": "af573e054cfb02d92260623cc8caa3f19008f16fe39d54743ac712e7c208f247"
+    },
+    {
+      "path": "src/Gu.Solvers/IGaugePenalty.cs",
+      "sha256": "2a4e5f8ddd93bc34872e637d8985b666a2e70d43792413d0396eef87c7174a9b"
+    },
+    {
+      "path": "src/Gu.Solvers/ISolverBackend.cs",
+      "sha256": "1160b0e1319bb1b6028ac1eb755fb6794d9b596062a6c48005f733e4eb88266d"
+    },
+    {
+      "path": "src/Gu.Solvers/SolverOrchestrator.cs",
+      "sha256": "9089ea6bd592c5e60d6b3215c61e28231b8bf52189be48f89c117c508dda6fb9"
+    },
+    {
+      "path": "src/Gu.Solvers/SolverTypes.cs",
+      "sha256": "0eac8442d787c7413ca0b7deeb97c9ffd97c14954e871c30f9558786f99994ab"
+    },
+    {
+      "path": "src/Gu.Symbolic/Gu.Symbolic.csproj",
+      "sha256": "3702bcd64b09004893c0afdb530b6b91249de567d2b8708f8ac16dab0c9dd561"
+    },
+    {
+      "path": "src/Gu.Validation/Gu.Validation.csproj",
+      "sha256": "69701e6be3749689b611a9e46f038a044160f951598c450f248a37839390405a"
+    },
+    {
+      "path": "src/Gu.Validation/IValidationRule.cs",
+      "sha256": "fdc4ac479f07bbb0b27c2ceeef6e7b82ad86cbff203d3429982a360705e94200"
+    },
+    {
+      "path": "src/Gu.Validation/PairwiseParityChecker.cs",
+      "sha256": "a8e404b7a2434ac2aa34680e557ee16912070103d84c9a2f094b296c6452303e"
+    },
+    {
+      "path": "src/Gu.Validation/Rules/ParityRule.cs",
+      "sha256": "03659b36c23d7e6947b70ea6739bb537c575f020f513677af351d07b17399ec0"
+    },
+    {
+      "path": "src/Gu.Validation/Rules/PredicateRule.cs",
+      "sha256": "5aaa76652eef8b0ef4a556d973543f085d8bd06b6cf2cf95102a21bd5e1c9c57"
+    },
+    {
+      "path": "src/Gu.Validation/Rules/ThresholdRule.cs",
+      "sha256": "b1d510c6385d579f824e6851ddcf8309f213fd11658853c70b4683d52c70d4a8"
+    },
+    {
+      "path": "src/Gu.Validation/Rules/ToleranceRule.cs",
+      "sha256": "48051b147a37a322d299daece52ad14e9b4440018e3e91409f53b4531fd57c71"
+    },
+    {
+      "path": "src/Gu.Validation/SchemaValidator.cs",
+      "sha256": "47460ce15f82b47859fbfb506b163f5b9e96ab3a71a0d1a8c48d610f38be24cd"
+    },
+    {
+      "path": "src/Gu.Validation/ValidationEngine.cs",
+      "sha256": "73b79c728f6c4d5642ff5e1b22f72e69c9a52fc0752b7314e1c5b39ec156a85b"
+    },
+    {
+      "path": "src/Gu.Validation/ValidationRuleRegistry.cs",
+      "sha256": "66d6bc275b968e6085aba3b24b31026e1c67c1528f5fc19a8fbd91218f0111f0"
+    },
+    {
+      "path": "src/Gu.Validation/ValidationRunner.cs",
+      "sha256": "a37c6f41a443463c5f269ba114b2d655e88bc0a4357dcefa7462ef93f633d78a"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ArtifactViewerService.cs",
+      "sha256": "1702886d5c19c77d60ae1d9332c5b033ab67fe09a8ef1736098afeb898ed104c"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ColorMapper.cs",
+      "sha256": "59fc8e381374db396d9a5bb4e653e96738db79737b3231ee4cee89b28d6cf8c4"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ConvergencePlotter.cs",
+      "sha256": "d1ca867746d2c2c108a3ce9f0d49fbc409ad28ed95f2e860d5fec48addfe05bc"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/Gu.VulkanViewer.csproj",
+      "sha256": "5f84ac99cc454399717205399f3bafa6cf8b704a1d7c63a86c5aabec3edd9728"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/IFieldVisualizer.cs",
+      "sha256": "5d0b6b4cdb07cdd1c9084d2bfdde953031ebc44f707f44b70639df558d5aeb7e"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/MeshExporter.cs",
+      "sha256": "7ec2ece04d85927261f84cc5281f9eb85ff3b9526bb153ee6162c03fe6bcf95d"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/NativeVulkanBindings.cs",
+      "sha256": "7929d89c299b5449e2667b293c7953aee015aa448bbe2c99b1370d9317ea0dfb"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/NativeVulkanBridge.cs",
+      "sha256": "4944d1aeb362b045d446c72570a48f7d1e6d15579373f5022c09a6bed5900b84"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ScalarFieldVisualizer.cs",
+      "sha256": "beadc69be3f422b880583240e9a134abbc71f70d21f3ecc2a488ff118fd374ad"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ViewPayloadBuilder.cs",
+      "sha256": "e1ba0f1b86942dd34b1594a5d3b35fab993e3ddc23d55b2cceede6b4ae07864b"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/ViewPayloads.cs",
+      "sha256": "3a4e42c785a4c5ae4839a158eea3ca22a824dfb2d5a0b1cf7baef87907e25370"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/VisualizationData.cs",
+      "sha256": "13a1cebb3886f7803a5f12c8e58069d41f774e024a13e895dab597bef438dac8"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/VulkanContext.cs",
+      "sha256": "bebbe5edc80490380ac522f0b9b1add32132b31a6b35fd621671b15672c66ed2"
+    },
+    {
+      "path": "src/Gu.VulkanViewer/WorkbenchSession.cs",
+      "sha256": "4524bfc9c199dde1c0ecdaa7fdbeec31be2e65f966d4fbe9326e70312306ac6c"
+    }
+  ]
+}

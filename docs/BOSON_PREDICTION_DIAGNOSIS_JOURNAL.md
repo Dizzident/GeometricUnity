@@ -22778,3 +22778,490 @@ deficits remained 15 W/Z and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`. No scanner recorded the new
 adjudication document. The skip report is
 `scripts/incremental/skip_reports/pass_2026-09-02T12-06-27-242Z.json`.
+
+## 2026-09-02 - Amendment A42, Phases578-580: conditional ledger complete, collective-coordinate convention falsified, review packet ready
+
+Phase578 consolidates the electroweak computation in its honest final form:
+fourteen derived or conditional rows, each with complete assumptions and exact
+source bindings. The two comparison misses are explicit: the conditional tree
+ratio `sqrt(5/8) = 0.7905694150420949` versus the declared comparison ratio
+`0.8814466001956406`, and the Phase451 two-loop weak angle
+`0.21063705618289308` versus `0.23122`, a `115.1250020940215` honest-band
+miss. Phase461's `451.10527021047886` anchor reconstruction is retained as a
+separate non-promotional anchor diagnostic, never counted as an electroweak
+comparison miss. No unit anchor or absolute mass is introduced; the deficits
+remain 15 W/Z and 14 Higgs fields. Terminal:
+`conditional-ledger-complete-absolute-masses-blocked`.
+
+Phase579 initially exposed an active-versus-passive transformation ambiguity
+during adversarial review, before Phase580 froze downstream hashes. The final
+v2 contract uses the stricter active test required by the registered claim:
+hold Phase450's `u_inv` fixed and transform `omega`. The coordinate and its
+coarea Jacobian reconstruct exactly; the independent 3,645-component centered
+finite-difference check reaches `2.1525757305101978e-11`, and the constrained
+free-Gaussian fixture agrees with closed form to `8.260059303211165e-14`.
+But exact global adjoint rotations change `Phi` by
+`0.018092493622111343` on the generic frozen state and
+`0.9157447490058648` on the registered ray, far above `5e-14`. Rotating both
+`u_inv` and `omega` preserves the pairing to `1.3877787807814457e-17`, but
+that is passive covariance and cannot satisfy active fixed-coordinate
+invariance. The final terminal is
+`phase450-lineage-convention-defective-preserved-negative`; Phase450 remains
+unchanged, `mayAuthorRuling:false` holds, and the O4 internal proposal is now
+defer pending a genuinely invariant replacement.
+
+Phase580 binds twelve review artifacts and assembles one committed packet
+directory with a reviewer guide and byte-identical full/summary hash manifests.
+The request is exactly two genuine judgment calls and eleven evidence-backed
+proposals; Phase579 is labeled adverse evidence, not support. The guide plainly
+states that the assessment is machine-authored and non-authoritative, the
+independent signer may overturn any proposal, and the empty reviewer registry
+plus strict Phase480 Ed25519 prerequisites still prevent intake. A first
+fail-closed packet attempt is preserved in `output/lineage/v1/`; the final
+terminal is `external-review-packet-assembled-readiness-only`. It authenticates
+or consumes no memo, authors no ruling, changes no pending flag, and grants no
+sampling, production, physical-unit, or GeV authority.
+
+The mandatory A42 incremental checkpoint ran 44 steps and skipped 393. It
+ended at `boson-claim-integrity-verified`: Phase202 remained 360 passed / 3
+standing failures, O4 coverage remained 31/31 with every artifact still
+review-pending, the synthetic-overturn battery remained 94/94, source deficits
+remained 15 W/Z and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The skip report is
+`scripts/incremental/skip_reports/pass_2026-09-02T15-40-46-609Z.json`.
+
+## 2026-09-08 - A43 / Phase581: a universal flaw in the fixed-ray invariance certificate
+
+The restart's three A42 tasks were already executed in the inherited dirty
+worktree. They were preserved. At the user's request to challenge assumptions
+and proceed without a third-party physicist, the next calculation targeted the
+meaning of the Phase450 projection, rather than another sampler run.
+
+Phase581 was allocated and its program, project, source bindings, analytic
+predictions, fixtures, tolerances, and terminal precedence frozen before its
+first Release execution. The first run passed. Skew-symmetry makes the tested
+`u^T J u=0` automatic for every ray. The exact `sum J^T J=2I` certificate
+proves there is no nonzero fixed linear global-adjoint invariant on any number
+of triples, including the 1,215 triples in Phase579's reconstruction. This
+generalizes the previously observed finite-rotation failure to the entire
+linear family; it is a mathematical obstruction to the certificate, not a
+statement that the theory has no physical scalar.
+
+An exact 24-rotation degree-two average gives a nonlinear global invariant:
+`3 mean Phi(R omega)^2=||U^T W||_F^2`. The fixed integer fixture gives
+1,152 for the sum of projection squares and 144 for the Gram norm squared.
+A separate pure-gauge SU(2) triangle has coefficient norm squared 0.38 and
+identity-loop error `5.55e-17`, preventing global invariance from being
+mistaken for local invariance. Gaussian radial controls at dimensions 3, 6,
+and 9 reproduce analytic moments to `1.96e-14`. Their nonzero density modes
+and radius-versus-squared-radius difference follow from the measure alone.
+Terminal: `linear-coordinate-obstruction-proved-nonlinear-controls-scoped`.
+
+This work changes the next useful question to construction of a local
+observable with a derived transformation and measure. It supplies a scoped
+nonlinear diagnostic, not a repaired GU observable. The A34/A35 lowering
+gap, physical observed-field and unit-scale gaps, O4 status, and all prior
+terminals remain. The earlier welded-carrier no-gos and tree-ratio comparison
+retain their assumptions; they are not theory-wide impossibility proofs.
+Details and the bounded next-step assessment are in
+`docs/Phases/Implementation/IMPLEMENTATION_P581.md`.
+
+Reference context was rechecked against the FMS Higgs-resonance paper,
+arXiv:2009.06671v2; it motivates composite physical operators but supplies no
+GU-specific map. A web check also found a now-live Kleis GU audit at
+`https://kleis.io/docs/papers/geometric_unity_audit.pdf`, so the old blanket
+"Kleis has no GU content" lead closure is stale. This is a new lead only:
+its abstract's formal-independence claims depend on its chosen axiomatization,
+which has not been independently verified here. It is not promotion evidence
+or a verified impossibility theorem for GU. No new source enters Phase581's
+calculation. The reference detail distinguishes that discovery from a source
+audit. No full literature sweep was performed.
+
+The phase is wired into the generator, traversal, all nine scanners, Phase101,
+Phase202, and the integrity verifier. The first sandboxed traversal exited
+before phase execution without diagnostics. The authorized retry outside the
+sandbox completed the integrated Release pass: 79 steps run, 362 skipped,
+Phase202 at 361 passed / 3 standing failures, exact Phase581 output
+reproducibility, O4 coverage 31/31, overturn battery 94/94, source deficits
+15/14, and `boson-claim-integrity-verified`. Its report is
+`scripts/incremental/skip_reports/pass_2026-09-08T13-45-40-014Z.json`.
+The final documentation changes are revalidated with the same incremental
+command. No full promotion-validation pass, commit, or push was requested or
+performed. External review remains pending and
+`promotedPhysicalMassClaimCount=0`.
+
+## 2026-09-08 - A44 / Phase582: a constructive local relative-transport candidate
+
+The user requested continuation of the Phase581 route. The primary draft's
+Eq. 12.6 was reread: displaced torsion is the difference of two connections,
+one built from the transformed reference spin connection. Phase559's missing
+registered-lowering bridge was also reread and preserved. An internally derived
+compact-link candidate was prospectively frozen before its first execution.
+
+For a common endpoint gauge law, R=U_A U_B^-1 transforms by conjugation.
+q=(3-Tr_Ad R)/4 is consequently invariant for all such transformations and
+independent of SU(2) lift signs. The tested V=epsilon_i^-1 V0 epsilon_j rule
+carries the reference connection explicitly. The fundamental-trace alternative
+does not descend to the registered SO(3) convention and is rejected. This is
+not a proof of full inhomogeneous GU symmetry or a physical scalar assignment.
+
+The first frozen v1 Release run passed. Local invariant error was 2.22e-16;
+independent complex-matrix observable error 4.44e-16; lift error zero. A=B
+pure-gauge links gave zero relative observable, whereas the bare-link control
+reached 0.22695. Holding V fixed while transforming U changed q by 0.38011.
+The factor 4 in 4q/a^2 was derived from t_a=-i sigma_a/2, not fitted. Constant
+noncommuting and centered affine profiles approach the frozen target 1.73
+with error-reduction ratios approaching four. At a=0.025, the smooth estimate
+is 1.7298178 and doubling midpoint subdivisions changes it by 2.98e-9.
+
+The conditional Haar control yields p(q)=(2/pi)*sqrt(q/(1-q)) and moments
+1,3/4,5/8, reproduced within 3.33e-15. Its endpoint enhancement is entropic.
+The registered noncompact coefficient measure is not replaced or normalized
+by this result. Terminal:
+`local-relative-observable-controls-pass-registered-bridge-open`.
+
+The next task is now a compatible two-connection action and variable/measure
+dictionary, comparing the source torsion term with the registered trivial-
+torsion restriction. No author-prescribed lattice is required if a correct
+source-to-discrete derivation can be established internally; missing physical
+equations cannot instead be supplied by a review signature. No old result is
+rewritten, and no production pack is authorized before that bridge exists.
+
+Sources and derivation boundaries are recorded in
+`docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md`
+and the reference ledger. Wilson's primary publisher abstract was checked for
+lattice-gauge context only; it supplies no GU-specific operator or mass.
+The study and `IMPLEMENTATION_P582.md` give the proof, test results, and limits.
+
+All nine scanners, the generator, traversal, Phase101 mirror, Phase202
+checklist, and integrity verifier include Phase582. Its prospective code,
+contract, and output are exact-hash-bound. The targeted run passed; integrated
+Release validation of the complete checkpoint is recorded by the timestamped
+incremental skip report. The verifier requires 362 checklist passes and the
+three standing physical-completion failures. No scientific code or contract
+was revised after execution, and no full promotion pass or commit is implied.
+O4 remains pending, Phase561 stays closed, and promotedPhysicalMassClaimCount=0.
+
+Validation note: the first integrated attempt stopped at compilation because
+the new Phase207 exclusion was appended after the preceding expression's
+semicolon. The terminator was moved to the new final clause; no exclusion
+scope or scientific input changed. The incremental tooling's 50 unit tests
+passed outside the sandbox after a sandboxed child-output assertion failure.
+The corrected checkpoint is revalidated by the integrated Release command.
+
+## 2026-09-08 - A45 / Phase583: bi-connection signs reconciled locally
+
+The user asked to move to the next task. Preserved the inherited dirty
+worktree and allocated Phase583 before its first execution. No council or
+external physicist was needed for this decisive bounded algebra experiment.
+The primary draft was reopened; its section 6 footnote already acknowledges
+sign inconsistencies. We did not alter its text or infer intended signs.
+
+The first frozen v1 Release run passed. All eight triples were enumerated
+with the group product, ordinary right connection law and B held fixed.
+The exact requirements c*s=1 and s+r=0 leave two compatible triples,
+(-1,-1,+1) and (+1,+1,-1), related by simultaneously reversing p,c,s,r.
+Only the former also uses the original right-action stabilizer. The printed
+(+1,-1,+1) is internally incompatible with bi-connection covariance even
+though its quotient and stabilizer work. An initial T=0 commuting example
+is sent to -2C with squared Lie-vector norm 24. This does not falsify every
+consistent version of the theory and is not a correction to registered code.
+
+All 13,824 checked-integer controls have zero cocycle, reference-recovery,
+residual-formula and sign-relabeling errors. They use nonzero A0 and ordinary
+first-jet product differentiation. The general algebraic proof, not a finite
+sample of rotations, establishes the arbitrary-first-jet identities.
+The new useful dictionary is c*pi_r=epsilon*T*epsilon^-1, with
+T=c*p-epsilon^-1*d0(epsilon). The finite coefficient sign flip has |det|=1;
+this does not establish a full interacting measure or action equivalence.
+Terminal:
+`printed-sign-conflict-proved-two-compatible-families-registered-map-unresolved`.
+
+Next derive the action in B,T and compare it with the registered omega
+objective, retaining reference and epsilon terms. In particular, omission of
+a torsion contribution must not be mistaken for constraining T=A-B to zero.
+The available dictionary supports this next calculation without author-intent
+selection, but supplies neither a registered field bridge nor a boson pole.
+
+All integration surfaces include Phase583, its five exact input bindings,
+contract/output hashes, and fourteen false authority flags. The verifier
+requires 363 Phase202 passes and the three standing physical-completion
+failures. Targeted Release and integrated incremental validation are the
+checkpoint checks; the timestamped skip report records the latter's actual
+execution status. No scientific source/contract was revised after first run.
+O4 stays pending, Phase561 closed, no sampling or promotion was performed,
+and promotedPhysicalMassClaimCount=0. No commit or push was requested.
+
+## 2026-09-08 - A46 / Phases584-586: parallel sign, measure and action tests
+
+The user explicitly requested parallel progress on concrete research leads.
+Three workers implemented disjoint studies, the coordinator reviewed each
+prospective pack before its first scientific run, and workers then performed
+mutual read-only adversarial reviews. All three frozen Release runs passed,
+with zero build warnings/errors and no post-run scientific or contract edits.
+Shared integration remains coordinator-owned; inherited changes are preserved.
+
+Phase584 passes 19,683 exact bracket identities and 168 smooth spatial rows
+through the real curvature assembler. The paired omega=-A/output=-F dictionary
+has the predicted leading dA+A-wedge-A curvature, with exact polynomial checks
+and affine normalized error reduced by 64 across the spacing ladder. However,
+the original fixed four-dimensional mesh still has quadratic weak-field defects
+under both dictionaries. The local shrinking two-dimensional triangle result
+is compatible with the old negative, not a repeal of it or a quantum limit.
+
+Phase585 passes 3,456 exact first-jet section/transformation controls, 576 compact
+toy cocycles and 48 finite Jacobians. Unit absolute determinant is conditional
+on retained-space closure, transformed domains and an allowed epsilon inverse.
+Projection, stale cutoffs and naive graph differentiation give the expected
+counterexamples. First-jet derivative fibers are noncompact. Existing theta=0
+targets cannot be dismissed solely by off-slice theta dependence, but neither
+action descent nor the regulated source measure is thereby established.
+
+Phase586 distinguishes omission of the torsion residual from constraining the
+relative field to vanish, using nonzero commuting registered inputs with zero
+curvature/action/gradients. Reference and variation controls pass. Independent
+positive-carrier examples demonstrate that omitted constant linear maps affect
+quadratic forms, Hessians and polynomial degree; matching kinetic metrics, not
+ordinary coordinate Hessian eigenvalues, preserves the generalized spectrum.
+The controls do not define the missing source carrier or select a coupling.
+
+All nine scanners (both Phase207 paths), generator, traversal, Phase101,
+Phase202 and integrity verifier include the new studies and reference note.
+The verifier checks their exact contracts/outputs and Phase586's live 726-file
+core-source manifest. Targeted package/audit/integrity checks pass at 366/3,
+O4 coverage31/31 and overturn battery94/94. Integrated Release validation of
+the final documentation is recorded in the timestamped incremental skip report;
+this is research cadence, not a full promotion-validation claim.
+
+In parallel with research, the existing Phase551 instrumented rerun completed
+with its original adjudication terminal and canonical output digest
+`b46cd8d38b3794eacd45025f794d829166b4e0459dba4e4921b4c87d1bb64041`
+unchanged. Its 17 observed external repository inputs are now recorded by the
+existing capture tool. No skip policy was weakened. Incremental tooling tests
+pass50/50 using explicit test paths; this Node version rejected the README's
+directory-only test invocation before discovering tests. Shell syntax and
+whitespace checks pass. No core operator, sampling or protected seed changed.
+
+The parallel follow-up reviews also recovered the outer Hodge star and explicit
+coefficient1/2 in original PDF page43 Eq.9.3. The coordinator visually verified
+the same exact-hash PDF. The old physics-decisions memo's transcription is
+incomplete; a corrected typed chain is recorded in the new reference note,
+without modifying frozen history or selecting the author's lost final operator.
+The next prioritized test is an exact single-simplex nonlinear residual
+factorization audit with a favorable flat-tangent control. Fixed-domain
+action/force refinement and section-density/joint-descent controls can proceed
+in parallel. Their proposed predictions are not additional executed results.
+
+Detailed results, next mathematical tests and limitations are in
+`docs/Reference/ExperimentReferences/SIGNED-SECTION-ACTION-LEADS-20260908.md`
+and `IMPLEMENTATION_P584.md` through `IMPLEMENTATION_P586.md`. No external
+ruling is needed to pursue these bounded derivations. O4 remains pending,
+Phase561 remains closed, source deficits remain15/14, and
+promotedPhysicalMassClaimCount=0. No commit or push was requested.
+
+## 2026-09-08: A47 parallel reconstruction, action and section tests
+
+Continued the user's concrete research leads with three independent workers.
+Registered Phases587-589 and frozen prospective contracts, complete fixtures,
+proofs, program/project hashes and the live726-file core manifest before first
+scientific execution. Coordinator reviewed each pack; an independent worker
+also reviewed Phase589. All three first Release runs passed their mandatory
+controls, without changing frozen inputs or core code.
+
+Phase587 confirms only the specified nonlinear reconstruction obstruction:
+the mixed coefficient span is30-dimensional; an exact Q-kernel witness of
+norm squared4 survives M. The flat-tangent factorization and full Gram split
+are positive controls. This is not a reverse-map or arbitrary-action no-go.
+
+Phase588 passes126 constant-action,36 direct signed-residual,252 cross-force,
+12 anchor,16 homothety and24 smooth rows with48 Richardson comparisons.
+The induced pairing's full-form anisotropy cancels upon self-dual restriction:
+Pplus G_h Pplus=(4.5+3h+0.5h^2)Pplus. This corrects a potential overbroad
+objection to the registered self-dual sector. Smooth O(h) remainder bounds
+are analytic, not fitted slopes, but deliberately loose. Coarse actions remain
+far from their limiting values; a zero-limit directional example is nonmonotone.
+The theorem concerns ideal exact arithmetic; actual float64 validation covers
+only the frozen meshes/scales due to the absolute inverse pivot floor.
+
+Phase589 rejects one literal projected joint lift, with two normalized Ward
+defects1.52727e-5 above the1e-6 threshold and ten zero-band controls. Independent
+derivative errors remain below2.020e-9, versus tolerance2e-7. Exact periodic
+Fourier integrals agree with direct-trig quadrature to4.444e-16. The fixed
+theta=0 sampled target and section-first route are not rejected. Local unit
+Jacobian/FP controls still permit different invariant densities and moments.
+Before freezing, review caught an affine background sign copied from an older
+compact Jacobian illustration. The new consistent map passes direct right
+invariance; an opposite-shift decoy fails by2sqrt(2). Phase585's determinant
+conclusion is unaffected, but its named cocycle/map identification is scoped
+explicitly in the new reference; no frozen historical artifact was rewritten.
+
+All nine scanners (both Phase207 paths), generator, traversal, Phase101,
+Phase202 and integrity verifier now include A47. Targeted Release package,
+completion audit and claim verification pass at369/3, O4 coverage31/31 and
+overturn battery94/94. Exact output hashes are recorded in the reference
+and verifier. Final integrated Release results belong in timestamped skip
+reports; incremental cadence is not a full physical-promotion validation.
+
+The three legacy read-set captures also completed: Phase549 recorded17,
+Phase550 recorded13 andPhase552 recorded18 external repository inputs.
+All canonical output hashes remain identical to their pre-capture manifest
+entries. Together with the earlier Phase551 capture, these permit safe
+hash-checked skipping of costly unchanged replays without changing policy.
+
+An additional independent algebra review supports constructing the actual
+Eq8.7 Clifford invariant tensors next. H=gamma7...gamma13 supplies the
+candidate balanced Hermitian form and reproduces the source grade pattern.
+The raw builder's mixed-signature chirality convention needs an explicit
+negative control, not an unreviewed core repair. No14D numerical successor
+was run or allocated. This constructive source-operator route remains concrete
+without external physics review, but does not select the author's lost choice.
+
+Detailed evidence and prospective next steps:
+`docs/Reference/ExperimentReferences/RECONSTRUCTION-ACTION-SECTION-20260908.md`
+and `IMPLEMENTATION_P587.md` through `IMPLEMENTATION_P589.md`. O4 remains
+pending, Phase561 closed, all fourteen authority flags false, source deficits
+15/14 and promotedPhysicalMassClaimCount=0. No new chains, production, target
+fitting, core edits, commit or push. Inherited unrelated work is preserved.
+
+## 2026-09-08: A48 constructive source Clifford and Hodge algebra
+
+The user requested the next step. Two parallel workers implemented590 and591,
+while a third independently challenged both packs. The coordinator also read
+all code/proofs/contracts and checked exact hashes before first-run approval.
+Both first frozen Release runs passed; neither required a scientific repair.
+
+Pre-run review identified an omitted possibility in the preceding proposal:
+the canonical one-/two-form Clifford tensors have independent volume-dual
+companions. Phase590 now verifies all four candidates through91 simultaneous
+Spin actions, with364 zero-residual tensor rows and19110 actual matrix
+commutator checks. It compares229376 dense gamma entries, all16384 blades
+and229376 blade/right-generator products with independent exact arithmetic.
+H is a balanced Hermitian involution; raw builder chirality-square -I and
+normalized volume-square I pass their separate controls without core edits.
+Declared norms are -14,91,14,-91 and cross pairings vanish. At least two
+invariant directions exist at each degree; neither uniqueness nor complete
+classification is asserted. The mixed-only wrong-metric decoy is explicitly
+limited to49 generators; an all-Euclidean replacement would additionally
+affect21 negative same-signature pairs. This scope was corrected before freezing.
+
+Phase591 executes the literal source-inspired14D Hodge/wedge/Clifford chain
+on a proved3185-element basis of algebraic Riemann tensors. All25480 branch
+comparisons,12740 primary comparisons,155926 independent Clifford word checks,
+16384 Hodge-square controls and five geometric anchors pass exactly. The
+independent Ricci/scalar oracle agrees with each formal coefficient slot.
+Linearity and basis completeness extend the conditional identities to that
+full vector space. A nonzero Weyl tensor is annihilated, whereas the
+pair-asymmetric and Bianchi-violating decoys retain nonzero grades2,3 and4:
+do not extend the identities to arbitrary adjoint-valued gauge curvature.
+
+The canonical Einstein-shaped CAA branch occurs only in the deliberately
+enlarged independent-occurrence family. Tying the repeated Phi1 bracket gives
+four primary branches with Ricci-only, scalar-only or zero results. This tying
+is our conservative restriction, not a source theorem. All normalizations
+remain formal; no source operator, registered correspondence or physical
+kinetic pairing was selected. The construction makes the remaining choices
+explicit rather than supplying a boson mass prediction.
+
+The reviewer derives a concrete prospective companion-family successor:
+Phi1=(a+b Omega)gamma and Phi2=(c+i d Omega)Gamma2 give a tied-CCA
+Einstein-shaped identity only if db=-a and da=-b. Nontrivial solutions are
+chiral and null under the declared trace/form pairing. Freeze an exact
+parameter-polynomial identity test, both chiral witnesses and invertible
+decoys next; no successor is allocated or run here. Nullity under an unselected
+pairing is not proof of source inadmissibility, and a physical chiral projection
+is not authorized. This bounded mathematics does not need an external ruling.
+
+All nine scanners (both Phase207 paths), generator, traversal, Phase101,
+Phase202 and the integrity verifier include590/591 and the new source note.
+Exact full/summary hashes are21d3e4b1bbcb54a030f4c2de56eef909503405a9f414eac713ed9134a7ae365d
+and0de24e16dbafee7ec713f8cabc8a69ca45f14a3a080da98031a5b9b366d1c797.
+Targeted Release package/audit/integrity checks pass at371/3, O4 coverage31/31
+and overturn battery94/94. Final integrated cadence is recorded in timestamped
+skip reports; it is not a full promotion-validation claim. The earlier A47
+pass finished successfully with78 steps run/371 skipped in approximately3minutes.
+
+See `docs/Reference/ExperimentReferences/SOURCE-CLIFFORD-CONTRACTION-20260908.md`
+and `IMPLEMENTATION_P590.md`/`IMPLEMENTATION_P591.md`. Registry590-591
+allocated;592+ free. O4 pending, Phase561 closed, all fourteen authority flags
+false, source deficits15/14 and promotedPhysicalMassClaimCount=0. No core or
+historical frozen changes, new sampling, target fitting, commit or push.
+
+## 2026-09-08 - A49: companion contraction survives; action shortcut fails
+
+The user asks for the next step and parallel investigations during waits.
+One worker implements592, another reviews independently, and a third
+challenges additional assumptions. The companion-family result is positive
+within its declared scope:76440 exact formal coefficient comparisons over
+the3185-dimensional Riemann basis agree with the independent oracle.
+The first approved frozen Release run passes in1.04seconds, including44944
+word products,16384 Hodge masks, parameter elimination/sufficiency, five
+anchors, six parameter rows and28 chirality/mixed/H-isotropy controls.
+
+Universal tied-CCA Einstein-shaped matching requires a+bd=b+ad=0.
+Nontrivial solutions are a!=0, d=+/-1, b=-da, c arbitrary. The matching
+tensor maps input chirality d to output -d and has null self-pairing under
+the declared indefinite trace/form convention. Opposite-chirality traces
+are nonzero: nullity cannot be used to reject the candidate or infer zero
+mixed source action. An invertible scalar-flat control also prevents
+confusing all-curvature matching with matching one special input.
+
+Parallel review finds a more consequential missing assumption: invariance
+and Einstein-shaped Riemann contraction do not guarantee the source's
+Eq9.4-to-Eq9.7 first-variation identity. An initial first-term counterexample
+cancels on the complete chiral branch, so it is not promoted. Two new
+FULL-chain witnesses are independently derived and registered prospectively
+as593 while592 runs. All program/proof/fixture/build/core bindings are
+reviewed by coordinator and separate reviewer before first execution.
+
+Phase593's first frozen Release run passes in0.197seconds, certifying a
+negative scientific finding for the named operator/action family. On the
+first constant-torsion fixture, curvature is independent of the variation
+coordinate; the action derivative is one-third or two-thirds of the desired
+nonzero force. On the second fixture, curvature/force vanish at that
+coordinate's zero value while the action derivative does not. The complete
+inner/outer contraction is included, nonvacuously in the second witness.
+Both matching chiralities and arbitrary c coefficientwise are covered.
+The first example demands a common raw cubic prefactor1; the second demands0.
+No common coefficient change repairs both. All20 polynomial rows,100
+amplitude checks (40 zero controls),15 quadratic-mass comparisons and two
+genuine Chern-Simons normalization controls pass exactly. The scientific
+negative is not a failed control, and no frozen execution failed or was rewritten.
+
+The constructive continuation is now explicit. At fixed epsilon/metric/B,
+the actual action derivative includes adjoint/bracket terms beyond K(F).
+On the three-coordinate first fixture, the desired force covector is
+(0,0,4a xy), while the actual cubic derivative is proportional to(yz,xz,xy).
+An independently derived prospective B-weighted reciprocity test has curl
+4a y and4a x. Because the curvature is independent of z, the corrected
+force cannot simply be another pointwise linear contraction of that same
+curvature. Freeze the exact full-gradient, reciprocity and factorization
+controls next; retain explicit torsion dependence as a constructive route.
+These analytical follow-ups are not yet allocated or executed. A possible
+new-operator search can impose exact off-Riemann constraints while separately
+preserving its Riemann restriction; feasibility is not established here.
+
+Other reviewed leads are a complete invariant-family classification through
+13 complexified sign characters/signed rotations, and an embedded u(1,1)
+test distinguishing invariant indefinite pairing from positive noninvariant
+Hilbert-Schmidt pairing. The classification is prospective, not an upgrade
+to590's frozen at-least-two claim. Indefinite force-vector Jacobian symmetry
+must be B-weighted; ordinary symmetry applies to the covector derivative.
+
+All nine scanners (both207 paths), generator/traversal,101/202 and verifier
+include592/593 and the new reference note. Exact full/summary hashes are
+47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be
+and67000008c72eddbfe44d9872170cfdf5e3725f333bbbbdb327f4e59d745cb1be.
+Targeted Release builds have zero warnings/errors; package/audit/integrity
+checks pass at373/3, with O4 coverage31/31 and overturn tests94/94.
+Final integrated cadence is recorded in timestamped skip reports after
+documentation is complete. The preceding A48 report is
+`scripts/incremental/skip_reports/pass_2026-09-08T23-27-48-323Z.json`
+(77 steps ran,374 skipped, all passed).
+
+See `docs/Reference/ExperimentReferences/CHIRAL-COMPANION-ASSUMPTIONS-20260908.md`
+and `IMPLEMENTATION_P592.md`/`IMPLEMENTATION_P593.md`. Registry592-593
+allocated;594+ free. O4 pending, Phase561 closed, all fourteen authority
+flags false, source deficits15/14 and promotedPhysicalMassClaimCount=0.
+This rejects a specific action/equation combination, not all GU realizations.
+No core or historical frozen changes, new sampling, target fitting, source
+selection, physical mass/unit claim, commit or push.

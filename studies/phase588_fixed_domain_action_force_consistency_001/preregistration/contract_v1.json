@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "phase": 588,
+  "contractId": "phase588-a47-fixed-domain-action-force-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Prescribed smooth fields on fixed-domain open4D meshes; default residual pairing; ideal exact-arithmetic consistency theorem and actual float64 checks only on frozen n/scales",
+  "fixtures": {
+    "sizes": [
+      1,
+      2,
+      4
+    ],
+    "members": [
+      "identity",
+      "sd2-id0-half"
+    ],
+    "theta": "zero-fixed",
+    "vertexFaceRule": "IncidentAverage",
+    "massWeights": "default-one",
+    "dictionary": {
+      "omegaSign": -1,
+      "physicalResidualSign": -1,
+      "physicalDirectionalSign": -1
+    },
+    "constantForms": "six basis vectors followed by fifteen lexicographic pair sums in [01,02,03,12,13,23]",
+    "constantCount": 21,
+    "directBasisCount": 6,
+    "crossDirectionsAtN1": 6,
+    "anchors": [
+      "zero",
+      "constant-flat-Jx-dx0"
+    ],
+    "homothetyScales": [
+      1,
+      0.5,
+      0.25,
+      0.125
+    ],
+    "homothetyForms": [
+      0,
+      6
+    ],
+    "homothetyProbe": "face-major component ((index mod 7)-3)/8",
+    "profiles": [
+      {
+        "id": "affine-witness",
+        "constant": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "derivatives": [
+          {
+            "mu": 1,
+            "nu": 0,
+            "vector": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "affine-four-component",
+        "constant": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0.5,
+            0.5,
+            0
+          ],
+          [
+            0,
+            0,
+            0.5
+          ]
+        ],
+        "derivatives": [
+          {
+            "mu": 1,
+            "nu": 0,
+            "vector": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "mu": 2,
+            "nu": 3,
+            "vector": [
+              0.25,
+              0,
+              0
+            ]
+          },
+          {
+            "mu": 3,
+            "nu": 2,
+            "vector": [
+              0,
+              0.25,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "directions": [
+      "self",
+      {
+        "id": "independent-affine",
+        "constant": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.5
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "derivatives": [
+          {
+            "mu": 1,
+            "nu": 0,
+            "vector": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "mu": 3,
+            "nu": 2,
+            "vector": [
+              0.25,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "directionalSteps": [
+      0.00390625,
+      0.0009765625,
+      0.000244140625
+    ],
+    "richardsonWeights": [
+      16,
+      -1,
+      15
+    ],
+    "exactTolerance": 0,
+    "scaledTolerance": 1e-10,
+    "forceTolerance": 1e-8,
+    "zeroTolerance": 1e-12,
+    "nonzeroFloor": 1e-8,
+    "bound": {
+      "cellRowL1": 132,
+      "edgeFieldFactor": 1,
+      "localCurvatureFactor": 3,
+      "localQuadraticFactor": 1.5,
+      "globalFaceFactor": 110,
+      "bulkTypeCount": 50,
+      "boundaryFaceFactor": 60
+    },
+    "counts": {
+      "constantRows": 126,
+      "directResidualRows": 36,
+      "crossRows": 252,
+      "anchorRows": 12,
+      "homothetyRows": 16,
+      "smoothRows": 24,
+      "richardsonPairs": 48,
+      "largestVertices": 625,
+      "largestEdges": 5936,
+      "largestFaces": 16064,
+      "largestCells": 6144
+    },
+    "resource": {
+      "estimatedCpuSeconds": 120,
+      "maximumEstimatedCpuSeconds": 180,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumN": 4
+    },
+    "coreFileCount": 726
+  },
+  "analyticPredictionsBeforeExecution": [
+    "G_h=(1.5+2h+0.5h^2)I+(1.5+0.5h)B^T B",
+    "Pplus G_h Pplus=(4.5+3h+0.5h^2)Pplus; full-form anisotropy does not survive on this self-dual image",
+    "Constant abelian action and directional derivatives equal the independent finite-mesh Gram formulas",
+    "Direct basis residuals Cf=W^T R F/2 and -C Kreg(-a)=W^T R F/2",
+    "Physical directional derivative is -GradOmega dot integral V",
+    "Cell row-l1 norm <=132, positive averaging preserves bound",
+    "A priori global O(h) bounds include local curvature, input-face anchor shift,50 bulk types and <=60h^-3 boundary faces",
+    "Homothety is local scaling, not fixed-domain refinement",
+    "Both ratio-four Richardson pairs cancel the quartic objective central derivative truncation term"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "analytic-force-parity-failed",
+    "exact-action-pairing-control-failed",
+    "smooth-global-bound-failed",
+    "fixed-domain-action-force-controls-pass-induced-pairing-scoped"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/Program.cs",
+      "sha256": "674c7b6db0d2368f554494e937cd69a5ed281e69977b6fd971ca414b9540cdc5"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/Phase588FixedDomainActionForceConsistency.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/STUDY.md",
+      "sha256": "c5d2e4116879e17052aac6115e6fb1044fbef9e5205cef753821e5393113f4ef"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase583-summary",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/output/biconnection_convention_reconciliation_summary.json",
+      "sha256": "01d45ea499dfe46d9125bf83c6ad8e52bd8bc4db32995e32ef1453a524abac70"
+    },
+    {
+      "id": "phase583-contract",
+      "path": "studies/phase583_biconnection_convention_reconciliation_001/preregistration/contract_v1.json",
+      "sha256": "73e7b9b1e7fe75508b56991d9582c2ce3e2b68c716cfdf721ebd2fd510681b6a"
+    },
+    {
+      "id": "phase584-summary",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/output/signed_spatial_curvature_consistency_summary.json",
+      "sha256": "80ce1c203d1e6207119da1423e11336ce5df6ea18d8057473db27eca8aff64b7"
+    },
+    {
+      "id": "phase584-contract",
+      "path": "studies/phase584_signed_spatial_curvature_consistency_001/preregistration/contract_v1.json",
+      "sha256": "eaeb353c92d35ee9a63627048fc70870742ee703dda676d0df78c467b2eab0fa"
+    },
+    {
+      "id": "phase586-summary",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/output/action_restriction_pairing_controls_summary.json",
+      "sha256": "4027aca43ee90caf1ffa4f9f381b19d4357eb1e7e867e14153704e7e19ca7f97"
+    },
+    {
+      "id": "phase586-contract",
+      "path": "studies/phase586_action_restriction_pairing_controls_001/preregistration/contract_v1.json",
+      "sha256": "23d9906b61c2cc901251865c5a489efbd99648255cc4879c2bf32c3aeaa3f462"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

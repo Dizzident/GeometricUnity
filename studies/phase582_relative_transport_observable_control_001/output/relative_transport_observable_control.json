@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "phase": 582,
+  "phaseId": "phase582-relative-transport-observable-control",
+  "contractId": "phase582-a44-relative-transport-v1",
+  "contractSha256": "a7520956d9c08ed8c3984bfb8f1787935649a026f447057772e3fe6473ea84ac",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase582_relative_transport_observable_control_001/Program.cs",
+      "sha256": "73e56b4cd8b52ad7009e8e2c851642412b4f32d857e1ff90a63736a7a9791266",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase582_relative_transport_observable_control_001/Phase582RelativeTransportObservableControl.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661",
+      "hashMatches": true
+    },
+    {
+      "id": "gu-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "bridge-status",
+      "path": "studies/phase559_bounded_transformation_law_source_census_001/output/bounded_transformation_law_source_census_summary.json",
+      "sha256": "5e2fd70f50e7c70dce8ebfc8400d9ab312dabb0e4b6e66d01e2bd791b936f790",
+      "hashMatches": true
+    },
+    {
+      "id": "prior-audit",
+      "path": "studies/phase581_collective_coordinate_assumption_audit_001/output/collective_coordinate_assumption_audit_summary.json",
+      "sha256": "c2b803a2cc4a6d0748ccc47e5e7e26cae967fb2f16a8ed00daa8e8556e7b6bbf",
+      "hashMatches": true
+    },
+    {
+      "id": "registered-so3-convention",
+      "path": "studies/phase450_constraint_effective_potential_hmc_probe_001/Program.cs",
+      "sha256": "df4eab4e6c1258a8f4f3835269519ea27bb448597408a085c167eaec2e1bac5e",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "local-relative-observable-controls-pass-registered-bridge-open",
+  "terminalStatus": "local-relative-observable-controls-pass-registered-bridge-open",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "upstreamValid": true,
+    "controlsPassed": true,
+    "knownAnswers": {
+      "exactQuaternionBattery": true,
+      "matrixProductError": 1.1102230246251565E-16,
+      "matrixInverseError": 0,
+      "noncommutingDecoySeparation": 0.16172618964958346
+    },
+    "source": {
+      "sourceAnchorsPresent": true,
+      "sourceEquation": "GU draft 12.6 (and 9.4): T=A-B, B=reference connection transformed by epsilon",
+      "discreteConstructionIsOurDerivation": true,
+      "registeredFieldIdentificationSupplied": false
+    },
+    "localTransport": {
+      "localControlsPassed": true,
+      "localInvariantError": 2.220446049250313E-16,
+      "referenceCovarianceError": 2.7755575615628914E-16,
+      "conjugationError": 2.220446049250313E-16,
+      "matrixObservableError": 4.440892098500626E-16,
+      "pureGaugeError": 0,
+      "bareLinkDecoyMaximum": 0.2269519961603439,
+      "fixedReferenceDecoyChange": 0.3801065588519875,
+      "formula": "R=U_A U_B^-1; R\u0027=g_i R g_i^-1; q=(3-Tr_Ad R)/4=|quaternion_vector(R)|^2",
+      "localGaugeInvarianceEstablishedForDeclaredLinkModel": true,
+      "registeredActionSymmetryEstablished": false
+    },
+    "centerDescent": {
+      "liftError": 0,
+      "fundamentalLiftChange": 1.5462675141245654,
+      "adjointObservableDescendsToSo3": true,
+      "fundamentalTraceRejected": true,
+      "centerSensitivePhysicsRecovered": false
+    },
+    "classicalConsistency": {
+      "refinementPassed": true,
+      "refinement": [
+        {
+          "spacing": 0.2,
+          "target": 1.7300000000000002,
+          "constantEstimate": 1.7194061160298344,
+          "smoothEstimate": 1.7183761089207414,
+          "constantError": 0.010593883970165807,
+          "smoothError": 0.011623891079258764,
+          "subdivisionDifference": 1.8861283646032234E-07,
+          "commutingError": 1.734723475976807E-18
+        },
+        {
+          "spacing": 0.1,
+          "target": 1.7300000000000002,
+          "constantEstimate": 1.7273460093912962,
+          "smoothEstimate": 1.7270866827258775,
+          "constantError": 0.002653990608703971,
+          "smoothError": 0.0029133172741226954,
+          "subdivisionDifference": 4.7493615040750115E-08,
+          "commutingError": 4.336808689942018E-19
+        },
+        {
+          "spacing": 0.05,
+          "target": 1.7300000000000002,
+          "constantEstimate": 1.729336156870415,
+          "smoothEstimate": 1.729271210874004,
+          "constantError": 0.0006638431295851177,
+          "smoothError": 0.0007287891259961654,
+          "subdivisionDifference": 1.1894750295837753E-08,
+          "commutingError": 0
+        },
+        {
+          "spacing": 0.025,
+          "target": 1.7300000000000002,
+          "constantEstimate": 1.7298340176174234,
+          "smoothEstimate": 1.729817773968402,
+          "constantError": 0.00016598238257681253,
+          "smoothError": 0.00018222603159823159,
+          "subdivisionDifference": 2.9750282237728243E-09,
+          "commutingError": 8.131516293641283E-20
+        }
+      ],
+      "rates": [
+        {
+          "spacing": 0.1,
+          "constantRatio": 3.99168103135796,
+          "smoothRatio": 3.989915956805335
+        },
+        {
+          "spacing": 0.05,
+          "constantRatio": 3.9979183189899645,
+          "smoothRatio": 3.9974763209324067
+        },
+        {
+          "spacing": 0.025,
+          "constantRatio": 3.9994794584775137,
+          "smoothRatio": 3.999368913454613
+        }
+      ],
+      "limit": "4q/a^2 tends to |A_mu-B_mu|^2 in the t_a=-i sigma_a/2 convention",
+      "transportRule": "ordered midpoint product on [-a/2,a/2]; affine smooth profiles; 64 subdivisions, 128 control",
+      "oneEdgeContractionOnly": true,
+      "fullGuContinuumLimitProved": false,
+      "quantumUniversalityEstablished": false
+    },
+    "conditionalMeasure": {
+      "measureControlPassed": true,
+      "moments": [
+        1.0000000000000007,
+        0.7499999999999986,
+        0.6249999999999967
+      ],
+      "expectedMoments": [
+        1,
+        0.75,
+        0.625
+      ],
+      "momentError": 3.3306690738754696E-15,
+      "densityRatio": 9.9498743710662,
+      "density": "p(q)=(2/pi)*sqrt(q/(1-q)), 0\u003Cq\u003C1; conditional Haar U given V",
+      "endpointDensityEnhancementIsEntropic": true,
+      "registeredLebesgueOmegaMeasureReplaced": false,
+      "interactingMeasureDerived": false,
+      "nonzeroModeProvesBreaking": false
+    },
+    "nextRequirement": "Derive a compatible two-connection action, registered variable map, and measure before using this candidate for correlators; do not substitute this observable into old outputs and call them physical."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "fullGuObservableEstablished": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

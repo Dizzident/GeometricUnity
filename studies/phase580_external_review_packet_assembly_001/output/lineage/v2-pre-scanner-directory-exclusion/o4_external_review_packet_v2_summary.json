@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "phase": 580,
+  "phaseId": "phase580-external-review-packet-assembly",
+  "contractId": "phase580-a42-external-review-packet-assembly-v2",
+  "contractSha256": "35b6743d4ae8378898414694b4291d73501a5492f40297979b7b0b27b2210bcb",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "deterministic": true,
+  "zeroCompute": true,
+  "zeroSampling": true,
+  "rngUsed": false,
+  "knownAnswerBattery": {
+    "auditedReviewInputParsedBeforeBattery": false,
+    "partitionCountsCorrect": true,
+    "partitionUnique": true,
+    "partitionDisjoint": true,
+    "partitionCoversExactO4Set": true,
+    "exactJudgmentCalls": true,
+    "checksumTamperDetected": true,
+    "passed": true
+  },
+  "packetDirectory": {
+    "path": "studies/phase580_external_review_packet_assembly_001/output/packet",
+    "reviewerGuidePath": "studies/phase580_external_review_packet_assembly_001/output/packet/REVIEWER_GUIDE.md",
+    "reviewerGuideSha256": "86867bf3ccd1fd3931afcfc4f845724986dafd8f3b255ecd6bbcc9df4ea3a473",
+    "packetJsonPath": "studies/phase580_external_review_packet_assembly_001/output/packet/o4_external_review_packet.json",
+    "packetSummaryPath": "studies/phase580_external_review_packet_assembly_001/output/packet/o4_external_review_packet_summary.json",
+    "fullAndSummaryRequiredByteIdentical": true
+  },
+  "hashManifest": {
+    "artifactCount": 12,
+    "allHashesMatch": true,
+    "artifacts": [
+      {
+        "id": "o4-internal-assessment",
+        "path": "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md",
+        "expectedSha256": "1a7ab6164b10e3f2f884679a1f3ca814704f64750c6337206c81e389789388ec",
+        "actualSha256": "1a7ab6164b10e3f2f884679a1f3ca814704f64750c6337206c81e389789388ec",
+        "hashMatches": true
+      },
+      {
+        "id": "o4-coverage-register",
+        "path": "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md",
+        "expectedSha256": "da5317d1819a237dced2a16087e04990d99b051017c530eccf83882c8786eff3",
+        "actualSha256": "da5317d1819a237dced2a16087e04990d99b051017c530eccf83882c8786eff3",
+        "hashMatches": true
+      },
+      {
+        "id": "o4-coverage-contract",
+        "path": "scripts/o4_register/coverage_contract.json",
+        "expectedSha256": "c73835b58a6ba4a73e41b13e326218cc21ccb08a4f10867576944ab3c7ca9449",
+        "actualSha256": "c73835b58a6ba4a73e41b13e326218cc21ccb08a4f10867576944ab3c7ca9449",
+        "hashMatches": true
+      },
+      {
+        "id": "o4-human-memo-schema",
+        "path": "scripts/o4_register/o4_human_memo_schema_v1.json",
+        "expectedSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+        "actualSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+        "hashMatches": true
+      },
+      {
+        "id": "o4-human-memo-template",
+        "path": "scripts/o4_register/o4_human_memo_template_v1.json",
+        "expectedSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
+        "actualSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
+        "hashMatches": true
+      },
+      {
+        "id": "phase480-signing-instructions",
+        "path": "studies/phase480_o4_physicist_adjudication_intake_001/STUDY.md",
+        "expectedSha256": "d3a80c4b19082b3054f2b7565a0fb30f346aff678f89f711a751e9ea60a85867",
+        "actualSha256": "d3a80c4b19082b3054f2b7565a0fb30f346aff678f89f711a751e9ea60a85867",
+        "hashMatches": true
+      },
+      {
+        "id": "phase480-intake-contract",
+        "path": "studies/phase480_o4_physicist_adjudication_intake_001/preregistration/o4_intake_contract_v1.json",
+        "expectedSha256": "a5f5b516807d53a6af5aa81b0d908c1308e693c40cd1cd15958b14924dee7927",
+        "actualSha256": "a5f5b516807d53a6af5aa81b0d908c1308e693c40cd1cd15958b14924dee7927",
+        "hashMatches": true
+      },
+      {
+        "id": "phase480-empty-reviewer-registry",
+        "path": "studies/phase480_o4_physicist_adjudication_intake_001/preregistration/o4_reviewer_registry_v1.json",
+        "expectedSha256": "112494857673a7a21f80d0631f688f09922a4e0c88493c731363076981ecaf74",
+        "actualSha256": "112494857673a7a21f80d0631f688f09922a4e0c88493c731363076981ecaf74",
+        "hashMatches": true
+      },
+      {
+        "id": "phase555-escalation-packet",
+        "path": "studies/phase555_flat_sector_external_review_escalation_packet_001/output/flat_sector_external_review_escalation_packet_summary.json",
+        "expectedSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+        "actualSha256": "c0610adfd09d699fd91069472751add335542101fc480f6b181ba3c4fc5681e6",
+        "hashMatches": true
+      },
+      {
+        "id": "phase485-falsifier-census",
+        "path": "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json",
+        "expectedSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+        "actualSha256": "67d39369631ce94e1bb07d69695b6aed8541dc315f80860865837085eaa7f886",
+        "hashMatches": true
+      },
+      {
+        "id": "phase578-conditional-electroweak-ledger",
+        "path": "studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/output/consolidated_conditional_electroweak_sector_ledger_summary.json",
+        "expectedSha256": "701662a434d552fb21de963aef79c8bf3ed52ff4199ddd4131d35502666f231e",
+        "actualSha256": "701662a434d552fb21de963aef79c8bf3ed52ff4199ddd4131d35502666f231e",
+        "hashMatches": true
+      },
+      {
+        "id": "phase579-collective-coordinate-self-check",
+        "path": "studies/phase579_collective_coordinate_jacobian_self_check_001/output/collective_coordinate_jacobian_self_check_summary.json",
+        "expectedSha256": "aa1294627db8b802c657260a6251f763ca525f57f4f8ed766c3a4494179c8cce",
+        "actualSha256": "aa1294627db8b802c657260a6251f763ca525f57f4f8ed766c3a4494179c8cce",
+        "hashMatches": true
+      }
+    ]
+  },
+  "inputValidation": {
+    "assessmentValid": true,
+    "assessmentMachineAuthored": true,
+    "assessmentNonAuthoritative": true,
+    "assessmentPhase579NegativePreserved": true,
+    "coverageValid": true,
+    "coverageReviewItemCount": 13,
+    "coverageEntryCount": 31,
+    "memoMaterialsValid": true,
+    "memoTemplateRulingCount": 13,
+    "signingMaterialsValid": true,
+    "phase555Valid": true,
+    "phase485Valid": true,
+    "phase578Valid": true,
+    "phase579Valid": true
+  },
+  "reviewerRequest": {
+    "judgmentCallCount": 2,
+    "judgmentCalls": [
+      {
+        "rulingId": "O4-P455-SB-MODEL",
+        "request": "Adjudicate the Phase455 S_B workbench-model choice; the machine assessment proposes insufficient-basis/defer."
+      },
+      {
+        "rulingId": "O4-C3-WS3-MPROBE-SCOPE",
+        "request": "Adjudicate the WS3 M-probe methodology scope; the stricter gate remains in force."
+      }
+    ],
+    "evidenceBackedProposalCount": 11,
+    "evidenceBackedProposalIds": [
+      "O4-F1-INVARIANT-RAYS",
+      "O4-F1-COLLECTIVE-COORDINATE",
+      "O4-F1-FP-NORMALIZATION",
+      "O4-F2-POSITIVE-MODE-IR",
+      "O4-F3-THETA-HAAR",
+      "O4-F4-SADDLE-BACKGROUNDS",
+      "O4-E1-P447-SOFT-FLOOR",
+      "O4-E2-P453-UNIFORM-LADDER",
+      "O4-P455-ZERO-MODE",
+      "O4-C1-COMPACT-REAL-FORM",
+      "O4-C2-YHALF-BOOKKEEPING"
+    ],
+    "supportingOrNotApplicableProposalCount": 10,
+    "preservedImplementationNegativeProposalCount": 1,
+    "preservedImplementationNegativeRulingId": "O4-F1-COLLECTIVE-COORDINATE",
+    "phase579NegativeIsEvidenceNotSupport": true,
+    "allThirteenItemsPresented": true,
+    "signerMayOverturnAnyProposal": true,
+    "machineProposalIsNotRuling": true
+  },
+  "signingAndIntake": {
+    "acceptedSignatureModes": [
+      "ed25519-detached"
+    ],
+    "reviewerRegistryRecordCount": 0,
+    "reviewerRegistryEmpty": true,
+    "independentReviewerMustBePrePinned": true,
+    "requiredReviewerRegistryState": "pre-pinned-active-human-reviewer-with-ed25519-spki-pem",
+    "canonicalization": "RFC8785-JCS-restricted-json-domain",
+    "signedPayloadDefinition": "UTF-8 JCS of the complete memo after removing top-level signedPayloadSha256 and signatureEnvelope",
+    "repositoryBindingCommitPolicy": "commit-must-exist-and-be-an-ancestor-of-HEAD; dossier, coverage, schema, and reviewer record are verified from that commit",
+    "signingPrerequisitesCurrentlySatisfied": false,
+    "phase480IntakeReady": false,
+    "productionMemoPresent": false,
+    "signatureVerified": false,
+    "shapeValidationIsAuthentication": false
+  },
+  "upstreamEvidence": {
+    "phase555Verdict": "packet-assembled-awaiting-external-ruling",
+    "phase485Verdict": "exact-thirteen-item-census-complete",
+    "phase578Verdict": "conditional-ledger-complete-absolute-masses-blocked",
+    "phase579Verdict": "phase450-lineage-convention-defective-preserved-negative",
+    "phase579FalsifierPassed": false,
+    "phase579PreservedFirstClassNegative": true
+  },
+  "packetContentValid": true,
+  "packetReadyForIndependentReview": true,
+  "readinessOnly": true,
+  "verdictKind": "external-review-packet-assembled-readiness-only",
+  "terminalStatus": "external-review-packet-assembly-external-review-packet-assembled-readiness-only",
+  "decision": "The exact-bound O4 review packet is assembled for an independent reviewer. It presents exactly two genuine judgment calls and eleven evidence-backed proposals, including Phase579\u0027s preserved implementation negative, and discloses the empty reviewer registry and every signing prerequisite. This is packet readiness only; it is not intake readiness, authentication, a ruling, or authority.",
+  "internalAssessmentMachineAuthored": true,
+  "internalAssessmentNonAuthoritative": true,
+  "independentSignerMayOverturnAnyProposal": true,
+  "authorsO4Ruling": false,
+  "consumesO4Memo": false,
+  "verifiesSignature": false,
+  "changesIntake": false,
+  "changesPendingFlag": false,
+  "o4Discharged": false,
+  "phase458Satisfied": false,
+  "phase481Changed": false,
+  "sourceContractApplicationAllowed": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "physicalUnitClaimAllowed": false,
+  "gevClaimAllowed": false,
+  "externalReviewPending": true,
+  "pendingArtifactCountChanged": false,
+  "promotedPhysicalMassClaimCount": 0
+}
