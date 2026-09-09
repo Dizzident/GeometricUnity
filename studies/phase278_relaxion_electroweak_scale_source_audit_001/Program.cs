@@ -571,6 +571,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P593.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P594.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P595.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P596.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P597.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -579,6 +581,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Reference/ExperimentReferences/SOURCE-CLIFFORD-CONTRACTION-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/CHIRAL-COMPANION-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/ACTION-GRADIENT-AND-INVARIANT-CLOSURE-20260909.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/HELMHOLTZ-AND-QUADRATIC-ACTION-20260909.md"
     || normalizedPath.StartsWith("studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase579_collective_coordinate_jacobian_self_check_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase580_external_review_packet_assembly_001/", StringComparison.Ordinal)
@@ -597,6 +600,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase593_companion_action_first_variation_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase594_actual_gradient_reciprocity_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase595_invariant_tensor_dimension_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase596_fixed_operator_helmholtz_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase597_actual_quadratic_joint_null_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>

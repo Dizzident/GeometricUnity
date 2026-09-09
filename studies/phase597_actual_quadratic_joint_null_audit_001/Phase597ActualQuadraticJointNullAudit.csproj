@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs" Link="ExactAlgebra.cs" />
+    <Compile Include="../phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs" Link="PolynomialTensor.cs" />
+  </ItemGroup>
+</Project>

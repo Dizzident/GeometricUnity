@@ -450,6 +450,8 @@
     <PhaseProject Include="../studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj" />
     <PhaseProject Include="../studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj" />
     <PhaseProject Include="../studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj" />
+    <PhaseProject Include="../studies/phase596_fixed_operator_helmholtz_audit_001/Phase596FixedOperatorHelmholtzAudit.csproj" />
+    <PhaseProject Include="../studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

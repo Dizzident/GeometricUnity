@@ -2365,3 +2365,66 @@ All fourteen authority flags stay false, O4 pending, Phase561 closed and
 promotedPhysicalMassClaimCount=0. No core changes, old-terminal replacement,
 target fitting, source selection, physical units or production. Registry594-595
 allocated;596+ free.
+
+### A51 - Conditional integrability and actual quadratic dynamics (2026-09-09 UTC)
+
+A50 is validated, committed and pushed as46d8fac6b9021acb3dbdef2821c4a6c7e2fa425b.
+Its final incremental report pass_2026-09-09T01-05-38-212Z.json passes
+76 steps ran/379 skipped,375/3 objective checklist, zero mass claims.
+Continue the active user goal with two independently reviewed deterministic
+studies; no new sampling or physical model choices are authorized.
+
+Allocate596 to the conditional fixed-operator Helmholtz classification.
+Use spatial dimension3 and the real u(1,1) matrix basis
+(iI,sigma1,sigma2,i sigma3), with H=diag(1,-1). Start with all144 lowered
+linear curvature-operator coefficients. Freeze the234 principal symmetric
+entry equations and exact rank134/nullity10 prediction, then the40
+ad-invariance equations on that10-dimensional space with rank8/nullity2.
+Independently construct cubic Jacobian coefficient constraints to check the
+same combined nullspace where feasible within a declared bounded resource
+budget. Freeze explicit ordering, normalizations, ranks, nullspace certificates,
+real-form/trace/bracket controls, and a complete written derivation.
+
+Exercise both surviving Lie-pairing directions positively: nonabelian cubic
+and central Fourier quadratic Chern-Simons controls. A symmetric but
+noninvariant pairing must pass principal tests and fail cubic tests. A
+spatially varying coefficient must pass pointwise constraints but fail the
+desired-force variation identity, exposing the missing differential
+closedness condition. Do not infer source-wide impossibility from the finite
+audit. Any general proof must state fixed zero-order K, unrestricted full
+gauge variations and exact curvature-only force; distinguish pointwise
+Spin invariance from covariance in the presence of additional backgrounds.
+
+Allocate597 to the actual fixed-background quadratic action, retaining K
+and derivative adjoints rather than the invalid curvature shortcut. On the
+flat14-torus use u=theta0 gamma2 cos(x0), v=theta1 Gamma12 sin(x0), the
+full literal matched CCA branches and exact normalized Fourier integration.
+Freeze all full-chain coefficients, indefinite Gram, quadratic polynomial,
+direct and adjoint Hessian identities, both chiralities and formal c controls.
+For Phi1=a(1+h Omega)gamma the predicted quadratic action is
+-a st/2+kappa(-s^2+t^2)/4. A raw KD-only decoy must fail reciprocity.
+
+Test the explicitly lifted coordinates epsilon=exp(r gamma2 sin(x0)) and
+T=(s-r)u+t v. Verify flatness, including a noncommuting two-generator
+Maurer-Cartan second-order jet control so cancellation is nonvacuous.
+The quadratic joint Hessian should have null vector(1,0,1), while the fixed
+epsilon u direction is not null. Explicitly check why K_epsilon and B
+variations contribute only at cubic or higher order on this flat fixture.
+This is a local coordinate/action consistency test, not a resolution of
+printed source transformation signs, full nonlinear covariance, source
+selection, hyperbolicity, stability, dispersion or a particle spectrum.
+Optional exact Ricci-flat versus constant-curvature stationarity controls
+must use nonzero mixed variations/Clifford grades, not null self-pairing.
+
+Workers own separate study folders and implementation notes; coordinator
+owns all shared integration/docs, and a third agent independently reviews
+both complete packs. Freeze complete code/project/proof, every fixture and
+expected result, exact tolerances, resources, precedence, unique bindings
+and the live726-file core manifest before first science. Coordinator must
+read/review/hash-check and explicitly approve first Release execution after
+independent review. Preserve failures and version scientific repairs.
+
+All fourteen authority flags remain false, O4 pending, Phase561 closed,
+externalReviewPending=true and promotedPhysicalMassClaimCount=0. No core
+edits, historical frozen rewrites, target fitting, physical units, production
+or contract promotion. Registry596-597 allocated;598+ free.

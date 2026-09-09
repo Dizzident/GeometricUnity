@@ -464,6 +464,8 @@ dotnet run --no-build -c Release --project studies/phase592_companion_tensor_chi
 dotnet run --no-build -c Release --project studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj
 dotnet run --no-build -c Release --project studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj
+dotnet run --no-build -c Release --project studies/phase596_fixed_operator_helmholtz_audit_001/Phase596FixedOperatorHelmholtzAudit.csproj
+dotnet run --no-build -c Release --project studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

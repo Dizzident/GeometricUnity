@@ -1,0 +1,4668 @@
+{
+  "schemaVersion": 1,
+  "phase": 597,
+  "phaseId": "phase597-actual-quadratic-joint-null-audit",
+  "contractId": "phase597-a51-actual-quadratic-joint-null-v1",
+  "contractSha256": "3bb6423f17a2bea308a437be16542ab94942149f60d80fab66041ad92aaf0b34",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "bindingCount": 15,
+  "uniqueBindingIdCount": 15,
+  "uniqueBindingPathCount": 15,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/Program.cs",
+      "sha256": "f71922fe1e1052afaa2918cc00350c602a8a7bbdb6cc4d91dc700c8d603a7fc5",
+      "hashMatches": true
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/FourierTensor.cs",
+      "sha256": "a6cc09a6770000923e7533a3163482e81be5b7b1e20152cb5ecc45b4ca63b35e",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj",
+      "sha256": "c5bf4f0407de4e9f9cb256890ded192e5f1600deeb8d3dc1dfb62c9d6e1dcd79",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/STUDY.md",
+      "sha256": "93c5e94d0fa30cf2f529ce401c3d0128f0557cdbb42e7c07b27ee49caa63fe54",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase594-summary",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json",
+      "sha256": "1b4de79a520c14f9ffe676a3225cb4814bf309feef2bc971a647f52b7b34777b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase594-contract",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/preregistration/contract_v1.json",
+      "sha256": "fb0a60401127df0575dbfdd4fdfa6cb40cfa885c70659c111c893c39d29f9a7f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase594-program",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Program.cs",
+      "sha256": "e10d92a37a48c1a512a8c00e676dd80eb0c50ed5790ae4f18fa84d4810d2148f",
+      "hashMatches": true
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs",
+      "sha256": "6b7f13a024dbb834331514e93781f1122c1af8ac253d2cb040c81a57a0db1d08",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-program",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Program.cs",
+      "sha256": "c2be95aafa4aeabb794615f4350539c1667783de00f54523a933fa30eea40987",
+      "hashMatches": true
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "actual-quadratic-joint-null-controls-pass-dynamics-unselected",
+  "terminalStatus": "actual-quadratic-joint-null-controls-pass-dynamics-unselected",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "chainPassed": true,
+    "adjointPassed": true,
+    "quadraticPassed": true,
+    "jointPassed": true,
+    "jetPassed": true,
+    "gradePassed": true,
+    "stationarityPassed": true,
+    "countsPassed": true,
+    "counts": {
+      "wordCases": 256,
+      "hodgeCases": 16384,
+      "operatorRows": 4,
+      "chainSlots": 8,
+      "rawReciprocityRejections": 4,
+      "massRows": 12,
+      "jointRows": 12,
+      "wrongLiftRejections": 12,
+      "fixedEpsilonNonNullRows": 12,
+      "epsilonJetRows": 8,
+      "adjointPairingChecks": 32,
+      "gradeRows": 56,
+      "stationarityRows": 24,
+      "maurerCartanRows": 2
+    },
+    "gram": [
+      [
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "curvatureGram": "1/2",
+    "dMatrix": [
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "dAdjointMatrix": [
+      [
+        "0"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "chainRows": [
+      {
+        "a": 1,
+        "h": -1,
+        "slot": 0,
+        "passed": true,
+        "fullK": [
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": -1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": 1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": -1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": 1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "raw": [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "2"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "-2",
+            "0"
+          ]
+        ],
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "directHessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "slot": 1,
+        "passed": true,
+        "fullK": [],
+        "raw": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "action": [],
+        "directHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "slot": 0,
+        "passed": true,
+        "fullK": [
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": -1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": 1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": 1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "raw": [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "2"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "-2",
+            "0"
+          ]
+        ],
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "directHessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "slot": 1,
+        "passed": true,
+        "fullK": [],
+        "raw": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "action": [],
+        "directHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "slot": 0,
+        "passed": true,
+        "fullK": [
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": 1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": 1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          }
+        ],
+        "raw": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "-2"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "2",
+            "0"
+          ]
+        ],
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "directHessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "slot": 1,
+        "passed": true,
+        "fullK": [],
+        "raw": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "action": [],
+        "directHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "slot": 0,
+        "passed": true,
+        "fullK": [
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 4,
+            "k0": 1,
+            "k1": 0,
+            "real": "-1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": -1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16379,
+            "k0": 1,
+            "k1": 0,
+            "real": "1",
+            "imaginary": "0"
+          }
+        ],
+        "raw": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "-2"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "2",
+            "0"
+          ]
+        ],
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "directHessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ]
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "slot": 1,
+        "passed": true,
+        "fullK": [],
+        "raw": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "finiteK": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "finiteKAdjoint": [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "action": [],
+        "directHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "adjointHessian": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "massRows": [
+      {
+        "a": 1,
+        "h": -1,
+        "kappa": -1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "-1",
+            "1"
+          ],
+          [
+            "-1",
+            "-1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "kappa": 0,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "0",
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "0",
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "-1/2",
+            "0"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "kappa": 1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "-1",
+            "1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "kappa": -1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "-1",
+            "1"
+          ],
+          [
+            "-1",
+            "-1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "kappa": 0,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "0"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "0",
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "0",
+            "-1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "-1/2",
+            "0"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "kappa": 1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "-1",
+            "1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "kappa": -1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "kappa": 0,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "-1/2",
+            "0"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "kappa": 1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "kappa": -1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "kappa": 0,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "-1/2",
+            "0"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "0",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "0"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "kappa": 1,
+        "quadraticPassed": true,
+        "jointPassed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "hessian": [
+          [
+            "-1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "raisedJacobian": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "jointAction": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/4",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "z": 1,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/4",
+            "imaginary": "0"
+          }
+        ],
+        "jointHessian": [
+          [
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "wrongLiftHessian": [
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        "nullOk": true,
+        "wrongRejected": true,
+        "fixedNotNull": true
+      }
+    ],
+    "epsilonJetRows": [
+      {
+        "a": 1,
+        "h": -1,
+        "slot": 0,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          }
+        ],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "slot": 1,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "slot": 0,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          }
+        ],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "slot": 1,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "slot": 0,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          }
+        ],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "slot": 1,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "slot": 0,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1,
+            "blade": 16383,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4,
+            "blade": 5,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8,
+            "blade": 9,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 16,
+            "blade": 17,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 32,
+            "blade": 33,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 64,
+            "blade": 65,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 128,
+            "blade": 129,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 256,
+            "blade": 257,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 512,
+            "blade": 513,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 1024,
+            "blade": 1025,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 2048,
+            "blade": 2049,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 4096,
+            "blade": 4097,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1"
+          },
+          {
+            "form": 8192,
+            "blade": 8193,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1"
+          }
+        ],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "slot": 1,
+        "passed": true,
+        "connectionV": [
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": -2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 3,
+            "blade": 2,
+            "k0": 2,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "tensorJetOnDv": [],
+        "integratedCorrection": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cubicAction": [],
+        "minimumUnaveragedAmplitudeDegree": 3
+      }
+    ],
+    "stationarityRows": [
+      {
+        "a": 1,
+        "h": -1,
+        "background": "flat",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "background": "flat",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "background": "weyl",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "background": "weyl",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "background": "constant",
+        "slot": 0,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [
+          {
+            "form": 1,
+            "blade": 1,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16382,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 2,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 16381,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 4,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 16379,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 8,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 16375,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16367,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 32,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 16351,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 64,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 16319,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 128,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 16255,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 256,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 16127,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 512,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 15871,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 1024,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 15359,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 2048,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 14335,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 4096,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 12287,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8191,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8192,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          }
+        ],
+        "forceSelfPairing": "0",
+        "mixedPairing": "-78"
+      },
+      {
+        "a": 1,
+        "h": -1,
+        "background": "constant",
+        "slot": 1,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "flat",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "flat",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "weyl",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "weyl",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "constant",
+        "slot": 0,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [
+          {
+            "form": 1,
+            "blade": 1,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16382,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 2,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 16381,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 4,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 16379,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 8,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 16375,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16367,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 32,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 16351,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 64,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 16319,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 128,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 16255,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 256,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 16127,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 512,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 15871,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 1024,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 15359,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 2048,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 14335,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 4096,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 12287,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8191,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8192,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          }
+        ],
+        "forceSelfPairing": "0",
+        "mixedPairing": "-78"
+      },
+      {
+        "a": 1,
+        "h": 1,
+        "background": "constant",
+        "slot": 1,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "flat",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "flat",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "weyl",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "weyl",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "constant",
+        "slot": 0,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [
+          {
+            "form": 1,
+            "blade": 1,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16382,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 2,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 16381,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 4,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 16379,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 8,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 16375,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16367,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 32,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 16351,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 64,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 16319,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 128,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 16255,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 256,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 16127,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 512,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 15871,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 1024,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 15359,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 2048,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 14335,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 4096,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 12287,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8191,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8192,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          }
+        ],
+        "forceSelfPairing": "0",
+        "mixedPairing": "78"
+      },
+      {
+        "a": -1,
+        "h": -1,
+        "background": "constant",
+        "slot": 1,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "flat",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "flat",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 0,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "weyl",
+        "slot": 0,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "weyl",
+        "slot": 1,
+        "passed": true,
+        "scalar": 0,
+        "curvatureTerms": 4,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "constant",
+        "slot": 0,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [
+          {
+            "form": 1,
+            "blade": 1,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1,
+            "blade": 16382,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 2,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2,
+            "blade": 16381,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 4,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 16379,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 8,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8,
+            "blade": 16375,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 16,
+            "blade": 16367,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 32,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 32,
+            "blade": 16351,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 64,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 64,
+            "blade": 16319,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 128,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 128,
+            "blade": 16255,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 256,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 256,
+            "blade": 16127,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 512,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 512,
+            "blade": 15871,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 1024,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 1024,
+            "blade": 15359,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 2048,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 2048,
+            "blade": 14335,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 4096,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 4096,
+            "blade": 12287,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8191,
+            "k0": 0,
+            "k1": 0,
+            "real": "78",
+            "imaginary": "0"
+          },
+          {
+            "form": 8192,
+            "blade": 8192,
+            "k0": 0,
+            "k1": 0,
+            "real": "-78",
+            "imaginary": "0"
+          }
+        ],
+        "forceSelfPairing": "0",
+        "mixedPairing": "78"
+      },
+      {
+        "a": -1,
+        "h": 1,
+        "background": "constant",
+        "slot": 1,
+        "passed": true,
+        "scalar": 182,
+        "curvatureTerms": 91,
+        "force": [],
+        "forceSelfPairing": "0",
+        "mixedPairing": "0"
+      }
+    ],
+    "maurerCartan": {
+      "oneGenerator": true,
+      "twoGenerator": true,
+      "inverseJet": true,
+      "b1": [
+        {
+          "form": 1,
+          "blade": 4,
+          "k0": -1,
+          "k1": 0,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 1,
+          "blade": 4,
+          "k0": 1,
+          "k1": 0,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 2,
+          "blade": 6,
+          "k0": 0,
+          "k1": -1,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 2,
+          "blade": 6,
+          "k0": 0,
+          "k1": 1,
+          "real": "1/2",
+          "imaginary": "0"
+        }
+      ],
+      "b2": [
+        {
+          "form": 1,
+          "blade": 2,
+          "k0": -1,
+          "k1": -1,
+          "real": "0",
+          "imaginary": "-1/2"
+        },
+        {
+          "form": 1,
+          "blade": 2,
+          "k0": -1,
+          "k1": 1,
+          "real": "0",
+          "imaginary": "1/2"
+        },
+        {
+          "form": 1,
+          "blade": 2,
+          "k0": 1,
+          "k1": -1,
+          "real": "0",
+          "imaginary": "-1/2"
+        },
+        {
+          "form": 1,
+          "blade": 2,
+          "k0": 1,
+          "k1": 1,
+          "real": "0",
+          "imaginary": "1/2"
+        }
+      ],
+      "db2": [
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": -1,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": 1,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": -1,
+          "real": "1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": 1,
+          "real": "1/2",
+          "imaginary": "0"
+        }
+      ],
+      "b1Squared": [
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": -1,
+          "real": "-1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": 1,
+          "real": "-1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": -1,
+          "real": "-1/2",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": 1,
+          "real": "-1/2",
+          "imaginary": "0"
+        }
+      ],
+      "wrongMinus": [
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": -1,
+          "real": "1",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": -1,
+          "k1": 1,
+          "real": "1",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": -1,
+          "real": "1",
+          "imaginary": "0"
+        },
+        {
+          "form": 3,
+          "blade": 2,
+          "k0": 1,
+          "k1": 1,
+          "real": "1",
+          "imaginary": "0"
+        }
+      ]
+    }
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

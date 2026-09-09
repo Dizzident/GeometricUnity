@@ -59,7 +59,9 @@ back, NO new phase directory may be created outside this table.
 | 593 | Full companion-branch first-variation audit (A49 extension) | Exact constant-torsion action polynomial versus candidate curvature force, both matching chiralities and bracket conventions; scoped variational counterexample, no source/model selection. |
 | 594 | Actual action-gradient and reciprocity audit (A50) | Exact full-coordinate adjoint/polynomial gradients, weighted Helmholtz controls, curvature factorization and Riemann-projection decoys; conditional action-consistent response, no physical spectrum. |
 | 595 | Complete invariant tensor dimension audit (A50) | Exact complexified sign-character and signed-rotation upper bounds plus existing real invariant lower bounds; degree1/2 dimension classification, no normalization or source choice. |
-| 596+ | Unassigned - extend this registry before use | - |
+| 596 | Fixed-operator Helmholtz classification audit (A51) | Exact spatial3/u(1,1) principal and cubic coefficient constraints, cyclic positive controls and variable-coefficient closedness decoy; conditional scope, no source selection. |
+| 597 | Actual quadratic action and joint-null audit (A51) | Exact Fourier/Clifford quadratic derivative, pure-gauge flatness and lifted-coordinate Hessian null controls; no spectral or stability claim. |
+| 598+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

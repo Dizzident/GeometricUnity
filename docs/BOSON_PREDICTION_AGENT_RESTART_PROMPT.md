@@ -45,6 +45,57 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, Amendment A51; Phases596-597 executed):
+both first frozen Release runs passed after independent and coordinator
+full-pack review. Phase596 checks all144 lowered operators on spatial3/u(1,1):
+principal rank134/nullity10, reduced rank8/nullity2, combined rank142/nullity2,
+curvature-map rank9/nullity69. Independent modular lower bounds match every
+rational rank. Nonabelian and central positive controls and the variable-
+coefficient closedness counterexample pass. Its separate conditional14D
+proof requires fixed zero-order K, unrestricted gauge variations, an exact
+curvature-only force, a Spin-invariant pairing and pointwise Spin intertwining.
+It is not an extrapolated small-matrix calculation or a theory-wide no-go.
+
+Phase597 constructs the actual quadratic action on two Fourier modes.
+All8 literal chain slots,12 mass/joint rows,32 adjoint checks,8 tensor jets,
+56 grade controls and24 pointwise stationarity anchors pass. The correctly
+lifted joint null direction works; fixed-epsilon and wrong-lift decoys fail.
+Noncommuting Maurer-Cartan jets cancel with the correct sign. A null
+self-pairing does not imply a stationary background. None of this selects
+a physical gauge quotient, hyperbolicity, stability or a boson spectrum.
+
+NEXT PRIORITY: freeze the full continuum action-descent and actual nonlinear
+Ward-identity test, not more sampling. An independently reviewed identity
+at fixed metric/reference/Phi/density is I(epsilon,omega)=I0(S),
+S=epsilon T epsilon^-1. It preserves the action's redundant epsilon equation
+through the ACTUAL gradient, not the rejected K F_A shortcut. For
+delta epsilon=epsilon alpha, delta S=Ad(epsilon)(delta omega-D_A alpha),
+so the right-trivialized epsilon Euler derivative is -D_A^dagger g.
+This uses the explicit consistent plus lift and does not adjudicate the
+printed source signs or establish registered discrete-action equivalence.
+
+Use exact H-unitary nilpotents N=gamma2+Gamma12, M=gamma2-Gamma12,
+N^2=M^2=0, and epsilon=(1+fN)(1+gM), with independent-coordinate sine
+functions. Its inverse is a finite polynomial, so full nonlinear controls
+need no exponential truncation. Two separately nonzero base action fixtures
+are available (cubic4a/3 and quadratic-a/2). Freeze full component/action
+identities, actual variations, nonzero wrong-sign/uncotransformed decoys,
+bindings and resource bounds before first execution. No successor is yet
+allocated or executed; registry598+ free.
+
+See `docs/Reference/ExperimentReferences/HELMHOLTZ-AND-QUADRATIC-ACTION-20260909.md`
+and IMPLEMENTATION_P596/P597. All integration surfaces include596-597;
+targeted Release package/audit/integrity pass at377/3, O4 coverage31/31,
+overturn controls94/94. Final incremental cadence is recorded after all
+documentation edits in timestamped skip reports, not a promotion full pass.
+A50 was committed/pushed as46d8fac6b9021acb3dbdef2821c4a6c7e2fa425b,
+with verified remote hash. Its report pass_2026-09-09T01-05-38-212Z.json
+passed76 ran/379 skipped. Commit/push A51 after its final validation.
+All fourteen flags remain false, O4 pending, Phase561 closed, source
+deficits15/14 and physical mass claims0. No core edits, frozen rewrites,
+new sampling, fitting, physical field selection or unit calibration.
+Earlier next-free and no-commit/no-push statements are historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, Amendment A50; Phases594-595 executed):
 both first frozen Release runs passed after independent and coordinator
 proof/code/hash review. Phase594 confirms the actual action gradient by

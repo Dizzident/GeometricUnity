@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "phase": 596,
+  "contractId": "phase596-a51-fixed-operator-helmholtz-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Exact finite u(1,1) fixed-operator principal/cubic classification, independent closedness controls and explicitly conditional written u(64,64)/Spin theorem; no missing source operator selection",
+  "fixtures": {
+    "spatialDimension": 3,
+    "gaugeRealDimension": 4,
+    "matrixDimension": 2,
+    "gaugeBasis": [
+      "i I",
+      "sigma1",
+      "sigma2",
+      "i sigma3"
+    ],
+    "hermitianForm": "diag(1,-1)",
+    "gaugeGram": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "pairing": "-ReTr(XY)/2; spatial axes positive; output coefficients lowered with this pairing",
+    "brackets": [
+      [
+        1,
+        2,
+        3,
+        2
+      ],
+      [
+        2,
+        3,
+        1,
+        -2
+      ],
+      [
+        3,
+        1,
+        2,
+        -2
+      ]
+    ],
+    "fieldIndex": "4*spatialIndex+gaugeIndex",
+    "curvaturePairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "operatorIndex": "12*outputIndex+curvatureIndex",
+    "coefficientConvention": "E_ia=sum_(j<k,b) L_ia,jkb F_jk^b; antisymmetric extension equals half of the all-index sum",
+    "quadraticMonomials": "t_i*t_j for0<=i<=j<12; off-diagonal symmetric tensor has no half",
+    "principalRows": "derivative axis0..2; output pair I<=J; M_axis[I,J]+M_axis[J,I]",
+    "cubicRows": "output pair I<J; coefficient variable0..11; partial_J E_I-partial_I E_J",
+    "reducedRows": "generator z=0..3; Lie pair a<=b; h([ez,ea],eb)+h(ea,[ez,eb])",
+    "reducedBilinearBasis": "symmetric4x4 coordinate matrices, row-major upper triangle",
+    "predictedCounts": {
+      "operatorVariables": 144,
+      "principalRows": 234,
+      "principalRank": 134,
+      "principalNullity": 10,
+      "reducedRows": 40,
+      "reducedRank": 8,
+      "reducedNullity": 2,
+      "cubicRows": 792,
+      "combinedRows": 1026,
+      "combinedRank": 142,
+      "combinedNullity": 2,
+      "quadraticMonomials": 78,
+      "qRows": 12,
+      "qEntries": 936,
+      "qRank": 9,
+      "qKernelDimension": 69,
+      "orderedBrackets": 16,
+      "jacobiTriples": 64,
+      "gramEntries": 16,
+      "realFormChecks": 4,
+      "spatialThreeMasks": 364,
+      "sameBlockFlips": 42,
+      "spatialCharacterChecks": 15288,
+      "spatialThreeSurvivors": 0,
+      "subgroupControlMasks": 4,
+      "subgroupControlCharacterChecks": 168
+    },
+    "survivingBilinears": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "survivingOperator": "L_ia,jkb=epsilon_ijk*h_ab; raised K uses G_internal^-1*h, not h alone",
+    "negativeControls": {
+      "repeatedSpatial": "L_(0,0),(01,0)=1 only",
+      "principalMaximumDefect": 2,
+      "noninvariantSymmetricBilinear": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reducedMaximumDefect": 4,
+      "cubicMaximumDefect": 4
+    },
+    "nonabelianPositive": {
+      "A": [
+        "x theta0 sigma1",
+        "y theta1 sigma2",
+        "z theta2 i sigma3"
+      ],
+      "action": "2xyz",
+      "forceCovector": [
+        "2yz",
+        "2xz",
+        "2xy"
+      ]
+    },
+    "fourier": {
+      "period": "2pi",
+      "integration": "normalized average (1/2pi) integral_0^(2pi)",
+      "coefficientRange": "finite exact Gaussian-rational Fourier modes",
+      "positive": {
+        "lambda": "1",
+        "A1": "p cos(theta) iI",
+        "A2": "q sin(theta) iI",
+        "action": "-pq/2",
+        "force": [
+          "-q/2",
+          "-p/2"
+        ]
+      },
+      "closednessDecoy": {
+        "lambda": "cos(theta)",
+        "A1": "p sin(theta) iI",
+        "A2": "q iI",
+        "action": "pq/4",
+        "actualDerivative": [
+          "q/4",
+          "p/4"
+        ],
+        "desiredForce": [
+          "0",
+          "p/2"
+        ]
+      },
+      "actualEuler": "one half of L+L_adjoint; contains +(1/2)*d(lambda) wedge A"
+    },
+    "subgroupControlMasks": [
+      0,
+      127,
+      16256,
+      16383
+    ],
+    "hypotheses": [
+      "fixed nondegenerate pairing and background",
+      "unrestricted bosonic u(H)-valued connection variations",
+      "zero-order linear K independent of varied connection",
+      "curvature-only target K(dA+A wedge A)",
+      "Spin-intertwining additionally required only for the conditional14D zero conclusion"
+    ],
+    "fullU128CoefficientCensusPerformed": false,
+    "sourceOperatorSelected": false,
+    "exactTolerance": 0,
+    "rankControl": {
+      "finiteFieldPrime": 1000003,
+      "primeTrialDivisors": "all integers2..1000",
+      "knownRanks": [
+        1,
+        2,
+        0
+      ],
+      "noninvertibleDenominatorRejected": true,
+      "independentRankLowerBound": true,
+      "rationalKernelAndRrefConsistencyIsNotStandaloneRankCertificate": true
+    },
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 20,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "principal-rank-control-failed",
+    "cubic-classification-control-failed",
+    "positive-or-decoy-control-failed",
+    "conditional-spin-control-failed",
+    "fixed-operator-helmholtz-controls-pass-conditional-classification-only"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase596_fixed_operator_helmholtz_audit_001/Program.cs",
+      "sha256": "b524f097b2357bb893136cba9896bc5ceba1a141df73c6497bb3da8e3dcf24c0"
+    },
+    {
+      "id": "controls-helper",
+      "path": "studies/phase596_fixed_operator_helmholtz_audit_001/ExactControls.cs",
+      "sha256": "54646871052e938d3f64ad8fe64b93890620775764d1a5262705a01c7ab5b8fb"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase596_fixed_operator_helmholtz_audit_001/Phase596FixedOperatorHelmholtzAudit.csproj",
+      "sha256": "c5bf4f0407de4e9f9cb256890ded192e5f1600deeb8d3dc1dfb62c9d6e1dcd79"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase596_fixed_operator_helmholtz_audit_001/STUDY.md",
+      "sha256": "4bd729786266bdb44323c10a507d1e11e30d4b9feaf838fac24d05ce6b059735"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase594-summary",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json",
+      "sha256": "1b4de79a520c14f9ffe676a3225cb4814bf309feef2bc971a647f52b7b34777b"
+    },
+    {
+      "id": "phase594-contract",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/preregistration/contract_v1.json",
+      "sha256": "fb0a60401127df0575dbfdd4fdfa6cb40cfa885c70659c111c893c39d29f9a7f"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs",
+      "sha256": "6b7f13a024dbb834331514e93781f1122c1af8ac253d2cb040c81a57a0db1d08"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase596_fixed_operator_helmholtz_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "o4Status": "pending",
+  "promotedPhysicalMassClaimCount": 0
+}

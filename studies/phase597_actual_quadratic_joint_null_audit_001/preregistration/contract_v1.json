@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "phase": 597,
+  "contractId": "phase597-a51-actual-quadratic-joint-null-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Exact finite Fourier action Hessian and declared coordinate-null controls, with separate pointwise Riemann stationarity anchors; no dynamics or source selection",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "flat fourteen-torus; periodic x0,x1; normalized Fourier integration; other coordinates constant",
+    "operators": [
+      {
+        "a": 1,
+        "h": -1
+      },
+      {
+        "a": 1,
+        "h": 1
+      },
+      {
+        "a": -1,
+        "h": -1
+      },
+      {
+        "a": -1,
+        "h": 1
+      }
+    ],
+    "phi1": "a(1+h Omega)gamma",
+    "phi2": "(c-i h Omega)Gamma2",
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "chain": "full tied CCA; upper=[Phi1 wedge star F]_C-(1/2)star[Phi1 wedge star[Phi2 wedge star F]_A]_C; lower=inverse star1 upper",
+    "pairing": "-ReTr/128 times signed exterior metric; no positivity assumption",
+    "carrier": [
+      "u=theta0 gamma2 cos(x0)",
+      "v=theta1 Gamma12 sin(x0)"
+    ],
+    "curvatureBasis": "w=theta01 Gamma12 cos(x0)",
+    "du": "0",
+    "dv": "w",
+    "dAdjointW": "v",
+    "gram": [
+      [
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "curvatureGram": "1/2",
+    "fullKw": "2a theta0 (1+h Omega)gamma2 cos(x0)",
+    "innerA": "zero in both formal c slots",
+    "rawCovectorMatrix": [
+      [
+        "0",
+        "-a"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "quadraticAction": "-a*s*t/2+kappa*(-s*s+t*t)/4",
+    "massKappa": [
+      -1,
+      0,
+      1
+    ],
+    "actualHessian": [
+      [
+        "-kappa/2",
+        "-a/2"
+      ],
+      [
+        "-a/2",
+        "kappa/2"
+      ]
+    ],
+    "adjointScope": "full chain followed by exact finite Fourier Gram pullback; finite K adjoint, not claimed ambient K adjoint",
+    "jointCoordinates": [
+      "s",
+      "t",
+      "r"
+    ],
+    "jointJ": [
+      [
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "jointNull": [
+      1,
+      0,
+      1
+    ],
+    "wrongLiftJ": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "epsilon": "exp(r gamma2 sin(x0)); B=epsilon^-1 d epsilon=r u exactly; T=(s-r)u+t v",
+    "epsilonTensorJet": "Phi_epsilon=Phi+r[Phi,alpha]+O(r^2), alpha=gamma2 sin(x0); metric and trace fixed",
+    "connectionJet": "D_B T=dT+r(u wedge T+T wedge u); K and connection corrections have total amplitude degree at least3 in the quadratic action",
+    "epsilonJetAverages": "all first-order tensor/connection correction matrix entries vanish by Fourier parity; unaveraged connection correction on v is nonzero; tensor jet independently equals K[alpha,F]-[alpha,KF]",
+    "maurerCartan": {
+      "f": "sin(x0)",
+      "g": "sin(x1)",
+      "X": "gamma2",
+      "Y": "Gamma12",
+      "commutator": "-2 gamma1",
+      "epsilon": "exp(r f X)exp(r g Y)",
+      "E1": "fX+gY",
+      "E2": "f^2 X^2/2+fgXY+g^2 Y^2/2",
+      "B1": "dE1",
+      "B2": "dE2-E1 dE1=g df[X,Y]",
+      "dB2": "-df wedge dg[X,Y]",
+      "B1Squared": "df wedge dg[X,Y]",
+      "wrongMinusCurvature": "4 df wedge dg gamma1"
+    },
+    "gradeControl": "P gamma_j has distinct nonzero grades1 and13; grade1 projection=a gamma_j; all14 axes and four operators",
+    "stationarityBackgrounds": [
+      "flat",
+      "Weyl R0101=R2323=1,R0202=R1313=-1",
+      "constant sectional curvature1, R_abab=sigma_a sigma_b"
+    ],
+    "stationarityScope": "separate pointwise algebraic Riemann anchors, not the curvature of the Fourier flat-torus background",
+    "stationarityPredictions": {
+      "scalar": [
+        0,
+        0,
+        182
+      ],
+      "ricciConstant": "13 eta",
+      "fullForceConstant": "78 P gamma",
+      "forceSelfPairing": 0,
+      "mixedVariation": "theta0 (1-h Omega)gamma0/2",
+      "mixedPairingConstant": "-78a"
+    },
+    "expectedCounts": {
+      "wordCases": 256,
+      "hodgeCases": 16384,
+      "operatorRows": 4,
+      "chainSlots": 8,
+      "rawReciprocityRejections": 4,
+      "massRows": 12,
+      "jointRows": 12,
+      "wrongLiftRejections": 12,
+      "fixedEpsilonNonNullRows": 12,
+      "epsilonJetRows": 8,
+      "adjointPairingChecks": 32,
+      "gradeRows": 56,
+      "stationarityRows": 24,
+      "maurerCartanRows": 2
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 3,
+      "maximumEstimatedCpuSeconds": 15,
+      "estimatedPeakBytes": 67108864,
+      "maximumEstimatedPeakBytes": 134217728
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Full literal matched CCA maps w to 2a theta0(1+h Omega)gamma2 cos(x0); both formal inner-A coefficients vanish",
+    "Exact finite Grams are diag(-1/2,1/2) and 1/2; direct action, top-form trace and defining adjoints yield the same symmetric covector Hessian",
+    "Raw KD has covector matrix [[0,-a],[0,0]] and fails reciprocity; the raised actual Jacobian is only Gram-weighted symmetric",
+    "For all four a/h operators and three kappa values, the joint Hessian is J-transpose H J and annihilates (1,0,1); wrong plus lift and fixed-epsilon u controls are non-null",
+    "The single-generator B=r u is analytically exact and flat; explicit second-order jets and commuting-generator conditions are checked",
+    "First tensor-conjugation and connection corrections have amplitude degree at least3, with exact zero integrated first correction on this Fourier fixture",
+    "Noncommuting independent-coordinate epsilon jets have nonzero dB2 and B1-squared that cancel; the wrong relative sign leaves 4 df wedge dg gamma1",
+    "All56 pure grade1 images have injective grade1 projection and null self-pairing; null pairing is not zero matrix",
+    "Separate flat and nonzero Weyl anchors have zero full force; constant sectional curvature1 has scalar182, force78 P gamma, null self-pairing and nonzero mixed variation -78a",
+    "No result selects source transformation signs, full nonlinear Ward identity, physical gauge quotient, stability, hyperbolicity, spectrum or mass"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "full-chain-adjoint-control-failed",
+    "quadratic-joint-control-failed",
+    "background-flatness-jet-control-failed",
+    "grade-stationarity-control-failed",
+    "actual-quadratic-joint-null-controls-pass-dynamics-unselected"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/Program.cs",
+      "sha256": "f71922fe1e1052afaa2918cc00350c602a8a7bbdb6cc4d91dc700c8d603a7fc5"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/FourierTensor.cs",
+      "sha256": "a6cc09a6770000923e7533a3163482e81be5b7b1e20152cb5ecc45b4ca63b35e"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj",
+      "sha256": "c5bf4f0407de4e9f9cb256890ded192e5f1600deeb8d3dc1dfb62c9d6e1dcd79"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/STUDY.md",
+      "sha256": "93c5e94d0fa30cf2f529ce401c3d0128f0557cdbb42e7c07b27ee49caa63fe54"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase594-summary",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json",
+      "sha256": "1b4de79a520c14f9ffe676a3225cb4814bf309feef2bc971a647f52b7b34777b"
+    },
+    {
+      "id": "phase594-contract",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/preregistration/contract_v1.json",
+      "sha256": "fb0a60401127df0575dbfdd4fdfa6cb40cfa885c70659c111c893c39d29f9a7f"
+    },
+    {
+      "id": "phase594-program",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Program.cs",
+      "sha256": "e10d92a37a48c1a512a8c00e676dd80eb0c50ed5790ae4f18fa84d4810d2148f"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs",
+      "sha256": "6b7f13a024dbb834331514e93781f1122c1af8ac253d2cb040c81a57a0db1d08"
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be"
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6"
+    },
+    {
+      "id": "phase592-program",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/Program.cs",
+      "sha256": "c2be95aafa4aeabb794615f4350539c1667783de00f54523a933fa30eea40987"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

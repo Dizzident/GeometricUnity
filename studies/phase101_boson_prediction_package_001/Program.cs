@@ -430,6 +430,8 @@ const string Phase592Path = "studies/phase592_companion_tensor_chirality_audit_0
 const string Phase593Path = "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json";
 const string Phase594Path = "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json";
 const string Phase595Path = "studies/phase595_invariant_tensor_dimension_audit_001/output/invariant_tensor_dimension_audit_summary.json";
+const string Phase596Path = "studies/phase596_fixed_operator_helmholtz_audit_001/output/fixed_operator_helmholtz_audit_summary.json";
+const string Phase597Path = "studies/phase597_actual_quadratic_joint_null_audit_001/output/actual_quadratic_joint_null_audit_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -900,6 +902,8 @@ using var phase592 = TryParseJson(Phase592Path);
 using var phase593 = TryParseJson(Phase593Path);
 using var phase594 = TryParseJson(Phase594Path);
 using var phase595 = TryParseJson(Phase595Path);
+using var phase596 = TryParseJson(Phase596Path);
+using var phase597 = TryParseJson(Phase597Path);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -10687,6 +10691,28 @@ var package = new
             contractValid = JsonBool(phase595.RootElement, "contractValid"),
             exactBindingsValid = JsonBool(phase595.RootElement, "exactBindingsValid"),
             promotedPhysicalMassClaimCount = JsonInt(phase595.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        fixedOperatorHelmholtzAudit = phase596 is null ? null : new
+        {
+            status = JsonString(phase596.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase596.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase596.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase596.RootElement, "exactBindingsValid"),
+            coreSourceTreeValid = JsonBool(phase596.RootElement, "coreSourceTreeValid"),
+            knownAnswerPassed = phase596.RootElement.TryGetProperty("evidence", out var p596MirrorKnown) ? JsonBool(p596MirrorKnown, "knownAnswerPassed") : null,
+            controlsPassed = phase596.RootElement.TryGetProperty("evidence", out var p596MirrorControls) ? JsonBool(p596MirrorControls, "controlsPassed") : null,
+            promotedPhysicalMassClaimCount = JsonInt(phase596.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        actualQuadraticJointNullAudit = phase597 is null ? null : new
+        {
+            status = JsonString(phase597.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase597.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase597.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase597.RootElement, "exactBindingsValid"),
+            coreSourceTreeValid = JsonBool(phase597.RootElement, "coreSourceTreeValid"),
+            knownAnswerPassed = phase597.RootElement.TryGetProperty("evidence", out var p597MirrorKnown) ? JsonBool(p597MirrorKnown, "knownAnswerPassed") : null,
+            controlsPassed = phase597.RootElement.TryGetProperty("evidence", out var p597MirrorControls) ? JsonBool(p597MirrorControls, "controlsPassed") : null,
+            promotedPhysicalMassClaimCount = JsonInt(phase597.RootElement, "promotedPhysicalMassClaimCount"),
         },
         externalReviewPacketAssembly = phase580 is null ? null : new
         {

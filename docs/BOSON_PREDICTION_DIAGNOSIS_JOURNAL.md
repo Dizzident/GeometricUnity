@@ -23317,3 +23317,64 @@ source deficits15/14, promotedPhysicalMassClaimCount=0. No core edits,
 source selection, new sampling, target fitting, physical units or mass claims.
 See ACTION-GRADIENT-AND-INVARIANT-CLOSURE-20260909.md and both implementation
 notes for exact evidence and scope. Continue toward concrete next tests.
+
+## 2026-09-09 UTC — A51 conditional integrability and corrected quadratic action
+
+Two workers implemented596/597 in parallel; a third independently reviewed
+the complete frozen packs, alongside coordinator proof/code/hash checks.
+Both first scientific Release executions passed. Phase596's full small
+operator census yields principal234x144 rank134/nullity10, reduced40x10
+rank8/nullity2, combined1026x144 rank142/nullity2, and curvature12x78
+rank9/nullity69. Pre-run review strengthened the evidence: rational kernel/
+RREF consistency alone is not a rank certificate, so a separately coded
+fixed-prime modular elimination now provides matching rank lower bounds.
+Primality, rational conversion and invalid-denominator controls are exact.
+
+Both nonzero invariant Lie-pairing directions pass cyclic positive controls.
+A variable coefficient passes pointwise algebraic conditions but fails the
+curvature-only force identity; the true adjoint derivative restores symmetry.
+The separate written full-u(64,64) theorem, with exact spatial sign controls,
+is explicitly conditional on fixed zero-order K, unrestricted variations,
+exact curvature-only force, invariant pairing and Spin intertwining. Frame
+covariance alone is insufficient. No broad source realization is ruled out.
+
+Phase597 passes the full literal Fourier-chain quadratic derivative, actual
+indefinite adjoints and correctly lifted joint null test. All12 wrong-lift
+and fixed-epsilon-null decoys are rejected. The noncommuting pure-gauge jet
+has individually nonzero derivative and quadratic curvature terms which
+cancel with the correct sign. Pointwise curvature anchors, separate from
+the flat Fourier background, show why null self-pairing cannot diagnose
+stationarity. No stability, dispersion relation or mass follows from a
+two-amplitude Hessian.
+
+596 full/summary SHA256:
+dbb522e4cd869a7de1905b8064ab1d96dfceb5e029d4884059fff0ee6963245b.
+597 full/summary SHA256:
+825feb58360b8a17817cfafd2bf323112c00fc2f8d51085dd8e080b59fb72cf6.
+All11/15 bindings and726 core files verified. Both frozen packs remain
+unchanged after execution. No scientific failure occurred; the unavailable
+external timing wrapper before596 did not launch the study.
+
+Parallel review found a stronger constructive continuation: for the displayed
+uniform-conjugation continuum operator at fixed geometry and density,
+I(epsilon,omega)=I0(epsilon T epsilon^-1). Its actual gradient supplies
+the redundant epsilon equation -D_A^dagger g, without the invalid curvature
+shortcut. Exact H-unitary nilpotents provide finite polynomial noncommuting
+test fields with nonzero base cubic and quadratic actions. Freeze that full
+nonlinear descent/Ward test next;598+ remains free, no successor executed.
+Printed transformation signs, registered discretization and measure selection
+remain distinct unresolved questions.
+
+All shared integration surfaces include A51. Phase101 now mirrors the new
+core/control booleans, and202 checks all fourteen firewall names explicitly.
+Targeted Release builds have zero warnings/errors; package/audit/integrity
+pass at377/3, O4 coverage31/31, overturn94/94. Final incremental cadence
+follows all documentation edits and is recorded by its timestamped skip
+report. The preceding A50 pass_2026-09-09T01-05-38-212Z.json passed76
+ran/379 skipped and was committed/pushed as46d8fac6 with verified remote.
+Commit/push this tranche after its final validation, per the active user goal.
+
+All fourteen authority flags false, O4 pending, Phase561 closed, deficits15/14,
+promotedPhysicalMassClaimCount=0. No core change, historical frozen rewrite,
+new sampling, source selection, target fit, physical unit or mass claim.
+See HELMHOLTZ-AND-QUADRATIC-ACTION-20260909.md and both implementation notes.
