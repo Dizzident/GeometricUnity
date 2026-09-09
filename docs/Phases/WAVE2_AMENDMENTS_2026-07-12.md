@@ -2560,3 +2560,122 @@ Preserve any failed frozen run; no historical/core rewrites.
 All fourteen authority flags remain false, O4 pending, Phase561 closed,
 external review pending and physical mass claims0. No sampling, contour,
 measure, physical field, source operator, normalization or GeV selection.
+
+### A54 - Actual trace adjoint, periodic norm and full Hessian closure (2026-09-09 UTC)
+
+A52-A53 were committed/pushed as eeb1a204a5e0425e63a9649394bd83783c08b779,
+with verified matching remote. Final incremental report
+pass_2026-09-09T02-22-26-128Z.json passed76 ran/383 skipped,379/3 checklist.
+Continue the active goal with two concrete independently derived leads.
+Allocate600-601;602+ remains free. No new sampling or physical choice.
+
+600 constructs the FULL trace/exterior adjoint of the literal source CCA
+operator, not a fitted matrix or the curvature-only shortcut. In the real
+bilinear trace pairing C_Phi^dagger=-C_Phi and A_Phi^dagger=A_Phi for
+A_Phi(X)=i{Phi,X}; i is not Hermitian-conjugated. For a fixed form I and
+output K containing I, input J=K\I has adjoint wedge factor
+sigma(I)shuffle(I,J). Hodge transpose is
+star_p^dagger=(-1)^(p(14-p))star_(14-p)=-star_p^-1 in index7.
+Derivative transpose is -sum_i sigma_i contraction_i partial_i.
+Reverse both the full typed chain and its algebraically simplified chain.
+Keep complex Fourier coefficients under zero-mode bilinear pairing,
+not a modewise positive Hermitian replacement.
+
+Let Q(S)=S wedge S and DQ_S[V]=S wedge V+V wedge S. With this FULL
+derivative the actual cubic gradient is gamma(KQ+(DQ_S)^dagger K^dagger S)/3;
+do not add the factor2 belonging to a half-bilinear convention. Independently
+check every structurally possible adjoint coefficient by forward pairing
+with real/i probes, plus explicit C/A, negative-form-signature, Hodge,
+derivative and half-factor nonzero known answers. Structural support can
+be enumerated prospectively without an ambient91*16384 input sweep.
+For the declared S,1560 raw K-adjoint candidates and6240 DQ-adjoint
+candidates are conservative unmeasured support bounds, not target fits.
+
+Retain599's compact embedding E1=-(Gamma01+Gamma23)/4 and periodic
+S=theta2 E1 sin(x0), epsilon=1, fixed flat metric/reference/density.
+Use both h=+/-1, matched Phi1=P gamma,P=1+h Omega, Phi2=(c-i h Omega)Gamma2,
+formal c and gamma1/2 conventions. Kappa0 is primary, kappa1 a separately
+labeled mass control. Full K(F)=P(theta2 gamma1-theta0 gamma3)cos(x0)/2.
+The second leg is zero on F=dS but its adjoint contribution is NOT zero:
+d^dagger K_second^dagger S=-(ic/2)P sum_(j!=0,3)theta_j Gamma0j gamma3 cos
+-(1/2)P theta3 gamma0 cos. Include this as an omitted-adjoint falsifier.
+
+The independently reviewed quadratic gradient is
+P[-theta0 gamma3/4+theta2 gamma1/2-theta3 gamma0/4
+ -(ic/4)sum_(j!=0,3)theta_j Gamma0j gamma3]cos(x0).
+The full DQ-adjoint correction before its gamma/3 weight is
+P[(theta0 gamma0+theta1 gamma1)/4
+ +(ic/4)(theta0 Gamma123-theta1 Gamma023)]sin^2(x0).
+Direct action variation along V=theta0 gamma3 cos(x0) is1/8.
+The full actual-gradient trace self-pairing is kappa^2/16, while its
+positive coefficient diagnostic is3/8+gamma^2/96
++c^2(3/4+gamma^2/96)+kappa^2/16. Freeze all coefficients, counts and
+nonzero controls before execution. The actual core SD2/id0 half residual
+half-square averages1/32, identity1/4. The upper13-form metric flips
+nonzero trace values relative to the lowered1-form metric. A kappa1
+half-square coincidence is not an action bridge or a source parameter fit.
+
+The zero trace square follows from a separately proved actual-gradient
+chirality identity. For even S, K and its independently transposed K^dagger
+put the relevant even inputs into P*Cl_odd; derivative and Q adjoints
+preserve it for fixed P. Products PX PY vanish for odd X,Y. This is
+nonzero but null, not a zero output and not a selected source9.11 norm.
+Correcting the first-action gradient and choosing a residual-square action
+are distinct operations; do not transfer shortcut results without proof.
+
+601 tests the actual flat quadratic raised Hessian H0=(Kd+d^dagger K^dagger)/2
+on CLOSED carriers. Clifford parity is orthogonal with nondegenerate even
+and odd restrictions under the declared full real trace pairing. H0 flips
+parity and sends every even one-form into the isotropic L=P*Cl_odd.
+Formal self-adjointness then implies H0 L=0, hence H0^3=0 on the full
+unconstrained periodic/compact-support carrier. This is a conditional
+operator proof, not a numerical extrapolation from a small submatrix.
+
+For u=theta0 gamma2 cos(x0), the predicted exact first image is
+e=H0u=[sum_(j!=0,2)theta_j gamma2 gamma_j+ic theta2 I]sin(x0).
+The two h Omega terms cancel between the actual adjoint legs. Its trace
+norm is g=(12+c^2)/2>0. Thus f=H0^2u is nonzero by B(u,f)=g,
+and span{u,e,f} is a closed nondegenerate three-dimensional cyclic carrier
+with Gram[[-1/2,0,g],[0,g,0],[g,0,0]], determinant-g^3, and H0f=0.
+The carrier depends on c: do not claim its coefficientwise span is closed
+under each coefficient operator separately. Compute the full f and H0f;
+never substitute the desired Jordan action for the source-chain application.
+
+At the explicitly diagnostic c0, include v=theta1 Gamma12 sin(x0),
+w=P(theta0 gamma2+theta2 gamma0)cos(x0). The exact closure {u,v,e,w}
+obeys Hu=e,Hv=w,He=-12w,Hw=0. Even Gram(v,e) is[[1/2,-1/2],[-1/2,6]],
+odd Gram(u,w) is[[-1/2,-1/2],[-1/2,0]], with other parity cross terms zero.
+Its full Jordan structure is3 plus1 and spectrumzero; the B-orthogonal
+compression to{u,v} has raised matrix[[0,1],[-1,0]]. Its nonzero eigenvalues
+are not an error in597's restricted action but cannot be claimed as full
+spectral modes without closure or a justified reduction. Test the leakage,
+nondegenerate Gram, full iterates, source c-slot controls and optional
+constant/mass/frequency controls only after complete analytical preregistration.
+No physical time, hyperbolicity, poles or full-theory no-go is inferred.
+
+600 and601 have separate workers; a third agent independently reviews both
+complete packs. Coordinator owns shared integration/docs and full pre-run
+code/proof/hash review. Freeze all code/helpers/project/STUDY, every fixture,
+expected coefficients/counts/tolerances, bounded resources, precedence,
+unique exact bindings and the live726-file core manifest. If601 links600
+helpers, bind the complete helper lineage and freeze only after those files
+are final; no scientific execution before both reviews and explicit MAIN
+approval. Build-only Release is permitted. Preserve failed frozen runs and
+version scientific repairs. No core or historical frozen rewrites.
+
+All fourteen authority flags remain false; O4 and external review pending,
+Phase561 closed, source deficits15/14 and promoted physical mass claims0.
+No sampling, fitting, norm/measure/contour selection, field extraction,
+dimensional reduction, source choice, physical spectrum or GeV calibration.
+
+A54 execution record: both first frozen Release runs passed after full
+independent and coordinator code/proof/fixture/binding/core-tree reviews.
+600 wall0.839s, contractf288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357,
+full/summaryfc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e.
+601 wall0.549s, contract1eaf3887a4720723d9793fc9a7d66507feee7136969c68ee35ff3ec32d9cd83f,
+full/summary294e2b9cfd4a7ed4eeb20f3b5820e8ccaebef0c08d22fb847f20be215b0cfc4c.
+All frozen counts, nonzero controls and scope flags passed unchanged.
+Integration now includes600-601; targeted package/checklist/integrity381/3.
+The analytical stationary odd and homogeneous invariant background leads
+are successors to freeze, not executed results or allocations. Registry602+
+remains free; no source norm, vacuum, scale or physical mass is selected.

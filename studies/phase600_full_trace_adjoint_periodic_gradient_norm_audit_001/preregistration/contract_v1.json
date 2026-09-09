@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "phase": 600,
+  "contractId": "phase600-a54-full-trace-adjoint-periodic-gradient-norm-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Full actual trace/exterior adjoint and periodic action gradient under a declared indefinite pairing; independently supported coefficient and registered API comparisons; no source norm or physical choice",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "fixed flat reference and metric; normalized periodic Fourier density in x0; epsilon=I",
+    "chiralities": [
+      -1,
+      1
+    ],
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "gammaEncodings": [
+      1,
+      2
+    ],
+    "massKappa": [
+      0,
+      1
+    ],
+    "phi1": "P gamma, P=1+h Omega",
+    "phi2": "(c-i h Omega)Gamma2",
+    "operator": "full typed CCA, both Hodge legs and factor1/2",
+    "pairing": "real bilinear -ReTr/128 times signed exterior metric; zero-mode Fourier convolution",
+    "adjoints": {
+      "C": "minus coefficient commutator",
+      "A": "same i anticommutator, no conjugation of i",
+      "wedge": "sigma(I)*shuffle(I,J), I subset output and J=output xor I",
+      "star": "(-1)^(p*(14-p))*star_(14-p)",
+      "d": "-sum_i sigma_i contraction_i partial_i",
+      "DQ": "full derivative S wedge V+V wedge S; its adjoint has no extra factor2"
+    },
+    "S": "theta2 E1 sin(x0), E1=-(Gamma01+Gamma23)/4",
+    "V": "theta0 gamma3 cos(x0)",
+    "F": "theta02 E1 cos(x0)",
+    "Q": 0,
+    "sourceLieGram": "1/8",
+    "sourceFieldPair": "1/16",
+    "fullKF": "P(theta2 gamma1-theta0 gamma3)cos(x0)/2",
+    "innerForwardOnF": 0,
+    "innerAdjointDerivative": "-P theta3 gamma0 cos/2-(ic/2)P sum_(j!=0,3)theta_j gamma0 gamma_j gamma3 cos",
+    "L": "P[-theta0 gamma3/4+theta2 gamma1/2-theta3 gamma0/4-(ic/4)sum_(j!=0,3)theta_j gamma0 gamma_j gamma3]cos",
+    "N": "P[(theta0 gamma0+theta1 gamma1)/4+(ic/4)(theta0 Gamma123-theta1 Gamma023)]sin^2",
+    "actualGradient": "G=L+gamma*N/3+kappa*S, N=(DQ_S)^dagger K^dagger S",
+    "directionalVariation": "1/8",
+    "shortcutDirectionalPair": "1/4",
+    "normPolynomialOrder": [
+      "1",
+      "c",
+      "c^2"
+    ],
+    "traceNorm": "kappa^2/16",
+    "upper13TraceNorm": "-kappa^2/16",
+    "coefficientNorm": "3/8+gamma^2/96+c^2*(3/4+gamma^2/96)+kappa^2/16",
+    "slotTermCounts": {
+      "KAdjoint": [
+        56,
+        312
+      ],
+      "L": [
+        12,
+        48
+      ],
+      "N": [
+        12,
+        12
+      ],
+      "Gkappa0": [
+        24,
+        60
+      ],
+      "Gkappa1": [
+        28,
+        60
+      ]
+    },
+    "support": {
+      "KForms": 91,
+      "ambientCliffordMasks": 16384,
+      "KCandidateMasks": "7 xor form,8 xor form,and their full14 complements",
+      "KCandidatesPerContext": 364,
+      "KExcludedPerContext": 1490580,
+      "KProbeHarmonics": [
+        "sin(x0)",
+        "cos(x0)"
+      ],
+      "KNonzeroSinPerSlot": [
+        28,
+        156
+      ],
+      "DQCandidatePositionsPerSlot": [
+        8,
+        48
+      ],
+      "DQProbeHarmonics": [
+        "1",
+        "cos(2x0)",
+        "sin(2x0)"
+      ],
+      "DQNonzeroPerContext": 8,
+      "realPhase": "1 for H-anti real blades, i otherwise",
+      "KRawCandidateUpperBound": 1560,
+      "DQRawCandidateUpperBound": 6240
+    },
+    "blockControls": [
+      "C positive pairing2",
+      "A positive pairing2 and wrong-i sign pairing-2",
+      "negative form signature/shuffle C pairing2",
+      "star1 pairing-1",
+      "star2 pairing-1",
+      "d adjoint pairing1/2",
+      "full DQ pairing2, erroneous half1"
+    ],
+    "fourierKnownAnswers": {
+      "sin2": "1/2",
+      "cos2": "1/2",
+      "sin4": "3/8",
+      "cosSin2": 0
+    },
+    "core": {
+      "api": "Lambda2Algebra.MemberEndomorphism; LieAlgebraFactory.CreateSu2WithTracePairing",
+      "member": "sd2/id0 coefficient1/2",
+      "map": "(I+star4)/4",
+      "identity": "id0/none",
+      "input": "theta02 T1 cos(x0)",
+      "halfSquares": [
+        "1/32",
+        "1/4"
+      ],
+      "meshInsertionPerformed": false
+    },
+    "expectedCounts": {
+      "wordCases": 256,
+      "hodgeCases": 16384,
+      "blockControls": 7,
+      "contexts": 4,
+      "KForwardPairingChecks": 2912,
+      "KNonzeroPairings": 368,
+      "DQForwardPairingChecks": 336,
+      "DQNonzeroPairings": 32,
+      "innerAdjointRejections": 4,
+      "gradientRows": 16,
+      "normRows": 8,
+      "shortcutRejections": 2,
+      "coreMatrixEntries": 108,
+      "coreGramEntries": 9,
+      "coreStructureEntries": 27,
+      "coreResidualEntries": 36,
+      "coreNormRows": 2
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 15,
+      "maximumEstimatedCpuSeconds": 90,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Real bilinear trace transpose reverses C but retains the i-anticommutator; exterior signature and Hodge index7 signs remain explicit",
+    "Literal factor-by-factor reversed CCA and independently simplified reversed CCA give identical complete adjoints",
+    "Four possible Clifford masks per curvature form exhaust structurally possible scalar traces:364 candidates and1490580 excluded positions per context, without claiming an ambient forward sweep",
+    "All2912 sine/cosine forward pairings verify the complete K-adjoint;368 are nonzero",
+    "Only after Y=K-adjoint S is fully certified,336 DQ probes certify the full derivative adjoint with32 nonzero pairings and no extra factor2",
+    "The second leg vanishes on dS but its derivative-adjoint contribution has genuine nonzero constant and c-dependent coefficients",
+    "The full actual gradient has the declared L plus gamma*N/3 plus kappa*S coefficients and directional variation1/8, whereas the shortcut directional pairing is1/4",
+    "The actual gradient trace polynomial is kappa-squared/16; upper13-form trace is its negative; neither is a selected source9.11 norm",
+    "The positive coefficient polynomial is3/8+gamma-squared/96+c-squared*(3/4+gamma-squared/96)+kappa-squared/16, with no linear-c cross term",
+    "The actual core member API gives the periodic positive half-square1/32 and identity control1/4 in its own Gram1 compact basis",
+    "The kappa1 mass-only half-square coincidence does not establish a bridge, select a parameter, or identify the full operators",
+    "All fourteen authority flags remain false and no physical mass, spectrum, measure, contour or source normalization is selected"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-adjoint-control-failed",
+    "full-adjoint-support-control-failed",
+    "actual-gradient-control-failed",
+    "declared-norm-control-failed",
+    "registered-comparison-control-failed",
+    "full-trace-adjoint-periodic-controls-pass-declared-norm-mismatch"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase598-summary",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/output/continuum_action_descent_ward_audit_summary.json",
+      "sha256": "d7d8b0576ec4a15edfb0a3bcfb7cbff900b651c1be326c0805d019c05b191cfb"
+    },
+    {
+      "id": "phase598-contract",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/preregistration/contract_v1.json",
+      "sha256": "daa0785a3b3aada95c665b5a7234d43d2bea67140d5a4e5651a9e72f8ec20ecd"
+    },
+    {
+      "id": "phase598-program",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/Program.cs",
+      "sha256": "a15a29e413bbb2212cd6385b999b953991980c9e782522ae0aa17a5e848de842"
+    },
+    {
+      "id": "phase598-arithmetic",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase598-fourier",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase599-summary",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/output/source_registered_residual_kernel_audit_summary.json",
+      "sha256": "17c29c711e3c5a4cd48e19b4773f4a9b5d6ce76ca84c5842d90832852e71b2ac"
+    },
+    {
+      "id": "phase599-contract",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/contract_v1.json",
+      "sha256": "a3807b93dfc04003baa7a285ac8fdbeb309e68ee437e17e3dcb212ad975bdd17"
+    },
+    {
+      "id": "phase599-program",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/Program.cs",
+      "sha256": "73b5b385dfbd147495b623b4ad0b3ad4728b72fcdfc56853810c80b55bf1a4a6"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

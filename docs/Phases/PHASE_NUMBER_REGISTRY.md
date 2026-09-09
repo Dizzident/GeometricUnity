@@ -63,7 +63,9 @@ back, NO new phase directory may be created outside this table.
 | 597 | Actual quadratic action and joint-null audit (A51) | Exact Fourier/Clifford quadratic derivative, pure-gauge flatness and lifted-coordinate Hessian null controls; no spectral or stability claim. |
 | 598 | Full continuum action-descent and nonlinear Ward audit (A52) | DONE, first frozen run passed: full finite-epsilon action and actual variations agree; nonzero wrong-lift/frozen-tensor controls reject; no source or measure selection. |
 | 599 | Source versus registered residual kernel audit (A53) | DONE, first frozen run passed: exact selfdual Weyl kernel mismatch under declared compact Lie embedding; no source selection, action-modulo-boundary conclusion or mass claim. |
-| 600+ | Unassigned - extend this registry before use | - |
+| 600 | Full trace-adjoint periodic gradient norm audit (A54) | DONE, first frozen run passed: complete forward-checked adjoint, nonzero/null actual gradient and declared-pairing periodic comparison; no norm or physical field selection. |
+| 601 | Full quadratic Hessian cyclic-closure audit (A54) | DONE, first frozen run passed: full-source cyclic closure and non-invariant two-mode compression; fixed-geometry connection carrier, no physical spectrum or source choice. |
+| 602+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -1,0 +1,3793 @@
+{
+  "schemaVersion": 1,
+  "phase": 601,
+  "phaseId": "phase601-full-hessian-cyclic-closure-audit",
+  "contractId": "phase601-a54-full-hessian-cyclic-closure-v1",
+  "contractSha256": "1eaf3887a4720723d9793fc9a7d66507feee7136969c68ee35ff3ec32d9cd83f",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "bindingCount": 15,
+  "uniqueBindingIdCount": 15,
+  "uniqueBindingPathCount": 15,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/Program.cs",
+      "sha256": "d13db7a23dbdf964ffafc067fa1711810ae7a420b81e15aa4c973dd3bd31c451",
+      "hashMatches": true
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/CyclicPolynomial.cs",
+      "sha256": "b37c7a5bdd769524513bef8eb0d85e77f3fbe30fca491136b27ef1ec685bd037",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj",
+      "sha256": "7638cabccf1113e0c281ee9fac8769f057336a356d5596f852727a87d388ace4",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/STUDY.md",
+      "sha256": "06eddfc63aea88f711aab752f2e6b27dffbc8a11c8125229d17a0e8df676f8d3",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444",
+      "hashMatches": true
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f",
+      "hashMatches": true
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a",
+      "hashMatches": true
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78",
+      "hashMatches": true
+    },
+    {
+      "id": "phase597-summary",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/output/actual_quadratic_joint_null_audit_summary.json",
+      "sha256": "825feb58360b8a17817cfafd2bf323112c00fc2f8d51085dd8e080b59fb72cf6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase597-contract",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/preregistration/contract_v1.json",
+      "sha256": "3bb6423f17a2bea308a437be16542ab94942149f60d80fab66041ad92aaf0b34",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "full-hessian-cyclic-closure-controls-pass-compression-not-spectrum",
+  "terminalStatus": "full-hessian-cyclic-closure-controls-pass-compression-not-spectrum",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "sourceApplicationsPassed": true,
+    "constantPassed": true,
+    "supportPassed": true,
+    "cyclicPassed": true,
+    "fourPassed": true,
+    "compressionPassed": true,
+    "countsPassed": true,
+    "counts": {
+      "wordCases": 44944,
+      "hodgeCases": 16384,
+      "chiralityRows": 2,
+      "operatorSlotApplications": 40,
+      "adjointLegComparisons": 6,
+      "cyclicRows": 2,
+      "cyclicGramEntries": 18,
+      "cyclicActionBilinearChecks": 18,
+      "fourRows": 2,
+      "fourGramEntries": 32,
+      "fourActionBilinearChecks": 32,
+      "compressionRows": 2,
+      "leakageRows": 4,
+      "leakageOrthogonalityChecks": 8,
+      "feedbackEntries": 8,
+      "constantRows": 2
+    },
+    "adjointLegRows": [
+      {
+        "h": -1,
+        "passed": true,
+        "first": [
+          {
+            "form": 2,
+            "blade": 6,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 2,
+            "blade": 6,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 8,
+            "blade": 12,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 8,
+            "blade": 12,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 16,
+            "blade": 20,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 16,
+            "blade": 20,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 32,
+            "blade": 36,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 32,
+            "blade": 36,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 64,
+            "blade": 68,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 64,
+            "blade": 68,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 128,
+            "blade": 132,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 128,
+            "blade": 132,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 256,
+            "blade": 260,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 256,
+            "blade": 260,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 512,
+            "blade": 516,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 512,
+            "blade": 516,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 1024,
+            "blade": 1028,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 1024,
+            "blade": 1028,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 2048,
+            "blade": 2052,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 2048,
+            "blade": 2052,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 4096,
+            "blade": 4100,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4096,
+            "blade": 4100,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 8192,
+            "blade": 8196,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 8192,
+            "blade": 8196,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          }
+        ],
+        "secondConstant": [
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          }
+        ],
+        "secondC": [
+          {
+            "form": 4,
+            "blade": 0,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 0,
+            "k0": 1,
+            "k1": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ]
+      },
+      {
+        "h": 1,
+        "passed": true,
+        "first": [
+          {
+            "form": 2,
+            "blade": 6,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 2,
+            "blade": 6,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 8,
+            "blade": 12,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 8,
+            "blade": 12,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 16,
+            "blade": 20,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 16,
+            "blade": 20,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 32,
+            "blade": 36,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 32,
+            "blade": 36,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 64,
+            "blade": 68,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 64,
+            "blade": 68,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 128,
+            "blade": 132,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 128,
+            "blade": 132,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 256,
+            "blade": 260,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 256,
+            "blade": 260,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 512,
+            "blade": 516,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 512,
+            "blade": 516,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 1024,
+            "blade": 1028,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 1024,
+            "blade": 1028,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 2048,
+            "blade": 2052,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 2048,
+            "blade": 2052,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 4096,
+            "blade": 4100,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4096,
+            "blade": 4100,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          },
+          {
+            "form": 8192,
+            "blade": 8196,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 8192,
+            "blade": 8196,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          }
+        ],
+        "secondConstant": [
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": -1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "1/2"
+          },
+          {
+            "form": 4,
+            "blade": 16383,
+            "k0": 1,
+            "k1": 0,
+            "real": "0",
+            "imaginary": "-1/2"
+          }
+        ],
+        "secondC": [
+          {
+            "form": 4,
+            "blade": 0,
+            "k0": -1,
+            "k1": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "form": 4,
+            "blade": 0,
+            "k0": 1,
+            "k1": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ]
+      }
+    ],
+    "cyclicRows": [
+      {
+        "h": -1,
+        "passed": true,
+        "actionBilinearPassed": true,
+        "e": [
+          {
+            "power": 0,
+            "terms": [
+              {
+                "form": 2,
+                "blade": 6,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 2,
+                "blade": 6,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8,
+                "blade": 12,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8,
+                "blade": 12,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 16,
+                "blade": 20,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 16,
+                "blade": 20,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 32,
+                "blade": 36,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 32,
+                "blade": 36,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 64,
+                "blade": 68,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 64,
+                "blade": 68,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 128,
+                "blade": 132,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 128,
+                "blade": 132,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 256,
+                "blade": 260,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 256,
+                "blade": 260,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 512,
+                "blade": 516,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 512,
+                "blade": 516,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1028,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1028,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2052,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2052,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4100,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4100,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8196,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8196,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              }
+            ]
+          },
+          {
+            "power": 1,
+            "terms": [
+              {
+                "form": 4,
+                "blade": 0,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 0,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "f": [
+          {
+            "power": 0,
+            "terms": [
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "power": 1,
+            "terms": [
+              {
+                "form": 2,
+                "blade": 7,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2,
+                "blade": 7,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2,
+                "blade": 16376,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2,
+                "blade": 16376,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 13,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 13,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 16370,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 8,
+                "blade": 16370,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 16,
+                "blade": 21,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 21,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 16362,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 16362,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 37,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 37,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 16346,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 32,
+                "blade": 16346,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 64,
+                "blade": 69,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 69,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 16314,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 16314,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 133,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 133,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 16250,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 16250,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 261,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 261,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 16122,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 256,
+                "blade": 16122,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 512,
+                "blade": 517,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 517,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 15866,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 15866,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1029,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1029,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 15354,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 15354,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2053,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2053,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 14330,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 14330,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4101,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4101,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 12282,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 12282,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8186,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8186,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8197,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8197,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              }
+            ]
+          },
+          {
+            "power": 2,
+            "terms": [
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": 1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": 1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": -1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": -1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "hF": [
+          {
+            "power": 0,
+            "terms": []
+          }
+        ],
+        "gram": [
+          [
+            [
+              "-1/2"
+            ],
+            [
+              "0"
+            ],
+            [
+              "6",
+              "0",
+              "1/2"
+            ]
+          ],
+          [
+            [
+              "0"
+            ],
+            [
+              "6",
+              "0",
+              "1/2"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "6",
+              "0",
+              "1/2"
+            ],
+            [
+              "0"
+            ],
+            [
+              "0"
+            ]
+          ]
+        ],
+        "gramDeterminant": [
+          "-216",
+          "0",
+          "-54",
+          "0",
+          "-9/2",
+          "0",
+          "-1/8"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "powerRanks": [
+          "2",
+          "1",
+          "0"
+        ],
+        "characteristic": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "cDependentCarrier": true,
+        "coefficientwiseOperatorClosureClaimed": false
+      },
+      {
+        "h": 1,
+        "passed": true,
+        "actionBilinearPassed": true,
+        "e": [
+          {
+            "power": 0,
+            "terms": [
+              {
+                "form": 2,
+                "blade": 6,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 2,
+                "blade": 6,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8,
+                "blade": 12,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8,
+                "blade": 12,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 16,
+                "blade": 20,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 16,
+                "blade": 20,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 32,
+                "blade": 36,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 32,
+                "blade": 36,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 64,
+                "blade": 68,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 64,
+                "blade": 68,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 128,
+                "blade": 132,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 128,
+                "blade": 132,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 256,
+                "blade": 260,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 256,
+                "blade": 260,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 512,
+                "blade": 516,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 512,
+                "blade": 516,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1028,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1028,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2052,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2052,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4100,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4100,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8196,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "1/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8196,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-1/2"
+              }
+            ]
+          },
+          {
+            "power": 1,
+            "terms": [
+              {
+                "form": 4,
+                "blade": 0,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 0,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "f": [
+          {
+            "power": 0,
+            "terms": [
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": -1,
+                "k1": 0,
+                "real": "6",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": 1,
+                "k1": 0,
+                "real": "6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": -1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": 1,
+                "k1": 0,
+                "real": "-6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": -1,
+                "k1": 0,
+                "real": "6",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": 1,
+                "k1": 0,
+                "real": "6",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "power": 1,
+            "terms": [
+              {
+                "form": 2,
+                "blade": 7,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2,
+                "blade": 7,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2,
+                "blade": 16376,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2,
+                "blade": 16376,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 8,
+                "blade": 13,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 13,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 16370,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8,
+                "blade": 16370,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 21,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 21,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 16,
+                "blade": 16362,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 16,
+                "blade": 16362,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 32,
+                "blade": 37,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 37,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 16346,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 32,
+                "blade": 16346,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 69,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 69,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 64,
+                "blade": 16314,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 64,
+                "blade": 16314,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 128,
+                "blade": 133,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 133,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 128,
+                "blade": 16250,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 128,
+                "blade": 16250,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 256,
+                "blade": 261,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 261,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 16122,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 256,
+                "blade": 16122,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 517,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 517,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 512,
+                "blade": 15866,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 512,
+                "blade": 15866,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1029,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 1029,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 15354,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 1024,
+                "blade": 15354,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2053,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 2053,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 14330,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 2048,
+                "blade": 14330,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4101,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 4101,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 12282,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 4096,
+                "blade": 12282,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8186,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8186,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "-11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8197,
+                "k0": -1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              },
+              {
+                "form": 8192,
+                "blade": 8197,
+                "k0": 1,
+                "k1": 0,
+                "real": "0",
+                "imaginary": "11/2"
+              }
+            ]
+          },
+          {
+            "power": 2,
+            "terms": [
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 4,
+                "k0": 1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": -1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 1,
+                "blade": 16379,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": -1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 1,
+                "k0": 1,
+                "k1": 0,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": -1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "form": 4,
+                "blade": 16382,
+                "k0": 1,
+                "k1": 0,
+                "real": "-1/2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "hF": [
+          {
+            "power": 0,
+            "terms": []
+          }
+        ],
+        "gram": [
+          [
+            [
+              "-1/2"
+            ],
+            [
+              "0"
+            ],
+            [
+              "6",
+              "0",
+              "1/2"
+            ]
+          ],
+          [
+            [
+              "0"
+            ],
+            [
+              "6",
+              "0",
+              "1/2"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "6",
+              "0",
+              "1/2"
+            ],
+            [
+              "0"
+            ],
+            [
+              "0"
+            ]
+          ]
+        ],
+        "gramDeterminant": [
+          "-216",
+          "0",
+          "-54",
+          "0",
+          "-9/2",
+          "0",
+          "-1/8"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "powerRanks": [
+          "2",
+          "1",
+          "0"
+        ],
+        "characteristic": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "cDependentCarrier": true,
+        "coefficientwiseOperatorClosureClaimed": false
+      }
+    ],
+    "fourRows": [
+      {
+        "h": -1,
+        "passed": true,
+        "fullColumnsPassed": true,
+        "actionBilinearPassed": true,
+        "gram": [
+          [
+            "-1/2",
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2",
+            "6",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "gramDeterminant": "-11/16",
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "-12",
+            "0"
+          ]
+        ],
+        "loweredHessian": [
+          [
+            "0",
+            "-1/2",
+            "6",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "6",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "powerRanks": [
+          "2",
+          "1",
+          "0"
+        ],
+        "characteristic": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "images": [
+          [
+            {
+              "form": 2,
+              "blade": 6,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2,
+              "blade": 6,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ]
+      },
+      {
+        "h": 1,
+        "passed": true,
+        "fullColumnsPassed": true,
+        "actionBilinearPassed": true,
+        "gram": [
+          [
+            "-1/2",
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2",
+            "6",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "gramDeterminant": "-11/16",
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "-12",
+            "0"
+          ]
+        ],
+        "loweredHessian": [
+          [
+            "0",
+            "-1/2",
+            "6",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "6",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "powerRanks": [
+          "2",
+          "1",
+          "0"
+        ],
+        "characteristic": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "images": [
+          [
+            {
+              "form": 2,
+              "blade": 6,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2,
+              "blade": 6,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 4,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "6",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "-6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "6",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "6",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ]
+      }
+    ],
+    "compressionRows": [
+      {
+        "h": -1,
+        "passed": true,
+        "compressedMatrix": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "characteristic": [
+          "1",
+          "0",
+          "1"
+        ],
+        "squared": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "projectedFullSquared": [
+          [
+            "-12",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "squareDifference": [
+          [
+            "-11",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "feedback": [
+          [
+            "-11",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "leakage": [
+          [
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "leakageNormSquared": [
+          "11/2",
+          "1/2"
+        ],
+        "restrictedActionValid": true,
+        "fullSpectralModesClaimed": false
+      },
+      {
+        "h": 1,
+        "passed": true,
+        "compressedMatrix": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "characteristic": [
+          "1",
+          "0",
+          "1"
+        ],
+        "squared": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "projectedFullSquared": [
+          [
+            "-12",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "squareDifference": [
+          [
+            "-11",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "feedback": [
+          [
+            "-11",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "leakage": [
+          [
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8,
+              "blade": 12,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 16,
+              "blade": 20,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 32,
+              "blade": 36,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 64,
+              "blade": 68,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 128,
+              "blade": 132,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 256,
+              "blade": 260,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 512,
+              "blade": 516,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 1024,
+              "blade": 1028,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 2048,
+              "blade": 2052,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 4096,
+              "blade": 4100,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": -1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "1/2"
+            },
+            {
+              "form": 8192,
+              "blade": 8196,
+              "k0": 1,
+              "k1": 0,
+              "real": "0",
+              "imaginary": "-1/2"
+            }
+          ],
+          [
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": -1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 1,
+              "blade": 16379,
+              "k0": 1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": -1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 1,
+              "k0": 1,
+              "k1": 0,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": -1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "form": 4,
+              "blade": 16382,
+              "k0": 1,
+              "k1": 0,
+              "real": "-1/2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "leakageNormSquared": [
+          "11/2",
+          "1/2"
+        ],
+        "restrictedActionValid": true,
+        "fullSpectralModesClaimed": false
+      }
+    ],
+    "fixedGeometryConnectionCarrierOnly": true,
+    "combinedMetricConnectionHessianTested": false,
+    "generalNilpotencyIsWrittenProof": true,
+    "fullSpectrumFromCompressionClaimed": false,
+    "sourceNormSelected": false,
+    "physicalDynamicsSelected": false
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

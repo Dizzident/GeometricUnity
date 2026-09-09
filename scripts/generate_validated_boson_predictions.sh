@@ -468,6 +468,8 @@ dotnet run --no-build -c Release --project studies/phase596_fixed_operator_helmh
 dotnet run --no-build -c Release --project studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj
 dotnet run --no-build -c Release --project studies/phase598_continuum_action_descent_ward_audit_001/Phase598ContinuumActionDescentWardAudit.csproj
 dotnet run --no-build -c Release --project studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj
+dotnet run --no-build -c Release --project studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj
+dotnet run --no-build -c Release --project studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

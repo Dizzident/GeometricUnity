@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "phase": 601,
+  "contractId": "phase601-a54-full-hessian-cyclic-closure-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Full fixed-geometry connection Hessian on formal-c cyclic and c0 two-seed closed carriers; exact compression leakage, not a full metric-plus-connection or physical spectrum claim",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "flat fixed metric/reference/epsilon/tensors; normalized periodic x0, other coordinates constant",
+    "carrierScope": "full connection carrier only; not metric-plus-connection Hessian",
+    "chiralities": [
+      -1,
+      1
+    ],
+    "a": 1,
+    "kappa": 0,
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "phi1": "P gamma,P=1+h Omega",
+    "phi2": "(c-i h Omega)Gamma2",
+    "operator": "H=(K d+dAdjoint KAdjoint)/2; actual full literal and simplified reverse chains",
+    "pairing": "-ReTr/128 with signed form metric and normalized Fourier zero-mode integral",
+    "u": "theta0 gamma2 cos(x0)",
+    "v": "theta1 Gamma12 sin(x0)",
+    "e": "[sum_(j!=0,2)theta_j gamma2 gamma_j+ic theta2 I]sin(x0)",
+    "Z": "sum_(j!=0,2)theta_j gamma0 gamma_j gamma2 cos(x0)",
+    "f": "P[-(12+c^2)theta0 gamma2 cos+(c^2-12)theta2 gamma0 cos-11ic Z]",
+    "firstAdjointLeg": "e0-h theta2 Omega sin",
+    "secondAdjointLegConstant": "h theta2 Omega sin",
+    "secondAdjointLegC": "i theta2 I sin",
+    "cyclicBasis": [
+      "u",
+      "e=Hu",
+      "f=H^2u"
+    ],
+    "g": "(12+c^2)/2",
+    "cyclicGram": [
+      [
+        "-1/2",
+        "0",
+        "g"
+      ],
+      [
+        "0",
+        "g",
+        "0"
+      ],
+      [
+        "g",
+        "0",
+        "0"
+      ]
+    ],
+    "cyclicDeterminant": "-g^3",
+    "cyclicMatrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "cyclicPowerRanks": [
+      2,
+      1,
+      0
+    ],
+    "cyclicCharacteristic": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "fourCarrierC": 0,
+    "fourBasis": [
+      "u",
+      "v",
+      "e0",
+      "w=P(theta0 gamma2+theta2 gamma0)cos"
+    ],
+    "fourMatrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        -12,
+        0
+      ]
+    ],
+    "fourGram": [
+      [
+        "-1/2",
+        "0",
+        "0",
+        "-1/2"
+      ],
+      [
+        "0",
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "6",
+        "0"
+      ],
+      [
+        "-1/2",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "fourDeterminant": "-11/16",
+    "fourPowerRanks": [
+      2,
+      1,
+      0
+    ],
+    "fourCharacteristic": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "compressionMatrix": [
+      [
+        0,
+        1
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "compressionGram": [
+      [
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "compressionCharacteristic": [
+      1,
+      0,
+      1
+    ],
+    "compressionEigenvalues": "plus/minus i; exact polynomial only, no eigensolver",
+    "leakage": [
+      "e0+v",
+      "w-u"
+    ],
+    "leakageNormSquared": [
+      "11/2",
+      "1/2"
+    ],
+    "compressionSquareDifference": [
+      [
+        -11,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "feedback": "Pi H(1-Pi)H equals Pi H^2-(Pi H)^2",
+    "actionBilinearOracle": "[B(X,KdY)+B(Y,KdX)]/2, computed independently from forward K",
+    "constantControl": "H(theta0 gamma2)=0 in both formal c slots",
+    "knownAnswerGrades": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "polynomialChecks": "(1+c)(1-c)=1-c^2; signed determinant, rank, inverse and characteristic known answers",
+    "counts": {
+      "wordCases": 44944,
+      "hodgeCases": 16384,
+      "chiralityRows": 2,
+      "operatorSlotApplications": 40,
+      "adjointLegComparisons": 6,
+      "cyclicRows": 2,
+      "cyclicGramEntries": 18,
+      "cyclicActionBilinearChecks": 18,
+      "fourRows": 2,
+      "fourGramEntries": 32,
+      "fourActionBilinearChecks": 32,
+      "compressionRows": 2,
+      "leakageRows": 4,
+      "leakageOrthogonalityChecks": 8,
+      "feedbackEntries": 8,
+      "constantRows": 2
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 10,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456,
+      "uTermBound": 2,
+      "eCoefficientTermBound": 26,
+      "fCoefficientTermBound": 64,
+      "maximumUntrimmedIterateDegree": 3
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "The full source Hessian and independently simplified reverse chain agree on every iterated input; separate adjoint legs exhibit the Omega cancellation in Hu",
+    "For both h signs and every formal real c, Hu=e, H squared u=f and H cubed u=0 with the complete frozen coefficient formulas",
+    "The cyclic Gram determinant is -[(12+c squared)/2] cubed, hence the c-dependent three-dimensional carrier is nondegenerate and the nilpotency index is exactly three for every real c",
+    "At diagnostic c0 the actual four-carrier matrix is recovered through its nondegenerate Gram and reconstructs every full tensor column; ranks are2,1,0 and characteristic t fourth",
+    "Independent forward-action polarization equals all9 formal cyclic and16 four-carrier lowered Hessian entries per chirality",
+    "The two-mode raised compression has characteristic t squared plus1 while the full carriers have only zero eigenvalues; leakage norms11/2 and1/2 and feedback diag(-11,1) expose the non-invariance",
+    "The constant Fourier mode is killed in both formal operator slots",
+    "The general nilpotency result is a separately stated operator proof on the full connection carrier with fixed geometry and compatible boundary conditions, not numerical extrapolation or a metric-plus-connection theorem"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "full-source-application-control-failed",
+    "formal-cyclic-closure-control-failed",
+    "four-carrier-closure-control-failed",
+    "compression-control-failed",
+    "full-hessian-cyclic-closure-controls-pass-compression-not-spectrum"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/Program.cs",
+      "sha256": "d13db7a23dbdf964ffafc067fa1711810ae7a420b81e15aa4c973dd3bd31c451"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/CyclicPolynomial.cs",
+      "sha256": "b37c7a5bdd769524513bef8eb0d85e77f3fbe30fca491136b27ef1ec685bd037"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj",
+      "sha256": "7638cabccf1113e0c281ee9fac8769f057336a356d5596f852727a87d388ace4"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/STUDY.md",
+      "sha256": "06eddfc63aea88f711aab752f2e6b27dffbc8a11c8125229d17a0e8df676f8d3"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase597-summary",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/output/actual_quadratic_joint_null_audit_summary.json",
+      "sha256": "825feb58360b8a17817cfafd2bf323112c00fc2f8d51085dd8e080b59fb72cf6"
+    },
+    {
+      "id": "phase597-contract",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/preregistration/contract_v1.json",
+      "sha256": "3bb6423f17a2bea308a437be16542ab94942149f60d80fab66041ad92aaf0b34"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "o4Status": "pending",
+  "promotedPhysicalMassClaimCount": 0
+}

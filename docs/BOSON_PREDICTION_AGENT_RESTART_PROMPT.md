@@ -45,6 +45,54 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, A54; Phases600-601 executed):
+both first frozen Release runs passed after complete independent/coordinator
+code/proof/hash review. 600 confirms the full actual gradient using2912
+K-adjoint and336 DQ forward-pairing checks, with368/32 nonzero controls.
+The second forward leg vanishes on dS but its adjoint contribution does not.
+All16 full-gradient and8 formal norm rows pass: nonzero variation1/8,
+null trace square at kappa0, actual core periodic half-square1/32. This
+does not select the incomplete source9.11 norm or establish an action bridge.
+
+601 confirms full-source cyclic closure with40 operator-slot applications
+and50 independent action bilinears. At the origin the full closed carriers
+are nilpotent of index3, while the original two-mode compression has
+characteristic t^2+1 and nonzero leakage11/2,1/2. The restricted action is
+correct; treating its non-invariant compression as the full spectrum would
+be wrong. The general H0^3 proof concerns CONNECTION variations at FIXED
+geometry and compatible boundary conditions, not the full GU theory.
+
+NEXT PRIORITY: freeze actual nonzero stationary-background tests. Three
+independent analytical derivations found S0=lambda theta0 gamma0 stationary
+for kappa0, every formal c and both h. Its FULL26D constant carrier
+V_i=theta_i gamma_i,W_i=theta_i Omega gamma_i, i1..13, closes with
+H=(4 gamma lambda/3)(J13-I13) tensor[[3,-h],[h,1]]. It has eigenvalues
+32 gamma lambda and -8 gamma lambda/3, with size2 Jordan blocks. This is
+a constructive loophole in ORIGIN nilpotency, not a physical mass or vacuum.
+Freeze every c-slot cancellation, actual stationarity/nonstationary controls,
+full nonlinear action polarization, complete tensor columns and closure.
+
+A second reviewed lead uses the homogeneous invariant S=aGamma1+bOmegaGamma1,
+r=a-hb,s=a+hb. Actual full G=104 gamma r s P Gamma1+(208 gamma r+kappa)S.
+For gamma*kappa nonzero it gives the nonzero stationary branch
+S*=-kappa(1-hOmega)Gamma1/(416 gamma), missed by the curvature-only shortcut.
+Its amplitude is tied to existing symbolic couplings, not a physical scale.
+Handle all zero-coupling degeneracies and check FULL gradients before using
+this as a vacuum candidate. Both leads are analytical only, no successor
+allocated or executed; registry602+ free. The separate squared-residual
+action and coupled metric variations require distinct tests.
+
+All integration surfaces include600-601. Targeted Release builds are clean,
+package/checklist/integrity pass381/3, O4coverage31/31, overturn94/94.
+Previous eeb1a204a5e0425e63a9649394bd83783c08b779 was committed/pushed with
+matching remote; its final pass_2026-09-09T02-22-26-128Z.json passed76 ran/383 skipped.
+Final A54 incremental cadence follows all doc edits; its timestamped report
+records completion. Commit/push the validated tranche under the active goal.
+All fourteen flags remain false; O4/external review pending, Phase561 closed,
+deficits15/14, physical claims0. No frozen rewrite, core change, sampling,
+source/norm/measure selection or unit calibration. See A54, IMPLEMENTATION_P600/P601
+and FULL-ADJOINT-AND-HESSIAN-CLOSURE-20260909.md. Older next-free entries are historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, A52-A53; Phases598-599 executed):
 both first frozen Release runs passed after full independent/coordinator
 code/proof/hash review. Phase598 confirms the full finite-epsilon continuum

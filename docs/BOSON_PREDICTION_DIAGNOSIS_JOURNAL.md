@@ -23473,3 +23473,111 @@ This lead is analytical only;600+ remains free and no new run is authorized.
 All fourteen flags remain false, O4/external review pending, Phase561 closed,
 source deficits15/14, physical claims0. No core change, sampling, source or
 norm selection, fitting, physical field extraction or unit calibration.
+
+## 2026-09-09 UTC: A54 full adjoint and carrier-closure investigation
+
+Previous tranche598-599 committed/pushed as
+eeb1a204a5e0425e63a9649394bd83783c08b779, independently verified remote.
+Final incremental pass_2026-09-09T02-22-26-128Z.json completed76 ran/383 skipped,
+379 passed and3 unchanged physical failures. Current turn starts from a
+clean worktree. This is PROGRESS, not closure of the physical blockers.
+
+Allocated600-601 before implementation;602+ remains free. Separate workers
+implement the full trace/exterior adjoint and closed quadratic Hessian tests,
+with a third agent independently reviewing both and MAIN owning integration
+and complete pre-run review. No scientific execution is authorized until
+all predictions, code/helpers, binding closure and resources are frozen.
+
+600 follows the periodic norm lead using the full actual gradient. A new
+nonzero falsifier is essential: the source's second forward leg vanishes on
+dS, but its adjoint leg contributes nonzero terms. Independently reviewed
+predictions distinguish nonzero/null gradients, positive coefficient norms,
+upper/lowered Hodge signs and the actual registered residual norm. No choice
+of the source's incomplete norm notation is made by this diagnostic.
+
+601 challenges an additional reduction assumption. The exact earlier two-mode
+Hessian is only a compression; restoring its omitted components is predicted
+to give a closed nilpotent carrier. A conditional full-operator parity and
+trace-adjoint proof yields H0^3=0. The experiment must compute all source-chain
+iterates and nonzero leakage, not insert a desired Jordan matrix. The prior
+restricted action remains correct; interpreting it as a full spectrum without
+closure would be the error. All statements are analytical pending execution.
+
+See FULL-ADJOINT-AND-HESSIAN-CLOSURE-20260909.md for derivation, source lineage,
+boundaries and the separate squared-residual-action follow-up. All fourteen
+flags remain false, O4/external review pending, Phase561 closed, deficits15/14,
+physical claims0. No sampling, fit, source/pairing/field selection or unit map.
+
+### Parallel constructive lead before execution
+
+The independent reviewer and MAIN separately derived a stationary odd
+background S0=lambda theta0 gamma0 at kappa0, for all formal c and both h.
+Actual gradient stationarity was checked, not inferred from Q=0. Its full
+constant first-action Hessian at diagnostic c0 closes on the26 directions
+theta_i gamma_i and theta_i Omega gamma_i, i=1..13. The full matrix is
+(4 gamma lambda/3)(J13-I13) tensor[[3,-h],[h,1]], with nonzero eigenvalues
+32 gamma lambda and -8 gamma lambda/3 and size2 Jordan blocks when
+gamma lambda is nonzero. This is a constructive escape from the ORIGIN
+nilpotency conclusion, not a selected physical vacuum, stable mode or mass.
+The reviewer further derived cancellation of the c slots; a third agent
+is independently challenging that extension while awaiting the600 freeze.
+No successor allocated and no scientific run performed for this lead.
+
+The separate residual-square Hessian at the flat origin was also derived:
+T=(Kd)-dagger Kd has T^2=0 under the declared trace pairing, with a nonzero
+24 trace-norm control. This prevents automatically transferring a first-action
+Hessian conclusion to the second action. A coupled metric/connection Hessian
+is another distinct question because source9.1 includes metric variables;
+the current fixed-geometry studies only claim the full connection carrier.
+Both next leads and their explicit analytical controls are in the reference
+note. Prioritize actual stationary-background dynamics after600-601 validate,
+without assuming a chosen background amplitude supplies a physical scale.
+
+### A54 first frozen results and checkpoint
+
+Both independent and MAIN final full-pack reviews passed. MAIN alone ran600
+in0.839seconds and601 in0.549seconds; both passed on their first frozen
+Release execution. No duplicate run, failed scientific artifact, fixture
+repair or historical frozen rewrite occurred. The600 omitted-adjoint-leg
+falsifier confirms a nonzero derivative contribution despite zero forward
+contribution on the fixture. All2912 full-adjoint and336 DQ checks pass,
+including368 and32 nonzero pairings,16 gradient rows and8 norm rows.
+Actual gradient variation1/8 remains nonzero while its kappa0 trace square
+vanishes; actual core periodic half-squares1/32 and1/4 pass independently.
+
+601 confirms exact index-three closure and non-invariant compression in
+both chiralities, with40 source-slot applications,18 formal cyclic and32
+four-carrier independent action bilinears. The full four-carrier determinant
+is-11/16 and matrix ranks2,1,0, while the two-mode compression has t^2+1.
+Leakage11/2,1/2 and feedbackdiag(-11,1) make the reduction mistake explicit.
+The prior restricted action is correct and is not rewritten.
+
+600 contractf288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357;
+full/summaryfc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e.
+601 contract1eaf3887a4720723d9793fc9a7d66507feee7136969c68ee35ff3ec32d9cd83f;
+full/summary294e2b9cfd4a7ed4eeb20f3b5820e8ccaebef0c08d22fb847f20be215b0cfc4c.
+All17/15 unique exact bindings, complete fixtures and live726 core files
+were independently and coordinator checked before execution. The601 worker
+hit a service usage limit after delivering its full pack and analytical
+results; MAIN recorded its approved execution in the unbound implementation
+note. Both pre-run independent reviews had already completed successfully.
+
+The stationary odd-background lead was independently confirmed for ALL c
+by the third agent, with all26 FULL tensor columns analytically derived.
+A second constructive lead ties a homogeneous invariant background to the
+existing kappa/gamma couplings. For S=aGamma1+bOmegaGamma1, r=a-hb,s=a+hb,
+I=-1456gamma r^2s-7kappa rs and full G=104gamma rsP Gamma1+(208gamma r+kappa)S.
+For nonzero couplings S*=-kappa(1-hOmega)Gamma1/(416gamma) is stationary,
+null and Q0, with an actual cubic adjoint variation canceling the mass term.
+Local invariance and the nondegenerate complete invariant carrier give an
+independent stationarity check. Neither lead has been executed or allocated;
+both are documented for prospective freeze next. No physical scale follows.
+
+All shared integration surfaces include600-601 and exact output pins.
+Targeted101/202 Release builds pass with zero warnings/errors; ordered
+package/checklist/integrity pass381/3, O4coverage31/31, overturn94/94.
+The three physical failures remain unchanged. Final incremental validation
+follows all documentation edits; its timestamped report records completion.
+Commit/push this validated PROGRESS checkpoint, not a promotion claim.
+All fourteen flags remain false, external review/O4 pending, Phase561 closed,
+source deficits15/14, physical mass claims0. Concrete next experiments remain.
