@@ -76,7 +76,10 @@ back, NO new phase directory may be created outside this table.
 | 610 | Induced spin-curvature contraction audit (A58 extension) | DONE, first frozen run passed: full608-curvature transport into an oriented rational orthonormal frame, typed spin action and literal nonzero source contraction; no physical vacuum, source normalization or spectrum selected. |
 | 611 | Untied CAA response and joint gauge audit (A59) | PASSED first frozen Release run: all49 counts, full-source signed-axis closure, original-action and joint quadratic gauge controls, nonzero second-leg and preserved variational-mismatch decoys; no source operator or physical propagation selected. |
 | 612 | Covariant CAA symbol and null audit (A59 extension) | PASSED first frozen Release run: all26 counts, full transverse mixed-momentum closure, nonzero null-chain witnesses despite zero restricted action, and longitudinal kernels; no full symbol determinant, characteristic cone or physical spectrum claim. |
-| 613+ | Unassigned - extend this registry before use | - |
+| 613 | Canonical isotropic stationarity and potential Hessian audit (A60) | DONE, first frozen run passed: full constant-field gradient and196-direction vector potential-Hessian closure, original-action checks, coupling degeneracies and nonlinear grade5 negative control; not a differential spectrum or physical vacuum. |
+| 614 | Conditional metric homothety stationarity audit (A60) | DONE, first frozen run passed: full CAA Hodge-scaling and original-action homothety controls separate field from conditional metric stationarity;615 excludes uniform scaling from its declared fixed-y source-induced image. |
+| 615 | Source-induced splitting and volume scope audit (A60 extension) | DONE, first frozen run passed:12 full metrics/480 full tangents and40-dimensional jet-map isomorphism verify fixed-y volume invariance and exclusion of uniform homothety; no moving-section, coupled metric equation or vacuum conclusion. |
+| 616+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

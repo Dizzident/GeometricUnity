@@ -3393,3 +3393,162 @@ The196-dimensional vector closure does not cover the differential operator.
 The existing reference also records a conditional homothety check that
 distinguishes connection stationarity from metric stationarity; source
 admissibility of that variation remains open.
+
+## Amendment A60 - isotropic potential and conditional metric stationarity (Phases613-614)
+
+Prior trancheA59 is complete:47808bef06777cab2ff9726a7ef6f5bffe924324
+pushed and remote independently matched, clean worktree before allocation.
+Final pass_2026-09-09T14-53-29-202Z.json ran42/skipped430,392/3checklist,
+coverage31/31,overturn94/94. All70 historical output changed lines were
+timestamps/runtime only. Previous goal turn was PROGRESS. No new source
+operator, physical norm, metric family or particle interpretation is selected.
+
+### Phase613: full constant-field isotropic gradient and potential Hessian
+
+Use the declared flat14D reference, canonical untiedCAA(firstC,outerA,innerA),
+Phi1=Gamma1,Phi2=Gamma2, and the original first action with fixedgamma,kappa.
+For constant S=sGamma1 the analytically derived full tensors are
+Q=2s²Gamma2,KQ=312s²Gamma1,KdagS=-24sGamma2 and
+DQ_S-dagger KdagS=624s²Gamma1. The original action is
+-1456gamma s³-7kappa s²; its full gradient is
+(312gamma s²+kappa s)Gamma1. Test all components with exact arithmetic,
+not a projected field equation. Classify s0 ands=-kappa/(312gamma) when
+gamma!=0, with the gamma0/kappa0 degeneracies stated separately.
+
+On all196 constant vector-valued one-form perturbations V, verify the full
+literal POTENTIAL Hessian against
+kappa V+16gamma s[3tr(V)I-2V-V^g]. Its trace, symmetric-traceless and
+metric-skew sectors have dimensions1/104/91 and coefficients
+kappa+624gamma s,kappa-48gamma s,kappa-16gamma s. Independent original
+action bilinears and complete adjoint support controls must accompany all
+columns. Polynomial-coefficient controls may avoid redundant parameter
+evaluations if the complete algebraic proof is frozen first. This is not a
+full differential spectrum:611 already proves derivative mixing with other
+Clifford grades. These coefficients are not physical masses or stability.
+
+Preserve an explicit nonlinear grade5 negative control. For
+T=x theta0 gamma2+y theta1 gamma3, Q=2xy theta01 Gamma23 and
+KQ=-4xy W,W=sum(j4..13)theta_j Gamma0123j. The transpose term
+DQ_T-dagger KdagT is vector-valued, so the grade5 cubic gradient cannot
+cancel. With the allowed V=theta4 Gamma01234, Q(T+tV)=Q(T) exactly and
+the original action at kappa0 is4gamma xy t/3. Test the full tensors and
+independent action coefficient; do not silently restrict variations to vectors.
+
+Contract phase613-a60-canonical-isotropic-stationarity-potential-hessian-v1;
+terminal canonical-isotropic-stationarity-controls-pass-potential-not-spectrum.
+The builder owns only613root and unbound IMPLEMENTATION_P613; MAIN owns
+shared wiring and documents. No scientific execution before complete review.
+
+### Phase614: conditional full-chain metric homothety
+
+Test the independently derived scaling for the DECLARED flat14D metric:
+g_lambda=lambda²g, Gamma1_lambda=lambda Gamma1,
+Gamma2_lambda=lambda²Gamma2, star_r,lambda=lambda^(14-2r)star_r.
+Both complete CAA legs must satisfy K_lambda(F_fixed)=lambda^-1K(F_fixed).
+Use full typed sparse tensors and signed pairings; scalar oracles alone do
+not certify the operator. One-form pairing scales aslambda^-2, volume as
+lambda14. With couplings fixed, the original action at fixed coordinate
+T=sGamma1 is-1456gamma s³lambda11-7kappa s²lambda12; transporting
+T_lambda=sGamma1_lambda instead giveslambda14 times the unit scalar action.
+At kappa=-312gamma s both scaling derivatives equal10192gamma s³.
+Offstationarity their difference is Pair(G,S)=-4368gamma s³-14kappa s²;
+test the chain rule rather than presuming metric and field derivatives equal.
+
+Freeze a finite rational scale menu including1/2,1,2, nonzero branch,
+offbranch and degenerate controls, wrong-power/omitted-leg negative controls,
+original-action polynomial derivatives, complete tensor stages, exact counts
+and resource bounds. Independent600/611 lineage permits building in parallel
+with613; no unexecuted613 output is an input. Source-induced MET(X)-to-MET(Y)
+admissibility of uniform independent14D scaling is NOT established. With
+additional terms or different allowed variations the inference may change.
+The terminal therefore does not reject a source-level/global physical vacuum.
+
+Contract phase614-a60-conditional-metric-homothety-stationarity-v1;
+terminal metric-homothety-controls-pass-source-admissibility-open.
+The builder owns only614root and unbound IMPLEMENTATION_P614. MAIN also
+investigates source variation admissibility read-only; any later source-faithful
+test requires its own prospective allocation rather than expanding614 silently.
+
+### Shared prospective execution and authority boundary
+
+Before FIRSTscience, freeze complete code, every compiled helper, project,
+proof, fixture, finite menu, expected coefficients/counts, exact tolerance,
+resource ceilings and terminal precedence. Bind all unique input IDs/paths/
+hashes including source text, passed600/611 provenance, live726 core manifest
+and Buildprops; independently verify the live sorted core pathset/hash tree.
+Release builds only, zero warnings/errors. MAIN and independent reviewer
+must read complete scientific code/proofs and explicitly approve the final
+frozen packs before MAIN authorizes first execution. Preserve failed first
+outputs and version repairs; never tune expectations to observed results.
+Register generator/traversal/101/202/verifier/9scanners(including both207
+sites), registry/amendment/implementation/restart/journal/reference+ledger.
+Final incremental follows ALL edits before scoped commit/push/remote check.
+All14 authority flags remain false,O4/externalreviewpending,Phase561closed,
+WZ15/H14 deficits,physicalmassclaims0.615+free. Concrete safe tests remain.
+
+### A60 extension - source-induced splitting and volume scope (Phase615)
+
+Before613/614 execution, MAIN reread primary888-1068 and2117 and an
+independent reviewer checked868-1085. The source's canonical chimeric
+metric at a FIXED fibre point y depends on y, while the downstairs metric
+enters its tangent-bundle identification through the Levi-Civita splitting.
+The vertical inclusion is canonical. Consequently every induced upstairs
+metric has the same vertical restriction, and any fixed-y induced variation
+has deltaG_VV=0. Uniform deltaG=2G cannot be such a tangent when the
+vertical metric is nondegenerate. This is sharper than treating614's
+independent14D homothety as an unexamined source variation.
+
+Allocate615 to a bounded exact check of this declared reconstruction.
+Use the already declared608 local blocks H_y=sigma y and
+V_y(A,B)=alpha Tr(y^-1 A y^-1 B)+beta Tr(y^-1 A)Tr(y^-1 B).
+Let the horizontal lift be the graph of a10x4 matrix L. Then C-to-TY is
+P=[[I4,0],[L,I10]], and the coordinate metric is
+G_L=P^-T diag(H_y,V_y)P^-1, not P^T diag P unless the inverse-map sign
+is used. Retain this sign convention and an explicit wrong-sign mixed-block
+control. Thus detG_L=detH_y detV_y, G_L|VV=V_y, and all splitting
+variations have Tr(G_L^-1 deltaG_L)=0. At L0 their diagonal blocks vanish
+and the offdiagonal block is -L^T V_y. This does not make the geometry flat.
+
+Derive the source torsion-free connection variation from the downstairs
+metric first jet using the exact Koszul formula. Its40 symmetric-lower-index
+connection components induce horizontal fibre motion
+L_i(y)=C_i^T y+y C_i for parallel covariant metrics; test the sign consistently
+with the horizontal-graph convention. Use a complete40-direction jet basis,
+prove the relevant map's rank/injectivity at nondegenerate y, retain the
+full14D metric/variation matrices, and independently check determinant,
+inverse, volume-trace, canonical vertical restriction and wrong-homothety
+witnesses. Freeze a finite rational y/trace-weight menu, complete counts,
+expected coefficients, resource bounds and source/code lineage before science.
+Downstairs constant rescaling leaves its LC connection unchanged and hence
+does not produce uniform upstairs scaling at fixed y; include this control.
+
+Fixed-y/fixed-total-space identification is essential: evaluating at a moving
+observer section y=g_X(x), pulling back the action, or varying additional
+source terms is not covered. No complete metric Euler equation, curved
+stationary branch, global vacuum or physical spectrum is claimed. This
+audit qualifies614's homothety interpretation without changing its conditional
+calculation or quietly expanding its frozen scope.615 uses passed607/608
+geometry lineage, not unexecuted613/614 output. All shared A60 first-execution,
+independent review and authority restrictions above remain mandatory.
+
+Contract phase615-a60-source-induced-splitting-volume-scope-v1;
+terminal induced-splitting-volume-controls-pass-homothety-outside-declared-image.
+The builder owns only615root and unbound IMPLEMENTATION_P615; MAIN owns
+shared wiring/docs. With three builders, independent peer reviews are
+cross-assigned: no builder approves its own scientific pack.616+free.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+
+### A60 execution record (2026-09-09 UTC)
+
+613-615 ALL PASSED FIRST frozen Release executions unchanged following
+complete independent and MAIN reviews and explicit MAIN approval.19/18/20
+unique bindings,51/36/33 exact count fields, full fixtures and live726
+closure passed. Wall5.068/0.922/1.395s;products532448/15976/1524684.
+Outputs and frozen contract hashes are recorded in the unbound implementation
+notes. No frozen scientific inputs were repaired after execution.615's
+fixed-y admissibility result qualifies614 without changing its conditional
+terminal; neither fixed volume nor connection stationarity is promoted to a
+coupled vacuum. All shared validation and final incremental must precede
+scoped commit/push/remote verification.616+free,all14flagsfalse,
+O4/externalreviewpending,Phase561closed,physicalmassclaims0. Progress remains
+possible through curved source-induced stationarity and full metric variation.

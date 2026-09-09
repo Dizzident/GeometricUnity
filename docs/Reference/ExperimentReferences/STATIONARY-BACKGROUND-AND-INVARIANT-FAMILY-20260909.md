@@ -1047,3 +1047,187 @@ vacuum rejection. It assumes no additional terms and fixed couplings. The
 source-induced MET(X)-to-MET(Y) family need not admit uniform independent
 14D scaling; that admissibility must be checked separately. It is a useful
 negative control against treating connection stationarity as a coupled vacuum.
+
+### A60 allocation and source-induced metric variation boundary
+
+Following the validated,pushedA59 checkpoint47808bef,613/614 are allocated
+to the full constant-field potential and conditional homothety controls
+above. No613/614 scientific execution has occurred. Their finite menus,
+proofs, code and exact expectations must freeze before first execution.
+
+A primary-source rereading sharpens the homothety caveat. Lines888-917
+construct the chimeric metrics from the fibre point y itself;954-958 take
+the two summands orthogonal. Lines1012-1049 use the downstairsLC connection
+to identify the horizontal bundle with TY;1060-1065 explicitly restrict the
+resulting upstairs metrics. Eq9.1 at2117 gives the metric variable asMET(X).
+These are local-source inspection facts, not a new selected metric convention.
+
+At a FIXED point y in the FIXED total space Y, the canonical vertical
+inclusion and its nondegenerate metric V_y are independent of the downstairs
+LC connection. Under the declared608 reconstruction H_y=sigma y, a new
+horizontal lift is a graph(+L), with C-to-TY map
+P_L=[[I4,0],[L,I10]]. Its coordinate metric is
+G_L=P_L^-T diag(H_y,V_y)P_L^-1. Equivalently a decomposition-map convention
+uses the opposite sign forL; confusing the two changes mixed-block signs.
+The fixed-y metric family has G_L|VV=V_y and detG_L=detH_y detV_y because
+detP_L=1. Therefore every induced variation has deltaG_VV=0 and
+Tr(G_L^-1 deltaG_L)=0. AtL0, its offdiagonal block is-L^T V_y and both
+diagonal blocks of the first variation vanish.
+
+SinceV_y is nondegenerate, uniformdeltaG=2G cannot be tangent to this
+declared induced image. A downstairs constant metric rescaling leaves its
+Levi-Civita connection unchanged, hence the fixed-y identification unchanged;
+it does not enact614's independent uniform14Dhomothety. This is a useful
+check against applying the right calculation to the wrong variation space.
+
+615 is allocated to exact full-matrix and40 torsion-free connection-jet
+controls, including the signed graph formula, inverse/determinant/volume,
+vertical restriction and wrong-homothety witnesses. The derivation is
+independently reviewed but the experiment remains prospective and unexecuted.
+The conclusion does not cover a moving observer section y=g_X(x), a pulled-
+back action, curvature/connection terms in the complete metric Euler equation,
+or a global physical vacuum. It does not identify the flat14D control with
+the source-induced curved geometry. All14flagsfalse,physicalclaims0,616+free.
+
+### A60 executed results: potential versus induced variation space
+
+613-615 each passed its FIRST frozen Release run after independent/MAIN
+reviews and explicit MAIN approval. All19/18/20 unique bindings,51/36/33
+prospective count fields and complete live726 closure passed unchanged.
+Full/summary hashes613/614/615:
+bd62d1cd4888a59d0b98bd20ff37a022175e88bb55faeb7aa4fd24a7f679334e;
+665327874740b741a36d6d949d012ddf9583d52e39de36147fce0a94c2e88cbc;
+5e42084985dbe5472d65b77640891ad7db86caa199d0d9aa75c024c05d330dbe.
+
+The196 full vector potential columns and38416 original-action bilinears
+confirm613's constant-field coefficients. General nonlinear vector closure
+still fails the retained grade5 action variation.614 confirms32 full
+homothety action paths, the on-branch derivative10192gamma s³ and the
+nonzero off-branch chain-rule contribution.615 confirms all40 jet-map
+directions at four contexts,12 full metrics and480 complete tangent rows.
+The exact isomorphism J_h -> C -> L_y has determinant(det y/det h)^10;
+the full metric determinant is+64(1+4beta)/(det y)^4, independent of L.
+The determinant-sign correction occurred BEFORE freeze/execution, not as a
+repair to observed results. Uniform homothety is outside this fixed-y image.
+
+The resulting correction is to interpretation, not to614's calculation:
+an arbitrary upstairs variation cannot be treated as an allowed downstairs
+source variation without checking the inducing map. The reverse shortcut
+is also invalid: volume invariance alone does not prove action stationarity.
+Inverse metric, Hodge star, induced spin connection/curvature, K and field
+transport all remain in the variation. Arbitrary first jets at fixed h
+are locally realizable by h(x)=h0+sum J_i x^i near the base point, but the
+result does not make arbitrary connection fields globally integrable.
+
+Next decisive work should calculate stationarity on608's actual curved
+geometry with the full untied operator, or derive the complete induced
+metric variation before a vacuum inference. An anisotropic Ricci/Einstein
+projector must not be assumed parallel; its covariant derivatives can
+generate additional Clifford/form grades. These are analytical next leads,
+not executed successor evidence or a selected physical model.616+free;
+all14 flagsfalse,O4/externalreviewpending,physicalmassclaims0.
+
+### Prospective curved canonical branch and nonparallel-projector test
+
+After615 execution, two independent reviewers and MAIN obtained the
+following analytical lead. It is NOT executed successor evidence. Phase591's
+canonical untiedCAA law on algebraic curvature is-RicGamma+(Scal/2)Gamma,
+not610's tied chiral law. Applied to608's declared(7,7) branch, it predicts
+
+    K_CAA(F_B)=-EinsteinGamma=-(15/4 PT+21/4(I-PT))Gamma1.
+
+The existing full spin curvature should be fed through the literal canonical
+chain independently; never substitute this Einstein oracle for its input.
+For constant S=sGamma1, Levi-Civita parallelism gives D_B S=0 and
+D_B^dag K^dag S=0, since K^dag S=-24sGamma2 is parallel. Combined with
+613's full local potential derivative, the expected full curved gradient is
+
+    G=[(312gamma s²+kappa s-21/4)I+(3/2)PT]Gamma1.
+
+No scalar s cancels both eigenvalues. This is an ansatz-level obstruction,
+not a rejection of anisotropic fields, a coupled physical vacuum or the
+source theory. Freeze all full-gradient controls before claiming execution.
+
+The natural extension S=(aPT+b(I-PT))Gamma1 cannot be treated as parallel.
+Using608's connection formulas with alpha1, for vertical symmetric A and
+horizontal u,v, the endomorphism derivative is
+
+    (nabla_u PT)v=(sigma/2)[y Sym(u,v)y-(u^T y v)y/4],
+    (nabla_u PT)A=(1/2)y^-1(PT A)u,  nabla_A PT=0.
+
+For eta,sigma-1,u=v=e0, the first is
+diag(-3/8,-1/8,-1/8,-1/8), explicitly nonzero. Thus
+
+    D_B S(A,u)=-(a-b)y^-1(PT A)u/2.
+
+Nonzero D_B S alone does not prove a gradient defect: the complete
+K D_B S and D_B^dag K^dag S may cancel. Retain both derivative legs and
+every allowed Clifford grade in any two-weight branch test. Scalar action
+restriction or projection onto two coefficients is not a full Euler test.
+
+For the separate MET(X) variation,615 supplies deltaC -> deltaL -> deltaG.
+Then the induced upstairs connection varies by
+deltaGamma^C_AB=G^CD(nabla_A deltaG_BD+nabla_B deltaG_AD-
+nabla_D deltaG_AB)/2 and deltaR=nabla deltaGamma-its skew counterpart.
+The spin lift needs a controlled varying-frame identification; deltaF_B,
+both Hodge/Phi legs of deltaK and field-coordinate transport also enter.
+Trace0 removes delta(volume) only, not delta(star). Before cancellations,
+G depends on first downstairs jets, B on second and F_B on third.
+One delta h(x) ties deltaL(y) across the entire fibre: the pointwise615
+isomorphism does not license arbitrary independent variations at each y.
+A complete downstairs Euler equation needs the fibre integral/domain and
+boundary prescription. This does not prevent a local connection-gradient
+test on Y. All successor statements remain conditional and unexecuted.
+
+### Sharpened prospective two-weight obstruction (analytical only)
+
+The two independent reviewers also agree on a full-grade witness; MAIN
+checked its frame/sign and algebraic support. For self-adjoint V at a
+normal orthonormal frame, the vector adjoint components are
+
+    (K^dag(VGamma))_ab=
+      2[gamma(Va) wedgeCl gamma_b+gamma_a wedgeCl gamma(Vb)]
+      -2 tr(V) gamma_a wedgeCl gamma_b.
+
+For constant tr(V) and div(V)=0, the complete differential gradient is
+
+    H_D(VGamma)_b=-2 sum_a sigma_a gamma_a wedgeCl gamma((nabla_a V)b).
+
+Here H_D=(K D_B+D_B^dag K^dag)/2, not either leg alone. PT has trace9,
+divPT=0 and nonzero horizontal derivative. In610's oriented eta frame,
+(nabla_H0 PT)H0=(A1+A2+A3)/4, so for V=aPT+b(I-PT) the full
+theta0 Gamma01 coefficient is-(a-b)/2. Both derivative legs must be
+checked separately in a frozen successor, including their full support.
+
+On this self-adjoint two-weight ansatz the complete algebraic gradient is
+vector-valued. At a diagonal orthonormal frame Q has matching form/Clifford
+pair blades, K^dag S has the same pair support, and DQ^dag contracts the
+bivectors with vectors to vectors. Thus the full-grade conclusion is not
+inferred merely by differentiating a restricted scalar action. The local
+potential formula is4gamma[V²-tr(V)V+e2(V)I]+kappa V, where
+e2(V)=((tr V)²-tr(V²))/2. Adding the curved source gives coefficients
+
+    G_a=4gamma(28a²+40ab+10b²)+kappa a-15/4,
+    G_b=4gamma(36a²+36ab+6b²)+kappa b-21/4.
+
+They reduce to613's scalar coefficient at a=b, before the unequal source
+terms. Their difference is(a-b)[kappa-16gamma(2a+b)]+3/2. Solving only
+these algebraic equations could miss the bivector witness. Prospectively,
+a!=b leaves the differential bivector and a=b leaves anisotropic vector
+forcing. This suggests rejection of the entire CONSTANT two-weight ansatz,
+not all anisotropic fields or all source vacua. Adding other Clifford grades
+or nonconstant coefficients is outside this claim. Freeze literal curvature,
+full covariant adjoint, complete support and planted-error controls before
+promoting this analytical no-go to executed evidence.616+ remains free.
+
+A concrete prospective negative control is gamma1,kappa11,a3/4,b-3/4:
+KQ has coefficients-9/2 and27/2, so both full vector residuals above
+vanish exactly. The full differential theta0Gamma01 coefficient remains
+-3/4. It distinguishes an algebraic-only false stationary point from the
+complete equation without a parameter fit. For diagonalT with eigenvalues
+t_i, tau=sum t_i,rho=sum t_i², the full adjoint support additionally gives
+DQ_T^dag K^dag T=2KQ and(KQ)_i=2[(tau-t_i)²-(rho-t_i²)].
+Thus no omitted higher-grade variation is assumed zero merely from a
+restricted scalar action. Both kinetic legs separately equal J forPT;
+full support and that equality still require independent literal controls
+at both transported points in a prospectively frozen successor.

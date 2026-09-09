@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "phase": 615,
+  "phaseId": "phase615-source-induced-splitting-volume-scope-audit",
+  "contractId": "phase615-a60-source-induced-splitting-volume-scope-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "baseDimension": 4,
+    "verticalDimension": 10,
+    "ambientDimension": 14,
+    "jetDimension": 40,
+    "basis": [
+      "h0",
+      "h1",
+      "h2",
+      "h3",
+      "E00",
+      "E11",
+      "E22",
+      "E33",
+      "E01+E10",
+      "E02+E20",
+      "E03+E30",
+      "E12+E21",
+      "E13+E31",
+      "E23+E32"
+    ],
+    "points": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        4,
+        9,
+        16
+      ]
+    ],
+    "downstairsMetric": [
+      -1,
+      1,
+      1,
+      1
+    ],
+    "alpha": "1",
+    "betas": [
+      "0",
+      "-1/2"
+    ],
+    "sigma": "-1",
+    "splittingMultipliers": [
+      "0",
+      "1",
+      "-2"
+    ],
+    "constantDownstairsScales": [
+      "1/2",
+      "2"
+    ],
+    "jetBasis": "J[index/10]=SymBasis[index%10]; all other derivative matrices zero",
+    "seedJet": "J_i=(i+1) SymBasis[(3i+1)%10]",
+    "connection": "C_i[k,j]=h^kl(J_i[j,l]+J_j[i,l]-J_l[i,j])/2",
+    "horizontalLift": "L_i=C_i^T y+y C_i; graph(+L)",
+    "inverseJet": "C=Koszul_y(L); J_i=C_i^T h+h C_i",
+    "connectionMapDeterminant": "(det y/det h)^10",
+    "connectionMapRank": 40,
+    "metric": "G=P^-T D P^-1; D=diag(-y,V_y); P=I+N; N_VH=L",
+    "blocks": "G_HH=-y+L^T V L; G_HV=-L^T V; G_VV=V",
+    "inverse": "G^-1=P D^-1 P^T",
+    "determinant": "64(1+4beta)/(det y)^4",
+    "inertia": [
+      [
+        8,
+        6,
+        0
+      ],
+      [
+        7,
+        7,
+        0
+      ]
+    ],
+    "tangent": "delta G=-(delta N)^T D(I-N)-(I-N)^T D delta N",
+    "inverseTangent": "delta G^-1=delta N D^-1 P^T+P D^-1(delta N)^T=-G^-1 delta G G^-1",
+    "centralDifference": "[G(N+delta N)-G(N-delta N)]/2; exact since polynomial degree2",
+    "secondDifference": "G(N+delta N)+G(N-delta N)-2G(N)=2 delta N^T D delta N",
+    "volumeTrace": "Tr(G^-1 delta G)=0",
+    "uniformHomothetyTrace": "28",
+    "uniformHomothetyVerticalWitness": "(2G)[4,4]=2(1+beta)/(y00)^2 !=0",
+    "wrongSign": "P^T D P has opposite nonzero mixed block at nonzero L; wrong tangent flips mixed block at every jet",
+    "expectedCounts": {
+      "arithmeticControls": 8,
+      "contexts": 4,
+      "connectionMapColumns": 160,
+      "connectionTorsionEntries": 10240,
+      "connectionReconstructionRows": 160,
+      "jetRescalingRows": 320,
+      "mapRanks": 4,
+      "mapDeterminants": 4,
+      "mapInverseProducts": 8,
+      "metricRows": 12,
+      "shearControls": 12,
+      "metricBlockEntries": 2352,
+      "inverseEntries": 2352,
+      "inverseProducts": 24,
+      "metricDeterminants": 12,
+      "metricInertias": 12,
+      "verticalMetricEntries": 1200,
+      "homothetyVerticalEntries": 1200,
+      "homothetyTraceRows": 12,
+      "wrongMetricSignRows": 8,
+      "metricRescalingRows": 24,
+      "tangentRows": 480,
+      "tangentBlockEntries": 94080,
+      "centralDifferenceEntries": 94080,
+      "secondDifferenceEntries": 94080,
+      "inverseDerivativeEntries": 94080,
+      "tangentDeterminants": 960,
+      "verticalTangentEntries": 48000,
+      "volumeTraceRows": 480,
+      "mixedNonzeroRows": 480,
+      "tangentReconstructionRows": 480,
+      "wrongTangentSignRows": 480,
+      "zeroSplittingDiagonalRows": 160
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 60,
+      "maximumEstimatedCpuSeconds": 180,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumTrackedMatrixProducts": 200000000,
+      "maximumMatrixDimension": 40,
+      "largestArrayEntries": 38416,
+      "maximumRetainedTangentRows": 480
+    },
+    "scope": {
+      "sourceNormalizationSelected": false,
+      "sourceHorizontalConventionUniquelySelected": false,
+      "uniformHomothetySourceAdmissible": false,
+      "movingObserverSectionIncluded": false,
+      "pulledBackActionComputed": false,
+      "fullMetricEulerComputed": false,
+      "globalVacuumClaimed": false,
+      "physicalSpectrumClaimed": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "connection-map-control-failed",
+    "metric-block-control-failed",
+    "tangent-volume-control-failed",
+    "scope-decoy-count-resource-control-failed",
+    "induced-splitting-volume-controls-pass-homothety-outside-declared-image"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/Program.cs",
+      "sha256": "ced7a164a781fb0c6cf1cd10bb1319b57fda6752237e5a91238b7d92fafde091"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj",
+      "sha256": "d3e7be499f5e3b66fb6ade7e4f3e84c6e575e4f6ebadff3db24b98f0c2a85f62"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/STUDY.md",
+      "sha256": "b86a2297e577a4c94b5c326fee9bbede0b68842d9fade0139c635fd10e6e0bce"
+    },
+    {
+      "id": "splitting-helper",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/SplittingControls.cs",
+      "sha256": "70160ecb92a3997aaaf1d1e47131886a5258b6006e286d12f7696cd7e8b8cb30"
+    },
+    {
+      "id": "ambient-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "geometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -481,6 +481,9 @@ dotnet run --no-build -c Release --project studies/phase609_chiral_null_branch_s
 dotnet run --no-build -c Release --project studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj
 dotnet run --no-build -c Release --project studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj
 dotnet run --no-build -c Release --project studies/phase612_covariant_caa_symbol_null_audit_001/Phase612CovariantCaaSymbolNullAudit.csproj
+dotnet run --no-build -c Release --project studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Phase613CanonicalIsotropicStationarityPotentialHessianAudit.csproj
+dotnet run --no-build -c Release --project studies/phase614_conditional_metric_homothety_stationarity_audit_001/Phase614ConditionalMetricHomothetyStationarityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

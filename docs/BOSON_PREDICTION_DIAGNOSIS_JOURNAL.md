@@ -23976,3 +23976,100 @@ branch has scaling derivative10192gamma s³; this is not metric-stationary
 if the declared independent14D scaling is admitted. Source admissibility
 of that variation is unproved, so no physical vacuum rejection is asserted.
 Both leads remain prospective and unexecuted;613+free. No physical promotion.
+
+### 2026-09-09 UTC - A60 stationary potential and source-metric scope allocation
+
+Previous goal turn was PROGRESS. Checkpoint47808bef06777cab2ff9726a7ef6f5bffe924324
+is committed,pushed,remote independently matched; worktree clean before A60.
+FinalA59 pass_2026-09-09T14-53-29-202Z.json ran42/skipped430,392/3checklist,
+O4coverage31/31,overturn94/94;70historicaloutputchangedlines timestamps/runtime only.
+Allocate613 to full constant-field isotropic stationarity and196-direction
+potential Hessian, with a full grade5 original-action negative control.
+Allocate614 to independently computed full-chain homothety and metric/field
+chain-rule controls under the declared independent14D scaling assumption.
+
+MAIN then reread primary888-1068 and2117; independent reviewer read868-1085.
+At fixed fibre point y, the chimeric metric and canonical vertical inclusion
+do not depend on the downstairs metric; its LC only changes the horizontal
+splitting. Thus the induced metric has fixed vertical restriction, invariant
+determinant under the unitriangular shear, and trace-free induced variations.
+Uniform14Dhomothety cannot be tangent to this fixed-y source-image family.
+Downstairs constant rescaling leavesLC unchanged, not upstairsuniformscaling.
+This prevents an incorrect source-vacuum inference from614's conditional test.
+
+Allocate615 to exact full-matrix/shear/40jet-direction controls of this
+source-admissibility boundary. Independent review corrected the graph(+L)
+sign convention: coordinate metric isP^-T diag(H,V)P^-1, notP^T diagP.
+Fixed-y is essential; moving sections, pulled-back actions and complete
+metric Euler equations remain unasserted. Three builders own disjointstudy
+roots/unboundnotes, with cross-reviews before MAIN first-run approval.
+No new science yet.616+free;all14flagsfalse,O4/externalreviewpending,
+Phase561closed,deficits15/14,physicalclaims0. Concrete safe tests remain.
+
+### 2026-09-09 UTC - A60 first frozen results and admissibility correction
+
+613-615 ALL PASSED their FIRST frozen Release executions unchanged after
+complete independent/MAIN proof/code/helper/project/contract reviews and
+explicit MAIN approval.19/18/20 unique bindings,51/36/33 prospective count
+fields, full fixtures and live726 core closure passed. Release builds had
+zero warnings/errors. Wall5.068/0.922/1.395s;tracked products532448/15976/
+1524684. Full/summary SHA256 respectively:
+bd62d1cd4888a59d0b98bd20ff37a022175e88bb55faeb7aa4fd24a7f679334e;
+665327874740b741a36d6d949d012ddf9583d52e39de36147fce0a94c2e88cbc;
+5e42084985dbe5472d65b77640891ad7db86caa199d0d9aa75c024c05d330dbe.
+Independent serialized-output review passed; all frozen inputs unchanged.
+
+613 verifies196 complete constant-field vector potential columns and38416
+original-action bilinears, including all three adjoint legs. The nonzero
+branchs=-kappa/(312gamma) has sector coefficients-kappa,15kappa/13,
+41kappa/39. These are potential coefficients, not physical masses or full
+differential closure. An allowed grade5 variation has nonzero action
+derivative4/3 or8/3, rejecting general nonlinear vector-only closure.
+
+614 verifies32 complete action paths and their derivative polynomials;
+its independent14Dhomothety obstructs the four nonzero field-stationary
+branches conditionally.615 verifies12 full metrics and480 full tangent
+rows from the complete40-dimensional metric-jet isomorphism. Fixed-y
+induced variations have zero VV block and zero volume trace; homothety
+has trace28 and nonzero VV block, hence lies outside this declared image.
+This prevents using614 alone to reject a source vacuum. Conversely constant
+volume is not constant action: inverse metric, connection, curvature,
+operator and transported fields still vary. Moving-section/pullback and
+global metric-Euler questions remain open. No authority flag is promoted.
+
+Ordered101/202/integrity PASSED395/3, O4coverage31/31,overturn94/94.
+Final incremental follows ALL edits before scoped checkpoint/push.616+free;
+concrete next lead is curved source-induced stationarity and actual metric
+variation, retaining covariant derivatives of nonparallel projectors.
+Do not identify flat613 with curved608 or tune new expectations to results.
+
+Two independent analytical reviewers and MAIN agree on a bounded successor:
+use literal canonical untiedCAA on the frozen608 spin curvature, not610's
+different tied chiral operator. Its expected source is-EinsteinGamma; for
+constant S=sGamma1 both kinetic legs vanish by Levi-Civita parallelism.
+The candidate full gradient is[(312gamma s²+kappa s-21/4)I+(3/2)PT]Gamma1,
+whose anisotropic part cannot be canceled by scalar s. This remains an
+unexecuted ansatz-level prediction pending prospective freeze and controls.
+It would reject only a constant isotropic curved branch, not all vacua.
+
+For a two-weight anisotropic successor, PT is not parallel in horizontal
+directions; both K D_B S and D_B^dag K^dag S must be retained and may
+cancel. A further boundary: one downstairs delta h(x) induces linked
+delta L(y) over every fibre. Pointwise40-dimensional surjectivity does not
+permit arbitrary independent metric variations at each y. A complete
+downstairs metric Euler equation needs the integration/domain/boundary
+prescription, while local connection-gradient tests can proceed without it.
+
+Further independent agreement yields a sharper prospective witness:
+H_D((aPT+b(I-PT))Gamma1) has theta0Gamma01 coefficient-(a-b)/2 in
+610's oriented frame. Its algebraic potential/source is vector-valued,
+so this term cannot be canceled by solving the two projected vector
+equations. MAIN checked the frame coefficient and diagonal-support argument;
+the full literal differential calculation still requires prospective freeze
+and execution. This would exclude only constant two-weight vector fields,
+not more general Clifford fields or vacua. Full derivation recorded in the
+existing reference;616+free and no successor science yet.
+Concrete prospective controlgamma1,kappa11,a3/4,b-3/4 has zero full
+algebraic vector gradient and nonzero differential coefficient-3/4.
+Both reviewers derived the derivative and full diagonal-adjoint closure;
+MAIN checked the rational cancellation. No source equation is selected.

@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "phase": 613,
+  "phaseId": "phase613-canonical-isotropic-stationarity-potential-hessian-audit",
+  "contractId": "phase613-a60-canonical-isotropic-stationarity-potential-hessian-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "operator": "canonical untied CAA: firstC outerA innerA; Phi1=Gamma1 Phi2=Gamma2",
+    "pairing": "signed exterior metric times -ReTr(XY)/128, real bilinear",
+    "constantFields": true,
+    "polynomialVariables": [
+      "s",
+      "gamma",
+      "kappa"
+    ],
+    "polynomialOrder": 4,
+    "gammas": [
+      0,
+      1,
+      2
+    ],
+    "kappas": [
+      -1,
+      0,
+      1
+    ],
+    "fieldValues": [
+      -1,
+      0,
+      1
+    ],
+    "isotropic": {
+      "Q": "2s^2Gamma2",
+      "KQ": "312s^2Gamma1",
+      "adjoint": "-24sGamma2",
+      "dqAdjoint": "624s^2Gamma1",
+      "action": "-1456gamma s^3-7kappa s^2",
+      "gradient": "(312gamma s^2+kappa s)Gamma1"
+    },
+    "carrier": {
+      "basis": "E_ab=theta_a gamma_b,a,b0..13",
+      "dimension": 196,
+      "gram": "-sigma_a sigma_b delta_ac delta_bd",
+      "transpose": "Vg_ab=sigma_a sigma_b V_ba",
+      "legs": [
+        "48(trV I-V)",
+        "48(trV I-Vg)",
+        "48(trV I-V)"
+      ],
+      "potential": "kappa V+16gamma s(3trV I-2V-Vg)",
+      "sectorDimensions": [
+        1,
+        104,
+        91
+      ],
+      "sectorCoefficients": [
+        "kappa+624gamma s",
+        "kappa-48gamma s",
+        "kappa-16gamma s"
+      ],
+      "fullDifferentialClosureClaimed": false
+    },
+    "adjoint": {
+      "first": "2theta_a wedge(gamma_b wedgeCl Gamma1)",
+      "second": "-2delta_ab Gamma2",
+      "outer": "2i delta_ab",
+      "probeBlade": "formPair XORbit(a) XORbit(b)",
+      "phase": "1 if H-adjoint-sign negative else i",
+      "probesPerInput": 91
+    },
+    "branches": {
+      "gammaNonzero": "s0 and s=-kappa/(312gamma); coincident ifkappa0",
+      "gammaZeroKappaNonzero": "s0 only",
+      "bothZero": "all real s",
+      "nonzeroBranchSectorCoefficients": [
+        "-kappa",
+        "15kappa/13",
+        "41kappa/39"
+      ],
+      "branchAction": "728gamma s^3",
+      "shortcutAtBranch": "-208gamma s^2Gamma1"
+    },
+    "decoy": {
+      "variables": [
+        "x",
+        "y",
+        "t"
+      ],
+      "order": 3,
+      "gammas": [
+        1,
+        2
+      ],
+      "T": "x theta0 gamma2+y theta1 gamma3",
+      "variation": "theta4 Gamma01234",
+      "Q": "2xy theta01 Gamma23, unchanged by tV",
+      "KQ": "-4xy sum_j4..13 theta_j Gamma0123j",
+      "inner": "4i xy Gamma0123 top",
+      "outer": "8xy W",
+      "adjointComposite": "4x^2(E00+E22-I)+4y^2(E11+E33-I)",
+      "action": "4gamma xyt/3",
+      "vectorClosureRejected": true
+    },
+    "knownWordMenu": "all16384blades times14singletons andOmega onbothsides plus square,31each",
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "expectedCounts": {
+      "rationalControls": 4,
+      "polynomialKnownAnswers": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "isotropicTensorRows": 5,
+      "isotropicForwardStages": 8,
+      "isotropicAdjointLegs": 2,
+      "isotropicScalarCoefficients": 35,
+      "isotropicGradientCoefficients": 35,
+      "isotropicVariationCoefficients": 35,
+      "adjointInputs": 196,
+      "adjointLegChecks": 392,
+      "adjointSimplifiedChecks": 196,
+      "outerAdjointChecks": 196,
+      "outerAdjointNonzero": 14,
+      "firstAdjointPositions": 2366,
+      "secondAdjointPositions": 1274,
+      "fullAdjointPositions": 3276,
+      "forwardAdjointProbes": 17836,
+      "nonzeroAdjointProbes": 3276,
+      "adjointReconstructions": 196,
+      "potentialColumns": 196,
+      "potentialLegs": 588,
+      "potentialStageChecks": 1568,
+      "carrierGramEntries": 38416,
+      "originalActionBilinears": 38416,
+      "weightedReciprocityEntries": 38416,
+      "massIdentityEntries": 38416,
+      "potentialMatrixEntries": 38416,
+      "sectorVectors": 196,
+      "traceSector": 1,
+      "symmetricTracelessSector": 104,
+      "skewSector": 91,
+      "decompositionRows": 196,
+      "parameterRows": 27,
+      "couplingRows": 9,
+      "originRows": 9,
+      "nonzeroBranchRows": 4,
+      "branchSectorChecks": 12,
+      "shortcutRejected": 4,
+      "decoyForwardStages": 8,
+      "decoyQCoefficients": 20,
+      "decoyKCoefficients": 20,
+      "decoyAdjointCompositeCoefficients": 20,
+      "decoyFullGradientCoefficients": 20,
+      "decoyQUnchangedCoefficients": 20,
+      "decoyActionRows": 2,
+      "decoyActionCoefficients": 40,
+      "decoyDerivativeCoefficients": 120,
+      "decoyPairings": 1,
+      "decoyGradeFiveTerms": 10
+    },
+    "resources": {
+      "estimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 268435456,
+      "maximumTrackedCoefficientProducts": 100000000,
+      "maximumFourierTerms": 8192,
+      "maximumFrequency": 0,
+      "maximumPolynomialDegree": 4,
+      "maximumPolynomialCoefficients": 35,
+      "carrierDimension": 196
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "sourceNormSelected": false,
+      "sourceMetricSelected": false,
+      "fullDifferentialClosureClaimed": false,
+      "physicalSpectrumClaimed": false,
+      "nonlinearVectorClosureClaimed": false,
+      "physicalVacuumSelected": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "isotropic-gradient-control-failed",
+    "complete-adjoint-control-failed",
+    "potential-hessian-control-failed",
+    "stationary-branch-control-failed",
+    "nonlinear-grade-five-control-failed",
+    "resource-census-control-failed",
+    "canonical-isotropic-stationarity-controls-pass-potential-not-spectrum"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Program.cs",
+      "sha256": "fbd98d2d8047f21f6730da767422219c4be2a6d1fd7f83c7bceca564dd39e197"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Phase613CanonicalIsotropicStationarityPotentialHessianAudit.csproj",
+      "sha256": "b4b4ad0a41caf3bb6257e3b958fcb2a7208a8f12a410657ed7d134bb301a989c"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/STUDY.md",
+      "sha256": "d4dd532ca437858ce02bf774a3d67f570fcf304e3e02f403b23141b9d18870f0"
+    },
+    {
+      "id": "potential-helper",
+      "path": "studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/IsotropicPotential.cs",
+      "sha256": "c0d9ecbbd3e766785ee21a0ac6633cc9a55bd0c9d4318063488fe867f6a539b1"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "caa-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/PolynomialJets.cs",
+      "sha256": "e6c9ecc9b081ac98897f4e0b32b27d0e6b68ccdd75a6fb4a80d386cde469e59a"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

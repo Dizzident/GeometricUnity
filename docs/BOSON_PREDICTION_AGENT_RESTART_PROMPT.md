@@ -45,6 +45,62 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC,A60;613-615executed,616+free):
+Authoritative completed checkpoint47808bef06777cab2ff9726a7ef6f5bffe924324
+was pushed and independently remote-matched; clean before this tranche.
+FinalA59 pass_2026-09-09T14-53-29-202Z.json ran42/skipped430,392/3checklist,
+coverage31/31,overturn94/94. Previous goal turn was PROGRESS.
+613 tests the full constant-field isotropic gradient and196-direction
+POTENTIAL Hessian, with complete original-action and omitted-grade5 controls.
+614 independently tests declared14D homothety and field/metric chain rule.
+Source rereading yielded a sharper admissibility boundary: at fixed fibre
+point y the canonical vertical metric is independent of downstairsLC;
+changing the horizontal splitting is a unitriangular shear. Induced upstairs
+volume is invariant and deltaG_VV=0, so uniform14Dhomothety is outside
+that declared fixed-y image.615 tests this using full matrices and all40
+torsion-free connection-jet directions. Moving observer sections, pullbacks
+and the complete metric Euler equation are outside this statement.
+613-615 ALL PASSED FIRST frozen Release runs unchanged after complete
+independent/MAIN review and explicit approval.19/18/20 unique bindings,
+51/36/33 prospective count fields and full fixtures/live726 all passed.
+Wall5.068/0.922/1.395s;products532448/15976/1524684. Full/summary SHA256:
+613 bd62d1cd4888a59d0b98bd20ff37a022175e88bb55faeb7aa4fd24a7f679334e;
+614 665327874740b741a36d6d949d012ddf9583d52e39de36147fce0a94c2e88cbc;
+615 5e42084985dbe5472d65b77640891ad7db86caa199d0d9aa75c024c05d330dbe.
+Scientific inputs are immutable; no post-run repairs.615 retained12 full
+metrics,480 full tangents and all40-dimensional jet maps/inverses. Its
+fixed-y volume result limits614's interpretation; constant volume is NOT
+a complete metric-stationarity proof.613's196 vector potential columns are
+not full differential closure; its grade5 action decoy stays nonzero.
+Shared ordered101/202/integrity PASSED395/3, O4coverage31/31,overturn94/94.
+Run final incremental AFTER ALL edits, then scoped commit/push/independent
+remote match. Record final
+report and checkpoint in handoff. Do not infer them from targeted runs.
+Next safe lead after checkpoint: curved source-induced connection
+stationarity and the actual allowed metric variation, retaining derivative
+terms and nonparallel projectors. Do not identify the flat613 reference
+with608's curved non-Einstein geometry or infer a vacuum from fixed volume.
+Independent analytical next-lead agreement: canonical untiedCAA on608's
+spin curvature should give-EinsteinGamma. OnS=sGamma1 both kinetic legs
+vanish by parallelism; the scalar potential cannot cancel Einstein's two
+eigenvalues15/4 and21/4. Freeze a literal-chain/full-gradient successor
+before treating this as executed evidence. A two-weight PT/(I-PT) ansatz
+requires BOTH derivative legs because PT is not parallel. One downstairs
+metric variation ties the induced changes across the whole fibre;615
+does not authorize independently varying every upstairs point.
+Sharpened analytical successor: forS=(aPT+b(I-PT))Gamma1 both reviewers
+predict a full differential theta0Gamma01 coefficient-(a-b)/2 in610's
+frame, while algebraic/source terms are vector-valued. This may exclude
+the constant two-weight ansatz too, not general fields. Exact formulas,
+support argument and needed independent controls are in the existing
+stationary-background reference. No616+science/allocation yet.
+Exact prospective negative control:gamma1,kappa11,a3/4,b-3/4 makes
+both full algebraic vector residuals zero but leaves that derivative
+coefficient-3/4. Reconstruct all14 covariant projector derivatives and
+both adjoint legs independently; do not promote the algebraic zero alone.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,deficits15/14,
+physicalmassclaims0. See A60 and extension. Older allocation text is historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC,A59;611-612executed,613+free):
 Previous completed checkpoint4706ac813c4077382fea497393bbd6fcbeefef0b
 was pushed and independently remote-matched. Previous goal turn PROGRESS.

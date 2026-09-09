@@ -588,6 +588,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P610.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P611.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P612.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P613.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P614.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P615.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -635,6 +638,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase610_induced_spin_curvature_contraction_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase611_untied_caa_response_joint_gauge_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase612_covariant_caa_symbol_null_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase614_conditional_metric_homothety_stationarity_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase615_source_induced_splitting_volume_scope_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>

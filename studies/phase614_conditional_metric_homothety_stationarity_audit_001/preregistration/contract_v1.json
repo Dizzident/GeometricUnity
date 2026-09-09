@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "phase": 614,
+  "phaseId": "phase614-conditional-metric-homothety-stationarity-audit",
+  "contractId": "phase614-a60-conditional-metric-homothety-stationarity-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "operator": "canonical untied CAA, firstC/outerA/innerA, fixed gamma and kappa, no extra action terms",
+    "metric": "independent declared g_lambda=lambda^2 g; source MET(X)-induced admissibility NOT established",
+    "reference": "B=0,FB=0,epsilon=I,constant coordinate fields",
+    "lambda": [
+      "1/2",
+      "1",
+      "2"
+    ],
+    "cases": [
+      {
+        "id": "branch-s-1-g1",
+        "s": -1,
+        "gamma": 1,
+        "kappa": 312,
+        "branch": true
+      },
+      {
+        "id": "branch-s-1-g2",
+        "s": -1,
+        "gamma": 2,
+        "kappa": 624,
+        "branch": true
+      },
+      {
+        "id": "branch-s1-g1",
+        "s": 1,
+        "gamma": 1,
+        "kappa": -312,
+        "branch": true
+      },
+      {
+        "id": "branch-s1-g2",
+        "s": 1,
+        "gamma": 2,
+        "kappa": -624,
+        "branch": true
+      },
+      {
+        "id": "offbranch-s-1-g1",
+        "s": -1,
+        "gamma": 1,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "offbranch-s-1-g2",
+        "s": -1,
+        "gamma": 2,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "offbranch-s1-g1",
+        "s": 1,
+        "gamma": 1,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "offbranch-s1-g2",
+        "s": 1,
+        "gamma": 2,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "zero-g1-k1",
+        "s": 0,
+        "gamma": 1,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "zero-g0-k0",
+        "s": 0,
+        "gamma": 0,
+        "kappa": 0,
+        "branch": false
+      },
+      {
+        "id": "mass-only-k-1",
+        "s": 1,
+        "gamma": 0,
+        "kappa": -1,
+        "branch": false
+      },
+      {
+        "id": "mass-only-k1",
+        "s": 1,
+        "gamma": 0,
+        "kappa": 1,
+        "branch": false
+      },
+      {
+        "id": "cubic-only-s-1",
+        "s": -1,
+        "gamma": 1,
+        "kappa": 0,
+        "branch": false
+      },
+      {
+        "id": "cubic-only-s1",
+        "s": 1,
+        "gamma": 1,
+        "kappa": 0,
+        "branch": false
+      },
+      {
+        "id": "zero-action-s-1",
+        "s": -1,
+        "gamma": 0,
+        "kappa": 0,
+        "branch": false
+      },
+      {
+        "id": "zero-action-s1",
+        "s": 1,
+        "gamma": 0,
+        "kappa": 0,
+        "branch": false
+      }
+    ],
+    "phiPowers": [
+      1,
+      2
+    ],
+    "hodgePower": "14-2r",
+    "scalarPairingPower": "-2r",
+    "volumePower": 14,
+    "forwardStagePowers": [
+      0,
+      10,
+      11,
+      12,
+      -2,
+      -1,
+      11,
+      -1
+    ],
+    "reverseStagePowers": [
+      0,
+      12,
+      1,
+      0,
+      -1,
+      13,
+      11,
+      1
+    ],
+    "KFixedPower": -1,
+    "KdagFixedPower": 1,
+    "DQdagFixedPower": -2,
+    "curvatureFixtures": [
+      "Gamma2",
+      "theta01 Gamma01/2",
+      "theta01 Gamma23",
+      "theta01 Gamma12"
+    ],
+    "forwardFirst": [
+      "-26Gamma1",
+      "-theta0 gamma0-theta1 gamma1",
+      "0",
+      "2theta0 gamma2"
+    ],
+    "forwardSecond": [
+      "182Gamma1",
+      "Gamma1",
+      "-2sum(j4..13)theta_j Gamma0123j",
+      "0"
+    ],
+    "adjointInputs": [
+      "Gamma1",
+      "theta0 gamma2"
+    ],
+    "adjointAnswers": [
+      "-24Gamma2",
+      "2theta0 wedge(gamma2 wedgeCl Gamma1)"
+    ],
+    "nonzeroAdjointBasePairings": [
+      -2184,
+      -12,
+      -2
+    ],
+    "maskMenu": "empty/full and prefix/7-axis-rotated prefix masks of lengths1..13;28 distinct",
+    "paths": [
+      "fixed-coordinate T=sGamma1",
+      "transported T_lambda=s lambda Gamma1"
+    ],
+    "sourceAnchors": [
+      "Q=2s^2 lambda^(2t)Gamma2",
+      "KQ=312s^2 lambda^(2t-1)Gamma1",
+      "KdagT=-24s lambda^(t+1)Gamma2",
+      "DQdagKdagT=624s^2 lambda^(2t-1)Gamma1"
+    ],
+    "pathExponent": "t=0 fixed,t=1 transported",
+    "gradient": "312gamma s^2 lambda^(2t-1)Gamma1+kappa s lambda^t Gamma1",
+    "action": "C lambda^(11+3t)+M lambda^(12+2t),C=-1456gamma s^3,M=-7kappa s^2",
+    "originalActionRoute": "full top-form T wedge metricStar(KQ) gamma/3 plus mass; independent density-weighted signed pairing",
+    "branchDerivativeAt1": "10192gamma s^3",
+    "chainRuleAt1": "movingDerivative-fixedDerivative=Pair(G,S)=-4368gamma s^3-14kappa s^2",
+    "wrongPhiPowers": [
+      -2,
+      -4
+    ],
+    "wrongPairAction": "C lambda13+M lambda14",
+    "wrongPairDerivativeDifferenceAt1": "2(C+M)",
+    "expectedCounts": {
+      "hodgeCases": 16384,
+      "wordCases": 44944,
+      "generatorWordCases": 458752,
+      "scaledHodge": 84,
+      "scaledPairings": 84,
+      "forwardFixtures": 4,
+      "forwardStagePolynomials": 32,
+      "forwardEvaluations": 12,
+      "reverseFixtures": 2,
+      "reverseStagePolynomials": 16,
+      "reverseEvaluations": 6,
+      "adjointPairings": 24,
+      "nonzeroAdjointPairings": 9,
+      "wrongPhiScaleRejections": 8,
+      "wrongPhiDerivativeRejections": 4,
+      "omittedFirstRejections": 9,
+      "omittedSecondRejections": 9,
+      "fieldCases": 16,
+      "fieldPaths": 32,
+      "sourceAnchorPolynomials": 128,
+      "sourceGradientLegPolynomials": 96,
+      "gradientPolynomials": 32,
+      "originalActionLegPolynomials": 128,
+      "actionPolynomials": 32,
+      "actionDerivativePolynomials": 32,
+      "caseScaleContexts": 48,
+      "actionValues": 96,
+      "actionDerivativeValues": 96,
+      "gradientValues": 96,
+      "chainRuleRows": 16,
+      "offBranchChainRuleRows": 8,
+      "fieldStationaryRows": 8,
+      "nonzeroMetricBranchRows": 4,
+      "fixedTransportBranchRejections": 8,
+      "wrongPairDerivativeRejections": 12,
+      "wrongPairScaleRejections": 24
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 20,
+      "maximumEstimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumCoefficientProducts": 50000000,
+      "maximumSparseTensorTerms": 65536,
+      "maximumLaurentMonomials": 4,
+      "maximumAbsoluteExponent": 28,
+      "maximumFrequency": 0
+    },
+    "scope": {
+      "sourceMetricVariationAdmissible": false,
+      "sourceOperatorSelected": false,
+      "additionalActionTermsIncluded": false,
+      "couplingsVaried": false,
+      "globalVacuumRejected": false,
+      "physicalMetricEquationSelected": false,
+      "fullDifferentialSpectrumComputed": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "metric-chain-control-failed",
+    "full-adjoint-control-failed",
+    "original-action-control-failed",
+    "field-gradient-control-failed",
+    "chain-rule-control-failed",
+    "metric-nonstationarity-control-failed",
+    "count-or-resource-control-failed",
+    "metric-homothety-controls-pass-source-admissibility-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase614_conditional_metric_homothety_stationarity_audit_001/Program.cs",
+      "sha256": "a8dd211482e3dbf81853b3fa569ba3dff846e6379b931253c10d0f09a78b9c35"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase614_conditional_metric_homothety_stationarity_audit_001/Phase614ConditionalMetricHomothetyStationarityAudit.csproj",
+      "sha256": "d8662f6485fc803e7f84ffa1353b3a870b49a03c88562cf79b948b9c66b5f328"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase614_conditional_metric_homothety_stationarity_audit_001/STUDY.md",
+      "sha256": "36b23066ec9e40c60ed52bd01d3701ad63c43500a18fc0beedb778b743dd3763"
+    },
+    {
+      "id": "control-helper",
+      "path": "studies/phase614_conditional_metric_homothety_stationarity_audit_001/MetricLaurent.cs",
+      "sha256": "192698854600baec7dec672d38b1f6eb15e9670d22afe30ed4ccfda4db6e80bb"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "caa-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}
