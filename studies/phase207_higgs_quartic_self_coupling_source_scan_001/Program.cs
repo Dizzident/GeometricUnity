@@ -221,6 +221,8 @@ static bool IsGeneratedDiagnosticScanPath(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P601.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P602.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P603.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P604.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P605.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -258,7 +260,9 @@ static bool IsGeneratedDiagnosticScanPath(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase601_full_hessian_cyclic_closure_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase602_stationary_odd_background_closure_audit_001/", StringComparison.Ordinal)
-    || normalizedPath.StartsWith("studies/phase603_homogeneous_invariant_stationary_family_audit_001/", StringComparison.Ordinal);
+    || normalizedPath.StartsWith("studies/phase603_homogeneous_invariant_stationary_family_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase604_squared_action_stationary_equivalence_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase605_stationary_background_fourier_closure_audit_001/", StringComparison.Ordinal);
 
 static string DetermineKind(string lower, string file)
 {
@@ -731,6 +735,8 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P601.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P602.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P603.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P604.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P605.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
@@ -769,6 +775,8 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("studies/phase601_full_hessian_cyclic_closure_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("studies/phase602_stationary_odd_background_closure_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("studies/phase603_homogeneous_invariant_stationary_family_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("studies/phase604_squared_action_stationary_equivalence_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("studies/phase605_stationary_background_fourier_closure_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("scripts/verify_boson_claim_integrity.sh", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md", StringComparison.Ordinal), "generated-diagnostic-artifact");

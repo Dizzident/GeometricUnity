@@ -6,9 +6,11 @@ A55 allocates602-603, following the validated A54 checkpoint
 abbee7db2ac49bd4ddb507c97f4aedbe093e3024. Both first frozen Release executions
 passed after independent and coordinator full code/helper/proof/fixture/hash
 reviews. Each pack binds16 unique files and verifies all726 live core files.
-The602/603 predictions below are now executed evidence within their stated
-scope; the final successor sections remain analytical and unexecuted.
-No physical blocker is relabeled by either result.
+The602-605 predictions below are now executed evidence within their stated
+scope, as recorded in the A56 results section. Only the general-c enlargement
+and positive-norm safeguard remain analytical and unexecuted. Earlier
+prospective/allocation language records the pre-execution chronology.
+No physical blocker is relabeled by these results.
 
 Primary source: the April1,2021 author draft, equations8.7 and9.3-9.12,
 local `texts/GU-DRAFT-2021-TEXT.txt`, SHA256
@@ -311,3 +313,125 @@ alpha is26/(15kappa). These are independently checked analytical targets,
 not numerical observations. At kappa0 with nonzero frequency the seed
 returns to the origin's size3 nilpotent chain. Zero frequency requires an
 actual constant basis, not just specializing a seven-mode sine/cosine Gram.
+
+## A56 prospective execution scope and general-c failure witness
+
+A55 was committed/pushed as60f7296565413b191fcd432fb85857d76b14e757;
+final pass_2026-09-09T12-05-50-227Z.json ran77/skipped386,383/3 checklist.
+A56 now allocates604 squared-action equations and605 stationary Fourier
+closure. The formulas above remain prospective for those successor tests;
+both full packs must freeze and receive independent/MAIN review before
+first execution.606+ free; older allocation statements are historical.
+
+At n0 the ACTUAL carrier is(u,b,Omega u,Omega b) with constant fields and
+Gramdiag(-1,-1,1,1). Its potential consists of two kappa/13[[14,1],[1,14]]
+blocks. Seed-u spans dimension2 when kappa is nonzero, dimension1 otherwise.
+No sine mode survives at n0; no seven-dimensional Fourier Gram is used.
+
+Two independent agents finished a general-c failure-of-closure witness.
+Put Z_n=sum_(j!=0,2)theta_j Gamma0j gamma2 cos(nx0). With
+t=-kappa/(416gamma), the three unweighted potential c legs on u are
+4itPZ_n,-112ihtOmegaZ_n,-44itPbarZ_n. Their sum is
+-8it(5+8hOmega)Z_n; multiplying gamma/3 gives the potential below. The
+full derivative contribution has the separately checked central component.
+Thus the exact coefficient of c in the FULL H_S*u is
+
+`n i theta2 I sin(nx0)+i kappa(5+8hOmega)Z_n/156`.
+
+The central even sine mode and odd grade3/11 cosine modes are real H-anti,
+nonzero and outside the c0 seven-mode carrier. Their Clifford parity keeps
+the derivative contribution from canceling against the potential. Shared
+index Clifford contraction and the complete second K leg determine all
+three potential coefficients independently; MAIN checked their combination.
+605 may verify this formal-c leakage, but must NOT infer general-c closure
+or eigenvalues from its c0 result. No physical norm/time split is selected.
+
+### Independent positive-norm assumption challenge (analytical only)
+
+Do not attribute every extra squared-action stationary point solely to
+indefiniteness. For the diagnostic positive real Clifford/form coefficient
+pairing, its invariant restriction is J_pos=7(g_r^2+g_s^2)/2. At
+r=-kappa/(416gamma),s0 this is positive, with nonzero first-action G,
+but both restricted derivatives vanish. The restricted Hessian is
+diag(-7kappa^2/2,0), not a minimum in that slice.
+
+Full connection stationarity in this example has a separate proof; it is
+NOT inferred from a non-Spin-invariant positive norm's restricted derivative.
+Let D be the diagonal sign involution of the complete real trace/form Gram,
+so B_pos(X,Y)=B(X,DY) and H_I-adjoint-pos=D H_I D. In this particular
+invariant carrier D Gamma1=-Gamma1 and D(Omega Gamma1)=+Omega Gamma1.
+DG points in the delta-s direction, and603's FULL tensor identity gives
+H_I delta-s=0 at r=-kappa/(416gamma). Thus D H_I D G=0 on the complete
+constant connection carrier. The same argument holds for arbitrary s on
+that r line; the quoted diagonal Hessian is specifically at s0.
+
+MAIN and the independent reviewer checked this argument analytically.
+It does not select a source norm, establish a positive norm's global Spin
+invariance, certify a full minimum or identify a physical vacuum. Extra
+critical points alone also do not invalidate a procedure that explicitly
+requires zero residual or a proven zero global minimum. This is a scoped
+interpretation safeguard, not an expansion of604's preregistered menu.
+
+## A56 first frozen execution results
+
+Both first Release runs passed after complete independent/MAIN source,
+helper, project, proof, fixture, binding and live726 core reviews.604 ran
+in0.901s with20 unique bindings;605 in2.172s with18. No failed scientific
+execution or post-execution scientific edit occurred. Before final605
+approval, its proof corrected each scaled F0j contribution to-4Pu and
+restored disjoint-pair terms in the displayed K^dagger u identity; those
+terms vanish under DQ_Sunit^dagger. These were proof-only prefreeze fixes,
+not changed numerical expectations or a repair after observing results.
+
+604 contract SHA256:
+`e2093bca8c97b15811eac261e25ea579ef228dbe894115df7e1f5cb971314cf3`.
+Its identical full/summary SHA256:
+`7e20c85ac704329a4d37727d8c8fb9187416f21b3766f4bb1ad0fe1ed734d0aa`.
+All symbolic controls pass:22 stationary rows,10 nonzero decoys,24 source
+factor controls,8 square derivatives,8 square Hessian columns and16 square
+Hessian bilinears. Nonzero formal-c adjoints are retained before the
+gradient cancellation. The extra JG stationary branch has nonzero original
+gradient; the exceptional gamma=3beta still gives opposite JR/JG Hessian
+signs. These are full constant-connection gradients, not projected tests.
+
+605 contract SHA256:
+`e3704f4d8ee5b7aca9438fa16b99967cf4425e7f95beb3004e430e58bbe9ac25`.
+Its identical full/summary SHA256:
+`1c9a958e52ab24540f19f6e71df9858b7ecd7354605c161d3e04c38fdb48e96b`.
+All36 base columns,108 potential legs,108 full columns,684 Gram entries,
+684 independent original-action bilinears,108 full-source Krylov
+applications,126 rank checks and18 polynomial rows pass. All8 generic
+Jordan rows have the predicted Schur coefficient; all12 formal-c leakage
+rows have zero projection but nonzero full output. The6 n0 rows use actual
+constant4D fields, distinct from12 nonzero-frequency7D rows.
+All fourteen flagsfalse, external review pending, physicalclaims0.
+No physical time, source norm, stable vacuum or dispersion law is selected.
+
+## Analytical successor correction:10D is not closed
+
+This section is unexecuted analytical work, independently cross-checked by
+the three agents;606+ remains unallocated. Extend the old7D basis by
+j=i theta2 I sin(nx0), z=iZ_n and oz=iOmega Z_n. This tempting10D carrier
+FAILS: the full differential column is
+
+`H0 z=-12n j-2hn(tilde e+6tilde e0)`,
+
+where tilde e=iOmega e and tilde e0=iOmega e0 are independent admissible
+real H-anti grade12 sine fields. The odd-background potential applied to
+odd z remains odd and cannot cancel the even leakage. Two independent
+derivations give K dz=-2hn tilde e-24hn tilde e0 and
+d^dagger K^dagger z=-2hn tilde e-24n j at c0.
+
+The independently checked full c coefficients of the old even columns are
+
+- Hc e=-12n(z+h oz)+h kappa(-5tilde e-12tilde e0)/78;
+- Hc e0=-n(z+h oz)+h kappa(-tilde e+6tilde e0)/78;
+- Hc q=kappa(tilde e+tilde e0)/13.
+
+The two grade12 coefficient columns(e,e0) have determinant
+-42(h kappa/78)^2, so BOTH additional directions are forced for kappa*c
+nonzero. This identifies a12D candidate, not a closed-carrier theorem.
+The full remaining columns, signed Gram, independent original-action
+bilinears, characteristic/Jordan controls and zero-parameter/zero-frequency
+strata must be derived and frozen before scientific execution. Do not
+carry c0's frequency-independent eigenvalues over to general c.

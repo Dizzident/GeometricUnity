@@ -45,6 +45,46 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, A56; Phases604-605 executed):
+both first frozen Release runs passed after full independent/MAIN reviews,
+unique exact bindings and live726 core closure.604 has20 bindings,605 has18.
+604 confirms22 stationary rows and10 nonzero decoys: residual-square and
+actual-gradient-square equations are not equivalent. Even the corrected
+gradient-square has an extra stationary branch with NONZERO original
+equation. Squared-action criticality alone does not certify a solution;
+a solver explicitly requiring zero residual is a different proposition.
+
+605 confirms FULL c0 seven-mode Fourier closure,108 full columns,684
+independent original-action bilinears and18 actual cyclic/characteristic
+rows, including the separate n0 constant carrier. Generic seed dimension6
+and the size2 Jordan block agree with the independent predictions. Its
+frequency-independent eigenvalues are not a physical dispersion law.
+All12 formal-c leakage rows pass: the seven-mode carrier does not close
+at general c. No source norm, physical time or pole has been selected.
+
+NEXT PRIORITY: derive/freeze FULL general-c closure, not a compression.
+Parallel independent analysis already rejects the tempting10D extension
+by j=i theta2 I sin,z=iZ_n,oz=iOmega Z_n. Full H0 z equals
+-12n j-2hn(tilde e+6tilde e0), where tilde e=iOmega e and
+tilde e0=iOmega e0 are admissible real H-anti grade12 directions.
+The formal-c columns of e/e0 independently force BOTH new directions
+when kappa*c is nonzero. Thus12D is a concrete candidate, NOT yet proved
+closed; derive remaining full columns before freezing a successor.
+See the reference for independently checked coefficients and scope.
+The positive-coefficient-norm diagnostic also has extra critical points;
+this analytical safeguard does not select the incomplete source9.11 norm.
+
+All shared surfaces include604-605 and exact output pins; targeted ordered
+101/202/integrity pass385/3, O4coverage31/31, overturn94/94. Final incremental
+cadence follows all edits, then checkpoint commit/push under the active goal.
+Previous60f7296565413b191fcd432fb85857d76b14e757 was pushed with matching
+remote and clean worktree: final A55 pass_2026-09-09T12-05-50-227Z.json
+ran77/skipped386,383/3. Preserve its frozen602 trailing blank byte-for-byte.
+All14 flagsfalse, O4/externalreviewpending, Phase561closed, deficits15/14,
+physicalclaims0. Registry606+ free. See A56, IMPLEMENTATION_P604/P605 and
+the stationary-background reference. Older allocation/free statements below
+are historical. Concrete next experiments remain; goal stays active.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, A55; Phases602-603 executed):
 both first frozen Release runs passed after complete independent/coordinator
 code/proof/fixture/hash reviews. Each pack has16 exact bindings and live726

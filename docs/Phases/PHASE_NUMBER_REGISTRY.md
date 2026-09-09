@@ -67,7 +67,9 @@ back, NO new phase directory may be created outside this table.
 | 601 | Full quadratic Hessian cyclic-closure audit (A54) | DONE, first frozen run passed: full-source cyclic closure and non-invariant two-mode compression; fixed-geometry connection carrier, no physical spectrum or source choice. |
 | 602 | Stationary odd-background full closure audit (A55) | DONE, first frozen run passed: actual stationary background, full26D constant Hessian closure and Jordan/saddle controls for both chiralities and every formal c; no physical vacuum or spectrum selection. |
 | 603 | Homogeneous invariant stationary-family audit (A55) | DONE, first frozen run passed: full symbolic action/gradient, all coupling degeneracies and nonzero stationary branch with closed invariant saddle Hessian; no physical scale, source or norm selection. |
-| 604+ | Unassigned - extend this registry before use | - |
+| 604 | Squared-action stationary-equivalence audit (A56) | DONE, first frozen run passed: full symbolic square-action derivatives,22 stationary rows and10 nonzero original-equation decoys; equations not equivalent, no physical norm or vacuum selection. |
+| 605 | Stationary-background Fourier closure audit (A56) | DONE, first frozen run passed: full c0 seven-mode closure, exact cyclic/Jordan controls, separate constant carrier and formal-c leakage witness; no physical dispersion or pole identification. |
+| 606+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

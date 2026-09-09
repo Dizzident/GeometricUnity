@@ -23671,3 +23671,63 @@ restart prompt. This upgrades the successor from an open carrier guess to
 a concrete independently predicted frozen test, not an executed physical
 spectrum. The square-action successor also has complete independently
 checked branches and full-transpose formulas. Neither is yet allocated.
+
+## 2026-09-09 UTC: A56 squared actions and stationary Fourier modes
+
+A55 checkpoint60f7296565413b191fcd432fb85857d76b14e757 was committed/pushed,
+remote independently matched and worktree was clean. Final incremental
+pass_2026-09-09T12-05-50-227Z.json ran77/skipped386 with383/3 checklist,
+O4coverage31/31, overturn94/94 and physicalclaims0. All historical output
+changes were generatedAt/runtimeSeconds only. Staged whitespace review found
+one harmless trailing blank in602's already frozen contract: MAIN explicitly
+preserved its exact reviewed bytes/hash, documented in the commit message.
+No frozen artifact was rewritten for cosmetic reasons.
+
+The completed tranche was PROGRESS: actual stationary backgrounds and full
+constant Hessians were independently tested, and two separate new full-
+gradient/momentum experiments now have precise predictions. Allocate604-605
+under A56,606+free. Separate workers implement the squared-action branch
+census and full stationary Fourier closure; third reviews both, MAIN owns
+shared wiring/docs and full pre-run reviews. No new scientific run yet.
+
+During the final A55 cadence, both agents independently completed the FULL
+formal-c seedu leakage: n i theta2 I sin(nx0)+i kappa(5+8hOmega)Z_n/156.
+Its three potential legs, before gamma/3, are4itPZ,-112ihtOmegaZ,-44itPbarZ;
+MAIN checked the sum, normalization and even/odd noncancellation. These
+new real H-anti central and grade3/11 modes are absent from c0's carrier.
+605 therefore freezes a failure-of-general-c-closure witness, not a general-c
+spectrum. Its n0 test uses actual constant4D vectors/Gram; the sine modes
+vanish, so abstract7D matrix specialization is not a physical carrier.
+All counts/formulas/resources/bindings must freeze before execution.
+All fourteen flagsfalse, O4/externalreviewpending, Phase561closed,
+source deficits15/14, physicalclaims0. No source norm or physical time choice.
+
+A56 execution outcome: PROGRESS. Both first frozen Release runs passed
+after complete independent/MAIN review and exact-binding/live726 closure.
+604 wall0.901s,20 bindings,22 stationary rows,10 nonzero decoys and24
+normalization-factor controls all pass. Its residual-square and corrected-
+gradient-square equations differ, and the latter admits an extra critical
+point with nonzero original equation.605 wall2.172s,18 bindings,108 full
+columns,684 independent action bilinears,18 polynomial/cyclic rows,8
+Jordan controls and12 formal-c leakage rows all pass. Full output hashes
+are7e20c85ac704329a4d37727d8c8fb9187416f21b3766f4bb1ad0fe1ed734d0aa
+and1c9a958e52ab24540f19f6e71df9858b7ecd7354605c161d3e04c38fdb48e96b.
+Before final605 freeze, independent review corrected two displayed proof
+identities: a scaled curvature contribution is-4Pu, and K^dagger u has
+disjoint-pair terms that subsequently vanish under DQ^dagger. No expected
+scientific result changed and no scientific run preceded these corrections.
+
+All shared surfaces are wired; ordered101/202/integrity passes385/3 with
+coverage31/31, overturn94/94, deficits15/14 and physicalclaims0. Final
+incremental cadence follows all edits before the checkpoint commit/push.
+
+While integration ran, three agents independently challenged the prospective
+general-c extension. The tempting10D space misses iOmega e and iOmega e0:
+full H0(iZ)=-12n j-2hn(iOmega e+6iOmega e0), and old e/e0 formal-c
+potential columns independently force both grade12 directions. Thus12D is
+a concrete candidate, not a proven closure. Remaining full columns are
+being derived without trial execution. Also preserve the positive-norm
+safeguard: extra square-action critical points are not exclusively an
+indefinite-pairing artifact, but do not by themselves refute a solver that
+demands zero residual. No source norm is chosen by this observation.
+All14 flagsfalse, O4/externalreviewpending, Phase561closed. Registry606+free.

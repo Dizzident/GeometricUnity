@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "phase": 605,
+  "contractId": "phase605-a56-stationary-background-fourier-closure-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Full c0 stationary-background source Fourier closure and actual constant zero-frequency carrier, original-action reciprocity and source Krylov/Jordan controls; general-c seed leakage only; no physical dispersion or source norm selection",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "fixed flat metric/reference/epsilon/tensors; normalized periodic x0; first action only",
+    "carrierScope": "full source columns on a closed fixed-geometry connection carrier; no full-theory physical dispersion",
+    "chiralities": [
+      -1,
+      1
+    ],
+    "nonzeroFrequencies": [
+      1,
+      2
+    ],
+    "constantFrequency": 0,
+    "kappas": [
+      -1,
+      0,
+      1
+    ],
+    "gammaControl": 1,
+    "gammaScope": "all nonzero gamma by exact gamma*S*=-kappa Pbar Gamma1/416, not a fit or coupling choice",
+    "cControl": 0,
+    "phi1": "P Gamma1, P=1+h Omega",
+    "phi2": "(c-i h Omega)Gamma2",
+    "backgroundUnit": "Pbar Gamma1, Pbar=1-h Omega",
+    "backgroundScale": "t=-kappa/(416 gamma)",
+    "operator": "H=H0+kappa I-kappa(A+B+C)/1248 at backgroundUnit; A=K DQ, B=DQ_V^adj K^adj Sunit, C=DQ_Sunit^adj K^adj V",
+    "basis": [
+      "u=theta0 gamma2 cos(nx0)",
+      "b=theta2 gamma0 cos(nx0)",
+      "Omega u",
+      "Omega b",
+      "e=sum_(j!=0,2)theta_j gamma2 gamma_j sin(nx0)",
+      "e0=theta0 Gamma20 sin(nx0)",
+      "q=theta2 Omega sin(nx0)"
+    ],
+    "nonzeroGram": [
+      "-1/2",
+      "-1/2",
+      "1/2",
+      "1/2",
+      "6",
+      "1/2",
+      "-1/2"
+    ],
+    "nonzeroGramDeterminant": "-3/32",
+    "constantBasis": [
+      "theta0 gamma2",
+      "theta2 gamma0",
+      "theta0 Omega gamma2",
+      "theta2 Omega gamma0"
+    ],
+    "constantGram": [
+      -1,
+      -1,
+      1,
+      1
+    ],
+    "constantGramDeterminant": "1",
+    "constantSineDirectionsExist": false,
+    "originColumns": [
+      "n e",
+      "n e",
+      "-h n e",
+      "-h n e",
+      "-12n P(u+b)",
+      "0",
+      "0"
+    ],
+    "potentialLegs": {
+      "oddInput": "v=u,b,Omega u,Omega b: (-48P v,-96 swapped(v),-48Pbar v)",
+      "e": [
+        "8(12e0+11e)",
+        "96(12e0+11e)",
+        "96e0+88e+1152h q"
+      ],
+      "e0": [
+        "8e",
+        "96e",
+        "8e+96h q"
+      ],
+      "q": [
+        "-96h(e+e0)",
+        "0",
+        "0"
+      ]
+    },
+    "fullColumns": [
+      "n e+kappa(14u+b)/13",
+      "n e+kappa(u+14b)/13",
+      "-h n e+kappa(14Omega u+Omega b)/13",
+      "-h n e+kappa(Omega u+14Omega b)/13",
+      "-12n P(u+b)+kappa(e/78-14e0/13-12h q/13)",
+      "kappa(e0-7e/78-h q/13)",
+      "kappa(q+h(e+e0)/13)"
+    ],
+    "characteristic": "(z-kappa)^2(z-15kappa/13)^2 z(z-12kappa/13)(z-85kappa/78)",
+    "constantCharacteristic": "(z-kappa)^2(z-15kappa/13)^2",
+    "genericMinimal": "(z-kappa)(z-15kappa/13)^2 z(z-12kappa/13)(z-85kappa/78)",
+    "zeroKappaMinimal": "z^3",
+    "constantMinimal": "(z-kappa)(z-15kappa/13) for kappa!=0; z otherwise",
+    "genericKrylovRanks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      6,
+      6
+    ],
+    "zeroKappaKrylovRanks": [
+      1,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "constantNonzeroKrylovRanks": [
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "constantZeroKrylovRanks": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "genericPowerRanks": [
+      6,
+      6,
+      6
+    ],
+    "zeroKappaPowerRanks": [
+      2,
+      1,
+      0
+    ],
+    "constantNonzeroPowerRanks": [
+      4,
+      4,
+      4
+    ],
+    "constantZeroPowerRanks": [
+      0,
+      0,
+      0
+    ],
+    "adaptedBasis": [
+      "z=P(u+b)",
+      "E=e+e0",
+      "q",
+      "F=e-12e0",
+      "w=Pbar(u+b)/2",
+      "u-b",
+      "Omega(u-b)"
+    ],
+    "alpha": "15kappa/13",
+    "alphaShiftPowerRanks": [
+      6,
+      5,
+      5
+    ],
+    "evenResolventEE": "26/(15 kappa)",
+    "jordanSchurCoefficient": "-208 n^2/(5 kappa)",
+    "genericCyclicGramNondegenerate": true,
+    "actionOracle": "six ordered placements of S,V,W in B(T,K(T wedge T)), exchanged word pairs grouped before real Pair; independent forward quadratic and mass terms",
+    "formalCLeakage": "n i theta2 I sin(nx0)+i kappa(5+8h Omega)Z_n/156",
+    "Z": "sum_(j!=0,2)theta_j Gamma0j gamma2 cos(nx0)",
+    "formalCPotentialLegs": [
+      "4iPZ",
+      "-112ih Omega Z",
+      "-44iPbar Z"
+    ],
+    "generalCClosureClaimed": false,
+    "knownAnswerGrades": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "counts": {
+      "wordCases": 44944,
+      "hodgeCases": 16384,
+      "matrixKnownAnswers": 4,
+      "frequencyKnownAnswers": 3,
+      "baseColumns": 36,
+      "potentialLegChecks": 108,
+      "originChecks": 36,
+      "rows": 18,
+      "fullColumns": 108,
+      "gramEntries": 684,
+      "actionBilinears": 684,
+      "krylovApplications": 108,
+      "krylovRankChecks": 126,
+      "polynomialRows": 18,
+      "jordanRows": 8,
+      "formalCLegChecks": 12,
+      "formalCLeakageRows": 12
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 30,
+      "maximumEstimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456,
+      "fullFourierTermBound": 36,
+      "constantTermBound": 4,
+      "formalCLeakageTermBound": 50,
+      "maximumKrylovApplicationsPerRow": 7
+    },
+    "sourceNormSelected": false,
+    "physicalTimeSelected": false,
+    "physicalScaleSelected": false
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "full-source-column-control-failed",
+    "original-action-control-failed",
+    "cyclic-jordan-control-failed",
+    "formal-c-leakage-control-failed",
+    "stationary-background-fourier-closure-controls-pass-no-physical-dispersion"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase605_stationary_background_fourier_closure_audit_001/Program.cs",
+      "sha256": "654c621292bd0dd3fca6fd1902f606b6a9f2bdf7d3f420b70b244a82c48aeb05"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase605_stationary_background_fourier_closure_audit_001/FourierClosure.cs",
+      "sha256": "16eeba8a4e31c0290ccd5b50348702d60552bf80d9e37d17c68b91fd5f4ad556"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase605_stationary_background_fourier_closure_audit_001/Phase605StationaryBackgroundFourierClosureAudit.csproj",
+      "sha256": "b6fca72a80f8fea00fdd47d7c63f2796a4f7e7e8a2c297570ce5039dd53d9f16"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase605_stationary_background_fourier_closure_audit_001/STUDY.md",
+      "sha256": "c248a41834bd3db47ab57e324572ae4062733c57b706c94ab008c4c143ef360c"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase601-summary",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/output/full_hessian_cyclic_closure_audit_summary.json",
+      "sha256": "294e2b9cfd4a7ed4eeb20f3b5820e8ccaebef0c08d22fb847f20be215b0cfc4c"
+    },
+    {
+      "id": "phase601-contract",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/preregistration/contract_v1.json",
+      "sha256": "1eaf3887a4720723d9793fc9a7d66507feee7136969c68ee35ff3ec32d9cd83f"
+    },
+    {
+      "id": "matrix-helper",
+      "path": "studies/phase601_full_hessian_cyclic_closure_audit_001/CyclicPolynomial.cs",
+      "sha256": "b37c7a5bdd769524513bef8eb0d85e77f3fbe30fca491136b27ef1ec685bd037"
+    },
+    {
+      "id": "phase603-summary",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/output/homogeneous_invariant_stationary_family_audit_summary.json",
+      "sha256": "0c66a20b280e5df487efb67be03388122a6ec88b8d55ab8636c86634f45bfda6"
+    },
+    {
+      "id": "phase603-contract",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/preregistration/contract_v1.json",
+      "sha256": "a81ca68c7f2405e4955dcd96bf42a76016da7e383d505c454328bb9fcc612dec"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "o4Status": "pending",
+  "promotedPhysicalMassClaimCount": 0
+}

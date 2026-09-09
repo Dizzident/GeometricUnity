@@ -2815,3 +2815,122 @@ the first bare-transpose leakage and seeks complete enlarged closure. These
 are prospective successor experiments only;604+ remains unallocated.
 All fourteen flags remain false, O4/external review pending, Phase561 closed,
 source deficits15/14 and promoted physical mass claims0.
+
+### A56 - Squared-action equations and stationary Fourier closure (2026-09-09 UTC)
+
+A55 was committed/pushed as60f7296565413b191fcd432fb85857d76b14e757,
+with independently verified remote and clean worktree. Final incremental
+pass_2026-09-09T12-05-50-227Z.json passed77 ran/386 skipped,383/3 checklist.
+Allocate604-605 before implementation;606+ remains free. This is constructive
+follow-up to independently confirmed actual stationary backgrounds, not a
+relabeled physical claim or external ruling. Full prospective predictions
+are recorded in STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md.
+
+604 retains the complete symbolic constant invariant family S=aGamma1+
+bOmegaGamma1, r=a-hb,s=a+hb, both h, formal c and independent beta,gamma,kappa.
+Use the literal full K chain and true trace adjoints, at fixed flat geometry,
+reference, tensors, epsilon and density. The declared indefinite pairing B
+is not selected as the source9.11 norm. Define R=beta KQ+kappa S and the
+actual first-action G=gamma(KQ+DQ_S^dagger K^dagger S)/3+kappa S.
+Test J_R=B(R,R)/2 and J_G=B(G,G)/2 as DISTINCT declared actions; source9.11
+without the half factor doubles gradients/Hessians. Never infer beta from
+gamma or fit their relationship to make a stationary point agree.
+
+Independently construct the original scalar squares and differentiate their
+formal polynomial coefficients. Full transposition gives
+grad J_R=beta DQ_S^dagger K^dagger R+kappa R and grad J_G=H_I G,
+where the actual full constant H_I has all three already tested source legs.
+K^dagger(PGamma1)=0 gives the full JR gradient directly; differentiating the
+FULL603 tensor gradient in direction G gives H_I G without a projected
+stationarity assumption. Local equivariance and595's complete invariant
+classification/nondegenerate Gram supply a separate written closure proof.
+Retain nonzero formal-c intermediate adjoints before their cancellation.
+
+Predictions: J_R=-7kappa r s(624beta r+kappa), with raised invariant gradient
+kappa(r(624beta r+kappa),s(1248beta r+kappa)). J_G=-7s f(r), where
+f=r(208gamma r+kappa)(416gamma r+kappa), with raised gradient(f,s f').
+For gamma*kappa nonzero, JG has three stationary points at s0 and
+r=0,-kappa/(208gamma),-kappa/(416gamma). The third has NONZERO first-action
+gradient r component-kappa^2/(832gamma) and delta-s=1 variation
+7kappa^2/(832gamma). Independently H_I G=0 there. JG stationary invariant
+Hessians are+kappa^2 I at the first two and-kappa^2 I/2 at the third.
+Gamma0/kappa-nonzero gives origin only; gamma-nonzero/kappa0 gives the r0
+line; both0 gives all constant invariant fields. JR for beta*kappa nonzero
+has origin and r=-kappa/(624beta),s0, with Hessians+kappa^2 I and-kappa^2 I.
+Beta0/kappa-nonzero gives origin; kappa0 gives ALL constant invariant fields,
+including nonzero residuals. Freeze full coefficient, derivative, Hessian,
+coupling-degeneracy and nonzero-residual/original-equation controls. At S*
+the JR variation is(7kappa^3/(208gamma))(1-3beta/gamma), unlike JG's zero;
+the exceptional gamma=3beta still has opposite invariant Hessian signs.
+
+605 tests the full NONCONSTANT first-action Hessian at
+S*=-kappa(1-hOmega)Gamma1/(416gamma), gamma nonzero, initially diagnostic c0.
+The background dependence of the potential is linear in gamma*S*, so it
+depends on kappa only; prove this algebraically, not by fitting parameter rows.
+Use nonzero periodic integer n and u=theta0 gamma2 cos(nx0),
+b=theta2 gamma0 cos(nx0), e=sum_(j!=0,2)theta_j gamma2 gamma_j sin(nx0),
+e0=theta0 Gamma20 sin(nx0),q=theta2 Omega sin(nx0). The full real carrier is
+(u,b,Omega u,Omega b,e,e0,q), Gramdiag(-1/2,-1/2,1/2,1/2,6,1/2,-1/2).
+All seven FULL source columns, three potential legs and independent scalar
+original-action Hessian bilinears must match the table in the reference.
+Do not merely project the result into an expected seven-by-seven matrix.
+
+The full closed characteristic polynomial is
+(z-kappa)^2(z-15kappa/13)^2 z(z-12kappa/13)(z-85kappa/78), independent of n.
+For kappa*n nonzero, seed-u cyclic dimension6, repeated15kappa/13 has a
+size2 Jordan block with effective coefficient-208n^2/(5kappa) in the stated
+adapted basis. Verify full cyclic images, nondegenerate Gram, exact ranks,
+minimal polynomial/Jordan controls and independent original-action reciprocity.
+At kappa0,n nonzero the origin size3 nilpotent chain returns. At n0, the
+sine fields VANISH: use a separate constant4D carrier(u,b,Omega u,Omega b),
+Gramdiag(-1,-1,1,1), two kappa/13[[14,1],[1,14]] potential blocks, seed-u
+cyclic dimension2 for kappa nonzero and1 when both vanish. Never claim the
+nonzero-frequency seven-mode Gram remains a physical basis at n0.
+
+Freeze a formal-c FAILURE-OF-CLOSURE control, not general-c eigenvalues.
+Let Z_n=sum_(j!=0,2)theta_j Gamma0j gamma2 cos(nx0). Two independent agents
+derive the c coefficient of the FULL H_S*u as
+n i theta2 I sin(nx0)+i kappa(5+8hOmega)Z_n/156. Its potential legs before
+gamma/3 at background t(1-hOmega)Gamma1 are4itPZ,-112ihtOmegaZ,-44itPbarZ,
+t=-kappa/(416gamma). The new even central and odd grade3/11 directions
+cannot cancel; they lie outside the c0 carrier. This is a scoped leakage
+witness only. The general-c closed spectrum remains an untested successor.
+
+Separate604/605 implementers own only their study roots and implementation
+notes; third agent independently reviews both complete packs. MAIN owns all
+shared integration and must read/review complete scientific code/helpers,
+proofs/fixtures/contracts and unique exact bindings plus live726 core tree
+before authorizing first execution. Build-only Release checks are permitted;
+all expected counts/coefficients/tolerances/resources/precedence freeze first.
+No trial execution to learn expected outputs, and no changes to frozen600-603.
+Preserve failed first outputs and version scientific repairs. Freeze bounded
+menus justified by algebra; no sampling, fitting or target calibration.
+
+All fourteen authority flags remain false; O4/external review pending,
+Phase561 closed, source deficits15/14 and physical mass claims0. Neither
+square stationarity nor Fourier eigenvalues identify a physical vacuum,
+source norm, kinetic time split, pole, field extraction, scale or GeV law.
+
+### A56 execution record (2026-09-09 UTC)
+
+Both first frozen Release runs passed after full independent and MAIN
+code/helper/project/proof/fixture reviews, unique binding closure and live726
+core verification.604 wall0.901s,20 bindings;605 wall2.172s,18 bindings.
+604 contract e2093bca8c97b15811eac261e25ea579ef228dbe894115df7e1f5cb971314cf3;
+full/summary7e20c85ac704329a4d37727d8c8fb9187416f21b3766f4bb1ad0fe1ed734d0aa.
+605 contract e3704f4d8ee5b7aca9438fa16b99967cf4425e7f95beb3004e430e58bbe9ac25;
+full/summary1c9a958e52ab24540f19f6e71df9858b7ecd7354605c161d3e04c38fdb48e96b.
+Every frozen count/control passes.604 confirms22 stationary rows,10 decoys
+and inequivalent equations.605 confirms108 full columns,684 independent
+original-action bilinears,18 polynomial/cyclic rows,8 Jordan rows and12
+formal-c leakage rows. No scientific failure or post-execution input edit.
+The two605 proof-only corrections occurred before final freeze/approval.
+
+All integration surfaces include both phases; targeted Release builds have
+zero warnings/errors. Ordered101/202/integrity passes385/3, coverage31/31
+and overturn94/94. Final incremental cadence follows all edits. No
+promotion-relevant claim is made. All14 flagsfalse, O4/externalreviewpending,
+Phase561closed, source deficits15/14, physicalclaims0.606+free.
+Parallel analytical work rejects the proposed10D general-c enlargement and
+identifies two missing grade12 directions;12D remains a candidate awaiting
+complete full-column proof. This is a concrete next safe experiment.
