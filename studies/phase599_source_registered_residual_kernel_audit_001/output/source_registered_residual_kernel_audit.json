@@ -1,0 +1,3322 @@
+{
+  "schemaVersion": 1,
+  "phase": 599,
+  "phaseId": "phase599-source-registered-residual-kernel-audit",
+  "contractId": "phase599-a53-source-registered-residual-kernel-v1",
+  "contractSha256": "a3807b93dfc04003baa7a285ac8fdbeb309e68ee437e17e3dcb212ad975bdd17",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "bindingCount": 13,
+  "uniqueBindingIdCount": 13,
+  "uniqueBindingPathCount": 13,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/Program.cs",
+      "sha256": "73b5b385dfbd147495b623b4ad0b3ad4728b72fcdfc56853810c80b55bf1a4a6",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj",
+      "sha256": "fc8f83b23b5d3bc2edf49ce76f689243fe5682e022c9b78972837803549b5508",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/STUDY.md",
+      "sha256": "d9c868f53b138858700778601f50c74226e26ff9449a2f312a5907da87f5a8e9",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5",
+      "hashMatches": true
+    },
+    {
+      "id": "phase588-summary",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/output/fixed_domain_action_force_consistency_summary.json",
+      "sha256": "7dec161d84073ff72fdfadbacd63534538b7f829690edaa7ce775d2227caeef4",
+      "hashMatches": true
+    },
+    {
+      "id": "phase588-contract",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/preregistration/contract_v1.json",
+      "sha256": "6fb8daa6abe002d5a67e0d5df605ca1e259e65e85f7c9f12e3c7c1144cce5061",
+      "hashMatches": true
+    },
+    {
+      "id": "phase591-summary",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json",
+      "sha256": "0de24e16dbafee7ec713f8cabc8a69ca45f14a3a080da98031a5b9b366d1c797",
+      "hashMatches": true
+    },
+    {
+      "id": "phase591-contract",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/preregistration/contract_v1.json",
+      "sha256": "0ff70e732c234cb1426c6a3b16f948b7a84cec6250bf70003d61ab0d8a84683f",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "source-registered-residual-kernel-mismatch-scoped",
+  "terminalStatus": "source-registered-residual-kernel-mismatch-scoped",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "cliffordWordCases": 44944,
+    "hodgeCases": 16384,
+    "embeddingControls": {
+      "embeddingPassed": true,
+      "rawBracketChecks": 18,
+      "embeddedBracketChecks": 18,
+      "rawGramChecks": 18,
+      "embeddedGramChecks": 18,
+      "hAntiChecks": 6,
+      "coreStructureEntries": 27,
+      "coreGramEntries": 9,
+      "embeddingRows": [
+        {
+          "embedding": "selfdual",
+          "J": [
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 3,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 12,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 5,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 10,
+                "real": "-1/2",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 6,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 9,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          "E": [
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 3,
+                "real": "-1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 12,
+                "real": "-1/4",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 5,
+                "real": "-1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 10,
+                "real": "1/4",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 6,
+                "real": "-1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 9,
+                "real": "-1/4",
+                "imaginary": "0"
+              }
+            ]
+          ]
+        },
+        {
+          "embedding": "antiselfdual",
+          "J": [
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 3,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 12,
+                "real": "-1/2",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 5,
+                "real": "1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 10,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 6,
+                "real": "-1/2",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 9,
+                "real": "1/2",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          "E": [
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 3,
+                "real": "1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 12,
+                "real": "-1/4",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 5,
+                "real": "1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 10,
+                "real": "1/4",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "formMask": 0,
+                "cliffordMask": 6,
+                "real": "-1/4",
+                "imaginary": "0"
+              },
+              {
+                "formMask": 0,
+                "cliffordMask": 9,
+                "real": "1/4",
+                "imaginary": "0"
+              }
+            ]
+          ]
+        }
+      ],
+      "pairingIsometryClaimed": false
+    },
+    "curvatureControls": {
+      "curvaturePassed": true,
+      "riemannComponentChecks": 153664,
+      "ricciEntries": 784,
+      "curvatureDictionaryChecks": 4,
+      "curvatureRows": [
+        {
+          "id": "selfdual-Weyl",
+          "scalar": 0,
+          "ricci": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "pairMatrix": [
+            {
+              "row": 0,
+              "column": 0,
+              "value": 1
+            },
+            {
+              "row": 0,
+              "column": 25,
+              "value": 1
+            },
+            {
+              "row": 1,
+              "column": 1,
+              "value": -1
+            },
+            {
+              "row": 1,
+              "column": 14,
+              "value": 1
+            },
+            {
+              "row": 14,
+              "column": 1,
+              "value": 1
+            },
+            {
+              "row": 14,
+              "column": 14,
+              "value": -1
+            },
+            {
+              "row": 25,
+              "column": 0,
+              "value": 1
+            },
+            {
+              "row": 25,
+              "column": 25,
+              "value": 1
+            }
+          ],
+          "curvature": [
+            {
+              "formMask": 3,
+              "cliffordMask": 3,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 3,
+              "cliffordMask": 12,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 5,
+              "cliffordMask": 5,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 5,
+              "cliffordMask": 10,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 10,
+              "cliffordMask": 5,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 10,
+              "cliffordMask": 10,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 12,
+              "cliffordMask": 3,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 12,
+              "cliffordMask": 12,
+              "real": "1/2",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "id": "antiselfdual-Weyl",
+          "scalar": 0,
+          "ricci": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "pairMatrix": [
+            {
+              "row": 0,
+              "column": 0,
+              "value": 1
+            },
+            {
+              "row": 0,
+              "column": 25,
+              "value": -1
+            },
+            {
+              "row": 1,
+              "column": 1,
+              "value": -1
+            },
+            {
+              "row": 1,
+              "column": 14,
+              "value": -1
+            },
+            {
+              "row": 14,
+              "column": 1,
+              "value": -1
+            },
+            {
+              "row": 14,
+              "column": 14,
+              "value": -1
+            },
+            {
+              "row": 25,
+              "column": 0,
+              "value": -1
+            },
+            {
+              "row": 25,
+              "column": 25,
+              "value": 1
+            }
+          ],
+          "curvature": [
+            {
+              "formMask": 3,
+              "cliffordMask": 3,
+              "real": "1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 3,
+              "cliffordMask": 12,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 5,
+              "cliffordMask": 5,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 5,
+              "cliffordMask": 10,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 10,
+              "cliffordMask": 5,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 10,
+              "cliffordMask": 10,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 12,
+              "cliffordMask": 3,
+              "real": "-1/2",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 12,
+              "cliffordMask": 12,
+              "real": "1/2",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "id": "zero",
+          "scalar": 0,
+          "ricci": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "pairMatrix": [],
+          "curvature": []
+        },
+        {
+          "id": "full-so4-plane-01",
+          "scalar": 2,
+          "ricci": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "pairMatrix": [
+            {
+              "row": 0,
+              "column": 0,
+              "value": 1
+            }
+          ],
+          "curvature": [
+            {
+              "formMask": 3,
+              "cliffordMask": 3,
+              "real": "1/2",
+              "imaginary": "0"
+            }
+          ]
+        }
+      ],
+      "globallyConstantConnectionCurvatureClaimed": false
+    },
+    "sourceControls": {
+      "sourcePassed": true,
+      "sourceFormalRows": 96,
+      "sourceNonzeroRows": 8,
+      "sourceZeroRows": 88,
+      "planeNumericalRows": 3,
+      "sourceRows": [
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "selfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "CCA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "antiselfdual-Weyl",
+          "branch": "AAA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "CCA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "zero",
+          "branch": "AAA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "a",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 1,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 2,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "b",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 16382,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 16381,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "a",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 1,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 2,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "b",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 16382,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 16381,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 16382,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 16381,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 16379,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 16375,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16367,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 16351,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 16319,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 16255,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 16127,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 15871,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 15359,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 14335,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 12287,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8191,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "CCA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 1,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 2,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 4,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 8,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 32,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 64,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 128,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 256,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 512,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 1024,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 2048,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 4096,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8192,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "ac",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "bc",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAC",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "a",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "b",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "ac",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 1,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 2,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 4,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 8,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 32,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 64,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 128,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 256,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 512,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 1024,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 2048,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 4096,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8192,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "bc",
+          "passed": true,
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 16382,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 16381,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 16379,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 16375,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16367,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 16351,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 16319,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 16255,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 16127,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 15871,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 15359,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 14335,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 12287,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8191,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "ad",
+          "passed": true,
+          "terms": []
+        },
+        {
+          "fixture": "full-so4-plane-01",
+          "branch": "AAA",
+          "monomial": "bd",
+          "passed": true,
+          "terms": []
+        }
+      ],
+      "planeRows": [
+        {
+          "id": "canonical",
+          "passed": true,
+          "termCount": 2,
+          "traceSelfPair": "-2",
+          "terms": [
+            {
+              "formMask": 1,
+              "cliffordMask": 1,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2,
+              "cliffordMask": 2,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "id": "matched-minus",
+          "passed": true,
+          "termCount": 24,
+          "traceSelfPair": "0",
+          "terms": [
+            {
+              "formMask": 4,
+              "cliffordMask": 4,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 16379,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 8,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 16375,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16367,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 32,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 16351,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 64,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 16319,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 128,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 16255,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 256,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 16127,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 512,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 15871,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 1024,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 15359,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 2048,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 14335,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 4096,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 12287,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8191,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8192,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        },
+        {
+          "id": "matched-plus",
+          "passed": true,
+          "termCount": 24,
+          "traceSelfPair": "0",
+          "terms": [
+            {
+              "formMask": 4,
+              "cliffordMask": 4,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4,
+              "cliffordMask": 16379,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 8,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8,
+              "cliffordMask": 16375,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 16,
+              "cliffordMask": 16367,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 32,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 32,
+              "cliffordMask": 16351,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 64,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 64,
+              "cliffordMask": 16319,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 128,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 128,
+              "cliffordMask": 16255,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 256,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 256,
+              "cliffordMask": 16127,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 512,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 512,
+              "cliffordMask": 15871,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 1024,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 1024,
+              "cliffordMask": 15359,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 2048,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 2048,
+              "cliffordMask": 14335,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 4096,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 4096,
+              "cliffordMask": 12287,
+              "real": "1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8191,
+              "real": "-1",
+              "imaginary": "0"
+            },
+            {
+              "formMask": 8192,
+              "cliffordMask": 8192,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        }
+      ],
+      "sourceNormSelected": false
+    },
+    "registeredControls": {
+      "registeredPassed": true,
+      "registeredMatrixEntries": 108,
+      "registeredResidualEntries": 108,
+      "registeredNormRows": 3,
+      "registeredRows": [
+        {
+          "id": "selfdual-Weyl",
+          "input": [
+            [
+              -2,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -2,
+              0,
+              0
+            ]
+          ],
+          "output": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "identityOutput": [
+            [
+              -2,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -2,
+              0,
+              0
+            ]
+          ],
+          "inputNormSquared": 16,
+          "outputNormSquared": 4,
+          "halfSquare": 2
+        },
+        {
+          "id": "antiselfdual-Weyl",
+          "input": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -2,
+              0,
+              0
+            ]
+          ],
+          "output": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "identityOutput": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -2,
+              0,
+              0
+            ]
+          ],
+          "inputNormSquared": 16,
+          "outputNormSquared": 0,
+          "halfSquare": 0
+        },
+        {
+          "id": "zero",
+          "input": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "output": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "identityOutput": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "inputNormSquared": 0,
+          "outputNormSquared": 0,
+          "halfSquare": 0
+        }
+      ],
+      "registeredMatrix": [
+        [
+          0.25,
+          0,
+          0,
+          0,
+          0,
+          0.25
+        ],
+        [
+          0,
+          0.25,
+          0,
+          0,
+          -0.25,
+          0
+        ],
+        [
+          0,
+          0,
+          0.25,
+          0.25,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0.25,
+          0.25,
+          0,
+          0
+        ],
+        [
+          0,
+          -0.25,
+          0,
+          0,
+          0.25,
+          0
+        ],
+        [
+          0.25,
+          0,
+          0,
+          0,
+          0,
+          0.25
+        ]
+      ],
+      "star4": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "identityMatrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "meshInsertionPerformed": false
+    },
+    "kernelControls": {
+      "kernelWitnessPassed": true,
+      "sourceResidualSameAtZeroAndWitness": true,
+      "registeredResidualDistinctAtZeroAndWitness": true,
+      "injectiveResidualIdentificationRejected": true,
+      "actionModuloBoundaryEquivalenceTested": false,
+      "globalFieldLiftEstablished": false,
+      "physicalReductionSelected": false
+    },
+    "nextRequirement": "Specify and test a different retained-field/residual map or source operator; separately declare source action, torsion and pairing before any action/measure equivalence claim."
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "phase": 599,
+  "contractId": "phase599-a53-source-registered-residual-kernel-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Pointwise source/registered residual-output kernel mismatch under two declared compact Lie embeddings; no action-modulo-boundary or global field lift claim",
+  "fixtures": {
+    "sourceDimension": 14,
+    "sourceSignature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "registeredDimension": 4,
+    "registeredPairOrder": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "sigmaPlus": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "sigmaMinus": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0
+      ]
+    ],
+    "embedding": {
+      "J": "Gamma(Sigma)/2",
+      "plusBracketFactor": -2,
+      "minusBracketFactor": 2,
+      "plusCoreEmbedding": "E=-J/2",
+      "minusCoreEmbedding": "E=J/2",
+      "sourceJGram": "1/2",
+      "sourceEGram": "1/8",
+      "coreGram": 1
+    },
+    "curvatureRows": [
+      "selfdual-Weyl",
+      "antiselfdual-Weyl",
+      "zero",
+      "full-so4-plane-01"
+    ],
+    "weylFormula": "R=Sigma1 tensor Sigma1-Sigma2 tensor Sigma2",
+    "curvatureConvention": "F_ab=(1/2) sum_(c<d) R_abcd sigma_c sigma_d gamma_c gamma_d",
+    "branches": [
+      "CCC",
+      "CCA",
+      "AAC",
+      "AAA"
+    ],
+    "formalMonomials": [
+      "a",
+      "b",
+      "ac",
+      "bc",
+      "ad",
+      "bd"
+    ],
+    "phi1": "(a+b Omega)gamma",
+    "phi2": "(c+i d Omega)Gamma2",
+    "chain": "star1_inverse([Phi1 wedge star14(F)]first-(1/2)*star14([Phi1 wedge star14([Phi2 wedge star14(F)]inner)]outer))",
+    "planePrediction": {
+      "CCC": "-a J-b Omega J",
+      "CCA": "-a J-b Omega J-ad Omega G-bd G",
+      "AAC": "0",
+      "AAA": "ac G+bc Omega G",
+      "J": "theta0 gamma0+theta1 gamma1",
+      "G": "sum_j=0..13 theta_j gamma_j"
+    },
+    "planeNumericalRows": [
+      {
+        "id": "canonical",
+        "a": 1,
+        "b": 0,
+        "c": 1,
+        "d": 0,
+        "traceSelfPair": "-2",
+        "termCount": 2
+      },
+      {
+        "id": "matched-minus",
+        "a": 1,
+        "b": -1,
+        "c": 1,
+        "d": 1,
+        "traceSelfPair": "0",
+        "termCount": 24
+      },
+      {
+        "id": "matched-plus",
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": -1,
+        "traceSelfPair": "0",
+        "termCount": 24
+      }
+    ],
+    "registered": {
+      "phi1": "sd2",
+      "phi2": "id0",
+      "coefficient": 0.5,
+      "operator": "(I+star4)/4",
+      "identityControl": "id0/none",
+      "api": "Gu.ReferenceCpu.Lambda2Algebra.MemberEndomorphism",
+      "meshInsertionPerformed": false,
+      "expectedInputNormSquared": [
+        16,
+        16,
+        0
+      ],
+      "expectedOutputNormSquared": [
+        4,
+        0,
+        0
+      ],
+      "expectedHalfSquare": [
+        2,
+        0,
+        0
+      ]
+    },
+    "knownAnswerGrades": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "counts": {
+      "cliffordWordCases": 44944,
+      "hodgeCases": 16384,
+      "rawBracketChecks": 18,
+      "embeddedBracketChecks": 18,
+      "rawGramChecks": 18,
+      "embeddedGramChecks": 18,
+      "hAntiChecks": 6,
+      "coreStructureEntries": 27,
+      "coreGramEntries": 9,
+      "riemannComponentChecks": 153664,
+      "ricciEntries": 784,
+      "curvatureDictionaryChecks": 4,
+      "sourceFormalRows": 96,
+      "sourceNonzeroRows": 8,
+      "sourceZeroRows": 88,
+      "planeNumericalRows": 3,
+      "registeredMatrixEntries": 108,
+      "registeredResidualEntries": 108,
+      "registeredNormRows": 3
+    },
+    "hodgeDomainsSeparate": true,
+    "sourcePairing": "-ReTr(XY)/128 times signed form metric; not source-selected positive norm",
+    "primaryConclusion": "pointwise kernel mismatch under declared Lie embeddings; not action equivalence modulo boundary terms",
+    "globalConnectionLiftClaimed": false,
+    "torsionZeroOnlyPointwise": true,
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 5,
+      "maximumEstimatedCpuSeconds": 30,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "embedding-or-curvature-control-failed",
+    "literal-source-control-failed",
+    "registered-control-failed",
+    "kernel-witness-control-failed",
+    "source-registered-residual-kernel-mismatch-scoped"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/Program.cs",
+      "sha256": "73b5b385dfbd147495b623b4ad0b3ad4728b72fcdfc56853810c80b55bf1a4a6"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj",
+      "sha256": "fc8f83b23b5d3bc2edf49ce76f689243fe5682e022c9b78972837803549b5508"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/STUDY.md",
+      "sha256": "d9c868f53b138858700778601f50c74226e26ff9449a2f312a5907da87f5a8e9"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "phase588-summary",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/output/fixed_domain_action_force_consistency_summary.json",
+      "sha256": "7dec161d84073ff72fdfadbacd63534538b7f829690edaa7ce775d2227caeef4"
+    },
+    {
+      "id": "phase588-contract",
+      "path": "studies/phase588_fixed_domain_action_force_consistency_001/preregistration/contract_v1.json",
+      "sha256": "6fb8daa6abe002d5a67e0d5df605ca1e259e65e85f7c9f12e3c7c1144cce5061"
+    },
+    {
+      "id": "phase591-summary",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json",
+      "sha256": "0de24e16dbafee7ec713f8cabc8a69ca45f14a3a080da98031a5b9b366d1c797"
+    },
+    {
+      "id": "phase591-contract",
+      "path": "studies/phase591_source_hodge_curvature_branch_audit_001/preregistration/contract_v1.json",
+      "sha256": "0ff70e732c234cb1426c6a3b16f948b7a84cec6250bf70003d61ab0d8a84683f"
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be"
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "o4Status": "pending",
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -452,6 +452,8 @@
     <PhaseProject Include="../studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj" />
     <PhaseProject Include="../studies/phase596_fixed_operator_helmholtz_audit_001/Phase596FixedOperatorHelmholtzAudit.csproj" />
     <PhaseProject Include="../studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj" />
+    <PhaseProject Include="../studies/phase598_continuum_action_descent_ward_audit_001/Phase598ContinuumActionDescentWardAudit.csproj" />
+    <PhaseProject Include="../studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

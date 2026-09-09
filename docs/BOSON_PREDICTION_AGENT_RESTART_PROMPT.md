@@ -45,6 +45,49 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, A52-A53; Phases598-599 executed):
+both first frozen Release runs passed after full independent/coordinator
+code/proof/hash review. Phase598 confirms the full finite-epsilon continuum
+action descent and actual nonlinear Ward redundancy, with32 action rows,
+32 each fixed/epsilon-only/Ward variations,16 operator comparisons and24
+top-form traces. Both nonzero decoys fail as predicted. The actual epsilon
+equation remains redundant despite the rejected curvature-only shortcut.
+It does not select printed source signs or prove registered action descent.
+
+Phase599 confirms a pointwise source/registered kernel mismatch under an
+explicit compact SU(2) embedding. All96 formal source rows pass; nonzero
+selfdual Weyl curvature is killed by every declared tied source chain but
+retained by the actual registered SD2/id0 half endomorphism. The Clifford
+generators require the Lie normalization E=-J/2, with a separate trace Gram.
+This excludes an injective residual identification or rescaling on that
+dictionary, not noninjective projection, altered inputs, action equality
+modulo boundary terms, or an arbitrary physical dimensional reduction.
+
+NEXT PRIORITY: freeze a periodic action/gradient-square comparison using
+the same compact embedding. Reviewed candidate S=theta2 E1 sin(x0),
+E1=-(Gamma01+Gamma23)/4, epsilon=1, kappa0. Full matched source CCA gives
+K(F)=(1+h Omega)(theta2 gamma1-theta0 gamma3)cos(x0)/2, nonzero but
+null under the DECLARED trace/Hodge pairing. A separately derived adjoint
+argument also puts the ACTUAL action gradient in (1+h Omega)*Cl_odd;
+it is nonzero, with variation+1/8 along theta0 gamma3 cos(x0), yet its
+trace self-square vanishes. Actual core residual half-square averages1/32
+(identity control1/4). This is analytical only, not yet an executed result.
+Independently construct the full trace/exterior adjoint and freeze all
+component/variation/norm controls before testing. Source9.11 does not fully
+specify its norm: do not select a positive norm, confuse upper13/lowered1
+Hodge signs, or transfer a shortcut-square conclusion to the actual gradient
+without the separate proof. Registry600+ remains free; no successor allocated.
+
+All integration surfaces include598-599. Targeted Release package/audit and
+integrity pass at379/3, O4 coverage31/31, overturn94/94; no physical failure
+has been relabeled. A51 was committed/pushed asfeb2aa5407aa5a1d9f550ada0cf40a0962ccac40
+with verified remote, final pass_2026-09-09T01-36-32-460Z.json76 ran/381 skipped.
+Final A52-A53 incremental cadence follows all doc edits; its timestamped
+report records completion. Commit/push this validated tranche per user goal.
+All fourteen flags false, O4 pending, Phase561 closed, deficits15/14 and
+physical claims0. No core/historical rewrite, new sampling or source choice.
+See CONTINUUM-ACTION-DESCENT-20260909.md and IMPLEMENTATION_P598/P599.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, Amendment A51; Phases596-597 executed):
 both first frozen Release runs passed after independent and coordinator
 full-pack review. Phase596 checks all144 lowered operators on spatial3/u(1,1):

@@ -61,7 +61,9 @@ back, NO new phase directory may be created outside this table.
 | 595 | Complete invariant tensor dimension audit (A50) | Exact complexified sign-character and signed-rotation upper bounds plus existing real invariant lower bounds; degree1/2 dimension classification, no normalization or source choice. |
 | 596 | Fixed-operator Helmholtz classification audit (A51) | Exact spatial3/u(1,1) principal and cubic coefficient constraints, cyclic positive controls and variable-coefficient closedness decoy; conditional scope, no source selection. |
 | 597 | Actual quadratic action and joint-null audit (A51) | Exact Fourier/Clifford quadratic derivative, pure-gauge flatness and lifted-coordinate Hessian null controls; no spectral or stability claim. |
-| 598+ | Unassigned - extend this registry before use | - |
+| 598 | Full continuum action-descent and nonlinear Ward audit (A52) | DONE, first frozen run passed: full finite-epsilon action and actual variations agree; nonzero wrong-lift/frozen-tensor controls reject; no source or measure selection. |
+| 599 | Source versus registered residual kernel audit (A53) | DONE, first frozen run passed: exact selfdual Weyl kernel mismatch under declared compact Lie embedding; no source selection, action-modulo-boundary conclusion or mass claim. |
+| 600+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

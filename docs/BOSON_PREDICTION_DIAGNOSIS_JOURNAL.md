@@ -23378,3 +23378,98 @@ All fourteen authority flags false, O4 pending, Phase561 closed, deficits15/14,
 promotedPhysicalMassClaimCount=0. No core change, historical frozen rewrite,
 new sampling, source selection, target fit, physical unit or mass claim.
 See HELMHOLTZ-AND-QUADRATIC-ACTION-20260909.md and both implementation notes.
+
+## 2026-09-09 UTC — A52-A53 nonlinear descent and residual dictionary tests
+
+The active goal continues with two parallel deterministic implementations
+and independent review. A51 was committed/pushed as
+feb2aa5407aa5a1d9f550ada0cf40a0962ccac40 with matching remote hash.
+Its final incremental pass_2026-09-09T01-36-32-460Z.json passed76 ran/381
+skipped, checklist377/3. Those three standing physical failures remain.
+
+Phase598 implements the full finite-epsilon continuum action descent and
+actual nonlinear Ward variation. It uses exact noncommuting H-unitary
+nilpotents, separately nonzero cubic/quadratic base actions, literal tensor
+conjugation and direct product differentiation. Preliminary independent and
+coordinator code review passes; final proof/fixture/hash freeze and both
+reviews are still required before any scientific run. The finite right-orbit
+polynomial check is explicitly kinematic, not a second full action evaluation.
+
+Parallel assumption review distinguished the first source action from the
+registered positive residual-square target. The first action's real cubic
+direction survives the right quotient. A disjoint-box argument strengthens
+the negative-ray observation to a finite-dimensional real coefficient-density
+divergence statement; this does not select a Euclidean measure or exclude a
+Lorentzian/contour/constraint completion. Separately defined source9.11 can
+still have its own correct residual-square chain rule even when its printed
+residual is not the first action's actual derivative. Replacing that residual
+by the corrected gradient would be a different second action, not an automatic
+repair. This distinction prevents overextending the earlier variation failure.
+
+The constructive operator-dictionary test is Phase599, allocated by A53.
+An independently reviewed selfdual Weyl curvature is killed by all declared
+source tied canonical/companion chains but retained by the actual registered
+SD2/id0 half endomorphism. Review caught the compact Lie normalization:
+the Clifford J generators have brackets -2 epsilon, so core generators map
+to -J/2, with a different trace Gram. The test freezes this distinction,
+separate star4/star14, opposite-duality/zero/identity controls and a full-so4
+Ricci-positive anchor outside the strict selfdual Weyl carrier. It tests
+pointwise residual identification, not action equality modulo boundary terms
+or global curvature realization. Both implementations remain unexecuted at
+this planning entry; registry600+ is free.
+
+Source field extraction, action/measure choice, dimensional reduction,
+pole extraction and unit normalization remain separate obligations. No
+sampling, core modification, frozen historical rewrite, physical source
+selection or mass claim is authorized. All fourteen flags remain false,
+O4 pending, Phase561 closed, external review pending and physical claims0.
+See CONTINUUM-ACTION-DESCENT-20260909.md and Amendments A52-A53.
+
+### First frozen execution results and checkpoint
+
+Both independent and coordinator final full-pack reviews passed before
+explicit MAIN approvals. MAIN executed598 in3.017seconds and599 in0.468seconds;
+both first frozen Release runs passed unchanged. No scientific failure,
+post-execution fixture change, duplicate launch or frozen rewrite occurred.
+
+598 confirms full action descent and actual Ward redundancy on its finite
+noncommuting background, with all32 action rows,32 each variation kind,
+16 complete operator comparisons,24 trace controls and nonzero decoys.
+The epsilon-only derivatives are genuinely nonzero: constant-fixture raw
+cubic derivative-32, Fourier pieces(0,5/2,-3,5/2), agreeing with the separate
+action-derived oracles. This is constructive recovery of the redundancy,
+not rehabilitation of the rejected curvature-only gradient. Contract
+daa0785a3b3aada95c665b5a7234d43d2bea67140d5a4e5651a9e72f8ec20ecd;
+identical full/summary d7d8b0576ec4a15edfb0a3bcfb7cbff900b651c1be326c0805d019c05b191cfb.
+
+599 confirms the scoped kernel mismatch. All96 formal source rows pass,
+including8 nonzero plane rows and88 zero rows, with153664 complete Riemann
+component checks,784 Ricci entries,108 actual core matrix and108 residual
+entry checks. The registered Weyl residual has squared norm4 and half-square2;
+the source output is exactly zero, independently of null self-pairings.
+Both compact embedding conventions and opposite-duality controls pass.
+Contract a3807b93dfc04003baa7a285ac8fdbeb309e68ee437e17e3dcb212ad975bdd17;
+identical full/summary17c29c711e3c5a4cd48e19b4773f4a9b5d6ce76ca84c5842d90832852e71b2ac.
+
+All shared integration surfaces include598-599, with exact verifier output
+pins, complete binding closure and core/control mirrors. Targeted Release
+101/202 builds pass0warnings/errors; package/checklist/integrity pass379/3,
+O4coverage31/31 and94/94 synthetic overturn controls. The3 physical failures
+remain unchanged. Final incremental cadence follows all documentation edits,
+and its timestamped report records the run. Commit/push the validated tranche
+under the active user goal; no promotion-relevant claim is made.
+
+While awaiting results, independent analytical work found the next bounded
+lead: same-embedding periodic S=theta2 E1 sin(x0), with nonzero actual
+action variation1/8 and a null actual-gradient trace square under the declared
+pairing, versus core residual half-square1/32. The actual-gradient chirality
+statement requires its separate trace-adjoint proof, not the shortcut force.
+A successor must construct that adjoint independently, check full components
+and nonzero directions, and distinguish the unspecified source norm from
+the diagnostic trace or positive coefficient norms. Upper/lowered Hodge
+signs and accidental mass-term numerical agreement must also be controlled.
+This lead is analytical only;600+ remains free and no new run is authorized.
+
+All fourteen flags remain false, O4/external review pending, Phase561 closed,
+source deficits15/14, physical claims0. No core change, sampling, source or
+norm selection, fitting, physical field extraction or unit calibration.

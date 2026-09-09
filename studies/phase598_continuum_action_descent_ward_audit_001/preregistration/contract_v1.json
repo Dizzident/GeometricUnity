@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "phase": 598,
+  "contractId": "phase598-a52-continuum-action-descent-ward-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Full declared continuum fixed-metric action descent and actual nonlinear Ward controls under an exact finite noncommuting H-unitary lift; no source or physical choice",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "fixed flat reference, metric and normalized periodic Fourier density; no physical decomposition",
+    "a": 1,
+    "chiralities": [
+      -1,
+      1
+    ],
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "gammaEncodings": [
+      1,
+      2
+    ],
+    "massKappa": [
+      0,
+      1
+    ],
+    "phi1": "(1+h Omega)gamma",
+    "phi2": "(c-i h Omega)Gamma2",
+    "brackets": "full tied CCA, outer Hodge and factor1/2 retained",
+    "pairing": "-ReTr/128 with signed exterior metric; indefinite; all real parts taken exactly",
+    "nilpotents": {
+      "N": "gamma2+Gamma12",
+      "M": "gamma2-Gamma12",
+      "N2": 0,
+      "M2": 0,
+      "NM": "2(1+gamma1)",
+      "MN": "2(1-gamma1)",
+      "commutator": "4gamma1",
+      "MNM": "4M"
+    },
+    "f": "sin(x0)",
+    "g": "sin(x1)",
+    "epsilon": "(1+fN)(1+gM)",
+    "inverse": "(1-gM)(1-fN)",
+    "B": "(N+4g gamma1-4g^2 M)df+Mdg",
+    "FB": "zero with nonzero cancelling dB and B^2",
+    "fixtures": [
+      {
+        "id": "constant-cubic",
+        "S": "theta0 Gamma01+theta1 Gamma12+theta1 gamma2",
+        "V": "theta1 gamma2",
+        "actionPieces": [
+          "0",
+          "0",
+          "4",
+          "1/2"
+        ],
+        "directionPieces": [
+          "0",
+          "0",
+          "4",
+          "-1"
+        ]
+      },
+      {
+        "id": "fourier-quadratic",
+        "S": "u+v; u=theta0 gamma2 cos(x0),v=theta1 Gamma12 sin(x0)",
+        "V": "u",
+        "actionPieces": [
+          "0",
+          "-1/2",
+          "0",
+          "0"
+        ],
+        "directionPieces": [
+          "0",
+          "-1/2",
+          "0",
+          "-1/2"
+        ]
+      }
+    ],
+    "pieceOrder": [
+      "background",
+      "quadraticWithHalf",
+      "rawCubic",
+      "massWithHalf"
+    ],
+    "action": "background+quadratic+gamma*rawCubic/3+kappa*mass",
+    "coordinates": "T=epsilon^-1 S epsilon; omega=B+T; both tensors conjugated independently",
+    "fixedEpsilonDirection": "delta omega=epsilon^-1 V epsilon; delta epsilon=0",
+    "rightAlpha": "eta=N sin(x0)",
+    "wardDirection": "delta epsilon=epsilon eta,delta omega=d eta+[omega,eta]",
+    "epsilonOnlyDirection": "delta epsilon=epsilon eta,delta omega=0; compare actual variation with deltaS=-Ad(epsilon)D_omega eta",
+    "variationMethod": "independent exact dual-number product rules through inverse, B, T, both Phi tensors, curvature, covariant derivative and all action terms",
+    "finiteOrbit": "right g_rho=1+rho eta and inverse1-rho eta; exact coefficientwise inverse/unitarity and reconstructed S invariance through polynomial degree4; not a separately executed full action polynomial",
+    "decoyAlpha": "gamma2 sin(x0)",
+    "decoyS": "lambda(u+v)",
+    "decoyKappa": 0,
+    "decoys": {
+      "wrongLift": "delta omega=-D_S alpha,delta epsilon=alpha; residual lambda-2gamma lambda^3/3",
+      "frozenTensors": "correct plus lift but deltaPhi=0; residual gamma lambda^3/3",
+      "correctLift": "full product variation residual zero",
+      "tensorCancellation": "-gamma lambda^3/3",
+      "Ktheta01gamma1": "2 sum_(j=2..13)theta_j Gamma0j",
+      "meanCos2Sin2": "1/8",
+      "lambda1Wrong": [
+        "1/3",
+        "-1/3"
+      ],
+      "lambda1Frozen": [
+        "1/3",
+        "2/3"
+      ]
+    },
+    "knownAnswerMenu": {
+      "masks": "0..7 and Omega xor(0..7)",
+      "kernelTensors": "I,N,M,sin(x0),cos(x1),theta0 gamma2 cos(x0),theta1 Gamma12 sin(x0),star(theta01 Gamma12)",
+      "products": [
+        "wedge",
+        "C",
+        "A"
+      ],
+      "bigInteger": "2^100 exact rational reduction"
+    },
+    "expectedCounts": {
+      "wordCases": 256,
+      "hodgeCases": 16384,
+      "kernelParityCases": 192,
+      "nilpotentIdentities": 6,
+      "finiteOrbitRows": 2,
+      "contexts": 8,
+      "actionRows": 32,
+      "fixedDirectionRows": 32,
+      "wardRows": 32,
+      "epsilonOnlyRows": 32,
+      "operatorDescentComparisons": 16,
+      "topTraceComparisons": 24,
+      "decoyRows": 8,
+      "wrongLiftRejections": 4,
+      "frozenTensorRejections": 4,
+      "nonzeroBaseActionContexts": 4
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 60,
+      "maximumEstimatedCpuSeconds": 300,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "epsilonTermUpperBound": 17,
+      "constantTTermUpperBound": 200,
+      "fourierTTermUpperBound": 280,
+      "phi1TermUpperBound": 2800,
+      "phi2TermUpperBound": 18200
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "N and M are H-anti-Hermitian nilpotents with N M=2(1+gamma1), M N=2(1-gamma1) and M N M=4M",
+    "The exact epsilon and reversed-factor inverse satisfy both inverse and H-unitarity orders; directly assembled B has the stated polynomial form with nonzero dB and B-squared cancelling",
+    "Literal transformed full CCA outputs on D_B T and T-squared equal independently conjugated base outputs in all eight formal-c contexts",
+    "Base constant and Fourier fixtures have nonzero actions 4gamma/3+kappa/2 and -1/2; every action piece agrees before combining couplings",
+    "The fixed-epsilon directions are inverse V epsilon, and actual direct derivatives equal 4gamma/3-kappa and -1/2-kappa/2",
+    "Actual nonlinear Ward variations differentiate both contraction tensors and all products; the plus right lift yields zero in every action piece",
+    "Epsilon-only direct variations equal independently assembled base derivatives along -Ad_epsilon D_A eta, without the rejected K F_A shortcut",
+    "Supplementary nilpotent finite right orbits reconstruct constant S coefficientwise through degree4 while omega changes nontrivially; this is not a separately executed full rho-action polynomial",
+    "Wrong-lift formal residual is lambda-2gamma lambda-cubed/3; frozen-tensor residual is gamma lambda-cubed/3; proper tensor variation cancels the latter",
+    "Complete K(theta01 gamma1) has only the prescribed out-of-plane components, and exact mean cos-squared sin-squared is 1/8",
+    "All actual calculations use exact rational Fourier coefficients; optimized product kernels agree with independent naive word-product kernels on the frozen menu",
+    "These conditional continuum identities select neither printed source signs nor registered discrete equivalence, measure, contour, physical fields, spectrum or mass"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "nilpotent-background-orbit-control-failed",
+    "full-action-descent-control-failed",
+    "actual-variation-ward-control-failed",
+    "nonzero-decoy-control-failed",
+    "continuum-action-descent-ward-controls-pass-source-choice-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/Program.cs",
+      "sha256": "a15a29e413bbb2212cd6385b999b953991980c9e782522ae0aa17a5e848de842"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/Phase598ContinuumActionDescentWardAudit.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/STUDY.md",
+      "sha256": "c4cb284a25d6174b8ad808caa0355c73cc1e7dbcc70c678674ebaa5f040b1d90"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase597-summary",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/output/actual_quadratic_joint_null_audit_summary.json",
+      "sha256": "825feb58360b8a17817cfafd2bf323112c00fc2f8d51085dd8e080b59fb72cf6"
+    },
+    {
+      "id": "phase597-contract",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/preregistration/contract_v1.json",
+      "sha256": "3bb6423f17a2bea308a437be16542ab94942149f60d80fab66041ad92aaf0b34"
+    },
+    {
+      "id": "phase597-program",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/Program.cs",
+      "sha256": "f71922fe1e1052afaa2918cc00350c602a8a7bbdb6cc4d91dc700c8d603a7fc5"
+    },
+    {
+      "id": "phase597-fourier-helper",
+      "path": "studies/phase597_actual_quadratic_joint_null_audit_001/FourierTensor.cs",
+      "sha256": "a6cc09a6770000923e7533a3163482e81be5b7b1e20152cb5ecc45b4ca63b35e"
+    },
+    {
+      "id": "phase594-summary",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json",
+      "sha256": "1b4de79a520c14f9ffe676a3225cb4814bf309feef2bc971a647f52b7b34777b"
+    },
+    {
+      "id": "phase594-contract",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/preregistration/contract_v1.json",
+      "sha256": "fb0a60401127df0575dbfdd4fdfa6cb40cfa885c70659c111c893c39d29f9a7f"
+    },
+    {
+      "id": "phase594-program",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Program.cs",
+      "sha256": "e10d92a37a48c1a512a8c00e676dd80eb0c50ed5790ae4f18fa84d4810d2148f"
+    },
+    {
+      "id": "phase592-algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

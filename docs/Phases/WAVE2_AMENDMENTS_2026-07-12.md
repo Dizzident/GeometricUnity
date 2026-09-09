@@ -2428,3 +2428,135 @@ All fourteen authority flags remain false, O4 pending, Phase561 closed,
 externalReviewPending=true and promotedPhysicalMassClaimCount=0. No core
 edits, historical frozen rewrites, target fitting, physical units, production
 or contract promotion. Registry596-597 allocated;598+ free.
+
+### A52 - Full continuum action descent and actual nonlinear Ward identity (2026-09-09 UTC)
+
+The preceding A51 checkpoint is committed and pushed as
+feb2aa5407aa5a1d9f550ada0cf40a0962ccac40, with verified matching remote.
+Final incremental report pass_2026-09-09T01-36-32-460Z.json passed76
+steps ran/381 skipped;377/3 objective checklist, all claim boundaries held.
+Continue the active user goal with the independently derived constructive
+lead, not a source-model selection or a relaxation of the physical gates.
+
+Allocate598 to full continuum fixed-metric action descent and the actual
+nonlinear Ward identity. Use N=gamma2+Gamma12 and M=gamma2-Gamma12,
+N^2=M^2=0, NM=2(1+gamma1), MN=2(1-gamma1), [N,M]=4gamma1.
+Both generators are H-anti-Hermitian. For independent periodic functions
+f=sin(x0),g=sin(x1), epsilon=(1+fN)(1+gM) and its reversed-factor inverse
+are exact finite polynomials. Test unitarity and both inverse orders directly,
+and B=epsilon^-1 d epsilon=(N+4g gamma1-4g^2 M)df+Mdg, F_B=0.
+No exponential truncation, sampled angles or numerical integration.
+
+For two separately nonzero base action fixtures S, form T=epsilon^-1 S epsilon
+and omega=B+T. Independently construct transformed Phi tensors and the full
+literal CCA operator before comparing D_B T, T wedge T, operator outputs,
+quadratic/cubic/mass action terms and actual directional variations with
+the epsilon=I expressions. The reviewed base fixtures are the constant
+Phase594 first carrier at unit amplitudes (cubic4a/3 for gamma1) and the
+Phase597 u+v Fourier carrier (quadratic-a/2, cubic average0). Freeze the
+complete menu of chiralities, formal c slots, gamma conventions, amplitudes
+and variation directions before execution; never promote a zero-only test
+as nonvacuous action agreement.
+
+The exact analytical identity to control is I(epsilon,omega)=I0(S),
+S=Ad(epsilon)T, with all metric/reference/Phi/density/coupling data fixed.
+For right-trivialized delta epsilon=epsilon alpha,
+delta S=Ad(epsilon)(delta omega-D_A alpha), A=B+T. The actual omega
+gradient g and epsilon derivative -D_A^dagger g supply the Ward redundancy;
+the rejected K F_A shortcut is not substituted for g. Include full direct
+product variation of tensors, B, T and action, and a finite polynomial
+right-orbit control where resource bounds allow.
+
+Prospective nonzero decoys were independently derived before allocation.
+At epsilon=I, kappa0, S=lambda(u+v), alpha=gamma2 sin(x0), the wrong lift
+delta omega=-D_A alpha has derivative
+a lambda-(2 gamma a/3)lambda^3. Under the correct plus lift but improperly
+frozen contraction tensors, the residual is gamma a lambda^3/3; the actual
+tensor variation cancels it. Full K(theta01 gamma1) has only components
+2a sum_(j=2..13)theta_j Gamma0j, so omitted in-plane pairings cannot
+explain these witnesses. Freeze exact coefficient/averaging controls,
+including mean(cos^2 sin^2)=1/8, and separate wrong signs from missing
+tensor transformations. Any additional decoy must be analytically predicted
+and reviewed before the first scientific run.
+
+One worker owns598 study/implementation, a second independently reviews
+its entire pack, and another investigates remaining source-action/measure
+assumptions read-only. Coordinator owns all shared integration/docs and
+complete pre-run code/proof/hash review. Freeze complete code/helpers/project,
+STUDY, fixture values/counts/predictions, zero tolerances, bounded resource
+estimates, terminal precedence, unique exact bindings and live726 core files.
+Build-only Release checks may precede freezing; first scientific execution
+requires explicit coordinator approval after independent review. Preserve
+failed frozen runs and version any scientific repair.
+
+The construction uses an explicitly consistent plus lift and displayed
+uniform conjugation; it does not adjudicate printed source signs, infer
+registered discrete-action equivalence, select a measure/contour, or prove
+hyperbolicity, physical field extraction, pole masses or unit normalization.
+All fourteen flags remain false, O4 pending, Phase561 closed, external review
+pending, promotedPhysicalMassClaimCount=0. No core/historical frozen changes,
+new sampling, fitting or source selection. Registry598 allocated;599+ free.
+
+### A53 - Source versus registered residual kernel bridge (2026-09-09 UTC)
+
+Parallel analytical review during598 identified a small decisive test of a
+specific proposed source/registered operator identification. Allocate599;
+600+ remains free. This does not select which source action is intended.
+The separate residual-square action9.11 has a valid chain-rule derivative
+as a definition even if its residual differs from the first action's actual
+Euler derivative. Neither correcting the latter nor proving its continuum
+action descent automatically identifies the registered sampler with9.11.
+
+On positive axes0..3, set Sigma1=theta01+theta23,
+Sigma2=theta02-theta13, Sigma3=theta03+theta12, and
+J_i=Gamma(Sigma_i)/2. Freeze the explicit Lie normalization
+[J_i,J_j]=-2 epsilon_ijk J_k and source trace Gram delta_ij/2.
+The actual core f=epsilon basis embeds as E_i=-J_i/2, with trace Gram
+delta_ij/8. This is a Lie embedding, not a pairing isometry. Do not silently
+identify the source star14 with the distinct Euclidean form star4.
+
+Use the algebraic curvature R=Sigma1 tensor Sigma1-Sigma2 tensor Sigma2.
+It is pair-symmetric, Bianchi (1-1+0=0), nonzero and Ricci/scalar zero.
+With the frozen591 ordered-pair spin-curvature half factor,
+F=Sigma1 J1-Sigma2 J2=-2Sigma1 E1+2Sigma2 E2.
+The literal canonical and companion source tied contraction chains must
+annihilate it in every declared formal coefficient slot. The actual
+registered SD2/id0 half member, (I+star4)/4, instead yields F/2.
+In the core identity pairing, norm(F)^2=16, norm(F/2)^2=4 and the
+pointwise half residual-square is2. This diagnostic pairing is explicitly
+different from the source trace pairing; no quantum measure is inferred.
+
+Include a separately labeled anti-selfdual compact embedding with
+barSigma=(theta01-theta23,theta02+theta13,theta03-theta12),
+barJ=Gamma(barSigma)/2, [barJ_i,barJ_j]=+2 epsilon_ijk barJ_k and
+barE=barJ/2. Its analogous nonzero Ricci-flat algebraic curvature is killed
+by both the source chains and registered selfdual projector. Include zero,
+identity-contraction and full-so4 single-plane R0101=1 controls. The latter
+is deliberately outside the strict selfdual su2 carrier: Ric00=Ric11=1,
+scalar2, canonical CCA=-theta0 gamma0-theta1 gamma1. Matched CCA has
+(1+h Omega)sum_(j=2..13)theta_j gamma_j, nonzero despite null trace
+self-pairing. Do not invent a nonzero Ricci tensor in the strict Bianchi
+selfdual-only Riemann carrier; that carrier is Weyl.
+
+The conclusion is a pointwise kernel mismatch under the declared input
+embedding. No zero-preserving map reconstructs the registered residual
+from the source residual at both0 andF; no injective map sends the
+registered residual to the source residual there. Noninjective projection,
+different field/curvature dictionaries, other source families and physical
+dimensional reduction are not excluded. Local gauge curvature realization
+may be checked with A_mu(x)=-sum_nu F_mu,nu x^nu/2 at x=0 only; it
+does not claim a globally constant curvature or a sampled/Levi-Civita lift.
+
+One worker owns599 study and implementation, an independent agent reviews
+the complete code/proof/contract, and coordinator owns shared wiring/docs
+and complete pre-run review. Freeze all fixtures/formal slots/counts,
+normalizations, exact or explicitly justified tolerances, resources,
+terminal precedence, unique bindings and live726 core files. Exercise the
+actual registered contraction implementation, not only an independently
+retyped projector. Build-only Release is allowed before freezing; no first
+scientific execution before both reviews and explicit coordinator approval.
+Preserve any failed frozen run; no historical/core rewrites.
+
+All fourteen authority flags remain false, O4 pending, Phase561 closed,
+external review pending and physical mass claims0. No sampling, contour,
+measure, physical field, source operator, normalization or GeV selection.

@@ -341,6 +341,8 @@ const string Phase594Path = "studies/phase594_actual_gradient_reciprocity_audit_
 const string Phase595Path = "studies/phase595_invariant_tensor_dimension_audit_001/output/invariant_tensor_dimension_audit_summary.json";
 const string Phase596Path = "studies/phase596_fixed_operator_helmholtz_audit_001/output/fixed_operator_helmholtz_audit_summary.json";
 const string Phase597Path = "studies/phase597_actual_quadratic_joint_null_audit_001/output/actual_quadratic_joint_null_audit_summary.json";
+const string Phase598Path = "studies/phase598_continuum_action_descent_ward_audit_001/output/continuum_action_descent_ward_audit_summary.json";
+const string Phase599Path = "studies/phase599_source_registered_residual_kernel_audit_001/output/source_registered_residual_kernel_audit_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -733,6 +735,8 @@ using var phase594 = File.Exists(Phase594Path) ? JsonDocument.Parse(File.ReadAll
 using var phase595 = File.Exists(Phase595Path) ? JsonDocument.Parse(File.ReadAllText(Phase595Path)) : null;
 using var phase596 = File.Exists(Phase596Path) ? JsonDocument.Parse(File.ReadAllText(Phase596Path)) : null;
 using var phase597 = File.Exists(Phase597Path) ? JsonDocument.Parse(File.ReadAllText(Phase597Path)) : null;
+using var phase598 = File.Exists(Phase598Path) ? JsonDocument.Parse(File.ReadAllText(Phase598Path)) : null;
+using var phase599 = File.Exists(Phase599Path) ? JsonDocument.Parse(File.ReadAllText(Phase599Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -9488,6 +9492,42 @@ var actualQuadraticJointNullAuditPassed = phase597 is not null
     && p597Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
     && JsonBool(phase597.RootElement, "externalReviewPending") is true
     && JsonInt(phase597.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var continuumActionDescentWardAuditPassed = phase598 is not null
+    && JsonInt(phase598.RootElement, "schemaVersion") == 1
+    && JsonInt(phase598.RootElement, "phase") == 598
+    && JsonString(phase598.RootElement, "contractId") == "phase598-a52-continuum-action-descent-ward-v1"
+    && JsonString(phase598.RootElement, "verdictKind") == "continuum-action-descent-ward-controls-pass-source-choice-open"
+    && JsonBool(phase598.RootElement, "auditPassed") is true
+    && JsonBool(phase598.RootElement, "contractValid") is true
+    && JsonBool(phase598.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase598.RootElement, "coreSourceTreeValid") is true
+    && phase598.RootElement.TryGetProperty("evidence", out var p598Evidence)
+    && JsonBool(p598Evidence, "knownAnswerPassed") is true
+    && JsonBool(p598Evidence, "controlsPassed") is true
+    && phase598.RootElement.TryGetProperty("authorityFirewalls", out var p598Firewalls)
+    && p598Firewalls.EnumerateObject().Count() == 14
+    && new[] { "authorIntentSelected", "registeredTransformationBridgeEstablished", "registeredActionChanged", "registeredMeasureSelected", "physicalHiggsIdentified", "sourceContractApplicationAllowed", "phase561Opened", "o4Discharged", "phase458Satisfied", "phase481Changed", "samplingPerformed", "samplingAuthorized", "productionAuthorized", "gevClaimAllowed" }.All(name => JsonBool(p598Firewalls, name) is false)
+    && p598Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase598.RootElement, "externalReviewPending") is true
+    && JsonInt(phase598.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var sourceRegisteredResidualKernelAuditPassed = phase599 is not null
+    && JsonInt(phase599.RootElement, "schemaVersion") == 1
+    && JsonInt(phase599.RootElement, "phase") == 599
+    && JsonString(phase599.RootElement, "contractId") == "phase599-a53-source-registered-residual-kernel-v1"
+    && JsonString(phase599.RootElement, "verdictKind") == "source-registered-residual-kernel-mismatch-scoped"
+    && JsonBool(phase599.RootElement, "auditPassed") is true
+    && JsonBool(phase599.RootElement, "contractValid") is true
+    && JsonBool(phase599.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase599.RootElement, "coreSourceTreeValid") is true
+    && phase599.RootElement.TryGetProperty("evidence", out var p599Evidence)
+    && JsonBool(p599Evidence, "knownAnswerPassed") is true
+    && JsonBool(p599Evidence, "controlsPassed") is true
+    && phase599.RootElement.TryGetProperty("authorityFirewalls", out var p599Firewalls)
+    && p599Firewalls.EnumerateObject().Count() == 14
+    && new[] { "authorIntentSelected", "registeredTransformationBridgeEstablished", "registeredActionChanged", "registeredMeasureSelected", "physicalHiggsIdentified", "sourceContractApplicationAllowed", "phase561Opened", "o4Discharged", "phase458Satisfied", "phase481Changed", "samplingPerformed", "samplingAuthorized", "productionAuthorized", "gevClaimAllowed" }.All(name => JsonBool(p599Firewalls, name) is false)
+    && p599Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase599.RootElement, "externalReviewPending") is true
+    && JsonInt(phase599.RootElement, "promotedPhysicalMassClaimCount") == 0;
 
 var externalReviewPacketAssemblyPassed = phase580 is not null
     && JsonInt(phase580.RootElement, "schemaVersion") == 1
@@ -12838,6 +12878,18 @@ var checklist = new[]
         actualQuadraticJointNullAuditPassed ? "passed" : "failed",
         phase597 is null ? "Phase597 artifact not materialized" : $"verdictKind={JsonString(phase597.RootElement, "verdictKind")}; auditPassed={JsonBool(phase597.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase597.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase597Path),
+    new ObjectiveChecklistItem(
+        "continuum-action-descent-ward-audit",
+        "Verify full continuum action descent and actual nonlinear Ward identities with exact nonzero controls and no source or measure selection.",
+        continuumActionDescentWardAuditPassed ? "passed" : "failed",
+        phase598 is null ? "Phase598 artifact not materialized" : $"verdictKind={JsonString(phase598.RootElement, "verdictKind")}; auditPassed={JsonBool(phase598.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase598.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase598Path),
+    new ObjectiveChecklistItem(
+        "source-registered-residual-kernel-audit",
+        "Test the declared source and registered residual dictionary with an exact Weyl kernel witness and distinct compact embeddings.",
+        sourceRegisteredResidualKernelAuditPassed ? "passed" : "failed",
+        phase599 is null ? "Phase599 artifact not materialized" : $"verdictKind={JsonString(phase599.RootElement, "verdictKind")}; auditPassed={JsonBool(phase599.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase599.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase599Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
