@@ -688,3 +688,188 @@ or suitable closed/boundary conditions are essential. Zero density at one
 metric, restricted-L stationarity or unspecified boundary domains do not
 suffice. This remains conditional declared-action analysis, unexecuted by
 606/607, and does not establish a physical stable vacuum or source9.11 norm.
+
+## A58 prospective full ambient and null-branch tests
+
+608/609 are allocated under A58;610+free. Neither is scientifically executed.
+608 covers both607points,alpha1,beta0/-1/2,sigma-1, with full14D coordinate
+jets, Koszul and differentiated-Koszul curvature and independent typed laws.
+MAIN rederived all six slots (U=y^-1 A,V=y^-1 B):
+R(A,B)C=-y[[U,V],y^-1 C]/4;
+R(A,B)u=-[U,V]u/4; R(A,u)B=VUu/4;
+R(A,u)v=-sigma W(Uu,v)/4;
+R(u,v)A=-sigma[W(u,Uv)-W(v,Uu)]/4;
+R(u,v)w=kH[GHH(v,w)u-GHH(u,w)v],
+kH=(alpha+6beta)/[8alpha(alpha+4beta)].
+Here u,v,w are horizontal vectors; A,B,C are vertical symmetric tensors.
+These complete mixed slots explicitly prevent a product-metric shortcut.
+Under y'=L y L^T, transport horizontal u'=L^-T u, vertical A'=L A L^T.
+
+An exact rational orthonormal-frame route is available for the later typed
+spin test under alpha1,beta-1/2,sigma-1, but is outside608's menu. At eta,
+write diagonal vertical A=eta U. Half-scaled Hadamard rows for diagonal U
+give three traceless norm+1 directions and one trace norm-1 direction.
+Pair each spatial off-diagonal P (norm+2) with a time-spatial N (norm-2).
+The combinations(3P+N)/4 and(P+3N)/4 have norms+1,-1 and cross0.
+Together with horizontal metric-eta this supplies7positive/7negative
+rational directions; congruence transport gives the secondpoint frame.
+This avoids introducing unreviewed square-root rounding in a future exact
+spin-lift test. Explicit orientation, Clifford index order, inverse-frame
+curvature conversion and source spin normalization still need certification.
+
+609's prospective even spin control is
+B=theta0 Gamma01+theta1 Gamma12+theta2 Gamma23 in a flat(7,7)coordinate
+frame; B is deliberately NOT identified with the induced LC connection.
+By direct Clifford commutators and593's relabeled exact chain anchor,
+FB=2theta01 Gamma02+2theta12 Gamma13,
+KFB=-4P(theta1 gamma2+theta2 gamma3),P=1+hOmega.
+For S=-KFB/kappa, DB S=8theta12 Pgamma3/kappa is NONZERO.
+The candidate tests Q0,KDBS0,K^dagger S0 and the FULL first gradient0;
+V=theta1 gamma2 has separate curvature/mass variations+4,-4.
+Wrong-sign S leaves the action null but produces fullgradient2KFB and
+variation8; kappa0 is a separate nonzero-source control. MAIN independently
+checked these sparse formulas; formal-c intermediate and complete graded
+batteries still require prospective review, not inference from these rows.
+
+The metric argument can be strengthened at the formal density level:
+the full first field variation vanishes pointwise because the quadratic
+derivative terms pair against KDBS0 or K^dagger S0, the cubic usesQ0 and
+K^dagger S0, and curvature/mass cancel. In a smooth P-preserving metric
+trivialization, the density restricted toL vanishes identically for every
+evenB; changing trivialization adds the already-zero full field variation.
+This may eliminate the need for field integration by parts in that local
+identity, but must be proved for unrestricted field jets, not only constant
+or L-restricted directions. Global admissibility/integrability, source-action
+normalizations, the squared norm and physical spectrum remain separate.
+
+Independent reviewer confirms the conditional common-zero implication:
+K(FB+DBS+beta Q)+kappa S=0 on this branch, as well as the actual first
+gradient. In the declared star convention this is the lowered source9.8
+residual with matched mass normalization. It therefore has zero residual
+for any smooth quadratic residual pairing; this does not equate stationary
+sets or Hessians and does not select the missing source9.11 norm. The compact
+9.4 prints kappa1/2 while its expanded integral prints kappa1 without the
+half. Retain the explicit declared kappa/2 normalization; do not silently
+adjudicate that internal source discrepancy. All claims are at epsilon=I
+with evenB preservingOmega; a gauge change must transportOmega,L,Phi and
+the reference connection together. Arbitrary non-Spin B at fixedOmega
+does not satisfy the covariant image premise.
+
+For the later spin lift, MAIN and independent reviewer agree on a crucial
+index/sign conversion. If the geometric lowered tensor is
+L_abcd=G(R(a,b)c,d), the591/592 tensor is
+R_abcd=G(R(a,b)d,c)=-L_abcd. The frozen ordered-pair spin lift
+F_ab=(1/2)sum(c<d) R_abcd sigma_c sigma_d gamma_c gamma_d
+then satisfies[F_ab,gamma_e]=gamma(R(a,b)e) directly. UsingL instead gives
+the opposite vector action; omitting the half doubles it. This is a concrete
+independent transport test, not a factor fitted to Ricci. Both positive and
+mixed sectional planes should be explicit negative controls in that future
+test. No610 allocation or execution is implied by this analytical note.
+
+### Subsequent A58 allocation and further response-operator lead
+
+608 has now passed its first frozen run unchanged (see A58 execution/extension
+record), including full ambient Ricci.610 is subsequently allocated to test
+the preceding exact frame/spin/contraction predictions on608's full curvature;
+609 is still completing its preregistration.611+free. Earlier unallocated
+language records the analytical stage, not the current registry.
+
+MAIN and independent reviewer checked a further analytical implication to
+test after stationarity; this is not part of608-610's frozen output claims.
+For the claimed residual on the L branch, let A=K D_B and C=beta K DQ_S.
+A maps even toL, odd toeven and L to0; C maps odd toL and kills even/L.
+Thus A^3=C^2=AC=CA=0, including variable coefficients when the smooth
+covariant image premise holds. For constant kappa nonzero, the residual
+linearization kappa I+A+C has the same finite differential inverse as the
+actual first Hessian described above. It is not yet a physical propagator.
+
+A genuinely FULL smooth critical family S*(g) imposes another exact Hessian
+relation. Write the connection Hessian block M, mixed block B and metric
+block Cg, with J=DS*(g). Differentiated criticality gives M J+B=0 and
+B^dagger J+Cg=0. With the appropriate variational adjoint, the full block
+matrix is[[M,-MJ],[-J^dagger M,J^dagger M J]], so tangent(J delta g,delta g)
+is null. A formally invertible M would give zero metric Schur complement.
+All variations of K and the induced B must be included in J/B; this is not
+an instruction to drop them. The source maps metric fields onX to fields
+onY, so J^dagger involves fiber pushforward as well as differential transpose.
+Global fiber integrability, domain and boundary choices remain essential
+before claiming a global metric operator. These identities suggest testing
+quadratic flat directions rather than assuming that finding a stationary
+connection already provides propagating bosons.
+
+### Additional assumption audit: untied canonical CAA remains open
+
+Primary8.1 (2026-2034) permits commutator/i-anticommutator tools and sums;
+9.3 repeatsPhi1 but does not resolve its bracket occurrences.591 explicitly
+distinguished a conservative tied-Phi1 family from an enlarged untied family.
+Its canonical CAA (firstC,outerA,innerA) yields-EinsteinGamma with
+Phi1=Gamma1,Phi2=Gamma2, without a chiral singularP. The592+ matching/null
+results apply to their declared TIED family and must not be turned into a
+no-go theorem for all source-compatible contraction choices. No untied
+choice is hereby selected as the author's missing final operator.
+
+Independent reviewer and MAIN analytically derived a concrete further test.
+For this untied canonicalCAA at the flat reference and positive derivative
+axis0, setu=theta0 gamma2 cos(nx0) and
+e=sum(j!=0,2)theta_j Gamma2j sin(nx0). The FULL actual quadratic Hessian
+H0=(K d+d^dagger K^dagger)/2 closes on these two fields:
+H0u=n e,H0e=-12n u,so H0^2=-12n^2I for n nonzero.
+This differs from the tied chiral nilpotent response; it is not a compression.
+
+The derivation retains the complete adjoint. d u=0;
+K^dagger u=2sum(j!=0,2)theta0j Gamma2j cos(nx0), givingd^dagger/2=n e.
+The outer-A transpose contraction sum_i sigma_i i{gamma_i,Y_i} vanishes
+for bothu ande. K^dagger e has only2jforms and hence no axis0 divergence.
+The nonzero d e has theta0j Gamma2j; its innerA withGamma0j vanishes by
+the shared index, and the first K d e is-24n u. Gramdiag(-1/2,6) and
+the independent original quadratic density integral6nxy forxu+ye verify
+weighted reciprocity. Full real-form/word/Hodge, source-choice and zero-
+frequency controls still need a prospective executable test. MAIN and the
+independent reviewer subsequently extended the derivation to t=7, keeping
+gamma2 positive: H0u=sigma_t n e, H0e=-12n u, Gramdiag(-sigma_t/2,6),
+and original quadratic action6sigma_t nxy. Thus H0^2=-12sigma_t n^2I;
+the sign reverses for this negative-signature derivative axis. This does
+not identify physical time, dispersion or poles. Moreover u=d(alpha),
+alpha=gamma2 sin(nx_t)/n, so a joint section/connection gauge check is
+required; full fixed-section closure alone is not a physical quotient.
+611+ remains free; this is a concrete analytical successor, not an executed
+result, selected action convention or physical boson prediction.
+
+### A58 executed results and successor boundary
+
+608-610 all passed their FIRST frozen Release runs after complete independent
+and MAIN reviews, with15/20/24 unique exact bindings and live726 closure.
+Wall times were2.394s,2.046s,1.375s; all35/37/44 prospective count fields
+matched without a scientific repair or post-execution bound-file edit.
+608 confirms the full induced Ricci under the declared convention.609
+confirms full-field local stationarity of the chiral cancellation branch,
+including nonzero curvature/covariant derivative and wrong-sign decoys;
+its arbitrary-metric conclusion is the stated conditional pointwise proof,
+not a global functional-domain assertion.610 independently transports the
+full608 curvature by two routes, verifies2548 spin vector actions and all
+eight literal chains: KFB=-P EinsteinGamma is nonzero, coefficient-square
+2115/4 and cross-pairing60, despite self-pairing0. This does not invalidate
+609's cancellation and does not establish an admissible physical vacuum.
+
+Full/summary SHA256 values:
+
+- 608:29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26.
+- 609:e368290636c199b459d41b9d55a1cbde6f39e3daff32f38146f22c26648c5e42.
+- 610:507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4.
+
+The next untiedCAA test must also exercise its nonvanishing second leg,
+since that leg happens to vanish on the Fourier seed. An independently
+derived unit-plane control F=theta01 Gamma01/2 gives first lower term
+-theta0 gamma0-theta1 gamma1, inner=-i top, outer=-2Gamma1, and final
+K(F)=sum(j!=0,1)theta_j gamma_j. Its adjoint control is
+K^dagger Gamma1=4Gamma2-28Gamma2=-24Gamma2, with both pairings=-12.
+These are prospective analytical controls, not executed observations.
+
+Matching Einstein curvature and obtaining a non-nilpotent true Hessian do
+not repair the old variational mismatch. For the593 seed
+T=x theta0 Gamma01+y theta1 Gamma12+z theta1 gamma2, the canonicalCAA
+second-leg transpose and inner onQ vanish. Its pulled-back cubic action
+remains4gamma xyz/3 while the claimed target covector is(0,0,4xy).
+This exact negative control should survive in the successor. Source bracket
+selection, the action/equation discrepancy, global field admissibility,
+metric coupling and physical extraction remain separate questions.

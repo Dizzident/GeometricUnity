@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "phase": 609,
+  "phaseId": "phase609-chiral-null-branch-stationarity-audit",
+  "contractId": "phase609-a58-chiral-null-branch-stationarity-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "carrier": "fixed flat oriented unit-volume14torus/frame,epsilon=I; curved even spin control B is NOT the induced Levi-Civita connection",
+    "h": [
+      -1,
+      1
+    ],
+    "kappa": [
+      -1,
+      1
+    ],
+    "gamma": [
+      1,
+      2
+    ],
+    "formalCSlots": [
+      0,
+      1
+    ],
+    "phi1": "P Gamma1,P=1+hOmega",
+    "phi2": "(c-i h Omega)Gamma2",
+    "pairing": "real bilinear -ReTr/128 times signed exterior metric",
+    "massConvention": "kappa Pair(S,S)/2; compact versus expanded9.4 factor is unresolved, no author normalization selected",
+    "background": "theta0 Gamma01+theta1 Gamma12+theta2 Gamma23",
+    "curvature": "2theta01 Gamma02+2theta12 Gamma13",
+    "KFB": "-4P(theta1 gamma2+theta2 gamma3)",
+    "state": "S=-KFB/kappa",
+    "DBS": "8theta12 Pgamma3/kappa",
+    "Q": "0",
+    "KdaggerS": "0",
+    "innerDBS": [
+      "0",
+      "16i P Gamma123 volume/kappa"
+    ],
+    "outerInnerDBS": "0",
+    "gradientLegs": [
+      "KFB",
+      "KDBS/2",
+      "DBdagger KdaggerS/2",
+      "gamma KQ/3",
+      "gamma DQdagger KdaggerS/3",
+      "kappa S"
+    ],
+    "sourceResidual": "K(FB+DBS+beta Q)+kappa S=0 for every beta because Q=0; not used to construct actual gradient",
+    "V": "theta1 gamma2",
+    "variationLegs": [
+      "4",
+      "0",
+      "0",
+      "-4"
+    ],
+    "actionPolynomials": {
+      "branch": "-kappa t^2/2",
+      "wrongSign": "8t-kappa t^2/2",
+      "kappa0S0": "4t"
+    },
+    "wrongSignGradient": "2KFB",
+    "wrongSignAction": "0",
+    "wrongSignTraceGradientSquare": "0",
+    "wrongSignGradientPairV": "8",
+    "coefficientNorms": {
+      "curvature": 8,
+      "KFB": 64,
+      "SAtUnitKappa": 64,
+      "wrongSignGradient": 256
+    },
+    "coefficientCounts": {
+      "background": 3,
+      "curvature": 2,
+      "KFB": 4,
+      "S": 4,
+      "DBS": 2,
+      "innerC": 2
+    },
+    "gradeBattery": {
+      "masks": "all cyclic contiguous masks of lengths1..13 on14 axes, plus0/full",
+      "maskCount": 184,
+      "oddMaskCount": 98,
+      "KInputPlanes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "KdaggerOutputAxes": [
+        0,
+        7,
+        13
+      ],
+      "scope": "bounded operator battery; general theorem proved separately, not full form-times-Clifford enumeration"
+    },
+    "complementPairs": "4096 unordered odd mask/complement pairs times2h; normalized real H-anti blade representatives",
+    "adjointSupport": {
+      "Y": "theta1 gamma2",
+      "candidate": "for each of91twoforms ab, blade=ab XOR bit1 XOR bit2, and its full complement",
+      "candidateCount": 182,
+      "constantNonzero": 78,
+      "linearCNonzero": 67,
+      "totalNonzeroProbes": 290,
+      "independentForward": "ordered-word NaiveChain paired with Y, full182-position reconstruction for eachh/slot"
+    },
+    "pointwiseJets": [
+      "value=V,dvalue0",
+      "value=theta0 Gamma01,dvalue0",
+      "value0,dvalue=theta01 Gamma02",
+      "value0,dvalue=theta12 gamma3"
+    ],
+    "metricJets": [
+      "all coframe weights1:deltaKFB=-KFB,deltaS=-S",
+      "only coframe weight0=1:deltaKFB=4theta1 Pgamma2,deltaS=-4theta1 Pgamma2/kappa"
+    ],
+    "metricHeldFixed": "coordinate B,curvature,and S for partial derivative; recomputed candidate deltaS=-deltaKFB/kappa for total branch derivative; orthonormal Clifford matrices and P fixed in this identification",
+    "metricDerivative": "delta star_p=(sum m-2sum_form m)star_p; deltaPhi=sum_form m Phi; pairing includes same volume/inverse-form factor",
+    "backgroundJet": "deltaB=B,deltaFB=2FB;partial deltaDBS=DBS;recomputed branch deltaS=2S",
+    "identificationJet": "deltaS=[gamma2,S]=-8h theta1 Omega/kappa+8theta2 Gamma23/kappa, nonzero even variation outsideL",
+    "covariantAdjointControls": [
+      "U=theta1 gamma2,Y=theta12 gamma3:DBU=2Y,DBdaggerY=2U,pairs-2",
+      "U=i theta1 I sinx0,Y=i theta01 I cosx0:centralBcommutator0,derivativepairs1/2"
+    ],
+    "expectedCounts": {
+      "realBladeRows": 16384,
+      "omegaOddRows": 8192,
+      "wordCases": 44944,
+      "generatorWordCases": 458752,
+      "omegaWordCases": 32768,
+      "hodgeCases": 16384,
+      "complementPairRows": 8192,
+      "genericK": 2208,
+      "genericKdagger": 2208,
+      "nullK": 1176,
+      "nullKdagger": 1176,
+      "adjointSupportProbes": 728,
+      "adjointNonzeroProbes": 290,
+      "covariantAdjointControls": 2,
+      "branchContexts": 8,
+      "branchAnchorChecks": 64,
+      "gradientSlots": 16,
+      "gradientLegs": 96,
+      "sourceResidualSlots": 16,
+      "innerCoefficientSlots": 16,
+      "innerNonzeroRows": 8,
+      "actionVariationSlots": 16,
+      "actionVariationLegs": 64,
+      "branchPolynomialSlots": 16,
+      "wrongSignSlots": 16,
+      "wrongSignPolynomialSlots": 16,
+      "wrongSignNonzeroRows": 8,
+      "pointwiseJetSlots": 64,
+      "metricRows": 16,
+      "metricSlots": 32,
+      "metricNonzeroBranchDeltas": 16,
+      "backgroundJetRows": 8,
+      "backgroundJetSlots": 16,
+      "identificationRows": 8,
+      "identificationSlots": 16,
+      "masslessRows": 4,
+      "masslessSlots": 8
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 15,
+      "maximumEstimatedCpuSeconds": 90,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumCoefficientProducts": 50000000,
+      "maximumSparseTensorTerms": 65536,
+      "maximumActionPolynomialDegree": 3
+    },
+    "scope": {
+      "inducedLCBackgroundClaim": false,
+      "sourceNormalizationSelected": false,
+      "globalAdmissibilityEstablished": false,
+      "physicalVacuumSelected": false,
+      "secondActionNormSelected": false,
+      "hessianOrPropagatorComputed": false,
+      "conditionalPointwiseMetricDensityProof": true
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "null-ideal-image-control-failed",
+    "full-adjoint-control-failed",
+    "full-stationarity-control-failed",
+    "pointwise-variation-control-failed",
+    "metric-density-control-failed",
+    "nonzero-decoy-control-failed",
+    "chiral-null-branch-controls-pass-full-stationarity-conditional"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase609_chiral_null_branch_stationarity_audit_001/Program.cs",
+      "sha256": "3c5623cf4dde24de3f171dbdec6f09e51f6438f137fc3ce9d8fb6696e45ffc13"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase609_chiral_null_branch_stationarity_audit_001/Phase609ChiralNullBranchStationarityAudit.csproj",
+      "sha256": "7638cabccf1113e0c281ee9fac8769f057336a356d5596f852727a87d388ace4"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase609_chiral_null_branch_stationarity_audit_001/STUDY.md",
+      "sha256": "8cfae1a7e26df3e8dad3491e91c3e31702728e380d61c70d24c358bfc83f1932"
+    },
+    {
+      "id": "control-helper",
+      "path": "studies/phase609_chiral_null_branch_stationarity_audit_001/NullBranchControls.cs",
+      "sha256": "c1250f1ac7df367515794c90344641f61ab47a2a1f6bdb79c35e1fdfbc8d371f"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase593-summary",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json",
+      "sha256": "67000008c72eddbfe44d9872170cfdf5e3725f333bbbbdb327f4e59d745cb1be"
+    },
+    {
+      "id": "phase593-contract",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/preregistration/contract_v1.json",
+      "sha256": "cde88414f1af7790f472d81419250b826f1c25fd9dd844639ebcf98919001fa4"
+    },
+    {
+      "id": "phase593-program",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Program.cs",
+      "sha256": "6ca291a18e95e95228188e55f47d17af1d662d75662c7a3b834373929ccce788"
+    },
+    {
+      "id": "phase593-study",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/STUDY.md",
+      "sha256": "210c5daf97a9c3f7ae99901a6ed8f64031db60db2a63ea936ab535c0c928e40a"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

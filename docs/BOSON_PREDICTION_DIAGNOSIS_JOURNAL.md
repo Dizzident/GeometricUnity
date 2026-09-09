@@ -23808,3 +23808,67 @@ overturn94/94. Final incremental follows all edits before checkpointing.
 No source convention, norm, physical field, pole or unit selected. All14flags
 false, externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
 This tranche is PROGRESS; decisive safe experiments remain under the active goal.
+
+### 2026-09-09 UTC - A58 full induced geometry and null-branch preregistration
+
+Previous goal turn was PROGRESS. Checkpoint12e2635c9d0b43b277dc42bb46d77f2c3ce0e64e
+committed/pushed, remote independently matched, clean worktree. Final A57
+pass_2026-09-09T13-23-18-206Z.json ran76steps/skipped391,387/3checklist,
+coverage31/31,overturn94/94;70historicaloutputchangedlines onlytimestamps/runtime.
+
+Allocate608full source-induced ambient Ricci and609constructive chiral
+null-branch stationarity. Separate builders and independent reviewer work
+in parallel; MAIN owns integration and first-execution approval.608 tests
+all14D curvature slots and mixed geometry from fullcoordinate jets rather
+than infer ambientRicci fromfiberRicci.609 tests nonzeroFB andnonzeroDBS,
+fulladjoints andfullfield derivatives, formalc andwrong-signzeroactiondecoys.
+The spincontrol is not conflated with608's inducedLC. MAIN independently
+checked all six typed curvature formulas, sparse branchcommutators and
+sourcechain anchor. A rational orthonormal frame is a later typedspinlead.
+The pointwise metric-density argument is under independent challenge.
+
+All code/proof/expectedcounts/resources/tolerances/precedence/uniqueexact
+bindings/live726 must be reviewed and frozen before firstscience; build-only
+Release checks permitted. No608/609scientific execution yet.610+free.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,deficits15/14,
+physicalclaims0. No sourceconvention/norm/physicalfield/units selection.
+
+### 2026-09-09 UTC - A58 first frozen execution and untied-operator lead
+
+608-610 passed FIRST frozen Release runs after complete independent/MAIN
+code/helper/project/proof/contract reviews and explicit MAIN approval.
+All15/20/24 unique exact bindings and live726 core closure held; no frozen
+scientific files changed after execution. Wall2.394s/2.046s/1.375s.
+All35/37/44 prospective count fields matched.608 computed full ambient
+Ricci;609 verified full first-action local null-branch stationarity with
+nonzero curvature/covariant derivative and wrong-sign decoys;610 verified
+both full curvature transports,2548 spin actions and eight literal chains.
+Its KFB is nonzero: coefficient-square2115/4,cross-pair60,self-pair0.
+This supports testing a curved stationary branch rather than using flatness
+as an assumed source background, but does not establish a physical vacuum.
+
+608 full/summary29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26;
+609 full/summarye368290636c199b459d41b9d55a1cbde6f39e3daff32f38146f22c26648c5e42;
+610 full/summary507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4.
+Instrumented work:608 Matrix.Mul12668089;609 groupedproducts90124,
+largesttensor156;610 Matrix.Mul26331,groupedproducts19640,largesttensor822.
+These counters do not measure all rational operations or naive-kernel work.
+
+Ordered101/202 reports390passed/3standingphysicalfailures. The first new
+verifier assertion incorrectly required a gradient array on609's scalar-only
+kappa0 decoys; corrected ONLY the integration assertion to the frozen schema.
+Integrity then passed,coverage31/31,overturn94/94. Scientific result/contract
+hashes did not change. Final incremental must follow all edits before
+checkpointing. Registry, generator/traversal,101/202/verifier,9scanners,
+implementation notes, restart, journal and existing reference/ledger wired.
+
+Parallel review produced a concrete successor: canonical UNTIED CAA already
+allowed as an enlarged family in591. Its full2D flat Fourier Hessian has
+H0^2=-12sigma_t n^2I for t=0,7, not the tied family's nilpotent response.
+The independent original action and nonzero second-leg controls are derived
+in the existing reference. This is not a source choice or physical pole.
+u is exact, so a joint epsilon/connection gauge test must accompany closure.
+The original cubic action/claimed-force mismatch survives and must remain
+an explicit negative control; matching curvature alone does not repair it.
+611+free. All14flagsfalse,O4/externalreviewpending,Phase561closed,
+deficits15/14,physicalclaims0. PROGRESS; decisive safe experiments remain.

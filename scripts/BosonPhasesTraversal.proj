@@ -462,6 +462,9 @@
     <PhaseProject Include="../studies/phase605_stationary_background_fourier_closure_audit_001/Phase605StationaryBackgroundFourierClosureAudit.csproj" />
     <PhaseProject Include="../studies/phase606_general_companion_stationary_fourier_closure_audit_001/Phase606GeneralCompanionStationaryFourierClosureAudit.csproj" />
     <PhaseProject Include="../studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj" />
+    <PhaseProject Include="../studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj" />
+    <PhaseProject Include="../studies/phase609_chiral_null_branch_stationarity_audit_001/Phase609ChiralNullBranchStationarityAudit.csproj" />
+    <PhaseProject Include="../studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

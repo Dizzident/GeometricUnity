@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "phase": 610,
+  "phaseId": "phase610-induced-spin-curvature-contraction-audit",
+  "contractId": "phase610-a58-induced-spin-curvature-contraction-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "upstreamBeta": "-1/2",
+    "upstreamSigma": "-1",
+    "points": [
+      0,
+      1
+    ],
+    "chiralities": [
+      -1,
+      1
+    ],
+    "formalCSlots": [
+      0,
+      1
+    ],
+    "frameOrder": [
+      "H0",
+      "A1",
+      "A2",
+      "A3",
+      "p1",
+      "p2",
+      "p3",
+      "H1",
+      "H2",
+      "H3",
+      "T",
+      "n1",
+      "n2",
+      "n3"
+    ],
+    "diagonalRows": [
+      [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "diagonalDenominator": 2,
+    "trace": "-eta/2",
+    "positiveOffDiagonal": "(3P+N)/4",
+    "negativeOffDiagonal": "(P+3N)/4",
+    "frameDeterminants": [
+      "1/8",
+      "41472"
+    ],
+    "inverse": "explicit Hadamard diagonal and paired inverse; E^-1=eta14 E^T G",
+    "transport": "diag(L^-T,SymL), L=diag(1,2,3,4)",
+    "curvatureRoutes": [
+      "two-input endomorphism mixing then E^-1 R E",
+      "coordinate Gram lowering then independent four covariant slots"
+    ],
+    "riemannConvention": "R592_abcd=-G(R(a,b)c,d)",
+    "spin": "F_ab=1/2 sum_c<d R592_abcd sigma_c sigma_d gamma_c gamma_d",
+    "commutator": "[F_ab,gamma_e]=gamma(R(a,b)e)",
+    "knownPlanes": {
+      "pairs": 91,
+      "mixed": 49,
+      "sameSign": 42,
+      "vectorDirections": 14,
+      "metricError": "omit sigma_c sigma_d",
+      "factorError": "drop ordered-pair half",
+      "signError": "use +L instead of -L"
+    },
+    "actualMixedAnchor": {
+      "pair": [
+        0,
+        7
+      ],
+      "inputGamma": 7,
+      "correct": "-gamma0/4",
+      "wrongMetric": "gamma0/4",
+      "wrongFactor": "-gamma0/2",
+      "wrongSign": "gamma0/4"
+    },
+    "phi1": "(1+hOmega)Gamma1",
+    "phi2Slots": [
+      "-ihOmega Gamma2",
+      "Gamma2"
+    ],
+    "firstTermSlots": [
+      true,
+      false
+    ],
+    "innerSlots": [
+      "5hOmega top",
+      "5i top"
+    ],
+    "zeroSlots": [
+      "-5hOmega",
+      "-5i"
+    ],
+    "outerSlots": [
+      "10P Gamma1",
+      "0"
+    ],
+    "firstLowerSlots": [
+      "-P RicciGamma",
+      "0"
+    ],
+    "finalSlots": [
+      "-P EinsteinGamma",
+      "0"
+    ],
+    "ricciTraceless": "-5/4",
+    "ricciOther": "1/4",
+    "scalar": "-10",
+    "einsteinTraceless": "15/4",
+    "einsteinOther": "21/4",
+    "tracelessFrameAxes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13
+    ],
+    "finalNonzeroCoefficients": 28,
+    "coefficientSquare": "2115/4",
+    "gammaCrossPair": "60",
+    "selfPair": "0",
+    "chiralityDifferenceSquare": "2115/2",
+    "wordMenu": "all 16384 blades; left/right by each14 singleton and Omega, plus square:31 selected products each",
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "expectedCounts": {
+      "arithmeticControls": 8,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "planeCases": 91,
+      "planeCommutators": 1274,
+      "planeMetricMixedRejected": 49,
+      "planeMetricSameAccepted": 42,
+      "planeFactorRejected": 91,
+      "planeSignRejected": 91,
+      "contexts": 2,
+      "frameMatrixEntries": 392,
+      "inverseEntries": 392,
+      "orientationControls": 2,
+      "orientationDecoys": 2,
+      "frameCurvatureEntries": 76832,
+      "frameSymmetryEntries": 76832,
+      "ricciEntries": 392,
+      "einsteinEntries": 392,
+      "pointTransportEntries": 38416,
+      "spinCommutators": 2548,
+      "spinWordAgreement": 2548,
+      "liftTypeRows": 2,
+      "actualMetricDecoys": 2,
+      "actualFactorDecoys": 2,
+      "actualSignDecoys": 2,
+      "chainRows": 8,
+      "invariantTensorRows": 8,
+      "chainStageComparisons": 56,
+      "chainTypeChecks": 64,
+      "chainRealityChecks": 64,
+      "innerOracleRows": 8,
+      "firstOracleRows": 8,
+      "outerOracleRows": 8,
+      "finalOracleRows": 8,
+      "literalChainAgreementRows": 8,
+      "nonzeroInnerRows": 8,
+      "nonzeroKRows": 4,
+      "zeroCSlots": 4,
+      "finalCoefficientCountRows": 4,
+      "coefficientNormRows": 4,
+      "crossPairRows": 4,
+      "isotropicRows": 4,
+      "chiralityDifferenceRows": 2,
+      "chainTransportRows": 4
+    },
+    "resources": {
+      "estimatedCpuSeconds": 60,
+      "maximumEstimatedCpuSeconds": 180,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 805306368,
+      "maximumTrackedMatrixProducts": 100000000,
+      "maximumTrackedCoefficientProducts": 50000000,
+      "maximumFourierTerms": 8281,
+      "maximumMatrixDimension": 14,
+      "largestScalarArrayEntries": 38416
+    },
+    "scope": {
+      "sourceNormalizationSelected": false,
+      "sourceNormSelected": false,
+      "connectionFrameTransformed": false,
+      "covariantGradientComputed": false,
+      "inducedStationaryBackgroundRejected": false,
+      "physicalSpectrumIdentified": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "frame-curvature-control-failed",
+    "typed-spin-control-failed",
+    "literal-contraction-control-failed",
+    "diagnostic-resource-control-failed",
+    "induced-spin-curvature-contraction-controls-pass-nonzero-conditional-source"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Program.cs",
+      "sha256": "a6fb779acf2f96a6fafd1b010a529e525ceed4f0edc708943909cb13624db5a0"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj",
+      "sha256": "a64e6a9ab71d179c56bf829735f835b25c2af7bf7d265ac1be777a05f961970e"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/STUDY.md",
+      "sha256": "67269d1d55c5e738e7e1a5cbd87da10f6064cb11d96008f6fa80bc1648961a93"
+    },
+    {
+      "id": "spin-helper",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs",
+      "sha256": "1da7150abc6f2da2abe0c9dbd1600e84edcd452dae90449a599a65fbb8d7e2cb"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "phase608-project",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj",
+      "sha256": "7d25507c8102d3b0bb10fd28d4bcf395fcc57497cd56ce71c16aceb3fc2b821f"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "geometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase592-study",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/STUDY.md",
+      "sha256": "722dc3a89cd5331ed9005723beebae5705a55375406b473d8be408d76cd17e3c"
+    },
+    {
+      "id": "phase592-summary",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json",
+      "sha256": "47fac92eaac8baccdc9e17c559bc5ddbfd97ed975f26844ed2a035e5f35e89be"
+    },
+    {
+      "id": "phase592-contract",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/contract_v1.json",
+      "sha256": "ffa3f692d45dd763ccecf7778d0e0f28164ec95209efd1b60258b9f67527caf6"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

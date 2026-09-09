@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs" Link="ExactArithmetic.cs" />
+    <Compile Include="../phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs" Link="FourierTensor.cs" />
+    <Compile Include="../phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs" Link="VerticalGeometry.cs" />
+  </ItemGroup>
+</Project>

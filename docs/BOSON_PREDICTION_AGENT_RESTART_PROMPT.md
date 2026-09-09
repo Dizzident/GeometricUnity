@@ -45,6 +45,53 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC,A58;608-610executed,611+free):
+Previous completed checkpoint12e2635c9d0b43b277dc42bb46d77f2c3ce0e64e
+was pushed and remote independently matched.608-610 now ALL PASSED their
+FIRST frozen Release executions unchanged after complete independent/MAIN
+reviews,15/20/24 unique exactbindings and live726 closure. Wall times
+2.394s/2.046s/1.375s; all35/37/44 prospective count fields matched.
+608: full ambient curvature/Ricci, including mixed directions and both
+metric conventions. Conditional(7,7) Ricci eigen-5/4(9),+1/4(5),scalar-10.
+609: full first-action chiral null-branch stationarity, nonzeroFB/DBS,
+full adjoint support, arbitrary-field and conditional pointwise metric
+variation controls; wrong-sign zero-action and kappa0 decoys remain nonzero.
+610: full608 curvature transformed independently into an oriented rational
+frame,2548 spin vector actions, eight literal contraction chains. Nonzero
+KFB=-P EinsteinGamma has coefficient-square2115/4 and cross-pairing60,
+despite self-pairing0. Nonzero source does NOT reject609's cancellation.
+Full/summary hashes608/609/610 respectively:
+29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26;
+e368290636c199b459d41b9d55a1cbde6f39e3daff32f38146f22c26648c5e42;
+507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4.
+
+Ordered101/202/integrity pass390/3,coverage31/31,overturn94/94. An initial
+new-verifier integration assertion wrongly expected gradient arrays on609's
+scalar-only kappa0 decoy records; corrected ONLY verifier to the frozen schema.
+Scientific files/results were unchanged. Final incremental follows ALL edits
+before commit/push; record its report and remote checkpoint in the handoff.
+
+NEXT PRIORITY: allocate611 only after this tranche is checkpointed. Audit
+UNTIED canonical CAA(firstC,outerA,innerA),Phi1=Gamma1,Phi2=Gamma2, already
+distinguished by591 from the conservative tied chiral family. MAIN and
+independent reviewer derived FULL2D Fourier closure for t=0,7,n!=0:
+u=theta_t gamma2 cos(nx_t),e=sum(j!=t,2)theta_j Gamma2j sin(nx_t),
+H0u=sigma_t n e,H0e=-12n u,H0^2=-12sigma_t n^2I;
+Gramdiag(-sigma_t/2,6), original quadratic action6sigma_t nxy.
+This challenges source-wide nilpotency, NOT the scoped tied-family theorem.
+Test full adjoint and nonzero second-A-leg unit-plane controls; retain593's
+action-versus-claimed-force mismatch decoy. u=d(alpha), so test the JOINT
+epsilon/connection lift rather than deleting u as an assumed gauge mode.
+These successor formulas remain analytical, not executed or source-selected.
+Further leads: chiral curved response finite differential inverse and full
+metric/connection Hessian flat directions; global domains remain essential.
+See existing stationary-background reference for all derivations and scope.
+
+All14flagsfalse,O4/externalreviewpending,Phase561closed,deficits15/14,
+physicalclaims0. No physical fields, source norm/operator, poles or units
+selected. This tranche is PROGRESS; concrete decisive safe tests remain.
+Older free/allocation and prospective language below is historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, A57;606-607 executed):
 Both FIRST frozen Release runs passed after full independent/MAIN reviews,
 21/16 unique exact bindings and live726 closure.606 wall6.454s,607 wall2.045s.

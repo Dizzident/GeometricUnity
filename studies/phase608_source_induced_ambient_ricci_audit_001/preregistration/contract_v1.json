@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "phase": 608,
+  "phaseId": "phase608-source-induced-ambient-ricci-audit",
+  "contractId": "phase608-a58-source-induced-ambient-ricci-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "baseDimension": 4,
+    "verticalDimension": 10,
+    "ambientDimension": 14,
+    "basis": [
+      "h0",
+      "h1",
+      "h2",
+      "h3",
+      "E00",
+      "E11",
+      "E22",
+      "E33",
+      "E01+E10",
+      "E02+E20",
+      "E03+E30",
+      "E12+E21",
+      "E13+E31",
+      "E23+E32"
+    ],
+    "points": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        4,
+        9,
+        16
+      ]
+    ],
+    "transportL": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "horizontalTransport": "L^-T",
+    "verticalTransport": "L A L^T",
+    "alpha": "1",
+    "betas": [
+      "0",
+      "-1/2"
+    ],
+    "sigma": "-1",
+    "alternateSigma": "1",
+    "metric": "GHH=sigma y, GHV=0, GVV=alpha Tr(p A p B)+beta Tr(p A)Tr(p B)",
+    "generalConditions": "alpha sigma (alpha+4beta)!=0, y real invertible symmetric Lorentz",
+    "W": "[y sym(uv^T)y-beta/(alpha+4beta)(u^T y v)y]/alpha",
+    "connection": [
+      "GammaAB=-(A p B+B p A)/2",
+      "GammaAu=p A u/2",
+      "Gammauv=-sigma W(u,v)/2"
+    ],
+    "curvatureConvention": "R(a,b)c=nabla_a nabla_b c-nabla_b nabla_a c",
+    "typedCurvature": [
+      "RABC=-y[[pA,pB],pC]/4",
+      "RABu=-[pA,pB]u/4",
+      "RAuB=p B p A u/4",
+      "RAuv=-sigma W(p A u,v)/4",
+      "RuvA=-sigma[W(u,pAv)-W(v,pAu)]/4",
+      "Ruvw=sigma(alpha+6beta)/(8alpha d)[u<v,w>-v<u,w>]"
+    ],
+    "independentRoute": "full metric jets; Koszul inverse solve; differentiated Koszul including -(DG)Gamma; recovered coefficient composition; ordinary trace and independent inverse-Gram lowered contraction",
+    "ricciVV": "-5Tr(pA pB)/4+Tr(pA)Tr(pB)/4",
+    "ricciHH": "-GHH/(4d)",
+    "ricciHV": "0",
+    "raisedRicci": "-5PT/(4alpha)-(I-PT)/(4d), rankPT9, rank(I-PT)5",
+    "scalar": [
+      "-25/2",
+      "-10"
+    ],
+    "ricciEigenvalues": [
+      [
+        "-5/4",
+        "-1/4"
+      ],
+      [
+        "-5/4",
+        "1/4"
+      ]
+    ],
+    "einsteinEigenvalues": [
+      [
+        "5",
+        "6"
+      ],
+      [
+        "15/4",
+        "21/4"
+      ]
+    ],
+    "determinant": "64 sigma^4 alpha^9 d/(det y)^4",
+    "inertia": [
+      [
+        8,
+        6,
+        0
+      ],
+      [
+        7,
+        7,
+        0
+      ]
+    ],
+    "alternateInertia": [
+      [
+        10,
+        4,
+        0
+      ],
+      [
+        9,
+        5,
+        0
+      ]
+    ],
+    "sectionalAnchors": [
+      "vertical A=diag(0,1,-1,0),B=E12+E21: -1/2",
+      "mixed y,e1: -1/(16d)",
+      "horizontal e1,e2: (1+6beta)/(8d)"
+    ],
+    "productDecoys": [
+      "intrinsic Ric(A,A)=-2 vs full-5/2",
+      "product Ric(e1,e1)=0 vs full1/(4d)"
+    ],
+    "traceRicciAnchor": "Ric(y,y)=-1 vs intrinsic0",
+    "wrongMusicalDecoy": "independent sigma*y^-1 Gram jets produce Gamma(E11,e1)=-e1/2 vs +e1/2; transport both fields",
+    "expectedCounts": {
+      "arithmeticControls": 8,
+      "contexts": 4,
+      "inverseControls": 8,
+      "gramEntries": 784,
+      "metricFirstJets": 10976,
+      "metricSecondJets": 153664,
+      "metricSecondJetSymmetry": 153664,
+      "connectionOutputs": 784,
+      "koszulPairings": 10976,
+      "torsionControls": 784,
+      "metricCompatibility": 10976,
+      "connectionDerivativeOutputs": 10976,
+      "curvatureOutputs": 10976,
+      "firstPairSkew": 10976,
+      "bianchi": 10976,
+      "loweredEntries": 153664,
+      "lastPairSkew": 153664,
+      "pairExchange": 153664,
+      "ricciEntries": 784,
+      "inverseGramRicciEntries": 784,
+      "raisedRicciEntries": 784,
+      "einsteinEntries": 784,
+      "scalarRows": 4,
+      "projectorRows": 4,
+      "gramDeterminants": 4,
+      "gramInertias": 4,
+      "alternateSignatureControls": 4,
+      "congruenceMetric": 392,
+      "congruenceConnection": 392,
+      "congruenceCurvature": 5488,
+      "congruenceRicci": 392,
+      "sectionalAnchors": 12,
+      "traceRicciAnchors": 4,
+      "productRicciDecoys": 8,
+      "wrongMusicalDecoys": 4
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 80,
+      "maximumEstimatedCpuSeconds": 240,
+      "estimatedPeakBytes": 268435456,
+      "maximumEstimatedPeakBytes": 805306368,
+      "maximumTrackedMatrixProducts": 200000000,
+      "maximumMatrixDimension": 14,
+      "largestArrayEntries": 38416
+    },
+    "scope": {
+      "sourceNormalizationSelected": false,
+      "sourceHorizontalConventionUniquelySelected": false,
+      "spinLiftComputed": false,
+      "shiabContractionNonzeroInferred": false,
+      "inducedStationaryBackgroundRejected": false,
+      "fullMetricEulerComputed": false,
+      "historicalFlatControlsRewritten": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "metric-connection-control-failed",
+    "full-curvature-control-failed",
+    "ricci-projector-control-failed",
+    "congruence-decoy-control-failed",
+    "source-induced-ambient-ricci-controls-pass-conditional-curved-background"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj",
+      "sha256": "7d25507c8102d3b0bb10fd28d4bcf395fcc57497cd56ce71c16aceb3fc2b821f"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "ambient-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "geometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

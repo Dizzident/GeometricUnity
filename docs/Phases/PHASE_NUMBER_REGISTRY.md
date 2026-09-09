@@ -71,7 +71,10 @@ back, NO new phase directory may be created outside this table.
 | 605 | Stationary-background Fourier closure audit (A56) | DONE, first frozen run passed: full c0 seven-mode closure, exact cyclic/Jordan controls, separate constant carrier and formal-c leakage witness; no physical dispersion or pole identification. |
 | 606 | General-companion stationary Fourier closure audit (A57) | DONE, first frozen run passed: full12D formal-c closure,126 rows,13608 action bilinears and parameter-dependent diagnostic factors;78 certified minimal strata,48 explicitly unasserted; no physical dispersion or source parameter selection. |
 | 607 | Source-induced vertical curvature audit (A57 extension) | DONE, first frozen run passed: exact metric-fiber connection/curvature and four transported nonzero witnesses; flat-reference assumption boundary, no inference that its Shiab contraction is nonzero or a physical vacuum is selected. |
-| 608+ | Unassigned - extend this registry before use | - |
+| 608 | Source-induced ambient Ricci audit (A58) | DONE, first frozen run passed: full14D local block-metric connection/curvature and Ricci controls under explicit conventions; no source normalization, spin contraction or physical vacuum selected. |
+| 609 | Chiral null-branch stationarity audit (A58) | DONE, first frozen run passed: full declared-action gradient/adjoint controls for a constructive chiral branch with nonzero curvature and covariant derivative; no induced-LC or global physical-vacuum identification. |
+| 610 | Induced spin-curvature contraction audit (A58 extension) | DONE, first frozen run passed: full608-curvature transport into an oriented rational orthonormal frame, typed spin action and literal nonzero source contraction; no physical vacuum, source normalization or spectrum selected. |
+| 611+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

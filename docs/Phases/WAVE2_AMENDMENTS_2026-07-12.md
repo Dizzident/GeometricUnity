@@ -3122,3 +3122,155 @@ All shared surfaces include606/607. Final incremental follows all edits.
 608+ remains unallocated; next full ambient curvature/typed contraction and
 constructive null-branch tests are analytical only. All14flagsfalse,
 O4/externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
+
+## Amendment A58 - full induced geometry and constructive chiral stationarity
+
+2026-09-09 UTC. Previous A57 checkpoint12e2635c9d0b43b277dc42bb46d77f2c3ce0e64e
+was committed/pushed with independently matching remote and clean worktree.
+Final pass_2026-09-09T13-23-18-206Z.json passed76steps/391skips,387/3checklist,
+O4coverage31/31,overturn94/94. Historical outputs changed only volatile fields.
+Previous goal turn was PROGRESS; concrete decisive safe experiments remain.
+
+Allocate608 source-induced-ambient-ricci-audit and609
+chiral-null-branch-stationarity-audit.610+free. These are prospective,
+deterministic exact zero-sampling studies, not source conventions or physical
+predictions. No science execution before full independent/MAIN approval.
+
+608 declares the full local block metric GHH=sigma*y, GHV=0,
+gV(A,B)=alpha Tr(y^-1 A y^-1 B)+beta Tr(y^-1 A)Tr(y^-1 B).
+The horizontal coordinate formula is a typed reconstruction through the
+tautological musical/lift map, not a literal printed source formula; y^-1
+is the covector metric, not a replacement in commuting vector coordinates.
+Freeze two607congruent fiber points, alpha1,beta0/-1/2,sigma-1; the former
+is an(8,6)control and the latter an explicitly conditional(7,7)branch.
+No unique source normalization or trace/sign choice is inferred. Full
+coordinate metric jets and Koszul/differentiated-Koszul curvature must agree
+with independently derived typed horizontal/vertical formulas, complete
+symmetry/Bianchi/metric-compatibility and Ricci/projector controls. Mixed
+terms must not be discarded as a product-metric approximation. Transport
+horizontal vectors by L^-T while vertical tensors transform by L A L^T.
+Predicted RicVV=-5Tr(UV)/4+TrUTrV/4, RicHH=-GHH/[4(alpha+4beta)], mixed0;
+eigenvalues-5/(4alpha) on traceless9 and-1/[4(alpha+4beta)] on remaining5.
+Full spin lift/literal K contraction requires separate typed certification;
+608 does not infer KFB!=0 merely from nonzero curvature.
+Contract phase608-a58-source-induced-ambient-ricci-v1;
+terminal source-induced-ambient-ricci-controls-pass-conditional-curved-background.
+
+609 tests the constructive first-action branch L=(1+hOmega)Cl_odd,
+S=-K(FB)/kappa, kappa constant/nonzero, with both matching chiralities and
+formal companion parameter c. General proofs must establish real H-anti
+membership, isotropic pairings, K(L)=0, K^dagger(L)=0 and full adjoint
+image inclusions without replacing full-field stationarity by an L-restricted
+derivative. The declared even spin control B must have both nonzero FB and
+nonzero D_B S; it is NOT identified with608's induced Levi-Civita connection.
+Use literal full K/transpose chains and independent original-action forward
+variations, retaining separate curvature/mass terms and nonzero inner-c
+intermediates before their outer cancellation. Wrong-sign S must reject
+full stationarity even if its action and trace gradient-square vanish;
+kappa0 is a separate obstruction control, never divided by zero.
+
+Pointwise first variation is a separate proof obligation: derivative terms
+may vanish by K(D_B S)=0 and K^dagger S=0 without integration by parts.
+If proven for unrestricted field jets, smooth metric-dependent bundle
+identifications introduce no surviving field-variation chain term. A local
+density identity is not alone global admissibility, a finite physical action,
+a stable vacuum, the separate9.11 norm, or a coupled physical propagator.
+Freeze the full proof and bounded metric/jet controls before claiming any
+such conditional identity; no generic theorem inferred just from sparse rows.
+Contract phase609-a58-chiral-null-branch-stationarity-v1;
+terminal chiral-null-branch-controls-pass-full-stationarity-conditional.
+
+Separate builders own only their study roots/unbound implementation notes;
+MAIN owns shared integration. Independent reviewer and MAIN each read all
+scientific code/helpers/projects/proofs/fixtures/contracts completely, verify
+unique exact bindings and live726core closure, and approve all expected
+counts, coefficients, resources, tolerances and terminal precedence BEFORE
+first science. Release build-only allowed0warnings/errors. All new files
+exactly one final newline before freeze. Preserve scientific failures and
+version repairs; never rewrite historical frozen files or registered core.
+Wire generator/traversal/101/202/verifier/9scanners(207both)/registry/notes/
+restart/journal/reference/ledger. Final incremental follows all edits before
+commit/push. All14flagsfalse,O4/externalreviewpending,Phase561closed,
+deficits15/14,physicalclaims0; no sampling, source norm, physical fields or units.
+
+### A58 extension - induced spin-curvature contraction (Phase610)
+
+608 FIRST frozen Release run passed unchanged after complete independent/MAIN
+reviews,15unique bindings/live726closure. Wall2.394s,user2.609s,sys0.070s.
+Contract2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87;
+full/summary29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26.
+All10976full curvature outputs,153664lowered entries and784Ricci entries
+match exact predictions; mixed/product/musical/sign controls pass. While609
+is being completed, allocate the decisive next610typed spin/contraction test;
+611+free. This is not a new source convention or a physical promotion.
+
+Use only608's explicitly conditional alpha1,beta-1/2,sigma-1 branch at both
+congruent points. Build an exact rational orthonormal frame with positively
+oriented ordered7positive/7negative directions. At eta, diagonal vertical
+A=eta U uses Hadamard traceless rows
+(1,1,-1,-1)/2,(1,-1,1,-1)/2,(1,-1,-1,1)/2 and trace T=-eta/2.
+Pair spatial off-diagonal P1,P2,P3 on12,13,23 with temporal N1,N2,N3
+on01,02,03. Positive combinations(3P+N)/4 and negative(P+3N)/4
+have exact norms+1,-1 and cross0. Order positivesH0,D1,D2,D3,p1,p2,p3;
+negativesH1,H2,H3,T,n1,n2,n3. Frame determinant+1/8; transport by
+diag(L^-T,SymL) gives secondpoint determinant41472. Freeze full matrix,
+inverse, orientation, metric and typed transport controls before science.
+
+Transport the FULL recovered608 curvature, including its mixed components,
+not an Einstein tensor substituted as input. If
+L_abcd=G(R(a,b)c,d), the bound591/592 tensor convention isR_abcd=-L_abcd.
+The ordered-pair spin lift
+F_ab=(1/2)sum(c<d)R_abcd sigma_c sigma_d gamma_c gamma_d
+must independently satisfy[F_ab,gamma_e]=gamma(R(a,b)e) on all directions.
+Wrong last-index sign, omitted half and omitted mixed metric signs are
+explicit nonzero decoys; orientation/chirality cannot be silently switched.
+This pointwise curvature transform does not transform a connection while
+omitting the derivative of its frame.
+
+Apply the literal full source CCA chain with both h signs and formal c
+slots using immutable600 algebra, not the expected Ricci formula. Bound592
+matching gives the independent oracleKFB=-P EinsteinGamma. Expected
+Einstein coefficients15/4 on9tracelessvertical and21/4 onH4+trace1;
+coefficient-square2115/4, declared Pair(Gamma,KFB)=60, while self-trace
+pairing is0. Retain nonzero output coefficients and inner legs; the c slot
+vanishes on this algebraic Riemann input, not on arbitrary gauge curvature.
+Passing would establish a conditional nonzero curvature source, not reject
+the constructive torsion cancellation under investigation in609.
+
+Contract phase610-a58-induced-spin-curvature-contraction-v1;
+terminal induced-spin-curvature-contraction-controls-pass-nonzero-conditional-source.
+Freeze all exact counts/proofs/decoys/resources/tolerances/precedence and
+unique complete lineage including608 outputs before first execution.
+Complete independent/MAIN code/helper/project/proof/contract/live726review
+and explicit MAIN first-run approval required; Release build-only allowed.
+Builder owns610root/unboundnote only;608scientificfiles immutable. MAIN
+wires every shared surface and finalcadence before checkpoint. No science
+yet in609/610. All14flagsfalse,O4/externalreviewpending,Phase561closed,
+deficits15/14,physicalclaims0; no source norm, field, units or sampling choice.
+
+### A58 execution record - all three first frozen runs passed
+
+Complete independent/MAIN reviews and explicit MAIN approval preceded each
+FIRST scientific run.608/609/610 all passed unchanged, with15/20/24 unique
+exactbindings, live726 closure and35/37/44 exact count predictions. Release
+builds had0warnings/errors. Wall times2.394s/2.046s/1.375s respectively.
+No scientific failure, version repair or post-execution bound-file edit.
+
+609 contract436b41c3641e21d5cd64591bac88d13a21deaa0bcf6042ea1f06071b3873f83b;
+full/summarye368290636c199b459d41b9d55a1cbde6f39e3daff32f38146f22c26648c5e42.
+610 contractc3bd65163480ae51b75c9500fb897cf2a1291a06655f538ce2be9a2776d9233e;
+full/summary507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4.
+608 hashes are retained in the preceding extension record.
+
+609 passes full-gradient/adjoint, pointwise field/conditional metric-density
+and nonzero wrong-sign controls;610 passes two complete frame transforms,
+2548 actual spin actions and eight literal contractions. KFB=-P EinsteinGamma
+is nonzero but isotropic; this does not reject609's constructive cancellation.
+No global admissibility, physical vacuum, norm, source operator or spectrum
+selection follows. Further untiedCAA and coupled-response leads are recorded
+in the existing reference;611+unallocated until the next prospective tranche.
+
+Targeted101/202/integrity passes390/3,coverage31/31,overturn94/94 after one
+new-verifier schema typo was corrected without changing any scientific input
+or output. Final incremental follows all edits; commit/push only after pass.
+All14flagsfalse,externalreviewpending,Phase561closed,deficits15/14,massclaims0.
