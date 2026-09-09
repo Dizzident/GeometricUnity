@@ -474,6 +474,8 @@ dotnet run --no-build -c Release --project studies/phase602_stationary_odd_backg
 dotnet run --no-build -c Release --project studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj
 dotnet run --no-build -c Release --project studies/phase604_squared_action_stationary_equivalence_audit_001/Phase604SquaredActionStationaryEquivalenceAudit.csproj
 dotnet run --no-build -c Release --project studies/phase605_stationary_background_fourier_closure_audit_001/Phase605StationaryBackgroundFourierClosureAudit.csproj
+dotnet run --no-build -c Release --project studies/phase606_general_companion_stationary_fourier_closure_audit_001/Phase606GeneralCompanionStationaryFourierClosureAudit.csproj
+dotnet run --no-build -c Release --project studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

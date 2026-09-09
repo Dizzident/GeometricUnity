@@ -440,6 +440,8 @@ const string Phase602Path = "studies/phase602_stationary_odd_background_closure_
 const string Phase603Path = "studies/phase603_homogeneous_invariant_stationary_family_audit_001/output/homogeneous_invariant_stationary_family_audit_summary.json";
 const string Phase604Path = "studies/phase604_squared_action_stationary_equivalence_audit_001/output/squared_action_stationary_equivalence_audit_summary.json";
 const string Phase605Path = "studies/phase605_stationary_background_fourier_closure_audit_001/output/stationary_background_fourier_closure_audit_summary.json";
+const string Phase606Path = "studies/phase606_general_companion_stationary_fourier_closure_audit_001/output/general_companion_stationary_fourier_closure_audit_summary.json";
+const string Phase607Path = "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -920,6 +922,8 @@ using var phase602 = TryParseJson(Phase602Path);
 using var phase603 = TryParseJson(Phase603Path);
 using var phase604 = TryParseJson(Phase604Path);
 using var phase605 = TryParseJson(Phase605Path);
+using var phase606 = TryParseJson(Phase606Path);
+using var phase607 = TryParseJson(Phase607Path);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -10817,6 +10821,28 @@ var package = new
             knownAnswerPassed = phase605.RootElement.TryGetProperty("evidence", out var p605MirrorKnown) ? JsonBool(p605MirrorKnown, "knownAnswerPassed") : null,
             controlsPassed = phase605.RootElement.TryGetProperty("evidence", out var p605MirrorControls) ? JsonBool(p605MirrorControls, "controlsPassed") : null,
             promotedPhysicalMassClaimCount = JsonInt(phase605.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        generalCompanionStationaryFourierClosureAudit = phase606 is null ? null : new
+        {
+            status = JsonString(phase606.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase606.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase606.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase606.RootElement, "exactBindingsValid"),
+            coreSourceTreeValid = JsonBool(phase606.RootElement, "coreSourceTreeValid"),
+            knownAnswerPassed = phase606.RootElement.TryGetProperty("evidence", out var p606MirrorKnown) ? JsonBool(p606MirrorKnown, "knownAnswerPassed") : null,
+            controlsPassed = phase606.RootElement.TryGetProperty("evidence", out var p606MirrorControls) ? JsonBool(p606MirrorControls, "controlsPassed") : null,
+            promotedPhysicalMassClaimCount = JsonInt(phase606.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        sourceInducedVerticalCurvatureAudit = phase607 is null ? null : new
+        {
+            status = JsonString(phase607.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase607.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase607.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase607.RootElement, "exactBindingsValid"),
+            coreSourceTreeValid = JsonBool(phase607.RootElement, "coreSourceTreeValid"),
+            knownAnswerPassed = phase607.RootElement.TryGetProperty("evidence", out var p607MirrorKnown) ? JsonBool(p607MirrorKnown, "knownAnswerPassed") : null,
+            controlsPassed = phase607.RootElement.TryGetProperty("evidence", out var p607MirrorControls) ? JsonBool(p607MirrorControls, "controlsPassed") : null,
+            promotedPhysicalMassClaimCount = JsonInt(phase607.RootElement, "promotedPhysicalMassClaimCount"),
         },
         externalReviewPacketAssembly = phase580 is null ? null : new
         {

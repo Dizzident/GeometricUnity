@@ -45,6 +45,81 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, A57;606-607 executed):
+Both FIRST frozen Release runs passed after full independent/MAIN reviews,
+21/16 unique exact bindings and live726 closure.606 wall6.454s,607 wall2.045s.
+606 verifies126 rows,1260 full columns,13608 original-action bilinears and
+all symbolic characteristic factors.78 minimal strata are certified and48
+remain explicitly unasserted. The diagnostic spectrum varies with the free
+companion parameter even under the same declared Riemann matching.
+607 verifies all10 vertical directions at four metric/trace contexts,
+4000 curvature outputs and40000 lowered entries; every transported witness
+has sectional curvature-1/2. Flat downstairs does not imply flat upstairs.
+Neither finding selects physical fields, a norm, poles or units.
+
+Targeted101/202/integrity pass387/3, O4coverage31/31, overturn94/94.
+A verifier integration typo initially referenced606 fixtures.expectedCounts
+instead of the frozen fixtures.counts; corrected verifier only. Scientific
+outputs and all bound inputs remained unchanged. Final incremental must
+follow all edits, then commit/push this tranche under the active user goal.
+
+NEXT PRIORITY (608+free): full ambient curvature/Ricci and typed spin lift,
+then literal K(FB), under explicitly declared local block metric
+G=sigma*y+gV. The natural musical/lift reconstruction gives y on horizontal
+vectors, y^-1 on covectors; do not confuse this with a commuting-coordinate
+metric inversion. Alpha1,beta-1/2,sigma-1 is a conditional(7,7) convention,
+not uniquely selected by the source. Independent analytic Ricci eigenvalues
+are-5/4 on9 vertical traceless directions and+1/4 on5 others, scalar-10.
+
+CONSTRUCTIVE PARALLEL LEAD: for L=(1+hOmega)Cl_odd, the declared matched
+K kills L-valued two-forms and K^dagger kills L-valued one-forms. If frozen
+full-adjoint/parity tests confirm this, S=-K(FB)/kappa (kappa!=0) solves
+the full first-action gradient on curved geometry, not just its L restriction.
+The resulting fixed-metric Hessian may have a nilpotent differential part
+of index at most3. These are independently reviewed analytical leads, NOT
+executed findings or physical vacua. An on-shell metric-variation argument
+requires a smooth stationary family, full field Euler equation and valid
+boundary/compact-support assumptions; zero action values alone are insufficient.
+Freeze exact prospective counts/proofs/decoys before any successor execution.
+All14 flagsfalse, O4/externalreviewpending, Phase561closed, deficits15/14,
+physicalclaims0. Concrete decisive tests remain; goal stays active.
+
+PRE-EXECUTION CONTEXT (2026-09-09 UTC, A57; historical):
+authoritative completed checkpoint34492879d40eb24f0db0e6d49745198e601b4880
+was committed/pushed, remote independently matched, clean worktree.
+Final A56 pass_2026-09-09T12-37-10-846Z.json ran77/skipped388,385/3 checklist.
+Its sole staged whitespace exception was605's frozen Program.cs final blank;
+preserve the reviewed hash, documented in that commit. All historical output
+changes were generatedAt/runtimeSeconds only. Previous tranche was PROGRESS.
+
+606 now implements independently derived FULL12D general-c closure, all24
+formal columns,126 bounded parameter rows and original-action bilinears.
+The chiral flag predicts a frequency-independent characteristic polynomial
+but c-dependent factors.592's Riemann-matching condition leaves c free;
+different diagnostic factors therefore share the same matching requirement.
+This is nonuniqueness of the diagnostic spectrum, NOT physical boson masses.
+General nonzero-c minimal/Jordan claims require exact separate certificates;
+do not promote generic perturbation arguments to every fixture. Actual n0
+has six constant odd modes, not twelve nonvanishing Fourier modes.
+
+607 targets a more fundamental assumption: the source's metric fiber is
+curved EVEN OVER A FLAT DOWNSTAIRS BASE. Independent source/geometry review
+derived R_y(A,B)C=-y[[y^-1A,y^-1B],y^-1C]/4 for the declared Frobenius
+metric family, with a nonzero spatial witness R(A,B)B=-A. The fiber is
+totally geodesic in the induced local block metric, so ambient curvature
+survives; the horizontal metric need not be y-independent.606's flat14D
+reference remains a conditional control, not this source-induced geometry.
+Important: FB!=0 does NOT imply K(FB)!=0 or a nonstationarity verdict.
+The complete induced curvature/contraction/background calculation remains
+a concrete successor. The source varies MET(X1,3), not arbitrary MET(Y7,7).
+
+Both packs require full independent/MAIN code/helper/project/proof/fixture/
+contract review, unique exact bindings/live726 closure and explicit MAIN
+approval before FIRST scientific execution. No606/607 run yet. All14 flags
+false, O4/externalreviewpending, Phase561closed, deficits15/14, physicalclaims0.
+608+free. See full A57/extension and stationary-background reference. Older
+allocation/free language below is historical; never rewrite frozen artifacts.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, A56; Phases604-605 executed):
 both first frozen Release runs passed after full independent/MAIN reviews,
 unique exact bindings and live726 core closure.604 has20 bindings,605 has18.

@@ -2934,3 +2934,191 @@ Phase561closed, source deficits15/14, physicalclaims0.606+free.
 Parallel analytical work rejects the proposed10D general-c enlargement and
 identifies two missing grade12 directions;12D remains a candidate awaiting
 complete full-column proof. This is a concrete next safe experiment.
+
+## A57 - General-companion stationary Fourier closure (2026-09-09 UTC)
+
+Previous checkpoint34492879d40eb24f0db0e6d49745198e601b4880 is committed,
+pushed and independently remote-verified with clean worktree. Final A56
+pass_2026-09-09T12-37-10-846Z.json ran77/skipped388,385/3 checklist.
+The sole staged whitespace exception was605's already frozen Program.cs
+final blank line; preserve its exact hash, documented in the commit message.
+A56 was PROGRESS: both first frozen audits passed and independent analytical
+work constructively closed the enlarged12D carrier. No source choice made.
+
+Allocate606 general-companion-stationary-fourier-closure-audit;607+free.
+Contract phase606-a57-general-companion-stationary-fourier-closure-v1,
+terminal general-companion-fourier-closure-controls-pass-diagnostic-spectrum-nonunique.
+Use the unchanged declared flat(7,7) geometry, periodic normalized x0,
+Phi1=(1+hOmega)Gamma1,Phi2=(c-ihOmega)Gamma2, epsilonI, full CCA and
+S*=-kappa(1-hOmega)Gamma1/(416gamma), gamma nonzero. This is a conditional
+fixed-geometry connection Hessian, not a demonstrated source metric vacuum.
+
+Independent full-source derivations now close on the ordered real H-anti
+basis(u,b,Omega u,Omega b,z,oz,e,e0,q,j,T,T0), retaining605's conventions,
+z=iZ_n,oz=iOmega Z_n,j=i theta2 I sin(nx0),T=iOmega e,T0=iOmega e0.
+The nonzero-frequency Gram is diagonal
+(-1/2,-1/2,1/2,1/2,-6,6,6,1/2,-1/2,1/2,-6,-1/2), inertia6+/6-.
+The complete24 formal c0/c1 columns and raw three-leg derivations must be
+written in STUDY and frozen, checked against FULL source output with zero
+residual after reconstruction, not just an expected matrix projection.
+K is affine in c; the potential is affine in kappa and the derivative
+linear in n, by construction rather than fitted samples.
+
+The chiral flag has odd-plus3 closed, even6 mapping into odd-plus, and
+odd-minus3 mapping into even. The potential preserves these odd chiralities;
+n enters only off-diagonal blocks. Freeze its explicit change of basis and
+factor proof: characteristic
+(lambda-15kappa/13)^2 Qodd^2 (lambda-kappa) lambda Qeven Qhook,
+Qodd=lambda^2-6kappa lambda/13+kappa^2(c^2-14)/26,
+Qeven=lambda^2-17kappa lambda/13+12kappa^2(5-c^2)/169,
+Qhook=lambda^2-30kappa lambda/13+kappa^2(8075+49c^2)/6084.
+The hook block in(e-12e0,T-12T0) is
+kappa/78[[85,-7hc],[7hc,95]]. The trace block in(e+e0,q,T+T0)
+is kappa/13[[-1,h,hc],[-13h,13,13c],[-hc,c,5]], whose second row is
+13h times the first. The separate central j potential is kappa j.
+These factors are prospective exact tests, not particle masses or poles.
+
+Freeze bounded menu h=-1,+1; n=0,1,2; kappa=-1,0,1;
+c=0,+/-1,+/-5/7,+/-2:126 rows. Check full source affine slots and each
+three-leg output, all original-action bilinears through an independent
+forward-only scalar mixed derivative in BOTH c slots, Gram/adjoint/typing,
+full reconstructed columns and exact characteristic polynomials. In
+addition to finite rows, preserve the full symbolic factor/flag proof;
+finite parameter checks alone do not establish arbitrary-c statements.
+
+At n0 all six sine fields vanish: use ACTUAL constant odd6 and Gram
+(-1,-1,1,1,-12,12), characteristic(lambda-15kappa/13)^2 Qodd^2;
+minimal(lambda-15kappa/13)Qodd for kappa nonzero, including repeated Qodd
+roots, since Qodd(15kappa/13)=kappa^2(44/169+c^2/26)>0 for real c.
+Seed-u dimension3 for c nonzero,2 for c0; kappa0 is the zero operator.
+At kappa0,n nonzero, H0^3=0, seed-u dimension3 for every real c.
+Full12 ranks are rankH0=6 for c nonzero,4 at c0; rankH0^2=3 except
+c0 or c^2=4/3 where2. The symbolic minus-to-plus H0^2 determinant is
+192c^2(4-3c^2)n^6; preserve an exact proof of the exceptional irrational-c
+stratum, not a rounded numerical row. Corresponding full Jordan types
+are3J3+3J1 generically,2J3+2J2+2J1 at c^2=4/3,2J3+6J1 at c0.
+For c0,kappa*n nonzero, full12 minimal has degree10 but seed-u degree6:
+do not conflate full minimal with a single seed or characteristic.
+General nonzero-c/kappa minimal or collision Jordan claims are NOT authorized
+by generic perturbative reachability alone; freeze only exact independently
+derived certificates. Characteristic and full closure cover the whole menu.
+
+Phase592's declared Riemann matching fixes a!=0,d=+/-1,b=-da but leaves c
+free. Its normalization a1,bh,d-h is this exact family. Therefore c0/c1
+have the same matching requirement but different diagnostic factors:
+hook roots85kappa/78,95kappa/78 at c0 versus
+kappa(90+/-i sqrt24)/78 at c1. This disproves uniqueness of THIS diagnostic
+spectrum from that matching alone. It is not a physical instability theorem,
+source convention selection, physical field extraction or boson prediction.
+
+Separate606 builder owns only its study root/implementation note. Independent
+reviewer reads the full pack; MAIN owns all shared surfaces and must read
+every scientific file/helper/proof/project/fixture/contract, verify unique
+exact bindings and live726 core closure and give explicit first-execution
+approval. All expected counts, coefficients, tolerances, resources and
+terminal precedence freeze first. Release build-only checks permitted;
+no trial scientific run to discover expected outputs. All new files must
+have exactly one final newline BEFORE freeze. Preserve scientific failures,
+version any repair; never rewrite600-605 or the registered core.
+Wire generator, traversal,101,202, verifier,9 scanners(207 both), registry,
+implementation, restart, journal and existing stationary-background reference
+plus ledger in the same checkpoint. Final incremental follows all edits.
+
+Parallel read-only source-geometry work asks whether the flat14D control
+belongs to the source-induced downstairs/upstairs metric family. Source9.1
+varies MET(X1,3), not arbitrary MET(Y7,7); section3.4 constrains the upstairs
+metric through the downstairs Levi-Civita connection. Do not infer full
+source metric stationarity from the diagnostic connection-only Hessian.
+All fourteen flagsfalse, O4/externalreviewpending, Phase561closed, deficits
+15/14 and physicalclaims0. No sampling, fitting, source norm, units or
+physical time selection. Concrete next experiments remain.
+
+### A57 extension - source-induced vertical curvature (Phase607)
+
+Parallel source inspection and independent algebraic review found a concrete
+background-assumption gap. Allocate607 source-induced-vertical-curvature-audit;
+608+free. Contract phase607-a57-source-induced-vertical-curvature-v1,
+terminal source-induced-vertical-curvature-controls-pass-flat-reference-not-induced.
+This is a deterministic exact geometric control, no scientific run yet.
+
+The primary draft3.7-3.10 equips each metric fiber with double-contraction
+metric and permits trace-sign freedom. For nondegenerate Lorentz matrices y,
+declare the full family gV_y(A,B)=alpha Tr(y^-1 A y^-1 B)
++beta Tr(y^-1 A)Tr(y^-1 B), alpha!=0,alpha+4beta!=0.
+Its torsion-free compatible connection on constant symmetric matrix fields is
+Gamma_y(A,B)=-(A y^-1 B+B y^-1 A)/2, independent of beta.
+Derive this from the full metric derivative/Koszul identity, not by analogy
+with the positive-definite case. Its curvature is
+R_y(A,B)C=-y[[y^-1 A,y^-1 B],y^-1 C]/4.
+Freeze independent derivative-of-Gamma and commutator routes, complete
+symmetry/Bianchi/metric-compatibility controls and nonzero decoys.
+
+At eta=diag(-1,1,1,1), A=diag(0,1,-1,0), B=E12+E21,
+R(A,B)B=-A, gV(A,A)=gV(B,B)=2alpha, gV(A,B)=0;
+lowered curvature=-2alpha, sectional curvature=-1/(2alpha).
+This remains nonzero for either allowed nondegenerate trace sign.
+Use exact rational menu: two congruent fiber points eta and
+L eta L^T with L=diag(1,2,3,4); alpha1,beta0 or-1/2.
+Freeze all10 symmetric coordinate directions, exact coefficient censuses,
+metric inertia/nondegeneracy, Koszul/connection/curvature identities,
+congruence transport and naive-flat-connection negative controls.
+The general alpha/beta formula and proof must remain explicit; finite rows
+alone do not fix a source normalization or certify arbitrary metrics.
+
+Source3.4 identifies the induced upstairs structure through the downstairs
+Levi-Civita split, and9.4 names FB as the induced spin curvature. For a flat
+downstairs connection, coordinate horizontal/vertical cross terms vanish
+identically and the vertical metric has no x dependence. Thus GammaH_VV=0
+by Koszul: fibers are totally geodesic and their nonzero curvature is also
+ambient curvature. The horizontal metric can depend on y, so do NOT call
+the full metric a Riemannian product. Freeze that precise local block-metric
+argument and explicit assumptions. The nonzero curvature cannot be removed
+by an invertible gauge rotation of the reference connection.
+
+Crucial limit: FB!=0 does NOT imply K(FB)!=0; the audited contraction has
+a kernel. This phase does not evaluate the full induced curvature's Shiab
+contraction, its cancellation against covariant torsion terms, the full
+metric Euler equation or stationary backgrounds on the actual Observerse.
+It rejects identification of the flat14D diagnostic reference with this
+induced geometry even when the downstairs base is flat. Existing flat
+controls remain valid within their declared scope and are not rewritten.
+
+Record exact primary-source spans and relevant existing code assumptions
+as bindings, including the explicit flat LC implementation and geometry
+classifier limitation. No core fix or reclassification of historical runs.
+Independent reviewer and MAIN must completely review every scientific
+file/helper/project/proof/fixture/contract, all unique exact bindings and
+live726 core before first execution. All counts/coefficients/tolerances/
+resources/precedence freeze first; Release build-only permitted. Preserve
+failed outputs and version repairs.607 builder owns only its root/note;
+MAIN integrates every shared surface and final cadence/checkpoint.
+All fourteen flagsfalse, externalreviewpending, Phase561closed, deficits
+15/14, physicalclaims0; no source norm/scale/physical-time or sampling choice.
+
+### A57 execution record -606/607 first frozen runs
+
+Both first frozen Release runs passed after complete independent/MAIN
+code/helper/project/proof/fixture/contract reviews, unique exact bindings
+and live726 core closure. MAIN gave explicit first-execution approval.
+606:21bindings,wall6.454s,user6.981s,sys0.086s; contractSHA256
+622bfde465dfd7c83c3faf8e84472251b533f2b2d21b8b7dc0ae9b9ca68e8371;
+full/summarySHA256
+6a2b0672f2de3abcab551d6a4742c59f7a8275e309162c0ef77c1d3d9b3fd19b.
+126rows,1260columns,13608action bilinears,120symboliccolumns,360legs,
+2592action coefficients,78certified/48unasserted minimal strata;
+44944base and84630new-grade word controls,16384Hodge controls allpass.
+607:16bindings,wall2.045s,user2.210s,sys0.080s; contractSHA256
+001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd;
+full/summarySHA256
+a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348.
+All30count fields and7support totals match; four contexts,4000curvature
+outputs,40000lowered entries and four transported sectional-1/2witnesses.
+Instrumented Matrix.Mul count2282563; this is not a count of all arithmetic.
+Scientific files unchanged, no failed scientific run or repair. One shared
+verifier integration typo used606 fixtures.expectedCounts instead ofcounts;
+corrected only verifier, preserved frozen contract/output. Ordered101/202
+pass387/3 and integrity rerun passes,coverage31/31,overturn94/94.
+All shared surfaces include606/607. Final incremental follows all edits.
+608+ remains unallocated; next full ambient curvature/typed contraction and
+constructive null-branch tests are analytical only. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.

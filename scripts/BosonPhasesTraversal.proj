@@ -460,6 +460,8 @@
     <PhaseProject Include="../studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj" />
     <PhaseProject Include="../studies/phase604_squared_action_stationary_equivalence_audit_001/Phase604SquaredActionStationaryEquivalenceAudit.csproj" />
     <PhaseProject Include="../studies/phase605_stationary_background_fourier_closure_audit_001/Phase605StationaryBackgroundFourierClosureAudit.csproj" />
+    <PhaseProject Include="../studies/phase606_general_companion_stationary_fourier_closure_audit_001/Phase606GeneralCompanionStationaryFourierClosureAudit.csproj" />
+    <PhaseProject Include="../studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

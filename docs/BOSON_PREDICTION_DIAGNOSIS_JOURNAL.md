@@ -23731,3 +23731,80 @@ safeguard: extra square-action critical points are not exclusively an
 indefinite-pairing artifact, but do not by themselves refute a solver that
 demands zero residual. No source norm is chosen by this observation.
 All14 flagsfalse, O4/externalreviewpending, Phase561closed. Registry606+free.
+
+## 2026-09-09 UTC: A57 full companion carrier and induced geometry
+
+Previous goal turn was PROGRESS. Checkpoint34492879d40eb24f0db0e6d49745198e601b4880
+was committed/pushed, remote independently matched and worktree clean.
+Final A56 pass_2026-09-09T12-37-10-846Z.json ran77/skipped388,385/3 checklist,
+coverage31/31, overturn94/94, deficits15/14 and physicalclaims0.
+The70 changed historical output lines were only generatedAt/runtimeSeconds.
+Staging found one final blank in605's already frozen Program.cs; MAIN
+preserved its reviewed hash rather than alter a scientific file after execution.
+The sole whitespace-check exception is documented in the commit message.
+
+Parallel analytical work completed all24 formal source columns of the12D
+general-c carrier. MAIN and independent agents checked signed Gram/reciprocity,
+the odd-chiral flag and complete characteristic factors. The characteristic
+remains independent of n on this closed carrier but varies with c, while592's
+declared Riemann matching leaves c free. Allocate606 to test fullsource
+columns/legs, independent original-action bilinears,126 finite rows and a
+symbolic factor proof. General-c minimal/Jordan claims remain gated by exact
+certificates; generic perturbative reachability does not authorize every row.
+
+A second independent investigation found a more fundamental assumption:
+flat downstairs geometry does not make the source-induced14D metric flat.
+The metric-fiber Frobenius connection has exact nonzero vertical curvature;
+orthogonal block geometry and x-independent vertical metric make fibers
+totally geodesic even though the horizontal metric depends on y. MAIN and
+the third agent independently checked the connection, curvature witness and
+source spans. Allocate607 to a complete10basis exact geometric audit at
+two congruent fiber points and both trace-sign controls. No core edits.
+
+Source9.1 varies MET(X1,3), not arbitrary MET(Y7,7). Existing flat14D studies
+remain legitimate conditional controls, not established source backgrounds.
+Nonzero FB alone does NOT prove nonzero K(FB) or nonstationarity: the
+contraction has a kernel. Its full induced curvature/contraction and the
+covariant background equations remain concrete further leads.
+
+Both606/607 packs must freeze all expected counts/coefficient/tolerance/
+resource/precedence and pass complete independent/MAIN code/helper/project/
+proof/contract/exactbinding/live726 reviews before first science. No run yet.
+Allsharedwiring now includes606/607 except finalverifier pins pendingfreeze.
+Targeted101/202Release builds pass0warnings/errors.608+free.
+All14 flagsfalse, O4/externalreviewpending, Phase561closed, physicalclaims0.
+
+### 2026-09-09 UTC - A57 first frozen results and constructive curved lead
+
+606/607 both passed on first scientific execution after complete independent
+and MAIN reviews,21/16 unique bindings and live726 core closure. No frozen
+scientific file was edited after execution.606 wall6.454s verifies126rows,
+1260fullcolumns,13608original-action bilinears and all symbolic factors;
+78minimal strata certified,48explicitly unasserted.607 wall2.045s verifies
+four metric contexts, all10directions,4000curvature outputs/40000lowered
+entries and four nonzero transported sectional-1/2witnesses.
+Full/summary hashes respectively
+6a2b0672f2de3abcab551d6a4742c59f7a8275e309162c0ef77c1d3d9b3fd19b and
+a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348.
+
+Two useful corrections to assumptions: the matching condition leaves a
+parameter that changes diagnostic spectral factors, and a flat downstairs
+base still has curved induced metric fibers. Neither constitutes a physical
+spectrum or a no-solution theorem. The full contraction must still be tested.
+Parallel independent derivations produced conditional full ambient Ricci
+and a constructive L=(1+hOmega)Cl_odd candidate S=-K(FB)/kappa. Full adjoint
+and covariant image identities suggest exact first-action stationarity and
+a nilpotent differential Hessian part. A third review clarified horizontal
+vector versus covector musical maps and the on-shell metric chain-rule
+proof obligations. These leads remain analytical/unexecuted;608+free.
+See the existing stationary-background reference for formulas, source spans,
+conditional normalization, full-field and boundary qualifications.
+
+Ordered101/202 gives387passed/3standingphysicalfailures. First sharedverifier
+run caught an integration typo:606 contract stores counts underfixtures.counts,
+notfixtures.expectedCounts. Corrected the new verifier assertion only; no
+scientific result/input changed. Integrity now passes, O4coverage31/31 and
+overturn94/94. Final incremental follows all edits before checkpointing.
+No source convention, norm, physical field, pole or unit selected. All14flags
+false, externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
+This tranche is PROGRESS; decisive safe experiments remain under the active goal.

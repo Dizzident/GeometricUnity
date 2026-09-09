@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "phase": 607,
+  "phaseId": "phase607-source-induced-vertical-curvature-audit",
+  "contractId": "phase607-a57-source-induced-vertical-curvature-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "baseDimension": 4,
+    "verticalDimension": 10,
+    "ambientDimension": 14,
+    "basis": [
+      "E00",
+      "E11",
+      "E22",
+      "E33",
+      "E01+E10",
+      "E02+E20",
+      "E03+E30",
+      "E12+E21",
+      "E13+E31",
+      "E23+E32"
+    ],
+    "points": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        4,
+        9,
+        16
+      ]
+    ],
+    "transportL": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "alpha": "1",
+    "betas": [
+      "0",
+      "-1/2"
+    ],
+    "generalFamily": "g_y(A,B)=alpha Tr(p A p B)+beta Tr(p A)Tr(p B),p=y^-1,alpha!=0,alpha+4beta!=0",
+    "connection": "Gamma_y(A,B)=-(A p B+B p A)/2",
+    "curvatureConvention": "R(A,B)C=nabla_A nabla_B C-nabla_B nabla_A C for commuting coordinate fields",
+    "curvature": "R_y(A,B)C=-y[[p A,p B],p C]/4",
+    "independentRoute": "inverse-metric first/second jets; Koszul linear solve; differentiated Koszul solve including -(Dg)Gamma; composition of recovered coefficients",
+    "determinant": "64 alpha^9(alpha+4beta)/(det y)^5",
+    "expectedGramDeterminants": [
+      [
+        "-64",
+        "64"
+      ],
+      [
+        "-1/990677827584",
+        "1/990677827584"
+      ]
+    ],
+    "expectedInertias": [
+      [
+        7,
+        3,
+        0
+      ],
+      [
+        6,
+        4,
+        0
+      ]
+    ],
+    "singularControls": [
+      {
+        "alpha": "0",
+        "beta": "1",
+        "inertia": [
+          1,
+          0,
+          9
+        ]
+      },
+      {
+        "alpha": "1",
+        "beta": "-1/4",
+        "inertia": [
+          6,
+          3,
+          1
+        ]
+      }
+    ],
+    "witness": "A=diag(0,1,-1,0),B=E12+E21; use L A L^T,L B L^T at second point",
+    "witnessPrediction": {
+      "RABB": "-A",
+      "normA": "2",
+      "normB": "2",
+      "cross": "0",
+      "lowered": "-2",
+      "sectional": "-1/2"
+    },
+    "flatControls": [
+      "commuting diagonal A and C=diag(0,1,1,-2)",
+      "central trace direction y"
+    ],
+    "flatConnectionDecoy": "Gamma=0 gives D_D g(D,D)=12 at eta (transport at second point), not metric compatibility",
+    "omittedDerivativeDecoy": "Gamma(A,Gamma(B,B))-Gamma(B,Gamma(A,B))=+A instead of -A",
+    "ambientControls": {
+      "horizontalBlocks": [
+        "y",
+        "y^-1"
+      ],
+      "crossBlock": "zero identically",
+      "baseDerivatives": "zero identically",
+      "VVChristoffel": "vertical recovered Gamma and all four horizontal components zero",
+      "horizontalVerticalDerivative": "nonzero; no product metric assertion",
+      "sourceHorizontalIdentificationSelected": false
+    },
+    "nonzeroPerContext": {
+      "connectionOutputs": 58,
+      "connectionMatrixEntries": 112,
+      "connectionCoordinates": 64,
+      "curvatureOutputs": 336,
+      "curvatureMatrixEntries": 672,
+      "curvatureCoordinates": 384,
+      "loweredCurvatureEntries": 384
+    },
+    "expectedCounts": {
+      "arithmeticControls": 8,
+      "contexts": 4,
+      "inverseControls": 8,
+      "gramEntries": 400,
+      "metricFirstJets": 4000,
+      "metricSecondJets": 40000,
+      "metricSecondJetSymmetry": 40000,
+      "connectionOutputs": 400,
+      "koszulPairings": 4000,
+      "torsionControls": 400,
+      "metricCompatibility": 4000,
+      "connectionDerivativeOutputs": 4000,
+      "curvatureOutputs": 4000,
+      "firstPairSkew": 4000,
+      "bianchi": 4000,
+      "loweredEntries": 40000,
+      "lastPairSkew": 40000,
+      "pairExchange": 40000,
+      "gramDeterminants": 4,
+      "gramInertias": 4,
+      "singularMetricControls": 4,
+      "congruenceMetric": 200,
+      "congruenceConnection": 200,
+      "congruenceCurvature": 2000,
+      "witnesses": 4,
+      "flatControls": 8,
+      "flatConnectionDecoys": 4,
+      "omittedDerivativeDecoys": 4,
+      "ambientVVOutputs": 800,
+      "nonproductControls": 8
+    },
+    "expectedNonzeroTotals": {
+      "connectionOutputs": 232,
+      "connectionMatrixEntries": 448,
+      "connectionCoordinates": 256,
+      "curvatureOutputs": 1344,
+      "curvatureMatrixEntries": 2688,
+      "curvatureCoordinates": 1536,
+      "loweredCurvatureEntries": 1536
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 20,
+      "maximumEstimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumTrackedMatrixProducts": 100000000,
+      "maximumMatrixDimension": 14,
+      "largestJetEntries": 10000
+    },
+    "sourceAnchors": [
+      "3.7-3.10 metric-fiber vertical metric and trace/sign freedom",
+      "3.4 downstairs LC split induces upstairs LC",
+      "9.1 domain G x MET(X), not arbitrary MET(Y)",
+      "9.4 FB induced spin curvature"
+    ],
+    "scope": {
+      "sourceNormalizationSelected": false,
+      "horizontalConventionSelected": false,
+      "shiabContractionNonzeroInferred": false,
+      "inducedStationaryBackgroundRejected": false,
+      "fullMetricEulerComputed": false,
+      "historicalFlatControlsRewritten": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "metric-connection-control-failed",
+    "full-curvature-control-failed",
+    "induced-ambient-control-failed",
+    "nonzero-flat-decoy-control-failed",
+    "source-induced-vertical-curvature-controls-pass-flat-reference-not-induced"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj",
+      "sha256": "01da9a505b2af2cfab0a62296b5dd00a3b3df1ce1ca4d45645f719d1c3d3673b"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "geometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-flat-lc",
+      "path": "src/Gu.Phase4.Dirac/CpuSpinConnectionBuilder.cs",
+      "sha256": "404c84d0602bed9ac99ccb83df1ab5b372ffeef97b2a4c4f73024ae974aacfb2"
+    },
+    {
+      "id": "core-toy-geometry",
+      "path": "src/Gu.Geometry/ToyGeometryFactory.cs",
+      "sha256": "fa5914612c99c8c906aac1a4067d3e6066642f75c92df0bffdfe2e87588a6c8f"
+    },
+    {
+      "id": "core-fiber-metadata",
+      "path": "src/Gu.Geometry/FiberBundleMesh.cs",
+      "sha256": "0d8965cabe5d8203fe06f1743e04abc687161c7fd18e90e590621d76ecf047b6"
+    },
+    {
+      "id": "core-classifier",
+      "path": "src/Gu.Phase5.Reporting/GeometryEvidenceClassifier.cs",
+      "sha256": "443c3820e71f2cbee693fac11614741a1a8e3b5ad64e078c0f7ee87985c1ef03"
+    },
+    {
+      "id": "core-flat-biconnection",
+      "path": "src/Gu.ReferenceCpu/BiConnectionBuilder.cs",
+      "sha256": "17237817fa79475a75e91ace7f667a562dd435b7ae2a6dc1d7ed85064f8e0ab3"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

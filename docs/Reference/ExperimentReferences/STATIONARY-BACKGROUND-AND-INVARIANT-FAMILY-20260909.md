@@ -7,8 +7,9 @@ abbee7db2ac49bd4ddb507c97f4aedbe093e3024. Both first frozen Release executions
 passed after independent and coordinator full code/helper/proof/fixture/hash
 reviews. Each pack binds16 unique files and verifies all726 live core files.
 The602-605 predictions below are now executed evidence within their stated
-scope, as recorded in the A56 results section. Only the general-c enlargement
-and positive-norm safeguard remain analytical and unexecuted. Earlier
+scope, as recorded in the A56 results section. The general-c enlargement,
+positive-norm safeguard and source-induced geometry lead remain analytical
+and unexecuted under prospective A57. Earlier
 prospective/allocation language records the pre-execution chronology.
 No physical blocker is relabeled by these results.
 
@@ -435,3 +436,255 @@ The full remaining columns, signed Gram, independent original-action
 bilinears, characteristic/Jordan controls and zero-parameter/zero-frequency
 strata must be derived and frozen before scientific execution. Do not
 carry c0's frequency-independent eigenvalues over to general c.
+
+## A57 prospective full general-c closure
+
+During the final A56 cadence, three independent agents completed the full
+source derivations; MAIN checked the Gram, new cross-pair reciprocity and
+chiral-factor algebra. This is prospective606 evidence, not executed yet.
+The ten-dimensional guess is rejected, but the TWELVE-dimensional space
+does close analytically. h=+/-1,P=1+hOmega,a=u-b,oa=Omega a,E=e+e0;
+z=iZ_n,oz=iOmega Z_n,j=i theta2 I sin,T=iOmega e,T0=iOmega e0.
+Write H=H(0)+c H(1); the coefficients below are full tensor identities.
+
+| Input | H(0) output | H(1) output |
+| --- | --- | --- |
+| u | ne+κ(14u+b)/13 | nj+κ(5z+8hoz)/156 |
+| b | ne+κ(u+14b)/13 | −H(1)u |
+| Ωu | −hne+κ(14Ωu+Ωb)/13 | −hnj+κ(8hz+5oz)/156 |
+| Ωb | −hne+κ(Ωu+14Ωb)/13 | −H(1)Ωu |
+| z | −12nj−2hn(T+6T0)−7κz/13 | 12nE+κ(5a−8hoa)/13 |
+| oz | 12hnj+2n(T+6T0)−7κoz/13 | −12hnE+κ(−8ha+5oa)/13 |
+| e | −12nP(u+b)+κ(e/78−14e0/13−12hq/13) | −12n(z+hoz)+hκ(−5T−12T0)/78 |
+| e0 | κ(e0−7e/78−hq/13) | −n(z+hoz)+hκ(−T+6T0)/78 |
+| q | κ(q+hE/13) | κ(T+T0)/13 |
+| j | n(z+hoz)+κj | −n(a+hoa) |
+| T | −2hn(z+hoz)+κ(35T−60T0)/78 | hκ(5e+12e0)/78+12κq/13 |
+| T0 | −hn(z+hoz)+κ(−5T+90T0)/78 | hκ(e−6e0)/78+κq/13 |
+
+The real H-anti basis order is(u,b,Omega u,Omega b,z,oz,e,e0,q,j,T,T0),
+Gramdiag(-1/2,-1/2,1/2,1/2,-6,6,6,1/2,-1/2,1/2,-6,-1/2).
+All24 columns include the original source's three potential legs and both
+differential adjoint terms; no output was discarded by projection.
+The builder must record every raw leg and independently test original-action
+bilinears. The fixed geometry and connection-only scope remain unchanged.
+
+Define x=u+b and odd chiral triples(x+hOmega x,a+hOmega a,z+h oz),
+(x-hOmega x,a-hOmega a,z-h oz). H0 kills the plus triple and maps minus
+to even to plus; the potential preserves each odd chirality. Thus n enters
+only off-diagonal blocks. Each odd3 block has alpha=15kappa/13 and
+Qodd=lambda^2-6kappa lambda/13+kappa^2(c^2-14)/26.
+Even directions split as j with eigenkappa; hook(F=e-12e0,Tf=T-12T0)
+with matrix kappa/78[[85,-7hc],[7hc,95]]; and(E,q,T+T0) with matrix
+kappa/13[[-1,h,hc],[-13h,13,13c],[-hc,c,5]].
+The last matrix has row2=13h row1, null vector(1,h,0), trace17 and
+principal-minor sum60-12c^2. Consequently the characteristic is
+
+`(lambda-alpha)^2 Qodd^2 (lambda-kappa) lambda Qeven Qhook`,
+
+Qeven=lambda^2-17kappa lambda/13+12kappa^2(5-c^2)/169,
+Qhook=lambda^2-30kappa lambda/13+kappa^2(8075+49c^2)/6084.
+This is a degree12 conditional characteristic, independent of n on this
+closed carrier. It is not the full theory's physical dispersion relation.
+
+At n0 use actual constant odd6 with doubled odd Gram; all six sine fields
+vanish. Characteristic is(lambda-alpha)^2 Qodd^2 and minimal
+(lambda-alpha)Qodd for kappa nonzero; seed-u dimension3 for c nonzero,
+2 at c0. At kappa0 the constant operator vanishes. At nonzero n,kappa0,
+the full12 operator is nilpotent of index3: rankH0 is6 for c nonzero,
+4 at c0; rankH0^2 is3 except c0 or c^2=4/3 where2. The exact
+half-normalized odd-minus to odd-plus H0^2/n^2 matrix is
+[[-24,0,-144c],[0,-2c^2,12c],[-24c,2c,4-156c^2]],
+determinant192c^2(4-3c^2). Seed-u remains cyclic3 for every real c;
+its H0^2u has the fixed nonzero -12n^2 P(u+b) component.
+At c0,kappa*n nonzero, full12 minimal is degree10 while seed-u degree6.
+Generic nonzero-c reachability is analytical only; no exact c1 cyclic count
+or collision Jordan structure is frozen from a generic argument alone.
+
+Bounded606 menu is h+/-1,n0/1/2,kappa-1/0/1,c0,+/-1,+/-5/7,+/-2,
+126 rows with complete formal columns and an arbitrary-c flag proof.
+Frozen592 STUDY lines129-155 fixes a!=0,d+/-1,b=-da but leaves c free
+under the declared Riemann CCA matching. Setting a1,bh,d-h gives this
+same family. The hook roots change from85kappa/78,95kappa/78 at c0 to
+kappa(90+/-i sqrt24)/78 at c1, although the matching requirement is unchanged.
+This disproves uniqueness of these DIAGNOSTIC ratios from matching alone;
+it neither identifies bosons nor selects c or establishes physical instability.
+
+## A57 source-induced geometry: flat downstairs is not flat upstairs
+
+Prospective607 follows a separate independently checked source/geometry lead.
+Primary text spans:889-925 define the horizontal pullback metric and vertical
+double contraction/trace choice;954-958 specify orthogonality;1012-1018
+identify the horizontal bundle with TY through the downstairs connection;
+1022-1065 give the induced upstairs metric/connection and prohibit treating
+arbitrary upstairs metrics as source fields.9.1(line2117) varies MET(X1,3).
+9.4(lines2160-2212) explicitly includes FB and identifies it as induced
+Levi-Civita spin curvature, gauge-rotated by epsilon.
+
+For the declared vertical family at a nondegenerate symmetric Lorentz y,
+
+`gV_y(A,B)=alpha Tr(y^-1 A y^-1 B)+beta Tr(y^-1 A)Tr(y^-1 B)`,
+
+alpha!=0 and alpha+4beta!=0, the torsion-free compatible connection is
+Gamma_y(A,B)=-(A y^-1 B+B y^-1 A)/2 on constant coordinate matrices.
+The full Koszul derivative verifies this for BOTH trace terms, independent
+of beta. Differentiating Gamma gives
+R_y(A,B)C=-y[[y^-1 A,y^-1 B],y^-1 C]/4.
+
+At eta=diag(-1,1,1,1), A=diag(0,1,-1,0),B=E12+E21, the spatial
+commutator has [[A,B],B]=4A; hence R(A,B)B=-A. Both norms are2alpha,
+their cross product0, lowered curvature-2alpha and sectional-1/(2alpha).
+The trace choice cannot remove this traceless witness.
+
+For a flat downstairs connection, the local horizontal/vertical cross
+block vanishes and gVV is x-independent. Koszul therefore gives
+GammaH_VV=0: metric fibers are totally geodesic, and the displayed vertical
+curvature is also ambient curvature. The horizontal metric CAN vary with y;
+the full metric is not claimed to be a Riemannian product. Invertible gauge
+rotation cannot remove nonzero reference curvature.
+
+This exposes an assumption boundary in flat14D controls, not a refutation
+of their conditional algebra. It does NOT prove K(FB)!=0:599 demonstrates
+a nontrivial contraction kernel. Full induced curvature, its contraction,
+covariant torsion/background equations and downstairs metric variation
+remain separate tasks before any source-vacuum conclusion.
+
+Relevant current code explicitly labels its simplification:
+CpuSpinConnectionBuilder.cs lines14-15,59-62,84 sets all LC coefficients
+to zero under P4-IA-003; BiConnectionBuilder.WithFlatA0 is a toy constructor.
+ToyGeometryFactory's finite fiber offsets and FiberBundleMesh's ambient
+embedding dimension do not implement the10D metric fiber's LC geometry.
+GeometryEvidenceClassifier.Classify accepts dimensions4/14 without testing
+the Frobenius/Zorro structure; dimension agreement alone is insufficient.
+No core code or historical classification is changed by this investigation.
+
+A separate flat-extension metric-stationarity argument is conditional only:
+at S*, all S_iS_j vanish, as do FB and DBS under the flat hypotheses.
+Variations of K/Hodge/density multiply zero arguments; the induced even
+Spin-connection variation pairs an odd commutator with even K^dagger S,
+and the remaining constant-adjoint derivative is a boundary term. This
+does not establish the actual source metric Euler equation. An earlier
+homothety estimate was corrected BEFORE any prospective experiment:
+the literal lowered K scales lambda^-1, so cubic density lambda^11 and
+mass density lambda^12, not lambda^13 for the cubic. Both values vanish
+at the flat invariant branch, but that branch's induced realization is open.
+
+## Further analytical lead: full induced Ricci and a constructive null branch
+
+This section is analytical only, outside606/607's frozen menus;608+ remains
+unallocated. MAIN derived the full local block metric formulas and the
+independent reviewer rederived them. Declare
+G= sigma y_mu_nu dx_mu dx_nu + gV, d=alpha+4beta.
+For horizontal vectors u,v define
+W(u,v)=[y sym(uv^T)y-(beta/d)(u^T y v)y]/alpha.
+Besides the vertical connection above, the mixed coefficients are
+GammaH(A,u)=y^-1 A u/2 and GammaV(u,v)=-sigma W(u,v)/2.
+They give R(A,u)v=-sigma W(y^-1 A u,v)/4.
+The pure-horizontal sectional coefficient is(alpha+6beta)/(8alpha d).
+
+The resulting full ambient Ricci tensor is
+RicVV(A,B)=-5Tr(UV)/4+Tr(U)Tr(V)/4, U=y^-1 A,V=y^-1 B;
+RicHH=-GHH/(4d), mixed Ricci0.
+Thus raised Ricci has eigen-5/(4alpha) on vertical traceless9 and
+-1/(4d) on vertical trace1 plus horizontal4, with scalar
+-45/(4alpha)-5/(4d). For the explicitly declared alpha1,beta-1/2,
+sigma-1 branch, total signature is(7,7), Ricci eigen-5/4 and+1/4,
+scalar-10, Einstein eigen15/4 and21/4. Choosing sigma+1 with the same
+vertical signs would NOT match the existing(7,7) Clifford control.
+The complete curvature/typed spin lift and literal K contraction remain
+unexecuted and require a new frozen test before claiming K(FB) nonzero.
+
+An independent constructive check suggests that nonzero curvature need not
+end the first-action investigation. Let L=P times the odd Clifford space.
+Coefficient products L L vanish; real trace pairs L with itself to zero.
+For the declared matched CCA tensors, parity implies K(even) lies in L,
+K(odd) is even, and the two outer products give K(L-valued2forms)=0.
+The nondegenerate full real H-anti pairing then gives K^dagger S=0 for
+any L-valued one-form S. The LC connection preserves Omega/parity, so
+D_B S remains L-valued and S wedge S=0.
+
+If these full-algebra identities survive the new prospective test, then
+for any even spin curvature FB and kappa nonzero,
+S=-K(FB)/kappa is an exact stationary connection of the DECLARED first
+action: its full gradient reduces to K(FB)+kappa S. This is a different
+branch from603's opposite-chiral S*, which would instead retain the
+curvature source. The action density on the proposed new branch vanishes.
+A corresponding metric-variation conclusion needs an explicit chain-rule
+proof with smooth metric-dependent field identifications and boundary
+conditions; it is not certified by606/607 or by a zero scalar value alone.
+
+MAIN and the reviewer agree on the preliminary null-ideal argument. Do not
+treat it as an executed theorem, a stable physical vacuum, a norm choice or
+a boson prediction. It supplies a concrete constructive successor alongside
+the exact curvature calculation; the source's separate squared action and
+physical extraction/unit contracts remain unselected.
+
+The same preliminary grading argument has a second, independently checked
+consequence. On the proposed L-valued stationary branch, the fixed-metric
+Hessian is H=kappa I+D+N,
+D=(K D_B+D_B^dagger K^dagger)/2,
+N=gamma(K DQ_S+DQ_S^dagger K^dagger)/3; its middle leg vanishes because
+K^dagger S=0. Direct transposes give K^dagger(even) in L,
+K^dagger(odd) even and K^dagger(L)=0. Hence D maps even to L, odd to
+even and L to0; N maps odd to L and kills even and L. It follows that
+D^3=N^2=DN=ND=0, without commuting K through derivatives. For constant
+kappa nonzero, the formal inverse is the finite differential operator
+kappa^-1[I-(D+N)/kappa+(D+N)^2/kappa^2].
+This is a local smooth-section identity awaiting a frozen test, not a
+physical propagator or a spectral statement for unspecified boundary
+domains, and not a conclusion about coupled metric/connection modes.
+
+## A57 executed results and independent next-test challenges
+
+Both first frozen606/607 Release runs passed unchanged after full MAIN and
+independent review,21/16 exact bindings and live726 core closure.
+606 wall6.454s:126rows,1260 full columns,13608 original-action bilinears,
+120 symbolic columns,360 separate potential legs and2592 coefficient checks;
+78 minimal strata certified,48 unasserted. Full/summary SHA256
+6a2b0672f2de3abcab551d6a4742c59f7a8275e309162c0ef77c1d3d9b3fd19b.
+607 wall2.045s:four complete geometric contexts,4000 curvature outputs,
+40000 lowered entries, four nonzero transported witnesses, all controls pass.
+Full/summary SHA256
+a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348.
+The general-c diagnostic factors are nonunique under the same matching;
+the induced metric fibers are not flat. No physical mass claims follow.
+
+A third independent analytical review confirms the preceding conditional
+Ricci and null-ideal formulas. Important source-identification clarification:
+lines883-892 identify H* as pulled-back cotangents, with H its dual and the
+remaining maps metric isomorphisms. For covariant metric coordinates y,
+the covector metric is y^-1. The tautological musical/lift map sends a
+horizontal vector u to covector yu, hence
+(yu)^T y^-1(yv)=u^T yv. This reconstructs GHH=sigma*y in horizontal vector
+coordinates; the source does not literally print that coordinate formula.
+The LC identification is at1005-1018, with already-present horizontal and
+vertical metric data at1763-1766. A y-dependent frame change also changes
+brackets/connection terms; replacing y by y^-1 in commuting coordinate
+Koszul equations is not a mere notational convention. At eta the equality
+eta=eta^-1 hides this mistake; derivatives and a scaled point expose it.
+
+The normalized triple(alpha,beta,sigma)=(1,-1/2,-1) has the declared(7,7)
+signature but is not uniquely source-selected. Trace and summand-sign
+freedom at909-917,954-958 and1082-1090 remains explicit. The overall
+opposite signs also give(7,7). Future full ambient tests must declare these
+conventions and avoid promoting finite parameter checks to a source choice.
+
+The null branch requires full real H-anti membership and the FULL field
+gradient, not merely variations restricted to its isotropic subspace L.
+L is maximal isotropic in the odd space: left Omega is an involution with
+equal-dimensional eigenspaces paired by trace. Thus K(L)=0 plus the
+nondegenerate full pairing gives K^dagger(even) in L; direct outer-product
+transposes give K^dagger(L)=0. LC preserves L, establishing the stated
+nilpotent image flag without commuting K with covariant derivatives.
+
+There is a conditional metric-Euler theorem, but it is a separate proof
+obligation. For smooth identifications J_g of the full real H-anti bundles,
+write I(g,t)=I_g(J_g t). If S*(g) is a smooth FULL-field stationary family
+and I_g(S*(g)) is identically zero, its metric derivative is zero by the
+chain rule: the field term vanishes on shell. Changing J_g changes the
+partial metric derivative only by another field-Euler term. If S*(g)
+contains metric derivatives, valid integration by parts and compact support
+or suitable closed/boundary conditions are essential. Zero density at one
+metric, restricted-L stationarity or unspecified boundary domains do not
+suffice. This remains conditional declared-action analysis, unexecuted by
+606/607, and does not establish a physical stable vacuum or source9.11 norm.
