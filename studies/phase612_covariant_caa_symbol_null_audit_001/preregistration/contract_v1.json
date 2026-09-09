@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "phase": 612,
+  "phaseId": "phase612-covariant-caa-symbol-null-audit",
+  "contractId": "phase612-a59-covariant-caa-symbol-null-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "operator": "canonical untied CAA: first C, outer A, inner A; Phi1=Gamma1,Phi2=Gamma2; no source choice",
+    "pairing": "real -ReTr(XY)/128 times signed exterior metric, normalized periodic average",
+    "momentumPairs": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "n": [
+      1,
+      2
+    ],
+    "vAxis": 2,
+    "vSquared": 1,
+    "kappa": 0,
+    "momentum": "q=n(a theta0+b theta7),Q=n(a gamma0-b gamma7),qSquared=n^2(a^2-b^2)",
+    "fourierConvention": "K0 stores abstract unit phase phi=q.x; all physical n,a,b are in q; Dq=q wedge partial_phase,Dqdag=-i_qsharp partial_phase",
+    "inputOrder": [
+      "U=qV cos",
+      "A=(V wedgeCl Gamma1)sin",
+      "qC=q(V wedgeCl Q)sin",
+      "E=(qSquared A-qC)sin",
+      "Y=qQ cos"
+    ],
+    "leakage": "Z=theta2 Q cos,retained before cancellation",
+    "adjointFirst": [
+      "2q wedge A cos",
+      "2theta2 wedge Gamma1 sin",
+      "2theta2 wedge qQ sin",
+      "2theta2 wedge(qSquared Gamma1-qQ)sin",
+      "2q wedge(Q wedgeCl Gamma1)cos"
+    ],
+    "adjointSecond": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "-2qSquared Gamma2 cos"
+    ],
+    "divergenceFirst": [
+      "2E",
+      "2Z",
+      "2qSquared Z",
+      "0",
+      "2qSquared(Q wedgeCl Gamma1)sin"
+    ],
+    "divergenceSecond": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "-2qSquared(Q wedgeCl Gamma1)sin"
+    ],
+    "forwardKd": [
+      "0",
+      "-24U",
+      "0",
+      "-24qSquared U",
+      "0"
+    ],
+    "hessianColumns": [
+      "E",
+      "-12U+Z",
+      "qSquared Z",
+      "-12qSquared U",
+      "0"
+    ],
+    "carrierMatrix": [
+      [
+        "0",
+        "-12qSquared"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "carrierSquare": "-12qSquared I",
+    "carrierRankNonNull": 2,
+    "carrierRankNull": 1,
+    "carrierGram": [
+      [
+        "-qSquared/2",
+        "0"
+      ],
+      [
+        "0",
+        "6qSquared^2"
+      ]
+    ],
+    "originalAction": "6qSquared^2 xy",
+    "actionHessianOffDiagonal": "6qSquared^2",
+    "nullControl": "q nonzero,qSquared0,U andE nonzero,HU=E,HE0; restricted Gram and action zero, not full response zero",
+    "nullProbes": [
+      "theta0 gamma2 cos pairs U=-n/2",
+      "theta0 Gamma02 sin pairs E=n^2/2"
+    ],
+    "longitudinal": "HY=0 allq; Pair(Y,Y)=-qSquared^2/2,nonnull first/second divergence nonzero and cancel",
+    "supports": {
+      "inputsNonNull": [
+        2,
+        13,
+        4,
+        15,
+        4,
+        2
+      ],
+      "inputsNull": [
+        2,
+        13,
+        4,
+        4,
+        4,
+        2
+      ],
+      "adjointsNonNull": [
+        24,
+        13,
+        4,
+        15,
+        114
+      ],
+      "adjointsNull": [
+        24,
+        13,
+        4,
+        4,
+        48
+      ],
+      "YFirstNonNull": 49,
+      "YFirstNull": 48,
+      "YSecondNonNull": 91,
+      "YSecondNull": 0,
+      "YNonNullDivergencePositions": 26
+    },
+    "supportCandidates": {
+      "U": [
+        "m XOR bit0 XOR bit2",
+        "m XOR bit7 XOR bit2"
+      ],
+      "A": [
+        "m XOR bit2"
+      ],
+      "qCAndE": [
+        "m XOR bit2",
+        "m XOR bit2 XOR bit0 XOR bit7"
+      ],
+      "Y": [
+        "m",
+        "m XOR bit0 XOR bit7"
+      ]
+    },
+    "independentAdjointReconstruction": "all91 twoforms times fixedcandidate masks, real Hanti phase1/ioracle, same sine/cosine, NaiveProduct ordered-word full forward chain; entire tensor reconstructed",
+    "derivativeControls": [
+      "X=i theta2 cos,Y=i theta0 wedge theta2 sin,pair=-na/2",
+      "X=i theta2 cos,Y=i theta7 wedge theta2 sin,pair=nb/2"
+    ],
+    "negativeControls": [
+      "positive metric contraction substituted on axis7 rejects full HU in all8rows",
+      "deleting second Y adjoint rejects HY in all4nonnullrows",
+      "zero null Gram/action does not erase nonzero full E; fixed probes detect it"
+    ],
+    "expectedCounts": {
+      "hodgeCases": 16384,
+      "wordCases": 44944,
+      "generatorWordCases": 458752,
+      "rows": 8,
+      "inputCoefficientChecks": 48,
+      "derivativePairings": 16,
+      "derivativeSquareZeros": 48,
+      "adjointInputs": 40,
+      "adjointLegs": 80,
+      "adjointDivergenceLegs": 80,
+      "adjointSupportProbes": 6552,
+      "adjointNonzeroProbes": 1052,
+      "hessianColumns": 40,
+      "fullSecondApplications": 16,
+      "leakageRows": 8,
+      "gramEntries": 32,
+      "actionPolarizations": 32,
+      "actionCoefficients": 24,
+      "carrierMatrixEntries": 32,
+      "nullRows": 4,
+      "nonNullRows": 4,
+      "nullProbePairs": 8,
+      "longitudinalRows": 8,
+      "longitudinalNonzeroDivergenceRows": 4,
+      "wrongMetricRows": 8,
+      "wrongDeletedAdjointRows": 4
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 20,
+      "maximumEstimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 536870912,
+      "maximumCoefficientProducts": 100000000,
+      "maximumSparseTensorTerms": 65536,
+      "maximumStoredFrequency": 1,
+      "maximumCarrierDimension": 2,
+      "maximumActionDegree": 2
+    },
+    "scope": {
+      "fullSymbolRankComputed": false,
+      "fullDeterminantComputed": false,
+      "physicalCharacteristicConeSelected": false,
+      "physicalTimeSelected": false,
+      "globalGaugeQuotientEstablished": false,
+      "sourceOperatorSelected": false,
+      "nullProbeExtendedCarrierClosureClaimed": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "full-adjoint-control-failed",
+    "full-column-control-failed",
+    "action-gram-control-failed",
+    "null-response-control-failed",
+    "longitudinal-control-failed",
+    "count-or-resource-control-failed",
+    "covariant-caa-symbol-controls-pass-carrier-not-full-spectrum"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase612_covariant_caa_symbol_null_audit_001/Program.cs",
+      "sha256": "c506d5bbd200243368f075f20d76f7d422842986b85408a2da568f22fcbd235e"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase612_covariant_caa_symbol_null_audit_001/Phase612CovariantCaaSymbolNullAudit.csproj",
+      "sha256": "d8662f6485fc803e7f84ffa1353b3a870b49a03c88562cf79b948b9c66b5f328"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase612_covariant_caa_symbol_null_audit_001/STUDY.md",
+      "sha256": "1ddd4741528a5ae21468d78c96ded1cde1c7f2b4ef9140a002f4b1afb7283748"
+    },
+    {
+      "id": "control-helper",
+      "path": "studies/phase612_covariant_caa_symbol_null_audit_001/CovariantControls.cs",
+      "sha256": "7f8e9ecf9c7864bdaf92d673c86c32fb5cd651e52290b5308d9a33e781c5d70a"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "caa-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

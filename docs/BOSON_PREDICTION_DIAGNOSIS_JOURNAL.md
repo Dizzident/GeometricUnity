@@ -23872,3 +23872,107 @@ The original cubic action/claimed-force mismatch survives and must remain
 an explicit negative control; matching curvature alone does not repair it.
 611+free. All14flagsfalse,O4/externalreviewpending,Phase561closed,
 deficits15/14,physicalclaims0. PROGRESS; decisive safe experiments remain.
+
+### 2026-09-09 UTC - A59 untied operator response preregistration
+
+Previous goal turn was PROGRESS: checkpoint4706ac813c4077382fea497393bbd6fcbeefef0b
+pushed, remote independently matched, clean worktree. FinalA58
+pass_2026-09-09T14-07-27-474Z.json ran78/skipped392,390/3checklist,
+coverage31/31,overturn94/94;70historicaloutputchangedlines onlytimestamps/runtime.
+
+Allocate611untiedCAA response and joint gauge audit. Its full2D signed-axis
+closure is independently derived by MAIN and two reviewers; it differs from
+the tied chiral result without contradicting that family's scoped theorem.
+Test nonzero second-A leg, full adjoint and original-action differentiation;
+preserve the cubic action/claimed-force mismatch. The exactu direction is
+not itself null at fixed epsilon; the correct joint null is(1,0,1).
+Finite amplitude Ward transformations can leave this carrier. Forn0 retain
+only the actual1D constant field; no periodic alpha=sin(nx)/n exists there.
+A separate read-only lead investigates arbitrary momenta and null covectors.
+
+All scientific inputs/proofs/counts/resources/coefficients/tolerances/unique
+bindings/live726 closure must freeze and pass complete independent/MAIN
+review before firstscience. No611execution yet. Main wires allsurfaces;
+builder owns611root/unboundnote only.612+free,all14flagsfalse,
+O4/externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
+
+### 2026-09-09 UTC - A59 mixed-momentum and null-pairing extension
+
+Parallel analytical work yielded two useful checks beyond611's axes. For
+q=n(a theta0+b theta7),v=gamma2, U=qVcos andE=(q²(V wedgeCl Gamma1)
+-q(V wedgeCl Q))sin form a full-source transverse carrierHU=E,HE=-12q²U.
+Atq²0,qnonzero, bothvectors remain nonzero while their restricted Gram and
+action vanish. A fixed allowed external probe detectsHU byn²/2. Conversely
+Y=qQcos lies in the full kernel even fornonnullq, with nonzero self-pairing.
+Its two full adjoint legs cancel only after divergence. A small carrier
+polynomial therefore is not a full symbol determinant or dispersion cone.
+
+Allocate612to eight exact mixed/null rows, keeping all intermediate tensor
+components, extra-direction cancellation, fulladjoints, originalaction and
+nonzero probes. MAIN and independent reviewers checked the analytical
+forecasts; they remain prospective until fullpackfreeze andfirstexecution.
+Two builders now work inparallel; independent reviewer reads bothpacks and
+MAIN owns integration/first-run approval.611mustfreeze/pass before612uses
+its immutable CAA helper lineage.613+free. No physical/source selection.
+
+### 2026-09-09 UTC - A59 first Phase611 execution
+
+After final independent approval and MAIN verification of all23 unique
+bindings, full fixture parity, live726 core closure and output absence,
+MAIN explicitly approved firstscience. The user-requested permission prompt
+was reissued and the frozen Release calculation PASSED unchanged in1.066s.
+All49 prospective counts matched;36524 tracked products/largest tensor273.
+Full and summary SHA256:
+b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07.
+Full adjoint, signed-axis response, joint quadratic gauge null and retained
+cubic variational mismatch controls all passed. This validates a conditional
+operator diagnostic, not a source choice or physical boson prediction.
+Bound611 inputs are immutable; only its unbound implementation note updates.
+612 builder is now freezing its18 bindings against this passed output, with
+independent final closure review requested. No612science yet. Shared final
+verifier blocks, validation and A59 checkpoint/push remain to be completed.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+
+### 2026-09-09 UTC - A59 Phase612 pass and integrated validation
+
+Previous goal turn was PROGRESS:611 first frozen execution passed.612 now
+also PASSED its FIRST frozen Release run unchanged, after complete MAIN
+and independent final review of18 unique exact bindings,26 count fields,
+full fixtures/proofs/resources and live726 closure. Wall1.569s,user1.730s,
+sys.049s;10872products,largest228,maximumfrequency1. Full/summary SHA256:
+afd344c386a8c1c859b2c1a094daa1c0bb6be14b8f2e1a4b42374868240da97d.
+Independent output review confirms all controls, counts and scope flags.
+
+The four nonzero null momenta retain a nonzero full response detected by
+allowed external probes, despite zero restricted Gram/action. A separate
+longitudinal kernel persists at nonnullq through cancellation of nonzero
+adjoint legs. This prevents interpreting the transverse block as the full
+dispersion relation.611's joint quadratic null and preserved cubic mismatch
+also remain verified, with no author-selected operator or physical pole.
+
+All shared wiring registered and independently checked. Ordered101/202 and
+claim integrity pass392/3, O4coverage31/31,overturn94/94. Final incremental
+must follow ALL remaining edits before scoped commit/push/remote check.
+All14flagsfalse,Phase561closed,O4/externalreviewpending,deficits15/14,
+physicalclaims0.613+free. The next safe research lead is the independently
+derived isotropic canonical stationary branch/full constant-field potential Hessian;
+its nonlinear grade5 caveat must remain an explicit negative control.
+
+### 2026-09-09 UTC - A59 precheckpoint scope clarification
+
+Incremental pass_2026-09-09T14-49-15-996Z.json passed77ran/395skipped,
+392/3checklist,coverage31/31,overturn94/94. During that run a read-only
+review caught an overbroad successor description: the196-dimensional
+vector Hessian closure is CONSTANT-FIELD POTENTIAL closure, not the full
+differential operator. All edits waited until that run completed. Current
+reference/restart/amendment wording is now explicit; scientific611/612
+inputs and outputs remain unchanged. Final incremental is repeated after
+these documentation changes, before checkpoint.
+
+Parallel analytical review supplied an exact grade5 scalar-action witness
+and a conditional metric homothety check, both recorded in the existing
+reference. For fixed couplings the nonzero connection-stationary isotropic
+branch has scaling derivative10192gamma s³; this is not metric-stationary
+if the declared independent14D scaling is admitted. Source admissibility
+of that variation is unproved, so no physical vacuum rejection is asserted.
+Both leads remain prospective and unexecuted;613+free. No physical promotion.

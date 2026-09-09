@@ -465,6 +465,8 @@
     <PhaseProject Include="../studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj" />
     <PhaseProject Include="../studies/phase609_chiral_null_branch_stationarity_audit_001/Phase609ChiralNullBranchStationarityAudit.csproj" />
     <PhaseProject Include="../studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj" />
+    <PhaseProject Include="../studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj" />
+    <PhaseProject Include="../studies/phase612_covariant_caa_symbol_null_audit_001/Phase612CovariantCaaSymbolNullAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

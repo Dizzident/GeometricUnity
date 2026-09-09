@@ -873,3 +873,177 @@ remains4gamma xyz/3 while the claimed target covector is(0,0,4xy).
 This exact negative control should survive in the successor. Source bracket
 selection, the action/equation discrepancy, global field admissibility,
 metric coupling and physical extraction remain separate questions.
+
+### A59 allocation and gauge qualifications
+
+After the validated and pushedA58 checkpoint,611 is allocated to the untied
+CAA signed-axis/full-adjoint/action/joint-null experiment above.612+free.
+This is prospective: no611scientific execution has occurred. The author has
+not selected this enlarged occurrence choice; it tests the boundary of our
+previous conservative tying assumption, not a replacement source law.
+
+Independent second review confirms that at the origin the joint quadratic
+form6sigma_t n(s-r)y has null(1,0,1), whereas fixed-epsilon u is not null.
+The finite Ward variation is delta omega=D_A alpha, including[omega,alpha];
+at nonzero amplitudes it can leave the small carrier. Do not extrapolate
+its quadratic coordinate null to a full closed nonlinear gauge orbit.
+Atn0,e0and uconstant: the true carrier is1D and H0=0. The formula
+alpha=sin(nx)/n is not a periodic generator atn0; its x limit is nonperiodic.
+These caveats are mandatory in the prospective experiment and prevent
+spurious deletion of a response mode or a wrong zero-frequency multiplicity.
+
+### A59 covariant-symbol extension and two further pitfalls
+
+MAIN and independent reviewers derived, without scientific execution, a
+covariant extension of the transverse carrier. Letq be a covector,
+Q=c(qsharp), V=c(v), q(v)=0,v²nonzero. PutA=V wedgeCl Gamma1,
+C=V wedgeCl Q,U=qV,E=q²A-qC. Usecos(q.x) forU andsin(q.x) forE.
+Then the full actualH0 satisfiesHU=E,HE=-12q²U. In deriving this, retain
+HA=-12U+vflat Q andH(qC)=q²vflat Q; their extra direction cancels only
+in the complete E combination. This is not a projection onto two modes.
+The restricted Gram isdiag(-v²q²/2,6v²(q²)^2) and the original quadratic
+action is6v²(q²)^2xy. All these formulas are polynomial; no division byq²
+is used, so null momenta are not excluded by the derivation.
+
+Atq²0 withqnonzero, bothU andE remain nonzero and form a full-source
+length2 chainHU=E,HE0. Yet their restricted Gram and action are bothzero.
+Forq=n(theta0+theta7),v=gamma2, the fixed allowed variation
+Z=theta0 Gamma02 sin(q.x) pairsHU byn²/2. This detects the nonzero full
+response that a restricted action test would miss. It does not claim the
+probe-extended space is invariant or rule out longer full-operator chains.
+
+Conversely Y=qQcos(q.x) is a kernel for EVERYq, includingnonnullq where
+Pair(Y,Y)=-(q²)^2/2 is nonzero. Indeed dY0 and
+KdagY=2q wedge(Q wedgeCl Gamma1)-2q²Gamma2. Interior contraction with
+qsharp cancels the two legs, giving ddagKdagY0. The transverse block's
+lambda²+12q² therefore cannot be called the full symbol determinant or
+characteristic cone. Metric coupling, constraints and source choices remain.
+
+612 is prospectively allocated to eight mixed-momentum rows with
+q=n(a theta0+b theta7),pairs(2,1),(1,2),(1,1),(1,-1),n1,2,v=gamma2.
+For checking signed masks, E0=n²(b²Gamma02+abGamma27),
+E7=n²(abGamma02+a²Gamma27), andEj=n²(a²-b²)Gamma2j forj!=0,2,7.
+It has15 nonzero physical coefficients atnonnullq and4 atnullq;U has2.
+The fixed Z above pairsE byn²b²/2 throughout this menu. These are
+prospective exact forecasts, not result-fitted values.613+free.
+
+### Further analytical lead: isotropic canonical CAA background
+
+While611/612 are being built, MAIN and independent reviewer derived a
+possible subsequent stationary-background test, not an allocated experiment.
+For canonicalCAA on the declared flat reference,S=sGamma1 gives
+Q=2s²Gamma2,KQ=312s²Gamma1,KdagS=-24sGamma2. The full
+DQ_S-dagger Gamma2=-26sGamma1, so the actual constant-field gradient is
+(312gamma s²+kappa s)Gamma1 with no extra Clifford component. The original
+action density is-1456gamma s³-7kappa s². For gamma nonzero this gives
+the analytical branches s0 ands=-kappa/(312gamma); degenerate couplings
+must be treated separately. No curved induced-reference or physical vacuum
+claim follows from this flat, constant-field calculation.
+
+The full CONSTANT-FIELD POTENTIAL Hessian on vector-valued one-form
+perturbations V at this isotropic background is
+kappa V+16gamma s[3tr(V)I-2V-V^g], where V^g is the metric transpose.
+Its trace1, symmetric-traceless104 and metric-skew91 sectors have coefficients
+kappa+624gamma s,kappa-48gamma s,kappa-16gamma s. On the nonzero branch
+these become-kappa,15kappa/13,41kappa/39. Direct quadratic expansion gives
+8gamma s[Tr(V²)+2Tr(V^g V)-3(trV)²], plus the declared mass term,
+consistent with the pairing B(V,W)=-Tr(V^g W). These are unexecuted
+conditional coefficients, not masses or a stability classification.
+This closure is only for constant perturbations: the differential part
+(Kd+d-dagger K-dagger)/2 mixes vector and bivector modes as611 demonstrates.
+Do not extend the196-dimensional potential carrier to a full differential
+spectrum without a new closure proof.
+
+An initially broader nonlinear closure claim was rejected during review:
+canonicalCAA does NOT map arbitrary bivector curvature only to vectors.
+For example F01=Gamma23 produces an inner grade4 component and an outer
+grade5 contribution. The matrix expression
+4(T²-tr(T)T)+2[(trT)²-tr(T²)]I forK(Q(T)) is only its GRADE1 projection.
+At S=sI, the linear DQ_S V has repeated curvature-form/Clifford indices,
+which eliminate that grade4 inner contribution; the other two Hessian legs
+also remain vectors. This is why the linear statement survives while the
+nonlinear generalization does not. Preserve a grade5 negative control in
+any successor rather than silently discarding that component.
+
+Two independent reviewers and MAIN also derived a realizable constant-field
+negative control without running a new experiment. Take
+T=theta0 gamma2+theta1 gamma3, soQ(T)=2theta01 Gamma23. The first-C
+lowered contribution vanishes; the inner-A is4i Gamma0123 times topform,
+its Hodge dual is-4i Gamma0123, and outer-A is
+8sum(j not0,1,2,3)theta_j Gamma0123j. Consequently the full
+KQ=-4sum(j not0,1,2,3)theta_j Gamma0123j is pure nonzero grade5.
+KdagT is bivector-valued and DQ_T-dagger KdagT is vector-valued, so the
+actual cubic action gradient retains this grade5 term with coefficient
+-4gamma/3; it cannot be canceled by silently keeping only vector variations.
+These are prospective analytical coefficients for a successor, not executed
+evidence or a claim against the isotropic-background linear closure.
+
+An original-action witness makes the obstruction testable without relying
+on a projected gradient. For T=x theta0 gamma2+y theta1 gamma3 and
+V=theta4 Gamma01234, both Clifford commutators withgamma2 andgamma3
+vanish, soQ(T+tV)=Q(T) exactly. The signed pairing gives
+Pair(V,KQ)=4xy and, at kappa0, I_gamma(T+tV)=4gamma xy t/3.
+The original action restricted to vector-valued T is zero here, but this
+allowed grade5 variation has nonzero derivative. Preserve this exact
+first-action negative control alongside full Hessian closure tests.
+
+### A59 first-execution results and next priority
+
+611 and612 both PASSED their FIRST frozen Release executions unchanged,
+after complete independent and MAIN reviews of code, proofs, fixtures,
+counts, resources, unique exact bindings and live726 core closure. All49
+611 counts and all26 612 counts matched their prospective forecasts.
+611 wall1.066s,36524 products,largest273;612 wall1.569s,10872 products,
+largest228,maximum stored frequency1. No result-fitted changes were made.
+
+611 contract0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa;
+full/summary b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07.
+612 contractb5c7f90143ccdd87f5db52140493cac64d0828572c66cbd1ac094862c4f27d0c;
+full/summary afd344c386a8c1c859b2c1a094daa1c0bb6be14b8f2e1a4b42374868240da97d.
+
+The actual611 joint quadratic Hessian has rank2 and null(1,0,1), while
+the wrong reference lift fails. Full second-adjoint and cubic mismatch
+controls pass. The enlarged untied operator's response is non-nilpotent
+on the tested nonzero signed-axis carriers, without overturning the scoped
+tied-family theorem. The two actual constant carriers have dimension1;
+no periodic zero-frequency gauge parameter is asserted.
+
+612 verifies HU=E,HE=-12q²U on all8 rows, including four nonzero null
+momenta with zero restricted Gram/action but nonzero full E. Fixed allowed
+probes detect this response. HY=0 also at nonnullq requires cancellation
+of two nonzero adjoint divergences; deleting the second leg fails. These
+results reject full-spectrum/physical-cone inference from this small block.
+
+Ordered101/202/integrity passed392/3, exact O4coverage31/31 andoverturn94/94.
+All14 authority flags remain false; Phase561closed,externalreviewpending,
+WZ15/H14 source-field deficits,physicalmassclaims0. Final incremental must
+follow every integration/document edit before A59 commit/push. The next
+priority after checkpoint is the isotropic canonical stationary branch and
+full constant-field potential Hessian above, with a nonlinear grade5 decoy.
+613+ remains unallocated; this next lead is not executed or source-selected.
+
+### Further conditional lead: field stationarity versus metric stationarity
+
+MAIN and independent reviewer derived a homothety check without executing
+new science. Hold gamma,kappa fixed, take the declared flat14D reference
+g_lambda=lambda²g, and transport Gamma1_lambda=lambda Gamma1,
+Gamma2_lambda=lambda²Gamma2. On fixed r-forms, Hodge star scales as
+lambda^(14-2r). Both canonical CAA legs then give
+K_lambda(F_fixed)=lambda^-1 K(F_fixed).
+
+Along T_lambda=s Gamma1_lambda, Q scales aslambda²,KQ aslambda, and
+the one-form pairing aslambda^-2. Thus scalar L remains
+-1456gamma s³-7kappa s², while volume scales aslambda14. At the nonzero
+field-stationary branch kappa=-312gamma s, L=728gamma s³ and the
+scaling derivative is14L=10192gamma s³, nonzero. An independent check
+holding the coordinate tensor T fixed gives
+I_lambda=-1456gamma s³ lambda11-7kappa s² lambda12, whose derivative
+agrees at field stationarity. The moving-field contribution therefore
+vanishes there, as required by the chain rule.
+
+This is a prospective CONDITIONAL metric-stationarity obstruction for the
+declared first action and homothety, not an executed result or a source-level
+vacuum rejection. It assumes no additional terms and fixed couplings. The
+source-induced MET(X)-to-MET(Y) family need not admit uniform independent
+14D scaling; that admissibility must be checked separately. It is a useful
+negative control against treating connection stationarity as a coupled vacuum.

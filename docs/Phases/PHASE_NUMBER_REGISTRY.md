@@ -74,7 +74,9 @@ back, NO new phase directory may be created outside this table.
 | 608 | Source-induced ambient Ricci audit (A58) | DONE, first frozen run passed: full14D local block-metric connection/curvature and Ricci controls under explicit conventions; no source normalization, spin contraction or physical vacuum selected. |
 | 609 | Chiral null-branch stationarity audit (A58) | DONE, first frozen run passed: full declared-action gradient/adjoint controls for a constructive chiral branch with nonzero curvature and covariant derivative; no induced-LC or global physical-vacuum identification. |
 | 610 | Induced spin-curvature contraction audit (A58 extension) | DONE, first frozen run passed: full608-curvature transport into an oriented rational orthonormal frame, typed spin action and literal nonzero source contraction; no physical vacuum, source normalization or spectrum selected. |
-| 611+ | Unassigned - extend this registry before use | - |
+| 611 | Untied CAA response and joint gauge audit (A59) | PASSED first frozen Release run: all49 counts, full-source signed-axis closure, original-action and joint quadratic gauge controls, nonzero second-leg and preserved variational-mismatch decoys; no source operator or physical propagation selected. |
+| 612 | Covariant CAA symbol and null audit (A59 extension) | PASSED first frozen Release run: all26 counts, full transverse mixed-momentum closure, nonzero null-chain witnesses despite zero restricted action, and longitudinal kernels; no full symbol determinant, characteristic cone or physical spectrum claim. |
+| 613+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

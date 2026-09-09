@@ -3274,3 +3274,122 @@ Targeted101/202/integrity passes390/3,coverage31/31,overturn94/94 after one
 new-verifier schema typo was corrected without changing any scientific input
 or output. Final incremental follows all edits; commit/push only after pass.
 All14flagsfalse,externalreviewpending,Phase561closed,deficits15/14,massclaims0.
+
+## Amendment A59 - untied CAA response and joint gauge audit (Phase611)
+
+2026-09-09 UTC. A58 checkpoint4706ac813c4077382fea497393bbd6fcbeefef0b
+committed/pushed and remote independently matched, worktree clean. Its final
+pass_2026-09-09T14-07-27-474Z.json passed78steps/392skips,390/3checklist,
+coverage31/31,overturn94/94. The previous goal turn was PROGRESS.
+
+Allocate611 to test a concrete assumption boundary independently derived by
+MAIN and two reviewers.591's canonical untied CAA(firstC,outerA,innerA),
+Phi1=Gamma1,Phi2=Gamma2, lies outside the conservatively tied chiral family.
+It is an enlarged diagnostic, NOT an author-permitted/selected source law.
+Its Einstein matching does not license extending tied-family nilpotency
+conclusions to it, nor erase593's action-versus-claimed-force discrepancy.
+
+At the declared flat(7,7) periodic reference, for t=0,7 and n=1,2, freeze
+u=theta_t gamma2 cos(nx_t), e=sum(j!=t,2)theta_j Gamma2j sin(nx_t),kappa0.
+The FULL source Hessian must satisfy H0u=sigma_t n e,H0e=-12n u,
+H0^2=-12sigma_t n^2I. Original action6sigma_t nxy and
+Gramdiag(-sigma_t/2,6) independently test weighted reciprocity. Keep every
+full tensor coefficient and adjoint leg; never substitute compressed answers.
+Known controls must exercise the nonzero second-A leg absent on these seeds:
+F=theta01 Gamma01/2 gives K(F)=sum(j!=0,1)theta_j gamma_j and
+K^dagger Gamma1=4Gamma2-28Gamma2=-24Gamma2, with both pairings=-12.
+The old cubic seed must retain action4gamma xyz/3 versus target(0,0,4xy).
+
+Test the JOINT epsilon/connection quadratic lift, not an assumed deletion of
+the exact u direction. For alpha=gamma2 sin(nx_t)/n,epsilon=exp(r alpha),
+omega=s u+y e, B=r u exactly and FB0. The quadratic action is
+6sigma_t n(s-r)y; all9 Hessian entries, null(1,0,1), wrong-lift and nonnull
+fixed-epsilon controls are required. Tensor and connection changes start at
+higher amplitude degree, not assumed absent. Finite nonlinear Ward orbits
+can leave this carrier, so quadratic nullity is not full gauge reduction.
+For n0, e vanishes: use the actual1D constant carrier,H0=0; the periodic
+alpha formula does not exist there. No nonzero-frequency assertion is reused.
+
+Contract phase611-a59-untied-caa-response-joint-gauge-v1, terminal
+untied-caa-response-controls-pass-source-choice-open. Before FIRST science,
+freeze complete code/helpers/project/proof/coefficients/menu/counts/tolerance/
+resources/precedence and unique exact source/core lineage. Complete MAIN and
+independent review plus explicit MAIN first-run approval mandatory; only
+Release build checks allowed before freeze, with0warnings/errors. All new
+files one final newline. Preserve failures; version scientific repairs.
+Builder owns611root/unboundnote; MAIN sharedwiring/documents. Register every
+generator/traversal/101/202/verifier/scanner/registry/note/reference surface,
+then finalincremental AFTER all edits before commit/push.612+free.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,deficits15/14,
+massclaims0. No source operator/norm, physical time, poles or units selected.
+
+### A59 extension - covariant CAA symbol and null controls (Phase612)
+
+While611's prospective pack is being built, MAIN and independent reviewers
+derived a useful mixed/null-momentum extension and an important countercheck
+to interpreting a small closed block as the full symbol. Allocate612;
+613+free. No611/612science has occurred. The611operator remains an enlarged
+conditional diagnostic, not a selected source convention.
+
+For covectorq, Q=c(qsharp), V=c(v), q(v)=0 and v²nonzero, set
+A=V wedgeCl Gamma1,C=V wedgeCl Q,U=qV,E=q²A-qC,Y=qQ.
+U,Y have cos(q.x) phase and E,A,qC have sin(q.x) phase. Full actualH0
+givesHU=E,HE=-12q²U. Crucially HA=-12U+vflat Q andH(qC)=q²vflat Q;
+the extra vector direction must be retained until it cancels, not projected
+away. Gram(U,E)=diag(-v²q²/2,6v²(q²)^2), and original quadratic action
+is6v²(q²)^2xy. These are full tensor identities, not restricted adjoints.
+
+Atq²0 butqnonzero, U,E remain nonzero and HU=E,HE0: a full-source chain
+of length2 despite the carrier's ZERO Gram and ZERO pulled-back action.
+This does not rule out longer full-operator chains. Freeze v=gamma2,
+q=n(a theta0+b theta7), pairs(2,1),(1,2),(1,1),(1,-1), n1,2.
+For the null rows the allowed fixedprobe theta0 Gamma02 sin(q.x) pairs
+E byn²/2; theta0 gamma2 cos(q.x) pairsU by-n/2. These nonzero probes
+prevent confusing a degenerate restricted action with a zero full response.
+They do not assert that the probe-extended carrier is invariant underH.
+
+An independent longitudinal control holds for EVERYq:HY0. Its full adjoint
+is2q wedge(Q wedgeCl Gamma1)-2q²Gamma2; contraction withqsharp cancels
+between these two nonzero legs whenq²nonzero. dY0. Fornon-nullq,
+Pair(Y,Y)=-(q²)^2/2 is nonzero. Consequently the transverse block's
+lambda²+12q² is NOT the full operator determinant or characteristic cone.
+Check literal/simplified full adjoints before divergence, complete forward
+controls, actual original-action pairings and prospective exact coefficient
+and rank/zero/nonzero witnesses. Here null momentum is not zero momentum;
+the distinct n0/periodic-domain issue stays governed by611.
+
+Contract phase612-a59-covariant-caa-symbol-null-v1; terminal
+covariant-caa-symbol-controls-pass-carrier-not-full-spectrum. Builder owns
+612root andunboundnote; MAIN sharedwiring/docs. Any compiled611helper and
+dependency hashes must freeze after611's pack is fixed, withpassed611
+required before612execution. Complete code/proof/count/resource/coefficients/
+tolerance/precedence/uniqueexactbinding/live726 independent andMAIN reviews
+and explicit MAIN approval precede FIRSTscience. Releasebuild-only permitted,
+0warnings/errors; preserve failures and version repairs. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
+No physical time, poles, full symbol rank, global domain or source norm chosen.
+
+### A59 executed outcome and checkpoint preparation
+
+611/612 FIRST frozen Release runs both PASSED unchanged after complete
+independent/MAIN review and explicit MAIN approval.23/18 unique bindings,
+49/26 prospective count fields and live726 core closure matched exactly.
+611 wall1.066s,36524products/largest273;612 wall1.569s,10872products/
+largest228/frequency1. Full/summary hashes respectively:
+b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07;
+afd344c386a8c1c859b2c1a094daa1c0bb6be14b8f2e1a4b42374868240da97d.
+No bound scientific file was changed after execution. The correctly lifted
+joint quadratic gauge null passes; the cubic action/claimed-force mismatch
+remains. Null restricted action does not erase the full response, and the
+longitudinal kernel rules out full-symbol inference from the tiny carrier.
+
+All integration surfaces registered; ordered101/202/integrity pass392/3,
+coverage31/31,overturn94/94. Final incremental follows all edits, then scoped
+commit/push and remote verification. All14flagsfalse,O4/externalreviewpending,
+Phase561closed,deficits15/14,physicalclaims0.613+free. Next analytical lead:
+canonical isotropic stationary branch and full constant-field potential Hessian, with
+explicit grade5 nonlinear-closure negative control; not yet executed.
+The196-dimensional vector closure does not cover the differential operator.
+The existing reference also records a conditional homothety check that
+distinguishes connection stationarity from metric stationarity; source
+admissibility of that variation remains open.

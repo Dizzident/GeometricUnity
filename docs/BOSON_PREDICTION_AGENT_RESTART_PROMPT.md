@@ -45,6 +45,52 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC,A59;611-612executed,613+free):
+Previous completed checkpoint4706ac813c4077382fea497393bbd6fcbeefef0b
+was pushed and independently remote-matched. Previous goal turn PROGRESS.
+611/612 now BOTH PASSED FIRST frozen Release executions unchanged after
+complete independent/MAIN review and explicit MAIN approval:23/18 unique
+bindings,49/26 prospective count fields,full fixtures and live726 closure.
+611 wall1.066s,36524products/largest273;612 wall1.569s,10872products/
+largest228/maximumfrequency1. Full/summary SHA256 respectively:
+b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07;
+afd344c386a8c1c859b2c1a094daa1c0bb6be14b8f2e1a4b42374868240da97d.
+All bound scientific files are now immutable; no post-execution repairs.
+
+611 validates full untiedCAA signed-axis response, original quadratic
+action, the JOINT gauge null(1,0,1), nonzero second-A controls and retained
+cubic action/claimed-force mismatch. The n0 carriers are actual1D constants;
+no periodic alpha exists there. Finite nonlinear gauge orbits can leave the
+small carrier; do not infer full quotient from a joint quadratic null.
+612 validates HU=E,HE=-12q²U including four nonzero null momenta with
+zero restricted Gram/action but nonzero full response detected by allowed
+probes. HY=0 even atnonnullq requires both adjoint legs. Thus the transverse
+block is NOT a fullsymbol determinant, rank or physical characteristic cone.
+
+Shared wiring and verifier blocks independently reviewed. Ordered101/202/
+integrity pass392/3,coverage31/31,overturn94/94. Final incremental must
+follow ALL edits before A59 scoped commit/push/remote verification. Record
+the final report and exact remote-matched checkpoint in the handoff; do not
+infer final validation from this targeted pass. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,deficits15/14,physicalclaims0.
+
+NEXT PRIORITY after A59 checkpoint: allocate613+ prospectively to the
+canonical isotropic stationary branch S=sGamma1 on the declared flat
+reference and its full CONSTANT-FIELD POTENTIAL Hessian. Unexecuted gradient
+is(312gamma s²+kappa s)Gamma1; nonzero branchs=-kappa/(312gamma).
+The196-dimensional constant-field vector carrier has trace/symmetric-traceless/
+metric-skew sectors1/104/91 with coefficients kappa+624gamma s,
+kappa-48gamma s,kappa-16gamma s. These are NOT physical masses or closure
+of the full differential operator;611 already shows derivative mixing.
+General nonlinear vector closure FAILS: preserve a grade5 negative control
+instead of discarding it. Full proof and scope are in the existing stationary
+background reference. Also test conditional metric homothety: the nonzero
+connection-stationary branch has scaling derivative10192gamma s³ if the
+declared14D metric may scale independently with fixed couplings. Whether
+this variation is source-admissible remains unproved. Concrete safe tests
+remain; this tranche is PROGRESS.
+Older allocation/prospective text below is historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC,A58;608-610executed,611+free):
 Previous completed checkpoint12e2635c9d0b43b277dc42bb46d77f2c3ce0e64e
 was pushed and remote independently matched.608-610 now ALL PASSED their

@@ -228,6 +228,8 @@ static bool IsGeneratedDiagnosticScanPath(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P608.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P609.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P610.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P611.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P612.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -272,7 +274,9 @@ static bool IsGeneratedDiagnosticScanPath(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase607_source_induced_vertical_curvature_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase608_source_induced_ambient_ricci_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase609_chiral_null_branch_stationarity_audit_001/", StringComparison.Ordinal)
-    || normalizedPath.StartsWith("studies/phase610_induced_spin_curvature_contraction_audit_001/", StringComparison.Ordinal);
+    || normalizedPath.StartsWith("studies/phase610_induced_spin_curvature_contraction_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase611_untied_caa_response_joint_gauge_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase612_covariant_caa_symbol_null_audit_001/", StringComparison.Ordinal);
 
 static string DetermineKind(string lower, string file)
 {
@@ -752,6 +756,8 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P608.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P609.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P610.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P611.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P612.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
@@ -797,6 +803,8 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("studies/phase608_source_induced_ambient_ricci_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("studies/phase609_chiral_null_branch_stationarity_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("studies/phase610_induced_spin_curvature_contraction_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("studies/phase611_untied_caa_response_joint_gauge_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("studies/phase612_covariant_caa_symbol_null_audit_001/", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("scripts/verify_boson_claim_integrity.sh", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
