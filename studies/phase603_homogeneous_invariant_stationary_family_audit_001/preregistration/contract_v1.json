@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "phase": 603,
+  "contractId": "phase603-a55-homogeneous-invariant-stationary-family-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Full symbolic constant first-action connection gradient, complete real invariant stationary branches and closed invariant Hessian; fixed geometry, no source norm, physical vacuum or scale selection",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "flat fixed metric/reference/epsilon/tensors; constant connection and normalized density",
+    "carrierScope": "full connection gradient; closed two-dimensional local Spin-invariant Hessian only; no metric variations",
+    "chiralities": [
+      -1,
+      1
+    ],
+    "variables": [
+      "a",
+      "b",
+      "c",
+      "gamma",
+      "kappa"
+    ],
+    "phi1": "P Gamma1, P=1+h Omega",
+    "phi2": "(c-i h Omega)Gamma2",
+    "pairing": "-ReTr/128 with signed form metric",
+    "S": "a Gamma1+b Omega Gamma1",
+    "r": "a-h b",
+    "s": "a+h b",
+    "Q": "2 r s Gamma2",
+    "KQ": "312 r s P Gamma1",
+    "KAdjointS": "-24 r Gamma2-28 i h c r Omega Gamma2",
+    "DQAdjointKAdjointS": "624 r S",
+    "norm": "-14 r s",
+    "rawCubic": "-4368 r^2 s",
+    "action": "-1456 gamma r^2 s-7 kappa r s",
+    "gradient": "104 gamma r s P Gamma1+(208 gamma r+kappa)S",
+    "gramAB": [
+      [
+        -14,
+        0
+      ],
+      [
+        0,
+        14
+      ]
+    ],
+    "gramRS": [
+      [
+        0,
+        -7
+      ],
+      [
+        -7,
+        0
+      ]
+    ],
+    "raisedGradientRS": [
+      "r(208 gamma r+kappa)",
+      "s(416 gamma r+kappa)"
+    ],
+    "hessianRS": [
+      [
+        "416 gamma r+kappa",
+        "0"
+      ],
+      [
+        "416 gamma s",
+        "416 gamma r+kappa"
+      ]
+    ],
+    "hessianCharacteristic": "(t-416 gamma r-kappa)^2",
+    "nonzeroBranchLoweredHessianAB": [
+      [
+        "14 kappa",
+        "0"
+      ],
+      [
+        "0",
+        "-14 kappa"
+      ]
+    ],
+    "invariantCompleteness": "independent written equivariance plus bound595 full real invariant classification; no repeated census",
+    "branches": [
+      "both-zero/all-a-b",
+      "mass-only/origin",
+      "cubic-only/origin",
+      "cubic-only/chiral-line",
+      "both-nonzero/origin",
+      "both-nonzero/opposite-chiral"
+    ],
+    "branchSubstitutions": "free symbolic t uses variable a; opposite branch a=-t,b=h t,kappa=416 gamma t; chiral a=t,b=h t,kappa=0",
+    "branchHessians": [
+      "zero",
+      "kappa I",
+      "zero",
+      "nonzero rank-one square-zero for gamma*t!=0",
+      "kappa I",
+      "-kappa I"
+    ],
+    "decoys": [
+      "opposite-chiral at kappa0 has Q0 but G=416 gamma t^2(1-h Omega)Gamma1",
+      "chiral at nonzero kappa has G=kappa S",
+      "at stationary opposite branch curvature-only gradient=kappa S!=0"
+    ],
+    "knownAnswerGrades": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "counts": {
+      "wordCases": 44944,
+      "hodgeCases": 16384,
+      "polynomialChecks": 5,
+      "chiralityRows": 2,
+      "fullIdentityChecks": 16,
+      "actionDerivativeChecks": 4,
+      "hessianColumns": 4,
+      "hessianBilinears": 8,
+      "stationaryRows": 12,
+      "decoyRows": 6
+    },
+    "coefficientCountsPerChirality": {
+      "Q": 182,
+      "KQ": 56,
+      "KAdjointS": 364,
+      "DQAdjointKAdjointS": 56,
+      "cubicGradient": 84,
+      "massGradient": 28,
+      "action": 6
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 10,
+      "maximumEstimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 268435456,
+      "maximumFinalTensorCoefficientCount": 364,
+      "maximumPolynomialTotalDegree": 4
+    },
+    "sourceNormSelected": false,
+    "physicalVacuumSelected": false,
+    "physicalScaleSelected": false
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "full-symbolic-gradient-control-failed",
+    "invariant-hessian-control-failed",
+    "stationary-family-control-failed",
+    "homogeneous-invariant-stationary-family-controls-pass-scale-unselected"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/Program.cs",
+      "sha256": "4f9f8810d7e146e75bce604a25eed8fd4c8bdfa26ca6e2b406891bee7aff42b2"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/InvariantPolynomial.cs",
+      "sha256": "42f9a0a95041e199f30448bfd69441bbb9b031c7f8dfe0863e17634858b0b25d"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj",
+      "sha256": "7638cabccf1113e0c281ee9fac8769f057336a356d5596f852727a87d388ace4"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase603_homogeneous_invariant_stationary_family_audit_001/STUDY.md",
+      "sha256": "f0ec6ebcab4a49b91358953cfbc61f2695a07a5df442883cea693bc56b6cf48a"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase595-summary",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/output/invariant_tensor_dimension_audit_summary.json",
+      "sha256": "e42ee13516ce4140a7eb8e37ef4dbf95af4e41af4c08258b16a7aa8f547cc071"
+    },
+    {
+      "id": "phase595-contract",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/preregistration/contract_v1.json",
+      "sha256": "d2d32ff4e3689a05b4d46276b43e20874fc9e73ca259b80413191c43cc7fc54e"
+    },
+    {
+      "id": "phase595-study",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/STUDY.md",
+      "sha256": "3e730fba0659fb0f8344d942da6b34726a44239b9e65570fc0b37bd6fbcf88b9"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "o4Status": "pending",
+  "promotedPhysicalMassClaimCount": 0
+}

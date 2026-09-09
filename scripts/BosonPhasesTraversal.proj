@@ -456,6 +456,8 @@
     <PhaseProject Include="../studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj" />
     <PhaseProject Include="../studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj" />
     <PhaseProject Include="../studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj" />
+    <PhaseProject Include="../studies/phase602_stationary_odd_background_closure_audit_001/Phase602StationaryOddBackgroundClosureAudit.csproj" />
+    <PhaseProject Include="../studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

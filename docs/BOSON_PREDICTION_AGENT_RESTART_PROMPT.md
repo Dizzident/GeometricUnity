@@ -45,6 +45,61 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, A55; Phases602-603 executed):
+both first frozen Release runs passed after complete independent/coordinator
+code/proof/fixture/hash reviews. Each pack has16 exact bindings and live726
+core closure. 602 confirms actual S0 stationarity and FULL26D constant
+Hessian closure,104 full columns,312 separate legs,2704 independent action
+bilinears and624 scaled columns. Nonzero eigenvalues32gamma lambda and
+-8gamma lambda/3 have size2 Jordan blocks; the lowered Hessian has13+
+and13- directions. This defeats an origin-only obstruction, but is a real
+constant-action saddle, not a physical stable vacuum or particle spectrum.
+
+603 confirms the full symbolic invariant gradient, all coupling degeneracies,
+12 stationary rows and6 nonzero decoys. It recovers the actual first-action
+branch S*=-kappa(1-hOmega)Gamma1/(416gamma), missed by curvature-only KQ.
+The full closed invariant Hessian is-kappa I2; its lowered real Hessian is
+indefinite for kappa nonzero. A symbolic coupling ratio is not physical units.
+
+NEXT PRIORITY: freeze the two squared-action constructions independently.
+For R_beta=beta KQ+kappa S, J_R=B(R_beta,R_beta)/2, and J_G=B(G,G)/2,
+analytical full gradients disagree at S* unless gamma=3beta. There the
+delta-s=1 variation of J_R is(7kappa^3/(208gamma))(1-3beta/gamma), versus0
+for J_G. More sharply J_G has an extra stationary branch
+r=-kappa/(416gamma),s0 where the first-action gradient is NONZERO, with
+first-action directional derivative7kappa^2/(832gamma). Square stationarity
+does not imply the original equation. Freeze all coupling degeneracies,
+full adjoint gradients, independent original-square derivatives, nonzero
+witnesses and closed invariant Hessians. The source9.11 norm remains unselected.
+
+IN PARALLEL: finish full Fourier closure around S*. Two independent agents
+confirmed at c0, u=theta0 gamma2 cos,b=theta2 gamma0 cos,e=H0u,
+H_S*u=e+kappa(14u+b)/13. The bare b leaks outside601's former3D carrier.
+Further images require additional even modes e0=theta0 Gamma20 sin and
+q=theta2 Omega sin. Two agents have now independently derived FULL7D c0
+closure on(u,b,Omega u,Omega b,e,e0,q); MAIN checked Gram/reciprocity and
+block factorization. All columns and frequency conventions are recorded in
+the reference. Its prospective characteristic polynomial is
+(z-kappa)^2(z-15kappa/13)^2 z(z-12kappa/13)(z-85kappa/78), independent of
+nonzero Fourier frequency although the operator/Jordan response is not.
+This is analytical, not executed: freeze original-action bilinears and full
+columns before testing, and handle kappa0 and n0 distinctly. General-c
+closure remains open. Do not transfer eigenvalues to physical poles or
+compress away leaking outputs.
+Registry604+ free; neither next experiment is allocated or run.
+
+All shared surfaces include602-603 and exact output pins. Targeted101/202
+Release builds passed0 warnings/errors; ordered package/checklist/integrity
+pass383/3, O4coverage31/31, overturn94/94. Final incremental cadence follows
+all documentation edits, then commit/push this validated tranche under the
+active user goal. Previous abbee7db2ac49bd4ddb507c97f4aedbe093e3024 was
+committed/pushed with matching remote and clean worktree; its final A54
+pass_2026-09-09T11-25-21-355Z.json passed76 ran/385 skipped,381/3 checklist.
+All fourteen flags false, O4/external review pending, Phase561 closed,
+deficits15/14, physical claims0. See A55, IMPLEMENTATION_P602/P603 and
+STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md. Older allocation/free
+statements below are historical; preserve all frozen scientific inputs.
+
 LATEST FOLLOW-UP (2026-09-09 UTC, A54; Phases600-601 executed):
 both first frozen Release runs passed after complete independent/coordinator
 code/proof/hash review. 600 confirms the full actual gradient using2912

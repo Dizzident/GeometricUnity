@@ -470,6 +470,8 @@ dotnet run --no-build -c Release --project studies/phase598_continuum_action_des
 dotnet run --no-build -c Release --project studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj
 dotnet run --no-build -c Release --project studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj
 dotnet run --no-build -c Release --project studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj
+dotnet run --no-build -c Release --project studies/phase602_stationary_odd_background_closure_audit_001/Phase602StationaryOddBackgroundClosureAudit.csproj
+dotnet run --no-build -c Release --project studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

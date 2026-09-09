@@ -1067,6 +1067,8 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P599.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P600.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P601.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P602.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P603.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -1078,6 +1080,7 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Reference/ExperimentReferences/HELMHOLTZ-AND-QUADRATIC-ACTION-20260909.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/CONTINUUM-ACTION-DESCENT-20260909.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/FULL-ADJOINT-AND-HESSIAN-CLOSURE-20260909.md"
+    || normalizedPath == "docs/Reference/ExperimentReferences/STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md"
     || normalizedPath.StartsWith("studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase579_collective_coordinate_jacobian_self_check_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase580_external_review_packet_assembly_001/", StringComparison.Ordinal)
@@ -1102,6 +1105,8 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase599_source_registered_residual_kernel_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase601_full_hessian_cyclic_closure_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase602_stationary_odd_background_closure_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase603_homogeneous_invariant_stationary_family_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"

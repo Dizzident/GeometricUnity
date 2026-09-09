@@ -2679,3 +2679,139 @@ Integration now includes600-601; targeted package/checklist/integrity381/3.
 The analytical stationary odd and homogeneous invariant background leads
 are successors to freeze, not executed results or allocations. Registry602+
 remains free; no source norm, vacuum, scale or physical mass is selected.
+
+### A55 - Actual stationary backgrounds beyond the origin (2026-09-09 UTC)
+
+A54 was committed/pushed as abbee7db2ac49bd4ddb507c97f4aedbe093e3024,
+with independently verified remote and clean worktree. Final incremental
+pass_2026-09-09T11-25-21-355Z.json passed76 ran/385 skipped,381/3 checklist.
+The preceding goal turn was PROGRESS: full adjoint and carrier closure were
+executed and independently validated, and new stationary-background leads
+changed the next experiment. Allocate602-603 before implementation;604+ free.
+
+Keep the exact source family already audited: flat fixed metric/reference,
+constant tensors and normalized density, epsilonI, h=-1,+1, P=1+hOmega,
+Phi1=P Gamma1 and Phi2=(c-ihOmega)Gamma2, full CCA with both Hodge legs.
+All connection directions lie in the full H-anti real carrier; the declared
+trace/form pairing is indefinite, not a selected source9.11 positive norm.
+c is formal, not a fitted parameter. These are fixed-geometry connection
+tests; metric variations, physical poles and the separate second action
+are outside their claims. No new sampling, core change or historical rewrite.
+
+602 tests S0=lambda theta0 gamma0 at kappa0. Q0 by itself is insufficient
+for stationarity. The full constant actual gradient must be constructed as
+G=gamma(KQ+(DQ_S)^dagger K^dagger S)/3, with the FULL derivative
+DQ_S[V]=S wedge V+V wedge S. The exact S0 gradient is zero for every c/h.
+K^dagger(theta0 gamma0) has constant part
+-2 sum_(a<b,a,b!=0)theta_ab Gamma_ab and linear c part
+-2ihc sum_(a<b)theta_ab Omega Gamma_ab. Only0j contributes to DQ_S0^dagger;
+those terms commute with gamma0. The nonstationary Q0 control
+lambda theta0 gamma2 instead has actual gradient
+-(4gamma lambda^2/3)sum_(j!=0,2)theta_j gamma_j. Check full tensors and
+nonzero directional variations; never infer stationarity from a null square.
+
+Differentiate the actual gradient with fixed tensors and couplings:
+H_S0[V]=(gamma/3)[K(DQ_S0 V)+(DQ_V)^dagger K^dagger S0
+ +(DQ_S0)^dagger K^dagger V]. All d terms vanish only because these
+particular input fields are constant. The complete full output must be
+computed before comparing with the candidate closed carrier. Independently
+differentiate/polarize the original cubic action on S0+sV+tW rather than
+reusing this Hessian formula to certify itself.
+
+Let V_i=theta_i gamma_i,W_i=theta_i Omega gamma_i, i1..13. Its full26D
+Gram is diag(-I13,+I13). The three unweighted Hessian contributions on V_i
+are4sum_(j!=0,i)(V_j+hW_j),4sum V_j,4sum V_j. On W_i they are
+0,4sum W_j,-4h sum V_j. Every c contribution vanishes by shared-index
+Clifford identities, including putative output0. Freeze and verify those
+cancellations rather than restricting c to zero after inspecting results.
+
+The closed matrix is (4gamma lambda/3)(J13-I13) tensor M,
+M=[[3,-h],[h,1]], with (M-2I)^2=0 but M-2I nonzero. For gamma lambda
+nonzero, the uniform index sector has eigen32gamma lambda and the twelve
+traceless sectors have eigen-8gamma lambda/3, each with a size2 Jordan
+block. The V+hW directions are genuine eigenvectors, not a compression.
+Freeze all column/bilinear, Gram, rank/minimal-polynomial, nonzero Jordan,
+chirality/c-slot, coupling-scaling and zero-degeneracy controls prospectively.
+Any finite parameter rows are labeled known-answer controls, not a selected
+source coupling, vacuum amplitude, stable mode or physical mass.
+
+603 tests S=aGamma1+bOmegaGamma1, r=a-hb,s=a+hb, on the complete local
+Spin-invariant one-form carrier. The exact constant identities are
+Q=2rsGamma2, KQ=312rsP Gamma1,
+K^dagger S=-24rGamma2-28ihcrOmegaGamma2,
+(DQ_S)^dagger K^dagger S=624rS,
+B(S,S)=-14rs, B(S,KQ)=-4368r^2s,
+I=-1456gamma r^2s-7kappa rs, and
+G=104gamma rsP Gamma1+(208gamma r+kappa)S.
+Use complete symbolic polynomial coefficients, not interpolation or fits.
+The c-slot cancellation must retain the nonzero intermediate adjoint term.
+
+The invariant Gram in(a,b) is diag(-14,+14), or in(r,s) [[0,-7],[-7,0]].
+Independent action differentiation gives raised coordinates
+(r(208gamma r+kappa), s(416gamma r+kappa)). Direct FULL gradient equality
+must establish stationarity, not only a projected derivative. Separately,
+local Spin equivariance and595's complete rank2 invariant one-form result
+give a proof of closure with a nondegenerate restricted Gram; do not claim
+that arbitrary Spin rotations preserve the torus lattice or fix metric
+Euler derivatives. Verify the two arguments separately where implemented.
+
+For gamma*kappa nonzero the only stationary points in this invariant
+carrier are the origin and S*=-kappa(1-hOmega)Gamma1/(416gamma).
+For kappa0,gamma nonzero the r0 line is stationary; for gamma0,kappa
+nonzero only the origin; if both vanish every constant invariant S is
+stationary. Formal branch normalization may avoid inverse symbolic gamma,
+but must not suppress these degenerate cases or select numeric couplings.
+At the nonzero branch the closed invariant Hessian is-kappa I2, versus
++kappa I2 at the origin. S* is null and Q0, while its nonzero cubic
+adjoint variation cancels kappa S*. The rejected curvature-only residual
+would instead equal kappa S* and miss this first-action stationary branch.
+This discrepancy is not a conclusion about the separately defined second
+action, source norm, physical vacuum selection, scale or unit calibration.
+
+Separate workers own602/603 studies and implementation notes; a third agent
+independently reviews complete packs. MAIN owns registry/shared wiring/docs
+and must completely review code/proofs/contracts/bindings before approval.
+Use immutable600 arithmetic/Fourier/full-adjoint helpers and, when useful,
+601 polynomial/matrix helpers with complete hash lineage. Do not couple the
+two new first-run freezes unnecessarily. Before ANY scientific run freeze
+all scientific files, full fixture menus, every count/prediction/tolerance,
+resources/precedence, unique exact bindings and the live726-file core tree.
+Release build-only checks may precede freeze. First-run failures are retained;
+scientific repairs require versioning and independent review. Neither an
+unexecuted plan nor a larger checklist is itself boson-prediction progress.
+
+All fourteen authority flags remain false; O4/external review pending,
+Phase561 closed, source deficits15/14 and promoted physical mass claims0.
+No sampling, fitting, physical field identification, source/norm/measure/
+contour selection, production, physical spectrum or GeV calibration.
+
+A55 additional PRE-EXECUTION scope control: these stationary points are
+not thereby real action minima. In602 the lowered internal block is
+diag(-1,+1)M=[[-3,h],[h,1]], determinant-4, hence one positive and one
+negative direction. The index factors12 and-1 are nonzero, so the complete
+26D constant carrier has inertia13+,13- for gamma lambda nonzero. In603
+the nonzero stationary branch has lowered(a,b) Hessian diag(14kappa,-14kappa),
+hence1+,1- when kappa nonzero; the origin has the opposite signs. Include
+these elementary controls where natural and state the real constant-action
+saddle boundary in both proofs. This does NOT infer physical instability
+without a kinetic/time/constraint analysis or select Euclidean continuation.
+
+A55 execution record: both first frozen Release runs passed after full
+independent/coordinator code/proof/fixture/binding/core reviews. 602 wall1.438s,
+contract8073885753e5e9833b5ab86701d7aedd8c691965a5e5d3658b60841ed484afef,
+full/summaryffebaa3ef03149ed72b94a55b3d2d76770474b169b012f1571aa5f2b68a9415d.
+603 wall0.581s, contracta81ca68c7f2405e4955dcd96bf42a76016da7e383d505c454328bb9fcc612dec,
+full/summary0c66a20b280e5df487efb67be03388122a6ec88b8d55ab8636c86634f45bfda6.
+Both16-binding packs and live726 tree passed unchanged. Every frozen count,
+formal-c cancellation, nonzero decoy and Jordan/saddle control passed.
+All integration surfaces include602-603; targeted package/checklist/integrity
+pass383/3 with the same three standing physical failures. Final incremental
+cadence follows all doc edits. No physical promotion claim is made.
+
+New full-gradient analytical leads distinguish residual-square from actual-
+gradient-square stationary points and expose an extra J_G stationary branch
+with nonzero original gradient. A parallel Fourier analysis around S* exposes
+the first bare-transpose leakage and seeks complete enlarged closure. These
+are prospective successor experiments only;604+ remains unallocated.
+All fourteen flags remain false, O4/external review pending, Phase561 closed,
+source deficits15/14 and promoted physical mass claims0.

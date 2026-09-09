@@ -23581,3 +23581,93 @@ follows all documentation edits; its timestamped report records completion.
 Commit/push this validated PROGRESS checkpoint, not a promotion claim.
 All fourteen flags remain false, external review/O4 pending, Phase561 closed,
 source deficits15/14, physical mass claims0. Concrete next experiments remain.
+
+## 2026-09-09 UTC: A55 stationary-background implementation
+
+Previous goal turn was PROGRESS:600-601 were committed/pushed as
+abbee7db2ac49bd4ddb507c97f4aedbe093e3024 with independently matching remote,
+clean worktree and final pass_2026-09-09T11-25-21-355Z.json76 ran/385 skipped.
+Current turn re-read authoritative checkpoint/restart/registry before work.
+Allocate602-603;604+ remains free. No scientific execution has yet occurred.
+
+Separate implementers pursue the nonzero odd-background full26D Hessian and
+the homogeneous invariant stationary family. The independent reviewer
+re-derived the complete603 adjoint, action, gradient and ALL coupling
+degeneracies, including the kappa0 stationary line's nonzero Jordan shear.
+Both workers can continue after the previous transient service-limit stop.
+MAIN owns shared wiring/docs and full pre-run reviews; all packs must freeze
+complete scientific code, predictions/counts/resources and exact lineage
+before first execution. No empirical fitting or trial scientific run.
+
+This is directed at two concrete errors: replacing the full gradient by a
+curvature-only residual can miss actual stationary branches, and treating
+a non-invariant compression as a spectrum can invent modes. The new tests
+must retain complete tensor images, all formal c slots, independent action
+polarization, nonzero stationarity decoys and all coupling degeneracies.
+Even a valid stationary background does not select a physical vacuum or
+convert symbolic couplings into a mass scale. The closed carriers describe
+fixed-geometry connection variations, not coupled metric dynamics.
+
+During implementation, independent analysis found a decisive next comparison:
+the source residual-square and corrected-gradient-square do not share the
+same stationary family under the declared trace norm. A null but nonzero
+residual can have a NONZERO derivative. Exact variation and Hessian controls
+are recorded in STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md;
+they are analytical, not allocated/executed, and no source norm is selected.
+All fourteen flags false, O4/external review pending, Phase561 closed,
+source deficits15/14, physical mass claims0. Source and unit choices remain open.
+
+### A55 first frozen results and checkpoint
+
+Both complete packs received independent reviewer and MAIN approval before
+MAIN executed them. 603 passed in0.581s and602 in1.438s; no scientific trial,
+failed run or post-execution scientific repair occurred. Each16-binding pack
+passed full fixture parity and all726 live core path/hash/tree checks.
+
+602 confirms104 full source Hessian columns,312 independent legs,2704
+original-action bilinears,624 scaled columns and every frozen Jordan/rank
+certificate. Actual work274208 coefficient products, largest tensor91terms.
+The full stationary constant carrier has nonzero eigenvalues but13 positive
+and13 negative lowered directions. 603 confirms16 full symbolic identities,
+4 first derivatives,4 full Hessian columns,8 action Hessian bilinears,
+12 stationary rows and6 nonzero decoys. It recovers S*, whose actual cubic
+adjoint cancels the mass gradient although Q0 and its trace square0.
+Neither result makes a physical stable-vacuum or mass claim.
+
+602 contract8073885753e5e9833b5ab86701d7aedd8c691965a5e5d3658b60841ed484afef;
+full/summaryffebaa3ef03149ed72b94a55b3d2d76770474b169b012f1571aa5f2b68a9415d.
+603 contracta81ca68c7f2405e4955dcd96bf42a76016da7e383d505c454328bb9fcc612dec;
+full/summary0c66a20b280e5df487efb67be03388122a6ec88b8d55ab8636c86634f45bfda6.
+Workers updated only their unbound implementation notes after execution.
+All shared wiring, scanner registrations and verifier pins are present;
+ordered101/202/integrity passed383/3, O4coverage31/31, overturn94/94.
+Final incremental cadence follows all documentation edits before checkpoint.
+
+Useful parallel work continued while packs and integration were prepared.
+Independent analysis confirmed J_R versus J_G full-gradient differences and
+an EXTRA J_G stationary branch r=-kappa/(416gamma),s0 where the first-action
+variation is7kappa^2/(832gamma), nonzero. Thus even squaring the corrected
+gradient need not preserve its stationary equations under the declared
+indefinite trace pairing. The full-transpose and independent scalar-action
+routes agree analytically; this is an unexecuted successor, not a source norm
+choice. The complete coupling degeneracies are recorded in the reference.
+
+Two independent agents confirmed Fourier leakage around S*: H*u contains
+the bare transpose b absent from601's carrier, and H*e requires further even
+modes. A seven-direction candidate is under review; no closure or physical
+dispersion is asserted before its full images are derived and tested.
+These concrete tests justify continued PROGRESS, not escalating an unresolved
+author/norm/physical-unit choice into a machine-authored external ruling.
+All fourteen flags false, O4/external review pending, Phase561 closed,
+source deficits15/14, physical claims0. Registry604+ free.
+
+Before the final A55 cadence, both momentum agents completed independent
+derivations of every7D c0 column. MAIN checked the signed Gram, all displayed
+reciprocity entries and the even-block factorization. The full prospective
+characteristic polynomial is frequency independent on this carrier; its
+matrix/Jordan behavior need not be. The full column table, nonzero-frequency
+Gram, n0 caution and general-c limitation are now in the reference and
+restart prompt. This upgrades the successor from an open carrier guess to
+a concrete independently predicted frozen test, not an executed physical
+spectrum. The square-action successor also has complete independently
+checked branches and full-transpose formulas. Neither is yet allocated.

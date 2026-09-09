@@ -65,7 +65,9 @@ back, NO new phase directory may be created outside this table.
 | 599 | Source versus registered residual kernel audit (A53) | DONE, first frozen run passed: exact selfdual Weyl kernel mismatch under declared compact Lie embedding; no source selection, action-modulo-boundary conclusion or mass claim. |
 | 600 | Full trace-adjoint periodic gradient norm audit (A54) | DONE, first frozen run passed: complete forward-checked adjoint, nonzero/null actual gradient and declared-pairing periodic comparison; no norm or physical field selection. |
 | 601 | Full quadratic Hessian cyclic-closure audit (A54) | DONE, first frozen run passed: full-source cyclic closure and non-invariant two-mode compression; fixed-geometry connection carrier, no physical spectrum or source choice. |
-| 602+ | Unassigned - extend this registry before use | - |
+| 602 | Stationary odd-background full closure audit (A55) | DONE, first frozen run passed: actual stationary background, full26D constant Hessian closure and Jordan/saddle controls for both chiralities and every formal c; no physical vacuum or spectrum selection. |
+| 603 | Homogeneous invariant stationary-family audit (A55) | DONE, first frozen run passed: full symbolic action/gradient, all coupling degeneracies and nonzero stationary branch with closed invariant saddle Hessian; no physical scale, source or norm selection. |
+| 604+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the
