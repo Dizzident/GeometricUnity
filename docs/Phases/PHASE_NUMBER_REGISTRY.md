@@ -57,7 +57,9 @@ back, NO new phase directory may be created outside this table.
 | 590-591 | Source Clifford tensors and typed curvature contraction (A48) | 590 mixed-signature real-form and canonical tensor controls; 591 literal Hodge/Clifford chain on an explicit algebraic-curvature basis, with tied and enlarged bracket families distinguished. Deterministic, source choices unselected, no core changes or physical claims. |
 | 592 | Companion-tensor parameter and chirality audit (A49) | Exact formal companion-family contraction, Einstein-shaped matching conditions, chiral witnesses and invertible decoys; declared pairing only, no source selection or physical projection. |
 | 593 | Full companion-branch first-variation audit (A49 extension) | Exact constant-torsion action polynomial versus candidate curvature force, both matching chiralities and bracket conventions; scoped variational counterexample, no source/model selection. |
-| 594+ | Unassigned - extend this registry before use | - |
+| 594 | Actual action-gradient and reciprocity audit (A50) | Exact full-coordinate adjoint/polynomial gradients, weighted Helmholtz controls, curvature factorization and Riemann-projection decoys; conditional action-consistent response, no physical spectrum. |
+| 595 | Complete invariant tensor dimension audit (A50) | Exact complexified sign-character and signed-rotation upper bounds plus existing real invariant lower bounds; degree1/2 dimension classification, no normalization or source choice. |
+| 596+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "phase": 595,
+  "contractId": "phase595-a50-invariant-tensor-dimension-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Complete real invariant dimensions at exterior degrees1 and2 for the declared Spin(7,7) representation; complex finite-subgroup upper bounds plus independently bound real lower bounds; no source operator or normalization choice",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "complexification": "negative vector and gamma basis multiply by i; dual coframe multiply by -i; positive axes unchanged",
+    "realForm": "u(H) tensor_R C = End_C(S); H=gamma7...gamma13; real kernel complexification preserves dimension",
+    "formDegrees": [
+      1,
+      2
+    ],
+    "cliffordMasks": "all integers0..16383, increasing order",
+    "characters": "13 even coordinate flips (0,j), j=1..13; tensor sign is parity of (I xor J) intersect {0,j}",
+    "missingCharacter": 13,
+    "quarterTurns": "13 adjacent pairs(p,p+1), p=0..12; e_p maps to e_(p+1), e_(p+1) maps to -e_p",
+    "dualAction": "inverse-transpose signed permutation, computed separately; in the complex orthonormal basis it equals the vector action",
+    "orbitConvention": "coefficient(target)=formSign*cliffordSign*coefficient(source); both directions added for graph traversal",
+    "canonicalCoefficients": "J=I, coefficient1",
+    "complementCoefficients": "J=Icomplement, EuclideanBladeSign(full,I)",
+    "complexRealCompanionPhases": [
+      1,
+      2
+    ],
+    "degreeRows": [
+      {
+        "degree": 1,
+        "formMasks": 14,
+        "positions": 229376,
+        "survivors": 28,
+        "missingCharacterSurvivors": 56,
+        "rotationRows": 364,
+        "components": 2,
+        "orbitSize": 14,
+        "rank": 26,
+        "nonTreeRows": 338,
+        "wrongDualChangedTerms": 2,
+        "wrongComplementChangedTerms": 2
+      },
+      {
+        "degree": 2,
+        "formMasks": 91,
+        "positions": 1490944,
+        "survivors": 182,
+        "missingCharacterSurvivors": 364,
+        "rotationRows": 2366,
+        "components": 2,
+        "orbitSize": 91,
+        "rank": 180,
+        "nonTreeRows": 2186,
+        "wrongDualChangedTerms": 24,
+        "wrongComplementChangedTerms": 24
+      }
+    ],
+    "predictedCounts": {
+      "formMasks": 105,
+      "positions": 1720320,
+      "characterEvaluations": 22364160,
+      "survivors": 210,
+      "missingCharacterSurvivors": 420,
+      "rotationRows": 2730,
+      "forestEdges": 206,
+      "nonTreeRows": 2524,
+      "components": 4,
+      "wrongDualRows": 52,
+      "wrongComplementRows": 26,
+      "rotationMaskKnownAnswers": 212992,
+      "complexificationRows": 105
+    },
+    "wrongDualDecoy": "use inverse quarter-turn on covectors but correct forward adjoint action; every tensor/generator must fail with max coefficient defect2",
+    "wrongComplementDecoy": "replace complement orientation coefficients by all+1; every degree/generator must fail with max coefficient defect2",
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 10,
+      "maximumEstimatedCpuSeconds": 30,
+      "estimatedPeakBytes": 67108864,
+      "maximumEstimatedPeakBytes": 134217728
+    }
+  },
+  "analyticPredictionsBeforeExecution": [
+    "Complexification rescales negative vectors/gammas by i and dual coframes by -i; original real companion tensors become i and -1 times the Euclidean complement patterns",
+    "The Euclidean complex volume squares to -1, unlike the original mixed-signature volume whose square is+1",
+    "Every real Spin invariant is fixed by the selected complex Spin sign flips and quarter-turns; these finite tests supply only upper bounds",
+    "All thirteen characters leave only J=I or J=Icomplement,28 and182 positions; omitting flip(0,13) doubles these to56 and364",
+    "Signed quarter-turn graphs have two components of size14 or91, ranks26 or180, and all338 or2186 non-tree directed rows are consistent",
+    "Canonical coefficient1 and complementary EuclideanBladeSign(full,I) independently satisfy all exact graph constraints",
+    "Inverse-instead-of-dual decoys fail all52 tensor/generator rows; missing complement signs fail all26 degree/generator rows; maximum defect2 and changed term counts2/24",
+    "The independently passed Phase590 real invariant lower bounds equal these complex upper bounds, proving real invariant dimensions2 and2",
+    "The result classifies only these representation tensor spaces, not source normalization, operator choice, nonlinear constructions, other degrees or physical claims"
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "character-census-control-failed",
+    "signed-orbit-control-failed",
+    "real-dimension-or-decoy-control-failed",
+    "invariant-tensor-dimensions-two-certified-source-choice-open"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/Program.cs",
+      "sha256": "36ed19de33b56f5d83fb841db8c0116b24e937f169e6cfdcca703684a08a5b30"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase595_invariant_tensor_dimension_audit_001/STUDY.md",
+      "sha256": "3e730fba0659fb0f8344d942da6b34726a44239b9e65570fc0b37bd6fbcf88b9"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase590-summary",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/output/source_clifford_tensor_controls_summary.json",
+      "sha256": "21d3e4b1bbcb54a030f4c2de56eef909503405a9f414eac713ed9134a7ae365d"
+    },
+    {
+      "id": "phase590-contract",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/preregistration/contract_v1.json",
+      "sha256": "028664b9aba7241c2c63da46fe13799d444b893bef08634cc4cd15cb48a4a4ac"
+    },
+    {
+      "id": "phase590-program",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/Program.cs",
+      "sha256": "1641f49ddcd59eea6795774694475f885c2d75b3701c21ff79ab8d67f5cb79fd"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase590_source_clifford_tensor_controls_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

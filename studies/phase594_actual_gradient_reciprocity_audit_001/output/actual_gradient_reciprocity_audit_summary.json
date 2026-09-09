@@ -1,0 +1,7522 @@
+{
+  "schemaVersion": 1,
+  "phase": 594,
+  "phaseId": "phase594-actual-gradient-reciprocity-audit",
+  "contractId": "phase594-a50-actual-gradient-reciprocity-v1",
+  "contractSha256": "fb0a60401127df0575dbfdd4fdfa6cb40cfa885c70659c111c893c39d29f9a7f",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "coreFileCount": 726,
+  "bindingCount": 12,
+  "uniqueBindingIdCount": 12,
+  "uniqueBindingPathCount": 12,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Program.cs",
+      "sha256": "e10d92a37a48c1a512a8c00e676dd80eb0c50ed5790ae4f18fa84d4810d2148f",
+      "hashMatches": true
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs",
+      "sha256": "6b7f13a024dbb834331514e93781f1122c1af8ac253d2cb040c81a57a0db1d08",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj",
+      "sha256": "c421dc2a581d894ec92b236e16750a358a9dd5d2711488331f35e1ce6436f12c",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/STUDY.md",
+      "sha256": "6ca9cb63ff1e26fb280937b4b5f1208d42af5e1279eeedfec776c9640084584d",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "phase593-summary",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json",
+      "sha256": "67000008c72eddbfe44d9872170cfdf5e3725f333bbbbdb327f4e59d745cb1be",
+      "hashMatches": true
+    },
+    {
+      "id": "phase593-contract",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/preregistration/contract_v1.json",
+      "sha256": "cde88414f1af7790f472d81419250b826f1c25fd9dd844639ebcf98919001fa4",
+      "hashMatches": true
+    },
+    {
+      "id": "phase593-program",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Program.cs",
+      "sha256": "6ca291a18e95e95228188e55f47d17af1d662d75662c7a3b834373929ccce788",
+      "hashMatches": true
+    },
+    {
+      "id": "phase593-study",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/STUDY.md",
+      "sha256": "210c5daf97a9c3f7ae99901a6ed8f64031db60db2a63ea936ab535c0c928e40a",
+      "hashMatches": true
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "actual-gradient-controls-pass-curvature-only-force-rejected",
+  "terminalStatus": "actual-gradient-controls-pass-curvature-only-force-rejected",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "wordPassed": true,
+    "hodgePassed": true,
+    "arithmeticPassed": true,
+    "wordCases": 256,
+    "hodgeCases": 16384,
+    "carrierPassed": true,
+    "adjointPassed": true,
+    "gradientPassed": true,
+    "reciprocityPassed": true,
+    "eulerPassed": true,
+    "factorizationPassed": true,
+    "projectionPassed": true,
+    "massPassed": true,
+    "csPassed": true,
+    "carrierRows": 5,
+    "coefficientRows": 10,
+    "gradientRows": 20,
+    "gradientComponents": 60,
+    "jacobianEntries": 180,
+    "curlComponents": 60,
+    "desiredCurlRejections": 10,
+    "zeroCRows": 10,
+    "unweightedJacobianRejections": 10,
+    "linearFactorizationRejections": 10,
+    "nonlinearFactorizationRejections": 10,
+    "kAdjointChecks": 30,
+    "qAdjointChecks": 30,
+    "sourceKernelVectors": 25,
+    "projectionRows": 10,
+    "massRows": 15,
+    "carriersOut": [
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "gramPassed": true,
+        "qPassed": true,
+        "gram": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "curvatureGram": "1",
+        "q": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "qT": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "qMap": [
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rank": 1,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "gramPassed": true,
+        "qPassed": true,
+        "gram": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "curvatureGram": "1",
+        "q": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "qT": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "qMap": [
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rank": 1,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "gramPassed": true,
+        "qPassed": true,
+        "gram": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "curvatureGram": "1",
+        "q": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "qT": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "qMap": [
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rank": 1,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "gramPassed": true,
+        "qPassed": true,
+        "gram": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "curvatureGram": "1",
+        "q": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-2",
+            "imaginary": "0"
+          }
+        ],
+        "qT": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "qMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-2",
+            "0"
+          ]
+        ],
+        "rank": 1,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "gramPassed": true,
+        "qPassed": true,
+        "gram": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "curvatureGram": "1",
+        "q": [
+          {
+            "x": 0,
+            "y": 1,
+            "z": 1,
+            "real": "-2",
+            "imaginary": "0"
+          }
+        ],
+        "qT": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "qMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-2",
+            "0"
+          ]
+        ],
+        "rank": 1,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "rowsOut": [
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 0,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "4/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "4/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-4/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 0,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "8/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "8/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 1,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 1,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 0,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "4/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "4/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-4/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 0,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "8/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "8/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 1,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 1,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 0,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "4/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "4/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-4/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 0,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCurl": [
+          [],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "8/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "8/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 1,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 1,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 0,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-4/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "4/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "4/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 0,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-8/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "-4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-8/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "8/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "8/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 1,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 1,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 0,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-4/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "4/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-4/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-4/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-4/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 0,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "8/3",
+            "imaginary": "0"
+          }
+        ],
+        "directCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointRaisedGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desiredCovector": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4",
+              "imaginary": "0"
+            }
+          ],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-4",
+              "imaginary": "0"
+            }
+          ],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ]
+          ],
+          [
+            [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            [
+              {
+                "x": 1,
+                "y": 0,
+                "z": 0,
+                "real": "-8/3",
+                "imaginary": "0"
+              }
+            ],
+            []
+          ]
+        ],
+        "eulerPotential": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "4/3",
+            "imaginary": "0"
+          }
+        ],
+        "eulerDerivative": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "4/3",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "8/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-8/3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8/3",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": false,
+        "explicitKernel": true,
+        "explicitImage": true,
+        "sameCurvature": true,
+        "sameGradient": false,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            },
+            {
+              "real": "-8/3",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 1,
+        "encoding": 1,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 1,
+        "encoding": 2,
+        "gradients": true,
+        "curls": true,
+        "euler": true,
+        "factor": true,
+        "action": [],
+        "directCovector": [
+          [],
+          [],
+          []
+        ],
+        "adjointRaisedGradient": [
+          [],
+          [],
+          []
+        ],
+        "desiredCovector": [
+          [],
+          [],
+          []
+        ],
+        "desiredCurl": [
+          [],
+          [],
+          []
+        ],
+        "actualCurl": [
+          [],
+          [],
+          []
+        ],
+        "weightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "unweightedJacobian": [
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            []
+          ]
+        ],
+        "eulerPotential": [],
+        "eulerDerivative": [
+          [],
+          [],
+          []
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "annihilatesCurvatureKernel": true,
+        "explicitKernel": true,
+        "explicitImage": false,
+        "sameCurvature": true,
+        "sameGradient": true,
+        "collisionPoints": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "collisionGradients": [
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            },
+            {
+              "real": "0",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      }
+    ],
+    "projectionsOut": [
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 0,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "slot": 1,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 0,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "slot": 1,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 0,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "slot": 1,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [
+          {
+            "formMask": 3,
+            "cliffordMask": 5,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          },
+          {
+            "formMask": 5,
+            "cliffordMask": 3,
+            "polynomial": [
+              {
+                "x": 1,
+                "y": 1,
+                "z": 0,
+                "real": "1",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 0,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "slot": 1,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 0,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "slot": 1,
+        "passed": true,
+        "input": [
+          {
+            "formMask": 6,
+            "cliffordMask": 16381,
+            "polynomial": [
+              {
+                "x": 0,
+                "y": 1,
+                "z": 1,
+                "real": "-2",
+                "imaginary": "0"
+              }
+            ]
+          }
+        ],
+        "projectedInput": [],
+        "projectedCovector": [
+          [],
+          [],
+          []
+        ]
+      }
+    ],
+    "massesOut": [
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "covector": [
+          [],
+          [],
+          []
+        ],
+        "raised": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "canonical",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "covector": [
+          [],
+          [],
+          []
+        ],
+        "raised": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-minus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "covector": [
+          [],
+          [],
+          []
+        ],
+        "raised": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "curvature-stationary",
+        "op": "chiral-plus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "covector": [
+          [],
+          [],
+          []
+        ],
+        "raised": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-minus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": -1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": 0,
+        "passed": true,
+        "action": [],
+        "covector": [
+          [],
+          [],
+          []
+        ],
+        "raised": [
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "carrier": "commuting-background",
+        "op": "chiral-plus",
+        "kappa": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "z": 0,
+            "real": "-1/2",
+            "imaginary": "0"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "real": "1/2",
+            "imaginary": "0"
+          }
+        ],
+        "covector": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "-1",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "raised": [
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 0,
+              "y": 0,
+              "z": 1,
+              "real": "1",
+              "imaginary": "0"
+            }
+          ]
+        ]
+      }
+    ],
+    "csRows": [
+      {
+        "encoding": 1,
+        "passed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "gradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desired": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "curvatureMap": [
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rank": 3,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      {
+        "encoding": 2,
+        "passed": true,
+        "action": [
+          {
+            "x": 1,
+            "y": 1,
+            "z": 1,
+            "real": "2",
+            "imaginary": "0"
+          }
+        ],
+        "gradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "adjointGradient": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "desired": [
+          [
+            {
+              "x": 0,
+              "y": 1,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 0,
+              "z": 1,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ],
+          [
+            {
+              "x": 1,
+              "y": 1,
+              "z": 0,
+              "real": "2",
+              "imaginary": "0"
+            }
+          ]
+        ],
+        "curvatureMap": [
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        "gradientMap": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rank": 3,
+        "kernel": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "sourceChoicesOpen": true,
+    "actionChanged": false,
+    "ambientClosureClaimed": false,
+    "registeredCoreChanged": false
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

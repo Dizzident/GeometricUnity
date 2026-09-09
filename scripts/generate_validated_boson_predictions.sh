@@ -462,6 +462,8 @@ dotnet run --no-build -c Release --project studies/phase590_source_clifford_tens
 dotnet run --no-build -c Release --project studies/phase591_source_hodge_curvature_branch_audit_001/Phase591SourceHodgeCurvatureBranchAudit.csproj
 dotnet run --no-build -c Release --project studies/phase592_companion_tensor_chirality_audit_001/Phase592CompanionTensorChiralityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj
+dotnet run --no-build -c Release --project studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj
+dotnet run --no-build -c Release --project studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -23265,3 +23265,55 @@ flags false, source deficits15/14 and promotedPhysicalMassClaimCount=0.
 This rejects a specific action/equation combination, not all GU realizations.
 No core or historical frozen changes, new sampling, target fitting, source
 selection, physical mass/unit claim, commit or push.
+
+## 2026-09-09 UTC — A50 actual gradients and invariant completeness
+
+Continued the active user goal with two independent implementations and
+cross-review before coordinator execution approval. Both first frozen
+Release runs passed. Phase594 directly differentiates the unchanged cubic
+action and independently reconstructs all60 gradient components using its
+actual indefinite-Gram adjoints. All180 Jacobian entries and60 curls pass.
+The proposed curvature-only force fails reciprocity; equal-full-curvature
+pairs have unequal actual gradients. Neither a linear nor single-valued
+nonlinear contraction of that same curvature repairs the equation on these
+carriers. Explicit torsion dependence remains a constructive route.
+
+Phase595 establishes real invariant dimensions2,2 using all1,720,320
+coefficient positions,13 sign characters, signed rotation graphs and
+Phase590's independent full-Spin lower bounds. Real/complex phase bridges,
+non-tree cycles and all wrong-dual/complement controls pass. No missing
+third invariant direction exists in this declared module; source coefficient
+and normalization choices remain open.
+
+Frozen full/summary SHA256 values:594
+1b4de79a520c14f9ffe676a3225cb4814bf309feef2bc971a647f52b7b34777b;
+595 e42ee13516ce4140a7eb8e37ef4dbf95af4e41af4c08258b16a7aa8f547cc071.
+All12/9 bindings and the726-file core manifest passed. No scientific failure
+or frozen repair occurred. The optional external timing wrapper was absent
+before595 ran; its unexecuted command was replaced with shell timing.
+
+While integrating, independent agents challenged two new leads. Retaining
+the action's actual derivative preserves K F_B at zero torsion and gives
+Hessian (K D_B+D_B^dagger K^dagger)/2+kappa I. Formal adjoints must retain
+derivatives of K. Test that principal symbol and its constraints next; neither
+indefinite self-adjointness nor a null trace norm establishes stable dynamics.
+A separate Helmholtz classification can audit fixed zero-order curvature-only
+forces, with explicit unrestricted-variation and background assumptions.
+These successors are prospective and unallocated;596+ free.
+
+All nine scanners (both207 paths), generator/traversal,101/202 and verifier
+include A50. A read-only independent integration review found no blocking
+copy/schema errors. Targeted Release builds have zero warnings/errors,
+package/audit/integrity pass at375/3, O4 coverage31/31, overturn controls94/94.
+Final incremental cadence follows all documentation edits; its timestamped
+skip report is the authoritative result, not a promotion full pass. Prior
+A49 report pass_2026-09-09T00-00-27-036Z.json passed77 ran/376 skipped.
+
+Checkpoint578-593 was committed/pushed as fafb6d70 on the existing research
+branch, and its exact remote hash verified. The active user goal authorizes
+regular validated commits/pushes; earlier no-push statements are historical.
+O4 remains pending, Phase561 closed, all fourteen authority flags false,
+source deficits15/14, promotedPhysicalMassClaimCount=0. No core edits,
+source selection, new sampling, target fitting, physical units or mass claims.
+See ACTION-GRADIENT-AND-INVARIANT-CLOSURE-20260909.md and both implementation
+notes for exact evidence and scope. Continue toward concrete next tests.

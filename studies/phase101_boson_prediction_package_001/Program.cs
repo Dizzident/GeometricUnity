@@ -428,6 +428,8 @@ const string Phase590Path = "studies/phase590_source_clifford_tensor_controls_00
 const string Phase591Path = "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json";
 const string Phase592Path = "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json";
 const string Phase593Path = "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json";
+const string Phase594Path = "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json";
+const string Phase595Path = "studies/phase595_invariant_tensor_dimension_audit_001/output/invariant_tensor_dimension_audit_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -896,6 +898,8 @@ using var phase590 = TryParseJson(Phase590Path);
 using var phase591 = TryParseJson(Phase591Path);
 using var phase592 = TryParseJson(Phase592Path);
 using var phase593 = TryParseJson(Phase593Path);
+using var phase594 = TryParseJson(Phase594Path);
+using var phase595 = TryParseJson(Phase595Path);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -10667,6 +10671,22 @@ var package = new
             contractValid = JsonBool(phase593.RootElement, "contractValid"),
             exactBindingsValid = JsonBool(phase593.RootElement, "exactBindingsValid"),
             promotedPhysicalMassClaimCount = JsonInt(phase593.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        actualGradientReciprocityAudit = phase594 is null ? null : new
+        {
+            status = JsonString(phase594.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase594.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase594.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase594.RootElement, "exactBindingsValid"),
+            promotedPhysicalMassClaimCount = JsonInt(phase594.RootElement, "promotedPhysicalMassClaimCount"),
+        },
+        invariantTensorDimensionAudit = phase595 is null ? null : new
+        {
+            status = JsonString(phase595.RootElement, "verdictKind"),
+            auditPassed = JsonBool(phase595.RootElement, "auditPassed"),
+            contractValid = JsonBool(phase595.RootElement, "contractValid"),
+            exactBindingsValid = JsonBool(phase595.RootElement, "exactBindingsValid"),
+            promotedPhysicalMassClaimCount = JsonInt(phase595.RootElement, "promotedPhysicalMassClaimCount"),
         },
         externalReviewPacketAssembly = phase580 is null ? null : new
         {

@@ -337,6 +337,8 @@ const string Phase590Path = "studies/phase590_source_clifford_tensor_controls_00
 const string Phase591Path = "studies/phase591_source_hodge_curvature_branch_audit_001/output/source_hodge_curvature_branch_audit_summary.json";
 const string Phase592Path = "studies/phase592_companion_tensor_chirality_audit_001/output/companion_tensor_chirality_audit_summary.json";
 const string Phase593Path = "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json";
+const string Phase594Path = "studies/phase594_actual_gradient_reciprocity_audit_001/output/actual_gradient_reciprocity_audit_summary.json";
+const string Phase595Path = "studies/phase595_invariant_tensor_dimension_audit_001/output/invariant_tensor_dimension_audit_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -725,6 +727,8 @@ using var phase590 = File.Exists(Phase590Path) ? JsonDocument.Parse(File.ReadAll
 using var phase591 = File.Exists(Phase591Path) ? JsonDocument.Parse(File.ReadAllText(Phase591Path)) : null;
 using var phase592 = File.Exists(Phase592Path) ? JsonDocument.Parse(File.ReadAllText(Phase592Path)) : null;
 using var phase593 = File.Exists(Phase593Path) ? JsonDocument.Parse(File.ReadAllText(Phase593Path)) : null;
+using var phase594 = File.Exists(Phase594Path) ? JsonDocument.Parse(File.ReadAllText(Phase594Path)) : null;
+using var phase595 = File.Exists(Phase595Path) ? JsonDocument.Parse(File.ReadAllText(Phase595Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -9410,6 +9414,40 @@ var companionActionFirstVariationAuditPassed = phase593 is not null
     && p593Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
     && JsonBool(phase593.RootElement, "externalReviewPending") is true
     && JsonInt(phase593.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var actualGradientReciprocityAuditPassed = phase594 is not null
+    && JsonInt(phase594.RootElement, "schemaVersion") == 1
+    && JsonInt(phase594.RootElement, "phase") == 594
+    && JsonString(phase594.RootElement, "contractId") == "phase594-a50-actual-gradient-reciprocity-v1"
+    && JsonString(phase594.RootElement, "verdictKind") == "actual-gradient-controls-pass-curvature-only-force-rejected"
+    && JsonBool(phase594.RootElement, "auditPassed") is true
+    && JsonBool(phase594.RootElement, "contractValid") is true
+    && JsonBool(phase594.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase594.RootElement, "coreSourceTreeValid") is true
+    && phase594.RootElement.TryGetProperty("evidence", out var p594Evidence)
+    && JsonBool(p594Evidence, "knownAnswerPassed") is true
+    && JsonBool(p594Evidence, "controlsPassed") is true
+    && phase594.RootElement.TryGetProperty("authorityFirewalls", out var p594Firewalls)
+    && p594Firewalls.EnumerateObject().Count() == 14
+    && p594Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase594.RootElement, "externalReviewPending") is true
+    && JsonInt(phase594.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var invariantTensorDimensionAuditPassed = phase595 is not null
+    && JsonInt(phase595.RootElement, "schemaVersion") == 1
+    && JsonInt(phase595.RootElement, "phase") == 595
+    && JsonString(phase595.RootElement, "contractId") == "phase595-a50-invariant-tensor-dimension-v1"
+    && JsonString(phase595.RootElement, "verdictKind") == "invariant-tensor-dimensions-two-certified-source-choice-open"
+    && JsonBool(phase595.RootElement, "auditPassed") is true
+    && JsonBool(phase595.RootElement, "contractValid") is true
+    && JsonBool(phase595.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase595.RootElement, "coreSourceTreeValid") is true
+    && phase595.RootElement.TryGetProperty("evidence", out var p595Evidence)
+    && JsonBool(p595Evidence, "knownAnswerPassed") is true
+    && JsonBool(p595Evidence, "controlsPassed") is true
+    && phase595.RootElement.TryGetProperty("authorityFirewalls", out var p595Firewalls)
+    && p595Firewalls.EnumerateObject().Count() == 14
+    && p595Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase595.RootElement, "externalReviewPending") is true
+    && JsonInt(phase595.RootElement, "promotedPhysicalMassClaimCount") == 0;
 
 var externalReviewPacketAssemblyPassed = phase580 is not null
     && JsonInt(phase580.RootElement, "schemaVersion") == 1
@@ -12736,6 +12774,18 @@ var checklist = new[]
         companionActionFirstVariationAuditPassed ? "passed" : "failed",
         phase593 is null ? "Phase593 artifact not materialized" : $"verdictKind={JsonString(phase593.RootElement, "verdictKind")}; auditPassed={JsonBool(phase593.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase593.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase593Path),
+    new ObjectiveChecklistItem(
+        "actual-gradient-reciprocity-audit",
+        "Construct exact action gradients and test weighted reciprocity and curvature-only factorization without selecting a physical model.",
+        actualGradientReciprocityAuditPassed ? "passed" : "failed",
+        phase594 is null ? "Phase594 artifact not materialized" : $"verdictKind={JsonString(phase594.RootElement, "verdictKind")}; auditPassed={JsonBool(phase594.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase594.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase594Path),
+    new ObjectiveChecklistItem(
+        "invariant-tensor-dimension-audit",
+        "Classify invariant tensor dimensions with exact character and signed-rotation controls without selecting source tensors or normalization.",
+        invariantTensorDimensionAuditPassed ? "passed" : "failed",
+        phase595 is null ? "Phase595 artifact not materialized" : $"verdictKind={JsonString(phase595.RootElement, "verdictKind")}; auditPassed={JsonBool(phase595.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase595.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase595Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

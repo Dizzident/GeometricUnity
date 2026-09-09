@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "phase": 594,
+  "contractId": "phase594-a50-actual-gradient-reciprocity-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "scope": "Exact actual-gradient and trace-adjoint agreement, weighted reciprocity, Euler potential, curvature-only factorization and input-changing Riemann projection on two finite nondegenerate torsion carriers; same action retained, source choices open",
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "background": "fixed flat constant unit-volume (7,7) fourteen-torus; epsilon=I; B=0; dT=0",
+    "operator": "full CCA: K(F)=[Phi1 wedge star(F)]_C-(1/2)star([Phi1 wedge star([Phi2 wedge star(F)]_A)]_C)",
+    "phi1": "(a+b Omega)gamma",
+    "phi2": "(c+i d Omega)Gamma2",
+    "formalCSlots": [
+      "1",
+      "c"
+    ],
+    "pairing": "-ReTr/128 with signed exterior metric; finite Gram pullback after full K",
+    "operatorRows": [
+      {
+        "id": "canonical",
+        "a": 1,
+        "b": 0,
+        "d": 0
+      },
+      {
+        "id": "chiral-minus",
+        "a": 1,
+        "b": -1,
+        "d": 1
+      },
+      {
+        "id": "chiral-plus",
+        "a": 1,
+        "b": 1,
+        "d": -1
+      }
+    ],
+    "carriers": [
+      {
+        "id": "curvature-stationary",
+        "operatorIds": [
+          "canonical",
+          "chiral-minus",
+          "chiral-plus"
+        ],
+        "gramDiagonal": [
+          1,
+          1,
+          -1
+        ],
+        "curvature": "2xy theta01 Gamma02",
+        "curvatureGram": 1,
+        "qRow": [
+          "y",
+          "x",
+          "0"
+        ],
+        "desiredCovector": [
+          "0",
+          "0",
+          "4xy"
+        ],
+        "desiredCurl": [
+          "0",
+          "4y",
+          "4x"
+        ],
+        "collision": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "id": "commuting-background",
+        "operatorIds": [
+          "chiral-minus",
+          "chiral-plus"
+        ],
+        "gramDiagonal": [
+          1,
+          -1,
+          -1
+        ],
+        "curvature": "-2yz theta12 Omega gamma1",
+        "curvatureGram": 1,
+        "qRow": [
+          "0",
+          "-z",
+          "-y"
+        ],
+        "desiredCovector": [
+          "4hyz",
+          "0",
+          "0"
+        ],
+        "desiredCurl": [
+          "-4hz",
+          "-4hy",
+          "0"
+        ],
+        "collision": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "gammaEncodings": [
+      1,
+      2
+    ],
+    "actionPrefactor": "gamma/3 with Q=T wedge T fixed",
+    "gradient": "gamma/3*(K_E Q+2 Q_T^dagger K_E^dagger T)",
+    "covector": "4gamma/3*(yz,xz,xy), with extra h on second carrier",
+    "curlOrder": [
+      "xy",
+      "xz",
+      "yz"
+    ],
+    "curlConvention": "partial_i f_j-partial_j f_i, i<j",
+    "quadraticMonomials": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "symmetricSquare": "diagonal ei tensor ei; off-diagonal ei tensor ej+ej tensor ei, without half",
+    "kernelColumnWitness": 2,
+    "sourceQRank": 1,
+    "sourceQKernelDimension": 5,
+    "projection": [
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "projectionBasis": "theta01 Gamma02,theta02 Gamma01,theta12 Omega gamma1",
+    "projectionExpected": "first desired covector halved; second curvature and projected force zero",
+    "curlPoints": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "massKappa": [
+      -1,
+      0,
+      1
+    ],
+    "chernSimons": {
+      "nu11Mask": 16376,
+      "q": [
+        "2xy",
+        "-2xz",
+        "2yz"
+      ],
+      "gramDiagonal": [
+        1,
+        1,
+        1
+      ],
+      "K": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "action": "2xyz",
+      "gradient": [
+        "2yz",
+        "2xz",
+        "2xy"
+      ],
+      "qRank": 3,
+      "qKernelDimension": 3
+    },
+    "expectedCounts": {
+      "carrierRows": 5,
+      "coefficientRows": 10,
+      "gradientRows": 20,
+      "gradientComponents": 60,
+      "jacobianEntries": 180,
+      "curlComponents": 60,
+      "desiredCurlRejections": 10,
+      "zeroCRows": 10,
+      "unweightedJacobianRejections": 10,
+      "linearFactorizationRejections": 10,
+      "nonlinearFactorizationRejections": 10,
+      "kAdjointChecks": 30,
+      "qAdjointChecks": 30,
+      "sourceKernelVectors": 25,
+      "projectionRows": 10,
+      "massRows": 15,
+      "csRows": 2
+    },
+    "knownAnswer": {
+      "maskCount": 16,
+      "wordCases": 256,
+      "hodgeCases": 16384
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resource": {
+      "estimatedCpuSeconds": 5,
+      "maximumEstimatedCpuSeconds": 20,
+      "estimatedPeakBytes": 67108864,
+      "maximumEstimatedPeakBytes": 134217728
+    }
+  },
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Program.cs",
+      "sha256": "e10d92a37a48c1a512a8c00e676dd80eb0c50ed5790ae4f18fa84d4810d2148f"
+    },
+    {
+      "id": "polynomial-helper",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/PolynomialTensor.cs",
+      "sha256": "6b7f13a024dbb834331514e93781f1122c1af8ac253d2cb040c81a57a0db1d08"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj",
+      "sha256": "c421dc2a581d894ec92b236e16750a358a9dd5d2711488331f35e1ce6436f12c"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase594_actual_gradient_reciprocity_audit_001/STUDY.md",
+      "sha256": "6ca9cb63ff1e26fb280937b4b5f1208d42af5e1279eeedfec776c9640084584d"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "phase593-summary",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/output/companion_action_first_variation_audit_summary.json",
+      "sha256": "67000008c72eddbfe44d9872170cfdf5e3725f333bbbbdb327f4e59d745cb1be"
+    },
+    {
+      "id": "phase593-contract",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/preregistration/contract_v1.json",
+      "sha256": "cde88414f1af7790f472d81419250b826f1c25fd9dd844639ebcf98919001fa4"
+    },
+    {
+      "id": "phase593-program",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/Program.cs",
+      "sha256": "6ca291a18e95e95228188e55f47d17af1d662d75662c7a3b834373929ccce788"
+    },
+    {
+      "id": "phase593-study",
+      "path": "studies/phase593_companion_action_first_variation_audit_001/STUDY.md",
+      "sha256": "210c5daf97a9c3f7ae99901a6ed8f64031db60db2a63ea936ab535c0c928e40a"
+    },
+    {
+      "id": "algebra-helper",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/ExactAlgebra.cs",
+      "sha256": "cf139f4cc6226ef5e2c7f830ee413a50c9e30d483411c77f87a631063ff3b8f5"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase592_companion_tensor_chirality_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "carrier-adjoint-control-failed",
+    "gradient-reciprocity-control-failed",
+    "factorization-projection-control-failed",
+    "positive-control-failed",
+    "actual-gradient-controls-pass-curvature-only-force-rejected"
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

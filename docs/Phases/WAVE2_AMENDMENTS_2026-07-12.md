@@ -2309,3 +2309,59 @@ mismatch from an arbitrary-common-cubic-prefactor repair: the first
 witness needs prefactor1, the second needs prefactor0. No one common
 prefactor repairs both. Explicit signs, full-chain coefficients, typing
 and independence of c require code/proof review before execution.
+
+### A50 - Actual gradients and complete tensor classification (2026-09-09 UTC)
+
+The active user goal requests continued progress until the blockers are
+resolved or meaningful leads are exhausted, with regular commits and pushes.
+This authorizes checkpoint commits/pushes on the existing research branch;
+earlier no-commit/no-push statements describe their historical turns only.
+It does not authorize new sampling, source-model selection, a fabricated
+external ruling, or physical mass claims. The validated578-593 checkpoint
+is committed before implementing this next tranche.
+
+Allocate594 to the actual-gradient/reciprocity successor proposed after593.
+Use both exact three-coordinate torsion carriers, their computed nondegenerate
+indefinite Grams, full literal K before Gram pullback, and both matching
+chiralities with formal c slots. Independently differentiate the action in
+all three coordinates and construct the adjoint formula using verified
+pairing identities. Freeze all derivative/Jacobian entries, weighted
+reciprocity, desired-force Euler potential, mass and genuine Chern-Simons
+positive controls. A wrong unweighted-Jacobian decoy must distinguish a
+gradient vector from its covector. No closure of the ambient field space
+under the finite carrier is implied.
+
+Freeze the six-monomial quadratic curvature coefficient map with explicit
+off-diagonal symmetric-square normalization. Compare its exact kernel to
+the actual-gradient map; include equal-curvature/unequal-gradient pairs,
+which also test single-valued nonlinear curvature-only factorization. A
+declared Riemann pair-symmetry/Bianchi projection halves the first witness
+obstruction and erases the second curvature; test this as an input-changing
+decoy, not as a source-selected repair. Predicted nonintegrability and
+factorization negatives must be scoped to the specified force/carrier.
+
+Allocate595 independently to complete invariant tensor dimensions at form
+degrees1,2. Complexify the real invariance equations with an explicit
+negative-axis vector/coframe phase map, not a fictitious real compact boost.
+Thirteen even sign flips eliminate all coefficient supports except the
+canonical and volume-complement ones. Exact signed quarter-turn constraints,
+including transported signs and non-tree cycles, bound each family by one
+dimension. Use590's full-Spin real invariant tensors as the matching lower
+bound. Freeze all105*16384 coefficient decisions, exact survivor/orbit/rank
+predictions, missing-character and wrong-dual/sign controls. Do not rewrite
+590's lower-bound evidence or infer normalization/author choices.
+
+Two workers own separate studies; a third independently reviews both and
+investigates the broader fixed-operator Helmholtz classification. The latter
+remains prospective, not a new allocated phase or established source-wide
+no-go. Coordinator owns shared integration and reviews each complete pack.
+Before first scientific execution freeze complete code/project/proof, fixtures,
+predictions, zero tolerances, resource ceilings, terminal precedence, unique
+input bindings and the full live core manifest. Release build-only checks
+may precede freezing. Explicit coordinator approval follows independent
+review; preserve every failure and version any scientific repair.
+
+All fourteen authority flags stay false, O4 pending, Phase561 closed and
+promotedPhysicalMassClaimCount=0. No core changes, old-terminal replacement,
+target fitting, source selection, physical units or production. Registry594-595
+allocated;596+ free.

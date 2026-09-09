@@ -45,6 +45,61 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST FOLLOW-UP (2026-09-09 UTC, Amendment A50; Phases594-595 executed):
+both first frozen Release runs passed after independent and coordinator
+proof/code/hash review. Phase594 confirms the actual action gradient by
+direct differentiation and trace-adjoint construction on both593 carriers:
+60 components,180 Jacobian entries and60 curl components pass. The proposed
+curvature-only force fails weighted reciprocity. Equal-full-curvature pairs
+have unequal actual gradients, excluding even a single-valued nonlinear
+curvature-only refactorization on these carriers. Retaining explicit torsion
+dependence is still constructive; no action or registered core was changed.
+Mass, changed-input projection and genuine cyclic positive controls pass.
+
+Phase595 completes the declared invariant-tensor classification. Exact sign
+characters examine1,720,320 coefficients; signed-rotation constraints plus
+Phase590's real full-Spin lower bounds certify dimension2 at both degrees.
+All complex/real phase bridges and wrong-dual/complement controls pass.
+This closes the missing-invariant-direction lead within the declared module,
+not the source coefficient/normalization or dimensional-reduction choices.
+
+NEXT PRIORITY: prospectively freeze the action-consistent zero-torsion
+linearization, with genuine derivative/adjoint controls, NOT more sampling.
+For fixed background, the corrected gradient still equals K F_B at T=0;
+its Hessian is (K D_B+D_B^dagger K^dagger)/2+kappa I. The adjoint acts on
+K^dagger V as a product: do not discard derivatives of K. Check whether its
+principal symbol has usable dynamics and distinguish gauge/constraint zero
+modes from physical modes. No background stability or boson spectrum follows
+from formal self-adjointness or an indefinite null norm alone.
+
+A parallel conditional Helmholtz classification can test fixed zero-order
+curvature-only operators under unrestricted gauge variations. Freeze the
+small exact rank/cyclic controls and general proof before execution; separate
+pointwise, cubic and differential closedness conditions. Frame covariance
+is not automatically pointwise Spin invariance when extra backgrounds exist.
+Neither successor is yet allocated or executed; registry596+ free.
+
+See `docs/Reference/ExperimentReferences/ACTION-GRADIENT-AND-INVARIANT-CLOSURE-20260909.md`
+and `IMPLEMENTATION_P594.md`/`IMPLEMENTATION_P595.md`. All integration surfaces
+include594-595. Targeted Release builds have zero warnings/errors;
+package/audit/integrity pass at375 checklist passes / three standing physical
+blockers, O4 coverage31/31 and overturn controls94/94. Final integrated
+cadence is recorded after these documentation edits in timestamped skip
+reports, not asserted as a promotion full pass. Prior A49 report:
+`scripts/incremental/skip_reports/pass_2026-09-09T00-00-27-036Z.json`
+(77 steps ran,376 skipped, all passed).
+
+The active user goal authorizes regular validated commits/pushes. Checkpoint
+578-593 is committed and pushed as fafb6d7038eaac8e170e96da17d31a71a85f4471
+on research/collective-coordinate-assumption-audit-20260908; the live remote
+hash was independently verified. Commit the validated A50 tranche next.
+Earlier no-commit/no-push statements below describe historical turns only.
+All fourteen authority flags remain false, O4 pending, Phase561 closed,
+source deficits15/14 and promotedPhysicalMassClaimCount=0. No core edits,
+historical frozen rewrites, source choice, new sampling, fitting or physical
+unit claims. Mathematical progress requires no external ruling; physical
+prediction contracts remain unresolved. Earlier frontiers are historical.
+
 LATEST FOLLOW-UP (2026-09-08, Amendment A49; Phases592-593 executed): the
 companion-family contraction survives its exact tests, but automatically
 treating it as the stated action's field equation does not. Three agents

@@ -448,6 +448,8 @@
     <PhaseProject Include="../studies/phase591_source_hodge_curvature_branch_audit_001/Phase591SourceHodgeCurvatureBranchAudit.csproj" />
     <PhaseProject Include="../studies/phase592_companion_tensor_chirality_audit_001/Phase592CompanionTensorChiralityAudit.csproj" />
     <PhaseProject Include="../studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj" />
+    <PhaseProject Include="../studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj" />
+    <PhaseProject Include="../studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />
