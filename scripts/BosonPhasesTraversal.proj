@@ -470,6 +470,8 @@
     <PhaseProject Include="../studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Phase613CanonicalIsotropicStationarityPotentialHessianAudit.csproj" />
     <PhaseProject Include="../studies/phase614_conditional_metric_homothety_stationarity_audit_001/Phase614ConditionalMetricHomothetyStationarityAudit.csproj" />
     <PhaseProject Include="../studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj" />
+    <PhaseProject Include="../studies/phase616_curved_canonical_isotropic_gradient_audit_001/Phase616CurvedCanonicalIsotropicGradientAudit.csproj" />
+    <PhaseProject Include="../studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

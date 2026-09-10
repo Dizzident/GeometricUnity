@@ -79,7 +79,9 @@ back, NO new phase directory may be created outside this table.
 | 613 | Canonical isotropic stationarity and potential Hessian audit (A60) | DONE, first frozen run passed: full constant-field gradient and196-direction vector potential-Hessian closure, original-action checks, coupling degeneracies and nonlinear grade5 negative control; not a differential spectrum or physical vacuum. |
 | 614 | Conditional metric homothety stationarity audit (A60) | DONE, first frozen run passed: full CAA Hodge-scaling and original-action homothety controls separate field from conditional metric stationarity;615 excludes uniform scaling from its declared fixed-y source-induced image. |
 | 615 | Source-induced splitting and volume scope audit (A60 extension) | DONE, first frozen run passed:12 full metrics/480 full tangents and40-dimensional jet-map isomorphism verify fixed-y volume invariance and exclusion of uniform homothety; no moving-section, coupled metric equation or vacuum conclusion. |
-| 616+ | Unassigned - extend this registry before use | - |
+| 616 | Curved canonical isotropic gradient audit (A61) | First frozen Release run passed: literal untiedCAA induced-spin contraction and full constant-isotropic gradient; nonzero anisotropic source excludes this ansatz, not general vacua. |
+| 617 | Nonparallel projector and two-weight gradient audit (A61) | First frozen Release run passed: full covariant projector derivatives, both kinetic adjoint legs and complete two-weight gradient; exact algebraic zero retains derivative coefficient-3/4. No Clifford projection or global-vacuum claim. |
+| 618+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -1231,3 +1231,128 @@ Thus no omitted higher-grade variation is assumed zero merely from a
 restricted scalar action. Both kinetic legs separately equal J forPT;
 full support and that equality still require independent literal controls
 at both transported points in a prospectively frozen successor.
+
+### A61 prospective execution allocation (2026-09-10)
+
+User resumed on main from validated,pushed fcc8b633.616 will audit the
+canonical untiedCAA curvature/isotropic gradient;617 will independently
+audit all projector derivatives and both full kinetic legs with the exact
+algebraic-zero/nonzero-full-gradient control above. Both use only passed
+upstream data and directly bound immutable helpers. No new science has run;
+complete prospective code/proof/fixture/resource/binding review and MAIN
+approval precedes first execution.618+free; no physical/source promotion.
+
+### Constructive extension beyond the vector ansatz (analytical, unexecuted)
+
+A61's independent reviewer and MAIN derived a possible constructive route,
+not just another ansatz rejection. For the declared fixed-geometry equation
+
+    A+H S+kappa S+gamma N(S)=0,
+    A=K(F_B), H=(K D_B+D_B^dag K^dag)/2,
+    N(S)=[K(S wedge S)+DQ_S^dag K^dag S]/3,
+
+the actual bivector forcing J=H(PT Gamma1) is an allowed real
+Clifford-bivector-valued one-form. Including a component proportional toJ
+lets its mass term counter the missing even-grade contribution, but its
+kinetic and cubic feedback must also be computed. Parity alone proves no
+finite-dimensional closure or stationary solution.
+
+More generally put lambda=1/kappa as a FORMAL variable and
+S=lambda S1+lambda² S2+lambda³ S3+.... Coefficient recursion gives
+
+    S1=-A, S2=H A, S3=-H² A-gamma N(A).
+
+For this background A=-(21/4)Gamma1+(3/2)PT Gamma1, so S2=(3/2)J.
+The second coefficient already explains why restricting to vector fields
+can obstruct an otherwise viable formal solution. If
+C(U,V)=N(U+V)-N(U)-N(V), the next coefficient is
+
+    S4=H³A+gamma H N(A)+gamma C(A,H A).
+
+Substituting the three-term truncation into the ORIGINAL equation cancels
+lambda^0,lambda^1,lambda^2. Its prospective leading residual is
+-lambda³S4, with exact polynomial terms through lambda^6; do not call this
+O(lambda^4) merely because multiplying the whole equation bylambda shifts
+the order. No convergence or existence of an actual smooth/global solution,
+metric Euler equation, stability, source coupling value or physical scale
+is proved by formal recursion. A future coefficient/jet audit must retain
+full Clifford grades and sufficient derivatives, and distinguish the
+original from rescaled equation. No new phase is allocated for this lead.
+
+Jet and grade requirements are explicit: constructing S3 needs covariant
+derivatives ofA through order2; evaluating the complete leading remainder
+needs order3. Here A=-21Gamma1/4+3PTGamma1/2 reduces these to derivatives
+ofPT. The second derivative needs analytic partial²PT and partialGamma;
+the third also needs partial²Gamma, hence metric third jets.617's first
+projector derivative alone cannot verify that formal residual. H toggles
+Clifford parity, but H acting on a bivector can generate grades1 AND5.
+S3 must retain the full H²A; a cancellation of grade5 for the particularJ
+would need its own proof. No small flat carrier supplies curved closure.
+
+Independent analytical arithmetic further fixes the nonlinear source term:
+substitute a=-15/4,b=-21/4 into617's full diagonal quadratic coefficients,
+giving N(A)=(11655/2)PTGamma1+(11043/2)(I-PT)Gamma1. Consequently
+N(A)=(11043/2)Gamma1+306PTGamma1 and HN(A)=306J. Thus
+
+    S3=-(3/2)HJ-gamma N(A),
+    S4=(3/2)H²J+306gamma J+(3gamma/2)C(A,J).
+
+For T3=-lambda A+lambda²HA+lambda³S3, the exact FORMAL residual of
+the original equation is
+
+    -lambda³S4
+    +gamma lambda^4[C(-A,S3)+N(HA)]
+    +gamma lambda^5 C(HA,S3)+gamma lambda^6 N(S3).
+
+This specifies the next audit's coefficient targets without pretending
+that HJ,H²J or C(A,J) were computed by617. It is analytical bookkeeping,
+not new executed evidence, a convergence estimate or a stationary solution.
+
+### Separate horizontal/trace weights: assumption challenge (analytical only)
+
+Equal Einstein eigenvalues on the horizontal4 and vertical-trace1 do not
+justify forcing their field weights equal. MAIN and the independent reviewer
+therefore checked the larger V=aPT+bPH+cPtr, with constant weights and
+I=PT+PH+Ptr. This is not an executed617 result or expanded617 scope.
+For general self-adjoint V, the complete differential expression is
+
+    H(VGamma)_b=-2 sum_i sigma_i gamma_i wedgeCl gamma((nabla_i V)b)
+      +gamma(grad trV-divV) wedgeCl gamma_b.
+
+The previous formula used both constant trace and zero divergence. PH has
+nabla_A PH=0, (nabla_u PH)v=-sigma W(u,v)/2 and
+(nabla_u PH)A=-y^-1 A u/2. At alpha1,beta-1/2, divPH=y/2 and
+divPtr=-y/2; omitting divergence would lose another obstruction. For
+vertical A the first wedge sum vanishes by symmetry of y^-1 A, leaving
+H(PH Gamma)(A)=-gamma(y/2) wedgeCl gamma(A), while H(PT Gamma)(A)=0.
+In610's frame y/2=-T, giving theta1 Gamma1,10 coefficient-1 for PH.
+Thus the complete three-weight kinetic gradient has vertical witness-(b-c).
+If b=c, the horizontal witness fromPT forces a=c; the unequal Einstein
+source then prevents scalar stationarity. This suggests the constant
+three-weight vector family is also too small, not that every anisotropic
+field fails. All coefficients, both derivative legs and grade completeness
+would need a newly frozen finite audit before executed evidence is claimed.
+618+free. The constructive full-grade correction remains a distinct lead.
+
+### A61 executed findings and constructive boundary (2026-09-10)
+
+616/617 passed their first frozen Release runs after full independent/MAIN
+review, with all37/34 exact bindings and50/38 forecast counts unchanged.
+Full/summary hashes:
+616 ed4fde0055b1ccf11bbd5ec4b8b582d43fbe78fc2f4f2e9c48960cd8122736bd;
+617 b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb.
+Both transported points reproduce full tensors, not only scalar summaries.
+The prospective canonical source, isotropic gradient, projector derivative,
+both kinetic legs and two-weight algebraic coefficients above are now
+verified within these frozen scopes. The planted vector residual is exactly
+zero while the full derivative witness is-3/4. No source operator or vacuum
+is selected, and no general-vacuum rejection follows from these ansatz tests.
+
+The constructive expansion and three-weight extension above remain
+ANALYTICAL ONLY. In particular the nonzero bivector J does not itself imply
+a closed vector/bivector carrier. A future constructive audit must compute
+all output grades and full covariant jets before testing any truncation.
+An exact formal series, even to arbitrary order, does not establish a
+convergent smooth solution, an allowed coupled metric variation, stability,
+observer-field extraction, pole identification or GeV normalization.
+All14 authority flagsfalse,O4/externalreviewpending,physicalclaims0.

@@ -24073,3 +24073,72 @@ Concrete prospective controlgamma1,kappa11,a3/4,b-3/4 has zero full
 algebraic vector gradient and nonzero differential coefficient-3/4.
 Both reviewers derived the derivative and full diagonal-adjoint closure;
 MAIN checked the rational cancellation. No source equation is selected.
+
+### 2026-09-10 UTC - A61 explicit resumption and curved-gradient allocation
+
+User explicitly resumed and directs use of main without a new branch.
+MAIN verified clean main at fcc8b633eb43747a406e3796d271d41af6e1b752;
+the interrupted branch-creation request did not change branches. The prior
+scientific tranche was PROGRESS. Its final incremental88ran/387skipped,
+395/3 checklist,coverage31/31,overturn94/94 and remote-matched merge are
+recorded in the commit and earlier handoff; the intervening stop was requested
+by the user, not exhaustion of concrete scientific leads.
+
+A61 allocates616 to literal canonical untiedCAA curvature contraction and
+full constant-isotropic gradient on608's curved geometry, and617 to full
+covariant projector derivatives and constant two-weight field stationarity.
+The frozen analytical negative control targets an algebraic-only false
+stationary point. Two disjoint builders and one independent reviewer work
+in parallel; MAIN owns integration and final first-execution approval.
+All scientific menus/counts/coefficients/resources and code/proofs must be
+reviewed and frozen before first science. No616/617 execution yet.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,deficits15/14,
+physicalmassclaims0. No source norm/operator/scale or physical vacuum is
+selected.618+free. Exact safe next experiments exist; no council trigger.
+
+### 2026-09-10 UTC - A61 first frozen curved-gradient results
+
+616/617 BOTH PASSED FIRST frozen Release runs unchanged after complete
+independent/MAIN reviews and explicit MAIN approval.37/34 unique bindings,
+50/38 prospective count fields, full fixtures and live726 closure passed.
+Zero-warning builds; wall1.858/1.814s; coefficientproducts45232/42350,
+matrixproducts26331/108980,largest tensor822 each. Full/summary SHA256:
+616 ed4fde0055b1ccf11bbd5ec4b8b582d43fbe78fc2f4f2e9c48960cd8122736bd;
+617 b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb.
+Bound scientific inputs are immutable; no post-run changes or retuned counts.
+
+616 reconstructs the full canonical curvature source-EinsteinGamma and
+verifies parallelism with all91 Lie-algebra generators and all14 derivative
+directions. Constant displayed components alone are not a parallelism proof:
+omitting either the Clifford or covector connection action fails. The full
+isotropic gradient retains a3/2 traceless/complement difference for every
+real gamma,kappa,s.617 reconstructs all14 covariant projector derivatives
+from analytic partials plus the complete coordinate connection, compares
+independent typed formulas and transports the assembled tensor. Both kinetic
+legs equal J, with theta0Gamma01 coefficient-1/2. The full parameter
+gradient has even witness-(a-b)/2; equal weights leave the3/2 vector defect.
+The exact gamma1,kappa11,a3/4,b-3/4 control has algebraic residual0 but
+derivative coefficient-3/4. Dropping derivatives therefore manufactures
+a false stationary solution. Full original-action and adjoint controls pass.
+
+Neither result excludes nonconstant fields, additional Clifford components,
+other source conventions or all vacua. The constructive follow-up is to
+permit the forced bivector correction and compute its full feedback. The
+formal inverse-kappa recursion already requires S2=HA=(3/2)J, precisely
+the component prohibited by the vector-only ansatz. Its next terms require
+second/third covariant projector derivatives and unrestricted Clifford
+support; formal cancellation is not convergence, coupled metric stationarity
+or a physical spectrum. A separate analytical three-weight check identifies
+the previously untested horizontal/trace divergence term; it is not an
+expanded617 result. Both leads are documented in the existing reference.
+
+Shared wiring/verifier and serialized outputs passed independent review.
+Ordered101/202/integrity PASSED397/3,O4coverage31/31,overturn94/94.
+Incremental tooling unit tests50/50passed outside the sandbox; the initial
+directory invocation was not discovered by this Node version, and the
+explicit test-file invocation required child-process permission for its
+seed fixtures. No tooling code was changed. Final incremental must follow
+ALL edits before scoped commit/push on main and independent remote match.
+Record its exact report/checkpoint in the commit and handoff without editing
+after the final pass. All14flagsfalse,O4/externalreviewpending,
+Phase561closed,WZ15/H14deficits,physicalclaims0.618+free; PROGRESS.

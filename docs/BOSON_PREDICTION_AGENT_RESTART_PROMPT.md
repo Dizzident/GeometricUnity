@@ -45,6 +45,42 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+WORK IN PROGRESS (2026-09-10 UTC,A61;616-617executed,618+free):
+User explicitly resumed research and directs work on main, no new branch.
+Authoritative completed checkpoint fcc8b633eb43747a406e3796d271d41af6e1b752
+was validated,pushed and fast-forward merged to main; clean before A61.
+Final A60 pass_2026-09-09T16-26-54-453Z.json ran88/skipped387,395/3
+checklist,O4coverage31/31,overturn94/94,integritypassed. Previous research
+tranche PROGRESS; intervening stop was user-requested, not exhaustion.
+616 tests the full canonical CAA induced-curvature/isotropic gradient;
+617 independently tests all covariant projector derivatives, both kinetic
+adjoint legs and complete two-weight gradient, including the exact false
+algebraic-stationary control. BOTH PASSED FIRST frozen Release runs unchanged
+after complete independent/MAIN review and explicit MAIN approval.37/34
+unique bindings,50/38 exact count fields, full fixtures and live726 closure
+passed; zero-warning builds. Wall1.858/1.814s;coefficientproducts45232/42350,
+matrixproducts26331/108980,largest tensor822 each. Full/summary SHA256:
+616 ed4fde0055b1ccf11bbd5ec4b8b582d43fbe78fc2f4f2e9c48960cd8122736bd;
+617 b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb.
+All bound scientific inputs are immutable; no post-run repairs. The exact
+gamma1,kappa11,a3/4,b-3/4 algebraic zero retains differential coefficient
+-3/4. Constant isotropic/two-weight fields fail the declared connection
+equation; this is NOT a vacuum-wide no-go or a source operator selection.
+Shared wiring/verifier and serialized outputs passed independent review.
+Ordered101/202/integrity PASSED397/3,O4coverage31/31,overturn94/94;
+incremental tooling unit tests50/50passed. Final incremental must follow
+ALL edits; do not infer final validation from targeted runs. Record its
+report and exact checkpoint in commit/handoff. Scoped commit/push must stay
+on main with independent remote verification. No edits after final pass.
+Constructive next lead: full-grade formal inverse-kappa connection solution,
+S1=-A,S2=HA,S3=-H²A-gammaN(A),A=K(FB). The bivector correction S2
+is precisely what a vector-only ansatz forbids. Higher jets and full Clifford
+support must be prospectively audited; convergence, metric stationarity and
+physical spectrum are not established by formal recursion. See existing
+stationary-background reference; no618+allocation/science yet.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+See A61; earlier prospective/free-number text is historical.
+
 LATEST FOLLOW-UP (2026-09-09 UTC,A60;613-615executed,616+free):
 Authoritative completed checkpoint47808bef06777cab2ff9726a7ef6f5bffe924324
 was pushed and independently remote-matched; clean before this tranche.

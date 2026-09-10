@@ -3552,3 +3552,96 @@ coupled vacuum. All shared validation and final incremental must precede
 scoped commit/push/remote verification.616+free,all14flagsfalse,
 O4/externalreviewpending,Phase561closed,physicalmassclaims0. Progress remains
 possible through curved source-induced stationarity and full metric variation.
+
+## A61 - Curved canonical stationarity and nonparallel-projector audit (2026-09-10)
+
+User explicitly resumed research after A60 was validated, committed, pushed
+and fast-forwarded into main at fcc8b633eb43747a406e3796d271d41af6e1b752.
+User now directs work on main; do not create a research branch. The previous
+scientific tranche was PROGRESS, followed by a requested stop, not scientific
+exhaustion. Final A60 pass_2026-09-09T16-26-54-453Z.json ran88/skipped387,
+395/3 checklist, O4coverage31/31,overturn94/94,claim integrity passed.
+Current worktree was clean before allocation. Concrete tests remain, so no
+blocker council is needed merely to repeat the existing source-choice gaps.
+
+Allocate616 to the literal canonical UNTIED CAA(firstC,outerA,innerA),
+Phi1=Gamma1,Phi2=Gamma2, on the full frozen608 induced spin curvature in
+610's declared oriented(7,7) frames. Reuse immutable compiled helpers and
+full exact-bound lineage, never input an Einstein oracle on the literal side.
+Expected K(F_B)=-EinsteinGamma has eigenvalues-15/4 on the traceless-vertical
+projector PT and-21/4 on its complement. Compare both full chains at the two
+transported points with independent curvature/adjoint controls. On constant
+S=sGamma1, canonical tensors are Levi-Civita parallel; verify complete
+potential and source gradient, all coupling degeneracies and nonzero
+anisotropic defect. Expected G=[(312gamma s²+kappa s-21/4)I+(3/2)PT]Gamma1.
+This rejects only this constant isotropic ansatz on this declared geometry,
+not arbitrary fields, source conventions, metric vacua or physical spectra.
+Contract phase616-a61-curved-canonical-isotropic-gradient-v1;
+terminal curved-canonical-isotropic-controls-pass-no-isotropic-branch.
+Root studies/phase616_curved_canonical_isotropic_gradient_audit_001;
+project Phase616CurvedCanonicalIsotropicGradientAudit.csproj.
+
+Allocate617 independently to the complete covariant derivative ofPT from
+608's full coordinate connection and analytic derivatives, transported into
+610's frame. Do not use a varying frame while dropping its connection term.
+Test all14 derivative directions and full14x14 matrices against independent
+typed formulas, trPT=9, divPT=0, but nonzero horizontal derivative. For
+S=(aPT+b(I-PT))Gamma1 with constant a,b, evaluate BOTH K D_B S and
+D_B^dag K^dag S literally, with full support retained. The expected full
+differential theta0Gamma01 coefficient is-(a-b)/2. The complete algebraic
+gradient is vector-valued, with coefficients
+4gamma(28a²+40ab+10b²)+kappa a-15/4 and
+4gamma(36a²+36ab+6b²)+kappa b-21/4. Test full adjoint variation, not only
+derivatives of a restricted scalar action. The prederived rational control
+gamma1,kappa11,a3/4,b-3/4 has zero algebraic vector residual but differential
+coefficient-3/4; this is a prospective negative control, not a fitted row.
+For a=b the anisotropic curvature source persists; a!=b leaves an even
+Clifford derivative term that the odd algebraic terms cannot cancel.
+This is a constant two-weight ansatz test only, not a global-vacuum no-go.
+Contract phase617-a61-nonparallel-projector-two-weight-gradient-v1;
+terminal nonparallel-projector-controls-pass-two-weight-ansatz-nonstationary.
+Root studies/phase617_nonparallel_projector_two_weight_gradient_audit_001;
+project Phase617NonparallelProjectorTwoWeightGradientAudit.csproj.
+
+The two builders own only their allocated root and unbound IMPLEMENTATION
+note. No unexecuted616 output may be used by617. MAIN owns shared wiring
+and documentation. Before FIRST science, independently derive and freeze
+complete code/helpers/project/proof, exact finite menus, expected coefficients
+and counts, tolerance0, resource bounds and failure precedence. Require
+complete independent and MAIN review, unique exact bindings for all compiled
+inputs and provenance, complete fixture parity, live726 core path/hash/tree
+closure and zero-warning Release builds. MAIN alone approves first execution.
+Preserve first failures; repairs require a newly frozen version, never tuned
+expectations. No upstream scientific bytes or core files may be changed.
+Register generator/traversal/101/202/verifier/all9scanners(both207sites),
+registry/amendment/implementation/restart/journal/reference+ledger. Final
+incremental must follow ALL edits before scoped commit/push/remote check.
+All14 authority flagsfalse,O4/externalreviewpending,Phase561closed,WZ15/H14
+deficits,physicalmassclaims0. No sampling, fits, operator/norm/source-scale
+selection or physical prediction is authorized.618+free.
+
+### A61 first execution record (2026-09-10 UTC)
+
+616 and617 BOTH PASSED FIRST frozen Release executions unchanged after
+complete independent/MAIN code/helper/project/proof/contract review and
+explicit MAIN approval.37/34 unique bindings,50/38 exact count fields,
+full fixtures, all14 false flags and live726 core closure passed. Release
+builds had zero warnings/errors. Wall1.858/1.814s;tracked coefficient
+products45232/42350,matrixproducts26331/108980,largest tensor822 each.
+Full/summary SHA256 respectively:
+ed4fde0055b1ccf11bbd5ec4b8b582d43fbe78fc2f4f2e9c48960cd8122736bd;
+b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb.
+No frozen inputs were repaired after execution. Canonical parallelism
+requires cancellation of Clifford and covector connection actions; the
+nonparallel projector requires analytic partials and both kinetic legs.
+The planted algebraic-zero control retains full derivative coefficient-3/4.
+These constant-field ansatz rejections do not reject general Clifford
+fields or coupled vacua. Shared wiring/verifier/output independent reviews
+passed; ordered101/202/integrity PASSED397/3,coverage31/31,overturn94/94.
+Incremental tooling tests50/50passed. Final incremental AFTER ALL edits
+still precedes scoped commit/push on main and remote verification; record
+its report in commit/handoff, with no subsequent edits before checkpoint.
+The formal full-grade inverse-kappa correction remains analytical only,
+requires further covariant jets, and establishes no convergence or spectrum.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+618+free; concrete constructive tests remain, so this is PROGRESS.

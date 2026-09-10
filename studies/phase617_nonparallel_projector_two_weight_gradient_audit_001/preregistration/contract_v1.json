@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "phase": 617,
+  "phaseId": "phase617-nonparallel-projector-two-weight-gradient-audit",
+  "contractId": "phase617-a61-nonparallel-projector-two-weight-gradient-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "points": [
+      0,
+      1
+    ],
+    "metrics": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        4,
+        9,
+        16
+      ]
+    ],
+    "alpha": "1",
+    "beta": "-1/2",
+    "sigma": "-1",
+    "operator": "canonical untied CAA: firstC outerA innerA; Phi1=Gamma1 Phi2=Gamma2",
+    "pairing": "signed exterior metric times -ReTr(XY)/128, real bilinear; compact-support formal adjoint",
+    "ansatz": "S=(aPT+b(I-PT))Gamma1; real constant weights; geometry and couplings held fixed",
+    "projectorRank": 9,
+    "projectorFrameIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13
+    ],
+    "covariantDerivative": "partial PT + Gamma PT - PT Gamma, all14 coordinate directions before tensor frame transport",
+    "typedHorizontalHorizontal": "sigma/2[y Sym(u,v)y-(u^T y v)y/4]",
+    "typedHorizontalVertical": "y^-1(PT A)u/2",
+    "typedVertical": "zero",
+    "differential": "(K DB S + DBdag Kdag S)/2; both legs separately J for PT",
+    "witness": {
+      "form": 1,
+      "blade": 3,
+      "coefficient": "-(a-b)/2"
+    },
+    "formalMonomials": [
+      "a^2",
+      "ab",
+      "b^2"
+    ],
+    "KQCoefficientsPT": [
+      112,
+      160,
+      40
+    ],
+    "KQCoefficientsComplement": [
+      144,
+      144,
+      24
+    ],
+    "adjointComposite": "2KQ coefficientwise, full tensor not projected",
+    "sourcePT": "-15/4",
+    "sourceComplement": "-21/4",
+    "gammas": [
+      0,
+      1,
+      2
+    ],
+    "kappas": [
+      -1,
+      0,
+      1
+    ],
+    "weights": [
+      -1,
+      0,
+      1
+    ],
+    "falseStationary": {
+      "gamma": "1",
+      "kappa": "11",
+      "a": "3/4",
+      "b": "-3/4",
+      "KQPT": "-9/2",
+      "KQComplement": "27/2",
+      "algebraicResidual": "0",
+      "differentialWitness": "-3/4"
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "expectedCounts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "contexts": 2,
+      "frameControls": 2,
+      "projectorControls": 2,
+      "connectionEntries": 5488,
+      "coordinateDerivativeEntries": 5488,
+      "derivativeTraceRows": 28,
+      "projectorDerivativeRows": 28,
+      "wrongParallelHorizontalRows": 8,
+      "omittedPartialVerticalRows": 20,
+      "frameDerivativeEntries": 5488,
+      "transportDerivativeEntries": 2744,
+      "divergenceEntries": 28,
+      "horizontalAnchorRows": 2,
+      "kineticStageComparisons": 16,
+      "reverseDerivativeRows": 28,
+      "reverseSimplifiedRows": 28,
+      "kineticLegRows": 4,
+      "kineticGradientRows": 2,
+      "kineticWitnessRows": 2,
+      "omittedKineticLegRows": 4,
+      "transportKineticRows": 1,
+      "spinInputRows": 2,
+      "sourceStageComparisons": 16,
+      "sourceRows": 2,
+      "algebraicAdjointRows": 4,
+      "forwardAdjointProbes": 364,
+      "adjointReconstructions": 4,
+      "quadraticSourceCoefficients": 6,
+      "quadraticAdjointCoefficients": 6,
+      "quadraticGradientCoefficients": 6,
+      "originalActionVariations": 1176,
+      "parameterRows": 162,
+      "equalWeightRows": 54,
+      "unequalWeightRows": 108,
+      "falseStationaryRows": 2
+    },
+    "resources": {
+      "estimatedCpuSeconds": 120,
+      "estimatedPeakBytes": 268435456,
+      "maximumTrackedCoefficientProducts": 100000000,
+      "maximumTrackedMatrixProducts": 100000000,
+      "maximumTensorTerms": 32768,
+      "maximumMatrixDimension": 14,
+      "largestArrayEntries": 38416,
+      "maximumFormalDegree": 2,
+      "maximumFormalCoefficients": 3,
+      "maximumFrequency": 0,
+      "maximumRetainedParameterRows": 162
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "sourceNormSelected": false,
+      "sourceMetricSelected": false,
+      "physicalVacuumSelected": false,
+      "globalVacuumRejected": false,
+      "nonconstantWeightsIncluded": false,
+      "additionalCliffordGradesInAnsatz": false,
+      "fullMetricEulerComputed": false,
+      "physicalSpectrumClaimed": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "coordinate-connection-control-failed",
+    "covariant-projector-control-failed",
+    "complete-kinetic-adjoint-control-failed",
+    "curved-source-control-failed",
+    "full-algebraic-gradient-control-failed",
+    "false-stationarity-control-failed",
+    "resource-census-control-failed",
+    "nonparallel-projector-controls-pass-two-weight-ansatz-nonstationary"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Program.cs",
+      "sha256": "f9a515298d4d98a67df58157d56f716debc95978d292468f8b5408ef2a073d12"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj",
+      "sha256": "5d0ea1f1d6f4ca41370982a7780da57ded562f5c60aa29870b15d5e432499102"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/STUDY.md",
+      "sha256": "23a14987225373161af0f529536dff01860ee2c30e9725819cf88ad019769115"
+    },
+    {
+      "id": "projector-helper",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/ProjectorGradient.cs",
+      "sha256": "1747e96750264c2f5b5c1ce39caf0138c05789816550ade2d8f9efeab8d00e35"
+    },
+    {
+      "id": "phase600-exactarithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-fouriertensor-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-traceadjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase607-verticalgeometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase608-ambientgeometry-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase610-spingeometry-helper",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs",
+      "sha256": "1da7150abc6f2da2abe0c9dbd1600e84edcd452dae90449a599a65fbb8d7e2cb"
+    },
+    {
+      "id": "phase610-program",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Program.cs",
+      "sha256": "a6fb779acf2f96a6fafd1b010a529e525ceed4f0edc708943909cb13624db5a0"
+    },
+    {
+      "id": "phase610-study",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/STUDY.md",
+      "sha256": "67269d1d55c5e738e7e1a5cbd87da10f6064cb11d96008f6fa80bc1648961a93"
+    },
+    {
+      "id": "phase610-contract",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/preregistration/contract_v1.json",
+      "sha256": "c3bd65163480ae51b75c9500fb897cf2a1291a06655f538ce2be9a2776d9233e"
+    },
+    {
+      "id": "phase610-summary",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/output/induced_spin_curvature_contraction_audit_summary.json",
+      "sha256": "507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4"
+    },
+    {
+      "id": "phase611-caaoperator-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

@@ -484,6 +484,8 @@ dotnet run --no-build -c Release --project studies/phase612_covariant_caa_symbol
 dotnet run --no-build -c Release --project studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Phase613CanonicalIsotropicStationarityPotentialHessianAudit.csproj
 dotnet run --no-build -c Release --project studies/phase614_conditional_metric_homothety_stationarity_audit_001/Phase614ConditionalMetricHomothetyStationarityAudit.csproj
 dotnet run --no-build -c Release --project studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj
+dotnet run --no-build -c Release --project studies/phase616_curved_canonical_isotropic_gradient_audit_001/Phase616CurvedCanonicalIsotropicGradientAudit.csproj
+dotnet run --no-build -c Release --project studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
