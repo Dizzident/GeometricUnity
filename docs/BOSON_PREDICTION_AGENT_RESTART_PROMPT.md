@@ -45,6 +45,46 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+WORK IN PROGRESS (2026-09-10 UTC,A62;618-619executed,620+free):
+Authoritative completed checkpoint c90f9bb013ec91ac9e0fe68d9df36de466be170c
+is on main,pushed and independently remote-matched. FinalA61 report
+pass_2026-09-10T20-45-35-342Z.json ran77/skipped400,397/3 checklist,
+coverage31/31,overturn94/94,integrity passed. Previous scientific turn
+PROGRESS. User-requested root AGENTS.md records repository-scoped Git
+approvals; include it in next checkpoint, work directly on main.
+Three independent analytical reviews found a constructive improvement:
+affine homogeneity can make the FULL invariant connection equation finite
+dimensional, yielding actual local invariant solutions for sufficiently
+large |kappa| at fixed finite gamma by contraction. This is not a physical
+vacuum, a solution at a prescribed source coupling or a spectrum. Full
+u(64,64) including central iI and both parities is supported by3.27/3.34.
+Restrict the full gradient, never only the invariant scalar action.
+618/619 BOTH PASSED FIRST frozen Release runs unchanged after complete
+independent/MAIN reviews and MAIN approval.39/26 unique exactbindings,
+46/35 forecast counts, full fixture/singleEOF/live726 closure and
+zero-warning builds passed. Wall1.153/1.295s;coefficientproducts553/18510,
+matrixproducts128816/492,largest tensor216/650. Full/summary SHA256:
+618 10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79;
+619 b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c.
+All bound scientific inputs are now immutable.618 checks the full moving
+connection/curvature/isotropy and conditional local-existence bounds;
+619 retains614 nonlinear terms,600 of grade5, with allowed potential
+variation1/3.619 excludes HJ and full covariant-action stationarity.
+Independent output/shared-wiring/verifier reviews passed. Ordered101/202/
+integrity PASSED399/3,O4coverage31/31,overturn94/94.
+Final incremental must follow ALL edits before scoped commit/push on main
+and independent remote match. Targeted runs are not final validation.
+Analytical next leads: curved uniform-conjugation Ward redundancy; full
+induced-metric variation as a possible base total derivative under strict
+fixed-y/fixed-fibre-domain conditions; full homogeneous HJ/H²J for explicit
+branch construction. None extends618's frozen epsilon/metric scope.
+The moving-section control s_h*G_h=sigma h has a zeroth-order variation
+absent at fixed y; do not infer observer-reduced stationarity from a fixed-Y
+total-derivative argument. Source chimeric-identification ambiguity remains.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+See A62 and existing stationary-background reference. Older statuses below
+are historical; do not infer final validation of A62 from A61's report.
+
 WORK IN PROGRESS (2026-09-10 UTC,A61;616-617executed,618+free):
 User explicitly resumed research and directs work on main, no new branch.
 Authoritative completed checkpoint fcc8b633eb43747a406e3796d271d41af6e1b752

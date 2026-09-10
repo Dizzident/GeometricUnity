@@ -3645,3 +3645,112 @@ The formal full-grade inverse-kappa correction remains analytical only,
 requires further covariant jets, and establishes no convergence or spectrum.
 All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
 618+free; concrete constructive tests remain, so this is PROGRESS.
+
+## A62 - Homogeneous connection and full nonlinear feedback (2026-09-10)
+
+A61 completed on main at c90f9bb013ec91ac9e0fe68d9df36de466be170c,
+pushed and independently remote-matched. Final incremental report
+pass_2026-09-10T20-45-35-342Z.json ran77/skipped400,397/3 checklist,
+O4coverage31/31,overturn94/94,integrity passed. No edits followed the
+final pass before that checkpoint. The user subsequently requested root
+AGENTS.md to record the repository-scoped git -C approval convention;
+preserve and include that requested instruction in the next checkpoint.
+Continue directly on main. The preceding scientific tranche was PROGRESS.
+
+Three independent analytical reviews identify a constructive improvement:
+608's declared geometry is affine-homogeneous. With group action
+(x,y)->(Lx+t,L^-T y L^-1), choose the reductive tangent lift
+(u,A)->(u,-y^-1A/2). In the group-transported frame the Levi-Civita map is
+Lambda_A=0, Lambda_u v=-sigma W(u,v)/2, Lambda_u A=y^-1Au/2.
+The vertical zero requires cancellation of coordinate connection and moving
+frame derivatives. It cannot be obtained by declaring coordinate tensors
+constant. Full invariant tensor derivatives are algebraic actions ofLambda;
+this can replace escalating explicit coordinate-jet calculations once
+independently verified. Use sigma=-1,alpha1,beta-1/2 as in608/617.
+
+Allocate618 to the full14-dimensional homogeneous connection at both passed
+608 points. Compare coordinate Koszul connection plus analytic frame-motion
+derivative with independently typedLambda; check all metric compatibility,
+torsion and curvature entries, retaining the isotropy curvature term. Compare
+full projector derivatives and both kinetic legs with617. Include full
+isotropy covariance, or state a strictly local/cover result if disconnected
+descent is not proved. No small Clifford carrier is assumed closed.
+Root studies/phase618_homogeneous_covariant_connection_audit_001;
+project Phase618HomogeneousCovariantConnectionAudit.csproj;
+contract phase618-a62-homogeneous-covariant-connection-v1;
+terminal homogeneous-connection-controls-pass-conditional-local-existence.
+
+The accompanying proof must restrict the ALREADY DERIVED FULL gradient,
+not differentiate a restricted invariant scalar action whose pairing may
+be degenerate. The isotropy-fixed full real u(64,64)-valued one-form space
+is finite-dimensional; natural full K,D,dagger,N preserve invariant sections.
+For fixed finite gamma, T+lambda[A+HT+gammaN(T)]=0 has derivativeI at0.
+A contraction proof supplies actual local invariant connection-stationary
+fields for sufficiently small nonzero |lambda|=1/|kappa|. The coefficient
+norm used only for existence estimates is NOT a selected physical norm.
+No solution at an unknown prescribed coupling, finite total action,
+global spinor descent, coupled metric/epsilon stationarity, stability,
+observed-field map, pole or physical mass follows from this statement.
+Primary3.27/3.34 explicitly allow full u(64,64), including central iI and
+both Clifford parities;12.26/12.27 give C and i-anticommutator closure.
+Do not silently replace this with su, a parity sector or a small carrier.
+
+Allocate619 independently to complete nonlinear feedback of617's retained
+36-term J. Reconstruct full KdagJ, Q(J), KQ(J), DQ_JdagKdagJ and N(J)
+with literal canonical CAA and original-action controls. The prospective
+cyclic trace identity predicts KdagJ is vector-valued but N(J) has nonzero
+grade5. Independently verify before freezing the candidate coefficient
+N(J) at(form8,blade157), namely theta3 Gamma02347, equal+1/3. Retain
+all full tensors and test an allowed grade5 variation of the ORIGINAL
+first action, including its signed trace norm. A projected scalar gradient
+or vector/bivector closure would miss this feedback. No HJ/H²J calculation
+or unexecuted618 output is an input to619. Polarized extensions require
+separate complete prospective derivations if included; do not enlarge
+scope after seeing a result.
+Root studies/phase619_invariant_bivector_nonlinear_feedback_audit_001;
+project Phase619InvariantBivectorNonlinearFeedbackAudit.csproj;
+contract phase619-a62-invariant-bivector-nonlinear-feedback-v1;
+terminal invariant-bivector-controls-pass-nonlinear-grade-five-required.
+
+Builders own only their allocated root and unbound IMPLEMENTATION note;
+MAIN owns shared wiring/docs and explicit first-execution approval. Before
+FIRST science freeze full code/helpers/project/proof, finite menus, exact
+coefficients/counts/tolerance, resource bounds and failure precedence.
+Require complete independent and MAIN review, unique direct exact bindings
+for compiled inputs and primary provenance, full fixture parity, live726
+core path/hash/tree closure, single EOF and zero-warning Release builds.
+Preserve first failures; repairs need new frozen versions, never retuning.
+No upstream scientific bytes or core edits. Register generator/traversal,
+101/202/verifier/all9scanners(both207sites), implementation, registry,
+restart, journal, existing reference and ledger. Final incremental AFTER
+ALL edits precedes scoped commit/push on main and remote verification.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,WZ15/H14deficits,
+physicalmassclaims0. No sampling, fits, source operator/norm/scale selection
+or physical vacuum promotion.620+free; no new scientific execution yet.
+
+### A62 first execution record (2026-09-10 UTC)
+
+618/619 BOTH PASSED FIRST frozen Release runs unchanged after complete
+independent/MAIN reviews and MAIN approval.39/26 unique exactbindings,
+46/35 forecast counts,full fixture/singleEOF/live726 closure and zero-warning
+builds passed. Wall1.153/1.295s;coefficientproducts553/18510,
+matrixproducts128816/492,largest tensor216/650. Full/summary SHA256:
+618 10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79;
+619 b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c.
+All bound scientific inputs are immutable; no post-run repairs.618 verifies
+the complete homogeneous connection, curvature, full isotropy, previous
+projector/kinetic evidence and conservative conditional-existence bounds.
+619 retains full614-term N(J), including600 grade5 terms; the allowed
+original-potential variation is1/3. Its scope excludes HJ, full covariant
+stationarity and physical claims. Independent retained-output reviews pass;
+shared verifier and ordered101/202/integrity remain pending. Final
+incremental AFTER ALL edits precedes scoped commit/push/main/remote match.
+Unexecuted next leads are a curved Ward extension, induced-metric base
+total-derivative test and explicit homogeneous higher feedback. They must
+not alter618's frozen epsilon/metric scope. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,physicalclaims0.620+free.
+
+Ordered101/202/integrity PASSED399/3,O4coverage31/31,overturn94/94.
+Independent verifier review PASSED; final incremental AFTER ALL
+edits still precedes scoped commit/push/main and independent remote match.
+No post-run bound scientific inputs or outputs were repaired.

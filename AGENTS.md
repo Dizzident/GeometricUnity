@@ -7,6 +7,10 @@
   `git -C /home/josh/Documents/GitHub/GeometricUnity <command>`.
   The saved approval rule covers `diff`, `add`, `commit`, `merge`, and
   `push` with this prefix; bare `git` invocations do not match that rule.
+- Reuse these saved approvals for in-scope Git operations without asking
+  for redundant conversational confirmation. Request execution escalation
+  when required by the sandbox; the runtime decides whether a saved rule
+  satisfies approval or a user prompt is necessary.
 - Prefer separate, simple commands so the approval system can match each
   command reliably. Do not broaden permissions or bypass a required prompt.
 - Saved approvals do not authorize unrelated work, destructive operations,

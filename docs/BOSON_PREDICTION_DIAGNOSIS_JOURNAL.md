@@ -24142,3 +24142,83 @@ ALL edits before scoped commit/push on main and independent remote match.
 Record its exact report/checkpoint in the commit and handoff without editing
 after the final pass. All14flagsfalse,O4/externalreviewpending,
 Phase561closed,WZ15/H14deficits,physicalclaims0.618+free; PROGRESS.
+
+### 2026-09-10 UTC - A62 constructive homogeneous route, prospective allocation
+
+Resumed from completed,pushed and independently remote-matched
+c90f9bb013ec91ac9e0fe68d9df36de466be170c on main. Final A61 report
+pass_2026-09-10T20-45-35-342Z.json ran77/skipped400,397/3 checklist,
+coverage31/31,overturn94/94,integrity passed. Previous scientific tranche
+was PROGRESS; the intervening user-requested AGENTS.md clarification
+records existing repository-scoped approvals, not expanded permissions.
+
+Three independent analytical reviews agree on a constructive improvement:
+the declared608 metric is affine-homogeneous. Its transported connection
+has Lambda_A=0 only after frame-motion and coordinate-connection terms
+cancel. Restricting the full gradient to the FULL isotropy-fixed real
+u(64,64) field space gives a finite-dimensional equation. A contraction
+argument supplies actual local invariant connection-stationary fields for
+sufficiently large |kappa| at fixed finite gamma, conditional on this
+declared model. This is stronger than formal series cancellation but does
+not select physical couplings or prove coupled metric/epsilon stationarity,
+global admissibility, stability, poles or physical masses. The auxiliary
+coefficient norm used in a proof is not a selected physical norm.
+
+618 is allocated to full moving-frame geometry, curvature, connected AND
+disconnected isotropy,617 projector/kinetic controls and conservative
+contraction-bound certificates.619 independently audits the complete
+nonlinear feedback of617's36-term J and a grade5 variation of the original
+POTENTIAL. Hand calculations and independent review give N(J) coefficient
++1/3 at theta3Gamma02347 and potential gamma*u²*v/3+kappa*(9u²+v²)/2
+on uJ+vW. HJ is outside619, so this is not a full-action vacuum test.
+The source explicitly permits full u(64,64), including central iI and both
+parities; shrinking that domain would manufacture an unsupported closure.
+
+Two disjoint builders and one read-only independent reviewer work in
+parallel. MAIN owns shared wiring and documentation. No new scientific
+execution yet: full prospective code/proof/menu/resource/binding closure,
+independent/MAIN review and explicit MAIN approval must come first. Full
+derivations and primary mathematical reference are recorded in the existing
+stationary-background reference and ledger. No council trigger: decisive
+safe tests are known. All14flagsfalse,O4/externalreviewpending,
+Phase561closed,WZ15/H14deficits,physicalclaims0.620+free.
+
+### 2026-09-10 UTC - A62 first frozen results
+
+618/619 BOTH PASSED FIRST frozen Release runs unchanged after complete
+independent/MAIN reviews and MAIN approval.39/26 unique exactbindings,
+46/35 prospective counters,full fixture/singleEOF/live726 closure and
+zero-warning builds passed. Wall1.153/1.295s;coefficientproducts553/18510,
+matrixproducts128816/492,largest tensor216/650. Full/summary SHA256:
+618 10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79;
+619 b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c.
+All scientific inputs are immutable; no repairs or retuned expectations.
+
+618's full curvature/isotropy controls and conservative norm certificates
+support an actual conditional local invariant connection-existence proof,
+not merely a formal series. No parameter is chosen as a physical coupling.
+619 confirms the full nonlinear forcing is not confined to vectors and
+bivectors: each N(J) has614 terms,600 grade5 and14 vector, with the
+allowed signed-pairing potential variation1/3. Full original-potential
+coefficients and gradient pairings agree; the projected decoy loses it.
+HJ and possible full kinetic cancellation remain outside619.
+
+Independent analytical follow-up finds a curved Ward descent route and
+a possible full induced-metric base-total-derivative argument. These are
+next-test candidates, not expanded executed618 coverage. Source variable
+choice, fixed-y versus moving-section dependence, fibre domain and full
+field gradients must be retained. Independent output reviews pass; shared
+verifier and ordered101/202/integrity remain pending. Final incremental
+must follow ALL edits before scoped commit/push/main and remote match.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+PROGRESS;620+free.
+
+Ordered101/202/integrity now PASSED399/3,O4coverage31/31,overturn94/94.
+The three standing failed checks concern defensible known values, promotable
+source contracts and top-level completion; none was waived by these audits.
+MAIN caught a mistyped618 contract literal in the new verifier before its
+full run; only the verifier was corrected, never frozen science or outputs.
+Independent verifier review PASSED. Final incremental still follows
+ALL edits before commit/push. Source challenge sharpened the next metric
+test: s_h*G_h=sigma h has a zeroth-order variation under a moving section.
+Fixed-Y integration cannot silently become observer-reduced stationarity.

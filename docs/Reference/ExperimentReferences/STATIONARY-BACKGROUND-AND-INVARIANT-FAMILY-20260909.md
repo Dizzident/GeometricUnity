@@ -1356,3 +1356,300 @@ An exact formal series, even to arbitrary order, does not establish a
 convergent smooth solution, an allowed coupled metric variation, stability,
 observer-field extraction, pole identification or GeV normalization.
 All14 authority flagsfalse,O4/externalreviewpending,physicalclaims0.
+
+### A62: homogeneous full-field existence route (analytical; execution pending)
+
+The completed A61 checkpoint is c90f9bb013ec91ac9e0fe68d9df36de466be170c.
+618 and619 are now allocated prospectively. Nothing below is a new executed
+result until those frozen audits run. Three independent derivations agree
+on the geometry and nonlinear witness; the finite tests must still verify
+the implementation, exact controls and declared bounds.
+
+External mathematical reference, consulted2026-09-10: Alberto Elduque,
+*Reductive homogeneous spaces and nonassociative algebras*,
+[arXiv1503.03227v3, Section5.2](https://arxiv.org/html/1503.03227v3).
+Theorem24 identifies invariant connections with isotropy-equivariant
+bilinear maps on the reductive tangent space. Equation22 retains both
+the tangent-bracket and isotropy terms in curvature. Remark25 warns that
+infinitesimal equivariance alone suffices only for connected isotropy.
+This supports the mathematical framework, not the GU-specific geometry,
+coupling selection, source interpretation or physical predictions below.
+The following formulas and contraction estimates are our model-specific
+derivations, subject to prospective exact implementation checks.
+
+Put p=y^-1 and retain608's declared sigma=-1,alpha=1,beta=-1/2.
+The affine action (x,y)->(Lx+t,L^-T y L^-1), with detL>0, preserves
+the full horizontal/vertical metric and is transitive. Its stabilizer is
+SO(1,3), including its second component represented by-I4. This acts
+by minus on the horizontal4 and plus on the vertical10, preserving the
+upstairs orientation. Lie-algebra controls alone would miss this descent
+condition. Local Clifford-tensor descent does not prove a chosen global
+spin structure or globally admissible finite-action field.
+
+For X=(u,A), use the reductive lift (u,-pA/2). Differentiating the
+transported frame gives horizontal derivative-pAv/2 and vertical
+derivative(ApB+BpA)/2. These cancel the coordinate connection in a
+vertical direction. The resulting moving-frame Levi-Civita map is
+
+    Lambda_A=0,
+    Lambda_u v=-sigma W(u,v)/2,
+    Lambda_u A=pAu/2.
+
+This is NOT obtained by holding coordinate components constant. The
+reductive brackets and isotropy action are
+
+    [X,Y]_m=(-pAv/2+pBu/2,0),
+    [X,Y]_k=[pA,pB]/4,
+    rho(Z)v=Zv, rho(Z)B=-Z^T B-BZ,
+    R(X,Y)=[Lambda_X,Lambda_Y]-Lambda_[X,Y]_m-rho([X,Y]_k).
+
+618 compares all these curvature entries with608 at both transported
+points, and compares the full first projector derivative and both kinetic
+legs with617. Higher covariant derivatives of invariant tensors can then
+be computed using the induced Lambda action on EVERY index. For example,
+
+    T1(X)=[Lambda_X,P],
+    T2(X,Y)=[Lambda_X,T1(Y)]-T1(Lambda_X Y),
+    T3(X,Y,Z)=[Lambda_X,T2(Y,Z)]
+              -T2(Lambda_X Y,Z)-T2(Y,Lambda_X Z).
+
+Thus explicit higher coordinate jets are not the only route to HJ/H²J;
+the homogeneous construction can provide them algebraically.618 does not
+itself compute those higher full-field responses.
+
+The primary text's3.27 explicitly gives u(64,64), including central iI
+and both Clifford parities;3.34 repeats that adjoint bundle. Equations
+12.26/12.27 use the commutator and i-anticommutator. The real domain is
+therefore not silently reduced to su, a parity sector or a small carrier.
+One h-anti-Hermitian unit per Clifford blade gives16384 real directions;
+the full one-form fibre has229376 real coordinates before isotropy
+constraints. This domain statement does not choose the source's unresolved
+operator parameters or physical norm.
+
+Let V be this full real fibre, and W its FULL isotropy-fixed subspace.
+Invariant sections are determined by their value in W. Natural operators
+preserve invariant sections: A=K(F_B) lies in W, H=(KD_B+D_B^dag K^dag)/2
+maps W to W, and the quadratic N maps W to W. Restrict the already-derived
+FULL gradient, not the scalar action restricted to W. The latter pairing
+could be degenerate; neither nondegeneracy on W nor compact-group averaging
+is required for this argument.
+
+For fixed finite real gamma and lambda=1/kappa, the equation is
+
+    T+lambda[A+HT+gamma N(T)]=0.
+
+The derivative with respect to T at(T,lambda)=(0,0) is the identity.
+An explicit contraction also proves existence, rather than just formal
+series consistency. In the auxiliary coefficient l1 norm, the prospective
+conservative bounds are a=||A||=60, ||H||<=h=51520 and
+
+    ||N(T)||<=c||T||²,
+    ||N(T)-N(U)||<=c(||T||+||U||)||T-U||, c=2576.
+
+The K/Kdag bound follows from ||Gamma1||=14,||Gamma2||=91 and the
+factor2 bound for each commutator/i-anticommutator and its transpose:
+28+(28*182)/2=2576. Each primitive plane generator replaces at most
+one blade index and one exterior-form index. Each of the four horizontal
+Lambda maps has upper-plane coefficient sum5/2, while the ten vertical
+maps vanish. The full induced tensor-action bound therefore gives
+||D_B||,||D_B^dag||<=20 and ||H||<=2576*20=51520.
+These are sufficient upper bounds, not measured optimal operator norms.
+
+For epsilon_gamma=1/[4(a+h+c(|gamma|+1))] and |lambda|<=epsilon_gamma,
+the map T->-lambda[A+HT+gamma N(T)] maps the closed unit ball in W
+into itself and has Lipschitz constant at most1/2. Completeness and
+iteration give a unique fixed point within that ball and
+||T||<=120|lambda|. Nonzero sufficiently small lambda consequently yields
+actual smooth invariant LOCAL connection-stationary fields in the declared
+model.618's finite rational certificate menu is only a check of these
+inequalities; it does not fit couplings or numerically solve a field.
+
+The coefficient norm is an existence-proof device, not a physical inner
+product or source normalization. This does not establish a solution at
+an unknown prescribed coupling, a coupled metric/epsilon stationary vacuum,
+finite total action, global spinor admissibility, stability, an observed
+field map, a pole, or a mass in GeV. It does remove the assumption that
+failure of low-grade ansatzes means the declared connection equation has
+no solutions. Whether these conditional solutions can meet the remaining
+physical requirements is a separate substantive problem.
+
+### A62: nonlinear grade-five witness (analytical; execution pending)
+
+619 independently uses617's complete36-term J, with no unexecuted618
+input. The cyclic Clifford wedge trace of J vanishes, so KdagJ has only
+grade1 and DQ_J^dag KdagJ has only grade1. That does NOT force N(J)
+to be vector-valued: KQ(J) contains a grade5 contribution.
+
+An independent hand witness uses Q(J) at form(0,7), blade(2,4), equal1/2.
+Its second-A chain gives KQ(J) at(form8,blade157)=+1, hence
+N(J) at this coefficient equals+1/3. Here form8 means theta3 and
+blade157 means Gamma02347. Let W=theta3 Gamma02347. Direct signed
+trace pairing gives <J,J>=9, <W,W>=1, <J,W>=0 and W wedge W=0.
+The complete original POTENTIAL restricted to S=uJ+vW is
+
+    I_potential(uJ+vW)=gamma*u²*v/3+kappa*(9u²+v²)/2.
+
+Its allowed W variation at v=0 is gamma*u²/3. All tensors, transpose
+terms, polynomial coefficients and signed pairings must be retained by619,
+not merely this scalar witness. This deliberately excludes the covariant
+kinetic action HJ; it is not a full-action stationary-field test or proof
+that a possible full kinetic contribution cannot cancel this force.
+All14 authority flagsfalse,O4/externalreviewpending,Phase561closed,
+physicalmassclaims0. Concrete constructive next steps remain.
+
+### Next lead: curved Ward redundancy (analytical extension, not a618 result)
+
+MAIN reread the complete598 proof and primary9.3-9.6. Independent review
+finds that598's descent argument extends algebraically to a nonflat reference
+and untied CAA, provided the declared uniform-conjugation convention is
+retained.598's executed fixtures were flat and tied CCA; this is therefore
+a new analytical extension, not expanded executed coverage.618's frozen
+epsilonStationarityClaimed=false stays unchanged.
+
+Fix metric, density, reference B0, tensors Phi0 and couplings. For the TOTAL
+connection Aconn define
+
+    B_e=epsilon^-1 B0 epsilon+epsilon^-1 d epsilon,
+    T=Aconn-B_e, S=epsilon T epsilon^-1,
+    Phi_e=epsilon^-1 Phi0 epsilon at EVERY occurrence.
+
+Then F_Be=Ad_epsilon^-1 F_B0 and D_Be T=Ad_epsilon^-1 D_B0 S.
+Conjugation respects wedge, Clifford multiplication, C, iA and fixed Hodge
+star, so the full K_e chain is equivariant whether its occurrences are
+tied or untied. The real trace pairing is conjugation-invariant without
+being positive. Each original first-action term consequently descends to
+I0(S), including the nonzero background-curvature term.
+
+For delta epsilon=epsilon eta, direct product differentiation gives
+
+    delta S=Ad_epsilon(delta Aconn-D_Aconn eta).
+
+If g0 is the FULL action-derived connection gradient, then
+g_e=Ad_epsilon^-1 g0 and the right-trivialized epsilon gradient is
+-D_Aconn^dag g_e, subject to the compact-support boundary convention.
+In particular g0=0 implies epsilon stationarity. This implication also
+follows directly from delta I0=0 in every allowed delta S direction;
+it does not need the disputed printed curvature-only force shortcut.
+For the source's perturbation variable varpi, put Aconn=B0+varpi;
+at fixed B0, delta Aconn=delta varpi and T=varpi-epsilon^-1 D0 epsilon.
+
+Freezing either Phi1 occurrence or Phi2, leaving F_B0 unrotated, or using
+an inconsistent lift sign invalidates this argument. Nor can a stationary
+scalar action on a degenerate invariant subspace replace g0=0. Derivatives
+of K0 belong inside the full gradient even when its tensors are not
+parallel. A newly frozen curved/full-CAA first-variation audit should retain
+the curvature contribution and nonzero inconsistent-transformation controls.
+No new phase allocation or execution is made here. Metric stationarity,
+global admissibility, source selection and the physical spectrum remain open.
+
+### Next lead: induced-metric base derivative (analytical, unexecuted)
+
+MAIN and an independent reviewer identified a stronger possible use of615
+than constant-volume reasoning. In the strict fixed-y reconstruction,
+G(h) depends on the downstairs metric only through its Levi-Civita
+connection C(h). At any constant nondegenerate h0, C(h0)=0: there is no
+dependence on the VALUES of the ten constant metric components. Therefore
+the linearization has no zeroth-order delta h term,
+
+    delta C^k_ij=(h0)^kl[partial_i delta h_jl
+                 +partial_j delta h_il-partial_l delta h_ij]/2.
+
+If EVERY metric, solder, spin-reference and curvature occurrence in the
+full first action factors through this declared construction, its variation
+at an x-translation-invariant field has the schematic form
+
+    delta L(x,y)=sum_(1<=|I|<=3) A_I(y) partial_x^I delta h(x).
+
+The highest order here comes from the reference curvature; variations of
+G and the induced connection begin at first and second base derivatives.
+Full field-dependent coefficients may be complicated in y but are constant
+in x. For compact-supported delta h, the integral of each positive-order
+base derivative vanishes. Integrating over x FIRST gives zero at each
+fixed y without any fibre integration by parts. On a fixed compact fibre
+region independent of x,h, differentiation of the relative action is then
+legitimate. This could prove a conditional induced-metric stationarity
+statement, not merely a volume identity or a solution under arbitrary
+upstairs metric variations.
+
+The assumptions need a full prospective audit. A moving observer section
+y=h(x), a metric-dependent or base-dependent fibre cutoff, an added base
+volume factor, direct h-dependence of source tensors or couplings, or a
+nonlocal field identification can introduce missing terms and invalidate
+the argument. Infinite full-fibre volume does not justify exchanging
+integrals, differentiating an undefined action or declaring a finite
+physical vacuum. At full field stationarity, smooth local changes of field
+coordinates along the metric contribute vanishing field Euler terms, but
+that is not permission to ignore a domain or boundary change.
+
+The next task should trace EVERY first-action metric dependence through
+the fixed-y construction and test the full first variation, including
+reference curvature, Hodge maps, both Phi1 occurrences, Phi2, both kinetic
+adjoint legs and density. Include controls that deliberately add a
+zeroth-order metric dependence or a base-dependent weight. No620+phase
+is allocated here;618's fullMetricEulerComputed=false remains unchanged.
+
+Independent primary-source challenge found no explicit zeroth-order h term
+in the displayed fixed-Y integral9.4:3.7-3.8 use the fibre metric y,
+3.17 routes h through LC(h), and9.4 uses the induced upstairs metric and
+spin curvature. This motivates the conditional test; it is not proof that
+every observer-reduced construction has the same dependence.
+
+There is a concrete counterexample to extending it to a moving section.
+For s_h(x)=(x,h(x)), metric compatibility gives
+ds_h(u)=(u,partial_u h)=(u,L_u(C(h),h)), so in615's reconstruction
+
+    s_h^*G_h(u,v)=sigma h(u,v),
+    delta(s_h^*G_h)=sigma delta h.
+
+This has a zeroth-order variation even when a constant delta h gives
+fixed-y delta G_h=0. Here sigma=-1, so the declared pullback is-h; do not
+silently identify this with a differently named source metric convention.
+Primary3.1(lines785-809),3.17(lines1046-1053),3.37-3.42(lines1237-1294)
+and section11(lines2513-2521) discuss observation/pullback. Thus the
+fixed-Y first-action question is genuinely distinct from deriving the
+observer-reduced action and equations needed for particle interpretation.
+Retain this explicit moving-section negative control in a future audit.
+
+One textual ambiguity also remains: primary lines1082-1086 describe metrics
+pulled up from the base, while3.7 and the connection-only wording of3.17
+motivate the fixed-y interpretation. If an alternative identification used
+the chosen h itself to identify horizontal duals, the block could instead
+be sigma h y^-1 h, with nonzero zeroth-order variation
+sigma(delta h y^-1 h+h y^-1 delta h). No explicit coordinate formula was
+found that selects this alternative. It is an assumption-control candidate,
+not a licensed replacement for615 or evidence of authorial intent. A future
+audit must distinguish conditional reconstruction from source selection.
+
+### A62 executed results and remaining boundary (2026-09-10)
+
+The prospective618/619 audits above BOTH PASSED FIRST frozen Release runs
+unchanged after complete independent/MAIN review and MAIN approval.
+39/26 unique bindings,46/35 forecast counts,full fixture/singleEOF/live726
+closure and zero-warning builds passed. Wall1.153/1.295s;coefficientproducts
+553/18510,matrixproducts128816/492,largest tensor216/650. Full/summary:
+618 10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79;
+619 b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c.
+
+Independent output review reconstructed the complete retained curvature,
+Nomizu covariance, projector/kinetic comparisons and exact contraction
+certificates. For619 it independently reconstructed matrix Q/Kdag/DQ,
+the full N,2548 signed probes,120 original-potential coefficients,
+144 full-gradient pairings and12 projection decoys. Each N(J) has614
+nonzero terms,600 grade5 and14 vector. The forecast+1/3 signed witness
+is confirmed. No bound input was repaired after execution.
+
+The homogeneous connection and sufficient local-existence bounds are now
+supported by executed exact controls and the accompanying full-domain
+proof. The nonlinear grade5 feedback is executed within619's potential
+scope. The separate curved Ward and induced-metric arguments above remain
+ANALYTICAL next leads, not new executed coverage or a source-selected law.
+An explicit branch/Hessian calculation still needs full homogeneous HJ
+and higher feedback; stability, observer-field extraction, poles, physical
+units and global admissibility remain unresolved. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,physicalmassclaims0.
+
+A62 shared wiring/verifier and full retained outputs passed independent
+review. Ordered101/202/integrity PASSED399/3,O4coverage31/31,overturn94/94.
+Final incremental must follow ALL edits before scoped commit/push on main
+and independent remote verification. Record the exact final report and
+checkpoint in commit/handoff, without editing after that final pass.

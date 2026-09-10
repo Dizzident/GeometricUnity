@@ -472,6 +472,8 @@
     <PhaseProject Include="../studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj" />
     <PhaseProject Include="../studies/phase616_curved_canonical_isotropic_gradient_audit_001/Phase616CurvedCanonicalIsotropicGradientAudit.csproj" />
     <PhaseProject Include="../studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj" />
+    <PhaseProject Include="../studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj" />
+    <PhaseProject Include="../studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />
