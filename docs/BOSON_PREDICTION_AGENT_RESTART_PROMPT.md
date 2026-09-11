@@ -45,6 +45,70 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+WORK IN PROGRESS (2026-09-10 UTC,A63;620-621allocated,622+free):
+Authoritative completed checkpoint571d79a9c25a21a55c2d22b4b77d99f84ba42bc6
+is on main,pushed and independently remote-matched. Final A62 report
+pass_2026-09-10T21-52-54-924Z.json ran77/skipped402,399/3 checklist,
+O4coverage31/31,overturn94/94,integrity passed. Clean before this tranche;
+previous goal turn PROGRESS. Keep main and repository-scoped saved Git
+approvals.618/619 scientific inputs remain immutable.
+620 targets full curved untiedCAA first-action descent/actual Ward
+variations, including consistent reference/tensor transformations and
+nonzero controls;621 independently targets full fixed-Y induced-metric
+variation, not merely volume. Freeze full prospective packs and obtain
+independent/MAIN approval before FIRST science.620 has now PASSED its FIRST
+frozen Release run unchanged after full independent/MAIN approval:
+45bindings,8compiled files,36counts,fullfixture/live726/singleEOF passed.
+Contract46a6edbae8cd1cd2bc236ef45fd8223c8bc0d0dadc6256d58c3f09aa76060d46;
+full/summary592d7b284fce0ee3371960b866cf102b661c84f46d5d171bbd5c52d7255f919f.
+Coefficients1001874,matrixproducts22920,largesttensor2254;32action rows,
+32each fixed/Ward/epsilon-only rows,12nonzero decoys.620inputs immutable.
+620 independent retained-output and35-line verifier-diff reviews passed;
+MAIN also checked all200240 serialized coefficient records and scalar rows.
+621 PASSED FIRST frozen Release run after full independent/MAIN approval.
+46bindings,13compiled files,43counts,fullfixture/DAG/live726/singleEOF
+closure and zero-warning build passed. Contract
+5ecf70637a466610003ec70115e61f251b65065a62fed28f678befe327a22a80;
+identical full/summary18eda4a2b62af3d450982c0181cf513d9f87d7acf0e8a4a48e313c310b3674f9
+(325198bytes each).700shards total39777820bytes,max145452. Products:
+coefficient9116109,matrix5307754,dual22900008,largesttensor822.
+All14000 full action-variation comparisons and third-jet source+3/16 pass.
+Inputs immutable. MAIN postflight checked all700 exactpaths/hashes/bytes;
+approved read-only replay PASSED all336000 stage fingerprints/84000pairs/
+3500fields/14000scalars. All702 output files and frozen inputs unchanged.
+Independent retained-output review PASSED all700 geometry/manifest checks
+and27 scope controls. Ordered101/202/integrity PASSED401/3, O4coverage31/31
+and overturn94/94, with the same3 standing physical-completion failures.
+Final verifier diff independently approved; incremental-tooling unit tests
+50/50 passed outside the sandbox. Final incremental MUST follow all edits;
+record its report and exact pushed checkpoint in the commit/handoff rather
+than infer final validation from these targeted runs. Scientific files and
+outputs remain immutable; no post-final edits before scoped main commit/push.
+Critical boundary: base-compact delta h need not vanish on the fibre cutoff.
+Bulk connection stationarity cannot alone discard field-identification
+boundary terms. Use fixed native varpi at epsilonI or keep all such terms.
+The moving-section pullback s_h*G_h=sigma h has zeroth-order variation;
+do not infer observer dynamics from a fixed-Y cancellation.
+Separate analytical constructive lead: differentiating the full cyclic
+trace W3(J)=0 with parallel canonicalGamma gives W4(D_BJ)=0. Therefore
+full HJ should be vector-valued, unlike619's nonlinear N(J). A future
+explicit homogeneous response audit must retain all covector/Clifford
+connection terms and allow separate horizontal/traceless/trace weights.
+Three independent hand derivations now forecast HJ=(9/4)PHGamma-PTGamma,
+with zero trace weight and BOTH kinetic legs separately equal; retain
+the full covector/spin connection. This is not executed HJ evidence or
+finite nonlinear closure. The corrected trace response and exact gamma0
+linear solution are independently hand-checked, not executed. Full S5
+grade5 witness-3gamma/4 remains a prospective complete-feedback test.
+A new joint relative-action stationarity synthesis has three independent
+reviews, now supported by621 replay within its precise native-field boundary
+class. It does not imply a global/physical vacuum or absent mixed Hessian.
+Unexecuted mass-piece metric/mixed second-variation controls and the next
+full-H/branch leads are recorded in the stationary-background reference.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+See A63 and existing stationary-background reference; older free-number
+and pre-checkpoint descriptions below are historical.
+
 WORK IN PROGRESS (2026-09-10 UTC,A62;618-619executed,620+free):
 Authoritative completed checkpoint c90f9bb013ec91ac9e0fe68d9df36de466be170c
 is on main,pushed and independently remote-matched. FinalA61 report

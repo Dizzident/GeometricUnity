@@ -81,9 +81,11 @@ back, NO new phase directory may be created outside this table.
 | 615 | Source-induced splitting and volume scope audit (A60 extension) | DONE, first frozen run passed:12 full metrics/480 full tangents and40-dimensional jet-map isomorphism verify fixed-y volume invariance and exclusion of uniform homothety; no moving-section, coupled metric equation or vacuum conclusion. |
 | 616 | Curved canonical isotropic gradient audit (A61) | First frozen Release run passed: literal untiedCAA induced-spin contraction and full constant-isotropic gradient; nonzero anisotropic source excludes this ansatz, not general vacua. |
 | 617 | Nonparallel projector and two-weight gradient audit (A61) | First frozen Release run passed: full covariant projector derivatives, both kinetic adjoint legs and complete two-weight gradient; exact algebraic zero retains derivative coefficient-3/4. No Clifford projection or global-vacuum claim. |
-| 618 | Homogeneous covariant connection audit (A62) | Prospective full moving-frame connection, torsion/curvature/isotropy controls and conditional invariant-field local existence proof; no physical vacuum or coupling selection. |
-| 619 | Invariant bivector nonlinear feedback audit (A62) | Prospective full canonical adjoint and nonlinear feedback of the retained617 bivector J, with a grade5 original-action variation; no small-carrier projection or spectrum claim. |
-| 620+ | Unassigned - extend this registry before use | - |
+| 618 | Homogeneous covariant connection audit (A62) | PASSED first frozen Release run: full moving-frame connection, curvature/isotropy and conservative contraction bounds support conditional local invariant connection existence; no physical vacuum or coupling selection. |
+| 619 | Invariant bivector nonlinear feedback audit (A62) | PASSED first frozen Release run: full nonlinear N(J) retains600 grade5 terms, signed potential witness1/3 and complete original-action controls; HJ and physical spectrum excluded. |
+| 620 | Curved CAA action-descent and Ward audit (A63) | First frozen Release run passed: full curved-reference first-action descent, actual Ward variations and nonzero inconsistent-transformation controls; conditional epsilon redundancy, not source selection. |
+| 621 | Induced-metric full-variation scope audit (A63) | First frozen Release run and independent full evidence replay passed700 complete metric-jet contexts. Fixed-domain relative-action scope retains fibre boundaries and moving-observer controls; no unrestricted upstairs or physical-vacuum claim. |
+| 622+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "phase": 621,
+  "phaseId": "phase621-induced-metric-full-variation-scope-audit",
+  "contractId": "phase621-a63-induced-metric-full-variation-scope-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "points": [
+      0,
+      1
+    ],
+    "metrics": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        4,
+        9,
+        16
+      ]
+    ],
+    "h0": "eta=diag(-1,1,1,1) at BOTH fixed fibre points; never varied together with y",
+    "alpha": "1",
+    "beta": "-1/2",
+    "sigma": "-1",
+    "symmetricBasis": "E00,E11,E22,E33,E01+E10,E02+E20,E03+E30,E12+E21,E13+E31,E23+E32",
+    "jetMenu": "all10M times all35 multiindices I in N^4, |I|<=3; delta h=M x^I/I! at x=0; degree then lexicographic ascending first3 exponents",
+    "nativeField": "epsilon=I, varpi=T fixed coordinate coefficients in a fixed chimeric spin trivialization; dT=0 for the finite local fields",
+    "frame": "E_t=(I+t deltaN)E0(y), baseline vertical first jet rho(-y^-1A/2)E0",
+    "connectionVariation": "delta omega=E0^-1(delta Gamma+d deltaN+[Gamma,deltaN])E0",
+    "metricRoute": "G_C=(I-N_C)^T G0(I-N_C), full first and second upstairs coordinate jets",
+    "curvatureRoute": "dual differentiated Koszul versus independently expanded Palatini; full coordinate R and both spin/exterior frame arguments",
+    "operator": "canonical untied CAA: firstC outerA innerA; Phi1=Gamma1 Phi2=Gamma2",
+    "actionRoutes": [
+      "fixed baseline frame: dual original action, every Phi1/Phi2/star/spin/reference occurrence",
+      "adapted moving frame: independent full product expansion with all input form-slot variations"
+    ],
+    "pairing": "signed exterior metric times -ReTr(XY)/128; original top form, no positive metric",
+    "fields": [
+      "Gamma1 at the point, locally coordinate-constant",
+      "Gamma1+theta0 Gamma01",
+      "Gamma1+theta0 Gamma01+i theta1 I",
+      "(dx0+dy00)gamma0",
+      "dy01 gamma0, coordinate fibre index8; third-jet source probe"
+    ],
+    "baselinePieces": [
+      [
+        "60",
+        "0",
+        "-1456",
+        "-7"
+      ],
+      [
+        "60",
+        "-13/4",
+        "-4372/3",
+        "-13/2"
+      ],
+      [
+        "60",
+        "-13/4",
+        "-4372/3",
+        "-6"
+      ],
+      [
+        "21/4",
+        "0",
+        "0",
+        "-3/4"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/4 at point0;1 at point1"
+      ]
+    ],
+    "pieceWeights": [
+      "1",
+      "1/2",
+      "gamma/3",
+      "kappa/2"
+    ],
+    "massControl": {
+      "variation": "delta h00=f(x0)",
+      "normalizedDerivative": "-kappa fprime",
+      "frozenHodge": "0",
+      "unweightedMean": "0",
+      "cosWeightSinVariationMean": "-kappa/2",
+      "periodicIdentityOnly": true
+    },
+    "sectionControl": "separate coincident observer background h_section=y: s_h^*G_h=sigma h; zero-jet response sigma M",
+    "alternativeIdentificationControl": "separate coincident h_alt=y: sigma h_alt y^-1 h_alt has zero-jet response2sigma M; nonselected",
+    "extraBaseDensityControls": [
+      "delta h=phi h0 gives120phi on Gamma at gamma=kappa0",
+      "delta h00=phi gives-30phi on Gamma at gamma=kappa0"
+    ],
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "expectedCounts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "fullRealDomainMasks": 16384,
+      "points": 2,
+      "frameControls": 2,
+      "baselineConnectionEntries": 5488,
+      "baselineCurvatureEntries": 76832,
+      "jetContexts": 700,
+      "zeroJetContexts": 20,
+      "firstJetContexts": 80,
+      "secondJetContexts": 200,
+      "thirdJetContexts": 400,
+      "metricEntries": 137200,
+      "metricFirstJetEntries": 1920800,
+      "metricSecondJetEntries": 26891200,
+      "inverseVariationEntries": 137200,
+      "volumeRows": 700,
+      "connectionVariationEntries": 1920800,
+      "connectionDerivativeEntries": 26891200,
+      "curvatureVariationEntries": 26891200,
+      "frameCurvatureEntries": 26891200,
+      "frameConnectionSkewEntries": 1920800,
+      "spinCurvatureRows": 700,
+      "solderMotionRows": 1400,
+      "fieldRows": 3500,
+      "fieldDomainRows": 3500,
+      "actionValueComparisons": 14000,
+      "actionDeltaComparisons": 14000,
+      "chainStageComparisons": 84000,
+      "zeroJetGeometryRows": 20,
+      "zeroJetActionEntries": 400,
+      "massDerivativeAnchors": 2,
+      "frozenHodgeDecoys": 2,
+      "weightedIntegrationControls": 4,
+      "movingSectionEntries": 320,
+      "alternativeIdentificationEntries": 320,
+      "addedDensityControls": 4,
+      "downstairsConnectionEntries": 44800,
+      "thirdJetCurvatureAnchors": 1,
+      "thirdJetSourceActionAnchors": 1,
+      "shardRows": 700,
+      "stageTensorFingerprints": 336000
+    },
+    "resources": {
+      "estimatedCpuSeconds": 900,
+      "estimatedPeakBytes": 1073741824,
+      "conservativePlanningCpuSeconds": 2400,
+      "conservativePlanningPeakBytes": 8589934592,
+      "maximumTrackedCoefficientProducts": 20000000000,
+      "maximumTrackedMatrixProducts": 10000000000,
+      "maximumTrackedDualProducts": 4000000000,
+      "maximumTensorTerms": 32768,
+      "maximumMatrixDimension": 14,
+      "largestArrayEntries": 38416,
+      "maximumFrequency": 2,
+      "retainedJetContexts": 700,
+      "maximumShardBytes": 67108864,
+      "maximumRationalTextCharacters": 128,
+      "maximumAggregateShardBytes": 2147483648
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "sourceNormSelected": false,
+      "sourceMetricSelected": false,
+      "physicalCouplingSelected": false,
+      "physicalVacuumSelected": false,
+      "globalActionDefined": false,
+      "observerMetricEquationComputed": false,
+      "fullUnrestrictedMetricEulerComputed": false,
+      "physicalSpectrumClaimed": false,
+      "fieldEulerBoundaryShortcutUsed": false,
+      "fibreIntegrationByPartsUsed": false,
+      "alternativeIdentificationSelected": false
+    },
+    "thirdJetControl": {
+      "point": 1,
+      "metricBasis": "E00",
+      "multiindex": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "deltaMetricDD_11_0_8": "-3/4",
+      "deltaCurvature_1_0_1_8": "3/4",
+      "sourceActionVariation": "3/16"
+    },
+    "evidenceStorage": {
+      "version": "phase621-metric-jet-shards-dag-v1",
+      "shards": 700,
+      "pattern": "output/shards/jet_p{0..1}_m{00..09}_j{00..34}.json",
+      "completePathsetRequired": true,
+      "geometry": "complete sparse tensors, zero coefficients implicit, no support projection",
+      "tensorFormat": "numeric ascending (form,blade,k0,k1), reduced Rational ToString, Fourier.Terms property order",
+      "tensorFingerprint": "sha256(compact UTF8 JSON Terms without newline)",
+      "documentFormat": "compact UTF8 JSON with exactly one LF",
+      "maximumShardBytes": 67108864,
+      "pointBaselineIds": [
+        0,
+        1
+      ],
+      "fieldsPerShard": 5,
+      "stagesPerPiece": 8,
+      "expandedStageTensorFingerprintCount": 336000,
+      "representation": "all primitive leaves plus exact versioned DAG recipes and expanded-stage fingerprints; not expanded stage arrays",
+      "replayMode": "--verify-evidence; read-only independent NaiveProduct and ordered-wedge motion; reconstruct ALL stages and original scalars",
+      "maximumAggregateShardBytes": 2147483648
+    },
+    "evidenceDag": {
+      "schema": "caa-jet-dag-v1",
+      "inputs": {
+        "f": 2,
+        "p1": 1,
+        "p2": 2
+      },
+      "nodes": [
+        {
+          "id": "sf",
+          "op": "star",
+          "a": "f",
+          "degree": 12
+        },
+        {
+          "id": "one",
+          "op": "product",
+          "a": "p1",
+          "b": "sf",
+          "kind": "C",
+          "degree": 13
+        },
+        {
+          "id": "inner",
+          "op": "product",
+          "a": "p2",
+          "b": "sf",
+          "kind": "A",
+          "degree": 14
+        },
+        {
+          "id": "zero",
+          "op": "star",
+          "a": "inner",
+          "degree": 0
+        },
+        {
+          "id": "outer",
+          "op": "product",
+          "a": "p1",
+          "b": "zero",
+          "kind": "A",
+          "degree": 1
+        },
+        {
+          "id": "outer-star",
+          "op": "star",
+          "a": "outer",
+          "degree": 13
+        },
+        {
+          "id": "scaled",
+          "op": "scale",
+          "a": "outer-star",
+          "scalar": "-1/2",
+          "degree": 13
+        },
+        {
+          "id": "upper",
+          "op": "add",
+          "a": "one",
+          "b": "scaled",
+          "degree": 13
+        },
+        {
+          "id": "lower",
+          "op": "star",
+          "a": "upper",
+          "degree": 1
+        }
+      ],
+      "stages": [
+        "f",
+        "sf",
+        "one",
+        "inner",
+        "zero",
+        "outer",
+        "upper",
+        "lower"
+      ]
+    },
+    "dagSemantics": {
+      "scalarAlgebra": "dual pairs (value,delta), real-bilinear; product delta=deltaA*B+A*deltaB",
+      "products": "W exterior Clifford product; C exterior coefficient commutator; A=i times exterior coefficient anticommutator, each via full masks",
+      "star": "HodgeSign(mask), complement mask; adapted star acts componentwise; fixed star delta=*deltaInput+*M(input)-M(*input)",
+      "formMotion": "M(A,t) replaces each occupied covector slot by sum_b A[old,b] theta_b, original wedge order, Clifford slots unchanged",
+      "inputs": "t,b,fb from point baseline; db,df,A from shard; dt=b wedge t+t wedge b; q=t wedge t",
+      "fixedInputs": "f=(fb,df-M(fb)); dt=(dt,db wedge t+t wedge db); q=(q,0); p1=(Gamma1,-M(Gamma1));p2=(Gamma2,-M(Gamma2))",
+      "adaptedInputs": "tdot=M(t);bdot=db+M(b);f=(fb,df);dt=(dt,bdot wedge t+t wedge bdot+b wedge tdot+tdot wedge b);q=(q,tdot wedge t+t wedge tdot);p1,p2 fixed",
+      "action": "weights1,1/2,1/3,1/2; fixed original pair=-ReTr(t wedge movingStar(output))/128; adapted pair full signed exterior/Clifford metric",
+      "sourceCouplings": "gamma,kappa are formal independent weights, no value selected"
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-domain-control-failed",
+    "metric-jet-control-failed",
+    "full-connection-curvature-control-failed",
+    "moving-spin-frame-control-failed",
+    "full-original-action-variation-control-failed",
+    "scope-negative-control-failed",
+    "resource-census-control-failed",
+    "induced-metric-full-variation-controls-pass-fixed-domain-only"
+  ],
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/Program.cs",
+      "sha256": "1b8000b68bb119ba2b1fc6d9a4ea90dbe3f71e3f1f4998ac512d2e256874194f"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/Phase621InducedMetricFullVariationScopeAudit.csproj",
+      "sha256": "aa6cad10ab9fa8d42efef60d4c7a0170cd271e2161066fda38bdd337173709b5"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/STUDY.md",
+      "sha256": "81c46bc83ca3a2e89e82a03267720a5d46a9141129d9f84d3c24b40f29083fe3"
+    },
+    {
+      "id": "metric-helper",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/MetricVariation.cs",
+      "sha256": "8ae8c222cd203e8b11e316467e2923fddddc74707ebda211ef1104a6306e5c52"
+    },
+    {
+      "id": "action-helper",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/ActionVariation.cs",
+      "sha256": "5967d2ba81434f3704e2189f46d3f34d5225263f3057214de45593754e7e90b3"
+    },
+    {
+      "id": "phase600-exactarithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-fouriertensor-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-traceadjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase607-verticalgeometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase608-ambientgeometry-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase610-spingeometry-helper",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs",
+      "sha256": "1da7150abc6f2da2abe0c9dbd1600e84edcd452dae90449a599a65fbb8d7e2cb"
+    },
+    {
+      "id": "phase610-program",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Program.cs",
+      "sha256": "a6fb779acf2f96a6fafd1b010a529e525ceed4f0edc708943909cb13624db5a0"
+    },
+    {
+      "id": "phase610-study",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/STUDY.md",
+      "sha256": "67269d1d55c5e738e7e1a5cbd87da10f6064cb11d96008f6fa80bc1648961a93"
+    },
+    {
+      "id": "phase610-contract",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/preregistration/contract_v1.json",
+      "sha256": "c3bd65163480ae51b75c9500fb897cf2a1291a06655f538ce2be9a2776d9233e"
+    },
+    {
+      "id": "phase610-summary",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/output/induced_spin_curvature_contraction_audit_summary.json",
+      "sha256": "507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4"
+    },
+    {
+      "id": "phase611-caaoperator-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase615-helper",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/SplittingControls.cs",
+      "sha256": "70160ecb92a3997aaaf1d1e47131886a5258b6006e286d12f7696cd7e8b8cb30"
+    },
+    {
+      "id": "phase615-program",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/Program.cs",
+      "sha256": "ced7a164a781fb0c6cf1cd10bb1319b57fda6752237e5a91238b7d92fafde091"
+    },
+    {
+      "id": "phase615-study",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/STUDY.md",
+      "sha256": "b86a2297e577a4c94b5c326fee9bbede0b68842d9fade0139c635fd10e6e0bce"
+    },
+    {
+      "id": "phase615-contract",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/preregistration/contract_v1.json",
+      "sha256": "1991cb2890796aa2c0823e667de757eccd1098de7047b28d37dac584c9e46afe"
+    },
+    {
+      "id": "phase615-summary",
+      "path": "studies/phase615_source_induced_splitting_volume_scope_audit_001/output/source_induced_splitting_volume_scope_audit_summary.json",
+      "sha256": "5e42084985dbe5472d65b77640891ad7db86caa199d0d9aa75c024c05d330dbe"
+    },
+    {
+      "id": "phase618-helper",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/HomogeneousConnection.cs",
+      "sha256": "76f2b9cceeeb83fe6cf9b31e590692b4ea2f814f5111b2e84d769665835187d8"
+    },
+    {
+      "id": "phase618-program",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Program.cs",
+      "sha256": "a5fe0b9c6ce18739f2effd6236021c7b60e3ab1dbd925359a6ad7c206736e102"
+    },
+    {
+      "id": "phase618-study",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/STUDY.md",
+      "sha256": "ba7b30f9953dbd4eb674d1ffdccb6f15ea9913da9da96580fa17c6f510999c67"
+    },
+    {
+      "id": "phase618-contract",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/preregistration/contract_v1.json",
+      "sha256": "22c794870d8906a628ef20816890a57dcf80c5e75f9a99c6a86937d71b0b790d"
+    },
+    {
+      "id": "phase618-summary",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/output/homogeneous_covariant_connection_audit_summary.json",
+      "sha256": "10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "evidence-helper",
+      "path": "studies/phase621_induced_metric_full_variation_scope_audit_001/EvidenceStore.cs",
+      "sha256": "badc6b3f385da5f6e8e04af7be379289c07e6aa882d7f0a5f9323c50c80a1e06"
+    }
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

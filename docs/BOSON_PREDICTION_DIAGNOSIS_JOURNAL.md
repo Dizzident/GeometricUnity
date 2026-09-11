@@ -24222,3 +24222,206 @@ Independent verifier review PASSED. Final incremental still follows
 ALL edits before commit/push. Source challenge sharpened the next metric
 test: s_h*G_h=sigma h has a zeroth-order variation under a moving section.
 Fixed-Y integration cannot silently become observer-reduced stationarity.
+
+### 2026-09-10 UTC - A63 curved action and full metric variation, prospective
+
+Resumed from completed checkpoint571d79a9c25a21a55c2d22b4b77d99f84ba42bc6,
+on main and independently remote-matched. Final A62 report
+pass_2026-09-10T21-52-54-924Z.json ran77/skipped402;399/3 checklist,
+O4coverage31/31,overturn94/94,integrity passed. Previous scientific turn
+was PROGRESS. The intervening user-requested AGENTS update clarifies reuse
+of active runtime Git approvals, not permission self-granting.
+
+620/621 are allocated,622+free. Two disjoint builders and an independent
+read-only reviewer continue in parallel; MAIN owns shared wiring/docs.
+620 tests full curved untiedCAA action descent and actual Ward variations,
+with independently transformed reference curvature and all three Phi
+occurrences. Nonzero epsilon-only and wrong-transformation controls must
+be retained.621 tests the complete fixed-Y induced-metric variation through
+the connection, solder, reference curvature, Hodge, density and action,
+not just615's volume identity. Full prospective packs, forecast counts,
+resource bounds, independent/MAIN review and explicit MAIN approval precede
+FIRST scientific execution. No new scientific run has occurred here.
+
+A boundary assumption was sharpened: base-compact delta h need not vanish
+on the fibre boundary. Bulk field stationarity therefore cannot discard
+field-identification surface terms. The621 design instead fixes native
+coordinate varpi at epsilonI, so delta Tcoord=0 exactly; its frame components
+still vary and must be computed. Integration over the base first on a fixed
+compact fibre domain avoids fibre integration by parts. Moving-section
+pullback and an added downstairs density are explicit counterexamples to
+unqualified extension of the fixed-Y argument.
+
+A constructive analytical lead also survived independent review:
+differentiating619's cyclic W3(J)=0 with the full tensor connection and
+parallel canonicalGamma gives W4(D_BJ)=0, removing the grade5 part of KDJ.
+Thus HJ should be vector-valued even though N(J) has600 grade5 terms.
+The three horizontal/traceless/trace weights still require a fresh exact
+audit; no pointwise formal-self-adjoint identity is assumed on noncompact
+invariant fields. The possible grade5 contribution to the fifth formal
+branch coefficient must be checked against full linear feedback, not
+inferred from N(J) alone. Details remain analytical in the existing
+stationary-background reference. Concrete safe tests exist; no council
+trigger. All14flagsfalse,O4/externalreviewpending,Phase561closed,
+physicalmassclaims0. The physical prediction goal remains unresolved.
+
+### 2026-09-10 UTC - A63 first frozen curved-action result
+
+620 PASSED FIRST frozen Release run unchanged after independent and MAIN
+full code/helper/project/proof/contract review and explicit MAIN approval.
+45unique bindings,8compiled files,36forecast counts,fullfixture/live726/
+singleEOF closure and zero-warning build passed. A resource-proof loop
+undercount was corrected BEFORE first science; no algebra, forecast,
+resource ceiling or post-execution input was adjusted.
+Contract46a6edbae8cd1cd2bc236ef45fd8223c8bc0d0dadc6256d58c3f09aa76060d46;
+full/summary592d7b284fce0ee3371960b866cf102b661c84f46d5d171bbd5c52d7255f919f.
+Each output retains49,312,663bytes. Tracked coefficientproducts1001874,
+matrixproducts22920,largesttensor2254;912dual chain stages and9646
+normal-reference plane entries. No measured runtime claim is made.
+
+All32 full action rows,32each fixed/Ward/epsilon-only rows,24operator
+comparisons,784ordinary/covariant Hessian rows and12nonzero decoys pass.
+The actual epsilon-only anchor remains147/16+kappa; freezing curvature
+or all Phi variations gives the prederived nonzero controls. The complete
+action descent supports conditional epsilon redundancy of the full
+connection equation; it does not establish metric stationarity or a
+physical vacuum. Scientific inputs immutable; independent output review
+and verifier integration are in progress.621 is still unexecuted and
+prospective. Final incremental follows ALL edits before scoped main
+commit/push and remote verification; not yet done for A63.
+
+Three independent hand derivations additionally agree on
+HJ=(9/4)PHGamma-PTGamma with zero trace weight, both genuine kinetic
+legs separately equal. This is an unexecuted forecast for a future
+explicit homogeneous-branch audit, not a physical mass or spectrum.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+
+The parallel challenge caught another tempting but false simplification:
+the trace projector has div(Ptr)=t, unlike the traceless projector. MAIN's
+tentative extension H(PtrGamma)=-4SpinR omitted this divergence term and
+was withdrawn before allocation or execution. The full trace response also
+has traceless-vertical Clifford-bivector rows, so a guessed two-bivector
+carrier and its proposed eigenvalues are unsupported. This does not affect
+the independently checked HJ forecast or any executed620 result.
+621's builder also identified that choosing h0=y at both fibre points
+can cancel a highest-order jet control accidentally. Its prospective menu
+will hold h0=eta while changing y at the second point, with moving-section
+controls explicitly separated. Neither a coincident-point cancellation
+nor a volume-only test substitutes for the full metric variation.
+
+The corrected trace extension subsequently passed independent hand checks.
+With B=-4SpinR and C_A=gamma_A wedge gamma_t on traceless-vertical rows,
+the true L=H(PtrGamma)=-B+C gives HL=(15/2)PHGamma+9PTGamma+10PtrGamma.
+For B and C the two kinetic legs are unequal; their separate exact
+prospective weights are recorded in the reference. These are candidate
+linear-response fixtures, not executed results or physical poles.
+MAIN additionally checked all3694 nonempty serialized620 tensors
+(200240 coefficient records) for unique full indices, canonical rational
+coefficients and zero frequencies, plus all32 action/96 variation/12decoy
+scalar identities. Independent output review separately recomputed352
+signed-pairing/product-rule checks. Shared620 verifier additions passed
+read-only review and syntax checks; no ordered/full verifier run yet.
+
+MAIN independently eliminated the corrected three-vector/two-bivector
+linear response system. The gamma0 diagnostic candidate has denominator
+4kappa^4+3kappa^2-19 and exact coefficients recorded in the stationary-
+background reference. This is an unexecuted closed-form control, not a
+physical pole or a nonlinear closure claim. The prospective full S5
+witness, if verified, also has an analytic interpretation through618:
+for fixed nonzero gamma the local branch must leave the vector/bivector
+ansatz at sufficiently large |kappa|. It would invalidate that ansatz,
+not establish that the unrestricted theory is broken.
+
+621 remains prefreeze. Its replay-overwrite failure path was corrected
+before first science, and aggregate shard writes now have a prospective
+2GiB fail-closed limit in addition to the64MiB per-shard ceiling. Full
+STUDY/resource/binding review and independent approval remain necessary;
+no621 scientific result is claimed from code inspection or forecasts.
+
+621 FIRST execution was explicitly approved by MAIN and launched at
+2026-09-10T23:15:54UTC after independent full-pack approval and final
+46binding/13compiled/43count/fullfixture/DAG/live726/singleEOF closure.
+Contract5ecf70637a466610003ec70115e61f251b65065a62fed28f678befe327a22a80;
+zero-warning Release build passed. Scientific inputs are now immutable.
+All denominator/sign and partial-resource-terminal corrections preceded
+FIRST science; no algebra, forecast or cap was tuned from run results.
+The separate resource review found the2GiB aggregate cap plausible and
+safe, not a rigorous guarantee that the run will pass that cap.
+
+While it runs, a new conditional synthesis is being independently reviewed:
+618 full invariant connection stationarity plus620 Ward descent plus621's
+fixed-domain metric theorem would give a joint relative-action critical
+background under an explicitly native boundary/variation class. The
+nonzero vertical curvature forbids treating the convenient pointwise
+vertical-frame cancellation as a globally parallel frame. General invariant
+fields have y-derivatives; only x-independence is needed. Fixed native
+varpi on the fibre boundary is not the same as fixed total connection
+B0(h)+varpi. These distinctions are retained in the reference; no joint
+physical vacuum or621 execution success is asserted yet.
+
+Three independent reviews agree on that conditional joint-stationarity
+synthesis, provided the field extends smoothly over a neighbourhood of
+the fixed fibre-domain closure and is not reselected as h varies. No
+additional first-order obstruction was found within this declared class.
+Separate hand checks establish useful future second-variation controls:
+for621's diagnostic native T and one-dimensional periodic h00 perturbation,
+the mass-piece metric second derivative has mean-kappa/2; the mixed
+metric/field derivative with a cos-amplitude variation has mean-kappa.
+These are unexecuted off-shell single-piece identities, not the full
+Hessian at the invariant solution. They show why first-order metric
+cancellation cannot be promoted to absent metric/mixed dynamics.
+
+### 2026-09-10 UTC - A63 full metric first result and independent replay
+
+621 PASSED FIRST frozen Release run unchanged after all prospective reviews
+and explicit MAIN approval.46bindings,13compiled files,43counts and complete
+fixture/DAG/live726 closure passed. Contract
+5ecf70637a466610003ec70115e61f251b65065a62fed28f678befe327a22a80;
+full/summary18eda4a2b62af3d450982c0181cf513d9f87d7acf0e8a4a48e313c310b3674f9,
+325198bytes each.700shards total39777820bytes,max145452, comfortably
+within the prospective2GiB guard. Tracked products9116109 coefficient,
+5307754 matrix,22900008 dual;largesttensor822. All700 complete metric-jet
+contexts,14000 action comparisons, zero-jet and nonzero derivative controls
+passed, including the noncoincident third-jet original-source derivative3/16.
+
+The separately approved READ-ONLY replay PASSED all336000 expanded-stage
+fingerprints,84000 fixed/adapted stage identities,3500 fields and14000
+original scalar coefficients. MAIN postflight verified all700 exactpaths/
+hashes/bytecounts, unchanged702 output files, all frozen621 bindings and
+unchanged620 closure. There were no post-run repairs or scientific reruns.
+Independent retained-output review and621 shared-verifier integration are
+in progress. Ordered101/202/integrity and final incremental must still
+precede the scoped main commit/push and remote match.
+
+These results support the newly reviewed joint LOCAL relative-action
+stationary background under the explicit native field/boundary class.
+Source/operator/coupling selection, physical vacuum, mixed fluctuations,
+observer reduction, pole extraction and unit normalization remain open.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,WZ15/H14deficits,
+physicalmassclaims0. PROGRESS;622+ remains free and concrete tests remain.
+
+Independent621 retained-output review PASSED all700 exact shard hashes/
+canonical records, all43 counts, all20 zero-jet geometries and400 scalar
+zeros, all14000 scalar route equalities and336000 fingerprint references.
+The reviewer additionally recomputed every k=-n^TG-Gn, inverse-shear and
+frame-motion identity; checked167840 canonical sparse geometry records,
+348224 linearized Riemann identities including the k*R lowering term,
+52072 typed real-form terms, all10 baseline fields and80 spin-reference
+coefficients from618's Nomizu matrices, and all27 scope controls. There
+are153 nonzero action-derivative coefficients, by base order(0,7,135,11).
+The claim is NOT that pointwise metric variation vanishes; only its
+zero-order base-jet part is absent and the specified integration cancels
+the positive derivative terms. Ordered101 then202 Release runs PASSED
+401/3; the3 standing physical/source-completion failures remain unchanged.
+Full integrity and final incremental/checkpoint are still pending.
+
+Ordered101/202/full integrity now PASSED401/3,O4coverage31/31,
+overturn94/94; WZ15/H14 deficits and physicalclaims0 remain unchanged.
+Independent full verifier-diff review passed, including recursive discovery
+of all13 compiled621 sources and exact700-shard completeness. Incremental
+tooling tests passed50/50 outside the sandbox. The initial sandboxed
+invocation lost a seed-child stdout assertion; no tooling code was changed,
+and the same explicit test files passed under the approved external run.
+Final incremental follows ALL edits. Its timestamped report and exact
+commit/push/remote-match evidence belong in the checkpoint handoff/commit
+metadata; these targeted checks do not substitute for that final cadence.

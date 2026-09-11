@@ -488,6 +488,8 @@ dotnet run --no-build -c Release --project studies/phase616_curved_canonical_iso
 dotnet run --no-build -c Release --project studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj
 dotnet run --no-build -c Release --project studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj
 dotnet run --no-build -c Release --project studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj
+dotnet run --no-build -c Release --project studies/phase620_curved_caa_action_descent_ward_audit_001/Phase620CurvedCaaActionDescentWardAudit.csproj
+dotnet run --no-build -c Release --project studies/phase621_induced_metric_full_variation_scope_audit_001/Phase621InducedMetricFullVariationScopeAudit.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

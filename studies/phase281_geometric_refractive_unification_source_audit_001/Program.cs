@@ -821,6 +821,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P617.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P618.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P619.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P620.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P621.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -875,6 +877,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase618_homogeneous_covariant_connection_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase620_curved_caa_action_descent_ward_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase621_induced_metric_full_variation_scope_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"

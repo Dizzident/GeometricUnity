@@ -3754,3 +3754,112 @@ Ordered101/202/integrity PASSED399/3,O4coverage31/31,overturn94/94.
 Independent verifier review PASSED; final incremental AFTER ALL
 edits still precedes scoped commit/push/main and independent remote match.
 No post-run bound scientific inputs or outputs were repaired.
+
+## A63 - Curved Ward and induced-metric stationarity conditions (2026-09-10)
+
+Continue directly on main from571d79a9c25a21a55c2d22b4b77d99f84ba42bc6,
+pushed and independently remote-matched; worktree clean before this tranche.
+Final A62 report pass_2026-09-10T21-52-54-924Z.json ran77/skipped402,
+399/3 checklist,O4coverage31/31,overturn94/94,integrity passed. Independent
+final audit confirmed all71 committed paths, unchanged frozen outputs and
+70 historical changed lines exclusively generatedAt/runtimeSeconds.
+Previous goal turn was PROGRESS; concrete safe next tests remain.
+
+Allocate620 to a full CURVED canonical untiedCAA action-descent/Ward audit.
+The primary9.4 action rotates its reference curvature and every Phi
+occurrence. Use passed608/610 curvature and the declared full real
+u(64,64) domain. Reconstruct a finite noncommuting epsilon and inverse,
+their consistent covariant jets, the shifted reference/torsion and full
+literal operator chains. Derive D0²epsilon from actual normal-reference
+connection jets with nonzero curvature, not a flat-reference shortcut.
+Compare the original first-action pieces and ACTUAL product-rule variations
+with independent base-field expressions. Retain nonzero curvature, kinetic,
+cubic and mass controls, plus wrong-lift/frozen-curvature/frozen-tensor
+negative controls derived before execution. No printed9.6/9.7 force shortcut
+may replace the action derivative. The analytic consequence is conditional
+epsilon stationarity when the already-derived FULL connection gradient
+vanishes, not stationarity of a projected invariant scalar action.
+Root studies/phase620_curved_caa_action_descent_ward_audit_001;
+project Phase620CurvedCaaActionDescentWardAudit.csproj;
+contract phase620-a63-curved-caa-action-descent-ward-v1;
+terminal curved-caa-action-descent-ward-controls-pass-conditional-epsilon-redundancy.
+
+Allocate621 independently to the complete fixed-Y first-action metric
+dependence under615's declared reconstruction h->C(h)->G_C and induced
+spin connection. At constant h0, every first variation should retain at
+least one base derivative of delta h; include full reference curvature,
+Hodge/density, Phi1/Phi2 and kinetic/potential terms. A constant-volume
+calculation alone is insufficient. Prove the total-base-derivative statement
+for translation-invariant backgrounds and a fixed compact fibre domain,
+with all field-coordinate and boundary assumptions explicit. Base-compact
+variations are not compact in Y: bulk field stationarity does not by itself
+cancel fibre-boundary terms. Prefer fixed native varpi=T at epsilonI in
+the fixed chimeric trivialization, so deltaT=0; otherwise retain the entire
+field-identification variation and its boundary terms.
+Include the moving-section control s_h*G_h=sigma h, whose zeroth-order
+variation invalidates an observer-pullback extension. Alternative chimeric
+identifications, extra base density or varying cutoff may be controlled
+explicitly but must never silently replace the declared model. No global
+integration prescription, source intent or physical vacuum is selected.
+Root studies/phase621_induced_metric_full_variation_scope_audit_001;
+project Phase621InducedMetricFullVariationScopeAudit.csproj;
+contract phase621-a63-induced-metric-full-variation-scope-v1;
+terminal induced-metric-full-variation-controls-pass-fixed-domain-only.
+
+Two disjoint builders own only their allocated root and unbound
+IMPLEMENTATION note. A third independent agent reviews proof/code/fixtures;
+MAIN owns shared wiring/docs and final FIRST-execution approval. Before
+FIRST science freeze complete code/helpers/project/STUDY, finite menus,
+independently derived exact coefficients/counts, tolerance0, resources and
+failure precedence. Require all unique exact bindings, complete fixture
+parity, live726 core path/hash/tree closure, single EOF, zero-warning Release
+build and independent plus MAIN approval. No new phase may use an
+unexecuted sibling artifact. Preserve first failures; no post-run retuning
+or bound-input repairs. Register generator/traversal/101/202/verifier/all9
+scanners(both207sites),registry/amendment/implementation/restart/journal/
+existing reference/ledger. Final incremental AFTER ALL edits precedes scoped
+commit/push/main and independent remote verification. No core edits.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,WZ15/H14deficits,
+physicalmassclaims0. No sampling/fits/physical norm/operator/scale selection.
+622+free; no new scientific execution yet.
+
+A63 execution update:620 PASSED FIRST frozen Release run unchanged after
+independent and MAIN full-pack review/approval.45bindings,36countfields,
+fullfixture/live726/singleEOF closure passed. Contract
+46a6edbae8cd1cd2bc236ef45fd8223c8bc0d0dadc6256d58c3f09aa76060d46;
+full/summary592d7b284fce0ee3371960b866cf102b661c84f46d5d171bbd5c52d7255f919f.
+Independent retained-output and shared-verifier reviews passed.621 is still
+prospective; no expanded frozen620 scope or post-run repair is authorized.
+
+621 prospective storage clarification BEFORE first execution: all700
+point/metric-basis/Taylor-jet contexts will have deterministic evidence
+shards, each listed by path, hash and byte count in identical small
+full/summary manifests. Full nonzero primitive geometry and tensor
+coefficients must remain present. Repeated action intermediates may use a
+lossless, versioned computation graph with canonical expanded-stage hashes,
+not unexplained final-stage values as graph inputs. Freeze the complete
+graph, serializer and independently implemented reconstruction before
+FIRST science; bind every helper. Independent postflight must actually
+reconstruct and check all336000 fixed/adapted value/delta stage references
+(84000 stage comparisons), all3500 field rows and14000 action variations.
+The verifier must reject missing, duplicate or extra shards as well as
+hash/byte/count disagreement. Sparse or graph encoding does not authorize
+dropping any coefficient, grade or field direction. The existing incremental
+output enumeration covers nested shards; no weaker skip rule is allowed.
+
+A63 execution update:621 PASSED FIRST frozen Release run after independent
+full-pack and MAIN approval; all scientific inputs remain unchanged.
+46bindings,13compiled files,43counts,fullfixture/DAG/live726/singleEOF and
+zero-warning Release build passed. Contract
+5ecf70637a466610003ec70115e61f251b65065a62fed28f678befe327a22a80;
+full/summary18eda4a2b62af3d450982c0181cf513d9f87d7acf0e8a4a48e313c310b3674f9,
+325198bytes each.700shards total39777820bytes,max145452. Products:
+coefficient9116109,matrix5307754,dual22900008,largesttensor822.
+The separately approved read-only replay PASSED all336000 stage tensor
+fingerprints,84000 frame-stage pairs,3500 field rows and14000 original
+action scalar coefficients. MAIN verified all700 exact shard paths/hashes/
+bytes and unchanged702 output files after replay. All14flagsfalse and
+physicalmassclaims0. Joint local relative-action stationarity is a new
+conditional synthesis within the specified native boundary class, not a
+source-selected/global physical vacuum. Final shared validation/checkpoint
+still follows all integration and documentation edits.

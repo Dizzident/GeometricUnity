@@ -3,9 +3,9 @@
   "phases": {
     "101": {
       "schemaVersion": 1,
-      "inputFingerprint": "49f0ed1ba625a0c9f253f982e794cae2a9abc50858b19c2618e6010f23ee3cf3",
+      "inputFingerprint": "ff4865f4d618fd495a6305d0dcb5f5a531dc028608f232f7fd2af3ef114e4786",
       "outputs": {
-        "studies/phase101_boson_prediction_package_001/output/boson_prediction_package.json": "4efe3d9e453e0a7be479a78ddd977393252fdbf3bb649e7941bc00df4877d542",
+        "studies/phase101_boson_prediction_package_001/output/boson_prediction_package.json": "e8196648ccb486591f4cad34d47cc81154a3048c1fa7ac71caa3d2a995514366",
         "studies/phase101_boson_prediction_package_001/output/boson_prediction_package_summary.json": "ab3ec7ddf10b6db6605718d8b0497657fbee6c128f9a0360df15de78e86c06c1"
       }
     },
@@ -86,15 +86,15 @@
     },
     "146": {
       "schemaVersion": 1,
-      "inputFingerprint": "1626bf9d5f7d66929827105c8d8ffd70599ca2db6c600b72eedf87317b764b6a",
+      "inputFingerprint": "f1901ef9a7bc9dda12c366bfd86cb3228df239e2e46f394701b2c3ed672c3a8c",
       "outputs": {
-        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json": "9106bd9e6ff44d194b0655573f6e118337ce433e5f30da990df211ddca959a71",
-        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census_summary.json": "6b7c563d1639841636155b8c1b0e59eaa2f8ebefa53ecb816457020c66efbe2a"
+        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json": "d8b7052420df391772ad57b3fc8654736afa5ffd04c3ba3ae0087f36dcf83636",
+        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census_summary.json": "a0296f91840ab0128ee300f675a06b7e71be4edf4b4cf3b6791dc7c857f1c925"
       }
     },
     "147": {
       "schemaVersion": 1,
-      "inputFingerprint": "78838f0134a3fe4c71841452b3c1fcddef475f5703c875df372f5c53dc7d5c5b",
+      "inputFingerprint": "508c51dbcc2d3b07bdff75d3775ca2f673dd4722a539aa56cb8638e686923c6a",
       "outputs": {
         "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt.json": "2dee4e065fb03b98f8fa92a86c84de3a31d5fc377887a4fa794b42c46842f804",
         "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt_summary.json": "e06e353ad8236309ed892fe579e8572c10e9c21d4f2be4d81a4129ea524b6848"
@@ -110,7 +110,7 @@
     },
     "149": {
       "schemaVersion": 1,
-      "inputFingerprint": "d3e973ae0707511b472823c5ca6cd622e782db32cf9e71ee2335753f2803aa74",
+      "inputFingerprint": "0d06685880a40eed4e2e9489f4edb1dcd4bd79a633ef453aa095c96200d75bfe",
       "outputs": {
         "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts.json": "47ecc46f25cf562c4424c57ae860e946500884f4aab8b9912583c0f005b8a16e",
         "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts_summary.json": "20fdf0ccffa7c8ce49259337371621fa62f8c47aba55e0f84b633f8d010ba0ff"
@@ -118,7 +118,7 @@
     },
     "150": {
       "schemaVersion": 1,
-      "inputFingerprint": "f9c4e5c07ef3db3072882db610d0cf007ce300d8d11c29c0db9d960460878851",
+      "inputFingerprint": "3785571e1d75941fef3e4994b40ab2863f14895b8f148c1b63bdae6074733e60",
       "outputs": {
         "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution.json": "aefcbed615c601254387422bb89a8e5a25bf779d7912367727acf18985ef4b74",
         "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution_summary.json": "821cb96f5e3a6ec36e596d868df316a0e50c19473e979e6e1c1a9480ff2ad253"
@@ -126,7 +126,7 @@
     },
     "151": {
       "schemaVersion": 1,
-      "inputFingerprint": "f9ccefbd4f49b480a6d18db540f9769a6dd9cb50b8862fecd12552bfc2049689",
+      "inputFingerprint": "66c946024de7611379969fe2d12c01afe14a4f4248981be31d7594e33566b151",
       "outputs": {
         "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.json": "d893059c64c05eb655fea53c84b438c657a63cbb4358d6bb9d5abc1ae103d00d",
         "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.md": "f7e9633c8ef3b837594d891a6296d9032126a966f139f3557f758fe2392f487f",
@@ -153,7 +153,7 @@
     },
     "154": {
       "schemaVersion": 1,
-      "inputFingerprint": "f06e7cbe1c9c1bb31a624bc56fa66a5b52619a77cf016262bf9433842b00f396",
+      "inputFingerprint": "08ae1479d8c799f9e2a12d149ddd6f535e4e20b9a233cb70477442b54b79a12d",
       "outputs": {
         "studies/phase154_wz_transition_bridge_root_cause_audit_001/output/wz_transition_bridge_root_cause_audit.json": "0e1f5ff030fb56cb15f336863de6bde39626e3a19b2e55c36e0222dcb7623223",
         "studies/phase154_wz_transition_bridge_root_cause_audit_001/output/wz_transition_bridge_root_cause_audit.md": "89d2d15eb24ebf6791679eebe9a438614b23a3a662f7575f7b061dea8a2ebe13",
@@ -162,7 +162,7 @@
     },
     "155": {
       "schemaVersion": 1,
-      "inputFingerprint": "68aa081acd65db5984a5f83c275c84c8ba299829151bfe708a6916c90a88a3cc",
+      "inputFingerprint": "5c2400a2375667b58429c8f159f50d15e3a7c08d98e66f6fa65f5941277d3969",
       "outputs": {
         "studies/phase155_fermion_sector_transition_evidence_derivation_001/output/fermion_sector_transition_evidence_derivation.json": "7e02fbe85a4abfa04d5cf02e56cc8bd0466b213a46d68712e4d17b3dc689b095",
         "studies/phase155_fermion_sector_transition_evidence_derivation_001/output/fermion_sector_transition_evidence_derivation.md": "5c33ba4521b025e5edf668b7b8ba68517c74073bda11c0d2550faaa318c0b59d",
@@ -171,7 +171,7 @@
     },
     "156": {
       "schemaVersion": 1,
-      "inputFingerprint": "6dba9577b295053c2f45bfab1f0770b3c03227ec800faaedae6c9a14e8f63161",
+      "inputFingerprint": "ba2ba88132defe6004f06e532add5bb0fc076844466abd3b5f0e332ee5fef7bd",
       "outputs": {
         "studies/phase156_boson_generation_execution_package_001/output/boson_generation_execution_package.json": "f6a1d141e58a8b90f0827db102c9d8b01c8e15dc9953451fab5a2f1d3191230f",
         "studies/phase156_boson_generation_execution_package_001/output/boson_generation_execution_package.md": "c2b176f414b312e69281c72383a52eade39134fc9f3940368005933593958e64",
@@ -180,7 +180,7 @@
     },
     "157": {
       "schemaVersion": 1,
-      "inputFingerprint": "13ae260a9ad1d02b6a25ae5381c02853e8e4a204fd38d2e3546b0fe29a7e6387",
+      "inputFingerprint": "19755963318376a20bf05b96e968b92708c5ad65ec9fdfdbc54a6e431f0fb2cb",
       "outputs": {
         "studies/phase157_scientific_defensibility_boundary_001/output/scientific_defensibility_boundary.json": "ef2f48723286d4d39028606fd3257b6f8a2a2967b800e1e438be7ad8c695e25c",
         "studies/phase157_scientific_defensibility_boundary_001/output/scientific_defensibility_boundary.md": "6d66bb4fad9e9e16c937a3c7d7200aabae2d3fd2d2671739d06d5baad923af5c",
@@ -546,15 +546,15 @@
     },
     "202": {
       "schemaVersion": 1,
-      "inputFingerprint": "cdf304e24b77f9c2a9b4fcb68f5ee36657f8348947a64fadeb566085c14b7114",
+      "inputFingerprint": "1c0dfb7fcb29aec9e36f608f97f7ee69a46609fbcd175684c088b2a97c3bedfe",
       "outputs": {
-        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit.json": "56d7fe01ce578bce3d1f2a1106f819c6ed09ae37cd849a35fe169cb747c8dd64",
-        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json": "dac35baff2c1136451d59f8eeab6d16c752383a5fecf7560096e8b7543d9814d"
+        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit.json": "6b98be3db582c07af383da14f8518b3660560c8ec7031e7bde407015e3e9f86a",
+        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json": "ba22964080b3625c421e8e478ce6b48b04adb56b778968800a58c69bef96eb32"
       }
     },
     "203": {
       "schemaVersion": 1,
-      "inputFingerprint": "5edd580e741a07c7e7fa1fc1a8361b21ae7b5e489841ab14f26dfa0cb0b25b11",
+      "inputFingerprint": "b9c9078016d25544428e22961ccf2de216aa8f796d5e8b0c01fc2220f4b9a023",
       "outputs": {
         "studies/phase203_defensible_boson_value_manifest_001/output/defensible_boson_value_manifest.json": "773c73372664c1a4d4698bffc49ea8d30fb24a45691a1a7289b3fceb0e82e791",
         "studies/phase203_defensible_boson_value_manifest_001/output/defensible_boson_value_manifest_summary.json": "691e36e64cc433a2deba65d1860d493b9578f5f4c5733a0087890735a55dae5d"
@@ -562,7 +562,7 @@
     },
     "204": {
       "schemaVersion": 1,
-      "inputFingerprint": "c4d4cf0e919ed553f286cc1d2fb03c215c1b8d6c52fb70f1dbab955a5c7ab194",
+      "inputFingerprint": "3fa91141a1fb2267fecc2c6a37fda28331275b57e3a2938a0e20e3991a7843c8",
       "outputs": {
         "studies/phase204_boson_source_lineage_candidate_scan_001/output/boson_source_lineage_candidate_scan.json": "13a2661dc6afa08a231efadf7271193b2118ba43d674dfd17f4c1e173fe9e33c",
         "studies/phase204_boson_source_lineage_candidate_scan_001/output/boson_source_lineage_candidate_scan_summary.json": "7411c32ba9a570f635a8f626406a03ac8aa52ff4d6bc6592b183b6af4595e298"
@@ -570,10 +570,10 @@
     },
     "205": {
       "schemaVersion": 1,
-      "inputFingerprint": "feebf453074a65d928adb5459745b07b8e240da01073f2ebc80c3835df0eb2cd",
+      "inputFingerprint": "31e87696a164c8371db00deb4b18637e44fb5063fdca3da72c646a2d73c5c92f",
       "outputs": {
-        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan.json": "4f398a150ddb11fd31740f6f1893391567826700f090614a0e40103568d7c2e5",
-        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan_summary.json": "4b1ffe1b585d440a7f587401aa262a40a39e97bdeb3db1fe485e23c860dbe093"
+        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan.json": "527bc7171485a5038a69cb71c6d419d004511755187c87a2dc2552eda8fc6f21",
+        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan_summary.json": "27f409cf155ce620fcc14953d28d64e9c1116139011babd71d3cb35724998a76"
       }
     },
     "206": {
@@ -586,7 +586,7 @@
     },
     "207": {
       "schemaVersion": 1,
-      "inputFingerprint": "b39de63a32d12663ab7e1d7b94947a1fc0818f57523d84aeb36ccb26e51225a4",
+      "inputFingerprint": "c8896bcb3cb347b8f882d1e98a96f37ca2a0eeb10d6b5d59e549c83b7877856b",
       "outputs": {
         "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan.json": "7b1a815d61cfc5a1c852dede57f21519c614ea41c36c1aaa973f722435518f1a",
         "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan_summary.json": "bbeb46c2dda94f909813cbc81e876f8416e27f6aa6c74461566bb630950fab3f"
@@ -594,15 +594,15 @@
     },
     "208": {
       "schemaVersion": 1,
-      "inputFingerprint": "253043709650c630fb675f60145133a2d4ca2ef25fd3724f86c1e58e20292d65",
+      "inputFingerprint": "5e31dea7e53b5df18f0d2e7616467cec994478f66d986fa026b81ca2e5648b24",
       "outputs": {
-        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate.json": "adf32bf20122d1a73b64127e0bd7559612147e577333474ca9449b6cf75c078d",
-        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate_summary.json": "bd7fed5694ffc5e1929ded9b61aab19cf463654c69ae456f2f22c0734aa62a20"
+        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate.json": "269c72cbd90a6f465a2b53a0d600b88bd700547b99a832ac02d502ef0a3bda54",
+        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate_summary.json": "4f0b1f0b9c6d5c53b17910bd0cf4d7967f2002d36faca881143501fff8245b75"
       }
     },
     "209": {
       "schemaVersion": 1,
-      "inputFingerprint": "6b9013a0a7b0391cc482a5e6b21ea324fb865e5f6566dfef724c7596965561e4",
+      "inputFingerprint": "a510d130ddd9feba28137cb44ff2de5d10619cacb74a030132f9f1eb41832912",
       "outputs": {
         "studies/phase209_boson_source_lineage_evidence_request_package_001/output/boson_source_lineage_evidence_request_package.json": "98122dd79b54e64db3b8c5725c08453c69da2f7e6a82f590e602d90864edef3f",
         "studies/phase209_boson_source_lineage_evidence_request_package_001/output/boson_source_lineage_evidence_request_package_summary.json": "e03c15a59e2d67422e3f8ce9f77739e0f9c1bfcf03fb7ec14155d870a3c166d3",
@@ -620,7 +620,7 @@
     },
     "211": {
       "schemaVersion": 1,
-      "inputFingerprint": "3e4bcd82a78bc836b0880aa550c8f555a2885b1050716ab5f414d7176b4f8dd9",
+      "inputFingerprint": "fd025fac0e13d3b37c5991e16adb152374c63abf76e801f4477a0f901ed0dfda",
       "outputs": {
         "studies/phase211_boson_prediction_promotion_readiness_gate_001/output/boson_prediction_promotion_readiness_gate.json": "b77aa53c1e31c70794f5030e8c798b12fca45dce1ba1300b44da7c148f57eb7b",
         "studies/phase211_boson_prediction_promotion_readiness_gate_001/output/boson_prediction_promotion_readiness_gate_summary.json": "85db4d780a0d1dabee5a627c24069252052508f7658e05442d3f164765a9106f"
@@ -628,7 +628,7 @@
     },
     "212": {
       "schemaVersion": 1,
-      "inputFingerprint": "329e19f0d26349e8c598e23c484f579e25839c2b38f3a1189e4023746d7928b6",
+      "inputFingerprint": "48b5143886a91c295cf358d99a635068ee85b0e33e52b4564acee9d37119a29b",
       "outputs": {
         "studies/phase212_boson_scientific_claim_boundary_certificate_001/output/boson_scientific_claim_boundary_certificate.json": "736fa2c7c6a449b692d69bb659a2b417c72734724bf13caeaea3c7153846400c",
         "studies/phase212_boson_scientific_claim_boundary_certificate_001/output/boson_scientific_claim_boundary_certificate_summary.json": "a876a130260e158c55c53c58662494f279d8880a8662d8791ed90c39a146ea8b"
@@ -636,7 +636,7 @@
     },
     "213": {
       "schemaVersion": 1,
-      "inputFingerprint": "ebcea1a6b3fc06af61304cc3f14de3aa26a66f79eb4e5f26b18eafe8cc650252",
+      "inputFingerprint": "cd6c5d332c1f484962a3ec7eec26dcfcd44d32f7d05735812cfdba95bc445505",
       "outputs": {
         "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json": "69ca302c9f02b468b979bba8a110b2cc716aabe57d8e2d2972a1ab8e98f43f5d",
         "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json": "0eb2ebf836221886e6f0038756cfbd8594c55e5b50b8e5e23239e97360f3c330"
@@ -668,7 +668,7 @@
     },
     "217": {
       "schemaVersion": 1,
-      "inputFingerprint": "dc0d3cc07a1c596aa1bd61584dba5b9574be2370d6446cfd0f6b380b4eb3bb45",
+      "inputFingerprint": "73904145d66463d12a6e3d80c7a6aeeb104fad0e5379c23e5c4d25377100bfb2",
       "outputs": {
         "studies/phase217_boson_independent_source_review_001/output/boson_independent_source_review.json": "f2eaac093161fad4050ea7772173e069757172d7c12579dc2a178ea80d6e0d05",
         "studies/phase217_boson_independent_source_review_001/output/boson_independent_source_review_summary.json": "811151d8c00226c26958edaf808d3cf56fc0421352d6b1466c38d208bbd039bf"
@@ -820,7 +820,7 @@
     },
     "236": {
       "schemaVersion": 1,
-      "inputFingerprint": "8484fdc0e64c83ad859ed33273ccb3e475e251252c841f29aca3fbe5cd462613",
+      "inputFingerprint": "b68dc2eb5ada085214d545b88cae6da7e504b6dae0202ab344bfc81763b75b20",
       "outputs": {
         "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit.json": "93e296ab66ba0233e7619e3697e5ffa0f97df9b8f81cc8ff31b1b9b3ba33a7ed",
         "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json": "84d04c5c2603271f40787aef7a0e8a69fe63d336e2925d9b04d62c15a430c8ea"
@@ -868,7 +868,7 @@
     },
     "242": {
       "schemaVersion": 1,
-      "inputFingerprint": "203ed0fe6eb95c7e46aee1b17eea305a1ec04c0301ffeb10daebb8eae85d7cba",
+      "inputFingerprint": "02dcab8e4f5ff347a6b05168339bcd9662206a298655e1fe67920a04329b269e",
       "outputs": {
         "studies/phase242_post_p241_external_lead_consolidation_audit_001/output/post_p241_external_lead_consolidation_audit.json": "2702cfdaecb09293a564a143b2a131f84201744366a329110c6693f42d83165a",
         "studies/phase242_post_p241_external_lead_consolidation_audit_001/output/post_p241_external_lead_consolidation_audit_summary.json": "36412e966a36e9bc2c4969b0febc35df4036ea6be08eb11cfeba67f6f38fd4d1"
@@ -876,7 +876,7 @@
     },
     "243": {
       "schemaVersion": 1,
-      "inputFingerprint": "151f27459e6bcbb8abf2e1f4be583813a91cbcdb7724468463c0645cb233ad7a",
+      "inputFingerprint": "fe996a2b298cd2ae5de5fc2f16685d8291f5e12d1971c7db8803ab58f7e323ed",
       "outputs": {
         "studies/phase243_public_web_source_delta_audit_001/output/public_web_source_delta_audit.json": "cb88002d4f0756cd30912f1d2884e5ab73f1c2c8d702e2e75cbee2c7c4727bbb",
         "studies/phase243_public_web_source_delta_audit_001/output/public_web_source_delta_audit_summary.json": "74c0d418ecc18889baedd893bd89c190ed657b4766447079a1189602888a2004"
@@ -957,9 +957,9 @@
     },
     "253": {
       "schemaVersion": 1,
-      "inputFingerprint": "7fc92f39e1900720fa04248a0f87c7e66fd87778449909ff7c0d218e6461a3b9",
+      "inputFingerprint": "77b587586ad96047849029fc6e2cf260fc7935903447cb04360b6ac80e2db96a",
       "outputs": {
-        "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan.json": "863318e745a3e0ccfa9a4dfe3591ce76795c5ceaec226c0e234548a0b02c586e",
+        "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan.json": "2cbbefd574fbd479591a65d8a8cabb083b96d8391429df54d6be40316416ba9b",
         "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan_summary.json": "bd8ac540b963727041427023534a8097ebed0658db5696121e93aeede04f46a4"
       }
     },
@@ -973,7 +973,7 @@
     },
     "255": {
       "schemaVersion": 1,
-      "inputFingerprint": "e136d2f45365eb1e979f8a5816f94ab86cdb0952a04d94dde628e67f3b18824b",
+      "inputFingerprint": "3d3377f4168743662e259af8647c484a795c6ae70310c491a4d864be100a68a7",
       "outputs": {
         "studies/phase255_observed_field_extraction_no_go_audit_001/output/observed_field_extraction_no_go_audit.json": "e35cba79d5edc2ea9fdd6e58236f3a3ab47c89998f1c583098295a3a8e1d7d82",
         "studies/phase255_observed_field_extraction_no_go_audit_001/output/observed_field_extraction_no_go_audit_summary.json": "1544edadae2d7953901ff5b9dcea206a071a0d0ab9d83b67cd95b13a52d85437"
@@ -1158,7 +1158,7 @@
     },
     "278": {
       "schemaVersion": 1,
-      "inputFingerprint": "4eabde04b6fa86ec9912b5a6cd5645055ad956c20e3ce31b3cacf7ea5e08e0d9",
+      "inputFingerprint": "b49085f2546911fc09de57956ec6c901e28fac836204ad1bdfda2632b57c3aa9",
       "outputs": {
         "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit.json": "194717b01c2f73da7807e928b34a4e4a29221df92640a0bfe478dc849dae6934",
         "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit_summary.json": "0fae5f1de14891fd15fcd2c8e6fbe02f56cfb1421bf84bc3833681bd8e0e9cc6"
@@ -1166,7 +1166,7 @@
     },
     "279": {
       "schemaVersion": 1,
-      "inputFingerprint": "4ac2e9bd88279368918dd536d4fba7bcfc10357a9280425f82a5052eeddd9214",
+      "inputFingerprint": "edabe817645c9b4869ab437a560f1755b847bbf9fae4d581753ca439b5b025f7",
       "outputs": {
         "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit.json": "d999a0c0d406c574104ca687453b308ceb891b02f1043166dc28e78d17743e02",
         "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit_summary.json": "7972641b1483ef657a79314ceab21a46b06eb03dca5b3ef12fcd972705bfb1a6"
@@ -1182,7 +1182,7 @@
     },
     "281": {
       "schemaVersion": 1,
-      "inputFingerprint": "910c5688bc6d6dc59e081bd5c8b313a96f575f172bb0ce815ed6a559dabd2898",
+      "inputFingerprint": "a119c16f3f64d921d48a7642337bf938c93933592842f19f2492d1978d73e4da",
       "outputs": {
         "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit.json": "254c36165915f06de970bf433d72db901515cf0bebc8801e2fc62c3fe0eada39",
         "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json": "0f4f0ffe6b0b3b05522bfc90796c9bcf22064d8fa18c934f9f88ec166543f1b9"
@@ -1238,7 +1238,7 @@
     },
     "288": {
       "schemaVersion": 1,
-      "inputFingerprint": "e264453c04412814140ce74c67654f94be12b87fd8f480c33c5824563752d4af",
+      "inputFingerprint": "01bca7928e568d6abc0e8b8159f073c6eb1e9e457cfe9a896c37c79c424e0d53",
       "outputs": {
         "studies/phase288_parameter_source_contract_candidate_scan_001/output/parameter_source_contract_candidate_scan.json": "9a5affd59f53aa71b5f407b306ad4996580f729d8c68932c54baba1aa11b22c6",
         "studies/phase288_parameter_source_contract_candidate_scan_001/output/parameter_source_contract_candidate_scan_summary.json": "601247a7dd8d9098be95fde26c4cd30e95ddff4102a140e5d57936a15c788a4f"
@@ -1246,10 +1246,10 @@
     },
     "289": {
       "schemaVersion": 1,
-      "inputFingerprint": "8ba65b5748ffe3b498295603c818cd0ad89991ea847c59ba6d15f6cc927c636c",
+      "inputFingerprint": "cf734c6f8256d9b9dfd4ff732d9b42dfdbed10328fba8fb9708c67febe4be5fd",
       "outputs": {
-        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit.json": "4bdc93b83a4be13b03db950b0d92da9ef36a28629109317f9ab8394a13a7f1c5",
-        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit_summary.json": "db97756e31c7a18618681a5fd0df09e88614f47a797be88140b473d4bb53f10f"
+        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit.json": "3e859baa54ec2db235ae5578e9957ebffaebe828a411b5fff9d704a39642375f",
+        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit_summary.json": "52b50589abd7c93986e8e27fc28c8ed2467f9ce5fe0189808cbf84f1a0639daf"
       }
     },
     "290": {
@@ -1270,7 +1270,7 @@
     },
     "292": {
       "schemaVersion": 1,
-      "inputFingerprint": "965c963bd4cbd79fba1c725291ecd3c6e184b6c097b99f66eddbde84cc355309",
+      "inputFingerprint": "6e9df082d8152b12ca8ebd5f37d73b7834027aac364dd348a118cf82f6a98ee6",
       "outputs": {
         "studies/phase292_electromagnetic_alpha_source_audit_001/output/electromagnetic_alpha_source_audit.json": "0661a2d10ee745f524e37a8047743ac416cfa42240a27d407eeea017749da225",
         "studies/phase292_electromagnetic_alpha_source_audit_001/output/electromagnetic_alpha_source_audit_summary.json": "7fced9605bee89fa97e8166e87521cd440632fefb4bd88f978ed800cb6436416"
@@ -1278,39 +1278,39 @@
     },
     "293": {
       "schemaVersion": 1,
-      "inputFingerprint": "850b62b4ae629e488bc67b87efca487176240ced76bdea19f2e56a78af731899",
+      "inputFingerprint": "db3883c0beceff817413039a8030724435377238fcfa74e7616c6df61b48a1ba",
       "outputs": {
-        "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit.json": "bb87a242ff1161521f1db6e526e6cee99026293797d6ebac46ccd6e89641712d",
-        "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit_summary.json": "4711724d07d0566d3c48b3a1cab4e5b0e140095c91e9077acf714734ab88050a"
+        "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit.json": "68d63f6781244053bfb20230ef73b762992cf06cbe8694acc6d090d378c8b267",
+        "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit_summary.json": "c380bb2efc40e165ce2cd641d43e0d539d120ddafd1b883d7821d59604d6169d"
       }
     },
     "294": {
       "schemaVersion": 1,
-      "inputFingerprint": "9062c239a6c91e579ebade689b3098261acb1ade0f5cd8006821b411a9bc4ff5",
+      "inputFingerprint": "41aa399cc69488b0465acf412f3151af3d82e99308e71cd11544ef93124dfa53",
       "outputs": {
-        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit.json": "319d02ed19400c5f5ff82571184aa45cbe0c3edd4cb905311ea7d6059fbda4e7",
-        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit_summary.json": "383922a1cab220a3a3da677310baa17b2e8bd2291f60f87c13aa14782ecec0ad"
+        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit.json": "c5ce397edabe0029f258199c9b6ddb218f8430022088a9cdcbfcc283b0e02f42",
+        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit_summary.json": "68458235b8925d009c41a3f2f613e13e2dfa8f6b3a5584d2a09c7e847ce2a82e"
       }
     },
     "295": {
       "schemaVersion": 1,
-      "inputFingerprint": "019617b959801393126d5d997c96747ff7e5a4056d5ff5eb83535b804ce02f6b",
+      "inputFingerprint": "0a4c619126ffe9410671fab3ebdd2d7ea03eeb476d6d07d2599d8839738fe14b",
       "outputs": {
-        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan.json": "4d3f379fbcfceddf838f739ada29d2d9466c2f7fa035ba44d1af8be66f0f6b11",
-        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json": "56453639f404b52ccb982050a80011b9c236438a01668a87d8e5f27d80b217eb"
+        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan.json": "f436a1e93cfa659ff48d90e0f08c7760085f202060a9631025812edf54c75527",
+        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json": "aa9a5481a63505e84413c8eb0cfcaba4763b1268c54467766bc4a22766d926f7"
       }
     },
     "296": {
       "schemaVersion": 1,
-      "inputFingerprint": "e9a6661ceec1246079d2a801a1d73c82f3b516c704e8744bbb8f16f06354ba3a",
+      "inputFingerprint": "58123b99a62ddafa2572b78c546acb701d59b49531317193b4d4909f469a3365",
       "outputs": {
-        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan.json": "f1e702208b670c7d66321a890ea45e65bc4ac125969f930c74a50fda1947bfcd",
-        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan_summary.json": "6096ebcb83422f73ed50715a22bfff14a914a047a2f258a2de22ddc9be2363d5"
+        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan.json": "31f52522bb0e3271b81ea2296571455cc570ea68e5f477e313a92759aae85c4e",
+        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan_summary.json": "ac3f0320492e5c34a98e07240eb8cdac59fd2c3eb0102488506c1ca002895744"
       }
     },
     "297": {
       "schemaVersion": 1,
-      "inputFingerprint": "ceda78d8ac428b7eb9d78854c8c1adbbb99bc5eab2af07005227f1f5aa1effc8",
+      "inputFingerprint": "ecac6c08a960d5d44d33e9c9550084bfa0bf704e62c167bcccc6e63bf4055236",
       "outputs": {
         "studies/phase297_wz_direct_bridge_source_contract_application_audit_001/output/wz_direct_bridge_source_contract_application_audit.json": "674939aac525590906b5eafb3e91bc765f17f8346a4643736ce3fe0156821a67",
         "studies/phase297_wz_direct_bridge_source_contract_application_audit_001/output/wz_direct_bridge_source_contract_application_audit_summary.json": "1fc21acc8a8d269aa866e5de90e8f0da70f1122cab1a042d5a94615c8c64f84b"
@@ -1428,7 +1428,7 @@
     },
     "311": {
       "schemaVersion": 1,
-      "inputFingerprint": "e52ef90fd9347a42e80ccc95efdc4ae9d8e9752ab199b21fe75b9da3bbc57233",
+      "inputFingerprint": "92e9492242f699b0f8545bbf8d04816bb6f3635f420eeae9ee0f85f36142be80",
       "outputs": {
         "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit.json": "ec91e699665fa727e4b3a669a319c2d88aa61aa0e804e078ca0bca46df60212f",
         "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json": "145bce2a097dfe76406c93fe7aa5caf1da25f6e4baf27baaeff351e32c136b6a"
@@ -1444,7 +1444,7 @@
     },
     "313": {
       "schemaVersion": 1,
-      "inputFingerprint": "34a9f2da0384cfa397af72c6f8911ab323847186eba4639ba2269f78e86a8531",
+      "inputFingerprint": "f0ee5c300037845b0615513ad4b05576ee9120a3f2969dd7f2049b2d55425668",
       "outputs": {
         "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit.json": "17fdc83c15ca67aff5aaae4f1c7500295790b213f78f48518210e0d6ec53d7a1",
         "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json": "4c1af6a2d24b07aa5fe39d2526af833e7281e7f9668bb628afa9e41114b4ef61"
@@ -1476,7 +1476,7 @@
     },
     "317": {
       "schemaVersion": 1,
-      "inputFingerprint": "ad836ff5dd46cadc0d4868e4803d912f2962742f120cbdb24d72161a0cd15ba1",
+      "inputFingerprint": "b18d32eb99fb432846c753c24f977f3423dad3717ecdfde85fe8036f1ebbec60",
       "outputs": {
         "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit.json": "24dfbc413755383e025406a7e437d3bccb45a7fb30112a9ed44780255e3119e1",
         "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json": "24dfbc413755383e025406a7e437d3bccb45a7fb30112a9ed44780255e3119e1"
@@ -1508,7 +1508,7 @@
     },
     "321": {
       "schemaVersion": 1,
-      "inputFingerprint": "cd44d3dffeb41b6d351f56da9b86eb0788acf814893fc20f39808276f7eff015",
+      "inputFingerprint": "3d627652a5f350cafeb9c714c762e218ba29164a8c39a33ebfa7a66b4a700ef3",
       "outputs": {
         "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit.json": "6b71656a96f8f4727c360e875a5531a64fc6c8c90e57d68d5c83fa952c75e96b",
         "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json": "6b71656a96f8f4727c360e875a5531a64fc6c8c90e57d68d5c83fa952c75e96b"
@@ -1524,7 +1524,7 @@
     },
     "323": {
       "schemaVersion": 1,
-      "inputFingerprint": "2d2792aea4a302e4a23617e392fd5cbcd845debdcdc80bbbdddcea9c60a4df69",
+      "inputFingerprint": "b16dad3060121e8c381cbe24a6273aee44e2e018c14892cf3f0c1794e640f6cc",
       "outputs": {
         "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit.json": "56f361a2f2258a0829975abadfb8a7cb9e62bb22c40be225e9ac6cb66acac44b",
         "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json": "56f361a2f2258a0829975abadfb8a7cb9e62bb22c40be225e9ac6cb66acac44b"
@@ -1532,7 +1532,7 @@
     },
     "324": {
       "schemaVersion": 1,
-      "inputFingerprint": "37a124763c2eb6f623bc91b7775117955a85ab628770e7498b744678b337ba0e",
+      "inputFingerprint": "7c93bd02d2363f5ba710c4cfb42e43ebc198b9f0b4a1a6a9eb340a6191c7e5de",
       "outputs": {
         "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit.json": "9824f55e551513e08f364fb3542c0ad135dc2ee79983bbacc327b3b4ff1f1fe2",
         "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json": "9824f55e551513e08f364fb3542c0ad135dc2ee79983bbacc327b3b4ff1f1fe2"
@@ -1540,7 +1540,7 @@
     },
     "325": {
       "schemaVersion": 1,
-      "inputFingerprint": "d86406ab6ed04f095854f8ebdfba14066627de17eee9cb1206cb8bf19047a030",
+      "inputFingerprint": "247f75f6af1e86e0e199b8f3a252689d11b1d337c2b6d2e6636567e833f7edce",
       "outputs": {
         "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit.json": "d737203702f4c601af5a6666ca3846d9ef28853d88fc541901cd020a7c9cc592",
         "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json": "d737203702f4c601af5a6666ca3846d9ef28853d88fc541901cd020a7c9cc592"
@@ -1548,7 +1548,7 @@
     },
     "326": {
       "schemaVersion": 1,
-      "inputFingerprint": "7600faa9c854164376ab1962ba353a484762dfc91a01a2049f20004be23a30d7",
+      "inputFingerprint": "79de850df30fe39ea50a06bfc48a78d2ce09efcbb193d6b26f6e2c4add2d4f1c",
       "outputs": {
         "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit.json": "c007e047a3c11e6a763305ee000dae612793e2ebd3bb026c0e664098bf961e20",
         "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json": "c007e047a3c11e6a763305ee000dae612793e2ebd3bb026c0e664098bf961e20"
@@ -1556,7 +1556,7 @@
     },
     "327": {
       "schemaVersion": 1,
-      "inputFingerprint": "cfde1d6a171e95526406cae5962e6c7a5453c5a7f10a38b11720eb38d1c9d556",
+      "inputFingerprint": "a507fab490037a2f169cefb957d8d7e0aeef875c6bbef1ef704539f1f535c37a",
       "outputs": {
         "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit.json": "ddf955952d84110be4fa617e780dd60da2f95b4e1d81b0dc0993b64e3555dfa3",
         "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json": "ddf955952d84110be4fa617e780dd60da2f95b4e1d81b0dc0993b64e3555dfa3"
@@ -1692,7 +1692,7 @@
     },
     "344": {
       "schemaVersion": 1,
-      "inputFingerprint": "f3cca0b9191469c80b8bc46b245e5c0ad7ace7628ba67ac6c35df6ed4d42ef0a",
+      "inputFingerprint": "3fc109565e004e3a3cda8da4033728366d1da8cd20d6525b0c67fd72c86b914e",
       "outputs": {
         "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json": "4ea3f9ec815b2501d3d55ca5e0d86f434f21aeed0aef538dcfa0364835cbb9e1",
         "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json": "cd7f499b9369d9d7f93919ace679b2a143642221714ff144b9215cf2bc9b7715"
@@ -1700,7 +1700,7 @@
     },
     "345": {
       "schemaVersion": 1,
-      "inputFingerprint": "59b045f285decfb7b0d7b32c7279b3002753442f045da062a612d5034eff29b8",
+      "inputFingerprint": "d8406ea1efa73ffede09b0a3ed633a5ac95626a38d9c80b591c97d487a5c3169",
       "outputs": {
         "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json": "0f2871ad0a721409f5a9711b1d1aa4f92bb641df6859f955c2f8b8cbe9cc9557",
         "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json": "a022c6e696bd68f334463d644f29cbc2ec9710bab5a7256bc63b5c0340e612ff"
@@ -1708,7 +1708,7 @@
     },
     "346": {
       "schemaVersion": 1,
-      "inputFingerprint": "559d376db57ce31e63a6a63ccbad53b4f86e40a91994ffaea83df8f512218975",
+      "inputFingerprint": "affbdc158c0df54f1d48ce4f38b782ce9d131828a51fe7b57c58550276cd0886",
       "outputs": {
         "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit.json": "165de38d0535a4808a1c2cafc96fe777a431a9031c3de91768c95455d0f25e57",
         "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json": "05c240cabdae4c9a28ce14c52456404d39540d7ee7bdf856714ccc84f7d20e2d"
@@ -1772,7 +1772,7 @@
     },
     "354": {
       "schemaVersion": 1,
-      "inputFingerprint": "d8b7f0a012dff2df629e71033415fdaf65545fc979c907dd312dd377d5aad57a",
+      "inputFingerprint": "b00e7a2582e4aea83d74694fb7461f8d72eea877ad8fefea69e9f76fd65529e3",
       "outputs": {
         "studies/phase354_multiplicative_higgs_lagrangian_source_audit_001/output/multiplicative_higgs_lagrangian_source_audit.json": "6d2e802131b4870c8f01c0fc594bdf6677d86d5149cb1a4ec47a29ea0f40d25d",
         "studies/phase354_multiplicative_higgs_lagrangian_source_audit_001/output/multiplicative_higgs_lagrangian_source_audit_summary.json": "bec8e54537bbea919758955eb1dd19adb7c31bd56bcc8adb21b0f7a74e957054"
@@ -1868,7 +1868,7 @@
     },
     "366": {
       "schemaVersion": 1,
-      "inputFingerprint": "1a692f58d01cd2f2a34a9f3dd64b777fdd4c64d5b01e9497a8d0ee9daa26d987",
+      "inputFingerprint": "70508a0b2adac3b1a499dab0d7ec775c5220ae500e0520a3f1d79189beff51cd",
       "outputs": {
         "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit.json": "63c02f49590de588548d67e8eaaf022c1481cf0b9811d8a00b7b0bc3691f136f",
         "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json": "03880e2f22013e9b11d20efd0d29b90c20f7b6795c6f4a00457f041ce618d615"
@@ -2112,7 +2112,7 @@
     },
     "380": {
       "schemaVersion": 1,
-      "inputFingerprint": "da37ed1a7f3d4def2f17825ab7a31ee61672bebb664a665a198774efc2676127",
+      "inputFingerprint": "de99b3c696dfa27a5269bc1df884421f7c779147e3be8deae98eeb03c68c1b3a",
       "outputs": {
         "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit.json": "cdbbefecdeb428ff34059f3c1bde7e6cc90fca60e34f8d93bcd4ede9cf401b62",
         "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json": "65d910f353ec6bd2fbabeeaea523e9be9948b99fc175d83da8efd341584b298c"
@@ -2128,7 +2128,7 @@
     },
     "382": {
       "schemaVersion": 1,
-      "inputFingerprint": "0acad802901944c18e934a852947e1df54b5480286ab0ea358ba51baf145ba33",
+      "inputFingerprint": "e170ed2b8fb5038fd978963f304b837c47a5c174190c4b1d11fe5248a0155196",
       "outputs": {
         "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit.json": "54b8d63b5aeb3ab185934b5b2729fad78d79f167ac4b2857595911b4c351f9e4",
         "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json": "b8f17f942141a0f9b54d985268490e90bfa63b12b4a246dab3195f923a7adb8d"
@@ -2226,8 +2226,8 @@
       "schemaVersion": 1,
       "inputFingerprint": "8c9c8b5082d9fd22fcecbfd45cad31a9b20869c2bfb0f906d997e82333415d31",
       "outputs": {
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-a-20260315212202.log": "1b427821232d64335cea5f0d44bd7e802d42ee85ff22fade36198828552912ee",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-b-20260315212202.log": "4cc398b1e6dd0d2d57baf0baa76374f61389f8e0eb99de2cb961aa6336c15d6a",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-a-20260315212202.log": "c43d7c7fb119ef6dfb22ce507d9654c1a61d1e61b54a90b3d400d1d1b852c91f",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-b-20260315212202.log": "c9578cf5214a589d7591404b24dd0f3ae4791e83e2b53989b4d1c973ae7df8b6",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/atlas.json": "d7610e7a36c2d8ac223b83cf2495b176a8f32b97de1246512a540ad96e6d103e",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/background_records/bg-phase12-bg-a-20260315212202.json": "51b507e81f8964417fce74a1718bfc919e7a0f6a0dacf5f2e0bef867024c6eea",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/background_records/bg-phase12-bg-b-20260315212202.json": "e960ddb1d918bca4c0ec6ed1019cb35c92bf4e9d7f54ac049131958a23292278",
@@ -2554,8 +2554,8 @@
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/observables/mode_signatures/bg-phase12-bg-b-20260315212202-mode-99.json": "ea099097fd91e4212384c6342222ffdf57f5cd4984e5c03d66f007b16fee9f83",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/reports/boson_atlas.json": "17fbcc37453a8194b776fb0af2b066bd6c5f998bf32aabd4490c1ffe3ad11021",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/reports/boson_atlas.md": "04f5293db8c461d55794c5b61ed7f43fc4167d81b9a29a42cf058f3bbf21b0d5",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-a-20260315212202_spectrum.json": "13c67c4c46df967a335b3e399e25d8b463b8d42d20446b33d12083ec5b103ea5",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-b-20260315212202_spectrum.json": "a34136939dc66c3ce45cbdb80b79cdfd682641537cc8dffaa2a00f2a2a93d5c6",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-a-20260315212202_spectrum.json": "4270f621a2047514a5f50849cad2b7b396a4b457fc4133d9025c5abcf7cbb840",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-b-20260315212202_spectrum.json": "b6bbdf6ebf9b0e47eb25f3dd4ba68b85fdef5f1959f60aaaeca27541b766c1f5",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-0.json": "cc9d62346f21ebe18f37e5f350927cc8e0545f6ccea4b12fa82c6d2154ce0fa8",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-1.json": "6bd2fe19bdf10e611128673257d9ba6874f7188452406dcea2f7fdc2ed3203ee",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-10.json": "c4d76723409edc580f98d32e336fb7d426c29549fd4b82f06f2803bb13abec27",
@@ -2882,7 +2882,7 @@
     },
     "396": {
       "schemaVersion": 1,
-      "inputFingerprint": "7b1109d4c603a988f50bd25091dfffeaf764017a1a664cb15d4cbcddb87711eb",
+      "inputFingerprint": "d82fa94320db20c13756a13ef3ac0f3f2f4313230b3379e5d5cf5124b7d3466a",
       "outputs": {
         "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe.json": "23b459ad5f08247071a1b5b16ba88032f268d3fa77f0dbd86f2f2596194c2bc1",
         "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json": "23b459ad5f08247071a1b5b16ba88032f268d3fa77f0dbd86f2f2596194c2bc1"
@@ -2906,7 +2906,7 @@
     },
     "399": {
       "schemaVersion": 1,
-      "inputFingerprint": "b5c44835346c4fcf9c182eb822295161dfe5923ffd7fe49377882aef090be512",
+      "inputFingerprint": "89f62087ece3f61a4024e9c9603152086d633ffda21916937bbb746f66238dcd",
       "outputs": {
         "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve.json": "d3b02ddf82c171e04268866e67f7c8902f5d9525c34a70055bcf5542e251987a",
         "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve_summary.json": "d3b02ddf82c171e04268866e67f7c8902f5d9525c34a70055bcf5542e251987a"
@@ -2914,7 +2914,7 @@
     },
     "400": {
       "schemaVersion": 1,
-      "inputFingerprint": "6f778134ea6354fb543cc64508e417ff3c94dfe28b54c3a2f1240a5bbb76de91",
+      "inputFingerprint": "7f3736e1af86191d9f5425fb9ba21fc8f2941cddabc5688800a12a89d87fd815",
       "outputs": {
         "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe.json": "f84ffcc6451af016770841cf1a2847cc5130a96f0cf6b9b4926bac52a62396d4",
         "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe_summary.json": "f84ffcc6451af016770841cf1a2847cc5130a96f0cf6b9b4926bac52a62396d4"
@@ -2922,7 +2922,7 @@
     },
     "401": {
       "schemaVersion": 1,
-      "inputFingerprint": "a6212c67b102a56a87bd14dd27b050e23c07ad5238dfc1eab05f85e49cc5d022",
+      "inputFingerprint": "3f571e2e2e7fe65182efaeb40621326bfe863d4d13b50c06e50c49318060383c",
       "outputs": {
         "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction.json": "6abba764aacf7efde4080bc1087a86c049275f269ff732fc0dee5c57449160de",
         "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json": "6abba764aacf7efde4080bc1087a86c049275f269ff732fc0dee5c57449160de"
@@ -2930,7 +2930,7 @@
     },
     "402": {
       "schemaVersion": 1,
-      "inputFingerprint": "c99e6311afdf223942a7cead014ff204c8eac3aad71aac52544b50028a4df846",
+      "inputFingerprint": "bb1c154c41b8babc5f719804c20ebf0078e6579b0d8d0efa8ee4a3b4afc4b99f",
       "outputs": {
         "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit.json": "324215d2598067f0503f1d4c52fe66e44bd1c46d929cce3cabb4f679123a9bc6",
         "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json": "324215d2598067f0503f1d4c52fe66e44bd1c46d929cce3cabb4f679123a9bc6"
@@ -3066,7 +3066,7 @@
     },
     "419": {
       "schemaVersion": 1,
-      "inputFingerprint": "960f32532ad0f93f0b137305cd45c6f245e99b35534fce21bdc47de6a435f409",
+      "inputFingerprint": "65445a6aa3a4df33df5c09dc22cfc5ec70c930698a42fdf4e42e60b3ed5f74b1",
       "outputs": {
         "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template.json": "2be8db5e2d31a0af0cae39734a841ebf36c4e5a7f6e6b0e42396147f815047bc",
         "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_map.json": "637b6791a6b1fc213d9c8da558d11df20554f7bc2c7e74fc7e9e6aea292bc784",
@@ -3387,7 +3387,7 @@
     },
     "459": {
       "schemaVersion": 1,
-      "inputFingerprint": "509af9d88a55ec382fb58383eaf704332d4b05202ef8328e41ba21679b053572",
+      "inputFingerprint": "b0aa56cf73463d7ff2cc04bfaa239a9b8b17e09d3983c3a55f4c36765490becf",
       "outputs": {
         "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation.json": "577ed75ee4e4323268fc4f043a83ac0592781357fa42551b3ddfbf319b2aae06",
         "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json": "577ed75ee4e4323268fc4f043a83ac0592781357fa42551b3ddfbf319b2aae06"
@@ -3395,7 +3395,7 @@
     },
     "460": {
       "schemaVersion": 1,
-      "inputFingerprint": "2a5e5c73ef06b49e9a55819d9803f97d991bc41b0e78e666b986257bf44fc1ff",
+      "inputFingerprint": "07b87668ef824bda6b1de2f06c27df207960611ac89d02e99fcfcb4dcfa09c32",
       "outputs": {
         "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel.json": "f03b5384eb4e68235ec5bfb177f01df98a4086305590bf61e545f660b62d7f63",
         "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json": "2783e0b2aacaa7439be56b95e0013e967b1fd4a64c0f0ec97b7ec33c6293ae71"
@@ -3403,7 +3403,7 @@
     },
     "461": {
       "schemaVersion": 1,
-      "inputFingerprint": "4267a59ace20d45ebd4150c2bf8f1f4b59b54ca2e365792a7635b697156c35eb",
+      "inputFingerprint": "6ca341e4caf20001f11f7257266d5b6b1b688f8629edb2803b913521cf673b88",
       "outputs": {
         "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json": "e0505dc8e6aa26e1abbb5c8440bcc3030cf24ee571a3ec88f805991115e76f7e",
         "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json": "1a839e0dbb1410c3bc3e7b56294ad42c63c09ec7b7184a8e14c735712539b500"
@@ -4180,7 +4180,7 @@
     },
     "558": {
       "schemaVersion": 1,
-      "inputFingerprint": "c879a77275ee21ddacf0c809fcb5485e53b2c3ba29a74829055915a35e6998dc",
+      "inputFingerprint": "9a40850593799b954e2b571fe50763aef98d412a5ea4f24f2e9b995f98fe6e97",
       "outputs": {
         "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/phase555_transformation_identity_supplement.json": "73e55e16ca3f219232525194acfd39fd3394b6aaec52ba7f2fc16b1c0aba55a1",
         "studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/output/registered_action_transformation_identity_independent_adjudicator.json": "3c3bc92e7c33f39514cd363a81faca8b7e111253977b3eaccc8f81bcfcf2f12d",
@@ -4197,7 +4197,7 @@
     },
     "560": {
       "schemaVersion": 1,
-      "inputFingerprint": "ceaeb33fc70b599231281d36d3f2ea22268d3d6a6cb755183216465aa5ba1080",
+      "inputFingerprint": "5706eeeefa56db9a48ace2713c3877c9a82e39e0f5af5d21b3be20d8a2c487c5",
       "outputs": {
         "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/phase555_source_census_supplement.json": "f2acfd154552a119b51a2ac968911abaa1490402ddc56789b553b69f543ffa67",
         "studies/phase560_transformation_law_source_census_independent_adjudicator_001/output/transformation_law_source_census_independent_adjudicator.json": "0c4bdbf9e507dee021131468bfcf25d67cdbfc5886d8a96ac53c6595e2229bee",
@@ -4772,6 +4772,722 @@
       "outputs": {
         "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/output/invariant_bivector_nonlinear_feedback_audit.json": "bebfd06b5856793d64cc5bfe6b8b1d5391f8e75d56ce295e257174b22ad51b9d",
         "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/output/invariant_bivector_nonlinear_feedback_audit_summary.json": "bebfd06b5856793d64cc5bfe6b8b1d5391f8e75d56ce295e257174b22ad51b9d"
+      }
+    },
+    "620": {
+      "schemaVersion": 1,
+      "inputFingerprint": "d5cc540df059f26f558e0accf992393186ec264d506ee1cb62f05f1f3192b527",
+      "outputs": {
+        "studies/phase620_curved_caa_action_descent_ward_audit_001/output/curved_caa_action_descent_ward_audit.json": "b97d7faecc5bdc21f98ddfa82bce42c73e9aa0dba0926290e7371a226f02a657",
+        "studies/phase620_curved_caa_action_descent_ward_audit_001/output/curved_caa_action_descent_ward_audit_summary.json": "b97d7faecc5bdc21f98ddfa82bce42c73e9aa0dba0926290e7371a226f02a657"
+      }
+    },
+    "621": {
+      "schemaVersion": 1,
+      "inputFingerprint": "0c4e4fec7079bd5d03288395e7a7b086dfd6349728c0948c39c6f18f78b1e9ef",
+      "outputs": {
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/induced_metric_full_variation_scope_audit.json": "1cfb648437aa40fa73ff340d87c0429fbf262446a5f87129286be74a989d64ea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/induced_metric_full_variation_scope_audit_summary.json": "1cfb648437aa40fa73ff340d87c0429fbf262446a5f87129286be74a989d64ea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j00.json": "10aecb2b498d39118b5403cc138fb8f44dbe9a90b8684395a8456d188a84704e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j01.json": "538a6c195e23b69db20be1c4c59372bc47c887cbf85811162e09979c81c9e093",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j02.json": "b214ab050871ddab79c31e8d51c3581f47bf9233ec62fd26d9d7ed5513925052",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j03.json": "130358f4109fd586f1f67cb45e73bd6b1cdce0f21620d02ba602ac80c40103c7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j04.json": "4d8ba5c495ba75ee1692a17e743b165271fcaece29b9778d97dd6839b7c39723",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j05.json": "24af46b451eef2ab4829f8626b6333fc6f0c57777357fa1bfb090d0bdb5cf14f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j06.json": "74bb407bb5d06c6a61252eaf60b5e1b72db304e28abc448f6488801855da1b97",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j07.json": "d41bf04d025c80ccac4675e0751b0b24c5fb327da174440d9c69f7fcbed1193b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j08.json": "9617d9e65f8e20e4a92651d9419968688ece28b52aee76b6b8a1491258a9e527",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j09.json": "0b0a296328afdadcb76d5f03f7f4b0d45fc73c4c6dd153ca14f1200e1a4a8cb7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j10.json": "ab07ac3431ba21a8a5d33170e6bc3a90221a989143459afbfa5b306e68d97dbb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j11.json": "a6d719679909f7d733f40dc0dcc6cda47023b34a9d7e777ae952c9add19bc4cd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j12.json": "ac4d76b5ac7176675cbbb3c100178675f1a85b7d7e81bdcc858086711cdd2f8f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j13.json": "985ba65c19eba705db5d4d852b6ee05f183af2a93a7e14f17bc9c10d7e8473b7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j14.json": "5306553054ad3515a624fe38ba078717df78b5b3f3e43063551dc2551249cb6c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j15.json": "30e94d01b10bdcbf1c3a88fbd7171f5c01f761686b0710808235ddd1d42d7318",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j16.json": "9cf19207916f58ce7cf63f0a928180ffe69863afd45c779261ae56f22771d3e0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j17.json": "9923f3f797bfe9768b23af3b31b1001a280bcfaf93bad977d1c0660dcc58dd23",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j18.json": "9bfc5966bce951b6876f99c90ab10523f4ed4f24ee2fbff469e9ce5bbb9d42fa",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j19.json": "0a401d30a7f7aca2c1a9a08ac98ac65f2fb33e8e632cc37aa15d38e5f6d6e83c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j20.json": "9f9b3421a3c7bec684cef41833653d16a8d188033a66a8266033bc701a6bc207",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j21.json": "b9cc1cc9adeb244bcdba03060513bc2bce64fdac8702ece173e1c16511afcf5b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j22.json": "768000ac5c6b45a0b80fe26a2e96c50990ac2683d157ba451d262c135028986a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j23.json": "fca7b0ad5bbcf449567b3cda3041f790e0fb5f5f3067d765d0cb56368abb225c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j24.json": "326ddf03c421f567328b2dd25220e0f38aa0cf0c1a9b9c9faccb8f28c39adef4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j25.json": "d68925349a060a6121f80a3f313210d308fbf3382f0bbad2761d5dc5cdcc2d1a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j26.json": "09b489ccca0dcf2a303011d0f7b406d699d0c2e496796d3e422cf1696abd084e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j27.json": "4039a9d02e8892b58e5f1f8014c41864c1669f993b3bc8d1dacce23380ea0f2b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j28.json": "5da80c1706bf89bc2402ff9d43de02c6d85b768939f313ba6115b04c9063981c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j29.json": "bdbe1fab2e37ef03758904be1ec31253c3813ca287192074961107f025b5c178",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j30.json": "9bb612c96ab18900a7c64fcb8f6c058e21f8390bdda3129f311578518ab1c9ed",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j31.json": "58eb3966bf6ae5f36075766e0ae99ddda08d5c858457601f649717c448034f9f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j32.json": "4946b872d12e5d20194c4226f12a4102ececae5954461876343768151b7b92b4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j33.json": "f144ada67c20a1ce7e071b7c62653ae2917f39b7d4ca8a02c4166e2c9c0e1314",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m00_j34.json": "802a5a234e1698008363a8405a62c62282c69f5987fa2fdecf4e1fc5759c1d85",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j00.json": "a1719b3e2e15bd0f02c5cbf92359832f2abc4b3545b21f476e907ca88e36b758",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j01.json": "70f1a51416d3c15abe8777903c7dd2ea3e933dac0524a5565c4044685a9925b2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j02.json": "9cffc7407e581ba55ab00b0cc81fa34bc9908e66d520923b157718961c23af1a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j03.json": "be3fe0e5b9b926cd472c7c49ef8305e1c58f460d8433d0cef908c1e0c9ea50e8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j04.json": "19812e568117cf6f4bbc41588e6e74bc57cb2795ccb3ff174f9ecbf6306d6531",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j05.json": "5deda8e028350ed86af8feeae8ce986c33cd0820794f26dc97ba9948268b124a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j06.json": "3168cf0931d4aafee6f08c3286b4e5dc570e9b2a33bc8b3262d773d729843a60",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j07.json": "91265646ab964191121b67f829297e7a20e326297e51b89204603a43c7a3c390",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j08.json": "81fa6bc4599f0c92e83f1432b7915b61a5b0d4f28d9755a263128c6e5914e71b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j09.json": "4392378963daabc63958a1866c402ecd9f900ae3b5d3987b381748a0d2b2b1dc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j10.json": "cba230021d242a4a1a8ac1243f730de86e7d1f483d284916c336de800fba17b7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j11.json": "1598818d1cc6eb660529daf1d7205f9bacb19350e66ae7aeb5505f1b779d8038",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j12.json": "b58fd864a7e2385db1f015bfe09abc65874c6ef4748ae3e2a08d2d2b5f0299f8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j13.json": "ce63aa90edf3bd85c93c51a1a42a82e7ac36daad57241457e155e1e3b707c0ee",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j14.json": "758ec8c4daa31000d12462ef2899570484218d129de7520c9cfdd7cf256b423a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j15.json": "9be706f7f735bfbf7efca078f1df9ce9ba88b27692ac31d6e5f0ac3121cedb83",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j16.json": "0f07c9c0164d8217dfd46f610f679d20da1d6931ed9127a8bf39a55ec1066cb8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j17.json": "b1e8a39cc416e6172d6c98e337572c15a1b2a47e4f4a88132b28223f5d9d0e5f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j18.json": "3a9aef2769f9987df3dd696d2feccbf708c3d8c6374946049fedccd73e7829fa",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j19.json": "2bf7b8f0255b1e0694ecc3fbde1e0426a042e1712cff045f3b02a9f999ca8f45",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j20.json": "d063858bad5b9821d1f594210c489b7df5989f79a43b07410a47b99fcd4e6e0d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j21.json": "26c975f201a67dee684734896a5aa38cce3418be3ba8021a930aa93217e509c5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j22.json": "508c08cad5213ffdf4ce1f623f22950339086edee51823781433ef89eaa06451",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j23.json": "c9b4a7092a27c006397f02046c537a09df1c7a39574ee0e1a3b238b978bbe62c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j24.json": "5cb6823f0be498aeffee483ff528397de57d4ad7c1741bfed9e2a92f9b241f64",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j25.json": "1fd90dd1361571225f0c01eb98b95a2eb693409b74e47991aaddc212dad2cfb4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j26.json": "85c2b4ebd4f7783262f6988c3cc17e57d3c465c1b756fdf600ca97f70a29e508",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j27.json": "c9105ea432b82afd46170d501e4d014df07d02b0b7d14a1b3e627d301e5bb462",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j28.json": "b39e3fc3ca222908763c1cb7060a49db50ba5d4fb7d92a8b31ff51184100a7e5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j29.json": "d0e8d9825a0e70a95d7c794e33af2f90e2ff6d542e972b536c2bc14e7fd13909",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j30.json": "3beecd1dc8efeedb4f17a0baaccdd54769b4a219aa0d3d48ec3991ddb34fcd14",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j31.json": "313a5e35fa78389a01e89a8af4fd93119d419e3bcaea46221adc23e6d2efc5a7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j32.json": "9e6f4a9c560b67dc04da7a211e7848eb8c84eb2cb68d54321bf3aa2ea8c3873c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j33.json": "7bf4dbf86a72ec12cf32c0eb79c11816e98aa26cbb30d28a8d20c2c7c9aaf189",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m01_j34.json": "85595405598ddb6af28bc2c786be95c783b6bdd8585ea1c78c51bf3f10844c92",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j00.json": "53d70dea664b4b987206a85cbb29c5fd30b4f7609345006b17788c4fabc29b7d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j01.json": "3d88922f1c40a5d7b5d072335047222a15d2a9c5ad335eef062c79715264ab48",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j02.json": "b02a8ece356d66a5f8260684801aa89cdd7e28b11a8f75887ebd283bbbfe3de2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j03.json": "0ef41f3d14c9e0e9e007183a71709cd7ab8c6b648977367d75e174826c32fa31",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j04.json": "209cf07038d0752a30854e352d11622d9556d77c26e7050b128c98555a3b91bd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j05.json": "1812698715a6e7477f18d139b1c611b63808591859febe6c59acd19bd66bbab1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j06.json": "5ad2987a3f47825378383869c3214a012d08a40e4cc1fe9df34393844f17fff9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j07.json": "080dc0a1168805500a6f7344282ce07d5fd44797f78ccba8e4951a97dfb5628f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j08.json": "2aaea64c7c273433668c7ff18438d5ca913b6068766da15dc1f3c1809b60854f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j09.json": "6519b3a2ee199f0f59e2c80f209eaf8d5854ab71389b984efcaf15a6e638f671",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j10.json": "e79468f8900c60f3c4559033613bd123e66e3e8d0fe2e4cc92dca427cdfc9111",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j11.json": "a56daf6e6d21c2acbf4b6509cbca3eed502227b7f90cfcd02683fa70e76f01d7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j12.json": "30dd153b4156ec69392d94a554ae8439d6a54c12e8dc9ca2c66fb42a4166e910",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j13.json": "1473af239437b0ccc3a4f0f861d23a3f1b2b08bf09f47265ab46a7556f746efa",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j14.json": "6869ee88d54d063989558a56d789854705ad506109a069522d44083eaed40f24",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j15.json": "3d965ee00ac9549805be9189a8806400a1aa269d1185b41ce4e059400f762703",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j16.json": "66098c31ef1e05e38030d9bae7b8f4558da92e250bf1798771b69461db4b6502",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j17.json": "6a966e25589e6c9a0959410482131679311aedc2199ea6f404acc97a2d69278c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j18.json": "e99916ffcbe21034fda4ee502076e6afbc6f8f108e23cc0c496dac3449b607ab",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j19.json": "33d1aa9326ad32c0d2525ed27067a04e289c4704fe3869b16d7c499df185e9c7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j20.json": "514c52f6940693f736bd6ff6ef09b785e6b2fc1f233b8c4d1124f3acc7ddcf73",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j21.json": "3d1778a25ab2015816c4719196c72465f88d137cd27d1853e0423938512fc816",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j22.json": "b98dd18fed2d2b97f43b984abd550d75a0b7784feeda8f2d980dd7a1cfcecb9e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j23.json": "6497f6de82a4f27643cae1bced5b173612a21184c235e1c2946855a6c2790c30",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j24.json": "d8aff6fb1266af52f01cfc315b1a308561a92d952c6e9fdf7ca4659d61c4e647",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j25.json": "248d8a5d5816af08ec184f0a1813233b9eccca1262187275ec4ee14499d3b3b4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j26.json": "74a27b74e7860dd69bf83ce37cde573a9240ae82e8ef38391c2fb280d708a020",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j27.json": "cf78ca31a731a7e42d9cbec586c9d1a44bae791a4179d8df7cb44cd32c700505",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j28.json": "99ea3f3a7650fc84797ed010338743c6b9dcfcbafc77cc1c077c8201bdbf335e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j29.json": "cf3fd20be6c2b60156c928cbb73f9fd3a9a19a9413b99e76c78b0198e8c8ea8b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j30.json": "15783dbba7b293ed90cb94b2d582db31801774167780c5dfa7ce01bfb9f95904",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j31.json": "7275d75b358b990a370adf4532ecff9cf509185d94b7a6b717beb86d48e79a9e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j32.json": "c5197a0b1e5ce1e50736392e465e149c98a160049e9ad03161e0e6b38aff9466",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j33.json": "f715e469d8e3ce115014339d9c50aa35ec9c97a28452e90650a63ea40f3399b6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m02_j34.json": "a9e227f9b74468bb065d3c0a61d1934bf664d3421a079348da55d6e7d93f13b1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j00.json": "3799f12b47348f315e859dbc5dcb7865d11faed5c4c16efa161e84b6ff3f1a58",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j01.json": "0811b98832dc1eecc45bdad0cf0e4ec8481642418652b0b12a3b7737137e1fb2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j02.json": "ec27087d428bdeee6c753530f6e0f81526f93a5f3563260e56af7ec830a118e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j03.json": "d36a711781e4784b636ce0fea0fead4dfd5ecd502543ed8d8a3a00c6877f7060",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j04.json": "70380a4d14686715d7e345c27d4c6e8762c29212fbcf53fde3365b610ed8907c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j05.json": "21e70bb8a621e7d739bc1399689d7446c4fb0c66bd6d5c35a90020886f1517ee",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j06.json": "09f971bff555c83255d2773a3b9a83205856047faabb0c06fe28bba7229c1c1b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j07.json": "cf61f097ed2c1dfbc194c72afefadfb2dfcbd950b208dfe0fac7b781d1b9008e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j08.json": "545508a819952cca971c4d52b5caa0d126b743243ffe4b018ab6036d6af7ea7d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j09.json": "151b5aee71b17c7559d5bb0315cac59414539e2d45d4f1f16b317d62ae83a657",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j10.json": "4b34c93de60eeefb9486a4e072e94421dd4b9768f271f4bb1a812ba3ee6e83c7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j11.json": "88f43427477a7308b3556dd4189034cac58ed81da14b820024c5b8b964b7c5b0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j12.json": "05db99ff6ee9c1e94350b0fbf1f00a37a5efb74cab64fb75fa393a3dabeba232",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j13.json": "e6f94a9a7a16b02d98fe4c298474a68e098efd1b71aa4c634f960d2aa588405b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j14.json": "45f42992e639333f87221ff643772cba7de87c0355cb96fabe67dcbbdc59e246",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j15.json": "de1bdf1b16ed237265e209383f74f8dcf8c9b2615676b41fb0dd3868f1f61cda",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j16.json": "28aa6804f14764f4c45dc8646691027f55b154a09f8a0e238c6766a90c471790",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j17.json": "418dec6fbb2e8a89d939990e2bc4e917246aaf1893325a08e10e45e053acbf8b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j18.json": "83180b01afe1eca1554ca7f7261dc9618a977dc01ba9f8af669a3a3bedb6e441",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j19.json": "336d07639c7ca9294a44299b31f1ea021c8b2b4f01a52a73f9df5f5d3b07153a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j20.json": "1d6c6881a4845b92ac8ac81ff863bc3a9e623cc18eb49c23e970b807d2a042a2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j21.json": "dc8235df5c81afd4c271c271f1ad45ca2583a62d4409313e6babe717594da3d8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j22.json": "d194f1b271609d5aa0f95dce88dcdfd20fb90e88500b9829159ece2ce8dd69e1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j23.json": "fc7b7155cef3378cc247659bfaaab9a8be1639db7a4ea618ad365b141cb8d2f7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j24.json": "c5fa84caa325497aea81119bb09c45e937154ecf3d7a6a13dc1fafca5126feea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j25.json": "a1055332a577e122d733032e354bab33cd15180accde85845d44c10c0e5f4954",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j26.json": "73a0bc99e26cda002690bf1377a5bc8cd49cd0c709a8005a5009e8466f61eb6e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j27.json": "4838d73f70e295b2959e4dc6fc51ef05ee567736f7c5f8983cd96eb23674fd43",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j28.json": "2c156d6be42ed14f33826bcb8c117e14c9da9aee48252fef03028a682db46564",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j29.json": "172b7f6291fa0152104397f92d7ed08d66ada2daf00d9fa9951e42df8b5fcd55",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j30.json": "55e7e6f0e126929208f2a8246b71f7abe146fc6ab0b92237d4335775d21e57f4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j31.json": "9e0ec8aa8a4d1b997b73962fc2d74d513a8f1cab5904f675e650e8914321e7df",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j32.json": "5a442d55837590ebdc68d3f57cbe91293abc6d4068ac4a551ba47c3fb232799b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j33.json": "1d4569832509b0da4c96d54e20489362fa137a61e26671339323aaec10ee4660",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m03_j34.json": "f5793c3d43f497d0d3e0709935b6885ff429c87d44a426d60241fdf8e53ed729",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j00.json": "3b3e5f3780b879b6387ede8a5bd7d2c81d5dcf2c8ae930837a19e1d536c6c09a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j01.json": "d6d1c6e8a28b9069c6f839167d271be26ddb2e29ca3497a5ecf68b83ae3103c0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j02.json": "c1b2b3716eb2a45127ba3d9f2030750ec74f7277ad36a1a15219bb43b0102f08",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j03.json": "0ba2bd54a26469ca2bf5f9e7e090070059fafccd9bbb68f0dfd41a0b580dd110",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j04.json": "adabad365ab6d9ebb5ab854b58cfa34b1d806cc2103ce8eb60cb9e035e387e56",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j05.json": "beda2b7a245747fc22344f2b7f3d3a06b615bbbdbd9861cc2ff9280370b02253",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j06.json": "d0272e49eaa083aa78f491917d2cc55d7898ff0489f3c54a285c2b3b2b55c026",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j07.json": "50fa6cafb7454a87a5ad43367621727c60ec739211e23b17ef3f5e042a9e648c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j08.json": "30105303ac4da519dbe0dcdb4b0cad198ab7289d2b8aa16503e40ac4f38c3ddf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j09.json": "b67621cb67742fdecc09f7bed2067603fc7a82571bdc7da1037ea43ccf843335",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j10.json": "c1eb8bd720e73768fc9b482a0d1426722ed8cd5b391705f5efa7953d7cc1b9ff",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j11.json": "eca86c25dcbac77fb207e3ef2bbf83d9d88449bb8712ec8eb6b6d72038c75863",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j12.json": "20fb95cab9b4161e7c2587dfa7e7099a5f2ee444e88c1f0ca67f5b7ea726dbc1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j13.json": "97a9881bb876768c54091fd074b52b37f3d90bf7d85aab7672dbd6d8e39da315",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j14.json": "0a0c642b852be3afcd90ea80078e2c35d4e02f0c1d44dab2c889e4db6426bc9c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j15.json": "20537233022df381c5dc70ff349652b670a46a36c064208becfb1f8d3e85c05f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j16.json": "32d9632b889266ef816b465cd42e20ab8730fe16b52bc260fe129212d9614c2e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j17.json": "81fec9a98e08e220e46dda38a6c763c9b74e8a1234cfd63cb5f179a1d21e1318",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j18.json": "29f6527899e391ba903495eb0dc921c6958e175f7effa8ac05493fc3dbb310f7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j19.json": "f9a3db6c5effd87baae7755be1a5f9fe902fb8831125fff64baf9fa5b1c2d422",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j20.json": "34bc1cb777150dc5ec6a4c3b050918ddd7d69f8a64282ce6de284b91ed2f2abe",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j21.json": "5098e09cd31212b257b1af3529533f8cd50c9b64dcdf2d2ffb5698c759b6d2e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j22.json": "ca25338bcee369c012aea77b5f45c3d6a66d6da240e4bf2ebf223ea3f15d9399",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j23.json": "5990e996b718e5f07a11149d6103df5f17870258173c722cecdbff583aa0f0a4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j24.json": "0d3756c3e10b589b0253726fc51490a95f5038edea7625d89b605fdaa9cbaf44",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j25.json": "4d6e0b840a0654a1ea668c3ca5f4279a3a73161372fff3e5430971bbb544bf18",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j26.json": "af0326439da6890827c4ee904847a84719076d925eb83e4dfa59e84422d49db9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j27.json": "8d70a35ea817dedd038ef6f839d3fa458be4f304345a739af73b7268bd80ea79",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j28.json": "da5aec871851978ed736de053fae02023e172835beb21e08acc63601f050412b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j29.json": "670ef3079be749ad3f7f167498e7b2b5b34c0545cd8b4227107dbf10887321c2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j30.json": "e7f5dae5cb6291aaad39eac08899042230e63b8d2a684524b84eeb9c7b43d37c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j31.json": "392f3ee3cc0786d3c1e6e8849b39ab4c519b2f4305dca121f60d5ffbb3b8079e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j32.json": "43b14b715a730171615068a7312f093b5bfbf74017643672af54e128099d15dd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j33.json": "143753df4631f388b49df8758b9f0dba4af753ec8e8b51a1a4f803cc7c2c1eaa",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m04_j34.json": "4373bdc9edc880440bd00612c81f2f0df15f2e10ad0b214781d70f64f8560755",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j00.json": "9b66e454f2db748b8ec2abbaa05d95868b73d2027cf526ec5404b69272b98b10",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j01.json": "7971c90131409a9b3ac4604a907533d3a06f139c0b8a9154fbfa1fd898fb0dea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j02.json": "102a0537904ecb6541dc76149a6270b061a7f3905e5c8d6957ea5ec3dc7c3c2d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j03.json": "02ce4ba11f95ff27b5808dd140b1e03bb661ec9edd12daef96c1616e71cc42de",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j04.json": "f56f625695c777a5ef5c7b23f8155c2415933fe10e06eabd67e28d518d3cb2cc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j05.json": "d5f3adadd9c0c14e760c9834c1c95fcea506a3d2b5660ee6aee4ac1e57115e61",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j06.json": "2a3bc0c83da75f9f1cc042cbcd72e3f48d44329c58cd0df13928f9c5b3bf033f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j07.json": "0da8a58c8ce7c4347476fb07fdac45bf561ca257a2d6022130f4e8dc816022ab",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j08.json": "34806f4fb0a9d8ee1d0dc96549d21461834c1be293882ea3bab69e7d0d4f9c67",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j09.json": "ee018085d2d98959ae230e8d306044052bd3fc41ff56c35d60e5413a327ce3e0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j10.json": "10dbdd986b5946605ed0349030be033ad77b665f82b0513e277d58aace9775fb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j11.json": "5243338af0e9b1c6be241cb8a28ea063ef4d17e3faeeed8bbed6139319c4ddef",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j12.json": "448c4816c239dafd2f89c73002cff4e413ab719abdedd56592487c4cf004a7a6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j13.json": "93c46b294210faf34eb8479ee24fee886d1a349bf784e7abe690b96aa31a5506",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j14.json": "914c347c78941f3b69c040e4ab2fc19f30cdb589b2354d289afc7549bbefb2ee",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j15.json": "3ac6522a41f90de1b55c007f42a293a3d613d1cee8a359c3ee93d6329870dc1c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j16.json": "3b7590eb57120b82e2335bfe7778501143240496c922a83cfa58a17eedb0de95",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j17.json": "bc20a9ce6a04e30147b22501603da5bc7a5e871eff68e9ded89468b795a34c73",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j18.json": "4567ea6974a73d09b6dfe53539e272c5bae16484ab7dbfeac86fc8e6b2e0ce76",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j19.json": "596c620bd0fe48f44fdf376cc6d9baf38d7dfa9dad39ca35d2aaf9072949efc1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j20.json": "db593df8d64399a12ec4286c9704ef171be6cc6f123c8aa80c5f18620c10f93b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j21.json": "b62cece57b5890e7aaa1ccabf1b4547ecfaf507ca11a5bd3baab658ccf0edb94",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j22.json": "1c9d32057bbcb9f40cc75b710ffe91de3a645639fce454e8e66f97570386ec5f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j23.json": "578df1fd59472ccda2d2ee1684f3012feecf0e1a958841e20e28a24ac4ce1823",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j24.json": "4e1c3407e6c9907f6f2145afed1405e7900ff404525937d8c3679b5d7fce9186",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j25.json": "d4a9475710a29f5f25db9c512198714ad423d477cf696a48bf3632841a898295",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j26.json": "4a895f8b143c00ce77b5a820d7fdfbc5eff15bc9de02ae2ce8a87932eb904721",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j27.json": "03789be15cadc2188456309eeb9d8176ca988fba13b106e126bc9f235bf57214",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j28.json": "abd0186f4be6e0b6ac5a34cb1567752e8f897ad6fd0a2c6c7217c9fe28dab8a7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j29.json": "ed7aa70d45c2398b535594445e94a7009d6d962007fe1eae9688a06fb2a639ae",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j30.json": "047d40a000585fc931fcd2dad4962ee85d4fb97d373745c9258580c6eb8a3e71",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j31.json": "cb823058b963fdbc5aa8e087d59d5207c8d8fe18a1e2688d0b814b62d12d47fe",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j32.json": "1d4e412575f15166f75bb7fb1dafb14b23bcebeab48fc22211978b65d793d3a3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j33.json": "207687fc9f03c24c326fce8fdd09d9d6877a066a084d5195b85c25cc942aefea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m05_j34.json": "789963d2ce1ba33e24df4ada6a545a89f6263c45e2848dfd0881adfc39fb4743",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j00.json": "c33f9e4afe373b1ce58ac44645ec5e4da208292739c7ff2c501b8cf81799607f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j01.json": "9021adefd353134c4e84f3e2f4f48e9d574d12724847fe9b23c8a10f9e59d4ee",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j02.json": "e368280cd86025bd5222b33c0aecf93af96ca170ebdcba75b8c82f1c42152875",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j03.json": "881d42a3699bd1261fdbc240a16036e56b82d2dcbbcc5598bc40f5fadf8bef58",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j04.json": "ab033c7b73ebd2cb6dc31aee36b0e80e9da8633e1933f19a3a3a52ed3e7e1448",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j05.json": "3501c5ca78584e69992e0815d8864944218f612c0a9e81d419a9ac28417e0088",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j06.json": "aef13e34ec03d6a93ab6cb8d8ebd9ada21aa25bde86e7df51f02e4bd6a21c6fc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j07.json": "7435a1c4ba6f89c89c63e5c70992e372f42433aa0f0ec864064aede0b9167769",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j08.json": "793f276548ff3224a1a44e06e80c6ba0caba9c7b42e4e2471ad52c2584644685",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j09.json": "05479b5bbc2f7c98d37d0b82dc9a956ae75ea572340a03e24928bee8aa0a25b1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j10.json": "13cbfd2d1d45d2701674f39c9a62009b1cb0f7e66b2e8d635ea05999dca37e0d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j11.json": "238f69c4ed9386338a8010fa7eb1c99515ac52372a96da0211b2128b937eaf6b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j12.json": "006ed461f1e6f0b7cad582b83315ce804a1758c3baee8b73c96b87ca57086760",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j13.json": "cb07183494399c435c919cad81733052bdbb066f06ebece8810f5f8b323a8082",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j14.json": "70d01a7f262449e7e438a49c120cf1790dfe89b41408ff9941e525641271eec5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j15.json": "2a951f2cc63328fa15ca146861e8cdf504505d9f223f05c8761aa5d195ecbae8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j16.json": "ecda40c9abfcd42e822484f02cf728190c218fcc7d49d5ff927a9380b8565f32",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j17.json": "2d720004b399f15f4b7021cd1c0c1bd5e423981fc65cc8763161e1f12e6a9b74",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j18.json": "ca65e8c908c3d7ed55bffa1fd92f22f9ec8447ed090181c26e17e83149d317f2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j19.json": "18f3b7a0d548c025e7d616b92453e19e95fedf05b69a3907d9717787efd2e144",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j20.json": "598cbafc73e8cf2ef8322a1b8b3519b8ed83897edd1b2fdcc6c884975681be5d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j21.json": "b50283c3093c7f05ccc77a3dbc0660e421fdef7a3c3606f2b54792cce4e01c9f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j22.json": "09fe021a3d00b959c1941bba38669835d4fa0b7dd826f05c38dfb7675493a32e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j23.json": "7c58646f534f2fae982de2657d211b2613054044b61841c835814011f7c63d5d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j24.json": "0ce9a8f505c6533a73c9d9a78dd448c46e0387641209a2e861eb4be8ab794363",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j25.json": "c8eb860f5a51013045354cc52f951557b2ee52741853f8a7750fa58b3263df32",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j26.json": "88e5a5817a07060334420bfb9b115e9489d660ad9b2b88acaf50ac1ac739c241",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j27.json": "270eac7568bbb796b03c945b43e7d807304af93da665aa2442d7387934ad9f67",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j28.json": "ca10955575b1c95c6c325edd0522002f489b092b6b2a09704e2fdb74587e5955",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j29.json": "d760f5e3b141bda172af4533607717459a51aba982a1885553afb42c67719f77",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j30.json": "d3d54144b7055b34612e7aa288951d286ed534ce4632cd93b65ad4c3a31eaabd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j31.json": "e9d277c1c112a8005ff9ecdb057051bb2f7488a2bb235b3ce2c13829d4c4a068",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j32.json": "4ea634a74766af166fe4c27cc4fec2fb7524d0625bf5cf9814065cd49f11103f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j33.json": "69f50fe5f820e62f0ef50a0de1823996745ddaccb58f1b8f2c98928f2286240e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m06_j34.json": "be1f51680a6b0b69dc1a32ce84d09a9372b6999ed5e17fa0a192b2248deaf962",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j00.json": "eb1d362875c2f5ce9ee4905f0d0eb71cb10bc83de736d4c4cea91fc752a73960",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j01.json": "85768c16da4f4e950745ff7760f39776e566fd5d6cfcf02d4abd431ddc2f8d2c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j02.json": "745ff5bdcbe11d4344b4dad749875777048e9fd542bfc1a585271720fd50074a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j03.json": "3fc857a1515d3a6be20ca295c52dee3fe35a45dece0f03c296339e9af7196748",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j04.json": "c3b05b73421370039691aa6c8b7a35302bbeae9f362a5d1c462be3f35d1b373a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j05.json": "59fa00b3dec3dfbbad289744b5ab397d4c8345d7426ee709742fad3d4261d693",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j06.json": "4f76e75d357f4db7c05eb62ef5cd20dad057e03728fefefcf4080fe5bfaba1b6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j07.json": "af648fcf62da6a8af78b63ed2fa6a16bfcddbb8bdf90fa3b4535c07220ceb06c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j08.json": "8ba41c406302e5fc90368f78eb25d3ff79cff8e17b3dd76265d1e06e648bad1e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j09.json": "81986359c945052067ed6898bbe31c08f451891b4aed499ede14afe1042e815a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j10.json": "66e8fe49649a9af356469b755129a4f23f7f525783a91e759a88c35d1005ed1f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j11.json": "c46826adb618936867f7c3ca6c3f21d3e28bcbe3324e408919b2f34987e8b24c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j12.json": "e9490031157dc6ba28d6f67ca169d26ed84530294e5997ffafb9b3ff1c983160",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j13.json": "ced8deb274a901d408241d70f667956de149efdf6bbda4705acf1255e2e2978e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j14.json": "30e1130c0bff870ad2cdc9fed2e20876f5ae1fb9884b953cb4235f2d853d29d1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j15.json": "f1ac22aa6241fe3c081d4a3fe0914b1eacb81388f71d4af8ca11e4f593119335",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j16.json": "b08a157068e400bf02267ad83a41c947ade4c4e4e64c06aebb758ebfa72dd7ff",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j17.json": "00b600b342960c7a1dad471207538f84a18358a80d4e11c3a618b0481c36e3da",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j18.json": "617fb39a05353087933fefd1c64fc9eebdc902adf8db58c6c1f74c0a1fb827eb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j19.json": "97669c43fb73b85d07f15335d5379883eda5d29c8f369ce1bfe76f331a4f6da6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j20.json": "d13f1ee472ea5c8bdc0cc764c06e549a55a54796d1b4febb1825cfbc90b00e81",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j21.json": "8cda9f7e0ed66776011eb8d0388a6b9e43a29530fa94a8039716fc7704aa5dae",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j22.json": "15c3a4946426c4c29b3fab60b196bf90656f2f4ebac17bb8dcf5e9904f1009b5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j23.json": "ebbc920067950b16b4cce9ebc59bc0e61aff60edb8f0fba956f8cb2ebab315af",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j24.json": "0350517444f62d2e2098aa3b05b3614e637e06e7de6e5a83e6da212447301397",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j25.json": "fd1e347f13d646ae23f49bbcd81739ffa84ef7bd3c5a7fbc50b25f518026fe52",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j26.json": "ce301ee096396d81891e39c4f23ec03ea991632f2824f90d52cbb6ab432a0247",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j27.json": "3d02e93627c42307706daab988b1269275d0f10e3affe7ef83dd63f95175a369",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j28.json": "431d2bbc97cfdc7ca6ddf0ce5c2d166fa6cf3f7a34453c83553df02692ab95f8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j29.json": "ca527d0b0ef82c6952df9b1aa4608503f6f689624f280121146efb077a978c30",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j30.json": "71266be782981d0c3ac76edf188e053c3bca394af314985ebce699f72ddda396",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j31.json": "027d78e4d67004b6948e0eb09a1039d5b695f26a942925d70c5072604a776ef2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j32.json": "40c92d40a628e81bd8fc09f1d69c6df79302a143dfa44926afcecf5b23bf3000",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j33.json": "dd46b21c3b19990b00624b1093a100a3e6252469e97b87a803eec1e1544bb17a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m07_j34.json": "246da778a797ab27e546f82734ad0e8c75cfe13175237bdbbbac2be718ce0cd3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j00.json": "ca8cb4ba7538400851f943dc64be66bb6e02b0224f582fcb24c4d8034317bde7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j01.json": "9d1f5eb6f32931f6fd84df086859adf229b0a5b3890fa929dff5d9d728da6b3c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j02.json": "a86bfb937a9e0006bad0773c08d085f86e3758f95a99403afd9cac0acbebb261",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j03.json": "04afb5cf445ce4b244004505ba3b50feff47b2ccd18c8280998c421579b59d31",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j04.json": "ceef63546938fd55594e4b603e84aef4c96b623fd184ca4c383d9160907319d0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j05.json": "56f286180a8a0d6b73d5dcd7236e5610ea35e7b184d6a45ebbd33ac40163103b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j06.json": "d1b25de4d2e96e9b134dc6561bd9edfaf0ec58f8f475df61f5a60790c58a923a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j07.json": "ef8fa4886c6765c7fb3a3af4f1b076ffb53176f43ef71539fc1f357ea498be89",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j08.json": "6c5429da43af496db590b2c86aad5a3d9ea936a45b128e74a52b27d0293153c4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j09.json": "fcf0312e139f1a1b1d6ced02f35b31e77dec460829ad30588eb330c98fb4dc32",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j10.json": "0fc1a22def2652c91a45b19227af25762a26f36aaeff4003fd02a6295af38707",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j11.json": "16bb84876a747c11b0bdd9cf33f79cb38e76f9581dfb47924d5f665c4e2e18ec",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j12.json": "8107b8d963c008eda73806a4c1b377e80020fd37c74a70c47eff4d36efc82bca",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j13.json": "7b39dea71f1ed314c859e937eee2c93cb7c78a0ab27e44084ab90eca6362c63c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j14.json": "1f8cce7ad2cb1247a7b6d9c557e4aaa1682ccf5cba49cf15bb4d4db5b9449526",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j15.json": "02c46cae3133e6324f54759ab983a3718173a745465934b47560c40ecc26b0db",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j16.json": "5648e8c3e0afb1175fcf5f183e6ea6242e3140bd0c99c6ebe935ee5696b8788d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j17.json": "c3f125bfdcd3cd2eebed4e52f7bef68f532b168d1f5c1bb188e8747ca42d7fea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j18.json": "f1ba1d8170ee18f5f632ce08f739153fc54332713104f2cd47e20e846a148d2a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j19.json": "db8641959891bbf49a1db968f063e909348c7564408ce1f16f19ae29730969e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j20.json": "b123f54100e41079c160a896e3f96d8118d60ddce071be5f1e8c819d994bcad7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j21.json": "9336678c71187f676ae7d00c48ee29172256d0964368343ef1e348903c31cdb4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j22.json": "0d80e046bbf8bdd900653062c6a8319ae1f0cbfa949451c5e7fd13baef297d17",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j23.json": "fddc7bdc23ca54e106b5b6c93038950658e448c37d019f7072906f7b031fe8f4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j24.json": "396ccefb8c4533a9c24e9df26cbebe8b7c2da9cd90377e98bffe3e97500f6c1d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j25.json": "2c1a0de127f6d38b1938d93f0cf97de4d3225e204979b3071174d4c05158361c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j26.json": "2fce58577dc0201ba6a38f38f429d0e5c2f5b19a1cb063262f708ea7c5025d14",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j27.json": "40a2946617f69b0a751e6287809235c130e2da96704f8efeed17218d147bd57f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j28.json": "7b0fe2b4ef446108a8ea2428cecfe8e260e4ce81c96c5fd4f8bb51a66d321e2f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j29.json": "e0d8be942d0adf387432fc35918aeb5cdc286c058e8ca111b053b9d8049cb065",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j30.json": "6b93ae0093ad3f8b8fa088456f89bec5d5ea7d55e245ae8f8c8fff61e1ee3cb7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j31.json": "fb91f814427d9fd73f9e979ce20bb3cfe45b960a6e882e84c6adfd04e1f7263d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j32.json": "374ab9506c73ea39c09c8576923fef83ba1517dc9d82e3b9ceb6cc1fd799b136",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j33.json": "4831ab27e2a1b4ab85fccf7c624cc6c8ec3d700b5784ff58d78ac8814771ccfc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m08_j34.json": "21e49811306d32652228bb80728428480139098e3c481bdc197ca72a5e76a684",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j00.json": "a2ce2194654300080856bc2148ad2b5017bbedb609d1c1042858ad40e881fe2f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j01.json": "d4efd0144b98970337bd89a39db19d37879d12a63cc84bfb3735caedf0b1c947",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j02.json": "5b305a2e5237a07a5269de85792f72e5ce8ada588b5900104c94897e6e524ee3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j03.json": "2f811c4a08120cc4906cae44e7e7abc5ef6a679ceabd3a493f2d44315f0b16f1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j04.json": "e8db86829396b505bb85a02dcad4eb5458dec9b3044fd20b881f582979eed55c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j05.json": "83087c82017eab994995c94507e1a7edd2701a024e9a957fd966b7b5433d6d86",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j06.json": "420b24e2e638a7758dd142bb65903f3105f1417db4e718ee5b1c9778cdd5fc84",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j07.json": "4d0a5d908b065cd894efae33223810b225bb9d5011807b3fc4937b396e89a836",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j08.json": "bd1ff2159d9aca35020e6ccbd02937772fb74b8c87bfb7c7f40991ecb9a0166f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j09.json": "a9434f471c1d2e9a93dc86d9de1c38e0e0229a3fd8befe706e8bfa57f99efefb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j10.json": "347279777d1a72d9baf9f259f59d380dc764285c9f024d8bbf29d9a762ee3964",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j11.json": "f6b45f2e44551cc8e6a25466acd1e0a5d369cfc972e615ee2f8d527ad29cd604",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j12.json": "4d850d0f2ca153e94e563312ee9a701288be3697733cc9f431adb1ae067f152f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j13.json": "c2ec527f78a58290881d64c75917af76fa0a4b07ef4b6d9f11675e1a3d8051e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j14.json": "a192ea1de48f26d7b770f99abf323f27a73ddb4ea57ebaac458a5a7cf48d26e0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j15.json": "874b1083361624990dee1e40c72fed3a465d93f2421f81da599bf9458b59f284",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j16.json": "75906fb627c9573fd687edd9ed358f0bd99cf3229a922721f41f98a10d6f8323",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j17.json": "c66ace20ae77ed601f2a32488c7337f7126f972730094fb701a93745de34cf38",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j18.json": "9e7d8e111195bee40a20f719f82ec70828dda90c1d2ff865af650ae889c5e651",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j19.json": "0bab2182c16fbb5c9aecf98c4633fedf80704c1f63567c34fdde1b16d090ce0b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j20.json": "cdfd4d0258c63cb1e2afa68aae5644e935ae74d8598ae18191786ebff3b84038",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j21.json": "9c2ca4f126578612c8fc4442b563f3e722192907e49187bffd35a20d6bc29b52",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j22.json": "e82a9dd752104687f2ed70d032efce5044a0243420b50409c3a3759b499eb64a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j23.json": "4660fa0b18d4c20de5ef08d049356cbacf949395b6a905fa2bc89807aec52420",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j24.json": "230deb88fb14fe6e81cac8b992be2cc0409082d7f906f97dbffe4d6b461ccb80",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j25.json": "cd0eccf41fdb428ebf47b7d1b40974e2b3866c1bb40d84df6f900856877ab820",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j26.json": "213b3b3fe7532a79ff8e6f24fce983f7f51f4c5e4d6992a5ac989311dd3202f0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j27.json": "a6e40c6ce76c99ec1b62cd7f068d1f95aab6647a76c00e711802412d9cd448dd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j28.json": "5a9fec67002acaa7e98994062d40b7660a79a245abbecf5fa8a64bbf1837c4bc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j29.json": "34b9cf64fb10978382b10a59e10ac3dfda88a098ef300cd6d49ae7a1d3157b4b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j30.json": "3fb5f3257143361bb5d8acae43ec84165ad70aa6d6cef7064c25fdfa3a93bbc5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j31.json": "a7a87a53ecf87150d1b19017f22b4b204c6f479483590c61cb2b569991649d51",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j32.json": "6e2d1c92c306e466ff3859f76fd7be0c4a0d3e9e12c298fc7455939581dc081c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j33.json": "2c38cb939c1c46e07c35e5de7d17d973c919c46b83aba33ce94431227e9e199c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p0_m09_j34.json": "4ad8bc820612a074e480c585c4020425a86599d4c332c75dabe7fdcef43786e5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j00.json": "905d9138629f029d8e058affefb0919134e126211213a87e07fc8c6b8bcd13ad",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j01.json": "87a2a5cd8a3a1abde50826d5c45036cb25061629307e5433d504d914abf287f9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j02.json": "5dd7b2b3ecce13692140d6af7f6d18e19863a24d8941f02b8826371dce081ff3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j03.json": "25e2e3351426f0246ff5659cfb5058b30d27542c7dcd343392a6764854521b43",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j04.json": "76085ddfa377146b2463b0ab44c66f8ad69ef1be9ba545bd4b075f5ae6907059",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j05.json": "588e9e3fc91d5fb55f5a28dc12eb24f76a04e5b7bcade87d8771c8f5a04c474f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j06.json": "9d690f4bcfaedb10e80d773560431b7836a52d9444d6b882de1618ce044a1165",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j07.json": "abba787943bc4b0057e82e9991ab42844765a30ce0f2ce5629ea9f682e64b924",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j08.json": "fabf42a54e25b93b83e80bdc17cb4111f279cf7b36edc541f7f97ab4f471b832",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j09.json": "03e97d388244a80cdbb9994c853e6fa6f90458c12708c8de5e06c5731d8aa244",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j10.json": "14a26d5850c6c1e1fa7adee124f8468e4b55112ff70b9cadd42676c5ba4d1462",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j11.json": "dbd4807709d8ec7034c853af2646750289ae22e9ad888088393658c056ae53a3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j12.json": "760ad85ab7b2e3b4084b8449c2a8eccbc644ef58945979fab1fac2e9ac7858a8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j13.json": "da4e16b31803c80d920ecbf0bc336727774b18d7293bc4aabf3d834a2746092e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j14.json": "fcf8975e24e12616298ebc12ebfdeac9767fdbf4a9b02fdd38db90f93e5eecbc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j15.json": "306806734eaaedd2a0236f5db96f5a5f61b6ef2b672168c81cfb0188625c5000",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j16.json": "22ebf9bfcf40a8d257324327e4cefbd96c4769d0b4c74ac9cd9340819e7f58b3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j17.json": "bfa8a8299dedc51670f50f178dcf437673bfc2ceb98a7ab6ff35cd32b370c763",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j18.json": "72f9531f1a1af8ef11d95739f7b79801903162e8e372f9f3f86d2f340fa65a3c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j19.json": "d329cf2d334259ec997015b5220268cb516729bee384738b351ab124dcdb4b7e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j20.json": "35414bc9bc6d4f6ce10771a35f92041860ea856282c462475cf7b2ceb47f5833",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j21.json": "9c6e9a5ddd48289ecfca1ce59830d220a3bcb67b4234e19d634e9b5efcfc7296",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j22.json": "1137f249b8eecca39d3dbca5ad55401a5fea8187d1d9438d22ab7c75ae977b89",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j23.json": "2cb924e29236a46a8b30865fb55a50959f7fbad487c65b29f6fe5f398ffb5b05",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j24.json": "0c3f56a482c174e6ffa74fd67fb9a4e5fcd7f21c9299cc42cab73f3bb295eb88",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j25.json": "94fab3f466fd02d9c9ce5864bd3ab9623873ff76484db5d78d2f1ed34db4b95e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j26.json": "88563a07b79b2112ba1dd5543cbdbd12c97440cc3731cd24e513e89a478ce4ba",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j27.json": "051b78ba37decb85b574c06c72573e823d2875c474831f7a168fcc86fc45cac4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j28.json": "a924e1e2907fd7fde4bd23f7d2c4bc4a6c1784be6b5ec16faa355b4048b9bfa0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j29.json": "2bb085e5869f65a1c30eb354d79ebfcbe2c58ab14160d7c05ddc01ac3482fd0b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j30.json": "772614478f67230ede031c751368459df66b1c6e8e64d0b08d1a8cf8d6e10907",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j31.json": "98a8179da682c6b38b8e604fb6cd280a75da33820db7c01fcfdeaea6977940e5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j32.json": "6078f058c69ad1aad7ddc85d9c1c7d39eca90b6656a84ee839f654f064d9c29f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j33.json": "dc14d848935b9edb07500a5b1e61afb8a3ebe5e321415d59718266e70006a49b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m00_j34.json": "931bd0a312c35986157166c8d47c4d08b813ee514432de4248311e9ee22104d6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j00.json": "cb93a95e3296249f7e8936f4bd624d61bb9843411bc7c077dacc3fe187d62b0a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j01.json": "96fc03e5fe49365872170bf9f3d5ae0b13c2641fb708257036fe14210c4eef75",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j02.json": "3e4ba1299e56fea6439773bce6f5164cabd7f61bc62a003c2c37261c3a7a1d22",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j03.json": "9e9c568f6d7792564f7ae108702a10046c18e4ab049af0dcfd53ee91061a2ecf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j04.json": "5c6265bfb9dd497424b26f88b37dc710897ebbc91043aa0db36bd4763856c666",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j05.json": "3725cbde65d94b5909b879e8183e55d0aed23563f7d1a878618905f1c004d90d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j06.json": "ce437cac81b9b596e08e6e84f3279d5d60dff21000b5b5799c6b3b4413445df6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j07.json": "2300562870ea65258fa50b721030b6071179d1d94c75a8d49d58acb11d53a494",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j08.json": "18538378c8398d5743b9a3942a8e5e15b576f292ae96326e98853d750d511d06",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j09.json": "f1e29e3bd6149904cf6b67fbbd0d154c5be951d3587b071a0dd45c5117cdb107",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j10.json": "68d955a89ca049f837a0f9a47ca56120787e9ba0781d7e6f1433e6250dba0859",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j11.json": "44c05b29e7b33e6acc4150be06ba0545ae6a4f8269b0ed32d24767e1b709ffee",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j12.json": "fdb7e701ae6fa137751ad5a75bcd7fdcda10e82498399a72d4c395eb36ce15a0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j13.json": "a2674170371015fdc321113ba399e602e15bcef881931789801129f0b4f48fe2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j14.json": "850fc3d96753a9a9fba6f93ca5f64b50a693f3d24b33f573e146a5900ed6030e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j15.json": "cd7c2c89c22e247cc31e85df7af8952acd2244c42ec8296caf6d3096a4e21c47",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j16.json": "2bda86bd501efa2867c69b950c65cb82e43bc0e48ccb6e22757d25649d129735",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j17.json": "17e97c28ede3e079006b44a3cabd4341a29972b1a402ecf8cf45bae2b1a12941",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j18.json": "f71c8341e9a27b5bda0bc4f506c199524edf73e64ba0adb9c2c5d2092510e230",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j19.json": "f55da592b01eea6e3075062d1b70d6d995712045d50e73f446fcf5939379685c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j20.json": "eba9c210db7171cf74363590267c3c572f03a58595baf87f6b6af7f1fcaac419",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j21.json": "dab2a7af828263fb43c6ffa462a3f47eb08f3f34a9153e15ed7b39620ec596c0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j22.json": "53ffd3a9305016ab5b20497433922f24208218931646878177770489fde194d0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j23.json": "fb4daca16f76581c7848eae33a8b67b860cdd7151008efd7b9107ecaf939f6dc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j24.json": "0a65720aa518e8833abb02f172f0e34ff6f13fe168ec53b15566ecc4aa9f5fd4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j25.json": "990dec45d521dc872af1733017069212f819696e1bce6c9918d79442bca92f20",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j26.json": "eeda9187ed3178c48468356717f4947dc5903587279ae930d7931cac3feb759b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j27.json": "ef729500b1596a39245eed37fbfe306927b20db8696bea7a3b373ac0359b02de",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j28.json": "f291eebd1e000b7c562b53cd6428766d093a012a95779b9aede0fd24cae41038",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j29.json": "dc63358450a04398786ee36dfa1809adfc889c676d240b21a317713f929ffaec",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j30.json": "cebf2c057fd11981e89f8b708d95d0ceb1dc3366dbe99aa652266d32438d7bb2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j31.json": "863cf39e191228e3e808d9f20d9b77d5ba8f3b234e6090b8a1e245e6fa5ddb8f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j32.json": "8f129a6eefc2e92be7513c87fdc04836ac3fb945c96f9f7c51a3a43b640b1ec8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j33.json": "15fa9931dd4a17c83ec5d1df9b83827fac6b862260dc1539dad4482cef2fe179",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m01_j34.json": "da6a6a3cfdb54c1e8acd5a8e3d3e75d0750ed9cd5970a8939febfa1750c0f710",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j00.json": "59ce1cbe118872d2c4d3f141f5824f70bec9abdea4a62caab07bb268b0bb3a05",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j01.json": "93bb408efe4174e0cdeb3274d28c2ccfaa3cfb40c1c2e7c5fda16735d9db0581",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j02.json": "0e36bc90f909997692fa97ccf22780ea4d3e5486c5cf58917e2c716247edb778",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j03.json": "0bdfb0ce392b7f1e3fa619d40e713cea28355640fbf41809debd07555f4fa912",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j04.json": "e9e1a38d43905e008326de1324f9eae943b3ee6c69494cc6640cce0db0a20b8b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j05.json": "65b2f5d960b03595a9660f87052c73f493648cda9620cd6eb3dccc3d12b088e3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j06.json": "37605d485b322961e73246cb9f86dbf38b1bb26f6c52fb92909e216183b6a767",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j07.json": "6b3a93509c16f1302fc61611fecbed41bb23819f2b59226517de54a13f1744d1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j08.json": "828b07fecc444592c61bd425fe4355ec847ea37d5e4de1f8cafcfe11dad3f68c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j09.json": "86f93a7c6537287a66a76bd9e3edaf7f471c16b7f34f96d299f48d29eeba3ff4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j10.json": "2f9c78b14a253552270583e8ddb1c7ca4c83293ca7a866e6a51b19c8973484a6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j11.json": "a10c570d4aab2db4f1793eef775ecd37c493915ce6420625fb4f0ae86a345f15",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j12.json": "0f3471673cf907304c34f6db64d9ea4077ee771ba6b546c5b61f5e05dbbb70f5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j13.json": "6352bae05687f9fee02ac4cf69691fb6038eab9cca83b0dc657ab35a5e7690a6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j14.json": "a79335520febe94a9af2829e982a459752b33b042e294a9276f183e1d7a22d4f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j15.json": "f4a75f5d54d1e44ae75506d650f6e442047e2d1399d4eade01b974e89fa1c5b1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j16.json": "279118c73d9663d8aa714548d316c028872176556539fc1ffecbcdb842115bcf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j17.json": "9d6328a37372abcc8ee7b66bc0a0184fd17a8f56d5fdb870449ee996f72a20bc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j18.json": "586d98b9eb7d2523eb3fe2ae72dcda2fd41750619c80efa973f5819d30988cb3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j19.json": "dc23c9929f5c14c171ccdc8bd2e667f81da4518fe36d80668451b371989d4477",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j20.json": "e98c778686dc633231cc1e8b503105aa5eb358385cdbd2bd70fd8fc3da85cd00",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j21.json": "50785c878be347ec471388abc8a6dd567a7163a0b176e54d1a70df6aa23a32f1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j22.json": "8428728138316ae87ba8dbefb7309a53c25aeb8cb0fb463bad2a30cf9fee7eb1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j23.json": "9d64b3de5ea0cd94b765002c7bb211df5f290bb02fb9aeda37c2bf5523732a5c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j24.json": "4a3072e99814ca79c41407afc98f1e2206078197163a4c099f81c12fad1d20db",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j25.json": "1341c75eb33d5ad5c0d9e59f988b81a136138382a82f1319c85e4dceaf7487c6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j26.json": "4a353234b69c8ef86a0f7877b12116db8f00fd0343f2dd83cb695d0cc2c55954",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j27.json": "261746dd6d2dcf65c2538717101974fe219f32eeeb0dd2cb725a46a581447b66",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j28.json": "5578371ac980582a49d94002a635bdd58c6172c17139d7cf4ae811eb037109e4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j29.json": "c7a770f723ad0a64a63c873edff75094810c286a445cfbc778a497c0b5da1fa5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j30.json": "b3c7054871816ef8803d5e6631ad018032271ea8d23931b45b990bfdfac664b4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j31.json": "1e31266da272f1cb4af950f0d5ca2c242b0e7d9be273c2040d75365f9c7498f5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j32.json": "ba0a05a82f920ff061455ad5baee4f86ce641069904735afcd1ff03948b0e255",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j33.json": "7e57b9daf38477ed2e807aeb876f04fcbb531571724fd6b80e2637b93812da38",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m02_j34.json": "d7077ea1402a21ffb634f114551e117e1544fdf90581e506cd8151e85db92213",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j00.json": "3d4687dbf8097323b9727fabaaf5be16f3e2d5a81fb95b9958c977c8f61f0f42",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j01.json": "8cccc844a62251aa4ebdc3e4ba21cba655dbab3b0c04f9c655d05234ebdcd537",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j02.json": "8c070eebaaea860af5733bdc713547033a367b41eaa3a06a7c18f2e9e5ec4496",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j03.json": "1935d378965f2b43c6af446c3a060b731a5598b581d33d8a8cccb396d95a12e2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j04.json": "a2255ddcce6bf89b0617ae18f7fa6dba155aedc5500134ab4df121dca40497d4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j05.json": "f4a14c90b6af6092927c448da4b8f42d72d200ac393c2fd3c3f2594f90acfdf9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j06.json": "e93a7a75ea4c9509d00e7e8bffbbd3fe2d11b198328ebba835ae9dc59677b490",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j07.json": "992dcf00f6aa78534559fc5e823944b6f24979cd10b23597662878900c06a617",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j08.json": "ca3800b1344ff10470045e3af4956612dd87fd3e0c523b553344e1857265000b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j09.json": "fd53c3cb26e559a86f1c0440443cfcfabbd514404da168ab37b7d351c01207d9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j10.json": "f54325961e83a57512a0a42fb6cf2bd3d89f8a2bcc6c40f668718fa9175d6ace",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j11.json": "e243f0b8ff18e10c059bd20f410685c95948eabfc87dbf7003db0ffb36a489c6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j12.json": "06e63755d543fd20037daf5c0cd892719ac627af067c2c60132767f253897032",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j13.json": "36c9fbad57d3e8f5758569859cb402bf2b980231b3fb18ddf09f2e2fb3ea5c45",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j14.json": "2a5c80b7ca6510175b5512ce968e30a55ad6cf805748f81e68ab206cb49dd975",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j15.json": "bb13ccaceb61270ac27e3714e8afb47b6118592b2d8a4ca9b10103bb6338f71f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j16.json": "ef3d4559e9d0b93e1a2213f77d740c205bfbc260df81b00c7ecae29d088d3b29",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j17.json": "a65a1e3ef6571433373d2546ceeaca6f401a98d077848357f3ab87db167d5dc0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j18.json": "3e09844c10e857ff829038be0fb6e463d72ff3dba7495c6d7366cb9f25b51f8d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j19.json": "014bd6621c11ff6aac0ed6072d1aea21bddb49cb3a93368ddcd5eff6e023eb29",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j20.json": "c899d8d205057deaafca4d90a296b4dfbade59175119d4fb2e727dc0c1961bf1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j21.json": "a4529701e094db30e8ff51206da926e86cef5613a4b36ebae46a1516ba7d84e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j22.json": "5f34c4a3641bf3bfaf3b8abe161a6c2eb055b7c8ab9d5f3e018adf44c6a23a65",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j23.json": "fcbd5f0238d1b2c64d94afbb48a76b1cb05a3d4d455b53dc5dcacd81def96a48",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j24.json": "b64b8329d3bf2ff1b288f875ec9026f23f087129ac48300bb854a77158c79bd3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j25.json": "654f0e37038dd430b88917435331b265e1a44e4b57d35cc608a869bee86691de",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j26.json": "f9e462238fc9c28cc37bedc0022b0de5a6d66a910d3a5895ca73820fa676c1e3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j27.json": "b94d424070c539a86f1392dbb561ee0aa5d8d951e7dc47e2e3ab3afc95da97e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j28.json": "f0adb89f4fb940934e585588ac2d084458f146b33fa878ce2ae9a0e7a8964935",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j29.json": "744461fde52859874f589de7ac0d28c4b6bcbef346e83a507b746e7f3f1e040c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j30.json": "319a3005162961427444b9bac734ba3642cf99f77daa56a0008a1c06b6ea2c49",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j31.json": "b9cf9125dcaef89f1600dae574a0f59023ca9f3d9985d4e2321337670085542c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j32.json": "ace6a0861f71a3332df4147243cd94865ec7a231b97c6dce0a2031afa4e3ab73",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j33.json": "24ae634dd36df15596905c58cd6550b342cbfd9b5433514250a072a0c949897f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m03_j34.json": "41d29911ce6824c657ac1ced1e50f2d5c6db6829bcdd6934c78af6112df0b623",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j00.json": "96bfee74e0f4a47a9750b845fbdc400e66eb8536fa93dfd6ac2ba77ab4d4a75a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j01.json": "d893274da6c652a2caecf2f5d5b3e344669735ae700be4770ff860193d379bef",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j02.json": "f4c53ff4b7e4b354610b1e6758b06b5a936f290429f5324b892378c9df0ad309",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j03.json": "a09511df3b0423a0467f3a47cd805a8519eb89164136f3f97183598308c4ec13",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j04.json": "d28f4173ef98d8d486001465ecba5a9d50990636a4994b36c940b5de9d9e7039",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j05.json": "4dd03a2af597756f04a5000867233db8b417492eee57eb6747b9c23a1081e3fc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j06.json": "3f7952f21a06c9faed76f7c17967b41066eb364166ef8628d5a092904c3a1586",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j07.json": "ef1db7c36401b999ca620d907baf0cf6d077c7bf674256e2f560fa2ea329ab75",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j08.json": "c1bc644ea6c3619e908fb58ccd90f859bdc328f3695aa2e5c9b535f87be180b0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j09.json": "2d7ffa84c7fe93be94e7ef70cdfe6cab6a097effcc4dd1dacb453d31e4f83032",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j10.json": "6744e47f3a0a7efd8422f21f2374239fe14d4506ea44b54685401b80b39bd852",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j11.json": "806f914143ef819601e89857e6d0edc567c29b2ec59ea7cc329fa6cb6f111414",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j12.json": "8e209744875471be0c57f36b73f151b3b6b4965d67457859aaabe3d8ee22f4dd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j13.json": "16d540d43c1c54892dc06a43bf5ddf68acc69e3c68eeea2f3dd31b1da67aaf1c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j14.json": "7cb1048b36fa3a8e0e40c95fc669edf10ae674931ac2ecceeacf10bc4404c0e3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j15.json": "3943ae61c672cc4e1442a5148d33863dc11a0867e80ac4420c880e1a35f55149",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j16.json": "6347231dab9e4de9430b74338092d89ba831557f9d1673c6e8e656fb50d10f81",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j17.json": "3d36a0e9bccf2c68ebd278bc12c69b98377d25f1bc513b13bc1ad79d7bcdda44",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j18.json": "5a00b6ad6485e3807ab7a77f8b5a703363a076cb8af236d173053f08afc79dfe",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j19.json": "d57c6aa59466105bf4c209edad526b2ae391bd9047f91b2de5784aac55f94500",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j20.json": "9f892c316f7d93fed6a386e4a370dc6a868665a42d4dfefbf3ff0760f7ebf14c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j21.json": "83f855c90df6687e5ce3a5ec19dcd4f0ddd34b6c1fcdb0185a6d5e69c715ed16",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j22.json": "06df2c3f7bc7646ae3bf53a129cb11009fbed8f39d0a7457329e0c5bd182fe55",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j23.json": "1c13b580677076a6035dab0def7fc7a9c0854739a762beabec7f277a9362d22b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j24.json": "004783f61ef6e9eff89e096fe60f1318ec06a940b5f688d261fffb7e215d3c86",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j25.json": "c531e0d322d837e15d8dbdfd10ea83b0d4c4d24bc5ccd3df71140de51b266469",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j26.json": "a4d0966865870fc2aead488621e4bf1a92c644d12ba6d114c4e3314f481bf78c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j27.json": "9006dea387b9f9942c29fa54296298076b47ce85d0a98b9aabc1d6288b5fd287",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j28.json": "374dea2601f332109454894e8ff73db4c9932d6e81bc753e158bd57f8493010e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j29.json": "c2e3625b9ff2182214beae5f065cf137216369768e34d5e7f02a1ff5924df510",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j30.json": "256bb9f717e4b5e95515ee0f2dad95bf5e51eb655c2dde813f1cbd9fc54f24df",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j31.json": "c00837312a69e559df0a8b64fd17d6eb72c22d2a8953d1a8c04c10409f376ca1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j32.json": "021be473b6492b7ffc32cc34c85c79e3716a3b32c5fdd3655644a2fa1e57b732",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j33.json": "cdc3092d6660473a868b51ec4981f9a4d8b40658f86e9ecf6ceb9ed2bcb01072",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m04_j34.json": "c083a36597d3c3c06e234441635e3508a1874f702ec7a0739da1ca942df7b74a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j00.json": "e19b50b1da84b0efe82827b76e03a171836abd217f436464d86c045b09988a2f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j01.json": "104c49c98a4c7f10b70758d464dd4f22fc661222cf09725d0dd22a36ecdffb2a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j02.json": "1aa0e2bb9660b62aad88dc75489963fc1bfbd9e1aedb819d44fbc7f9418924ea",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j03.json": "c7563cd1ea684dbaa812150d1a82c49d1853403234307492ee361b6c2f105e15",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j04.json": "c6bbd171230d3d2583a6cafd255397b157be5f1d33cdde8ee1705906845bc390",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j05.json": "6c4645ea4184357043f93692b03d0c0a76515737b74b3ef38d7d0f97cba847bf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j06.json": "cacabe903dcf6e9b59eb3c0b83502da44ae9211751b537ddf4d73f2187c61416",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j07.json": "38bc75ed359d91f97ae96312ab13f4e1b66371294be2d468fd0885c38a233342",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j08.json": "31dac1511034394b9b1b613a809abe7adb49d2c19923ede9bfb47be4c4703915",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j09.json": "df2fe2647e8a23f1d07bfc499915c375ee72b1cefa53aeae20f0c78ad42aeb57",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j10.json": "bac3ad6885a1944386ceaaec35456fcf7ca290275ef72c919569829b4d124ee7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j11.json": "afc003f91d18e0f2738283f97c5010027aa2d80bd4544c9cc4237f44c8146bbe",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j12.json": "9e2d02de4f9d91e2435a2190f79569baf358dc26bb70e0c05ab3c943b1166081",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j13.json": "cae4be06b74619accbb08cf3d96df13e6378e18b556c4c107d6c36113502bd27",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j14.json": "27fbcef08dc329c5278dec841446c5b475ebd78a47aa974eacefbdc25566839e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j15.json": "a7e9d6a260711ac160872604f84b5d1ff47decbfd770f5668de78442503119c3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j16.json": "b0ea43cb5efa2ffedc48c2dbbd6a3f62621f7df5c2f3a4485f01bb4213820eeb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j17.json": "6dba650805156f620be9c0fff8a33ea660b38c047d02a33e39c5f4a173c55581",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j18.json": "904e14da4da8f7830ece7658521f588b4ed8addb955bace27b480b1151c1fd0b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j19.json": "ae5a5ef584ea185f9ce7662be83974bd1740b3d591da651dcd1d07b1c3e1022d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j20.json": "8a3177ecfbcd0f924faa05fe7d741eb991a1b1247b0f403c0d376cccc99251b5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j21.json": "8add13f3816270fe3468598c865692cb9f0f14fa1d2cbe39fe4d1ff96edbf899",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j22.json": "5113a98c31640ac62e2f5e4050f003ad8c33020d74c360ad9ceaa27479ef7cf3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j23.json": "f7b065ef4b034e2c202fef6d8cbdafe944a620a34437f03be1d197190ecedb1f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j24.json": "0f01adb1838acacbc31af0bbf87f696a0bf5c1254815ff95da3237d9f6381ecd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j25.json": "a1bfb46e42c0a73ed2fd565a5a812a5b111709f52261b076fc57777183dc7a23",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j26.json": "69525d21a8ee9a297f007a1f1c8b9ad1ac0efe3539ea506f280b680de291e542",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j27.json": "02c5b5c40f28394b6bbf8cbc59e3ba153b3bed09b9d6ca4c66e9cbf5d81fb784",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j28.json": "bcbe285455e1d4a32bc36ba5250b5d3b102b886929eb8e7af562d0c8ca1048e9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j29.json": "30fcc152794f26f1eb20e3c0f9a2e2d473d9ac278b50426db228ce5107fbfd8b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j30.json": "125eb991d4fc13c6cbdd07a9d26e7427e523f7e6fdbfe49b1cc9490c23f7c7d2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j31.json": "be99492446f5a1c2050104d232b072b062d4bb0c8825a3106f970f130082d8bb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j32.json": "d05c4cded48392e10e711d745db5eddb25d132219572bb207ef2fe04da9c72e4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j33.json": "421023bd909dfb949d9ea3a66477e619b00034abbdb3e96046fac82ae0c23897",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m05_j34.json": "2c8a476930a03b3f97fcb5ae2ad9c9adb719c0bb3cc46198c17060892a5a3874",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j00.json": "f85be42051371f68632fa86cf3a4f17330de2179d1fc5d603ebe92f1bde4f27f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j01.json": "31e694de5453e3f3c4271224351c7ef961b76ee91a5fa5eb68d49b8a00b76252",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j02.json": "8828ab6a9eeeb1cd2b2c19439f307ae3c5e2bb7d0f2a14d255086b53dba6c56a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j03.json": "5eb1f54f182c3b1ff2449e83ebbc5f5ebd77a90ca8bff448e02ab1dc924bec8a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j04.json": "355d2bcdd2a87ac23ef1f0240d415ae2fbe2f00950341fb615bf1aaf34d9eb04",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j05.json": "808bde1f14030646ca67fb4cff3a88a0e5acedcb1843a06285de425c7023c6b9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j06.json": "4bc587e7c4f46120a4a8fcfd6fbd014a0cae288098645243a5c87f842d34d9d5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j07.json": "f23b1241c3eac52db9ab658adfa5ee44625432a68aa68f73d89c87d30e329739",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j08.json": "f0939dd481ed7ea68563d623f767f5a39e1b08a64c41be4bd37a67929fa9aaa4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j09.json": "6628144746d87432d060f9c7a3530c6c0b731924b04dfd6789dd68cb80c0f2d8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j10.json": "d37a58999a9b3cbd984c272178509e024498037962125176ca86656bbb7b76b0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j11.json": "9f03218cbc202f2f9e5b7a589c38a49e13ee8b3710e310cf75d4923de03f5d6d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j12.json": "bf982e19ec505ca9c2780af33b3a975b965d0614b8a774d9eaf1a2c117f354f7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j13.json": "a2a58b449120d8254bfd8435d274d229bb0c5a5142b97e9edee669a81abf078d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j14.json": "d48856ddbbf39ac80e376c993d121012bbaedd7c3ea467c3f167fc9f0d617098",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j15.json": "a7e42d8b1805e275c097625bbae618a6b5950b6d1486c60db95e00f3f6cffba1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j16.json": "c6f281de5e4c19a457dc5ef72200cc5ad41132cc31b952c92d620dd2df7a12de",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j17.json": "925bd984754ee2f7b9455ba6e7b796fd0d53db2d3d2a38e14b21ad75adfe48aa",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j18.json": "65bdaaf82bcc55bc38cb3ec7bce2290819c08444e6d28c551661282372b931b4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j19.json": "f8ec78a4958f26cd05aa40d66a63eaaad281d8d724da72c5a41d7e466f24e846",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j20.json": "35d479b21eb4f33aa7c133a0d6742024208a7d5158fa95a045c00b6032182a75",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j21.json": "f2cc9319014d5bf90e9a92e21e57494d7c24e8d36a08f17812df364f9da3b345",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j22.json": "003a5b94a5772f4ed978848dec2671020e188ba74b1ab4aa69313ec38c9f2854",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j23.json": "dbb3aa5b39143fd9ee152a9942bacbe15daf215f17c2f09f6dcb77598450cb2b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j24.json": "8f32664ab37c47d6d48da116f9ae1556a2f4d913886a8d0e5cd010fd2c60faf7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j25.json": "72a5f33a191167d93dffc61a7db97e0cdd6413d0c4485f318c7cf2c36fd7f9df",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j26.json": "a4bdf48f7dea27d6b618c0e4692e68d399bc35a9e1c1924ef01e07d5332950ac",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j27.json": "7530abc4cb8469eacb5fc86d76ac681b9c5854f14378b30cbbb75d73654d80eb",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j28.json": "7b8cbc305eb4d76bc10999890158c98396457f5cd586a7f95d7716761f6d10e6",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j29.json": "f6133eab0a4f33bf0f2a71a903c866e6c3b8545fd293adce7bfd30bb46c95b80",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j30.json": "d6dfdc9418829e84466f56bf62002ca227dd9bcd564833f17a1b750216ef89dd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j31.json": "0d19e7aa788f4a9dc46e617f7b67e2707114a33b97f978ea17baf5d06d4f0a74",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j32.json": "50d37906c4b7ab95cf6cf3ad2c1f8ce4cab76a625aba80646433ec98a80050dc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j33.json": "4721fd1ae64e3bd9e2e0f4cb024c03d66dbcbe816ce3b34c6ad254ae2cbfff06",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m06_j34.json": "9472f1149bbf85ac35e95bf2a7ab71b6d5cb4c68a0377cd55409beb109c0e5b7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j00.json": "9f1daac00ece78f22c3ccef3e89c42b3a5d12a038fc5ceb223567ed2d32ba75f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j01.json": "cd731c9fe705862d33d2bacc5c0ac2d972bfb16eb16014af677b596a2e700865",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j02.json": "f9473148a11a26b8c504c6aa81292f3b1f5ef775d036b2058258bbeb3e069277",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j03.json": "f543c4602b17586e235487c5ffe3810d2da4b58214fb6533e46e76a2e61f2ec5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j04.json": "a8f61a9fcc36bc03308640afb4ac90ad68b2f345fb4b1678bf81634e68bb508b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j05.json": "cede800478d9691aec7139cabaa97d6a57fe15ebc24c57fa90f70ecc7e9ec78f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j06.json": "16406b161f5ea025532e058e21ea8ae55aaa0975049890187b841d9e28a4b69c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j07.json": "924474d1dbe5f85d4483195033c2a5a05d21c55131a1786c8a7c0f00506417c5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j08.json": "9faaa4efbbb941064a070991663fbb1675d2ba8eecf6663a882002f27c843ea2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j09.json": "a2769d3875a82600d56f662ecb1696f2c43e90c7a6e004b5f4b8abde9b583686",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j10.json": "9e57aa650a5af8115ecd32508aebbbee45e182641c527fae41134b99a6ac53f1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j11.json": "0347f8d83a8079485e2bdf19b0309c73e36aa09d8658efe8c26d474d6c1baa93",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j12.json": "c3d831dcb840de76842c798dc6d1706c577487ac45b999345c60126c1dcae4ae",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j13.json": "3ad90815955e15c1b02a29b1b93011431c6aae2ebff69d0b77c5c79431ea7eb8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j14.json": "df4917a23b6296a17c489465317afd4f8722cd896c68713c275c8780d62795e5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j15.json": "c338e04e5f4b514a8367df9f334cd728ace472f918d07caae7d36b9c675745fc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j16.json": "b28e3f5eead1daefa95ff0994131b633276c4eb63f240422329c383d63994b34",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j17.json": "c8608de5beebcef68797166ae52201169b5fc7415a2d4f8514fb2c86263d04f9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j18.json": "5011e700a90732bca3f87c6ac69e9be081a62ad3db5492ca528b9c0d36abc3b7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j19.json": "f6501becc56e441b587ce6efe21b82e4dd605aa77657b3fdddbd471f12d80749",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j20.json": "dabf3fd20a2d593fec876f9067dd8ebc6f20d5cc600e1bfb1e53ba2372b28340",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j21.json": "8e4934bc528fc46e4df3f1dd1ebbc111d0ef3ff6fbd574e92219b71552e2e793",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j22.json": "270a05d7420dabe4c5885e2b3c635222cffaf5789689ac4a8908dd45ac2381d5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j23.json": "985c86381211b5e2c2ba4660741f0a6df708a1e8d7d6f63dbf8d953d2c511f54",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j24.json": "179dcfd6726d3e593c3b4f79e92b3f4d62bfd55937f8a53890b54d36216723ae",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j25.json": "b4fdde9896066f438065831b9e0570238b6487ffe470985504875f5e0250cb34",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j26.json": "098e51201eb8a7a39f92c42e0671ba18259826b1c6fa9a6cd9d6966c2446ca36",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j27.json": "513806a46ae11d91300fda277c8bceac8a5174670ee0b11f6be13815f9360e7f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j28.json": "2dca269b2fa366249fbf6ef94d35fa1de5a4c8b0a4990ce3c02566fbf7236613",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j29.json": "d734d952e1db0f6dd91c03276b9cae7fbd24a1cfb514961421d5158ac6a34526",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j30.json": "fd0ef582b5dc5f92e5a57f2125694bd40c9ab9b654bb15c45d3f16544bd8bbac",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j31.json": "a034a2e636a4130de5331ce5415f0b4641f9146a20cdd4db0ba948ed42e9809e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j32.json": "740570f1359aac237f21da0417f53a81c7d7531e9b8bc71d8cb8e3251ec14ddd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j33.json": "a7679c7518117eb5a0b3488dfc54c9a4af9a440f0694b024b43e7249bbe7e4fc",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m07_j34.json": "8366ac78c92a3a94fda74d7881ea7aa3684c5063e738c403aba038b873b5c6e5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j00.json": "723ccc293b8b3557187ab8ac72e67230a51c61371a099c9a144990f602af4074",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j01.json": "0ce8e292d9503b5b22ec54a8dfaaea4306b74008027d5829aa5ab1ef0a573f7a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j02.json": "107723f614db9d7eb0b2fea7940958ebfdcc2fa81fc385a5e9735b84cbfde3d7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j03.json": "71d81b1a47edd3185c1cc54a2991bdb9c6fa1b40b673cc75d17e02f678980320",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j04.json": "342cdce4494bbde440fe2a97a63081bcdd9732e32b6c5ab5102613a69a47f4ac",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j05.json": "8113467d759e2a7fde1c7227b355fe93012200f465a19a2a1db6c5de90d02ebf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j06.json": "9f09acf21ddb94c9975f698297bb04041cc84bf31a56d5c2a1d986dc685bb096",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j07.json": "9c2f6d56fde6426bce59a72c18194e97861dcbd66588d8cc723883f9d2c9c48f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j08.json": "3e739288aa507f1ab90adf50441ed3d5821619674ff74af30dd2802d8daadf65",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j09.json": "7d9e951c0f89c33865e0ad4ee4fefa3738874fafd6b2b847c5ebaa915299f8f2",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j10.json": "2ad08ee448815c7c2a437f8a8ec0120cb8114200dd392169e7ecdf7499e23ac4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j11.json": "38b64996e8acaafc6cb78790f4b4b53225f1aceb968e5b84e7bd6e217a531114",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j12.json": "834afc63c84a6a66a99622553e7bc33eff53d2a07a8f1a0bac257c6b2f83a27e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j13.json": "1bf0b82b54ba7e9388b9e501f4b8fb1cbd1a238786b8ef0f5c30a275b93261a9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j14.json": "001e86c338ef92525c5de7d2fd6bd397fbdaf639d3edc21d0a40b3ce59aa2f25",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j15.json": "670e2979d30db8e264d7af6bf96ff9c3ac631ff9023a8193f952d49b96be8e17",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j16.json": "bce18bb5a224902d722dd044aaea4ada49ae9767ee2622b678ed221c33319065",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j17.json": "f1e3cf53df2c272508f92e2a049bedc63e0207a34f18941c1dd4a95b42457cdf",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j18.json": "2762d3d22cffdd3d436afeeb2c1ec9c23af9292f541b8729f69424589c86c7d3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j19.json": "06778f5ced5e9fa6e8d73b29651f758b115fe958aadaf9e7a3fe71e440aff08f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j20.json": "3f6a12e592362a579ffcba0c60c728277bfa50c7308d94186554d4c91d893c5b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j21.json": "b85af5d31f589e05b8ecd4f37bbff7bb41eff828eaa77bda7432188cdbd022bd",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j22.json": "610953dc7035a029e96fd7e80a62ef6e13a4fe8fbe25164d0d6385dd59a4a31d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j23.json": "11d91e8cee44c3e4dd0fd16987741af39d48ecab6e37ac732accec9fe02a4b23",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j24.json": "628004850c59669b27296c05761c772cf6ad493f222a3e93de9ffe4d987a97c1",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j25.json": "0c60e7d4758bc636a03b72a130584dd6cf74a9eba5aab377fbd8465bd4ac2645",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j26.json": "3721cfa5f302ebf30c1b52606d2f0eee7ce2627e1a6d3a7a869bc4710b93a170",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j27.json": "0a89d75263ccd8e1427c2a7a634c27c6f07d662bdae88da3363a574c58a738e9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j28.json": "3f2115a7b66e917f30a5ec0caaa1f7286d43bd487869ab60944a0de180f8d872",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j29.json": "da4ac1461fb3050de585a1525180d5730f869031587a2de600820397b5eee31a",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j30.json": "8ae0fb974a1310a0b1c36694dfce30175ff23d6244f4a4558b678269d4c6416f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j31.json": "91172d912fb8c434e83b83138a72474bdcc4d37e3fe40970706844e88ae15f24",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j32.json": "c6130bafa5c9197fc48af01ccb206109a2394bf6af2e2cc02104703fb399b4e8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j33.json": "c2cdcd615b700665713d8a0efe647b96906e088fcecffc963197324eea761436",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m08_j34.json": "3acb29b30a28f9134c6c4166a593a6043dffa3ccdd783f419fc2edf2ddb23c21",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j00.json": "c9fa9e714dd2907f31c007b36ff1fbe3d1d27e52bf0182cb5205b872e2bbf2d9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j01.json": "a63cecf0ab7a658d6707a524aec30cf20c327b2bec504ec6fc9ceced14255d4b",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j02.json": "35863f98c18a77a84d1011546717b05b3a07f9f0aa92158ef287429a0c213e98",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j03.json": "bc17e80fa524a3516b9251b81c89e26cbc44f6a7e973651dff0bd44a90e5fbde",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j04.json": "7ac8ab0e5154051951431dfa375d962c6d3261ae436c0adb9cfac9503aba58de",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j05.json": "804af0fbbb446fc176767947b9fa3a5b570b2224202055833da88e45992f9a79",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j06.json": "c2aadd3e03f7e7f8dcdc444b45b43808f8abf6f0a6e6d847d8b0194ef4a82f8f",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j07.json": "6baeb77f9fc2f359e0f41073bd0a0fd1260ce1644d03495e765c5e7f96c14b3c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j08.json": "0e98b9b40a290428a629b1807bad06686ea4a116ee61abe11e61f5c1675e62b0",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j09.json": "745e675b32a69b2a08432a6bb818bf122db8e9740918dd7d90da159ec38bd85d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j10.json": "08818920eceb071f2885e76d0d47cf012c8d23166f60b5468ba13b7badd9bfba",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j11.json": "debbeb2688deb02432ac6ce982e85d2062ccd06c7fd707fb684622072d7c68c7",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j12.json": "2c1dd7741119fe13afe81846920a54d5dda68af0c9d272c1aec29287522ec74e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j13.json": "f2236696b091dcde116cc1c4efe558bcc96abe9d7c4e722e2c2dca82da7bdbc4",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j14.json": "6742291f64549d43112bd4b41dd2841c650fb99f8d15a95a95e0056d596c1cfe",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j15.json": "13bc16127b03ceb89fc56931be014be442d0e4f0c1e361b165b9a2cb67602337",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j16.json": "fc07757172bf0c72e684c8a591c069e88a249616ac0f02a15e8c286cf81c3777",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j17.json": "54c891df257ea795682d899db8096f6f0f052ff65f554f70214c2a4a5b5ddc61",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j18.json": "d54f337ceecfb7efd03f1836d6e33aab2d22646881f71310b63a8e8d78080559",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j19.json": "c6a623ff80b29f275d375215b65f046d2c07a6d889f3fd8e5a9d8a4a61399035",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j20.json": "6a4dbf50228095a680d9284b7e9f83ffa0e6b253e34e7d004cc58ab94323dd48",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j21.json": "368604dd72d5578b5f73818ee4a28c60dd1d550e87fe29d66ad23e513cf90b40",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j22.json": "6f239b553f7c2b7e1ed15b4d3ef820ac409dbf811b34554b65bf9dd6e3db8fb8",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j23.json": "523e5e16f7ee777de83c22212c38bf59254309e2c051fefa020854f771c92825",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j24.json": "2f7c6192a0317d0b36187e8d2ebffe3f2e6ed8d7ee4063fc4f222e672194196c",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j25.json": "91cc2c852b1281f3666ce44b88491faa2ee5d4b8c664f7cb826ed9c2bc2fd025",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j26.json": "a55180d4bcf8772583d122cd5c0c064b7165b552898fc257f140b1603f88b13e",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j27.json": "b27b83468ca3d625672f8fea3f3cd83c60a4d560f5936668e97d038de8a3818d",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j28.json": "dc15ea86f98fdff0ac097e5dac8f8cc5361848559cabf4b884d36ab5164c67c5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j29.json": "7f2572e1e6b7d00d711cbe07570cdab4222d94cfb8c3ca3b7f24cbd52c56f6a9",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j30.json": "2ac4a6cb51254e355ebd4ef2d5db8d69a247d3b0ac58a3cb89aeb97a51baa822",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j31.json": "faefe16bd601c846c7cf31e986bcbc740e13aafa71163915335ba9f4c3765ad5",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j32.json": "c10e1d46ff2beddbb3ced34bde39981550a1bca80b36f9fb2c664dcf1caf1e68",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j33.json": "aca472f09068f1b76169e389552b68cd21e8e1e2c693a0cf2863d99873863eb3",
+        "studies/phase621_induced_metric_full_variation_scope_audit_001/output/shards/jet_p1_m09_j34.json": "56c6f573248ba058ac579ce809c1ca2fbd9523443ae51228e9bc5f83064c68bb"
       }
     }
   }

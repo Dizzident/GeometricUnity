@@ -1653,3 +1653,454 @@ review. Ordered101/202/integrity PASSED399/3,O4coverage31/31,overturn94/94.
 Final incremental must follow ALL edits before scoped commit/push on main
 and independent remote verification. Record the exact final report and
 checkpoint in commit/handoff, without editing after that final pass.
+
+### A63 prospective curved-action and metric tests (2026-09-10)
+
+A62 is now committed at571d79a9c25a21a55c2d22b4b77d99f84ba42bc6,
+pushed and independently remote-matched. Final report
+pass_2026-09-10T21-52-54-924Z.json ran77/skipped402,399/3 checklist,
+O4coverage31/31,overturn94/94,integrity passed.620/621 are allocated;
+the following are analytical forecasts, not executed successor results.
+
+620 reconstructs the full curved first action in the untied canonical CAA
+convention. At a normal reference gauge A0(p)=0, set
+partial_a A0_b=FB0_ab/2 and derive D0^2 epsilon=[FB0,epsilon] from jets.
+Use the nilpotents N=gamma2+Gamma12, M=gamma2-Gamma12 and
+epsilon=(1+fN)(1+gM), inverse=(1-gM)(1-fN). The identity jet and the finite
+noncommuting f=1+x0,g=1+x1 jet are separate fixtures. Construct
+b=epsilon^-1 D0epsilon, DB and FB literally, then compare against
+conjugation identities. Transform each Phi occurrence, not only the final
+operator. Full real u(64,64), both parities and central iI remain in scope.
+
+For C:S=Gamma1,D0S=0, the independently forecast action pieces
+(source,kinetic with1/2,raw cubic,mass with1/2) are
+(60,0,-4368,-7), and their scaling variations are
+(60,0,-13104,-14). For K:S=theta0 gamma1,D0S=theta02 Gamma12,
+the corresponding pieces are(0,1,0,-1/2), with scaling variations
+(0,2,0,-1). These are nonzero full-action controls.
+
+Writing delta epsilon=epsilon eta gives
+delta S=Ad_epsilon(delta varpi-D_A eta). The plus Ward lift
+delta varpi=D_A eta leaves S fixed. An epsilon-only variation must not
+be declared zero: for the identity epsilon,K,eta=Gamma01,D0eta=S,
+its source/kinetic/raw-cubic/mass variations are
+(21/2,-21/16,0,+1), hence total147/16+kappa. At kappa0 the separate
+wrong-minus-lift, frozen-FB and frozen-all-Phi controls forecast
+-2,-5/8,-79/8 respectively under their specified compatible jets.
+These anchors were independently derived before execution; the frozen
+pack defines the complete menu and counts.
+
+621 sharpens the previous metric argument. The statement above about
+field-coordinate changes contributing vanishing Euler terms requires
+boundary conditions as well as bulk stationarity. A base-compact delta h
+is not compactly supported on the fibre; a metric-dependent field
+identification can leave a surface term at a fibre cutoff. Do not discard
+that term using618's bulk equation. Instead the prospective621 route sets
+epsilonI and holds native coordinate varpi=T fixed in the fixed chimeric
+spin trivialization. Then delta Tcoord=d(delta Tcoord)=0 exactly. Its
+components in the induced tangent frame still change; the full action
+variation must retain that change together with the solder, connection,
+reference curvature, Hodge maps and density.
+
+With this choice, all induced h dependence factors through C(h). At
+constant h0 the full first variation has only positive-order base jets,
+up to order3. Integrating compact-supported delta h over x FIRST yields
+zero at each fixed y; use a fixed compact fibre domain independent of x,h
+to define a differentiable relative action. This is not a claim about an
+unregulated infinite action. A moving domain or observer section is outside
+the cancellation: s_h*G_h=sigma h still has variation sigma delta h.
+Likewise an artificially added sqrt(|det h|) changes the C-source density60
+by120phi for delta h=phi h. Neither alternative is silently selected as
+the source law. Full Taylor-jet and nonzero weighted-action controls are
+being frozen before execution.
+
+### A63 analytical HJ cancellation and explicit-branch lead
+
+Let W3(J)=sum_b sigma_b gamma_b wedge_Cl J_b=0, as in619's full cyclic
+identity. Since the canonicalGamma is parallel, covariant differentiation
+with BOTH the covector and Clifford connection gives
+
+    sum_b sigma_b gamma_b wedge_Cl (nabla_a J)_b=0.
+
+Consequently, using the full exterior covariant derivative,
+
+    W4(D_BJ)=sum_(a<b) sigma_a sigma_b gamma_a wedge_Cl gamma_b
+                   wedge_Cl (D_BJ)_ab=0.
+
+For the canonical CAA operator on a bivector two-form, its grade5 output
+is -2 sum_k theta_k gamma_k wedge_Cl W4. Hence K D_BJ has only grade1;
+KdagJ is already grade1 and D_Bdag preserves Clifford grade. The full
+HJ is therefore expected to be vector-valued. This does not set its three
+horizontal/traceless/trace weights equal, and is not executed HJ evidence.
+The auxiliary homogeneous norm proof does not need pointwise adjointness.
+In particular, formal PDE self-adjointness cannot be used to infer
+<PTGamma,HJ>=<J,J> pointwise: invariant fields on this noncompact space
+need not satisfy integration-by-parts boundary conditions, and an invariant
+divergence can be nonzero.
+
+For F=A+HS+gamma N(S)+kappa S, the formal inverse-kappa coefficients obey
+S1=-A,S2=HA=(3/2)J and S3=-H^2A-gamma N(A). The cyclic argument makes
+S3 vector-valued. The next coefficient
+S4=-HS3-2gamma B(S1,S2) is bivector-valued under the full operator's grade
+rules. Therefore the N(S2) contribution first offers a grade5 candidate
+at S5, with619's unit witness contribution -3gamma/4. This is NOT the
+full S5 witness: grade5 from -HS4 could cancel it. A fresh frozen audit
+must compute the full covariant response or prove the appropriate complete
+cyclic identity before declaring that grade unavoidable in the solution.
+Do not close the branch to vectors/bivectors or infer a spectrum from this
+formal grade bookkeeping. All14flagsfalse,physicalmassclaims0.
+
+### A63 executed curved-action controls and analytical HJ weights
+
+620 PASSED FIRST frozen Release execution unchanged after full independent
+and MAIN review/approval.45unique bindings,8compiled files,36forecast
+counters and live726 closure passed. Contract SHA256
+46a6edbae8cd1cd2bc236ef45fd8223c8bc0d0dadc6256d58c3f09aa76060d46;
+full/summary592d7b284fce0ee3371960b866cf102b661c84f46d5d171bbd5c52d7255f919f.
+Tracked coefficientproducts1001874,matrixproducts22920,largesttensor2254.
+All32 action rows,32each fixed/Ward/epsilon-only rows,12nonzero decoys,
+784Hessian rows,912dual chain stages and9646normal-plane entries pass.
+The curved reference and actual variations support the conditional Ward
+identity without a flat-curvature substitution. All bound scientific
+inputs remain unchanged.621's metric argument is still unexecuted.
+
+Separately, three independent HAND derivations now give the prospective
+full homogeneous response, not an executed coefficient audit:
+
+    K D_BJ = D_Bdag Kdag J = (9/4) PHGamma - PTGamma,
+    HJ=(9/4) PHGamma - PTGamma +0 PtrGamma.
+
+Here H=(K D_B+D_Bdag Kdag)/2, gH=-y, and identify a vertical tangent
+with its y-raised self-adjoint endomorphism. Traceless A have inner product
+tr(AB); the trace unit is t=-I/2 with norm-1. Write Lambda_u=U_u+R_u,
+where U exchanges H and the traceless vertical subspace, and R exchanges
+H and the trace line. All vertical Lambda derivatives are zero in the
+homogeneous moving frame, not in a coordinate frame. Explicitly,
+
+    U_u v=C(u,v)=-(u tensor vflat+v tensor uflat)/4+gH(u,v)I/8,
+    U_u A=Au/2, U_u t=0,
+    R_u v=-gH(u,v)t/4, R_u t=-u/4, R_u A=0,
+    J_u=-4 Spin(U_u), J_A=J_t=0.
+
+The tracefree symmetric completeness identity gives
+sum_A sigma_A A^2=(9/4)I. Also sum_u sigma_u C(u,u)=0 and
+sum_u sigma_u C(u,v)u=-9v/8. Full differentiation, including BOTH
+covector and spin slots, gives spin-action matrices
+
+    (DJ)_uv=-8[U_u,U_v], (DJ)_uA=2U_(Au), (DJ)_ut=-U_u.
+
+Mixed R/U commutators cancel by self-adjointness and symmetry. The first
+CAA contraction sum_a sigma_a (DJ)_ab e_a is (9/4)v for b=v inH,
+-A for b=A inT, and0 for b=t. For its H entry the two contributions
+are9v/2 and-9v/4. Its total trace4*(9/4)-9 vanishes, so the scalar
+second-CAA term is zero. Its grade5 term vanishes by the full cyclic
+identity already given above.
+
+Independently KdagJ is the vector two-form Y(u,A)=-2Au with all other
+pair types zero. Apply the actual codifferential
+
+    DdagY=-sum_u sigma_u [Lambda_u Y(u,b)
+                         -Y(Lambda_u u,b)-Y(u,Lambda_u b)].
+
+The same completeness identities give(9/4)v,-A,0. No pointwise
+self-adjointness assertion was used. These explicit weights provide a
+concrete future test and prevent forcing the horizontal and trace weights
+equal. Neither this formal linear response nor its restricted eigenvalues
+would be an observed particle pole. No new phase is allocated for it here.
+
+The trace-projector extension requires additional care. In these conventions
+div(Ptr)=t rather than zero. For a vector-valued field VGamma the full
+kinetic response includes the divergence contribution
+
+    H(VGamma)_b=-2 sum_a sigma_a gamma_a wedge_Cl gamma((nabla_a V)b)
+                 -gamma(div V) wedge_Cl gamma_b.
+
+Thus H(PtrGamma) cannot be obtained by replacing U with R in the J formula.
+That replacement gives only the forward leg. With the trace term retained,
+the full trace response has horizontal rows +(1/2)gamma_u wedge_Cl gamma_t,
+traceless-vertical rows gamma_A wedge_Cl gamma_t, and zero trace row.
+The latter carrier is allowed by Hom(T,T wedge R) and must not be omitted.
+A tentative two-bivector closure/eigenvalue calculation based on the
+incorrect replacement was withdrawn during analytical review, before any
+phase allocation or execution. Future explicit-branch tests must derive
+this enlarged carrier and both adjoint legs rather than assume them.
+
+Independent analytical review subsequently checked the corrected trace
+response. Define B_u=-4Spin(R_u), B_A=B_t=0, and C_A=gamma_A wedge_Cl
+gamma_t, C_u=C_t=0. Then L=H(PtrGamma)=-B+C. The independently derived
+weights below are ordered(H,T,trace); they remain UNEXECUTED forecasts.
+
+| Field | K D_B | D_Bdag Kdag | Full H |
+| --- | --- | --- | --- |
+| J | (9/4,-1,0) | (9/4,-1,0) | (9/4,-1,0) |
+| B | (-9/4,-4,-3) | (3/4,0,1) | (-3/4,-2,-1) |
+| C | (27/2,16,18) | (0,-2,0) | (27/4,7,9) |
+| L=-B+C | (63/4,20,21) | (-3/4,-2,-1) | (15/2,9,10) |
+
+For B, the spin-action matrices of DB are -8[R_u,R_v] on uv,
+2R_(Au) on uA and-R_u on ut. Their first-CAA contraction has weights
+(7/4,0,1), with total trace8; the second scalar term therefore adds
+-4Gamma. KdagB has only Y_ut=u. The full codifferential gives(3/4,0,1),
+including its previously dangerous divergence and last-form-slot terms.
+
+For C, its coefficient action W_A satisfies W_A A'=-2tr(AA')t,
+W_A t=-2A and W_A u=0. Only(DC)_uA=[Lambda_u,W_A] remains after
+antisymmetrization. Its first-CAA contraction is(-9/2,-2,0), trace-36,
+and the scalar second term adds18Gamma. KdagC has only Y_At=-2A;
+its true codifferential is(0,-2,0). In both cases the cyclic wedge of the
+bivector field vanishes, so there is no grade5 part of the linear response.
+These calculations do not use pointwise adjointness; the unequal legs for
+B and C explicitly show why that assumption would be wrong here.
+
+Together with H(Gamma)=0 and H(PTGamma)=J, these formulas give a concrete
+candidate finite linear response problem for the source-generated branch.
+They do not prove nonlinear closure:619's nonzero grade5 forcing must
+still be retained. No numerical spectrum, exact branch coefficient or
+physical pole is promoted without a fresh frozen full-operator audit.
+
+### Prospective invariant-three-form completeness check
+
+Additional primary mathematical reference, inspected2026-09-10:
+P. Deligne, G.I. Lehrer and R.B. Zhang,
+[*The first fundamental theorem of invariant theory for the
+orthosymplectic super group*, arXiv1508.04202v1](https://arxiv.org/pdf/1508.04202v1).
+Only its ordinary orthogonal-group statement in section1.1,p1 is needed:
+invariant multilinear forms are generated by pairwise contractions with
+the nondegenerate bilinear form. Section1.4,p2 distinguishes the special
+orthogonal volume tensor. This is mathematical framework evidence, not
+a GU source law, observed-field identification or mass input.
+
+The following application is our own prospective deduction, not a theorem
+about GU asserted by that paper. Complexifying the Lorentz representation
+reduces its polynomial tensor-invariance question to the orthogonal case.
+For SO, split a tensor into even/odd pieces under an orthogonal reflection;
+multiplying an odd piece by the volume tensor gives an O-invariant tensor.
+The O contraction theorem then reduces the original invariants to metric
+contractions and at most one epsilon; two epsilon factors reduce to metrics.
+The tracefree symmetric projection is equivariant, so it introduces no
+new generators when restricting tensor powers to E=Sym^2_0(H).
+
+For W=H+E+Rt, consider all possible slot types of an invariant alternating
+three-form. An odd number of H slots has an odd number of underlying
+four-vector indices and admits no metric/epsilon contraction. With two H
+slots, the possible contractions are g(u,v) or g(u,Av), symmetric in those
+slots; an epsilon contraction with the symmetric A vanishes. With no H
+slots, the candidates on two E slots and t reduce to tr(AB), which is
+symmetric. On three E slots, surviving metric contractions reduce to
+tr(ABC), also symmetric for self-adjoint matrices by trace cyclicity and
+transpose. A single epsilon distributes four indices among only three
+symmetric matrices, placing two in one matrix and vanishing; higher
+epsilon products reduce to the preceding metric cases. Repeated trace
+slots vanish by alternation. Thus this argument predicts no invariant
+three-form on W, without assuming that the bivector one-form carrier
+has only two components.
+
+If the full invariant fourth branch coefficient S4 is indeed bivector-
+valued, this would force its cyclic wedge W3(S4)=0 and therefore remove
+grade5 from H S4. Combined with a complete check of the other quadratic
+terms at that order, it could turn619's grade5 contribution into a full
+S5 witness -3gamma/4. A future frozen audit must check those hypotheses,
+the invariant-domain application and all feedback terms. This remains a
+prospective proof lead, not executed branch closure or a boson prediction.
+
+The remaining grade hypotheses also have an independently checked
+analytical route. Isotropy-invariant vector one-forms have the three
+weights aPHGamma+bPTGamma+cPtrGamma, diagonal in the adapted frame;
+this is not a statement about arbitrary vector-valued fields. Their Q has
+matching exterior and Clifford index pairs. The literal CAA chain then
+has vector output, Kdag of the vector one-form is bivector-valued, and
+the DQ adjoint commutator stays vector-valued. Only AFTER this full-grade
+closure and isotropy are established may the diagonal scalar action be
+used to determine the three coefficients. The original cubic is-4e3(w),
+and the full quadratic response is N_i=4e2(w with i omitted). With
+multiplicities(4,9,1), this gives
+
+    N_H/4=3a^2+27ab+3ac+36b^2+9bc,
+    N_T/4=6a^2+32ab+4ac+28b^2+8bc,
+    N_tr/4=6a^2+36ab+36b^2.
+
+Thus the polarized quadratic term B(S1,S3) is vector-valued. For an
+invariant vector field and a cyclic bivector field Z, their Q cross term
+is vector-valued, hence its CAA output is bivector-valued. KdagZ is
+vector-valued because W3(Z)=0; both remaining adjoint cross terms are
+bivector commutators. Consequently B(S1,S2) and H S3 are bivector-valued,
+so S4 is bivector-valued. The invariant-three-form argument above then
+gives W3(S4)=0 and H S4 vector-valued. Under these explicit hypotheses,
+the full fifth formal coefficient has
+
+    (S5)_grade5=-(9gamma/4) N(J)_grade5,
+
+with the619 witness coefficient-3gamma/4. This strengthens the analytical
+forecast from a single contribution to the whole coefficient, but has
+NOT been independently executed in a frozen full-branch audit. The
+eventual test must retain all terms before checking this cancellation and
+must not use the restricted cubic alone as a full-gradient proof.
+
+### Prospective exact linear control and analytic-branch consequence
+
+MAIN independently checked the following elimination from the hand-derived
+full-H table above; it remains an UNEXECUTED control proposal. For gamma=0
+only, the source-generated linear carrier is
+span{PHGamma,PTGamma,PtrGamma,J,L}. Since H(PHGamma)=-J-L,
+H(PTGamma)=J and H(PtrGamma)=L, the candidate H-squared matrix on the
+ordered bivector basis(J,L), with images in columns, is
+
+    [ -13/4   3/2 ]
+    [  -9/4   5/2 ].
+
+Writing S=vH PHGamma+vT PTGamma+vt PtrGamma+jJ+lL, elimination from
+(kappa+H)S=-A gives (kappa^2-H^2)(jJ+lL)=HA=(3/2)J. Therefore, for
+kappa nonzero and D=4kappa^4+3kappa^2-19 nonzero, the candidate exact
+linear solution is
+
+    j=(6kappa^2-15)/D, l=-27/(2D),
+    vH=(21/4-9j/4-15l/2)/kappa,
+    vT=(15/4+j-9l)/kappa,
+    vt=(21/4-10l)/kappa.
+
+The leading j=3/(2kappa^2) and l=-27/(8kappa^4) are consistent with
+the proposed inverse-kappa recursion. This is a useful independent
+closed-form control for a future full-operator implementation. Its
+denominator is a homogeneous response determinant, NOT a momentum-space
+propagator or a particle pole. gamma=0 is a diagnostic specialization,
+not an author-intended coupling selection; nonlinear closure is not implied.
+
+There is also a conditional consequence stronger than formal bookkeeping.
+Analytic parameter dependence is a NEW deduction from618's finite-dimensional
+polynomial fixed-point equation, not additional frozen618 execution coverage.
+Complexify its real invariant coefficient space and extend H and the
+quadratic polarization complex-linearly/bilinearly. For a sufficiently small
+complex disk |lambda|<=rho, the map on the fixed unit ball satisfies
+
+    image bound <=rho(60+51520+2576|gamma|)<1,
+    Lipschitz bound <=rho(51520+5152|gamma|)<1.
+
+Iterations from zero are holomorphic polynomials in lambda and converge
+uniformly on that disk, hence their limit is holomorphic in its interior.
+This extends the real polynomial coefficients in the H-anti basis; it does
+NOT apply an antilinear adjoint to complex lambda. Shrink rho below1/120
+and618's contraction threshold, so its radius120|lambda| ball lies inside
+the unit ball. On real lambda, uniqueness then identifies the two branches.
+This argument, at fixed finite gamma, would turn a proven full Taylor
+coefficient (S5)_witness=-3gamma/4 into
+a genuine nonzero grade5 component for sufficiently small nonzero lambda
+when gamma is nonzero. This uses analytic existence and the first nonzero
+coefficient, not an assumption that every formal series converges. The
+full fifth-coefficient audit is still required. Even if confirmed, this
+would disprove the vector-plus-bivector restriction near that branch,
+not the full theory, and would not select couplings, a physical vacuum,
+stability, an observer reduction or any measured mass.
+
+### Conditional joint stationarity: synthesis supported by621 validation
+
+The following is a new analytical synthesis, not an expanded frozen618
+claim.621 has now passed its full first-execution and independent replay
+checks; the domain, field-identification and boundary hypotheses remain.
+Use the SAME declared canonical untied-CAA first action and fixed-Y
+chimeric identification throughout. Set h0=eta, fix finite gamma and
+nonzero lambda=1/kappa within618's contraction regime, and let S_lambda
+be its full invariant connection solution. Set epsilon=I and native
+varpi=S_lambda. On X times a fixed regular compact fibre domain D, use
+the finite relative action, not an unregulated infinite background action.
+All fields/frames must extend smoothly over a neighbourhood of the closure
+of D in one common chart; small variations must preserve nondegeneracy.
+D need not retain the affine symmetry: solve the full gradient pointwise
+on the homogeneous model first, then restrict it to D.
+
+Specify the tangent class explicitly: native delta varpi and delta epsilon
+have compact support in the interior of X times D; delta h has compact
+base support, with native varpi and epsilon fixed even at the fibre boundary.
+Do not reselect and differentiate a new homogeneous solution as h varies.
+Then618 sets the FULL connection gradient to zero for the first class;
+620's exact action descent gives zero first variation for the second;
+and621's positive-base-jet theorem gives zero for the third. Linearity of
+the first variation would establish joint stationarity under their sum.
+No fibre integration by parts is used to justify the metric component.
+
+Choose an actual smooth local chimeric frame E0(y), independent of x.
+The homogeneous field's native coefficients and their y-derivatives are
+x-independent, which is all621's structural theorem requires. Do NOT
+extend the finite fixtures' dT_coordinate=0 to that field. Likewise the
+pointwise normal/reductive cancellation of vertical spin connection is
+not a globally vertically parallel frame: nonzero vertical curvature
+forbids that. Full covariance transports618's zero gradient into the
+chosen smooth frame, whose vertical connection is generally nonzero.
+The metric-variation formula cancels arbitrary baseline dE0 terms exactly.
+
+This boundary class is not automatically the class with total connection
+A=B0(h)+varpi fixed on the fibre boundary. There delta A=delta B0+delta
+varpi can be nonzero under a metric variation; bulk connection stationarity
+does not justify discarding that boundary change. The synthesis selects
+neither that alternative boundary prescription nor a natural boundary
+condition on unrestricted upstairs metrics.
+
+If validated, this would remove the absence of a joint local critical
+background as an obstruction for this DECLARED regulated model and
+variation class. It would not select the author's operator/couplings,
+an unregulated global action, physical vacuum, observer reduction, units,
+stability or physical fluctuation poles. Those remain separate requirements.
+In particular, zero first variation does not eliminate metric-metric or
+metric-field second variations. Products of two base-dependent perturbations
+need not integrate to zero. A future physical fluctuation problem must
+derive the full mixed Hessian from the same action and handle the Ward
+null directions, boundary/operator domain and observer/time reduction;
+the homogeneous response determinant alone is not that Hessian or a pole.
+
+### Analytical second-variation countercontrols, unexecuted
+
+MAIN and independent agents hand-checked explicit MASS-PIECE examples;
+these are future controls, not a computed full Hessian. At fixed y=eta,
+epsilon=I and native T=(dx0+dy00)gamma0, set h00=-1+t f(x0) with other
+components unchanged. The exact LC/shear response is
+
+    C^0_00=-t f'/(2(1-tf)), n=N_4,0=t f'/(1-tf).
+
+Since G^-1=(I+N)G0^-1(I+N)^T, G0^-1_00=1,
+G0^-1_44=1/2 and the gamma0 trace pairing is-1, the normalized density is
+
+    I_mass(t)=-kappa(3/4+n+n^2/2),
+    [t^2]I_mass=-kappa(ff'+(f')^2/2),
+    I_mass''(0)=-2kappa ff'-kappa(f')^2.
+
+For the one-dimensional periodic identity f=sin x0, the mean SECOND
+DERIVATIVE is-kappa/2, whereas the mean t^2 COEFFICIENT is-kappa/4.
+Do not confuse the two normalizations. This is a scalar identity per
+transverse coordinate volume, not a compactly supported4D perturbation
+or a selected spacetime compactification.
+
+Independently take h_s=h0+s fE00 and native varpi_t=(1+t g)T. The
+mass density is(kappa/2)(1+t g)^2 Pair_Gs(T,T)vol_Gs. Its mixed
+s,t derivative, divided by the baseline upstairs density, is
+
+    partial_s partial_t I_mass=-2kappa g f'.
+
+For f=sin x0,g=cos x0 the normalized periodic mean is-kappa. The
+coefficient of st is this same mixed derivative, with no extra1/2.
+An x-dependent field variation makes the coefficient of f' nonconstant,
+so the earlier unweighted first-variation cancellation cannot be reused.
+Both examples are off-shell diagnostic-field, single-piece controls.
+Other action pieces and the actual S_lambda background must be retained
+before making any full-Hessian, stability or physical-spectrum claim.
+
+### A63 executed full metric audit and evidence replay
+
+621 PASSED FIRST frozen Release execution unchanged after independent
+full-pack and MAIN approval.46bindings,13compiled files,43counts,full
+fixture/DAG/live726/singleEOF closure and zero-warning build passed.
+Contract5ecf70637a466610003ec70115e61f251b65065a62fed28f678befe327a22a80;
+identical full/summary18eda4a2b62af3d450982c0181cf513d9f87d7acf0e8a4a48e313c310b3674f9
+(325198bytes each). All700 shards total39777820bytes,max145452.
+Tracked products are9116109 coefficient,5307754 matrix and22900008 dual;
+largesttensor822. The first-order metric theorem is accompanied by the
+FULL metric/curvature/frame comparisons and14000 original-action variations,
+not inferred only from a volume calculation or finite field menu.
+
+The separately approved read-only reconstruction PASSED all336000 stage
+fingerprints,84000 fixed/adapted identities,3500 fields and14000 original
+scalar coefficients. MAIN confirmed exact700paths, every hash/byte count,
+unchanged702 output files and all frozen inputs after replay. Retained
+first-jet mass variation is-1, frozen-Hodge0, weighted scalar mean-1/2;
+the noncoincident third-jet source variation is3/16 with curvature3/4.
+All14 authority flags remain false and physicalmassclaims0. This evidence
+supports the conditional joint relative-action synthesis above; it does
+not execute the proposed full-H/S5/Hessian tests or select physical inputs.

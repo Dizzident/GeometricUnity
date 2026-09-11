@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "phase": 620,
+  "contractId": "phase620-a63-curved-caa-action-descent-ward-v1",
+  "amendment": "A63",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "curved-reference-jet-control-failed",
+    "literal-action-descent-control-failed",
+    "actual-product-variation-ward-control-failed",
+    "nonzero-decoy-control-failed",
+    "resource-census-control-failed",
+    "curved-caa-action-descent-ward-controls-pass-conditional-epsilon-redundancy"
+  ],
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "points": [
+      0,
+      1
+    ],
+    "domain": "full real u(64,64), all16384 real phased blades including central iI; no carrier projection",
+    "operator": "canonical untied CAA; independently conjugated firstPhi Gamma1, outerPhi Gamma1, innerPhi Gamma2; Hodge and1/2 retained",
+    "background": "complete passed608 beta=-1/2 curvature reconstructed through immutable610 frame/lift; local normal reference A0(p)=0, partial_a A0_b=F_ab/2",
+    "epsilonModes": [
+      "identity including zero derivatives",
+      "(1+fN)(1+gM),f=g=1,df=theta0,dg=theta1; f=1+x0,g=1+x1"
+    ],
+    "nilpotents": "N=gamma2+Gamma12,M=gamma2-Gamma12; N2=M2=0,[N,M]=4gamma1",
+    "ordinaryMixedHessian": "epsilon01=epsilon10=NM; inverse01=inverse10=MN; other entrieszero",
+    "covariantSquare": "ordinary symmetric Hessian plus [partial_a A0_b,epsilon], antisymmetrized; compare [F0,epsilon] only afterward",
+    "fields": [
+      {
+        "id": "C",
+        "S": "Gamma1",
+        "DS": "0",
+        "pieces": [
+          "60",
+          "0",
+          "-4368",
+          "-7"
+        ],
+        "variation": [
+          "60",
+          "0",
+          "-13104",
+          "-14"
+        ]
+      },
+      {
+        "id": "K",
+        "S": "theta0 gamma1",
+        "DS": "theta02 Gamma12",
+        "realization": "partial2 S0=-Gamma12",
+        "pieces": [
+          "0",
+          "1",
+          "0",
+          "-1/2"
+        ],
+        "variation": [
+          "0",
+          "2",
+          "0",
+          "-1"
+        ]
+      }
+    ],
+    "pieceOrder": [
+      "source",
+      "kineticWithHalf",
+      "rawCubic",
+      "massWithHalf"
+    ],
+    "gammas": [
+      1,
+      2
+    ],
+    "kappas": [
+      0,
+      1
+    ],
+    "directions": [
+      "fixed epsilon: V=S,DV=DS",
+      "plus Ward: eta=Gamma01,Deta=theta0gamma1,deltaomega=D_Aeta",
+      "epsilon only: sameeta,deltaomega=0"
+    ],
+    "epsilonOnlyAnchor": [
+      "21/2",
+      "-21/16",
+      "0",
+      "1"
+    ],
+    "decoys": [
+      {
+        "id": "wrong-lift",
+        "eta": "0",
+        "Deta": "theta0gamma1",
+        "pieces": [
+          "0",
+          "-2",
+          "0",
+          "2"
+        ],
+        "kappa": 0,
+        "total": "-2"
+      },
+      {
+        "id": "frozen-curvature",
+        "eta": "Gamma01",
+        "Deta": "0",
+        "pieces": [
+          "-5/8",
+          "0",
+          "0",
+          "0"
+        ],
+        "kappa": 0,
+        "total": "-5/8"
+      },
+      {
+        "id": "frozen-all-Phi",
+        "eta": "Gamma01",
+        "Deta": "0",
+        "pieces": [
+          "-79/8",
+          "0",
+          "0",
+          "0"
+        ],
+        "kappa": 0,
+        "total": "-79/8"
+      }
+    ],
+    "variation": "exact first dual-number product rules; no printed9.6/9.7 or covariance substituted for action",
+    "expectedCounts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "domainBladeControls": 16384,
+      "centralDomainControls": 1,
+      "nilpotentIdentities": 6,
+      "kernelParityCases": 192,
+      "points": 2,
+      "frameEntries": 392,
+      "curvatureEntries": 76832,
+      "spinActionRows": 2548,
+      "curvatureInputRows": 2,
+      "sourceRows": 2,
+      "pointTransportRows": 1,
+      "epsilonContexts": 4,
+      "inverseControls": 16,
+      "inverseDerivativeControls": 8,
+      "ordinaryHessianRows": 784,
+      "normalSquareControls": 8,
+      "contexts": 8,
+      "noncommutingGeometryRows": 4,
+      "operatorDescentRows": 24,
+      "actionPieceRows": 32,
+      "topTraceRows": 32,
+      "actionRows": 32,
+      "variationContexts": 24,
+      "inverseVariationRows": 24,
+      "reconstructedFieldRows": 24,
+      "variationPieceRows": 96,
+      "phiVariationRows": 72,
+      "epsilonOnlyAnchorRows": 2,
+      "fixedDirectionRows": 32,
+      "wardRows": 32,
+      "epsilonOnlyRows": 32,
+      "decoyPieceRows": 6,
+      "decoyRows": 12
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "resources": {
+      "estimatedCpuSeconds": 30,
+      "maximumEstimatedCpuSeconds": 300,
+      "estimatedPeakBytes": 134217728,
+      "maximumEstimatedPeakBytes": 1073741824,
+      "maximumTrackedCoefficientProducts": 20000000000,
+      "maximumTrackedMatrixProducts": 10000000,
+      "maximumTensorTerms": 1490944,
+      "normalSquareEntries": 9646,
+      "dualChainStages": 912
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "sourceNormSelected": false,
+      "sourceMetricSelected": false,
+      "domainRestrictedToFixtures": false,
+      "printedForceUsed": false,
+      "invariantScalarActionUsedAsFullGradient": false,
+      "globalCurvatureConstancyClaimed": false,
+      "finiteTotalActionClaimed": false,
+      "fullMetricEulerComputed": false,
+      "physicalVacuumSelected": false,
+      "physicalSpectrumClaimed": false
+    }
+  },
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase620_curved_caa_action_descent_ward_audit_001/Program.cs",
+      "sha256": "1984e90dd16c58bb121a3c002be7ac8631ee547fbb99f2335bf98241a3c016eb"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase620_curved_caa_action_descent_ward_audit_001/Phase620CurvedCaaActionDescentWardAudit.csproj",
+      "sha256": "3ca484bad93d44d5f5d063e6c0da9277a25d129847c817ae50323e702afb6196"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase620_curved_caa_action_descent_ward_audit_001/STUDY.md",
+      "sha256": "d3e6c6663b0f8a3484fd3828c95e77e1ef0846acdcc160ab56e0e0291ae48fa8"
+    },
+    {
+      "id": "curved-ward-helper",
+      "path": "studies/phase620_curved_caa_action_descent_ward_audit_001/CurvedWard.cs",
+      "sha256": "95b1280a581b682279459de57b86ec3874f72a5b7f5027d927f293ac1f446471"
+    },
+    {
+      "id": "phase598-program",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/Program.cs",
+      "sha256": "a15a29e413bbb2212cd6385b999b953991980c9e782522ae0aa17a5e848de842"
+    },
+    {
+      "id": "phase598-project",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/Phase598ContinuumActionDescentWardAudit.csproj",
+      "sha256": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661"
+    },
+    {
+      "id": "phase598-study",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/STUDY.md",
+      "sha256": "c4cb284a25d6174b8ad808caa0355c73cc1e7dbcc70c678674ebaa5f040b1d90"
+    },
+    {
+      "id": "phase598-contract",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/preregistration/contract_v1.json",
+      "sha256": "daa0785a3b3aada95c665b5a7234d43d2bea67140d5a4e5651a9e72f8ec20ecd"
+    },
+    {
+      "id": "phase598-summary",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/output/continuum_action_descent_ward_audit_summary.json",
+      "sha256": "d7d8b0576ec4a15edfb0a3bcfb7cbff900b651c1be326c0805d019c05b191cfb"
+    },
+    {
+      "id": "phase598-exactarithmetic-helper",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase598-fouriertensor-helper",
+      "path": "studies/phase598_continuum_action_descent_ward_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-project",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-exactarithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-fouriertensor-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-traceadjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-project",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj",
+      "sha256": "01da9a505b2af2cfab0a62296b5dd00a3b3df1ce1ca4d45645f719d1c3d3673b"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-verticalgeometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-project",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj",
+      "sha256": "7d25507c8102d3b0bb10fd28d4bcf395fcc57497cd56ce71c16aceb3fc2b821f"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase610-program",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Program.cs",
+      "sha256": "a6fb779acf2f96a6fafd1b010a529e525ceed4f0edc708943909cb13624db5a0"
+    },
+    {
+      "id": "phase610-project",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj",
+      "sha256": "a64e6a9ab71d179c56bf829735f835b25c2af7bf7d265ac1be777a05f961970e"
+    },
+    {
+      "id": "phase610-study",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/STUDY.md",
+      "sha256": "67269d1d55c5e738e7e1a5cbd87da10f6064cb11d96008f6fa80bc1648961a93"
+    },
+    {
+      "id": "phase610-contract",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/preregistration/contract_v1.json",
+      "sha256": "c3bd65163480ae51b75c9500fb897cf2a1291a06655f538ce2be9a2776d9233e"
+    },
+    {
+      "id": "phase610-summary",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/output/induced_spin_curvature_contraction_audit_summary.json",
+      "sha256": "507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4"
+    },
+    {
+      "id": "phase610-spingeometry-helper",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs",
+      "sha256": "1da7150abc6f2da2abe0c9dbd1600e84edcd452dae90449a599a65fbb8d7e2cb"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-project",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj",
+      "sha256": "a7e269d3b8a9c1c2d8f915f74a0a112fad68c271b2ac6883a8253956e968c14b"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase611-caaoperator-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ]
+}

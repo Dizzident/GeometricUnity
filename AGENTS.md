@@ -11,6 +11,10 @@
   for redundant conversational confirmation. Request execution escalation
   when required by the sandbox; the runtime decides whether a saved rule
   satisfies approval or a user prompt is necessary.
+- Treat the active runtime approval rules as authoritative; this file records
+  the workflow but does not grant permissions. If an authorized operation
+  needs a new approval, request a narrowly scoped, repository-specific command
+  prefix through the approval mechanism so the user can save it for reuse.
 - Prefer separate, simple commands so the approval system can match each
   command reliably. Do not broaden permissions or bypass a required prompt.
 - Saved approvals do not authorize unrelated work, destructive operations,
