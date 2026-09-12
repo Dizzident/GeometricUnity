@@ -2550,3 +2550,287 @@ independently hand-checked this structural identity. A future full Hessian
 audit should test these zeros and the nonzero cross blocks, not discard
 either parity beforehand. It remains a fixed-epsilon, kappa0 statement,
 not a physical energy, stability or particle assertion.
+
+### A65 prospective BC controls and corrected mixed-variation design
+
+A64 is checkpointed as59ff44c9 on main after final validation.624 is now
+allocated to the exact BC candidate above; no624 science has executed.
+Independent hand review reconfirms the full nonlinear forecast without
+using a restricted scalar action. Let s=sum_i d_i=-2b+9c and
+q=sum_i d_i^2=b^2+9c^2. The literal Q_ij=2d_i d_j Gamma_ij gives
+KQ vector coefficient2(s^2-q)-4d_i(s-d_i). Its higher-grade wedge vanishes
+because the exterior and Clifford planes match. The complete adjoint
+contribution has only trace coefficient-4q. Dividing their sum by3 gives
+the three N weights above. This is a hand proof to challenge with the
+full exact tensor implementation, not executed evidence or grade projection.
+
+An important off-root control is S=B,gamma1,kappa0. The restricted even
+action density is zero, yet for V=PHGamma the original local source,
+kinetic and cubic variations are21,5,-4, with total22. The full Euler
+pairing is20. Their difference2 is exactly half the Green divergence4.
+Thus neither a zero restricted action nor a nonzero local invariant-field
+action derivative settles full stationarity.624 must retain the full
+gradient, original cubic variations and the explicit Green relation.
+
+The later mixed-Hessian test must not reuse621's finite-field helper
+unchanged. Its ActionVariation.Evaluate, line44 onward, builds D_BT from
+the connection commutator alone because its finite fixtures have locally
+constant native coordinates. A homogeneous BC field instead generally
+has nonzero dS*(y), and a compact probe U has nonzero dU. Both and their
+frame motion must be retained. This is a limitation of reusing that helper,
+not a newly found failure in621's stated finite menu.
+
+621 STUDY section7 separately proves its fixed-domain cancellation for
+arbitrary smooth x-independent T(y) AND dT(y). MAIN and a fresh independent
+reviewer checked that argument: in fixed native coordinates delta_h T=0
+and delta_h dT=0; every remaining h dependence enters through C(h) or its
+derivatives and induced frame. At constant h0 all coefficients multiply
+positive base derivatives of delta h, of order at most3. Their integrals
+vanish for base-compact variations at each fixed y, without fibre integration
+by parts. Thus the conditional joint-stationarity inference can still apply
+to tensorially defined x-independent BC sections, with b,c,gamma held fixed.
+The finite constant-coordinate execution alone does not prove this extension.
+
+For a future full mixed test write R_h(X,Y) for the original signed pairing
+INCLUDING its volume density, dotR for its metric variation, dotK for the
+complete solder/Hodge variation, deltaB for the spin-connection variation,
+and deltaF for its full curvature variation. Fix native T=S* and U while
+varying h, and define
+
+    Z=D_BT=dT+BT+TB, ZU=D_BU=dU+BU+UB,
+    Q=T T, C=T U+U T.
+
+Products here are exterior/Clifford products, with their full signs.
+The unintegrated original mixed density is the sum
+
+    Msource=dotR(U,KF)+R(U,dotK F+K deltaF),
+    Mkinetic={dotR(U,KZ)+R(U,dotK Z+K(deltaB T+T deltaB))
+              +dotR(T,KZU)+R(T,dotK ZU+K(deltaB U+U deltaB))}/2,
+    Mcubic=gamma{dotR(U,KQ)+R(U,dotK Q)
+                  +dotR(T,KC)+R(T,dotK C)}/3.
+
+The mass contribution is kappa dotR(T,U), zero in the declared BC test.
+These formulas follow both mixed derivative orders by ordinary product
+rules, without replacing the local variation by a formal-adjoint pairing.
+No coefficient in them has yet been computed as a new mixed-Hessian audit.
+
+A bounded prospective design reuses the700 metric Taylor germs from621
+and retains the FULL15 coefficient tensors multiplying U and its14 first
+coordinate derivatives. Build their algebraic transposes without spatial
+integration by parts and compare against a literal two-parameter original
+chain and the expansion above. This can represent arbitrary first field
+jets without claiming a small probe menu spans the full u(64,64) domain.
+The probe menu should include both parities, central iI and the native
+dy01 gamma0 anchor. Parity zeros and zero metric-jet controls complement,
+but do not replace, complete coefficient tensors.625 remains unallocated.
+
+The TOTAL base derivative order of the kinetic mixed terms is at most2:
+dotR/dotK have metric order at most1 and D_BU has field order at most1;
+deltaB has metric order at most2 but multiplies U without a derivative.
+There is no deltaB*dU product in this first mixed variation. Native dS*(y)
+carries zero base order. Cubic terms have total base order at most1.
+Base integration by parts preserves total order. Hence those terms cannot
+cancel the source's third-order +(3/16)g f''' mixed symbol. This is an
+analytical differential-coupling observation, not a particle pole or ghost.
+
+Ward-null tests require another correction to a tempting shortcut. For
+compact-interior eta the compensated tangent in native variables is
+W_eta=(delta epsilon=eta, delta varpi=D_(B+S)eta). It depends on h and S.
+Differentiating the exact Ward identity gives
+
+    D^2 I(v,W_eta)+D I(D_v W_eta)=0.
+
+The extra native component is[deltaB,eta] for a metric direction and[U,eta]
+for a field direction. It cannot be dropped pointwise or off shell. Use an
+exactly compensated two-parameter family: epsilon_s=1+s chi N with N^2=0
+and compact-interior chi, inverse1-s chi N, and
+
+    varpi(h,s)=epsilon_s^-1 D_B(h) epsilon_s
+                +epsilon_s^-1 T epsilon_s.
+
+Then the descended T is fixed and the original density is independent of
+s; both mixed orders must include the resulting acceleration.620's
+CurvedWard.Coordinates/Evaluate provide related first-order implementation
+anchors, not a substitute for the new second-order calculation. Keep
+ordinary symmetric second jets distinct from D_B^2 eta=[F_B,eta]. Only
+after full stationarity and the specified compact support may the integrated
+first-variation acceleration term be suppressed. A frozen lift or epsilon-
+only variation is a negative control, not the true gauge null direction.
+
+Before any physical spectrum follows, an admissible domain, boundary
+conditions, removal of redundant directions, observer/time interpretation,
+source couplings and unit normalization are still required. No new external
+source or author intention is selected by these internal derivations.
+
+### A65 later hand lead: first-order mass-coupling compensation about BC
+
+This is a new hand derivation checked independently by MAIN and a reviewer,
+not a624 menu change, coefficient execution or full continuation theorem.
+Keep gamma at the candidate's fixed algebraic value and consider the
+infinitesimal response to kappa at0. Write V=aPHGamma+ePTGamma+tPtrGamma;
+t here is an amplitude, not the trace tangent. The earlier full cyclic-grade
+and potential-only reflection argument predicts Bcal(V,bB+cC) in span{B,C}.
+Its two coefficients can be derived without solving any new field equation:
+use symmetry of Pair(U,Bcal(V,W)), the full N(bB+cC) polynomial, and the
+signed norms Pair(B,B)=-1 and Pair(C,C)=-9. They are
+
+    coefficientB=a(4b-36c)+e(18b-96c)+t(2b/3-12c),
+    coefficientC=a(-4b+64c/3)+e(-32b/3+112c/3)+t(-4b/3+4c).
+
+The zero J coefficient also follows from the earlier Bcal(V,J) proportional
+to J and orthogonality to B,C. No scalar restricted-action stationarity or
+pointwise kinetic self-adjointness is invoked. With the full kinetic response
+HV=(e-a)J+(t-a)(-B+C), the first-order equation
+
+    [H+2gamma Bcal(S*,.)]V=-S*, S*=bB+cC,
+
+requires e=a and a two-by-two system M(a,t)^T=(-b,-c)^T, where
+
+    M11=1+44gamma b-264gamma c,
+    M12=-1+4gamma b/3-24gamma c,
+    M21=-1-88gamma b/3+352gamma c/3,
+    M22=1-8gamma b/3+8gamma c.
+
+Put q=9r-1, P=1+18r+36r^2 and x=gamma b=3q/(4P), so gamma c=rx.
+Hand expansion gives
+
+    det M=(8x/3)(5-61r)+(352x^2/9)(2r+1)(9r-2)
+         =-2q(414r^3+621r^2+224r-27)/P^2 < 0.
+
+The inequality holds on the entire isolating interval(3/4,7/8), without
+a numerical root or reducing powers with p: q,P are positive and
+224r-27>141. Consequently the first-order compensation is well-defined,
+
+    a=b(-M22+r M12)/det M, e=a,
+    t=b(M21-r M11)/det M.
+
+This constructs only a formal first jet. In the diagnostic equation,
+substitution of S*+kappa V cancels the constant and linear orders, leaving
+kappa^2[V+gamma N(V)], conditional on the full hand identities above.
+It does NOT prove existence of a nearby actual nonlinear stationary family:
+higher-order solvability and the full invariant Clifford linearization
+remain to be examined. The two-by-two determinant is not a full Jacobian,
+differential inverse or propagator pole. No fixed physical coupling, source
+operator, observer metric, time or units have been selected.624 still tests
+only its prospectively defined exact kappa0 candidate;625remains unassigned.
+
+The reviewer identified a precise next compatibility question. If one insists
+on an exact solution inside the original six-carrier at gamma nonzero, the
+earlier grade-five necessity forces the J amplitude to vanish and the two
+horizontal/traceless vector weights to agree at every order. At order kappa^2
+the known odd-vector forcing V+gamma N(V) must then lie in the image of the
+three-by-two response obtained by varying b,c. The nonsingular first-order
+two-by-two system says nothing about this second-order compatibility. A
+failure would obstruct that small ansatz, not the full Clifford theory;
+additional invariant grades would require a new complete operator audit.
+
+MAIN and the reviewer sharpened the prospective second-order forcing by
+direct full-gradient algebra, not merely a scalar restriction. For diagonal
+V_i=v_i gamma_i put s=sum v_i and qv=sum v_i^2. The matched-plane curvature
+Q_ij=2v_i v_j Gamma_ij has no fourfold-wedge CAA term, so
+
+    (KQ)_i=2(s^2-qv)-4v_i(s-v_i).
+
+The complete reverse operator gives (Kdag V)_ij=-2(s-v_i-v_j)Gamma_ij.
+Its DQ adjoint is purely vector-valued and has coefficient
+4 sum_(j!=i) v_j(s-v_i-v_j)=2(KQ)_i. Thus the complete N(V)=KQ,
+with no discarded higher grade. For13 entries a and one trace entry t,
+
+    N(V)=(264a^2+48at)(PHGamma+PTGamma)+312a^2 PtrGamma.
+
+The next small-ansatz compatibility test is therefore concrete:
+form the three-vector columns HB+gamma partial_b N(S*) and
+HC+gamma partial_c N(S*), and check whether their image contains
+V+gamma N(V) in the same exact algebraic field. Neither that determinant
+nor any new nonlinear coefficient calculation has been executed. The
+result must not be assumed from the nonsingular first-order matrix.
+
+### A65 executed exact background and the next constrained obstruction
+
+624 PASSED its FIRST unchanged Release execution after independent and MAIN
+full-pack approval. Contract0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639;
+identical full/summaryad00ca89ad47d996a17ed7ade9d4df08ff14c4f29e7a003a0dc535e9fa0cf422,
+20740 bytes each. The two complete expanded point shards total5530216 bytes.
+Their full computed residuals are exactly zero; omitting H, feedback or
+the nonlinear adjoint produces nonzero residuals at both points. MAIN and
+independent retained-output reviews reconstructed all22 kinetic responses,
+24 feedback records,64 original cubic coefficients,48 derivatives and16
+Green variation identities. The independent review also reconstructed all
+16 currents/divergences. All60 frozen bindings remained unchanged.
+This is full-gradient evidence for the declared exact local background,
+not source selection, physical vacuum stability, arbitrary-gamma existence,
+global descent, a full mixed Hessian or a propagator.
+
+The following NEW result is HAND ONLY, independently checked by MAIN and
+two agents, outside624's frozen menu. No new coefficient program, root
+search, determinant execution or625 allocation occurred. It sharpens the
+above second-order question into a constrained obstruction.
+
+Retain fixed diagnostic gamma and put x=gamma b=3(9r-1)/(4P),
+A=gamma a, T=gamma t, with P=1+18r+36r^2. Define
+
+    K=414r^3+621r^2+224r-27,
+    U=198r^3+81r^2-4r+3,
+    W=1746r^3+243r^2-272r+21.
+
+Direct Cramer expansion of the already displayed first-order system gives
+A=3U/(8K), T=-3W/(8K). After multiplying the second-order forcing by the
+nonzero gamma, its three vector weights are(f,f,g), where
+
+    f=A+264A^2+48AT=3U Z/(8K^2), Z=K+99U-18W,
+    g=T+312A^2=3(117U^2-WK)/(8K^2).
+
+The two BC response columns L_b,L_c have rows(horizontal,traceless,trace):
+
+    L_b=(-3/4+x(2-18r), -2+x(4-64r/3), -1+x(4/3-24r)),
+    L_c=(27/4+x(-18+96r), 7+x(-64/3+224r/3), 9+x(-24+72r)).
+
+Write u=L_Hb-L_Tb=5/4+x(-2+10r/3) and
+v=L_Hc-L_Tc=-1/4+x(10+64r)/3.
+Both are positive on(3/4,7/8): in particular
+v=(540r^2+8r-11)/(4P)>0. In the traceless and trace rows the b column
+is negative and the c column positive. Therefore
+
+    m=v L_Tb-u L_Tc<0,
+    n=v L_tr,b-u L_tr,c<0.
+
+The compatibility scalar is m g-n f. To determine its sign, note K,U,W>0
+on the original isolating interval and
+
+    9U-W=36r^3+486r^2+236r+6>0,
+    9U-K=r(1368r^2-260)+108r^2+54>0.
+
+Thus WK<81U^2 and g>0. Also Z=-11412r^3+4266r^2+4724r-108.
+Using p(r)=0 reduces this to
+Z=-2(159733r^2-141298r+14936)/77.
+The exact hand value p(6/7)=-3731/343, together with p'>0 on the original
+interval, gives r>6/7. The quadratic in parentheses has value547736/49
+at6/7 and positive derivative thereafter. Hence Z<0 and f<0. It follows
+
+    m g-n f<0.
+
+The actual determinant with row order(H,T,tr) and columns(L_b,L_c,(f,f,g))
+is its NEGATIVE, hence strictly positive. This orientation distinction
+does not affect incompatibility. The required negative forcing is equally
+outside the image, since that image is a linear subspace.
+
+This cannot be evaded merely by choosing a different branch-compatible
+first jet INSIDE the same six-carrier. The exact grade-five equation at
+gamma nonzero forces J amplitude identically zero for a real or formal
+power-series branch, and the J row then forces e=a. The(H,T) minor of L
+is -m>0, so first-order delta b,delta c must vanish; det M<0 fixes a,t
+uniquely. This is uniqueness of an INTEGRABLE branch-compatible first jet,
+not nonsingularity of the unrestricted six-carrier Jacobian: the quadratic
+J^2 grade-five constraint has zero derivative at J=0 and can hide spurious
+linearized directions. Nonanalytic branches are not ruled out by the
+formal-series argument alone.
+
+Consequently the six-carrier formal continuation fails at second order,
+conditional on the full hand identities used above. This does not rule out
+additional invariant Clifford grades or nonhomogeneous fields. The next
+prospective calculation should test this obstruction exactly and audit
+whether the FULL admissible invariant response image removes it, retaining
+all output grades and distinguishing a linearized kernel from an integrable
+branch. Separately, the full mixed metric-field Hessian remains a concrete
+lead toward fluctuation analysis. Neither lead selects physical units or
+licenses boson mass predictions.

@@ -24693,3 +24693,169 @@ directory, retain both successful reports, and include the comparison
 limitation in the checkpoint. This is progress toward completing A64;
 the physical blockers and concrete next algebraic-background/Hessian leads
 are unchanged, and624+remain free.
+
+## 2026-09-12 - A64 checkpoint complete; A65 exact nonlinear background
+
+Checkpoint59ff44c9eafbd120093dff1c84130834628253c6 is committed on main,
+pushed and remote-matched; worktree clean before A65. Recovery final report
+pass_2026-09-12T20-22-09-170Z.json finished20:25:50.249Z with Release build
+plus42 steps passed,441 skipped and final integrity passed. MAIN and the
+independent reviewer confirmed all33 durable source snapshot hashes and
+all six622/623 frozen outputs unchanged. The checkpoint retains both final
+reports and the snapshot. There are33 tracked historical output diffs,
+not the earlier narrative34; all are generatedAt/runtimeSeconds only.
+The2574 old-output census remains2552 canonically identical and22 changed.
+The lost ignored preimages remain a limitation; the312 individual numeric
+mode records retain committed hashes. Checklist403/3, no physical masses.
+Previous goal turn PROGRESS: validated round committed and pushed.
+
+Allocate624 under A65 to test the hand-derived pure BC background using
+exact degree-three algebraic coefficients and the full original gradient.
+The builder must reconstruct all tensor/connection terms, both kinetic
+legs and all nonlinear grades before comparing with the reduced forecast.
+An independent reviewer challenges the candidate, field arithmetic and
+native boundary assumptions. A second parallel hand investigation designs
+the future full mixed metric-field second variation;625 is not allocated.
+No new scientific execution has occurred. The potentially useful result
+would be an exact local stationary background at one diagnostic coupling,
+not a selected physical vacuum or a mass prediction.
+
+A65 parallel hand review found two concrete future implementation hazards:
+621's finite ActionVariation helper omits dT only because its declared
+fixtures are coordinate-constant; a BC mixed audit needs dS*(y),dU and all
+frame-motion terms. The analytical621 fixed-domain theorem explicitly
+covers arbitrary x-independent dT and survives this distinction. Separately,
+the Ward lift varies with h and S: its differentiated identity includes
+the acceleration first variation, not just a pointwise Hessian-null claim.
+The existing reference now records the full original mixed expansion,
+total derivative-order proof and exact compensated-family controls.
+
+The off-root B,gamma1 control has zero restricted even action but nonzero
+PHGamma local variation22, Euler pairing20 and Green correction2. This
+will challenge624's interpretation without retuning its algebraic root.
+Shared generator/traversal101/202 and all9scanner registration is added;
+all11 shared C# projects built Release with0warnings/errors. No scientific
+phase was run. Independent full624 pack review and full shared verifier
+remain required before execution/checkpoint respectively.
+
+Independent partial shared-integration review passed all IDs, generator
+ordering,9scanners/10exclusion sites and14distinct false authority flags;
+no prior predicate was weakened. The full new analytical reference tail
+also passed independent review term by term. Full624 code/fixture/count/
+resource/binding approval remains pending; builder is implementing the
+exact scalar/tensor extension and original-action controls, without runs.
+
+Before new scientific outputs, MAIN archived all2580 old manifest-listed
+outputs plus the old manifest under the durable local ignored path
+scripts/incremental/skip_reports/a65_beforeimages.tar.gz,
+SHA92c92bbb58bfdc66c5342f73cac803d065db9b2726325bf8cc98b7cdffe133e3.
+The2581-entry census and tar byte-comparison passed. Use this retained
+baseline for final drift analysis. It is forensic material, not a bound
+science input or permission to overwrite the earlier baseline.
+
+A65 continued pre-run work: independent early review found exact624 field
+arithmetic and full-domain tensor extension sound; a C# method-name shadow
+was corrected before any build/science. MAIN added independently reviewed
+algebraic retained-evidence primitives to the shared verifier and hardened
+the malformed-null record check. Bash and embedded-JavaScript syntax checks
+passed. These helpers are not yet the complete624 output verifier; full
+schema/binding/output checks will follow the completed prospective pack.
+
+While the builder completes the pack, MAIN and an independent reviewer
+hand-derived a nonsingular two-by-two first-order kappa response about the
+pure BC candidate at fixed gamma. Its determinant is strictly negative on
+the full root-isolating interval. The existing reference records all mixed
+coefficients and the determinant proof. This is only a formal first jet,
+not nonlinear continuation or a physical pole, and it is excluded from624's
+frozen menu. Higher-order full-grade solvability is a concrete later lead.
+
+MAIN subsequently read the complete prospective624 program body and both
+helpers: actual residual assembly precedes all reduced forecasts; both
+kinetic legs and the original cubic/Green factors are retained. Read-only
+source metadata confirms60unique binding IDs/paths,12actual compiled sources
+all listed,55counters, and18cross-product/144cross-stage checks including
+the off-root decoy. At this check STUDY/contract completion and finalbuild
+were still pending, and the output directory was absent. These are not
+FIRST-science approval or a runtime result.
+
+The second-order continuation lead is now sharper: a direct adjoint proof
+confirms the full diagonal-vector N(V), including absence of higher grades.
+It gives an explicit three-by-two BC-image compatibility question for
+V+gamma N(V). That compatibility is not yet checked, and the hand lead is
+not an addition to624. The reference retains its precise provisional scope.
+
+A65 final prospective review is complete. The independent reviewer found
+one integration mismatch: contract fixture property order differed from
+Program and the verifier's strict serialization comparison. A pre-run
+apply_patch moved exactTolerance only; no values, science code or proof
+changed. Final contract is
+0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639.
+Independent and MAIN full reviews approve this exact pack; both metadata
+checks passed60 unique binding IDs/paths/hashes,12 actual compiled sources,
+55 STUDY/fixture counters, whole ordered fixture equality, live726 tree,
+14 false authority flags,15 false scope flags, singleLF and absent outputs.
+MAIN independent Release build passed0warnings/errors. MAIN now authorizes
+FIRST unchanged scientific execution. Its result remains pending and
+failure preservation/no post-run retuning remains mandatory.
+
+The durable A65 archive was also safely extracted into the previously absent
+scripts/incremental/skip_reports/a65_beforeimages_extracted/ directory.
+All2580 output bytes and the old manifest matched before any new outputs.
+The complete shared624 retained-evidence verifier passed independent and
+MAIN code review and syntax checks; it remains uncalled until actual FIRST
+hash pins exist. Previous goal turn PROGRESS; concrete tests remain.
+
+A65 FIRST execution PASSED unchanged: terminal session54360(exit0).
+Full/summary SHAad00ca89ad47d996a17ed7ade9d4df08ff14c4f29e7a003a0dc535e9fa0cf422,
+20740bytes each. Point0 SHA016de64ca9ae724eeffd6aa5b729094f368753817fdf17f247bde0928af1c3d2,
+2765092bytes; point1 SHAed6c0dd5d44164374ac34ee4a9950a25d24ced25d08410aecf756240fc786ce0,
+2765124bytes. The complete equation residual is zero at both points,
+while omission residual term counts are14,14,1 at each. Off-root original
+local variation22, Euler pairing20 and divergence4 survive exactly.
+
+MAIN's independent retained reconstruction checked67216 canonical tensor
+record visits,1844 nonempty tensors,256377 rational strings(max32 chars),
+all22 kinetic sums,24 nonlinear sums,64 original cubic coefficients,
+48 derivative coefficients and16 complete Green variation identities.
+The independent reviewer additionally reconstructed all derivative slots,
+codifferentials and16 currents/divergences through the separately reviewed
+retained-evidence verifier. Both reviews passed, not merely output booleans.
+Resources:44069 optimized coefficient products,3708 matrix products,
+11668 cubic products, largest intermediate614terms,5530216 shard bytes.
+All55 expected counters and60 frozen bindings match.
+
+Shared verifier activation used the actual FIRST hashes, added the exact
+101 mirror and unique202 row, and preserved every old aggregate conjunct.
+Independent and MAIN review approved verifier
+f579d7be3c03d97e4d3faec6f057c379bbabd67fd540b67b6c1fd11acc1cbf63.
+Ordered101/202 passed404/3. Full integrity terminal session3358 passed
+O4coverage31/31,overturn94/94 and strictJSON/JCS/Ed25519; WZ15/H14 deficits
+and physicalclaims0 are unchanged. Final checkpoint pass remains pending.
+
+Parallel hand investigation found a second-order obstruction within the
+six-carrier at fixed diagnostic gamma. MAIN and an independent reviewer
+checked the exact Cramer formulas and sign proof: scaled forcing(f,f,g)
+has f<0,g>0, while compatibility coefficients m,n are negative, so
+mg-nf<0. The determinant with columns(Lb,Lc,forcing) is its NEGATIVE and
+positive; this orientation correction was explicitly retained. The exact
+grade-five constraint and nonzero response minor fix every branch-compatible
+first jet, but do not prove the unrestricted linearized Jacobian is
+nonsingular. The full derivation is in the existing reference. No new
+coefficient execution or625 allocation occurred. Additional invariant
+Clifford grades and the full mixed Hessian remain concrete next leads.
+
+Pre-final old-output comparison covered every retained preimage:2577/2580
+are byte-identical. Only101full and202full/summary changed: the new624
+mirror/unique checklist row,403->404 count and timestamps. Matching old
+checklist rows by unique id found no other change. Repeat after final.
+The archive's original SHA was reverified; no lost-beforeimage gap in A65.
+
+Incremental tooling tests passed50/50 outside the sandbox with the six
+explicit test-file paths. The initial directory-form Node invocation did
+not resolve in this environment; the sandboxed explicit-file attempt hid
+child stdout. A direct spawnSync control exposed error.code=EPERM despite
+status0, so required execution escalation resolved it without source/test
+changes. Empty child output/status alone is not validation evidence.
+All source edits must precede the final incremental pass and its durable
+source snapshot; completion is to be recorded in the pass report/commit,
+not a source edit after validation.

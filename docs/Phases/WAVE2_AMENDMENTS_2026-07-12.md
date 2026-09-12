@@ -3985,3 +3985,82 @@ coefficient records and the complete kinetic/linear/Green/polarization/
 fifth-order/cubic evidence relations. Approved623 read-only evidence
 verification session13581 finished exit0. No bound scientific files were
 edited. These are targeted results, not a substitute for final validation.
+
+## A65 - Exact algebraic nonlinear stationary background (2026-09-12)
+
+Continue on main from59ff44c9eafbd120093dff1c84130834628253c6, pushed
+and remote-matched with clean worktree. A64 recovery final report
+pass_2026-09-12T20-22-09-170Z.json passed the Release build and42 steps,
+441 skipped; independent review confirmed33 source-snapshot hashes and
+all six new output pins unchanged. Checklist403/3, physical claims0.
+The prior goal turn was PROGRESS. Lost original ignored-output preimages
+remain a documented comparison limitation; no reconstruction is claimed.
+
+Allocate624 to the exact algebraic BC stationary-background audit.
+Root studies/phase624_exact_algebraic_bc_stationary_background_audit_001;
+project Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj;
+contract phase624-a65-exact-algebraic-bc-stationary-background-v1;
+terminal exact-algebraic-bc-controls-pass-conditional-stationary-background.
+The declared diagnostic first-action equation is
+A+H S+gamma N(S)+kappa S=0 with canonical untiedCAA and the complete
+real u(64,64) Clifford domain, both parities and central iI retained.
+Test S=bB+cC at kappa0 in Q[r]/(693r^3-511r^2-64r-17), with its real
+embedding isolated in(3/4,7/8), D=1+42r^2, P=1+18r+36r^2,
+b=7P/[2(9r-1)D], c=rb, gamma=3(9r-1)^2D/(14P^2).
+These are prospective exact algebraic specifications, not numerical fitting.
+This single diagnostic coupling is not an author-selected coupling or a
+solution for an arbitrary preassigned gamma.
+
+Reconstruct B,C and the complete covariant field tensors at both transported
+points, independently compute both kinetic adjoint legs, full Q, literal
+KQ, DQ adjoint Kdag S, and the original cubic-action directional derivatives.
+Only after the full gradient is computed may it be compared with the
+three-vector hand forecast. A restricted zero action is not stationarity.
+Require exact field arithmetic controls, irreducibility/real-embedding and
+nonzero-denominator proofs, full-grade residuals and nonzero omission decoys.
+Full geometry, source and operator inputs must be immutable passed artifacts;
+no unexecuted sibling is a dependency. Do not infer a pointwise symmetric
+homogeneous kinetic matrix or discard its Green-divergence correction.
+
+Builder owns only the624 study root; independent reviewer challenges the
+entire prospective pack; MAIN owns shared integration and FIRST approval.
+Before FIRST science freeze all code/project/STUDY/proof, full fixtures,
+independently derived counts, resource ceilings and failure precedence,
+exact bindings and actual compiled-source closure. Require live726 core
+path/hash/tree closure, zero-warning Release builds, independent and MAIN
+full review. No coefficient pilots, root search, post-run retuning or
+bound-input repair. Retain complete sparse evidence under frozen byte limits.
+Register generator/traversal/101/202/verifier/all9 scanners(both207sites),
+implementation/registry/amendment/restart/journal/reference/ledger before
+the final incremental validation and scoped commit/push/remote verification.
+
+Joint stationarity, if later justified, is only within621's fixed-domain,
+fixed-native perturbation class with constants b,c,gamma held fixed. At
+epsilonI, S=varpi, not varpi-B(h). No global boundary, physical vacuum,
+stability, differential inverse, observer field, units or pole is selected.
+All14 authority flags remain false; O4/external review pending, Phase561
+closed, WZ15/H14 deficits and physical claims0.625+remain unassigned.
+A separate read-only hand investigation may design the full original mixed
+metric-field Hessian test; it does not authorize another scientific run.
+
+A65 FIRST authorization: independent and MAIN complete final-pack reviews
+approve624 contract0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639.
+Both independently verified60 unique bindings,12 actual compiled sources,
+55 STUDY/fixture counts, whole ordered FixtureJson equality, live726 core
+path/hash/tree closure,14 false authority flags,15 false scope flags,
+single final LF and absent outputs. MAIN Release build passed0warnings/errors.
+The final pre-run correction only moved the contract exactTolerance key
+to match Program serialization order; no scientific value/code/proof changed.
+MAIN explicitly authorizes the FIRST unchanged Release scientific run.
+Preserve any failure; no frozen-input repair or observation-timeout restart.
+
+A65 FIRST result:624 PASSED unchanged in terminal session54360(exit0).
+Full/summaryad00ca89ad47d996a17ed7ade9d4df08ff14c4f29e7a003a0dc535e9fa0cf422
+are20740bytes each; two complete expanded shards total5530216bytes.
+Independent and MAIN retained reviews passed full residual/kinetic/nonlinear/
+original cubic/Green evidence,55counts and all60 unchanged bindings.
+The reviewed shared verifierf579d7be3c03d97e4d3faec6f057c379bbabd67fd540b67b6c1fd11acc1cbf63
+passed full integrity; ordered101/202 passed404/3,physicalclaims0.
+Final incremental validation follows all remaining shared narrative edits.
+The separately recorded hand-only second-order six-carrier obstruction is
+not a624 menu extension, full-space no-go or new execution authorization.

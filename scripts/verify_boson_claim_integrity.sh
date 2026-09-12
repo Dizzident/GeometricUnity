@@ -8113,6 +8113,223 @@ if (sourceLineageMissing) {
   assert(a64Bytes623===p623E.aggregateShardBytes&&a64MaxBytes623===p623E.maximumShardBytes&&a64Bytes623<=134217728&&a64MaxBytes623<=67108864&&a64Kinetic623Count===12&&a64Feedback623Count===16&&a64Action623Count===128&&a61Equal(a64Points623[0].coefficientRows,a64Points623[1].coefficientRows),"Phase623 expanded byte/count/transport closure drifted.");
   assert(a61Equal(p623E.scope,{fullS1ThroughS5Computed:true,fullOriginalResidualThroughLambdaFourComputed:true,fullNonlinearGradeFiveRetained:true,analyticBranchConsequenceConditional:true,sourceOperatorSelected:false,physicalCouplingSelected:false,physicalVacuumSelected:false,physicalSpectrumClaimed:false,pointwiseKineticSelfAdjointnessAssumed:false}),"Phase623 conditional analytic-branch/physical claim boundary drifted.");
   // End A64 retained evidence verification.
+
+  // A65 exact algebraic retained-evidence primitives. These never run a study
+  // or approximate the real root: coefficients use the ordered basis 1,r,r^2.
+  const a65Zero = () => ["0", "0", "0"];
+  const a65FieldValid = (x, limit = 4096) => Array.isArray(x) && x.length === 3 && x.every(v => a64Rat(v, limit));
+  const a65FieldZero = x => x.every(v => v === "0");
+  const a65FieldAdd = (a, b) => a.map((v, i) => a64AddText(v, b[i]));
+  const a65FieldScale = (a, q) => a.map(v => a64MulText(v, q));
+  const a65FieldMul = (a, b) => {
+    const coefficients = Array(5).fill("0");
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++)
+      coefficients[i + j] = a64AddText(coefficients[i + j], a64MulText(a[i], b[j]));
+    for (let degree = 4; degree >= 3; degree--) {
+      for (const [offset, factor] of [[3, "17/693"], [2, "64/693"], [1, "511/693"]])
+        coefficients[degree - offset] = a64AddText(coefficients[degree - offset], a64MulText(coefficients[degree], factor));
+      coefficients[degree] = "0";
+    }
+    return coefficients.slice(0, 3);
+  };
+  const a65TensorValid = (x, degree, limit = 4096) => Array.isArray(x) && x.every((t, i) =>
+    t !== null && typeof t === "object" && !Array.isArray(t)
+    && a61Equal(Object.keys(t), ["form", "blade", "k0", "k1", "real", "imaginary"])
+    && Number.isInteger(t.form) && t.form >= 0 && t.form < 16384 && (degree === undefined || a62Degree(t.form) === degree)
+    && Number.isInteger(t.blade) && t.blade >= 0 && t.blade < 16384 && t.k0 === 0 && t.k1 === 0
+    && a65FieldValid(t.real, limit) && a65FieldValid(t.imaginary, limit) && !(a65FieldZero(t.real) && a65FieldZero(t.imaginary))
+    && (i === 0 || x[i - 1].form < t.form || x[i - 1].form === t.form && x[i - 1].blade < t.blade));
+  const a65HAnti = t => t.every(x => (a62Degree(x.blade) * (a62Degree(x.blade) + 1) / 2) % 2 === 1
+    ? a65FieldZero(x.imaginary) : a65FieldZero(x.real));
+  const a65Lift = t => t.map(x => ({ ...x, real: [x.real, "0", "0"], imaginary: [x.imaginary, "0", "0"] }));
+  const a65Coefficient = (t, power) => t.map(x => ({ ...x, real: x.real[power], imaginary: x.imaginary[power] }))
+    .filter(x => x.real !== "0" || x.imaginary !== "0");
+  const a65Linear = (basis, weights) => {
+    assert(basis.length === weights.length, "A65 algebraic linear-combination arity drifted.");
+    const terms = new Map();
+    for (let i = 0; i < basis.length; i++) for (const t of basis[i]) {
+      const key = t.form + ":" + t.blade;
+      const old = terms.get(key) || { form: t.form, blade: t.blade, k0: 0, k1: 0, real: a65Zero(), imaginary: a65Zero() };
+      terms.set(key, { ...old, real: a65FieldAdd(old.real, a65FieldMul(t.real, weights[i])),
+        imaginary: a65FieldAdd(old.imaginary, a65FieldMul(t.imaginary, weights[i])) });
+    }
+    return [...terms.values()].filter(t => !(a65FieldZero(t.real) && a65FieldZero(t.imaginary)))
+      .sort((a, b) => a.form - b.form || a.blade - b.blade);
+  };
+  const a65Pair = (a, b) => {
+    const right = new Map(b.map(t => [t.form + ":" + t.blade, t])); let sum = a65Zero();
+    for (const t of a) {
+      const u = right.get(t.form + ":" + t.blade); if (!u) continue;
+      const d = a62Degree(t.blade), parity = d * (d - 1) / 2 + a62Degree(t.blade & 0x3f80) + a62Degree(t.form & 0x3f80);
+      const realProduct = a65FieldAdd(a65FieldMul(t.real, u.real), a65FieldScale(a65FieldMul(t.imaginary, u.imaginary), "-1"));
+      sum = a65FieldAdd(sum, a65FieldScale(realProduct, parity % 2 === 0 ? "-1" : "1"));
+    }
+    return sum;
+  };
+  // Parameterized by the reviewed frozen contract and immutable FIRST output
+  // hashes. This verifies retained evidence only; no scientific study runs.
+  const verifyA65RetainedEvidence = (contractHash, firstOutputHash) => {
+    const root = "studies/phase624_exact_algebraic_bc_stationary_background_audit_001";
+    const need = (ok, label) => { assert(ok, "Phase624 " + label); if (!ok) throw new Error("Phase624 malformed retained evidence: " + label); };
+    need(/^[0-9a-f]{64}$/.test(contractHash) && /^[0-9a-f]{64}$/.test(firstOutputHash), "requires actual frozen hash pins.");
+    const pack = a64Common(624, root, "exact_algebraic_bc_stationary_background_audit", "Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj", contractHash, 60, 12, 55, undefined);
+    const p = pack.p, e = p.evidence, fx = pack.contract.fixtures;
+    need([pack.fullPath, pack.summaryPath].every(path => sha256File(path) === firstOutputHash), "immutable FIRST full/summary pins drifted.");
+    need(p.phaseId === "phase624-exact-algebraic-bc-stationary-background-audit" && p.contractId === "phase624-a65-exact-algebraic-bc-stationary-background-v1" && p.verdictKind === "exact-algebraic-bc-controls-pass-conditional-stationary-background", "identity or terminal drifted.");
+    need(["fieldPassed", "connectionPassed", "kineticPassed", "nonlinearPassed", "actionPassed", "stationarityPassed", "countsPassed", "resourcesPassed", "frequencyPassed", "shardSetPassed"].every(k => e[k] === true), "scientific/resource control failed.");
+    const flags = ["authorIntentSelected", "registeredTransformationBridgeEstablished", "registeredActionChanged", "registeredMeasureSelected", "physicalHiggsIdentified", "sourceContractApplicationAllowed", "phase561Opened", "o4Discharged", "phase458Satisfied", "phase481Changed", "samplingPerformed", "samplingAuthorized", "productionAuthorized", "gevClaimAllowed"];
+    need(flags.every(k => p.authorityFirewalls[k] === false && pack.contract.authorityFirewalls[k] === false) && Object.keys(e.scope).length === 15 && Object.values(e.scope).every(x => x === false) && a61Equal(e.scope, fx.scope), "full false-flag/scope boundary drifted.");
+    const manifest = requireFile("studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json");
+    const live = [];
+    const walk = dir => { for (const item of fs.readdirSync(dir, {withFileTypes:true})) { if (item.name === "bin" || item.name === "obj") continue; const path = dir + "/" + item.name; if (item.isDirectory()) walk(path); else if (item.isFile() && /\.cs(proj)?$/.test(path)) live.push(path); } };
+    walk("src"); live.sort();
+    need(live.length === 726 && a61Equal(manifest.files.map(x => x.path), live) && manifest.files.every(x => sha256File(x.path) === x.sha256) && crypto.createHash("sha256").update(live.map(path => path + " " + sha256File(path) + "\n").join("")).digest("hex") === manifest.treeSha256 && manifest.treeSha256 === "d1d3222a5521fa8dc9720fd8169d5981610403f477ed2e8e38dc734273ae7f99", "live726 path/hash/tree closure drifted.");
+    need(fx.exactTolerance === 0 && fx.parameters.kappa === 0 && a61Equal(fx.field.modulusAscending, [-17,-64,-511,693]) && a61Equal(fx.field.basis, ["1","r","r^2"]) && a61Equal(fx.field.irreducibleModulo2Ascending, [1,0,1,1]), "exact number-field definition drifted.");
+    const scalar = q => [String(q), "0", "0"], one = scalar(1), zero = a65Zero(), rho = ["0","1","0"], rho2 = ["0","0","1"];
+    const add = a65FieldAdd, mul = a65FieldMul, scale = a65FieldScale, equal = a61Equal;
+    const sum = values => values.reduce(add, a65Zero());
+    const lin = (t, weights) => a65Linear(t, weights), plus = (a,b) => lin([a,b],[one,one]);
+    const ts = (t,q) => lin([t],[q]);
+    const basis = [one,rho,rho2];
+    const param = e.parameters;
+    need(equal(Object.keys(param), ["r","q","D","P","b","c","gamma","kappa"]) && param.kappa === 0 && ["r","q","D","P","b","c","gamma"].every(k => a65FieldValid(param[k],1024)), "parameter encoding drifted.");
+    const q = add(scale(rho,"9"),scalar(-1)), D = add(one,scale(rho2,"42")), P = sum([one,scale(rho,"18"),scale(rho2,"36")]);
+    const b = param.b, c = param.c, gamma = param.gamma;
+    need(equal(param.r,rho) && equal(param.q,q) && equal(param.D,D) && equal(param.P,P) && equal(mul(scale(mul(q,D),"2"),b),scale(P,"7")) && equal(c,mul(rho,b)) && equal(mul(scale(mul(P,P),"14"),gamma),scale(mul(mul(q,q),D),"3")) && equal(mul(mul(mul(gamma,b),b),D),scalar("21/8")), "four exact parameter identities drifted.");
+    need(equal(sum([scale(mul(rho2,rho),"693"),scale(rho2,"-511"),scale(rho,"-64"),scalar(-17)]),zero), "cubic modulus identity drifted.");
+    const embedding = {lower:"3/4",upper:"7/8",polynomialLower:"-3845/64",polynomialUpper:"11/512",derivativeLower:"5423/16",secondDerivativeLower:"4193/2",modulo2Values:[1,1]};
+    need(equal(e.embedding,embedding) && equal(fx.field.interval,[embedding.lower,embedding.upper]) && equal(fx.field.endpointPolynomial,[embedding.polynomialLower,embedding.polynomialUpper]) && fx.field.lowerDerivative === embedding.derivativeLower && fx.field.lowerSecondDerivative === embedding.secondDerivativeLower, "exact real embedding/monotonicity evidence drifted.");
+    // Positive p'(lower), p''(lower), increasing p'', opposite endpoint signs;
+    // reduction modulo2 has no root at either0 or1. No root approximation.
+    const polynomial = x => a64AddText(a64MulText("693",a64MulText(a64MulText(x,x),x)),a64AddText(a64MulText("-511",a64MulText(x,x)),a64AddText(a64MulText("-64",x),"-17")));
+    need(polynomial("3/4") === embedding.polynomialLower && polynomial("7/8") === embedding.polynomialUpper && a64AddText(a64MulText("2079",a64MulText("3/4","3/4")),a64AddText(a64MulText("-1022","3/4"),"-64")) === embedding.derivativeLower && a64AddText(a64MulText("4158","3/4"),"-1022") === embedding.secondDerivativeLower && [0,1].every(x => (x*x*x+x*x+1)%2 === 1), "root isolation arithmetic drifted.");
+    const inverseNames = ["1","r","r^2","q","D","P","2qD","14P^2","b","c","gamma"];
+    const inverseValues = [one,rho,rho2,q,D,P,scale(mul(q,D),"2"),scale(mul(P,P),"14"),b,c,gamma];
+    need(Array.isArray(e.arithmeticRows) && e.arithmeticRows.length === 20 && equal(fx.field.inverseMenu,inverseNames), "number-field arithmetic row census drifted.");
+    for (let i=0;i<3;i++) for (let j=0;j<3;j++) {
+      const row=e.arithmeticRows[3*i+j];
+      need(row.kind === "basis-product" && row.i === i && row.j === j && a65FieldValid(row.value,1024) && equal(row.value,row.oracle) && equal(row.value,mul(basis[i],basis[j])), "basis product/companion oracle drifted.");
+      for(let k=0;k<3;k++) need(equal(mul(mul(basis[i],basis[j]),basis[k]),mul(basis[i],mul(basis[j],basis[k]))), "basis associativity drifted.");
+    }
+    inverseNames.forEach((id,i) => { const row=e.arithmeticRows[9+i]; need(row.kind === "inverse" && row.id === id && [row.value,row.inverse,row.oracle].every(x => a65FieldValid(x,1024)) && equal(row.value,inverseValues[i]) && !a65FieldZero(row.value) && equal(row.inverse,row.oracle) && equal(mul(row.value,row.inverse),one) && equal(mul(row.inverse,row.value),one), "exact inverse/Euclidean oracle drifted: " + id); });
+    const paths = [0,1].map(point => root + "/output/points/point" + point + ".json");
+    need(fx.storage.schema === "two-complete-expanded-algebraic-point-shards-v1" && e.storageSchema === fx.storage.schema && equal(fx.storage.paths,paths) && Array.isArray(e.shards) && e.shards.length === 2 && equal(e.shards.map(x => x.path),paths) && equal(a64Files(root+"/output"),[pack.fullPath,pack.summaryPath,...paths].sort()), "exact two-shard/four-file path set drifted.");
+    need(fx.storage.maximumPointBytes === 67108864 && fx.storage.maximumAggregatePointBytes === 134217728 && fx.storage.maximumManifestBytes === 1048576 && pack.bytes.length <= 1048576, "storage ceilings drifted.");
+    const counters = {kinetic:0,feedback:0,cross:0,offCross:0,action:0,coefficients:0,derivatives:0,current:0};
+    let totalBytes=0, maxRational=1;
+    const scanRationals = value => { if (typeof value === "string" && /^-?\d+(\/\d+)?$/.test(value)) { need(a64Rat(value,1024),"noncanonical/oversized retained rational."); maxRational=Math.max(maxRational,value.length); } else if(Array.isArray(value)) value.forEach(scanRationals); else if(value && typeof value === "object") Object.values(value).forEach(scanRationals); };
+    [e.arithmeticRows,e.parameters,e.embedding].forEach(scanRationals);
+    const tensor = (t,degree) => need(a65TensorValid(t,degree,1024) && a65HAnti(t), "full algebraic tensor type/real-form/canonical order drifted.");
+    const stages = (actual,oracle) => { need(Array.isArray(actual) && actual.length === 8 && equal(actual,oracle), "eight literal/word algebraic CAA stages drifted."); actual.forEach((t,i) => tensor(t,[2,12,13,14,0,1,13,1][i])); };
+    const rationalKinetic = r => {
+      counters.kinetic++;
+      for(const [key,degree] of [["input",1],["forward",1],["reverse",1],["parallelReverse",1],["full",1],["exteriorDerivative",2],["exteriorOracle",2],["adjointFirst",2],["adjointSecond",2],["adjoint",2],["simplifiedAdjoint",2]]) need(a64Tensor(r[key],degree,1024) && a64HAnti(r[key]), "rational kinetic tensor drifted: "+key);
+      for(const [key,degree] of [["derivatives",1],["derivativeOracles",1],["adjointDerivatives",2],["parallelAdjoints",2]]) need(Array.isArray(r[key]) && r[key].length === 14 && r[key].every(t => a64Tensor(t,degree,1024) && a64HAnti(t)), "complete fourteen kinetic slots drifted.");
+      need(equal(r.derivatives,r.derivativeOracles) && equal(r.adjointDerivatives,r.parallelAdjoints) && equal(r.exteriorDerivative,r.exteriorOracle) && equal(r.adjoint,a62Tensor(r.adjointFirst,r.adjointSecond)) && equal(r.adjoint,r.simplifiedAdjoint) && equal(r.reverse,r.parallelReverse) && equal(r.full,a62Tensor(r.forward,r.reverse,"1/2","1/2")), "rational derivative/adjoint/kinetic sum drifted.");
+      need(Array.isArray(r.stages) && r.stages.length === 2 && r.stages.every(x => a64Stages(x,1024)) && equal(r.stages[0],r.stages[1]) && equal(r.stages[0][0],r.exteriorDerivative) && equal(r.stages[0][7],r.forward), "rational kinetic stage relation drifted.");
+      const reverse = a64Linear(r.adjointDerivatives.map((t,a) => a64Contract(t,a)),Array.from({length:14},(_,a) => a>=7?"1":"-1"));
+      const exterior = [];
+      for(let a=0;a<14;a++) for(const t of r.derivatives[a]) if(!(t.form&(1<<a))) { const sign=a62Degree(t.form&((1<<a)-1))%2?"-1":"1"; exterior.push({...t,form:t.form|(1<<a),real:a64MulText(t.real,sign),imaginary:a64MulText(t.imaginary,sign)}); }
+      need(equal(r.reverse,reverse) && equal(r.exteriorDerivative,a64Linear(exterior.map(t=>[t]),exterior.map(()=>"1"))), "complete exterior/codifferential reconstruction drifted.");
+    };
+    const feedback = r => {
+      counters.feedback++;
+      ["input","dq","wordDq","full"].forEach(k => tensor(r[k],1));
+      ["q","naiveQ","adjointFirst","adjointSecond","adjoint","simplifiedAdjoint"].forEach(k => tensor(r[k],2));
+      stages(r.stages,r.naiveStages);
+      need(equal(r.q,r.naiveQ) && equal(r.stages[0],r.q) && equal(r.adjoint,plus(r.adjointFirst,r.adjointSecond)) && equal(r.adjoint,r.simplifiedAdjoint) && equal(r.dq,r.wordDq) && equal(r.full,ts(plus(r.stages[7],r.dq),scalar("1/3"))), "full nonlinear product/adjoint/gradient relation drifted.");
+    };
+    const cross = r => {
+      counters.cross++; ["q","naiveQ"].forEach(k=>tensor(r[k],2)); ["firstAdjoint","secondAdjoint","firstWordAdjoint","secondWordAdjoint","full"].forEach(k=>tensor(r[k],1)); stages(r.stages,r.naiveStages);
+      need(equal(r.q,r.naiveQ) && equal(r.stages[0],r.q) && equal(r.firstAdjoint,r.firstWordAdjoint) && equal(r.secondAdjoint,r.secondWordAdjoint) && equal(r.full,ts(plus(r.stages[7],plus(r.firstAdjoint,r.secondAdjoint)),scalar("1/3"))), "cross product/full adjoint sum drifted.");
+    };
+    const contractTensor = (t,a) => t.filter(x => x.form&(1<<a)).map(x => ({...x,form:x.form^(1<<a),real:scale(x.real,a62Degree(x.form&((1<<a)-1))%2?"-1":"1"),imaginary:scale(x.imaginary,a62Degree(x.form&((1<<a)-1))%2?"-1":"1")}));
+    const current = (adjoint,variation) => Array.from({length:14},(_,a) => scale(a65Pair(contractTensor(adjoint,a),variation),a>=7?"-1":"1"));
+    const divergence = (lambda,j) => sum(lambda.flatMap((matrix,a) => matrix[a].map((v,i) => scale(j[i],v))));
+    const diagonal = (h,v,t) => lin([a65Lift(a64Diag(1,0,0)),a65Lift(a64Diag(0,1,0)),a65Lift(a64Diag(0,0,1))],[h,v,t]);
+    const nonlinear = (x,y) => { const xx=mul(x,x),xy=mul(x,y),yy=mul(y,y); return diagonal(sum([xx,scale(xy,"-18"),scale(yy,"48")]),sum([scale(xx,"2"),scale(xy,"-64/3"),scale(yy,"112/3")]),sum([scale(xx,"2/3"),scale(xy,"-24"),scale(yy,"36")])); };
+    const term = (form,blade,value) => ({form,blade,k0:0,k1:0,real:value,imaginary:a65Zero()});
+    const canonical = terms => lin(terms.map(t=>[t]),terms.map(()=>one));
+    const oracle = (x,y) => {
+      const d=Array.from({length:14},(_,i)=>i===10?zero:[0,7,8,9].includes(i)?scale(x,"-1/2"):y), s=sum(d), squares=sum(d.map(z=>mul(z,z)));
+      const Q=[],adjoint=[],kq=[];
+      for(let i=0;i<14;i++) {
+        for(let j=i+1;j<14;j++) Q.push(term((1<<i)|(1<<j),(1<<i)|(1<<j),scale(mul(d[i],d[j]),"2")));
+        if(i!==10) adjoint.push(term((1<<i)|(1<<10),1<<i,scale(d[i],i<10?"-2":"2")));
+        kq.push(term(1<<i,1<<i,add(scale(add(mul(s,s),scale(squares,"-1")),"2"),scale(mul(d[i],add(s,scale(d[i],"-1"))),"-4"))));
+      }
+      return {q:canonical(Q),adjoint:canonical(adjoint),kq:canonical(kq),dq:canonical([term(1<<10,1<<10,scale(squares,"-4"))])};
+    };
+    const points=[];
+    for(const [point,shard] of e.shards.entries()) {
+      need(shard.point===point && shard.path===paths[point] && /^[0-9a-f]{64}$/.test(shard.sha256) && Number.isSafeInteger(shard.bytes) && shard.bytes>0 && shard.bytes<=67108864, "shard manifest identity/cap drifted.");
+      const {bytes,value:r}=a64Read(shard.path,undefined,67108864); totalBytes+=bytes.length; points.push(r); scanRationals(r);
+      need(bytes.length===shard.bytes && sha256File(shard.path)===shard.sha256 && r.schemaVersion===1 && r.phase===624 && r.point===point && equal(r.fieldBasis,["1","r","r^2"]), "shard exact bytes/basis identity drifted.");
+      const old=p618.evidence.rows[point];
+      need(a64Matrix(r.frame,14,1024) && a64Matrix(r.inverse,14,1024) && equal(r.frame,old.frame) && r.frame.every((row,i)=>row.every((_,j)=>row.reduce((v,x,k)=>a64AddText(v,a64MulText(x,r.inverse[k][j])),"0")===String(i===j?1:0))), "frame/inverse identity drifted.");
+      need(Array.isArray(r.coordinateRows) && r.coordinateRows.length===14 && Array.isArray(r.frameConnection) && r.frameConnection.length===14 && equal(r.frameConnection,old.frameNomizu), "full connection row census drifted.");
+      r.coordinateRows.forEach((row,a) => need(row.axis===a && ["connection","motion","sum","oracle"].every(k=>a64Matrix(row[k],14,1024)) && equal(row.connection,old.coordinateRows[a].coordinateConnection) && equal(row.motion,old.coordinateRows[a].frameMotion) && equal(row.sum,old.coordinateRows[a].nomizu) && equal(row.sum,row.oracle) && row.sum.every((v,i)=>v.every((z,j)=>z===a64AddText(row.connection[i][j],row.motion[i][j]))), "coordinate connection/motion sum drifted."));
+      need(r.frameConnection.every(m=>a64Matrix(m,14,1024) && m.every((row,i)=>row.every((v,j)=>a64AddText(a64MulText(i>=7?"-1":"1",v),a64MulText(j>=7?"-1":"1",m[j][i]))==="0"))), "metric-skew connection drifted.");
+      need(Array.isArray(r.spinRows) && r.spinRows.length===14, "spin-lift row census drifted.");
+      r.spinRows.forEach((row,a) => { need(row.axis===a && a64Tensor(row.spin,0,1024) && a64HAnti(row.spin) && row.images.length===14,"spin-lift shape drifted."); row.images.forEach((image,j)=> { const expected=r.frameConnection[a].map((m,i)=>a61Term(0,1<<i,m[j])).filter(t=>t.real!=="0"); need(image.axis===j && a64Tensor(image.actual,0,1024) && equal(image.actual,image.expected) && equal(image.actual,expected),"all392 spin action/connection entries drifted."); }); });
+      const rationalDirections=[a64Diag(1,0,0),a64Diag(0,1,0),a64Diag(0,0,1),old.J,a64B,a64C,[a61Term(8,157,"1")],[{...a61Term(1,0,"0"),imaginary:"1"}]];
+      const directions=rationalDirections.map(a65Lift);
+      ["B","C","S","source"].forEach(k=>tensor(r[k],1));
+      need(equal(r.B,directions[4]) && equal(r.C,directions[5]) && equal(r.S,lin([r.B,r.C],[b,c])) && equal(r.source,a65Lift(old.source)) && equal(r.source,diagonal(scalar("-21/4"),scalar("-15/4"),scalar("-21/4"))), "native B/C/S or source definition drifted.");
+      need(Array.isArray(r.isotropyRows) && r.isotropyRows.length===18 && ["B","C","S"].every((id,index)=>old.isotropyRows.every((iso,k)=> {const row=r.isotropyRows[index*6+k]; return row.id===id && row.i===iso.i && row.k===iso.k && Array.isArray(row.action) && row.action.length===0;})), "all isotropy action rows drifted.");
+      for(const name of ["B","C","S"]) {
+        const disconnected=r[name].map(t=> { const sign=(a62Degree(t.form&897)+a62Degree(t.blade&897))%2?"-1":"1"; return {...t,real:scale(t.real,sign),imaginary:scale(t.imaginary,sign)}; });
+        need(equal(disconnected,r[name]),"disconnected Lorentz isotropy control drifted.");
+        // Trace-only reflection is a DIFFERENT, potential-algebra involution.
+        need(equal(lin([0,1,2].map(k=>a65Lift(a64Reflect(a65Coefficient(r[name],k)))),basis),ts(r[name],scalar(-1))),"trace-reflection odd tensor control drifted.");
+      }
+      need(r.kineticCoefficientResults.length===3 && r.actionRows.length===8 && r.feedbackRows.length===4, "kinetic/action/feedback menu drifted.");
+      r.kineticCoefficientResults.forEach((result,k)=> { rationalKinetic(result); need(equal(result.input,a65Coefficient(r.S,k)),"three rational S-coefficient inputs drifted."); });
+      for(const key of ["forward","reverse","full","adjoint"]) { tensor(r.kinetic[key],key==="adjoint"?2:1); need(equal(r.kinetic[key],lin(r.kineticCoefficientResults.map(x=>a65Lift(x[key])),basis)),"algebraic kinetic assembly drifted."); }
+      const Bweight={forward:["-9/4","-4","-3"],reverse:["3/4","0","1"],full:["-3/4","-2","-1"]}, Cweight={forward:["27/2","16","18"],reverse:["0","-2","0"],full:["27/4","7","9"]};
+      for(const key of ["forward","reverse","full"]) need(equal(r.kinetic[key],lin([diagonal(...Bweight[key].map(scalar)),diagonal(...Cweight[key].map(scalar))],[b,c])),"complete S kinetic forecast drifted.");
+      need(!equal(r.kinetic.forward,r.kinetic.reverse),"unequal S kinetic legs collapsed.");
+      const main=r.feedbackRows[0].result;
+      const menu=[["S",b,c,r.S],["B",one,zero,r.B],["C",zero,one,r.C],["BplusC",one,one,plus(r.B,r.C)]];
+      r.feedbackRows.forEach((row,i)=> { const [id,x,y,input]=menu[i], expected=oracle(x,y); feedback(row.result); tensor(row.cyclic,0); need(row.id===id && equal(row.b,x) && equal(row.c,y) && equal(row.result.input,input) && row.cyclic.length===0,"feedback input/cyclic menu drifted.");
+        for(const [actual,forecast,key] of [[row.result.q,row.expectedQ,"q"],[row.result.adjoint,row.expectedAdjoint,"adjoint"],[row.result.stages[7],row.expectedKq,"kq"],[row.result.dq,row.expectedDq,"dq"]]) { tensor(forecast,key==="q"||key==="adjoint"?2:1); need(equal(actual,forecast) && equal(actual,expected[key]),"full literal nonlinear oracle drifted: "+key); }
+        tensor(row.expectedFull,1); need(equal(row.result.full,row.expectedFull) && equal(row.result.full,nonlinear(x,y)) && [row.result.full,row.result.stages[7],row.result.dq].every(t=>t.every(z=>a62Degree(z.blade)===1)),"nonlinear all-grade vector closure drifted.");
+      });
+      ["full","omittedH","omittedFeedback","omittedAdjoint"].forEach(k=>tensor(r.residuals[k],1));
+      const residual=plus(r.source,plus(r.kinetic.full,ts(main.full,gamma)));
+      need(equal(r.residuals.full,residual) && residual.length===0 && equal(r.residuals.omittedH,plus(r.source,ts(main.full,gamma))) && equal(r.residuals.omittedFeedback,plus(r.source,r.kinetic.full)) && equal(r.residuals.omittedAdjoint,plus(r.source,plus(r.kinetic.full,ts(main.stages[7],scale(gamma,"1/3"))))) && ["omittedH","omittedFeedback","omittedAdjoint"].every(k=>r.residuals[k].length>0),"full stationary equation/nonzero omission decoys drifted.");
+      r.actionRows.forEach((row,v)=> {
+        counters.action++; tensor(row.variation,1); rationalKinetic(row.variationKinetic); feedback(row.variationFeedback); cross(row.cross);
+        need(row.id===fx.fields.actionDirections[v] && equal(row.variation,directions[v]) && equal(row.variationFeedback.input,row.variation) && equal(row.variationKinetic.input,rationalDirections[v]) && equal(row.signedNorm,scalar(fx.fields.actionDirectionNorms[v])) && equal(row.signedNorm,a65Pair(row.variation,row.variation)),"action direction/signed norm drifted.");
+        if(v===4||v===5) { const weights=v===4?Bweight:Cweight; for(const key of ["forward","reverse","full"]) need(equal(row.variationKinetic[key],a64Diag(...weights[key])),"B/C full kinetic leg forecast drifted."); need(!equal(row.variationKinetic.forward,row.variationKinetic.reverse),"unequal B/C legs collapsed."); }
+        const k=main.stages[7], crossK=row.cross.stages[7], ownK=row.variationFeedback.stages[7], third=scale(gamma,"1/3");
+        const coefficients=[a65Pair(r.S,k),add(a65Pair(row.variation,k),a65Pair(r.S,crossK)),add(a65Pair(row.variation,crossK),a65Pair(r.S,ownK)),a65Pair(row.variation,ownK)].map(x=>mul(third,x));
+        const forecast=[zero,mul(gamma,a65Pair(row.variation,nonlinear(b,c))),zero,v===0?scale(gamma,"-16"):v===1?scale(gamma,"-336"):zero];
+        const derivatives=[coefficients[1],scale(coefficients[2],"2"),scale(coefficients[3],"3")], gradient=[main.full,row.cross.full,row.variationFeedback.full].map(t=>mul(gamma,a65Pair(row.variation,t)));
+        need([row.coefficients,row.expectedCoefficients].every(a=>Array.isArray(a)&&a.length===4&&a.every(x=>a65FieldValid(x,1024))) && [row.derivativeCoefficients,row.gradientCoefficients].every(a=>Array.isArray(a)&&a.length===3&&a.every(x=>a65FieldValid(x,1024))) && equal(row.coefficients,coefficients) && equal(row.expectedCoefficients,forecast) && equal(coefficients,forecast) && equal(row.derivativeCoefficients,derivatives) && equal(row.gradientCoefficients,gradient) && equal(derivatives,gradient),"all original cubic coefficients/derivatives drifted.");
+        counters.coefficients+=4; counters.derivatives+=3;
+        if(v<2) need(!a65FieldZero(coefficients[3]),"nonzero cubic direction control vanished.");
+        const sourceFirst=a65Pair(row.variation,r.source), kineticFirst=scale(add(a65Pair(row.variation,r.kinetic.forward),a65Pair(r.S,a65Lift(row.variationKinetic.forward))),"1/2"), total=sum([sourceFirst,kineticFirst,coefficients[1]]), j=current(r.kinetic.adjoint,row.variation), div=divergence(r.frameConnection,j), euler=a65Pair(row.variation,residual);
+        need(equal(row.sourceFirst,sourceFirst) && equal(row.kineticFirst,kineticFirst) && equal(row.cubicFirst,coefficients[1]) && equal(row.totalFirst,total) && equal(row.eulerPairing,euler) && equal(row.current,j) && equal(row.divergence,div) && equal(total,add(euler,scale(div,"1/2"))),"original first variation/current/full Green identity drifted."); counters.current++;
+      });
+      const off=r.offRoot, kb=r.actionRows[4].variationKinetic, ph=r.actionRows[0].variationKinetic, nb=r.feedbackRows[1].result;
+      tensor(off.crossQ,2); tensor(off.naiveCrossQ,2); stages(off.stages,off.naiveStages); counters.offCross++;
+      need(equal(off.crossQ,off.naiveCrossQ) && equal(off.stages[0],off.crossQ),"off-root original cross-product evidence drifted.");
+      const offGradient=plus(r.source,plus(a65Lift(kb.full),nb.full)), offJ=current(a65Lift(kb.adjoint),directions[0]), offDiv=divergence(r.frameConnection,offJ);
+      const offSource=a65Pair(directions[0],r.source), offKinetic=scale(add(a65Pair(directions[0],a65Lift(kb.forward)),a65Pair(r.B,a65Lift(ph.forward))),"1/2"), offCubic=scale(add(a65Pair(directions[0],nb.stages[7]),a65Pair(r.B,off.stages[7])),"1/3");
+      const restricted=[a65Pair(r.B,r.source),scale(a65Pair(r.B,a65Lift(kb.forward)),"1/2"),scale(a65Pair(r.B,nb.stages[7]),"1/3")]; tensor(off.fullGradient,1);
+      need(equal(off.source,offSource) && equal(off.kinetic,offKinetic) && equal(off.cubic,offCubic) && equal(off.source,scalar(21)) && equal(off.kinetic,scalar(5)) && equal(off.cubic,scalar(-4)) && equal(off.localTotal,sum([offSource,offKinetic,offCubic])) && equal(off.localTotal,scalar(22)) && equal(off.fullGradient,offGradient) && offGradient.length>0 && equal(off.eulerPairing,a65Pair(directions[0],offGradient)) && equal(off.eulerPairing,scalar(20)) && equal(off.current,offJ) && equal(off.divergence,offDiv) && equal(offDiv,scalar(4)) && equal(off.localTotal,add(off.eulerPairing,scale(offDiv,"1/2"))) && equal(off.restrictedPieces,restricted) && restricted.every(a65FieldZero),"off-root zero restricted density/nonzero22-vs20 Green decoy drifted.");
+    }
+    const transport = r => [r.B,r.C,r.S,r.kinetic.full,r.feedbackRows[0].result.full,r.feedbackRows[0].result.stages[7],r.feedbackRows[0].result.dq,r.feedbackRows[0].result.adjoint,r.feedbackRows[0].result.q];
+    need(equal(transport(points[0]),transport(points[1])) && equal(counters,{kinetic:22,feedback:24,cross:16,offCross:2,action:16,coefficients:64,derivatives:48,current:16}),"complete retained row/transport census drifted.");
+    need(totalBytes===e.totalShardBytes && totalBytes<=134217728 && Number.isSafeInteger(e.maximumRationalCharacters) && e.maximumRationalCharacters===maxRational && maxRational<=1024, "aggregate shard bytes or exhaustive rational ceiling drifted.");
+    need(e.kineticCalls===22 && e.derivativeSlots===308 && e.connectionActions===724 && ["trackedCoefficientProducts","trackedMatrixProducts","trackedCubicProducts","largestTensor"].every(k=>Number.isSafeInteger(e[k])&&e[k]>0) && e.trackedCoefficientProducts<=fx.resources.maximumTrackedCoefficientProducts && e.trackedMatrixProducts<=fx.resources.maximumTrackedMatrixProducts && e.trackedCubicProducts<=fx.resources.maximumCubicProducts && e.largestTensor<=fx.resources.maximumTensorTerms && fx.resources.maximumFrequency===0, "actual operation/resource ceilings drifted.");
+    return {pack,points,counters};
+  };
+  const p624Retained = verifyA65RetainedEvidence(
+    "0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639",
+    "ad00ca89ad47d996a17ed7ade9d4df08ff14c4f29e7a003a0dc535e9fa0cf422");
+  const p624 = p624Retained.pack.p;
   const a46CoreManifest = requireFile(`${p586Root}/preregistration/core_source_manifest_v1.json`);
   const a46CorePaths = [];
   const a46WalkCore = dir => {
@@ -8314,6 +8531,9 @@ if (sourceLineageMissing) {
   const a64ChecklistIds = new Set(["full-homogeneous-kinetic-carrier-audit","full-inverse-kappa-fifth-order-feedback-audit"]);
   const a64ChecklistRows = phase202.checklist.filter(row => a64ChecklistIds.has(row.id));
   assert(a64ChecklistRows.length === 2 && new Set(a64ChecklistRows.map(row => row.id)).size === 2 && a64ChecklistRows.every(row => row.status === "passed"), "Phase202 A64 complete two-row checklist drifted.");
+  assert(p101a23?.exactAlgebraicBcStationaryBackgroundAudit?.status === p624.verdictKind && ["auditPassed","contractValid","exactBindingsValid","coreSourceTreeValid","knownAnswerPassed","controlsPassed"].every(k => p101a23.exactAlgebraicBcStationaryBackgroundAudit[k] === true) && p101a23.exactAlgebraicBcStationaryBackgroundAudit.promotedPhysicalMassClaimCount === 0, "Phase101 Phase624 mirror drifted.");
+  const a65ChecklistRows = phase202.checklist.filter(row => row.id === "exact-algebraic-bc-stationary-background-audit");
+  assert(a65ChecklistRows.length === 1 && new Set(a65ChecklistRows.map(row => row.id)).size === 1 && a65ChecklistRows.every(row => row.status === "passed"), "Phase202 A65 unique passed checklist row drifted.");
   const a63ChecklistRows = phase202.checklist.filter(row => a63ChecklistIds.has(row.id));
   assert(a63ChecklistRows.length === 2 && new Set(a63ChecklistRows.map(row => row.id)).size === 2 && a63ChecklistRows.every(row => row.status === "passed"), "Phase202 A63 complete two-row checklist drifted.");
   const a62ChecklistIds = new Set(["homogeneous-covariant-connection-audit","invariant-bivector-nonlinear-feedback-audit"]);
@@ -8346,7 +8566,7 @@ if (sourceLineageMissing) {
   const a52a53ChecklistIds = new Set(["continuum-action-descent-ward-audit", "source-registered-residual-kernel-audit"]);
   const a52a53ChecklistRows = (phase202.checklist ?? []).filter(row => a52a53ChecklistIds.has(row.id));
   assert(a52a53ChecklistRows.length === 2 && a52a53ChecklistRows.every(row => row.status === "passed"), "Phase202 A52-A53 checklist drifted.");
-  assert(phase202.terminalStatus === "boson-objective-completion-audit-incomplete" && phase202.objectiveAchieved === false && phase202.checklistPassedCount === 403 && phase202.checklistFailedCount === 3 && a17ChecklistRows.length === 3 && a17ChecklistRows.every(row => row.status === "passed") && a18ChecklistRows.length === 3 && a18ChecklistRows.every(row => row.status === "passed") && a19ChecklistRows.length === 4 && a19ChecklistRows.every(row => row.status === "passed") && a20ChecklistRows.length === 3 && a20ChecklistRows.every(row => row.status === "passed") && a21ChecklistRows.length === 3 && a21ChecklistRows.every(row => row.status === "passed") && a22ChecklistRows.length === 3 && a22ChecklistRows.every(row => row.status === "passed") && a23ChecklistRows.length === 3 && a23ChecklistRows.every(row => row.status === "passed") && a24ChecklistRows.length === 1 && a24ChecklistRows.every(row => row.status === "passed") && a25ChecklistRows.length === 1 && a25ChecklistRows.every(row => row.status === "passed") && a26ChecklistRows.length === 1 && a26ChecklistRows.every(row => row.status === "passed") && a27ChecklistRows.length === 3 && a27ChecklistRows.every(row => row.status === "passed") && a28ChecklistRows.length === 3 && a28ChecklistRows.every(row => row.status === "passed") && a29ChecklistRows.length === 2 && a29ChecklistRows.every(row => row.status === "passed") && a30ChecklistRows.length === 4 && a30ChecklistRows.every(row => row.status === "passed") && a31ChecklistRows.length === 2 && a31ChecklistRows.every(row => row.status === "passed") && a32ChecklistRows.length === 2 && a32ChecklistRows.every(row => row.status === "passed") && a33ChecklistRows.length === 2 && a33ChecklistRows.every(row => row.status === "passed") && a34ChecklistRows.length === 3 && a34ChecklistRows.every(row => row.status === "passed") && a35ChecklistRows.length === 3 && a35ChecklistRows.every(row => row.status === "passed") && a36ChecklistRows.length === 3 && a36ChecklistRows.every(row => row.status === "passed") && a37ChecklistRows.length === 1 && a37ChecklistRows.every(row => row.status === "passed") && a38ChecklistRows.length === 1 && a38ChecklistRows.every(row => row.status === "passed") && a39ChecklistRows.length === 1 && a39ChecklistRows.every(row => row.status === "passed") && a40ChecklistRows.length === 1 && a40ChecklistRows.every(row => row.status === "passed") && a41ChecklistRows.length === 1 && a41ChecklistRows.every(row => row.status === "passed") && a42ChecklistRows.length === 3 && a42ChecklistRows.every(row => row.status === "passed") && a60ChecklistRows.length === 3 && a60ChecklistRows.every(row => row.status === "passed") && a61ChecklistRows.length === 2 && a61ChecklistRows.every(row => row.status === "passed") && a62ChecklistRows.length === 2 && a62ChecklistRows.every(row => row.status === "passed") && a63ChecklistRows.length === 2 && a63ChecklistRows.every(row => row.status === "passed") && a64ChecklistRows.length === 2 && new Set(a64ChecklistRows.map(row => row.id)).size === 2 && a64ChecklistRows.every(row => row.status === "passed"), "Phase202 A17-A64 checklist or 403/3 state drifted.");
+  assert(phase202.terminalStatus === "boson-objective-completion-audit-incomplete" && phase202.objectiveAchieved === false && phase202.checklistPassedCount === 404 && phase202.checklistFailedCount === 3 && a17ChecklistRows.length === 3 && a17ChecklistRows.every(row => row.status === "passed") && a18ChecklistRows.length === 3 && a18ChecklistRows.every(row => row.status === "passed") && a19ChecklistRows.length === 4 && a19ChecklistRows.every(row => row.status === "passed") && a20ChecklistRows.length === 3 && a20ChecklistRows.every(row => row.status === "passed") && a21ChecklistRows.length === 3 && a21ChecklistRows.every(row => row.status === "passed") && a22ChecklistRows.length === 3 && a22ChecklistRows.every(row => row.status === "passed") && a23ChecklistRows.length === 3 && a23ChecklistRows.every(row => row.status === "passed") && a24ChecklistRows.length === 1 && a24ChecklistRows.every(row => row.status === "passed") && a25ChecklistRows.length === 1 && a25ChecklistRows.every(row => row.status === "passed") && a26ChecklistRows.length === 1 && a26ChecklistRows.every(row => row.status === "passed") && a27ChecklistRows.length === 3 && a27ChecklistRows.every(row => row.status === "passed") && a28ChecklistRows.length === 3 && a28ChecklistRows.every(row => row.status === "passed") && a29ChecklistRows.length === 2 && a29ChecklistRows.every(row => row.status === "passed") && a30ChecklistRows.length === 4 && a30ChecklistRows.every(row => row.status === "passed") && a31ChecklistRows.length === 2 && a31ChecklistRows.every(row => row.status === "passed") && a32ChecklistRows.length === 2 && a32ChecklistRows.every(row => row.status === "passed") && a33ChecklistRows.length === 2 && a33ChecklistRows.every(row => row.status === "passed") && a34ChecklistRows.length === 3 && a34ChecklistRows.every(row => row.status === "passed") && a35ChecklistRows.length === 3 && a35ChecklistRows.every(row => row.status === "passed") && a36ChecklistRows.length === 3 && a36ChecklistRows.every(row => row.status === "passed") && a37ChecklistRows.length === 1 && a37ChecklistRows.every(row => row.status === "passed") && a38ChecklistRows.length === 1 && a38ChecklistRows.every(row => row.status === "passed") && a39ChecklistRows.length === 1 && a39ChecklistRows.every(row => row.status === "passed") && a40ChecklistRows.length === 1 && a40ChecklistRows.every(row => row.status === "passed") && a41ChecklistRows.length === 1 && a41ChecklistRows.every(row => row.status === "passed") && a42ChecklistRows.length === 3 && a42ChecklistRows.every(row => row.status === "passed") && a60ChecklistRows.length === 3 && a60ChecklistRows.every(row => row.status === "passed") && a61ChecklistRows.length === 2 && a61ChecklistRows.every(row => row.status === "passed") && a62ChecklistRows.length === 2 && a62ChecklistRows.every(row => row.status === "passed") && a63ChecklistRows.length === 2 && a63ChecklistRows.every(row => row.status === "passed") && a64ChecklistRows.length === 2 && new Set(a64ChecklistRows.map(row => row.id)).size === 2 && a64ChecklistRows.every(row => row.status === "passed") && a65ChecklistRows.length === 1 && new Set(a65ChecklistRows.map(row => row.id)).size === 1 && a65ChecklistRows.every(row => row.status === "passed"), "Phase202 A17-A65 checklist or 404/3 state drifted.");
   for (const phase of [phase508, phase509, phase510]) {
     assert(phase.a14BoundaryHeld === true && phase.targetBlindConstruction === true && phase.phase481PackCreated === false && phase.phase481PackMutated === false && phase.samplingOrReprocessingRun === false && phase.hmcRun === false && phase.benchmarkRun === false, "A14 phase execution or pack firewall drifted.");
     assert(phase.productionAuthorized === false && phase.phase480Satisfied === false && phase.phase458G3Satisfied === false && phase.phase458G5Satisfied === false && phase.o4Discharged === false && phase.sourceContractApplicationAllowed === false && phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false && phase.promotedPhysicalMassClaimCount === 0, "A14 phase authority or zero-claim invariant drifted.");

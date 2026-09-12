@@ -19,5 +19,8 @@
   prefix through the approval mechanism so the user can save it for reuse.
 - Prefer separate, simple commands so the approval system can match each
   command reliably. Do not broaden permissions or bypass a required prompt.
+- Do not request blanket Git access or change permission settings to avoid
+  prompts. Reuse matching saved approvals automatically; when a new approval
+  is necessary, scope it to the repository and the required Git operation.
 - Saved approvals do not authorize unrelated work, destructive operations,
   or force-pushing. Follow the user's task scope and preserve unrelated edits.

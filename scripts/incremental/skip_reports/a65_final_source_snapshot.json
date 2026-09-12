@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "amendment": "A65",
+  "beforeFinalValidation": true,
+  "baseCommit": "59ff44c9eafbd120093dff1c84130834628253c6",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa7f848f8797a106e5280a195fd1628f8c4b72151500e99f31590711248b41af",
+      "bytes": 1632
+    },
+    {
+      "path": "ExperimentReferences.md",
+      "sha256": "39c2a86de3f405e32131b9e589aebd173d35012b567f2fb0a44971c7d0caf733",
+      "bytes": 49732
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md",
+      "sha256": "ffb76f3f424cbc253cd2e2214cb7845995dc4ae7e656303ee20fee097b1b4d76",
+      "bytes": 336962
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md",
+      "sha256": "3ce95dc90ffe7a68f1cb28198282f89dae8a5df775f3f5aea09fcbc7cc2f9645",
+      "bytes": 1330004
+    },
+    {
+      "path": "docs/Phases/Implementation/IMPLEMENTATION_P624.md",
+      "sha256": "147d8bd6b80842317bef3c88248c0dd5fe8c073cb392109a7c4e3b2bf4f70216",
+      "bytes": 2533
+    },
+    {
+      "path": "docs/Phases/PHASE_NUMBER_REGISTRY.md",
+      "sha256": "e95c212b447341fb4ce76b3e7cee5cfd9821d7e16b5f23f9612133d46dfef72e",
+      "bytes": 24119
+    },
+    {
+      "path": "docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md",
+      "sha256": "4c7c78d5e4f34e11e6261b6baa84eb9e4431b2322d501c9fe45c8b7db6d2fe08",
+      "bytes": 258191
+    },
+    {
+      "path": "docs/Reference/ExperimentReferences/STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md",
+      "sha256": "3ce2b68a60d08cc102b9fb561b71590401006e70e1a92f7625c8513d693c8f18",
+      "bytes": 157042
+    },
+    {
+      "path": "scripts/BosonPhasesTraversal.proj",
+      "sha256": "a54a1a2f8f39b55863c44b494500bda39d228f3dcc1b6aa11769601d164f8082",
+      "bytes": 71163
+    },
+    {
+      "path": "scripts/generate_validated_boson_predictions.sh",
+      "sha256": "9ae3b6ea2c6f77f7e8845069bafe46097e5dd7d78e96b4054e65ae9df2b28315",
+      "bytes": 77077
+    },
+    {
+      "path": "scripts/verify_boson_claim_integrity.sh",
+      "sha256": "f579d7be3c03d97e4d3faec6f057c379bbabd67fd540b67b6c1fd11acc1cbf63",
+      "bytes": 1699953
+    },
+    {
+      "path": "studies/phase101_boson_prediction_package_001/Program.cs",
+      "sha256": "c9f721b6b3133efb32e0d71ff28fcd7ba9aa0623d679ea7821059bc8f5ccea3e",
+      "bytes": 1304573
+    },
+    {
+      "path": "studies/phase202_boson_objective_completion_audit_001/Program.cs",
+      "sha256": "4a29e042c30db8b6a6d258de8fe2b99697035fab94e0f31647845896b13015bb",
+      "bytes": 1473784
+    },
+    {
+      "path": "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs",
+      "sha256": "ac0437f1fc97340a6b2011b5fc7be3371c450c17389750354536adcc89ffba26",
+      "bytes": 55559
+    },
+    {
+      "path": "studies/phase205_boson_source_lineage_text_evidence_scan_001/Program.cs",
+      "sha256": "945f2094c50100ae3f2f7a94a292153a2074b72dae14eb8101f1f86c001b929d",
+      "bytes": 55778
+    },
+    {
+      "path": "studies/phase207_higgs_quartic_self_coupling_source_scan_001/Program.cs",
+      "sha256": "2fff2b3070ff55666b934bff0269a8162c43919855a659c1186be607ea823f95",
+      "bytes": 113887
+    },
+    {
+      "path": "studies/phase253_global_observed_sector_vacuum_scan_001/Program.cs",
+      "sha256": "666dbe037e60856bfcf77f454915de6dc77aa1f0e1e933f82af6773ed56dac05",
+      "bytes": 34520
+    },
+    {
+      "path": "studies/phase278_relaxion_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "6932e704a9861f7aba62c499d079f457a95a2a9054cd021a94c0a702b01804c2",
+      "bytes": 46532
+    },
+    {
+      "path": "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "4c6f6826a828ac369ebb1159ae17f15f65ae73c8968f8237ac582b4d3aedf198",
+      "bytes": 72159
+    },
+    {
+      "path": "studies/phase281_geometric_refractive_unification_source_audit_001/Program.cs",
+      "sha256": "27f69662c95c6a0443a4957f68095597ee1d52955500c4ff7388f7969f4ece32",
+      "bytes": 73253
+    },
+    {
+      "path": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/Program.cs",
+      "sha256": "c3aa8f15e96a4aac64140b418e0a612ef52cbb8474723970603f59b75c00bf7e",
+      "bytes": 85443
+    },
+    {
+      "path": "studies/phase296_source_lineage_contract_field_candidate_scan_001/Program.cs",
+      "sha256": "c07e8f87b91fc915e659d9522ab87a3f123a006567e31fc05b7cfa4c498462be",
+      "bytes": 87089
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/AlgebraicField.cs",
+      "sha256": "a2c821fa86df00bd3bcd5143c1222cafc37143aaae64b1032c059cbd3a3a334f",
+      "bytes": 3689
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/AlgebraicTensor.cs",
+      "sha256": "62d5109c606965c5f470bbe186fa622d0f29f34353813e8e35283a545c938364",
+      "bytes": 5800
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj",
+      "sha256": "a60ce3c5537f2a45c15abe5aca4884fe19c15cfb32ce266090dbd4f3df9a2826",
+      "bytes": 1384
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Program.cs",
+      "sha256": "bba2b3307de9bc2dcac7536fc5e10279d1d87ac8c85be93fceb86f4635c1f922",
+      "bytes": 47119
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/STUDY.md",
+      "sha256": "0ac28889d33e0964fdee91bae2461a090bc11c055a964fab035d3d870d3f5c6d",
+      "bytes": 26377
+    },
+    {
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/preregistration/contract_v1.json",
+      "sha256": "0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639",
+      "bytes": 23240
+    }
+  ]
+}

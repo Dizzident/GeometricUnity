@@ -1,0 +1,678 @@
+{
+  "schemaVersion": 1,
+  "phase": 624,
+  "contractId": "phase624-a65-exact-algebraic-bc-stationary-background-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "points": [
+      0,
+      1
+    ],
+    "fullDiracModuleDimension": 128,
+    "chiralHalfDimension": 64,
+    "normalizedTraceDenominator": 128,
+    "operator": "canonical untied CAA: firstC outerA innerA; Phi1=Gamma1 Phi2=Gamma2",
+    "domain": "full real u(64,64), all16384 Clifford blades, both parities and central iI; no invariant response projection",
+    "field": {
+      "modulusAscending": [
+        -17,
+        -64,
+        -511,
+        693
+      ],
+      "basis": [
+        "1",
+        "r",
+        "r^2"
+      ],
+      "irreducibleModulo2Ascending": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "interval": [
+        "3/4",
+        "7/8"
+      ],
+      "endpointPolynomial": [
+        "-3845/64",
+        "11/512"
+      ],
+      "lowerDerivative": "5423/16",
+      "lowerSecondDerivative": "4193/2",
+      "inverseMenu": [
+        "1",
+        "r",
+        "r^2",
+        "q",
+        "D",
+        "P",
+        "2qD",
+        "14P^2",
+        "b",
+        "c",
+        "gamma"
+      ]
+    },
+    "parameters": {
+      "q": "9r-1",
+      "D": "1+42r^2",
+      "P": "1+18r+36r^2",
+      "b": "7P/(2qD)",
+      "c": "rb",
+      "gamma": "3q^2D/(14P^2)",
+      "kappa": 0
+    },
+    "fields": {
+      "horizontalAxes": [
+        0,
+        7,
+        8,
+        9
+      ],
+      "tracelessAxes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ],
+      "traceAxis": 10,
+      "B": "-1/2 PHGamma wedgeCl gamma_t",
+      "C": "PTGamma wedgeCl gamma_t",
+      "S": "bB+cC",
+      "feedbackMenu": [
+        "S",
+        "B",
+        "C",
+        "BplusC"
+      ],
+      "actionDirections": [
+        "PHGamma",
+        "PTGamma",
+        "PtrGamma",
+        "J",
+        "B",
+        "C",
+        "W5",
+        "central"
+      ],
+      "actionDirectionNorms": [
+        "-4",
+        "-9",
+        "-1",
+        "9",
+        "-1",
+        "-9",
+        "1",
+        "1"
+      ],
+      "W5": {
+        "form": 8,
+        "blade": 157,
+        "real": "1"
+      },
+      "central": {
+        "form": 1,
+        "blade": 0,
+        "imaginary": "1"
+      }
+    },
+    "sourceWeights": [
+      "-21/4",
+      "-15/4",
+      "-21/4"
+    ],
+    "kineticWeights": {
+      "B": {
+        "forward": [
+          "-9/4",
+          "-4",
+          "-3"
+        ],
+        "reverse": [
+          "3/4",
+          "0",
+          "1"
+        ],
+        "full": [
+          "-3/4",
+          "-2",
+          "-1"
+        ]
+      },
+      "C": {
+        "forward": [
+          "27/2",
+          "16",
+          "18"
+        ],
+        "reverse": [
+          "0",
+          "-2",
+          "0"
+        ],
+        "full": [
+          "27/4",
+          "7",
+          "9"
+        ]
+      }
+    },
+    "nonlinearWeights": {
+      "monomials": [
+        "b^2",
+        "bc",
+        "c^2"
+      ],
+      "horizontal": [
+        "1",
+        "-18",
+        "48"
+      ],
+      "traceless": [
+        "2",
+        "-64/3",
+        "112/3"
+      ],
+      "trace": [
+        "2/3",
+        "-24",
+        "36"
+      ]
+    },
+    "oracles": {
+      "dHorizontal": "-b/2",
+      "dTraceless": "c",
+      "dTrace": "0",
+      "Qij": "2di dj Gamma_ij",
+      "adjointIt": "-2di gamma_i",
+      "KQi": "2[(sumd)^2-sumd2]-4di(sumd-di)",
+      "dqTrace": "-4sumd2 gamma_t"
+    },
+    "actionForecast": {
+      "coefficient0": "0",
+      "coefficient1": "gamma Pair(V,N(S))",
+      "coefficient2": "0",
+      "coefficient3": [
+        "-16gamma",
+        "-336gamma",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "offRoot": {
+        "field": "B",
+        "gamma": 1,
+        "variation": "PHGamma",
+        "source": "21",
+        "kinetic": "5",
+        "cubic": "-4",
+        "localTotal": "22",
+        "eulerPairing": "20",
+        "divergence": "4",
+        "restrictedDensity": "0"
+      }
+    },
+    "coreFileCount": 726,
+    "exactTolerance": 0,
+    "expectedCounts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "fullRealDomainMasks": 16384,
+      "centralDomainControls": 2,
+      "fieldBasisProducts": 9,
+      "fieldAssociativity": 27,
+      "fieldInverseControls": 11,
+      "fieldIdentityControls": 4,
+      "irreducibilityControls": 2,
+      "embeddingControls": 5,
+      "parameterIdentities": 4,
+      "contexts": 2,
+      "coordinateConnectionEntries": 5488,
+      "frameConnectionEntries": 5488,
+      "metricSkewEntries": 5488,
+      "spinLiftControls": 392,
+      "fieldDefinitionControls": 4,
+      "isotropyControls": 36,
+      "disconnectedControls": 6,
+      "cyclicControls": 8,
+      "kineticResults": 22,
+      "kineticDerivativeChecks": 308,
+      "kineticParallelAdjointChecks": 308,
+      "kineticStageChecks": 176,
+      "kineticAdjointChecks": 22,
+      "kineticFormChecks": 22,
+      "kineticForecastRows": 18,
+      "unequalLegControls": 6,
+      "feedbackRows": 24,
+      "feedbackProductChecks": 24,
+      "feedbackAdjointChecks": 24,
+      "feedbackDqChecks": 24,
+      "feedbackStageChecks": 192,
+      "feedbackForecastRows": 8,
+      "feedbackQOracleRows": 8,
+      "feedbackAdjointOracleRows": 8,
+      "feedbackKQOracleRows": 8,
+      "feedbackDqOracleRows": 8,
+      "nonlinearGradeRows": 8,
+      "residualRows": 2,
+      "omissionDecoys": 6,
+      "actionDirections": 16,
+      "actionDirectionNorms": 16,
+      "crossProductChecks": 18,
+      "crossAdjointChecks": 32,
+      "crossStageChecks": 144,
+      "originalCubicCoefficients": 64,
+      "originalCubicDerivativeCoefficients": 48,
+      "nonzeroCubicControls": 4,
+      "localFirstVariationRows": 16,
+      "offRootActionDecoys": 2,
+      "offRootRestrictedZero": 2,
+      "transportRows": 9,
+      "pointShards": 2
+    },
+    "resources": {
+      "estimatedCpuSeconds": 60,
+      "estimatedPeakBytes": 1073741824,
+      "conservativePlanningCpuSeconds": 900,
+      "conservativePlanningPeakBytes": 8589934592,
+      "maximumTrackedCoefficientProducts": 100000000,
+      "maximumTrackedMatrixProducts": 100000000,
+      "maximumCubicProducts": 1000000,
+      "maximumTensorTerms": 65536,
+      "maximumRationalTextCharacters": 1024,
+      "maximumFrequency": 0,
+      "expectedKineticCalls": 22,
+      "expectedDerivativeSlots": 308,
+      "expectedConnectionActions": 724
+    },
+    "storage": {
+      "schema": "two-complete-expanded-algebraic-point-shards-v1",
+      "tensorEncoding": "numeric(form,blade,k0,k1), real[3], imaginary[3], rational strings in basis1,r,r2",
+      "paths": [
+        "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/output/points/point0.json",
+        "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/output/points/point1.json"
+      ],
+      "maximumPointBytes": 67108864,
+      "maximumAggregatePointBytes": 134217728,
+      "maximumManifestBytes": 1048576
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "sourceNormSelected": false,
+      "sourceMetricSelected": false,
+      "physicalCouplingSelected": false,
+      "arbitraryPreassignedGammaSolved": false,
+      "physicalVacuumSelected": false,
+      "smallLambdaContinuationClaimed": false,
+      "fullInvariantSolutionClassified": false,
+      "pointwiseSelfAdjointnessAssumed": false,
+      "jointMetricEulerComputed": false,
+      "fullMixedHessianComputed": false,
+      "globalSpinorDescentProved": false,
+      "globalFiniteActionProved": false,
+      "physicalSpectrumClaimed": false,
+      "gevNormalizationSelected": false
+    }
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "algebraic-field-control-failed",
+    "homogeneous-connection-control-failed",
+    "full-kinetic-control-failed",
+    "full-nonlinear-control-failed",
+    "original-action-control-failed",
+    "full-stationarity-control-failed",
+    "resource-census-control-failed",
+    "exact-algebraic-bc-controls-pass-conditional-stationary-background"
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Program.cs",
+      "sha256": "bba2b3307de9bc2dcac7536fc5e10279d1d87ac8c85be93fceb86f4635c1f922"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj",
+      "sha256": "a60ce3c5537f2a45c15abe5aca4884fe19c15cfb32ce266090dbd4f3df9a2826"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/STUDY.md",
+      "sha256": "0ac28889d33e0964fdee91bae2461a090bc11c055a964fab035d3d870d3f5c6d"
+    },
+    {
+      "id": "algebraic-field-helper",
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/AlgebraicField.cs",
+      "sha256": "a2c821fa86df00bd3bcd5143c1222cafc37143aaae64b1032c059cbd3a3a334f"
+    },
+    {
+      "id": "algebraic-tensor-helper",
+      "path": "studies/phase624_exact_algebraic_bc_stationary_background_audit_001/AlgebraicTensor.cs",
+      "sha256": "62d5109c606965c5f470bbe186fa622d0f29f34353813e8e35283a545c938364"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-project",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj",
+      "sha256": "e3e091e4e3421effeb8645d17cbf0d4ac54571d901236beb2a4891204f55b366"
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase600-exactarithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "phase600-fouriertensor-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "phase600-traceadjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase607-program",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Program.cs",
+      "sha256": "8729a5b21f62776f19d70a8547c7266405ec32e5a35d236a4d27edcc229ad611"
+    },
+    {
+      "id": "phase607-project",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj",
+      "sha256": "01da9a505b2af2cfab0a62296b5dd00a3b3df1ce1ca4d45645f719d1c3d3673b"
+    },
+    {
+      "id": "phase607-study",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/STUDY.md",
+      "sha256": "9b57faf7e7355f2124240e222e758505aac1ac005bc44e14aa6f1594c7209269"
+    },
+    {
+      "id": "phase607-contract",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/preregistration/contract_v1.json",
+      "sha256": "001cdcd42da3acfb024e226739d83fa292fabb78bd04f3928f7ee4cd3dc0dccd"
+    },
+    {
+      "id": "phase607-summary",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/output/source_induced_vertical_curvature_audit_summary.json",
+      "sha256": "a458c05fbda8d568d9509856955dcbab3c089bbed941077c9c288ea0b89e2348"
+    },
+    {
+      "id": "phase607-verticalgeometry-helper",
+      "path": "studies/phase607_source_induced_vertical_curvature_audit_001/VerticalGeometry.cs",
+      "sha256": "435614a4871b169133c580ce88c67d3abd40b1c5c72e79d43bd84a77cc0fe92c"
+    },
+    {
+      "id": "phase608-program",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Program.cs",
+      "sha256": "8ebeccca7c3a9ffdf33ff473064e02d7062bba8a1e9a1459b9da087c7a72d6be"
+    },
+    {
+      "id": "phase608-project",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj",
+      "sha256": "7d25507c8102d3b0bb10fd28d4bcf395fcc57497cd56ce71c16aceb3fc2b821f"
+    },
+    {
+      "id": "phase608-study",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/STUDY.md",
+      "sha256": "cc432590ab46516b7c9323835e66e60088bd0ffd4e770f2653aa2b9c852b3bdb"
+    },
+    {
+      "id": "phase608-contract",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/preregistration/contract_v1.json",
+      "sha256": "2f8c635c6e6c77d6bf64399de6be2208aa2de5c2a7fd8ec05b6932813cf06b87"
+    },
+    {
+      "id": "phase608-summary",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/output/source_induced_ambient_ricci_audit_summary.json",
+      "sha256": "29e92309d9ee16f47290073fffc71e48371f77c68b6019d3f460c87d0279ac26"
+    },
+    {
+      "id": "phase608-ambientgeometry-helper",
+      "path": "studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs",
+      "sha256": "5c1598e596e83d2aaae6bc34157b8b3ba63432cf961166d645c43d9f3081c9d4"
+    },
+    {
+      "id": "phase610-program",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Program.cs",
+      "sha256": "a6fb779acf2f96a6fafd1b010a529e525ceed4f0edc708943909cb13624db5a0"
+    },
+    {
+      "id": "phase610-project",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj",
+      "sha256": "a64e6a9ab71d179c56bf829735f835b25c2af7bf7d265ac1be777a05f961970e"
+    },
+    {
+      "id": "phase610-study",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/STUDY.md",
+      "sha256": "67269d1d55c5e738e7e1a5cbd87da10f6064cb11d96008f6fa80bc1648961a93"
+    },
+    {
+      "id": "phase610-contract",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/preregistration/contract_v1.json",
+      "sha256": "c3bd65163480ae51b75c9500fb897cf2a1291a06655f538ce2be9a2776d9233e"
+    },
+    {
+      "id": "phase610-summary",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/output/induced_spin_curvature_contraction_audit_summary.json",
+      "sha256": "507f0c55c42b726b27bfcef2547ed9c244e19709db76a2cc5a92eedfa38f87e4"
+    },
+    {
+      "id": "phase610-spingeometry-helper",
+      "path": "studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs",
+      "sha256": "1da7150abc6f2da2abe0c9dbd1600e84edcd452dae90449a599a65fbb8d7e2cb"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-project",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj",
+      "sha256": "a7e269d3b8a9c1c2d8f915f74a0a112fad68c271b2ac6883a8253956e968c14b"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase611-caaoperator-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase618-program",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Program.cs",
+      "sha256": "a5fe0b9c6ce18739f2effd6236021c7b60e3ab1dbd925359a6ad7c206736e102"
+    },
+    {
+      "id": "phase618-project",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj",
+      "sha256": "dc29f242b3a5c5e2829798acd8d61dd4e4b35ffd16f3e1bdf0c9e3bc2ee13890"
+    },
+    {
+      "id": "phase618-study",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/STUDY.md",
+      "sha256": "ba7b30f9953dbd4eb674d1ffdccb6f15ea9913da9da96580fa17c6f510999c67"
+    },
+    {
+      "id": "phase618-contract",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/preregistration/contract_v1.json",
+      "sha256": "22c794870d8906a628ef20816890a57dcf80c5e75f9a99c6a86937d71b0b790d"
+    },
+    {
+      "id": "phase618-summary",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/output/homogeneous_covariant_connection_audit_summary.json",
+      "sha256": "10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79"
+    },
+    {
+      "id": "phase618-homogeneousconnection-helper",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/HomogeneousConnection.cs",
+      "sha256": "76f2b9cceeeb83fe6cf9b31e590692b4ea2f814f5111b2e84d769665835187d8"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    },
+    {
+      "id": "phase622-program",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/Program.cs",
+      "sha256": "847c806b2298285c80ec84593bd1333ca788c1674c03514a32e07f09a1f79d30"
+    },
+    {
+      "id": "phase622-project",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/Phase622FullHomogeneousKineticCarrierAudit.csproj",
+      "sha256": "2f2f26131c502374722b2a47e7488e7bc4682596f2169b78a7cd38b68edb4487"
+    },
+    {
+      "id": "phase622-study",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/STUDY.md",
+      "sha256": "3de24bf28e831ae35c9e3218bd4e649e98856e6cb66ac494ae93eb0bfab9ebbf"
+    },
+    {
+      "id": "phase622-contract",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/preregistration/contract_v1.json",
+      "sha256": "5ab07e7c6798b2550106f06421820f8e13a28ca1b03c3a68ff31bdf02ac1009f"
+    },
+    {
+      "id": "phase622-summary",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/output/full_homogeneous_kinetic_carrier_audit_summary.json",
+      "sha256": "8a580308683806b8b5a4d9cb6fc343292a2555e54dd4e4ae5bcec2dd1b2fa9d9"
+    },
+    {
+      "id": "phase622-kinetic-helper",
+      "path": "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/KineticCarrier.cs",
+      "sha256": "4c8f2435064415e60c2f2affcae3f984eba34f141ff141325c5ca20d026173f0"
+    },
+    {
+      "id": "phase623-program",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Program.cs",
+      "sha256": "bc7724801c89b7023c536c9829b2b26a895eb11934ff035a02d181778046043d"
+    },
+    {
+      "id": "phase623-project",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj",
+      "sha256": "fa7f971f5c3305ec65ba905c329b4349b4fa65272946a60132d36eb7e0f1ca46"
+    },
+    {
+      "id": "phase623-study",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/STUDY.md",
+      "sha256": "5511c8b4959f71adb1336e3cbe072192417fc70a2af01b2ecceb5f1f9a705dd2"
+    },
+    {
+      "id": "phase623-contract",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/preregistration/contract_v1.json",
+      "sha256": "ec266d4e9863206de35026b7e781b30bfb7886ae3bf3993a269b6e3ae33244fa"
+    },
+    {
+      "id": "phase623-summary",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/full_inverse_kappa_fifth_order_feedback_audit_summary.json",
+      "sha256": "3fff1e142d8a11ee25b6b5c429d2f5381a089465bbf21174cdf35a41c19e7350"
+    },
+    {
+      "id": "phase623-feedback-helper",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/InverseFeedback.cs",
+      "sha256": "afa9ec5132c60bbf1275fe56cba9aa51a0706ffa9c1e70faa5493381743fcc90"
+    },
+    {
+      "id": "phase623-point0",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point0.json",
+      "sha256": "227d799d90f38c579c069c553e4b4cdb4b532641c172aec7ad793225a873604b"
+    },
+    {
+      "id": "phase623-point1",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point1.json",
+      "sha256": "ffab15eeac7e9f1584026ecd54ea45353f659616f502c44219dfdd3310196f12"
+    }
+  ]
+}

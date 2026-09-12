@@ -45,6 +45,90 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST A65 result (2026-09-12):624 FIRST unchanged Release run PASSED;
+session54360 is terminal exit0, not a live job to restart. Final contract
+0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639
+has independent and MAIN full scientific-pack approval. Both preflights
+passed60bindings/12compiled/55counts/whole ordered fixture/live726 core/
+14false authority flags/15false scope flags/singleLF/outputabsence;
+MAIN Release build0warnings/errors. A serialization-only contract key-order
+correction resolved the verifier mismatch without changing science.
+Full/summaryad00ca89ad47d996a17ed7ade9d4df08ff14c4f29e7a003a0dc535e9fa0cf422
+are20740bytes each. Two expanded shards total5530216bytes; full residuals
+vanish at both points and all6 omission decoys remain nonzero. Independent
+and MAIN retained reviews passed all22 kinetics,24 feedbacks,64 cubic
+coefficients,48 derivatives and16 Green identities; independent review
+also reconstructed all16 currents/divergences. All60 bindings unchanged.
+The complete reviewed verifierf579d7be3c03d97e4d3faec6f057c379bbabd67fd540b67b6c1fd11acc1cbf63
+is now hash-pinned and passed full integrity in terminal session3358.
+Ordered101/202 passed404/3; O4coverage31/31,overturn94/94,
+strictJSON/JCS/Ed25519 passed,WZ15/H14missing,physicalclaims0.
+Incremental tooling tests50/50 passed using explicit test files and required
+sandbox escalation; initial child-output EPERM was not a science failure.
+The old2580-output archive also has a verified extraction at
+scripts/incremental/skip_reports/a65_beforeimages_extracted/.
+Final incremental validation, exhaustive baseline drift review, scoped
+commit/push/main and remote match remain required AFTER all source edits.
+Do not edit sources after that final pass; retain its final report and
+durable source snapshot in the checkpoint. No frozen science repair.
+A new independent/MAIN HAND-ONLY proof finds a second-order obstruction
+inside the six-carrier formal continuation at fixed gamma. The existing
+reference records the full sign proof, determinant orientation and why a
+different branch-compatible first jet cannot evade it. It does NOT prove
+full-Jacobian nonsingularity or exclude higher invariant grades. Next leads:
+prospectively test the obstruction and full invariant response image;
+separately audit the full mixed metric-field Hessian with native dT and
+field-dependent Ward acceleration. No new calculation/phase is authorized
+by the hand proof alone; freeze a new amendment/pack before execution.
+No625 allocation, physical mass claim or blocker discharge is implied.
+The following A65 notes are chronological history, superseded here.
+
+WORK IN PROGRESS (2026-09-12 UTC,A65;624allocated,625+free):
+Authoritative checkpoint59ff44c9eafbd120093dff1c84130834628253c6 is on
+main, pushed and remote-matched, clean before this tranche. A64 recovery
+final report pass_2026-09-12T20-22-09-170Z.json passed Release build+42steps,
+441skipped; independent review verified33 source hashes and all6 outputs.
+Checklist403/3,O4coverage31/31,overturn94/94,physicalclaims0. Current
+committed historical output count is33, correcting earlier narrative34;
+all those tracked diffs are timestamp/runtime only. The lost ignored-output
+preimage limitation remains. Previous goal turn PROGRESS.
+624 prospectively tests the exact algebraic BC candidate in the FULL
+original connection equation, not only its reduced3vector equations.
+Builder owns624 root, independent reviewer challenges the full pack, MAIN
+owns shared wiring and FIRST approval. No624 scientific execution yet.
+Freeze code/proof/fixtures/counts/resources/bindings/compiled closure and
+obtain independent plus MAIN full review before FIRST science. No pilot,
+root fitting, new source interpretation, projection or post-run repair.
+The exact real algebraic embedding and nonzero denominators are required.
+The existing stationary-background reference and A65 define the candidate.
+A separate read-only investigation designs full mixed metric-field Hessian
+controls without allocating625 or executing new science. All14flagsfalse,
+O4/externalreviewpending,Phase561closed,physicalclaims0. Earlier status
+and free-number statements below are historical and superseded here.
+Latest A65: builder is implementing exact scalar/tensor arithmetic and the
+full prospective624 pack; no outputs, coefficient pilots or FIRST run.
+Shared generator/traversal101/202/all9scanners are registered and all11
+shared C# Release builds passed0warnings/errors. Independent partial
+integration review passed, preserving all previous predicates. Full624
+pack approval and shared verifier remain pending. The new reference tail's
+mixed-formula/native-dT/Ward-acceleration derivations passed independent
+hand review; those are NOT executed mixed-Hessian evidence.625still free.
+Before any new outputs, MAIN retained2580 old outputs plus the manifest in
+scripts/incremental/skip_reports/a65_beforeimages.tar.gz,
+SHA92c92bbb58bfdc66c5342f73cac803d065db9b2726325bf8cc98b7cdffe133e3.
+Archive2581-entry census and byte comparison passed. This durable local
+ignored archive is forensic material, not a new scientific dependency.
+Preserve it for the final old-output drift audit; do not overwrite it.
+Current pre-run review:624 scalar/tensor helpers passed independent hand
+review; Program fixture/preflight is being completed into the full body,
+STUDY and contract. No FIRST approval or science yet. MAIN has added only
+the A65 algebraic verifier primitives, independently reviewed and syntax-
+checked; complete624 retained-output verification remains pending. A new
+MAIN/reviewer hand-only first-order kappa-compensation lead is recorded at
+the end of the existing reference. Its2x2 determinant is nonzero throughout
+the isolating interval, but this is NOT a full nonlinear continuation or
+physical pole. Do not add it to624 or allocate625 without a new amendment.
+
 WORK IN PROGRESS (2026-09-11 UTC,A64;622-623allocated,624+free):
 RECOVERY UPDATE(2026-09-12): the final report
 scripts/incremental/skip_reports/pass_2026-09-11T13-10-41-001Z.json
