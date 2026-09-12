@@ -2834,3 +2834,227 @@ all output grades and distinguishing a linearized kernel from an integrable
 branch. Separately, the full mixed metric-field Hessian remains a concrete
 lead toward fluctuation analysis. Neither lead selects physical units or
 licenses boson mass predictions.
+
+### A66 hand correction: a complete second jet can leave the constrained branch
+
+This lead was derived after A65 source freeze and retained in checkpoint
+079af2a3295ee4a6bfa9aa9a50f1b1e99a8f5c30. MAIN and two independent
+agents checked the following HAND algebra; no new coefficient program has
+executed. It does not change624 or contradict the exact six-carrier
+branch obstruction above. That obstruction imposed J identically zero
+because an EXACT branch must satisfy its grade-five equation at all orders.
+A finite jet through kappa^2 has no such requirement until later orders.
+
+Let L=H+2gamma Bcal(S0,.), with the passed exact S0=bB+cC. The complete
+Bcal(S0,J) vanishes. Its possible grade-five part is proportional to the
+mixed fourfold wedge, which vanishes by the established cyclic identities.
+Here the mixed cancellation also uses the preceding trace-reflection and
+absence-of-invariant-three-form argument; cyclicity alone is not asserted
+to kill this wedge for arbitrary bivectors.
+Its remaining invariant vector component is odd under potential-only trace
+reflection, while each vector projector carrier is even. Independently,
+Pair(V,Bcal(S0,J))=Pair(S0,Bcal(V,J))=0 because Bcal(V,J) is proportional
+to J and S0 is orthogonal to J. The three-vector signed Gram is nondegenerate.
+This pairing argument only proves the FULL zero after grade closure has
+been established. Consequently LJ=HJ=(9/4,-1,0).
+
+The even-to-odd block has columns(HJ,L_b,L_c) in the preceding notation.
+Its determinant is
+
+    D_e=-99/4+x(129-168r)+88x^2(2r+1)(9r-2), x=3(9r-1)/(4P).
+
+On the entire interval(3/4,7/8), P-6(9r-1)=36r^2-36r+7>0:
+it equals1/4 at3/4 and has positive derivative thereafter. Thus0<x<1/8.
+Also129-168r<3 and the increasing positive quadratic
+88(2r+1)(9r-2) is less than5687/4. Therefore
+D_e<-99/4+3/8+5687/256=-553/256<0.
+
+For completeness, the odd-to-even block has rows(J,B,C) and columns
+(PHGamma,PTGamma,PtrGamma):
+
+    [-1,                 1,                   0]
+    [1+8x-72rx,          36x-192rx,           -1+4x/3-24rx]
+    [-1-8x+128rx/3,      -64x/3+224rx/3,      1-8x/3+8rx].
+
+Its determinant is -det M>0. The zero J row first fixes e=a in its
+kernel, after which the already nonsingular M fixes a=t=0. Both complete
+linear-response blocks therefore close and are invertible on the six
+carriers. This is NOT nonlinear closure or full invariant/PDE invertibility.
+
+Write S=S0+kappa V1+kappa^2 V2+kappa^3 V3+kappa^4 V4. The proposed
+projected recursion is
+
+    LV1=-S0,
+    LV2=-V1-gamma N(V1),
+    LV3=-V2-2gamma Bcal(V1,V2),
+    LV4=-P_grade1{V3+gamma[2Bcal(V1,V3)+N(V2)]}.
+
+V1,V3 are diagonal vectors; V2,V4 are in span(J,B,C). V2 uniquely cancels
+the FULL second-order forcing. Its J coefficient j2 is positive: Cramer's
+rule uses the positive determinant[L_b,L_c,(f,f,g)], the negative D_e,
+and negative forcing -(f,f,g)/gamma, with gamma>0. The BC-only obstruction
+also independently excludes j2=0. Thus the complete residual vanishes
+through degree3 and has, prospectively,
+
+    R4=gamma j2^2 N(J)_grade5 != 0.
+
+The grade-five basis witness retained in619 has signed pairing1/3, so its
+pairing with R4 is gamma j2^2/3>0. No aggregate signed norm is required to
+detect this nonzero tensor. Higher R5 through R8 must be retained, not
+silently truncated; this prospective finite polynomial is not an exact
+solution. The second-order incompatibility for an EXACT branch-compatible
+jet and the order-four failure of an unrestricted truncated jet are distinct.
+
+A66/625 will test these statements with full operators and original-action
+controls. For a fixed probe U, the original cubic action of S(kappa)+zU has
+kappa degree bounds12,8,4,0 in its four z coefficients:13+9+5+1=28 retained
+coefficient slots, including any leading coefficients that vanish by parity.
+Its z derivative has9+5+1=15 coefficients. The complete original action's
+first variation at z0 has nine kappa coefficients, including source,
+kinetic, cubic and kappa-mass terms separately; each must equal the full
+Euler pairing plus half the independently reconstructed Green divergence.
+These identities may not be replaced by the projected six-by-six matrix.
+
+### A66 next full-grade response lead, not an authorized calculation
+
+For Clifford grade g, the canonical CAA and its transpose send even g to
+odd grades(g-1,g+3), and odd g to even grades(g+1,g-3). The first Gamma
+commutator and the inner Gamma2/outer Gamma anticommutator chain give these
+bands directly. Spin covariant derivatives preserve grade. At S0, DQ_S0
+preserves grade because S0 is bivector-valued; Kdag S0 is grade1, so the
+additional DQ_U adjoint term introduces no extra band. Thus L has the same
+adjacency. In particular the relevant coupled even-to-odd chain is
+
+    {2,6,10,14} -> {1,5,9,13}.
+
+Grade6 alone is NOT a proven closed correction space: canceling grade5
+can create grade9, then grade13. The other even chain{0,4,8,12} remains
+part of the complete domain, including central iI; it is not excluded from
+the theory by this linear block decomposition.
+
+A bounded sufficient construction could seek a full preimage of the passed
+F=N(J)_grade5 under L. In an exactly certified cyclic space generated by
+F,L^2F,..., a minimal polynomial with nonzero constant term supplies a
+polynomial inverse of L^2 there. E=L p(L^2)F would then satisfy LE=F,
+which must be independently checked as a COMPLETE tensor at both points.
+Use coefficient pivots, not signed-Gram/Lanczos symmetry: H is not a
+pointwise symmetric invariant matrix. A successful E supplies an actual
+fourth-order correction after scaling by -gamma j2^2; it does not establish
+the full nonlinear continuation or eliminate all homogeneous kernel choices.
+
+A bounded cyclic failure is inconclusive, even if that cyclic space closes
+but is singular: an external zero-Jordan chain can contain a preimage missed
+by it. Complete invariant-image enumeration is a stronger fallback, not a
+prerequisite for a successful explicit witness. Freeze a separate complete
+pack, finite algorithm, counts and honest resource/retention bounds before
+any such calculation.626 remains unallocated at this design stage.
+
+The bounded candidate algorithm can be fixed at eight L-squared steps:
+w0=F, e_j=L w_j and w_(j+1)=L e_j for j=0,...,7. Suppose the first
+fully verified dependence is w_n=sum_(i=0)^(n-1) a_i w_i, with the earlier
+w_i independent. If a0 is nonzero, the explicit candidate is
+
+    E=[e_(n-1)-sum_(i=1)^(n-1) a_i e_(i-1)]/a0.
+
+Applying L gives F by this relation, but a separate full literal-operator
+check must still test the constructed candidate. If a0=0, report closed
+cyclic route inconclusive; if no dependence is found by w8, report iteration
+cap inconclusive. Neither excludes a preimage outside this cyclic subspace.
+Use the passed619 forcing and passed624 background as inputs, not an
+unexecuted625 sibling. No phase allocation or execution follows from this
+design sketch.
+
+Pivot rows are ordered by(form mask,Clifford mask,real/imaginary component).
+Each entry is a scalar in Q[r]/p, not three unrelated rational equations:
+testing independence over Q instead would answer a different question.
+One bounded-memory design retains original canonical columns on disk and
+only the at-most8-by8 pivot minor in memory. Solve on the pivot rows, then
+stream a full coefficient merge to find the first nonzero residual row or
+verify the complete relation. Do not retain eight dense normalized rational
+columns merely to implement elimination. The candidate verification must
+retain its complete residual, not only signed pairings or pivot coordinates.
+
+Support bounds alone do not establish a safe memory or time budget. Before
+freezing any successor, derive rational-height growth and maximum live
+temporaries against its actual operator implementation, with prospective
+term/bit/operation/time/memory and evidence guards. Resource exhaustion is
+inconclusive, not an image obstruction. Independent original-action mixed
+variation controls must retain the Green term and challenge both parity
+directions, the grade-five witness, the B/PH off-root control and central iI.
+Do not assume pointwise self-adjointness to replace those checks.
+
+### A66 executed jet result and source-coefficient priority check
+
+625 FIRST unchanged Release run passed under contract
+870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f.
+Its full/summary hash is
+e89d845f06827fa527b705a97259bf1e56712f6a796b37aec97b48323736011b.
+At both points the full residual term counts at orders0 through8 are
+0,0,0,0,600,49,614,49,614. Order4 is purely grade5; orders5/7 are grade2
+and orders6/8 contain grades1/5. The original-action and B/PH controls
+passed. This confirms the finite-jet correction and the small-ansatz
+boundary, not a full stationary branch or physical spectrum.
+
+A parallel rereading of the local primary text sharpens the next priority.
+Lines2162-2193 of GU-DRAFT-2021-TEXT.txt display first-action9.4 with fixed
+relative source/kinetic/cubic coefficients1,1/2,1/3 and named kappa1.
+They do not exhibit an independent gamma multiplying only the cubic term.
+The Shiab-choice discussion at2085-2096 and2119-2129 does not establish
+that extra freedom. Thus the624/625 algebraic gamma is a DIAGNOSTIC
+deformation, not a demonstrated adjustable parameter of that printed action.
+This confirms the frozen physicalCouplingSelected=false boundary.
+
+For a nonzero field rescaling S=cU, dividing the action by c^2 to preserve
+its kinetic normalization changes the equation to
+
+    A/c + HU + (gamma*c)N(U) + kappa U = 0.
+
+Setting gamma*c=1 changes the nonzero curvature source to gamma*A.
+Preserving both source and kinetic normalization forces c=1. Outside
+epsilon=I, scaling torsion also mixes the native field with epsilon^-1 D
+epsilon; it is not simply scaling varpi. No normalization bridge has been
+established by this hand substitution.
+
+A more source-directed NEXT candidate is therefore the passed623 fifth-
+order inverse-kappa polynomial at conditional gamma1. This still assumes
+the declared CAA/bracket normalization, but removes the extra variable
+cubic coefficient. The following bounds are HAND deductions from618's
+full-domain contraction and623's analytic-branch proof, not a new run.
+
+With a=60,h=51520,cN=2576, take the already audited positive gamma1
+certificate delta=1/[4(a+h+2cN)]=1/226928. On the complex parameter disk
+of radius delta the unique branch has norm at most Rdelta=120delta.
+Cauchy's bound for its fifth-order Taylor polynomial P5 gives
+
+    ||S(lambda)-P5(lambda)||
+      <= Rdelta (|lambda|/delta)^6/(1-|lambda|/delta).
+
+Fix prospectively lambda0=delta/4, kappa0=907712 and R=120lambda0.
+Then the Taylor error is at most R/768. The true solution lies in the
+smaller ball of radius(7/8)R, so P5 lies strictly inside the contraction
+ball of radiusR. Its fixed-point defect has norm at most R/512 since
+the contraction constant is at most1/2. These choices do not depend on
+measuring a residual or fitting an observed mass.
+
+A meaningful successor must compute the FULL original residual of P5,
+including the previously unexecuted H S5 and all higher nonlinear grades,
+and independently evaluate it at the fixed rational lambda0. Retain every
+original residual coefficient through lambda degree10, or every scaled
+defect coefficient through degree11. Then an actual defect norm provides
+
+    ||S*-P5|| <= lambda0 ||G(P5)||/(1-L0),
+
+provided the independently checked ball and contraction hypotheses hold.
+This would give a certified approximation to a full stationary connection
+with the cubic coefficient fixed; it is not merely another cancellation
+of low formal orders. The finite five-field candidate is preferable to
+an expanding tower of Picard polynomials for this test. No successor is
+allocated or executable until a complete prospective pack is frozen.
+
+Kappa is still diagnostic, not a physical scale. The compact9.4 expression
+prints kappa1/2 in the quadratic density, while its expanded integral
+prints kappa1. With common pairing conventions these would give our
+Euler kappa=kappa1 or2kappa1 respectively; the source-normalization issue
+must remain explicit. Canonical CAA selection, observed fields, boundary
+conditions, poles and GeV units are also unresolved. A successful residual
+certificate cannot silently discharge any of those source-lineage gaps.

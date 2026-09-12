@@ -24859,3 +24859,151 @@ changes. Empty child output/status alone is not validation evidence.
 All source edits must precede the final incremental pass and its durable
 source snapshot; completion is to be recorded in the pass report/commit,
 not a source edit after validation.
+
+## 2026-09-12 - A65 checkpoint complete; A66 full formal-jet audit
+
+A65 checkpoint079af2a3295ee4a6bfa9aa9a50f1b1e99a8f5c30 is on main,
+pushed and independently remote-matched with a clean worktree. Its68files
+include28 sources,33 timestamp/runtime-only historical outputs,4 new
+scientific outputs, the manifest and2 validation records. Final report
+pass_2026-09-12T21-12-27-572Z.json finished21:16:58.235Z, central Release
+build plus74steps passed,410skipped,404/3 checklist and full integrity passed.
+All28 frozen source hashes,60 scientific bindings and4 FIRST hashes match;
+all2584 current manifest output hashes were independently checked by MAIN.
+All2580 old preimages were compared:2485byteidentical,93changedJSON
+(73timestamp/runtime-only,20 scanner/integration/identifier metadata),
+2logs changed only their timestamped bundle IDs. All312 mode files and
+aggregate numerical data are unchanged. The older pending status is history.
+Previous goal turn PROGRESS; no physical prediction blocker was discharged.
+
+During final validation, MAIN and two agents found and hand-checked a way
+past the apparent second-order obstruction: Bcal(S0,J)=0, so LJ=HJ and
+the full J/B/C-to-vector determinant is negative throughout the isolating
+interval. A unique J/B/C second jet therefore cancels the COMPLETE second-
+order forcing. Its J coefficient is nonzero, so it cannot be the first
+terms of an exact six-carrier branch: J^2 produces grade5 at orderkappa4.
+The old obstruction imposed exact branch-compatible J identically zero;
+it did not prohibit a truncated second jet. This distinction must survive
+implementation, rather than being disguised as either success or failure
+of full continuation. The checkpoint commit retained this post-freeze lead.
+
+A66 allocates625 to compute full V1-V4 formal corrections and retain the
+original polynomial residual through degree8, both parity response blocks,
+exact inverse/BC-only controls and original-action/Green checks. The
+forecast nonzero degree4 grade-five term is a diagnostic of the small
+ansatz, not proof that the full theory lacks a continuation. Separate
+hand-only design studies the coupled higher-grade response and full mixed
+Hessian;626+remain free. No new scientific calculation has executed.
+
+A66 pre-run shared integration is registered in generator/traversal/101/202
+and all9 scanners/both207sites, implementation and reference ledger. The
+independent review caught a misplaced207 continuation semicolon; MAIN fixed
+it before validation. All11 shared C# Release builds passed0warnings/errors;
+corrected integration and A66 hand signs/formulas passed independent review.
+The full prospective625 pack and complete retained verifier remain pending.
+Eight fixed expanded shards have fresh64MiB/file and512MiB aggregate caps;
+no adaptive splitting or scientific run is authorized by registration.
+
+The durable A66 beforeimage archive contains2584 outputs plus the manifest:
+scripts/incremental/skip_reports/a66_beforeimages.tar.gz,
+SHAdc6bb318cdf49744587d71f7a9c84fcbf24de27b1ceb1e1ab17a31070c6ff716.
+Tar comparison,2585unique safe paths and safe extraction into the previously
+absent a66_beforeimages_extracted directory passed. MAIN compared all
+408197565 output bytes plus the manifest and verified all2584 canonical
+manifest hashes. An initial raw-SHA comparison was the wrong convention
+for the incremental manifest; the corrected canonical check passed without
+changing any output. Preserve the archive/extraction for final drift review.
+
+Independent hand-only design now specifies an eight-step L-squared cyclic
+preimage route, with exact Q[r]/p pivots and full retained relation checks.
+A nonzero closure constant supplies a candidate; a singular closure, cap or
+resource stop is inconclusive about the full image. The existing reference
+records the inverse formula and streamed coefficient-pivot design. Rational
+height and maximum-live-memory bounds still need implementation-specific
+proof before a successor can be frozen.626 remains unallocated. Previous
+goal turn PROGRESS; current work changes implementation/design evidence,
+not any physical mass claim or standing source-lineage blocker.
+
+MAIN read the full initial625 Program and helper before its final freeze.
+Full response reconstruction checks prevent coordinate extraction from
+hiding omitted grades; independent ordered polynomial products/adjoints
+assemble all9 residual coefficients. MAIN found that the approved B/PH
+off-root action/Green decoy was missing from this draft and requested its
+addition with exact counter/schema updates before FIRST. This is pre-run
+review, not a repair of scientific output. The independent code review and
+builder's complete resource/proof/contract pack remain in progress.
+
+Incremental-tooling tests passed50/50 with explicit six-file invocation and
+required subprocess escalation. No scientific program executed. The former
+A65 verifier reviewer clarified that their redundant final snapshot/preimage
+audit never ran; do not credit them with it. The existing final checkpoint
+claims rest on MAIN's exhaustive comparison and the other reviewer's checks.
+That agent now owns only an uncalled625 retained-evidence verifier draft;
+activation requires actual FIRST output pins after complete pack approval.
+
+A66 complete prospective gate: independent and MAIN approve exact625
+contract870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f.
+Both full reviews cover Program/helper/project, entire STUDY/contract,
+operative immutable helpers,68bindings/13compiled/70counts/ordered fixture,
+726core hashes/tree,14false authority/19false scope flags, EOF/outputabsence.
+MAIN additionally checked actual MSBuild Compile items and Release build
+with0warnings/errors. The scientific code retains the off-root22/20/div4
+decoy and full BC/J zero. Before freeze, MAIN challenged the forward-only
+support argument for two-form adjoints; independent sparse reverse and
+parallel-adjoint bounds close that gap without changing the numerical caps.
+Rational denominator/height and literal counted-product arguments passed.
+
+MAIN explicitly authorizes FIRST unchanged625 Release execution now.
+No bound input may be repaired after it; preserve any failed evidence.
+The uncalled retained verifier01d116bc35f42a589a8ef2912e7a8c5148634f25e7ae4355eb4b2e83a4619524
+passed complete independent/MAIN review and Bash/inlineJS syntax checks.
+Removing only its added function reproduces the previous verifier byte for
+byte. FIRST result, retained review, hash activation,405/3 integration and
+final checkpoint validation/commit/push remain pending.
+
+A66 FIRST625 PASSED unchanged in terminal session69397(exit0).
+Full/summarye89d845f06827fa527b705a97259bf1e56712f6a796b37aec97b48323736011b,
+28529bytes each. All8 shard hashes/bytes match, total147076756bytes,
+max26330668. Counts70/70, coefficientproducts866201,matrix4248,cubic63232,
+largesttensor614,maxrational597. All68 scientific bindings unchanged.
+Both points have residual term counts0,0,0,0,600,49,614,49,614; R4 is
+puregrade5, R5/R7 grade2, R6/R8 grades1/5. Positive rational components
+also make j2's real-embedding sign explicit. Off-root22/20/div4 survives.
+
+Ordered101/202 passed405/3. Fullintegrity23178 finished exit0, including
+complete retained625 reconstruction and all old checks, O4coverage31/31,
+overturn94/94,strictJSON/JCS/Ed25519. WZ15/H14 deficits and physicalclaims0
+remain. Initialintegrity79479 and independentreplay55002 failed only the
+new verifier's unreduced endpoint string comparison: -3731/343=-533/49.
+MAIN normalized that one expected rational comparison, without changing
+any frozen contract, program, proof, fixture or scientific output. The
+corrected verifierf7b9eb0d7c9ee93623c4f5b8f1132a1591114589472ec916e1af6866bf893254
+and405/3 aggregate preserve every old conjunct. Independent retained replay
+is still in progress; final checkpoint validation follows all source edits.
+
+Parallel source rereading found no independent cubic gamma in printed9.4.
+Rescaling S and overall action cannot remove gamma while preserving both
+nonzero curvature source and kinetic normalization. The diagnostic label
+on624/625 therefore matters. MAIN read the original text and618/623 proofs;
+the existing reference records a more source-directed successor: full
+residual of the passed P5 polynomial at conditionalgamma1,lambda0=1/907712,
+including H S5 and all higher grades, with full-domain error certification.
+The hand Taylorerror<=R/768 and defect<=R/512 give prospective benchmarks,
+not measured results. No new coefficient norm, residual or phase ran.
+CAA selection and the compact/expanded9.4 quadratic factor-two ambiguity
+remain explicit, along with all observer/pole/units limitations.626free.
+
+Independent full retained replay92809 PASSED(exit0), including all78
+kinetic records,26feedbacks,102crosses,12responses,8solves,18polynomial/
+18residual rows,448cubic coefficients,240derivatives,240parity controls,
+144Green variations,2off-root controls and43transport identities. All68
+bindings and8shards remained unchanged. Independent final verifier review
+approvedf7b9eb0d7c9ee93623c4f5b8f1132a1591114589472ec916e1af6866bf893254
+and proved preservation of every prior aggregate conjunct. A separate
+independent hand review approved the source9.4/rescaling/P5 certificate
+priority section and its conditional normalization boundaries.
+
+All source edits precede the final incremental checkpoint pass. Retain a
+durable source snapshot/report, compare all2584 old beforeimages, then
+commit/push on main with remote verification. No source edits after that
+final validation; put its result and exact checkpoint in commit/handoff.

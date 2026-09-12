@@ -88,7 +88,8 @@ back, NO new phase directory may be created outside this table.
 | 622 | Shared full homogeneous kinetic-carrier extension (A64) | FIRST frozen run passed: complete covariant kinetic responses, separate adjoint legs, Green current, exact linear branch and full-carrier zero controls; no physical pole or coupling selection. |
 | 623 | Shared full inverse-kappa branch-feedback extension (A64) | FIRST frozen run passed: full-grade recursion through fifth order, complete nonlinear polarization and original-action controls; retained-evidence verification passed; no physical spectrum or source selection. |
 | 624 | Exact algebraic BC stationary-background audit (A65) | FIRST frozen Release run passed: exact full connection residual zero at both transported points, both kinetic legs and original-action/Green controls verified. Conditional local background only; no physical vacuum, coupling or mass selected. |
-| 625+ | Unassigned - extend this registry before use | - |
+| 625 | Full algebraic kappa-jet and grade-five obstruction audit (A66) | Prospective: complete residuals for exact formal corrections about624, independently tested parity response blocks and original-action controls; no execution or full continuation claim. |
+| 626+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

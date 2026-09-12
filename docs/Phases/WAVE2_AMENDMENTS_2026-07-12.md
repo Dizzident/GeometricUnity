@@ -4064,3 +4064,86 @@ passed full integrity; ordered101/202 passed404/3,physicalclaims0.
 Final incremental validation follows all remaining shared narrative edits.
 The separately recorded hand-only second-order six-carrier obstruction is
 not a624 menu extension, full-space no-go or new execution authorization.
+
+## A66 - Full algebraic kappa jets and the nonlinear closure boundary (2026-09-12)
+
+Continue on main from079af2a3295ee4a6bfa9aa9a50f1b1e99a8f5c30,
+pushed and independently remote-matched. A65 final Release build plus74steps
+passed,410skipped; all28 source hashes and4 FIRST outputs unchanged.
+Checklist404/3,physicalclaims0. Prior goal turn PROGRESS.
+
+Allocate625, root
+studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001,
+project Phase625FullAlgebraicKappaJetObstructionAudit.csproj,
+contract phase625-a66-full-algebraic-kappa-jet-obstruction-v1,
+terminal full-algebraic-kappa-jet-controls-pass-six-carrier-obstruction.
+Keep the exact624 algebraic field, real embedding, fixed diagnostic gamma
+and S0=bB+cC. The original equation is A+HS+gamma N(S)+kappa S=0.
+Use the six-carrier only to define prospective correction coefficients,
+never to truncate the computed original residual or nonlinear gradient.
+
+Compute the complete linearized response on all six carriers, both kinetic
+legs and all nonlinear derivative terms, before comparing with hand matrices.
+Independently verify both parity blocks and exact inverse controls. In
+particular Bcal(S0,J)=0 and LJ=HJ=(9/4,-1,0); the full bivector-to-vector
+determinant is strictly negative on the fixed isolating interval. The
+vector-to-bivector block is also nonsingular. This is a linear restriction,
+not a full-space inverse or nonlinear six-carrier closure theorem.
+
+Construct the uniquely projected coefficients V1 through V4 of
+S(kappa)=S0+kappa V1+kappa^2 V2+kappa^3 V3+kappa^4 V4, using complete
+earlier nonlinear responses for the forcing. Independently substitute the
+entire polynomial into the FULL original equation and retain every
+coefficient through degree8, including every Clifford grade. The prospective
+forecast is zero residual through degree3; degree4 retains the nonzero
+grade-five gamma(j2)^2 N(J)_5 even after its vector part is cancelled.
+The old BC-only second-order incompatibility and the now-allowed J2 are
+separate controls. Original cubic-action directional derivatives and Green
+terms must independently challenge the operator/residual construction.
+Freeze all finite direction/polynomial menus and counts in the full pack;
+no coefficient pilot, root search, adaptive response basis or post-run repair.
+
+All scientific inputs must be immutable passed artifacts. Builder owns only
+625; independent reviewer challenges the whole prospective pack; MAIN owns
+shared wiring and explicit FIRST approval. Before execution require complete
+code/helpers/project/STUDY/contract, hand proofs, exact whole fixtures and
+counts, honest resource forecasts/hard retention limits/failure precedence,
+actual compiled-source closure and live726 core path/hash/tree closure.
+Build-only checks are allowed; FIRST science requires independent and MAIN
+full approval and a zero-warning Release build. Retain full sparse evidence,
+not summaries or expected coefficients standing in for actual computation.
+
+Register generator/traversal/101/202/verifier/all9 scanners(both207sites),
+implementation/registry/amendment/restart/journal/reference/ledger. Preserve
+durable old-output beforeimages; after all edits perform final incremental
+validation, exhaustive drift review, scoped commit/push and remote match.
+No core edit, source choice, physical vacuum, arbitrary-coupling theorem,
+full invariant inverse, PDE continuation, observer/units/pole or mass claim.
+All14 authority flags false,O4/externalreview pending,Phase561closed,
+WZ15/H14 deficits unchanged.626+remain unallocated. Parallel hand-only
+design may examine the full higher-grade chain or mixed Hessian, but does
+not authorize another scientific calculation.
+
+A66 prospective storage clarification: exactly eight expanded shards in
+point-major order, output/points/point{0,1}_{context,kinetic,feedback,cross}.json.
+Freeze64MiB/file and512MiB aggregate prewrite caps, exact category schemas,
+recursive file-set checks and failure precedence before FIRST. All tensors
+remain fully expanded; no adaptive splitting or reconstruction-only DAG.
+These are fresh625 bounds, not a repair of any executed retention failure.
+
+A66 FIRST authorization: independent and MAIN complete reviews approve
+contract870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f.
+68live bindings,13actual compiled sources,70counts, whole ordered fixture,
+726core hashes/tree,14false authority/19false scope flags and outputabsence
+passed; Release build0warnings/errors. The full B/PH off-root control and
+BC/J zero assertion are included. Separate sparse adjoint support and
+rational-height proofs were corrected before FIRST. MAIN authorizes the
+unchanged first execution; its result is pending and failures stay frozen.
+
+A66 FIRST result:625 PASSED unchanged in terminal session69397(exit0).
+Full/summarye89d845f06827fa527b705a97259bf1e56712f6a796b37aec97b48323736011b,
+eight shards147076756bytes,70counts matched and68bindings unchanged.
+Full residuals vanish through degree3 and leave600 grade5 terms at degree4;
+all coefficients through8 and original-action controls are retained.
+Ordered101/202/integrity passed405/3 with all physical deficits unchanged.
+Final source-freeze validation and scoped checkpoint remain required.

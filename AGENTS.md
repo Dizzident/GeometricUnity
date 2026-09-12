@@ -13,6 +13,11 @@
   for redundant conversational confirmation. Request execution escalation
   when required by the sandbox; the runtime decides whether a saved rule
   satisfies approval or a user prompt is necessary.
+- Proceed with already-authorized Git operations on `main` without asking
+  the user to reconfirm the workflow. If a new execution approval is needed,
+  request an operation-specific prefix such as
+  `["git", "-C", "/home/josh/Documents/GitHub/GeometricUnity", "push"]`
+  through the runtime approval mechanism, not a separate chat question.
 - Treat the active runtime approval rules as authoritative; this file records
   the workflow but does not grant permissions. If an authorized operation
   needs a new approval, request a narrowly scoped, repository-specific command

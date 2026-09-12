@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "amendment": "A66",
+  "phase": 625,
+  "baseCheckpoint": "079af2a3295ee4a6bfa9aa9a50f1b1e99a8f5c30",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "4fcccd805030f93d99ed27472df0cc778dbc15c1aa5ed726f02b128f12f50328"
+    },
+    {
+      "path": "ExperimentReferences.md",
+      "sha256": "3ab9c9015a0f199dc00f5906d789523c940e331739469f4558ebc4765c7c99b1"
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md",
+      "sha256": "1aaddab5d23bff8883a231d0c713e42e919671b46ecc79d7e87084203dad8fa7"
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md",
+      "sha256": "088611a1891ee9a885d7306316b1768d02835936e8deac0e8cd6aec84660e4a9"
+    },
+    {
+      "path": "docs/Phases/Implementation/IMPLEMENTATION_P625.md",
+      "sha256": "d1736282bad6b962e87465adf3ad9ffa3cc715b9eb664c8a22e639b046777d1f"
+    },
+    {
+      "path": "docs/Phases/PHASE_NUMBER_REGISTRY.md",
+      "sha256": "bfed5296d0857e159ee93bbc5447625295960f69a06b11abaebb28c313d90d6e"
+    },
+    {
+      "path": "docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md",
+      "sha256": "dc612b8ce2c7c5ce98f6eae0d2670720169efee8cf75af4de8d9c2eaf2ea33f0"
+    },
+    {
+      "path": "docs/Reference/ExperimentReferences/STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md",
+      "sha256": "5309626760ba0d0dfebe91881d3ff934f4538bb330f73013ca1fef11498ce664"
+    },
+    {
+      "path": "scripts/BosonPhasesTraversal.proj",
+      "sha256": "84af4976368b11b40c174843933c3244df43c2d1b06c735f2d3651eb67958635"
+    },
+    {
+      "path": "scripts/generate_validated_boson_predictions.sh",
+      "sha256": "90f2998d9bf26c07b34e0c23978d63ffcc195c6b5cfa5991210ec690ea7cab6e"
+    },
+    {
+      "path": "scripts/verify_boson_claim_integrity.sh",
+      "sha256": "f7b9eb0d7c9ee93623c4f5b8f1132a1591114589472ec916e1af6866bf893254"
+    },
+    {
+      "path": "studies/phase101_boson_prediction_package_001/Program.cs",
+      "sha256": "f385b317a7f1043a49af8a3eeb44fba2c17a799bb30671ab123b66d826235d5c"
+    },
+    {
+      "path": "studies/phase202_boson_objective_completion_audit_001/Program.cs",
+      "sha256": "630df9d2b7a63d857ecc4055f1747de9629d85ea2e69aafd8c380b415ddc80e9"
+    },
+    {
+      "path": "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs",
+      "sha256": "2a91afc119760d5e887792887187a13b0b476aa3a68dd906eabf340c59189176"
+    },
+    {
+      "path": "studies/phase205_boson_source_lineage_text_evidence_scan_001/Program.cs",
+      "sha256": "6e6c40abfdb6c140426e792f9f62c9fc1dde578c3af40f6513e9256ce9aea45b"
+    },
+    {
+      "path": "studies/phase207_higgs_quartic_self_coupling_source_scan_001/Program.cs",
+      "sha256": "28677e4cd9cd000f936d2356054491609c37e59ca5c4733d5a428ddcc46712bc"
+    },
+    {
+      "path": "studies/phase253_global_observed_sector_vacuum_scan_001/Program.cs",
+      "sha256": "25d53a5fea7b822445197657b8e90e94b77385a82a4d1817a94d12e4e5eacd87"
+    },
+    {
+      "path": "studies/phase278_relaxion_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "e0b2fea6a13bcde8e5a93d42ebaf935c1b22defbbc372e46a03658c90313959b"
+    },
+    {
+      "path": "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "c63ce08f98114eca18b48c33d0e4be3d7ef6e6ad7802ef988b00dcacd1eb2039"
+    },
+    {
+      "path": "studies/phase281_geometric_refractive_unification_source_audit_001/Program.cs",
+      "sha256": "da81a325ba05a120e5a5f80887171f9332f3225c4052b5cbfd66d32008fd9fab"
+    },
+    {
+      "path": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/Program.cs",
+      "sha256": "ea50c4c2208647d42ebee22e605e76ea18a358436f1aaedd118b6bf39624db47"
+    },
+    {
+      "path": "studies/phase296_source_lineage_contract_field_candidate_scan_001/Program.cs",
+      "sha256": "0598e5188fd367664752f0f1f30685a0a4285e0de3be3c1a2cf0535adefa5eb4"
+    },
+    {
+      "path": "studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/JetAudit.cs",
+      "sha256": "c9bfe006f671a3824f481371a50bc9fd23e1a9352d0d295edaa43fc204fc4f43"
+    },
+    {
+      "path": "studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/Phase625FullAlgebraicKappaJetObstructionAudit.csproj",
+      "sha256": "3450af7ec43458402158c04e9026fde7b8efbcca65efa302bde279ed73f48387"
+    },
+    {
+      "path": "studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/Program.cs",
+      "sha256": "0a0b4f3104d6196940980fe18a72dc9926e125f1d24b7b618382d74f4b919901"
+    },
+    {
+      "path": "studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/STUDY.md",
+      "sha256": "c6bb7c9d408daad8c76151adadea950668a3c26e4ec928d3094b8cc8b2afeecd"
+    },
+    {
+      "path": "studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/preregistration/contract_v1.json",
+      "sha256": "870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f"
+    }
+  ]
+}

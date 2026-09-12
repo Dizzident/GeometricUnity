@@ -1,7 +1,7 @@
 {
   "phaseId": "phase419-observed-field-symbolic-extraction-template",
   "terminalStatus": "observed-field-symbolic-extraction-template-materialized-contract-unfilled",
-  "generatedAt": "2026-09-12T21:16:26.6430789+00:00",
+  "generatedAt": "2026-09-12T22:12:22.3755187+00:00",
   "observedFieldSymbolicExtractionTemplatePassed": true,
   "applicationSubjectKind": "fms-dressing-field-observed-extraction-template",
   "targetBlindConstruction": true,

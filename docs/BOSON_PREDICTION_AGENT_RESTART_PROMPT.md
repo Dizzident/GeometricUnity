@@ -45,6 +45,110 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST A66 (2026-09-12):625 FIRST unchanged Release run PASSED in terminal
+session69397(exit0); do not restart. Approved contract
+870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f;
+identical full/summarye89d845f06827fa527b705a97259bf1e56712f6a796b37aec97b48323736011b,
+28529bytes each. Eight full expanded shards total147076756bytes, largest
+26330668, rationalmax597. All70counts/68bound inputs match. At both points
+the full residual counts for orders0..8 are0,0,0,0,600,49,614,49,614:
+order4 is purely grade5, not a full-space no-go. Original448cubic/240
+derivative/144Green controls and off-root22/20/div4 passed. MAIN checked
+allshard bytes/hashes/counts and the full vetted retained-evidence verifier.
+Independent full retained replay92809 also passed(exit0), reconstructing
+all78kinetics/26feedbacks/102crosses/448cubic/240derivatives/144Green rows
+and43transport identities; all68bindings/eightshards remained unchanged.
+Ordered101/202 passed405/3. Fullintegrity23178exit0 passed O4coverage31/31,
+overturn94/94,strictJSON/JCS/Ed25519,WZ15/H14missing,physicalclaims0.
+Verifierf7b9eb0d7c9ee93623c4f5b8f1132a1591114589472ec916e1af6866bf893254
+has reviewed FIRST pins/unique625check/preservedoldconjuncts. Initial
+integrity79479 failed only a new verifier string comparison: -3731/343
+equals reduced-533/49. Normalizing that comparison fixed it without any
+frozen science or output edit. No post-run scientific retuning occurred.
+
+Next research priority is now sharper: primary9.4 does not display a free
+cubic gamma, so the special624/625 gamma remains diagnostic. The existing
+reference derives why amplitude rescaling changes the nonzero source too.
+A more source-directed hand-only lead uses passed623's P5 at conditional
+gamma1 and fixed lambda0=1/907712, computing its COMPLETE residual including
+H S5 and every higher nonlinear grade, with618/623 contraction/Taylor error
+certification. Hand bounds are error<=R/768 and defect<=R/512, R=120lambda0.
+No626allocation/execution yet. Freeze a complete new pack before testing it;
+retain the canonical-CAA and kappa1/2-versus-kappa1 source caveats. The
+earlier cyclic-preimage lead remains available but lower priority for source
+matching. Final incremental must follow ALL source edits, with durable
+source snapshot, exhaustive A66-beforeimage drift review, scoped main
+commit/push and independent remote match. Previous goal turn PROGRESS.
+The earlier A66/A65 pending statuses below are chronological history.
+
+Final A66 source-freeze readiness: all independent retained/integration
+reviews passed, including byte-exact preservation of old aggregate predicates.
+Independent hand review also passed the source-coefficient/rescaling and
+source-directed P5 certificate lead. Do not edit source files after the final
+incremental pass; record its report and exact checkpoint in the commit and
+handoff. Preserve the A66 archive/extraction for exhaustive output drift.
+
+WORK IN PROGRESS (A66,2026-09-12): authoritative checkpoint
+079af2a3295ee4a6bfa9aa9a50f1b1e99a8f5c30 is committed on main, pushed,
+independently remote-matched and clean before this tranche. A65 final report
+pass_2026-09-12T21-12-27-572Z.json finished21:16:58.235Z: central Release
+build plus74steps passed,410skipped. All28 source snapshot hashes and all4
+624 FIRST outputs reproduced unchanged; all2584 manifest outputs verified.
+Checklist404/3,O4coverage31/31,overturn94/94,physicalclaims0. Exhaustive
+old2580 preimage audit:2485byteidentical,93changedJSON(73volatile-only,
+20reviewed scanner/integration/identifier metadata),2logs with timestamped
+bundle IDs only; all312 individual spectrum modes and aggregate numbers
+unchanged. The33 staged historical output diffs were timestamp/runtime only.
+The previous goal turn was PROGRESS: completed scientific/checkpoint work.
+
+Allocate625 under A66 to the full algebraic kappa-jet/grade-five obstruction
+audit. A new hand-only lead, recorded in the checkpoint commit and existing
+reference, shows that J/B/C gives an invertible second-order response block.
+This allows a truncated second jet with J2 nonzero, despite the exact
+six-carrier branch constraint J identically zero. The contradiction occurs
+at orderkappa4, not at the second-order equations for an unrestricted jet.
+625 will retain complete residuals, not substitute the projected equations
+for the original gradient. Freeze full code/proof/menu/counts/resources/
+bindings and obtain independent plus MAIN review before FIRST science.
+No new science has executed;626+free. Separate hand-only design challenges
+the complete higher-grade response chain and full mixed metric-field Hessian.
+No core/source selection, physical mass, or O4 discharge is authorized.
+The following A65 pending-checkpoint statements are chronological history.
+
+A66 pre-run integration update: generator/traversal/101/202/all9 scanners
+(both207 sites), implementation and reference ledger are registered. All11
+shared C# Release builds passed0warnings/errors. Independent review caught
+and MAIN fixed a207 continuation semicolon before validation; the corrected
+integration and hand formulas passed review, preserving every prior predicate.
+The full625 prospective pack and retained-evidence verifier are still pending;
+no FIRST approval or scientific execution. Eight fixed expanded shards use
+point{0,1}_{context,kinetic,feedback,cross}.json,64MiB/file,512MiB total.
+The original cubic degrees are upper bounds; retain leading zero slots too.
+All2584 old outputs plus the manifest are archived and safely extracted at
+scripts/incremental/skip_reports/a66_beforeimages_extracted/.
+Archive scripts/incremental/skip_reports/a66_beforeimages.tar.gz has SHA
+dc6bb318cdf49744587d71f7a9c84fcbf24de27b1ceb1e1ab17a31070c6ff716.
+2585unique safe paths, all408197565 output bytes and all2584 canonical
+manifest hashes matched before new science. Preserve this forensic baseline.
+The existing reference records a hand-only eight-step cyclic preimage design,
+exact algebraic-field pivots and why singular/capped searches are inconclusive.
+Its rational-height/live-memory proof is not complete;626 remains free.
+
+A66 FIRST gate now approved: independent and MAIN full reviews approve625
+contract870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f.
+Both verified68bindings,13compiled files,70counts, whole ordered fixture,
+live726 hashes/tree,14false authority/19false scope flags, EOF and absent
+outputs. MAIN actual MSBuild Compile metadata and Release0warning build
+passed. Pre-run review added the missing B/PH off-root22/20/div4 control,
+explicit full BC/J zero, and corrected the two-form adjoint support proof;
+no scientific execution or post-run repair preceded these changes.
+MAIN now authorizes FIRST unchanged Release execution. Preserve any failure;
+all bound science files become immutable. Its outcome remains pending.
+The complete uncalled verifier01d116bc35f42a589a8ef2912e7a8c5148634f25e7ae4355eb4b2e83a4619524
+passed independent/MAIN review and full syntax checks; every old verifier
+byte remains unchanged outside the added function. Activate only with
+actual FIRST pins, then perform retained reviews and405/3 shared integration.
+
 LATEST A65 result (2026-09-12):624 FIRST unchanged Release run PASSED;
 session54360 is terminal exit0, not a live job to restart. Final contract
 0184117441bf4a920db6953daebc429880579a4a905ce8d83d55fd17e4310639

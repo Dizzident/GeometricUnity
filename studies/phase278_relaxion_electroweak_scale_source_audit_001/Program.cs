@@ -600,6 +600,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P622.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P623.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P624.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P625.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -659,6 +660,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase622_full_homogeneous_kinetic_carrier_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase624_exact_algebraic_bc_stationary_background_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
