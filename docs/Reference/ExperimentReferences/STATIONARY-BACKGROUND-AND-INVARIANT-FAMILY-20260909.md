@@ -2104,3 +2104,449 @@ the noncoincident third-jet source variation is3/16 with curvature3/4.
 All14 authority flags remain false and physicalmassclaims0. This evidence
 supports the conditional joint relative-action synthesis above; it does
 not execute the proposed full-H/S5/Hessian tests or select physical inputs.
+
+### A64 prospective complete carrier and nonlinear polarization
+
+A63 is committed as23291a3078d23191df4060da3ad3f57870ecc675 on main,
+pushed and independently remote-matched. Final incremental report
+pass_2026-09-10T23-37-24-174Z.json passed79 steps plus the central build,
+skipped402, and retained401/3 checklist,31/31 O4 coverage,94/94 overturn
+and zero physical mass claims. The following analytical deductions were
+independently hand-checked while that pass ran; they are NOT new executed
+evidence.622/623 now have prospective allocations under A64. No scientific
+coefficient execution has occurred in either new phase.
+
+Write E=Sym^2_0(H), W=H+E+Rt, and identify W* with W using the declared
+nondegenerate metric. In W* tensor Lambda^2 W, ordinary metric contractions
+give exactly three invariant carriers: H->H wedge E from g(u,Av), denoted
+J; H->H wedge t from g(u,v), denoted B; and E->E wedge t from tr(AB),
+denoted C. E->Lambda^2 H vanishes by symmetry of g(u,Av). E->Lambda^2 E
+vanishes because tr(ABC) is symmetric for self-adjoint matrices. The other
+slot types vanish by odd underlying Lorentz-index count, lack of invariant
+vectors, tracefreeness or antisymmetry. The possible four/six-index terms
+with one epsilon place both indices of a symmetric matrix into epsilon
+and vanish; two epsilon factors reduce to metrics. This is the application
+of the previously cited orthogonal invariant-tensor framework, not a new
+GU source assertion. Thus the proposed FULL invariant bivector one-form
+carrier is span{J,B,C}; the smaller source-generated linear carrier with
+L=-B+C must not be mistaken for this complete representation statement.
+The proposed signed norms are(9,-1,-9), with all cross pairings zero.
+
+Let V=a PHGamma+b PTGamma+c PtrGamma and use the half-polarization
+
+    Bcal(X,Y)=[N(X+Y)-N(X)-N(Y)]/2.
+
+First establish its full Clifford grade. In
+
+    2 Bcal(V,J)=[K(V wedge J+J wedge V)
+                +DQ_V^dag K^dag J+DQ_J^dag K^dag V]/3,
+
+the first input has vector coefficients because a vector/bivector
+commutator is vector-valued. The complete CAA image is bivector-valued:
+the first commutator gives grade2, while the inner anticommutator gives
+grade3 and the outer anticommutator gives grade2. K^dag J is vector-valued
+by619's full cyclic-trace result, and K^dag V is bivector-valued by the
+complete diagonal formula. The two remaining adjoint terms use respectively
+vector/vector and bivector/bivector commutators, both grade2. Therefore
+the entire output is bivector-valued BEFORE any carrier comparison.
+
+For the ALGEBRAIC POTENTIAL only, apply the simultaneous maps
+gamma_t->-gamma_t and theta_t->-theta_t, fixing the other generators.
+This is an explicitly defined real Clifford/exterior automorphism; no
+Pin/gauge admissibility is assumed. It preserves the Clifford relations,
+real-form adjoint phases, scalar trace and signed pairing, and fixes the
+canonical Gamma1/Gamma2. Each Hodge star anticommutes with the orientation-
+reversing map, but the first CAA leg contains two stars and the second
+contains four. The full K and its algebraic transpose are equivariant.
+Consequently N and Bcal are equivariant. V and J are even under this map;
+B and C are odd. Together with the COMPLETE carrier argument, this forces
+Bcal(V,J) to be a multiple of J. It says nothing about reflection symmetry
+of the differential kinetic geometry or a pointwise differential adjoint.
+
+The original cubic action has a symmetric third derivative. Thus
+
+    Pair(J,Bcal(V,J))=Pair(V,N(J)).
+
+Using619's full vector weights N(J)=(3,22/3,6), the vector-carrier Gram
+diag(-4,-9,-1) and Pair(J,J)=9 gives the prospective identity
+
+    Bcal(V,J)=-(4a+22b+2c)J/3.
+
+In particular Bcal(A,J)=38J for
+A=(-21/4,-15/4,-21/4), and Bcal(Gamma,J)=-28J/3 is an independent
+normalization control. Both full grade and carrier completeness are needed
+before using these scalar pairings; the scalar restriction alone is not
+a full-gradient proof.623 must retain all output coefficients and check
+the original-action derivative independently.
+
+### A64 prospective complete fifth-order coefficients
+
+For A+H S+gamma N(S)+kappa S=0, lambda=1/kappa and
+S=sum_(r>=1) lambda^r S_r, the exact recursion through this order is
+
+    S1=-A, S2=HA,
+    S3=-H S2-gamma N(S1),
+    S4=-H S3-2gamma Bcal(S1,S2),
+    S5=-H S4-gamma[2 Bcal(S1,S3)+N(S2)].
+
+These are formal identities until the full coefficients and the previously
+stated analytic-existence argument have both been established. Using the
+prospective full-H table, S2=(3/2)J. The diagonal formula gives
+N(A)=(11043/2,11655/2,11043/2) and H N(A)=306J. Hence the forecast
+vector weights of S3 are
+
+    (-27/8-11043gamma/2, 3/2-11655gamma/2, -11043gamma/2),
+
+and the complete forecast S4 is
+
+    (-39/8+420gamma)J-(27/8)L.
+
+The forecast FULL vector weights of S5 are
+
+    (1161/32-1701gamma+15072318gamma^2,
+     51/2+(1275/2)gamma+15422130gamma^2,
+     135/4-(189/2)gamma+15072318gamma^2).
+
+For an independent arithmetic check, put X=-H^2 A=(-27/8,3/2,0).
+Then Bcal(A,X)=(-2997/8,117,-81/2) and
+Bcal(A,N(A))=(-7536159,-7711065,-7536159). The constants also agree
+with expansion of the proposed exact gamma=0 linear diagnostic. These
+hand checks do not authorize a numerical pilot or replace the independent
+full-tensor implementation.
+
+Each of J,B,C has zero cyclic wedge: J by619, B/C because the form
+direction repeats a Clifford wedge direction. Differentiating that tensor
+identity with the parallel solder gives W4(D_B S4)=0. Thus the complete
+H S4 is vector-valued; Bcal(S1,S3) is vector-valued by the full diagonal
+closure proof. The only remaining grade5 term is therefore
+
+    (S5)_grade5=-(9gamma/4)N(J)_grade5,
+
+with the retained(form8,blade157) witness -3gamma/4 and no other grades
+forecast at this order.623 must compute all feedback terms BEFORE checking
+this conclusion. With the separately proved analytic dependence, a nonzero
+fixed gamma would force an actual grade5 component for sufficiently small
+nonzero lambda on the local branch. This would reject a vector-plus-bivector
+truncation near that branch, not the theory, a general stationary solution,
+or any particular physical mass. The mixed metric/field Hessian, observer
+reduction, operator domain, source parameters and unit map remain unresolved.
+
+### A64 prospective Green-divergence control: do not symmetrize H pointwise
+
+The622 builder identified a further assumption hazard before execution:
+formal integrated symmetry of H does not imply pointwise symmetry of its
+matrix on noncompact homogeneous fields. From the prospective full-H table,
+
+    Pair(PHGamma,H B)=3, Pair(H PHGamma,B)=-1.
+
+This difference is not evidence that one may repair the matrix by averaging
+its entries. The two derivative adjoints carry a Green-divergence term.
+For invariant one-form fields U,V, define the vector current by
+
+    j^a=(sigma_a/2)[Pair(V,interior_a K^dag U)
+                    -Pair(U,interior_a K^dag V)].
+
+The ordinary covariant product rule gives
+
+    Pair(U,H V)-Pair(H U,V)=div j.
+
+MAIN independently hand-derived the following nonzero anchor, not executed
+evidence. Set U=PHGamma,V=B. The full diagonal adjoint formula gives
+interior^t K^dag PHGamma=12B. The cyclic-bivector adjoint formula gives
+interior^t K^dag B=PHGamma. With their signed norms -1 and -4, respectively,
+j^t=(-12+4)/2=-4. The other components vanish by isotropy, so j=-4t.
+The full Nomizu connection has div t=sum_a (Lambda_a)^a_t=-1: each of
+the four horizontal directions contributes -1/4. Thus div j=4, precisely
+the forecast pointwise skew-pairing difference.
+
+There is also an independent coordinate-volume derivation of div t.
+The horizontal density scales as |det y|^(1/2), the symmetric-matrix fibre
+density as |det y|^(-5/2), and their product as |det y|^(-2), up to the
+fixed nonzero beta/signature constant. The invariant trace field is
+t=-y/2 in the ten fibre coordinates. Its coordinate divergence is -5,
+whereas t(log density)=4, so the metric divergence is -1. This uses the
+declared smooth metric density, not a positive physical Hilbert norm.
+622 must independently assemble the full current and its divergence before
+testing this anchor. No coefficient execution has yet occurred. The
+algebraic potential's symmetric cubic third derivative used in623 has no
+such integration-by-parts issue and is unaffected by this distinction.
+
+The independent reviewer subsequently confirmed the complete carrier,
+reflection/polarization and Green anchor by hand. The622 builder also
+derived the original local kinetic-variation anchor with S=B,V=PHGamma:
+delta I_kinetic=5, Pair(V,H S)=3 and the relevant Green divergence=4,
+so delta I_kinetic-Pair(V,H S)=(div j)/2=2. These are prospective
+controls, not new executed results.
+
+### Further lead: formal curvature-square density, not a reduced Hessian
+
+While622/623 packs are prepared, MAIN and the independent reviewer derived
+a possible organizer for the later metric/mixed fluctuation problem. It
+is not part of either new phase's execution scope and allocates no624.
+For fixed finite metric jets, the formal large-kappa equation begins
+S=-lambda A(h)+O(lambda^2), A(h)=K_h(F_B(h)). Direct substitution into
+the ORIGINAL source and mass densities gives
+
+    Pair(S,A)+(1/(2lambda))Pair(S,S)
+      =-(lambda/2)Pair(A,A)+O(lambda^2).
+
+The kinetic term begins at order lambda^2 and the cubic at lambda^3 for
+fixed finite gamma. No integration by parts is needed for this leading
+algebraic coefficient. This is a formal differential expansion, not a
+uniform large-frequency bound or an existence proof for an inverse
+differential operator at arbitrary varying h.
+
+For torsion-free metric spin curvature, a generic identity follows from
+the complete canonical CAA formula, not from616's finite geometry menu
+alone. Its first commutator leg is -RicGamma. The inner anticommutator's
+grade4 part is the algebraic Bianchi alternation and vanishes, while its
+scalar is -iR/2 times the top form. Since star(top)=-1, the scalar after
+star is +iR/2 and the outer anticommutator is -RGamma. The ordered -1/2
+coefficient therefore adds +(R/2)Gamma. Consequently
+
+    A=-EinsteinGamma,
+    Pair(A,A)=-tr(Einstein^2)
+             =-[Ric_ab Ric^ab+(5/2)R^2] in dimension14.
+
+This is a new general analytical deduction from the full contraction
+formula, not retroactively expanded611/616 execution. It predicts the
+leading formal local eliminated density
+
+    +(lambda/2)[Ric_ab Ric^ab+(5/2)R^2] vol_G.
+
+The contraction is signed, not a positive curvature norm. Every metric,
+volume, soldering and spin-curvature variation must remain in any future
+Hessian calculation. The expression alone establishes no stability,
+particle spectrum, selected coupling or physical unit.
+
+Most importantly, varying the substituted S(h) generally changes native
+varpi on the fibre boundary, even for base-compact delta h. That lies
+outside the joint-stationarity theorem's compact-interior field variations.
+The kinetic Green flux cannot be discarded. With S and deltaS of order
+lambda this boundary issue starts at order lambda^2, so it does not spoil
+the displayed leading LOCAL algebraic density, but it prevents identifying
+the complete substituted action with an admissible reduced action. A future
+leading formal local metric-Hessian test and a boundary-compatible full
+Schur-complement problem must be explicitly distinguished. No624 execution,
+full Hessian, differential inverse or physical prediction is authorized by
+this exploratory deduction.
+
+One concrete principal-derivative control is now independently hand-checked
+by MAIN and the reviewer, using621's retained third-jet anchor. At h0=eta,
+y=diag(-1,4,9,16), take delta h00=f(x1). For the symbol covector dx1,
+the transverse mixed metric variation is k_0,8=-3f'/4; the remaining
+k_1,A terms are longitudinal. Coordinate8 denotes the symmetric fibre01
+direction, not horizontal x8. Since Ginv11=-1/4, the sole third-derivative
+Ricci entries are
+
+    delta Ric_0,8=delta Ric_8,0
+       =-(1/2)Ginv11 partial1^2 k_0,8=-3f'''/32,
+    delta R at third-derivative order=0.
+
+With Ginv00=1 and Ginv88=-2, the two symmetric mixed entries contribute
+
+    (delta Ric_ab)(delta Ric^ab) at degree6=-9(f''')^2/256.
+
+Thus the t^2 coefficient of the leading order-lambda local density for
+h=h0+t delta h has degree6 contribution
+
+    -9lambda(f''')^2/512,
+
+after dividing by the background density. The SECOND t derivative has
+twice this coefficient. Background curvature times second metric/curvature
+variation, and variations of the pairing/density/solder, have total base
+derivative order at most4 here and cannot cancel this degree6 term at the
+same orderlambda. This is a prospective local formal-symbol control, not a
+completed Hessian, a compactification, a chosen physical time, a negative-
+norm particle or a physical instability result. In particular, the expansion
+in lambda is not uniform at arbitrarily high frequency; the degree6 term
+of its first coefficient is not the principal symbol of an already-defined
+complete nonlocal reduced theory. No new coefficient execution or624
+allocation was performed.
+
+### A64 full-carrier zero controls, prospective before622 freeze
+
+The independent reviewer identified, and MAIN hand-checked, a distinction
+between the full six-dimensional vector+bivector invariant carrier and its
+source-generated five-dimensional subspace. On the full carrier the
+bivector-to-vector H block has determinant -99/4, while the vector-to-
+bivector block has rank2 and kernel span{Gamma}. Hence H has rank5 and
+kernel span{Gamma} on this SIX-dimensional carrier, not necessarily on
+the full Clifford-valued invariant field space.
+
+There is a nontrivial homogeneous Jordan chain:
+
+    Z=(11J-27B+8C)/99, HZ=Gamma, HGamma=0.
+
+For example, all three vector weights of99 HZ are99 using the proposed
+full-H table. Thus H^2Z=0 but HZ is nonzero. The source-generated span
+of the three vectors and J,L omits Z. This is a homogeneous algebraic
+operator control, not a physical zero mode or a propagator statement.
+
+MAIN then independently solved the zero-coupling linear equation in the
+complete carrier. At gamma=kappa=0,
+
+    S*=(7/12)J-(9/44)B+(37/66)C,
+    HS*=(21/4,15/4,21/4)=-A,
+    S=S*+aGamma for any real a.
+
+The reviewer checked the arithmetic and the classification WITHIN that
+six-dimensional carrier. This family does not lie in the source-generated
+five-dimensional carrier: its B and C coefficients sum47/132, whereas
+that smaller carrier requires their sum to vanish. It is not a kappa->0
+limit of the previous nonzero-kappa rational branch. Consequently the
+singular denominator of that branch cannot establish absence of solutions
+at zero coupling in the complete carrier.
+
+622 will add independently computed full-response controls for Z and S*
+before freeze, with updated prospective coefficients/counts/resources.
+No scientific execution, physical zero-coupling selection, unrestricted
+Clifford classification or new stationary result is claimed yet. For
+nonzero gamma, the complete nonlinear feedback must still be retained;
+the zero-coupling family cannot be silently reused as a nonlinear solution.
+
+Separately, MAIN and the reviewer hand-derived necessary conditions for
+nonzero-gamma stationarity within that six-carrier, without expanding either
+new phase's execution menu. For Z=xJ+yB+zC, its cyclic trace is zero, so
+the nonlinear adjoint contribution is vector-valued and only the forward
+fourfold wedge can produce grade5. B squared, C squared and the BC cross
+have matching exterior/internal plane directions, hence zero fourfold
+wedge. The JB/JC crosses have an invariant trace-odd fourfold wedge, which
+would be t wedge an invariant three-form on H+E; no such three-form exists
+by the contraction argument above. Therefore the prospective identity is
+
+    N(xJ+yB+zC)_grade5=x^2 N(J)_grade5.
+
+For S=V+Z, V=a PHGamma+b PTGamma+c PtrGamma, N(V) is vector-valued and
+the mixed polarization with cyclic Z is bivector-valued. The full H,
+source and mass terms have only grades1/2 on this carrier. Thus for real
+gamma nonzero, stationarity necessarily requires x=0. With x=0, the
+potential-only trace reflection makes Bcal(V,yB+zC) lie in span{B,C},
+whereas the J coefficient of H V is b-a. It follows that b=a is another
+necessary condition. These are not a proof that the remaining equations
+have no solutions, nor a no-go in the full Clifford field domain. They
+also show why the preceding zero-coupling family with x=7/12 cannot be
+silently continued inside the same six-carrier when gamma is switched on.
+No new coefficient execution, parameter selection or624 allocation follows.
+
+### A64 later nonlinear background lead: exact algebraic BC candidate
+
+The preceding necessary conditions do not imply a nonlinear no-go. MAIN
+and the independent reviewer have hand-derived and separately checked a
+candidate with S=bB+cC, kappa=0, at one positive diagnostic gamma. Here b,c
+are amplitudes, not the fibre metric. This is not a622/623 execution menu
+change, an executed result, or an author-selected physical coupling.
+
+Write S_i=d_i gamma_i wedgeCl gamma_t, with d_H=-b/2,d_T=c,d_t=0.
+The literal commutator gives Q_ij=2d_i d_j Gamma_ij. Matching exterior
+and Clifford planes make its fourfold wedge zero, so KQ is entirely
+vector-valued. Cyclicity gives (Kdag S)_it=-2d_i gamma_i, and the full
+DQ_Sdag Kdag S contributes only the trace row -4 sum_i d_i^2 gamma_t.
+Consequently the COMPLETE nonlinear tensor has vector weights
+
+    N(bB+cC)=(b^2-18bc+48c^2,
+              2b^2-(64/3)bc+(112/3)c^2,
+              (2/3)b^2-24bc+36c^2).
+
+There is no discarded central, bivector or higher-grade residual. With
+the prospective full H table, the original equation A+HS+gamma N(S)=0
+therefore has precisely three vector equations. Set r=c/b, D=1+42r^2,
+P=1+18r+36r^2 and w=gamma b^2. Trace minus4/3 horizontal gives
+w=21/(8D); the horizontal equation then gives
+
+    b=7P/[2(9r-1)D], c=rb,
+    gamma=3(9r-1)^2 D/(14P^2).
+
+The remaining traceless equation is p(r)/[2D(9r-1)]=0, where
+
+    p(r)=693r^3-511r^2-64r-17.
+
+Exact hand arithmetic gives p(3/4)=-3845/64 and p(7/8)=11/512.
+Moreover p'(3/4)=5423/16>0 and p''>0 on that interval. Thus exactly
+one root lies in(3/4,7/8); all displayed denominators are nonzero and
+gamma is positive. This is an algebraic specification, not a numerical
+root search or a claim for an arbitrary preassigned positive gamma.
+
+The exact algebraic field is justified without a numerical root search:
+p is primitive and reduces modulo2 to r^3+r^2+1, which takes value1 at
+both elements of F2. A cubic with no root over F2 is irreducible, so
+Gauss's lemma gives irreducibility over Q and Q[r]/(p) is a degree3 field.
+MAIN and the independent reviewer checked this argument by hand.
+
+A future prospective audit can evaluate the full Clifford/connection
+equation in the exact algebraic number field defined by p, retain every
+grade and verify that the real embedding lies in the isolating interval.
+Its controls should independently reconstruct B,C, both H legs, full Q,
+KQ and DQ adjoint, and original cubic-action variations before comparing
+with this hand forecast. No624 allocation or execution is made here.
+The candidate is distinct from618's small-lambda branch. Even confirmation
+would establish only a local homogeneous connection stationary field for
+the declared diagnostic model, not source coupling selection, a global
+finite action, an admissible differential inverse, stability or a spectrum.
+
+### A64 executed response results and the next mixed-variation boundary
+
+622 and623 FIRST frozen Release runs have now passed unchanged, following
+independent and MAIN full-pack approval.622 confirms both distinct kinetic
+legs and their Green current, all six nonzero-kappa linear residuals at
+both points, and the separate full-carrier zero Jordan/affine-family
+controls.623 confirms the complete fifth-order coefficients and all600
+grade-five entries, with128 original cubic-action derivative controls.
+Its retained-evidence verification and MAIN separate tensor/identity checks
+passed. The frozen STUDYs remain prospective provenance documents; these
+unbound notes record the execution status without rewriting their premises.
+Final shared pipeline validation remains pending. The BC algebraic
+candidate above is STILL hand-only, outside622/623's executed menus.
+
+A second independent reviewer confirmed that the candidate could use621's
+joint-stationarity argument within exactly its original tangent class:
+fixed compact fibre domain, base-compact delta h, and compact-interior native
+delta varpi/delta epsilon. Hold b,c,gamma constant during variation; do not
+recompute them or B,C as functions of the varied h. Extend B,C as smooth
+isotropy-fixed associated tensor sections. Cross-blocks of connection
+coefficients in an arbitrary y-dependent frame are not by themselves a
+tensorial definition. Their correctly transported native components and
+y-derivatives need not be constant. That distinction is essential for
+applying621's arbitrary T(y) theorem and homogeneous full-gradient descent.
+This is not a global spin-descent or fibre-boundary theorem.
+
+A concrete later diagnostic is the ORIGINAL action's mixed metric-field
+second variation, before any inverse or observer reduction. At621's
+noncoincident point take delta h00=f(x1) and native variation
+delta varpi=g(x,y) dy01 gamma0, with compact support and g constant in y
+near the test point. The source piece has the prospective highest-base-
+derivative mixed coefficient +(3/16)g f'''. There is no extra factor2 in
+the independent mixed derivative. Kinetic metric variation has at most
+two total base derivatives; cubic variation at most one. They cannot
+cancel this third-order mixed symbol. Compact g correlated with f'''
+prevents mistaking a constant-profile total derivative for a vanishing
+bilinear form. This is a later hand forecast, not a computed full Hessian.
+Both mixed derivative orders, full grades and compact-support Ward-null
+directions must be retained in a future preregistration. No physical time,
+coupling, unit, propagator or mass identification is implied.
+
+An independently cross-checked parity observation further sharpens this
+future test. In621's convention native varpi is the PERTURBATION, not the
+total connection: at fixed epsilon=I, S=varpi for every h because D0 I=0.
+Do not substitute S=varpi-B(h); that is a different fixed-total-connection
+variation problem. At kappa=0 and fixed even Clifford S, spin B(h), F_B,
+D_BS and Q(S) are even while canonical CAA K reverses Clifford parity.
+The full Tr128 signed pairing between even and odd elements vanishes.
+Thus the source, kinetic and cubic densities all vanish pointwise for any
+h in this parity-preserving reconstruction. The fixed-native metric-metric
+block is zero on the pure BC background, but that does not eliminate the
+mixed metric-odd-field block above. Epsilon is fixed to I in this statement;
+no independently varying-epsilon or physical stability conclusion follows.
+
+More generally let alpha be the complex-linear Clifford grade involution,
+fixing i. It fixes spin B(h), commutes with D_B and the quadratic product,
+anticommutes with K, and preserves the normalized pairing. At kappa0 the
+original action therefore obeys I_h(alpha S)=-I_h(S). At an even background,
+its field Hessian obeys H2(alpha U,alpha V)=-H2(U,V): both same-parity
+blocks vanish, while the even-odd block can survive. Metric directions are
+alpha-even in this native convention, so metric-even-field blocks also
+vanish but metric-odd-field blocks need not. MAIN and both reviewers
+independently hand-checked this structural identity. A future full Hessian
+audit should test these zeros and the nonzero cross blocks, not discard
+either parity beforehand. It remains a fixed-epsilon, kappa0 statement,
+not a physical energy, stability or particle assertion.

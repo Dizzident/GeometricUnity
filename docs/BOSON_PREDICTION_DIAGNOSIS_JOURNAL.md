@@ -24425,3 +24425,271 @@ and the same explicit test files passed under the approved external run.
 Final incremental follows ALL edits. Its timestamped report and exact
 commit/push/remote-match evidence belong in the checkpoint handoff/commit
 metadata; these targeted checks do not substitute for that final cadence.
+
+## 2026-09-11 - A63 checkpoint closed; A64 full kinetic/branch audits opened
+
+Previous research goal turn: PROGRESS. Final incremental session87130 was
+polled to its authoritative terminal exit0, not restarted after a quiet
+interval. Report pass_2026-09-10T23-37-24-174Z.json finished
+2026-09-11T11:55:44.697Z: central Release build plus79 steps passed,
+402 skipped. Checklist401/3,O4coverage31/31,overturn94/94,strictJSON/JCS/
+Ed25519 and claim integrity passed. The three standing completion failures
+remain; WZ15/H14 source deficits and physicalmassclaims0 are unchanged.
+
+MAIN postflight checked both full frozen closures, the unchanged35-file
+source snapshot, both620 identical original hashes and all702 original621
+output files, including every700 shard path/hash/byte count. No post-final
+edits preceded commit23291a3078d23191df4060da3ad3f57870ecc675. It is on
+main,pushed and independently matched via ls-remote; clean before A64.
+The checkpoint includes the requested AGENTS.md approval clarification.
+
+The old-output audit has a precise limit. All34 changed TRACKED outputs
+differ only in generatedAt/runtimeSeconds. All312 individually HEAD-pinned
+Phase394 mode objects and their copies inside the aggregate spectra were
+unchanged. Several ignored scanner/provenance and aggregate-file canonical
+hashes changed; their old full preimages are unavailable. Current source
+explains census/text/exclusion updates and timestamp-bearing spectrum IDs,
+but that is not an exhaustive old-field comparison. The commit retains this
+limitation rather than describing every hash change as merely volatile.
+
+The active science now moves to prospectively allocated622/623 in A64.
+Two disjoint builders prepare the full homogeneous kinetic-carrier audit
+and complete inverse-kappa S1-S5 nonlinear-feedback audit; a third agent
+independently reviews both. No new science/coefficient execution is permitted
+before complete proof/code/fixture/count/resource/binding freeze and both
+independent and MAIN approval. No unexecuted sibling dependency is allowed.
+All618-621 inputs stay immutable;624+free. MAIN owns shared integration.
+
+New hand derivations are now preserved in the existing stationary-background
+reference: the complete three-dimensional invariant bivector carrier,
+potential-only trace reflection, full polarization
+Bcal(V,J)=-(4a+22b+2c)J/3, every proposed S5 vector coefficient, and its
+complete grade5 part -(9gamma/4)N(J)_5. Independent hand arithmetic confirms
+the coefficients; none is promoted to executed evidence. The analytic
+existence argument is separately stated, not presumed from a formal series.
+
+An additional concrete false-assumption lead emerged: H is formally
+integrated-symmetric but its homogeneous pointwise matrix is not. The
+forecast Pair(PHGamma,H B)=3 differs from Pair(H PHGamma,B)=-1. MAIN
+derived a prospective full Green current j=-4t and div t=-1, reproducing
+the discrepancy4 without symmetrizing the operator. An independent
+coordinate-density derivation gives the same div t.622 will test the full
+current, connection terms and divergence. This does not invalidate the
+potential-only cubic third-derivative symmetry used in623.
+
+The intended progress is toward a correctly specified stationary background
+and its actual fluctuation problem, not toward obtaining passing restricted
+matrices. A local conditional solution alone is insufficient for physical
+boson prediction: mixed metric/field Hessian, boundary/operator domain,
+observer reduction, source parameters, pole extraction and unit normalization
+remain. No sampling, fitting, source selection or physical claims are added.
+
+The independent reviewer confirmed the complete invariant carrier,
+potential reflection/polarization and Green-divergence anchor.623's
+prospective storage is now explicitly two expanded point shards, each
+<=64MiB and total<=128MiB, with exact-path/hash/byte manifests and frozen
+prewrite resource/failure handling; no science has executed.
+
+A further hand-derived lead, separately reviewed and recorded in the
+existing reference, is the leading formal density after algebraic
+large-kappa substitution: -(lambda/2)Pair(A,A). Generic canonical CAA on
+torsion-free metric spin curvature gives A=-EinsteinGamma, so in14D this
+is +(lambda/2)[Ric_ab Ric^ab+(5/2)R^2]vol. This is not a computed metric
+Hessian or a full differential inverse. Substituting S(h) changes native
+field boundary values in general; its kinetic Green correction begins
+at orderlambda^2 and cannot be discarded in an actual reduced-action
+problem. A local formal Hessian and a boundary-compatible Schur complement
+must be separate claims. No624 allocation, coefficient execution, stability
+or physical spectrum follows. This provides a concrete later lead rather
+than assuming621's first-variation cancellation eliminates metric dynamics.
+
+MAIN and the independent reviewer also hand-checked a concrete later
+principal-derivative control from621's existing noncoincident third jet.
+For delta h00=f(x1), the orderlambda local formal density has t^2 degree6
+coefficient -9lambda(f''')^2/512. Both off-diagonal Ricci entries and the
+signed fibre inverse metric are essential; the second variation is twice
+that coefficient. This does not define the complete reduced Hessian or
+justify a high-frequency/physical-instability claim. The full derivation
+and nonuniform-expansion/boundary limitations are in the existing reference.
+
+Shared A64 generator/traversal,101/202 mirrors/checklists and all9 scanner
+registrations (both207 sites) are now added. No generator or new scientific
+phase has run: these registrations prepare the prospective workflow only.
+Shared build-only checks and full pack reviews precede any FIRST execution.
+
+All11 affected shared C# projects (101/202 and9 scanners) now build Release
+with zero warnings/errors; generator shell syntax and diff whitespace pass.
+The independent reviewer approved the complete shared diff, including both
+207 sites and every exact false flag. Incremental tooling tests pass50/50
+in the approved environment. The full integrity verifier still awaits final
+new-pack schemas; no generator or new scientific phase has executed.
+
+Two further full-carrier linear controls were derived and independently
+checked before622 freeze: Z=(11J-27B+8C)/99 has HZ=Gamma,HGamma=0;
+and gamma=kappa=0 has the affine family
+S=(7/12)J-(9/44)B+(37/66)C+aGamma within the complete six-dimensional
+invariant vector+bivector carrier. The latter is outside the smaller
+source-generated five-dimensional carrier, not a limit of its rational
+branch.622 will explicitly test both full responses, updating prospective
+counts/resources before execution. Neither is a physical zero-mode/pole,
+source coupling choice or full-Clifford solution classification.
+
+Before any A64 scientific run, MAIN preserved all2574 manifest-listed old
+outputs plus the unchanged incremental manifest in the local archive
+/tmp/gu-a64-beforeimages.HZ3I1f/outputs-before-a64.tar.gz. It has2575 entries;
+the output files alone total340793335 uncompressed bytes. Archive SHA256:
+1bf40747d005c2712326147a5885e70388fa3664111e06d2400dfb488c77a66b.
+The archive was compared against every current file with tar compare,
+exit0, before any science; path census and regular-file checks passed.
+This is an untracked local forensic before-image, not scientific evidence
+or a portable committed dependency. Use it for exact old-output drift
+comparison after A64; do not repeat A63's absent-preimage assumption.
+
+Another bounded analytical follow-up was independently confirmed without
+changing622/623 execution scope: N(xJ+yB+zC)_grade5=x^2 N(J)_grade5.
+Consequently nonzero-gamma stationary fields within the six-dimensional
+vector+bivector ansatz must have x=0 and equal horizontal/traceless vector
+weights a=b. The proof uses complete cyclic/grade support, invariant
+three-form exclusion and potential-only trace reflection. It does not
+exclude other solutions of that ansatz or the full theory. The existing
+reference records the derivation; no624 allocation or execution occurs.
+
+MAIN completed the final622 STUDY/contract review and623 contract/notation
+review, following its earlier full code reviews. Independent final approvals
+are622 contract5ab07e7c6798b2550106f06421820f8e13a28ca1b03c3a68ff31bdf02ac1009f
+and623 contractec266d4e9863206de35026b7e781b30bfb7886ae3bf3993a269b6e3ae33244fa.
+MAIN read-only preflight independently passed45/38 unique bindings,
+10/7 actual compiled files,46/49 forecast counters, complete fixture
+equality, all726 live core hashes/tree, exact14 false flags, single EOF,
+and output absence. Both exact final projects build Release0warnings/errors.
+An initial local preflight shell-quoting error and a truncated tool-output
+parse were corrected in the read-only orchestration, not study inputs;
+neither executed scientific coefficients. Shared verifier work proceeds
+in parallel; FIRST scientific execution remains pending explicit approval.
+
+The six-carrier necessary conditions led to a constructive further lead,
+not another no-go: a pure BC field at kappa0 and one positive algebraic
+gamma. MAIN and the reviewer independently checked the full nonlinear
+grade closure and elimination by hand. The remaining polynomial is
+693r^3-511r^2-64r-17, with exactly one root in(3/4,7/8); the existing
+reference records all amplitudes, coupling, endpoint signs and caveats.
+An exact algebraic-field full-equation audit is a concrete later test.
+No numerical root/coefficient execution, physical coupling selection,
+new allocation or622/623 menu change follows from this deduction.
+
+Both FIRST frozen scientific runs now PASSED unchanged after explicit MAIN
+approval:622 session66715 and623 session84217, terminal exit0.622 retained
+full/summary SHA2568a580308683806b8b5a4d9cb6fc343292a2555e54dd4e4ae5bcec2dd1b2fa9d9,
+12414943bytes each;623 manifests SHA256
+3fff1e142d8a11ee25b6b5c429d2f5381a089465bbf21174cdf35a41c19e7350,
+15279bytes each.623 point shards total36967102bytes,max18483562;
+exact hashes/bytes are in its immutable manifest and implementation note.
+All46/49 counts matched, with actual largest tensors496/614. No first
+scientific failure or bound-input repair occurred.
+
+MAIN independently inspected379846 canonical coefficient records across
+7454 nonempty tensor arrays, all38+12 kinetic results, all128 original
+cubic-action derivative rows, all600 fifth-order grade5 entries, and the
+full field/Green/Jordan/linear residual relations. The first temporary
+checker mistook plane-control metadata for a tensor because both contain
+form/blade keys; requiring the real coefficient key fixed the read-only
+checker, not any scientific artifact. Approved623 retained-evidence mode
+also passed, session13581 terminal exit0. All first output hashes and
+frozen scientific input hashes remain unchanged. This is independent
+retained-evidence inspection, not new full-operator recomputation.
+Shared verifier/output review and ordered/final validation remain pending.
+
+Independent retained-output reviews subsequently passed both phases,
+including all98 Green currents/divergences reconstructed from the actual
+adjoints and Nomizu matrices,2292 signed pairings, full623 geometry and
+all379846 term records. The independent reviewer also approved the final
+reference's separation of executed evidence from hand-only future leads.
+The algebraic BC candidate's polynomial is irreducible over Q by reduction
+mod2, giving a legitimate degree3 exact field for a later audit.
+
+Ordered101 session77240 and202 session73931 both finished exit0;
+202 reports403 passed/3 standing physical-completion failures. The O4
+register remains current with coverage31/31 and overturn94/94. These
+targeted checks are not the final incremental checkpoint pass. Shared
+verifier implementation/review and final validation remain pending.
+
+A useful additional assumption correction emerged during hand review of
+the future Hessian:621's native varpi is a perturbation, so epsilon=I gives
+S=varpi, not S=varpi-B(h). MAIN's followup question had temporarily used
+the latter total-connection identification; the builder corrected it before
+any new calculation or preregistration. The proposed parity argument still
+holds in the actual native class: at kappa0 and fixed even S, canonicalCAA
+flips Clifford parity, so all three original density terms vanish for anyh.
+Thus the pure metric-metric block vanishes at a pure BC background without
+forcing the mixed metric-odd-field block to vanish. The existing reference
+records this narrow analytical consequence and its fixed-epsilon caveat.
+No new study or scientific execution follows.
+
+Both reviewers confirmed the stronger native parity identity at kappa0,
+epsilonI: I_h(alpha S)=-I_h(S), with alpha the complex-linear Clifford
+grade involution. Thus at even S the same-parity field Hessian blocks and
+metric-even blocks vanish; the even-odd and metric-odd blocks remain.
+This supplies exact structural controls for a later FULL coupled Hessian,
+not permission to project a parity away or infer physical stability.
+
+For the pending final A64 drift audit, MAIN checked the original archive
+SHA again and extracted it, unchanged, into
+/tmp/gu-a64-before-extracted.Z7aQ8M. Use those actual2574 before-images
+and their archived incremental manifest for a field-by-field comparison.
+They are local forensic files, not new scientific inputs. The previous
+goal turn was PROGRESS: both frozen scientific runs and independent
+output checks completed; the present turn continues verifier integration.
+
+Final shared verifier5e2a299fc01541c751e8fe6f4a886bbe28b2a3a232aa7503d36657de56c692d0
+passed independent and MAIN complete reviews. It pins the immutable FIRST
+622/623 full/summary hashes, hence623's exact shard manifest, verifies all
+bindings/compiled closure/fixtures/counts, and reconstructs retained full
+kinetic, Green, linear, polarization, convolution and original cubic
+identities. Both mirrors and the exact two new checklist rows are required.
+The first full integration run(session6923,exit1) failed only its inherited
+401-pass aggregate expectation. The corrected403-pass assertion appends
+both A64 rows and preserves every earlier conjunct. No frozen scientific
+input/output changed. Full integrity session72056 then passed exit0,
+O4coverage31/31,overturn94/94,strictJSON/JCS/Ed25519;WZ15/H14deficits,
+promoted physical mass claims0. Incremental tooling remains50/50 passed
+in the approved environment; its sandbox-only seed-test restriction did
+not require a test or source change.
+
+Before final, MAIN compared all2574 archived old outputs against the live
+tree:2571 remained byte-identical. Only101package and202full/summary
+changed. Unique-id matching proves every old checklist record unchanged;
+changes are exactly the two new mirrors/rows, count401->403 and timestamps.
+The local scripts /tmp/gu-a64-main-postflight.cjs and
+/tmp/gu-a64-old-output-drift.cjs are read-only forensic helpers, not
+scientific dependencies. Repeat them after final validation. Freeze the
+complete source edit set now; final incremental must precede commit/push
+and independent remote match. Its exact report belongs in the commit and
+handoff without changing sources after that authoritative pass.
+
+2026-09-12 recovery: the final pass DID complete successfully. Its durable
+report pass_2026-09-11T13-10-41-001Z.json records start13:10:41.001Z,
+finish13:14:54.548Z, central build+77 non-build steps passed and406
+skipped;622/623 and final integrity ran with exit0. The old orchestration
+handle is absent and no matching pipeline process remains. Do not restart
+that completed run merely because its tool cell disappeared.
+
+The environment reload cleared /tmp, including the original before-image
+archive, extracted files, temporary checkers and the in-memory source
+snapshot. Their earlier verification remains historical evidence, not
+presently repeatable access. MAIN recovered the committed HEAD manifest
+and compared every old output:2552/2574 are canonically unchanged;22
+changed in101,146,202,205,208,253,289,294,295,296,394. All34 tracked
+historical output diffs were read completely and are generatedAt or
+runtimeSeconds only. Changed ignored preimages cannot be reconstructed
+from hashes, so no exhaustive field-by-field final comparison is claimed.
+Independent review is checking the surviving output/source evidence and
+the individually pinned394 modes. Exact622/623 contracts and the reviewed
+verifier remain unchanged.
+
+These recovery/status corrections require a fresh current-state final pass
+after all edits, not a repeat of FIRST scientific execution or a premise
+repair. Preserve its source snapshot under the durable ignored skip_reports
+directory, retain both successful reports, and include the comparison
+limitation in the checkpoint. This is progress toward completing A64;
+the physical blockers and concrete next algebraic-background/Hessian leads
+are unchanged, and624+remain free.

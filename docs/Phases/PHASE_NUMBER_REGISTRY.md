@@ -85,7 +85,9 @@ back, NO new phase directory may be created outside this table.
 | 619 | Invariant bivector nonlinear feedback audit (A62) | PASSED first frozen Release run: full nonlinear N(J) retains600 grade5 terms, signed potential witness1/3 and complete original-action controls; HJ and physical spectrum excluded. |
 | 620 | Curved CAA action-descent and Ward audit (A63) | First frozen Release run passed: full curved-reference first-action descent, actual Ward variations and nonzero inconsistent-transformation controls; conditional epsilon redundancy, not source selection. |
 | 621 | Induced-metric full-variation scope audit (A63) | First frozen Release run and independent full evidence replay passed700 complete metric-jet contexts. Fixed-domain relative-action scope retains fibre boundaries and moving-observer controls; no unrestricted upstairs or physical-vacuum claim. |
-| 622+ | Unassigned - extend this registry before use | - |
+| 622 | Shared full homogeneous kinetic-carrier extension (A64) | FIRST frozen run passed: complete covariant kinetic responses, separate adjoint legs, Green current, exact linear branch and full-carrier zero controls; no physical pole or coupling selection. |
+| 623 | Shared full inverse-kappa branch-feedback extension (A64) | FIRST frozen run passed: full-grade recursion through fifth order, complete nonlinear polarization and original-action controls; retained-evidence verification passed; no physical spectrum or source selection. |
+| 624+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

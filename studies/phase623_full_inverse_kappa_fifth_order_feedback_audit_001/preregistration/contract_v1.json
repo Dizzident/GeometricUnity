@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "phase": 623,
+  "contractId": "phase623-a64-full-inverse-kappa-fifth-order-feedback-v1",
+  "frozenBeforeFirstExecution": true,
+  "deterministicZeroSampling": true,
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "fixtures": {
+    "dimension": 14,
+    "signature": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "points": [
+      0,
+      1
+    ],
+    "operator": "canonical untied CAA: firstC outerA innerA; Phi1=Gamma1 Phi2=Gamma2",
+    "domain": "full real u(64,64), including central iI and both Clifford parities; no domain projection",
+    "horizontalAxes": [
+      0,
+      7,
+      8,
+      9
+    ],
+    "tracelessAxes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13
+    ],
+    "traceAxis": 10,
+    "gammas": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "lambdaOrder": 5,
+    "maximumGammaOrder": 2,
+    "halfPolarization": "Bcal(X,Y)=[N(X+Y)-N(X)-N(Y)]/2",
+    "originalEquation": "A+H S+gamma N(S)+kappa S=0; lambda=1/kappa; finite nonzero lambda",
+    "sourceWeights": [
+      "-21/4",
+      "-15/4",
+      "-21/4"
+    ],
+    "JTerms": 36,
+    "NJTerms": 614,
+    "NJGradeFiveTerms": 600,
+    "NJVectorWeights": [
+      "3",
+      "22/3",
+      "6"
+    ],
+    "witness": {
+      "form": 8,
+      "blade": 157,
+      "pairNorm": "1",
+      "NJ": "1/3",
+      "S5GammaCoefficient": "-3/4"
+    },
+    "carrier": {
+      "basis": [
+        "J",
+        "B",
+        "C"
+      ],
+      "norms": [
+        "9",
+        "-1",
+        "-9"
+      ],
+      "B": "B_u=-gamma_u gamma_t/2 for horizontal u",
+      "C": "C_A=gamma_A wedgeCl gamma_t for traceless A",
+      "L": "-B+C",
+      "completeOnlyInInvariantBivectorOneForms": true
+    },
+    "diagonalMixedCoefficients": [
+      "-4/3",
+      "-22/3",
+      "-2/3"
+    ],
+    "mixedLiteralLegs": {
+      "halfQ": "b*KdagJ/2",
+      "KhalfQ": "-2b J",
+      "DQ_V_dag_KdagJ": "-4b J",
+      "DQ_J_dag_KdagV": "-4(2a+9b+c)J"
+    },
+    "N_A_Weights": [
+      "11043/2",
+      "11655/2",
+      "11043/2"
+    ],
+    "series": {
+      "S1": {
+        "gamma0": [
+          "21/4",
+          "15/4",
+          "21/4"
+        ]
+      },
+      "S2": {
+        "gamma0J": "3/2"
+      },
+      "S3": {
+        "gamma0": [
+          "-27/8",
+          "3/2",
+          "0"
+        ],
+        "gamma1": [
+          "-11043/2",
+          "-11655/2",
+          "-11043/2"
+        ]
+      },
+      "S4": {
+        "gamma0J": "-39/8",
+        "gamma0L": "-27/8",
+        "gamma1J": "420"
+      },
+      "S5": {
+        "gamma0": [
+          "1161/32",
+          "51/2",
+          "135/4"
+        ],
+        "gamma1Vector": [
+          "-1701",
+          "1275/2",
+          "-189/2"
+        ],
+        "gamma1GradeFive": "-9/4 times full passed619 N(J)grade5",
+        "gamma2": [
+          "15072318",
+          "15422130",
+          "15072318"
+        ]
+      }
+    },
+    "recursiveFeedback": {
+      "N11": [
+        "11043/2",
+        "11655/2",
+        "11043/2"
+      ],
+      "B12J": "-57",
+      "B130": [
+        "2997/8",
+        "-117",
+        "81/2"
+      ],
+      "B131": [
+        "-7536159",
+        "-7711065",
+        "-7536159"
+      ],
+      "N22": "9/4 times full passed619 N(J)"
+    },
+    "actionDirections": [
+      "PHGamma",
+      "PEGamma",
+      "PtGamma",
+      "J",
+      "B",
+      "C",
+      "W5",
+      "central"
+    ],
+    "actionDirectionNorms": [
+      "-4",
+      "-9",
+      "-1",
+      "9",
+      "-1",
+      "-9",
+      "1",
+      "1"
+    ],
+    "actionControl": "coefficient of r*s*t in original Pair(rX+sY+tU,K Q(rX+sY+tU))/3 equals2 Pair(U,Bcal(X,Y)); eight full directions",
+    "residualControl": "complete original lambda powers0..4 times gamma powers0..2 vanish; no HS5 execution",
+    "storage": {
+      "schema": "two-complete-expanded-point-shards-v1",
+      "paths": [
+        "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point0.json",
+        "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point1.json"
+      ],
+      "eachMaximumBytes": 67108864,
+      "aggregateMaximumBytes": 134217728,
+      "encoding": "UTF8 deterministic indented JSON plus one LF; all primary and independent stage tensors fully expanded; canonical sorted masks and reduced rational strings",
+      "readonlyVerification": "--verify-evidence validates frozen preflight, exact two paths, hashes, bytes, canonical tensor entries, all point census array lengths and unchanged manifests; no computation or writes"
+    },
+    "exactTolerance": 0,
+    "coreFileCount": 726,
+    "expectedCounts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "domainBladeControls": 16384,
+      "reflectionHodgeControls": 16384,
+      "centralDomainControls": 2,
+      "contexts": 2,
+      "inputRows": 6,
+      "matrixMetricEntries": 5488,
+      "matrixSupportRows": 28,
+      "canonicalParallelRows": 56,
+      "omittedSlotDecoys": 16,
+      "carrierNormRows": 16,
+      "carrierOrthogonalityRows": 56,
+      "carrierIsotropyRows": 72,
+      "carrierReflectionRows": 12,
+      "canonicalReflectionRows": 4,
+      "cyclicCarrierRows": 2,
+      "signedMetricDecoys": 2,
+      "kineticRows": 12,
+      "derivativeComparisons": 168,
+      "reverseComparisons": 168,
+      "kineticStageComparisons": 96,
+      "kineticAdjointChecks": 12,
+      "kineticTypeRows": 12,
+      "feedbackRows": 16,
+      "feedbackProductComparisons": 16,
+      "feedbackAdjointChecks": 32,
+      "feedbackStageComparisons": 128,
+      "feedbackOracleChecks": 16,
+      "feedbackKReflectionChecks": 16,
+      "feedbackAdjointReflectionChecks": 32,
+      "mixedLiteralLegRows": 24,
+      "polarizationFactorDecoys": 6,
+      "seriesCoefficientRows": 30,
+      "seriesGradeRows": 30,
+      "convolutionOrderedTerms": 16,
+      "convolutionStageComparisons": 64,
+      "convolutionRows": 8,
+      "originalResidualCoefficients": 30,
+      "fullGradeFiveRows": 2,
+      "gammaEvaluationRows": 50,
+      "projectedFifthOrderDecoys": 8,
+      "actionStageComparisons": 2048,
+      "originalCubicDerivativeRows": 128,
+      "potentialTrilinearityRows": 128,
+      "transportCoefficientRows": 15,
+      "evidenceShards": 2,
+      "actionQuadraticComparisons": 256
+    },
+    "resources": {
+      "estimatedCpuSeconds": 180,
+      "maximumEstimatedCpuSeconds": 600,
+      "estimatedPeakBytes": 536870912,
+      "maximumEstimatedPeakBytes": 2147483648,
+      "maximumTrackedCoefficientProducts": 500000000,
+      "maximumTrackedSlotProducts": 100000000,
+      "maximumTensorTerms": 65536,
+      "maximumMatrixDimension": 14,
+      "maximumFrequency": 0,
+      "maximumRationalCharacters": 64,
+      "maximumShardBytes": 67108864,
+      "maximumAggregateShardBytes": 134217728
+    },
+    "scope": {
+      "sourceOperatorSelected": false,
+      "physicalCouplingSelected": false,
+      "sourceNormSelected": false,
+      "domainRestrictedToVectorBivector": false,
+      "pointwiseKineticSelfAdjointnessAssumed": false,
+      "physicalVacuumSelected": false,
+      "physicalSpectrumClaimed": false,
+      "branchAnalyticityConditional": true
+    },
+    "compiledSourceCount": 7
+  },
+  "terminalPrecedence": [
+    "invalid-or-drifted-input",
+    "known-answer-control-failed",
+    "passed-input-carrier-control-failed",
+    "full-covariant-kinetic-control-failed",
+    "full-polarized-feedback-control-failed",
+    "full-fifth-order-recursion-control-failed",
+    "original-cubic-action-control-failed",
+    "nonzero-omission-control-failed",
+    "resource-census-control-failed",
+    "full-inverse-kappa-fifth-order-controls-pass-grade-five-branch-required"
+  ],
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "exactBindings": [
+    {
+      "id": "program",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Program.cs",
+      "sha256": "bc7724801c89b7023c536c9829b2b26a895eb11934ff035a02d181778046043d"
+    },
+    {
+      "id": "project",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj",
+      "sha256": "fa7f971f5c3305ec65ba905c329b4349b4fa65272946a60132d36eb7e0f1ca46"
+    },
+    {
+      "id": "study",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/STUDY.md",
+      "sha256": "5511c8b4959f71adb1336e3cbe072192417fc70a2af01b2ecceb5f1f9a705dd2"
+    },
+    {
+      "id": "inverse-helper",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/InverseFeedback.cs",
+      "sha256": "afa9ec5132c60bbf1275fe56cba9aa51a0706ffa9c1e70faa5493381743fcc90"
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f"
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a"
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78"
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444"
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b"
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357"
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e"
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9"
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e"
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa"
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07"
+    },
+    {
+      "id": "phase611-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d"
+    },
+    {
+      "id": "phase611-project",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj",
+      "sha256": "a7e269d3b8a9c1c2d8f915f74a0a112fad68c271b2ac6883a8253956e968c14b"
+    },
+    {
+      "id": "phase617-program",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Program.cs",
+      "sha256": "f9a515298d4d98a67df58157d56f716debc95978d292468f8b5408ef2a073d12"
+    },
+    {
+      "id": "phase617-study",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/STUDY.md",
+      "sha256": "23a14987225373161af0f529536dff01860ee2c30e9725819cf88ad019769115"
+    },
+    {
+      "id": "phase617-contract",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/preregistration/contract_v1.json",
+      "sha256": "61479fae80b4a57df1850e10633efd270ac0fce6d96ca125c993fb6cbc1f6df2"
+    },
+    {
+      "id": "phase617-summary",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/output/nonparallel_projector_two_weight_gradient_audit_summary.json",
+      "sha256": "b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb"
+    },
+    {
+      "id": "phase617-helper",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/ProjectorGradient.cs",
+      "sha256": "1747e96750264c2f5b5c1ce39caf0138c05789816550ade2d8f9efeab8d00e35"
+    },
+    {
+      "id": "phase617-project",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj",
+      "sha256": "5d0ea1f1d6f4ca41370982a7780da57ded562f5c60aa29870b15d5e432499102"
+    },
+    {
+      "id": "phase618-program",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Program.cs",
+      "sha256": "a5fe0b9c6ce18739f2effd6236021c7b60e3ab1dbd925359a6ad7c206736e102"
+    },
+    {
+      "id": "phase618-study",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/STUDY.md",
+      "sha256": "ba7b30f9953dbd4eb674d1ffdccb6f15ea9913da9da96580fa17c6f510999c67"
+    },
+    {
+      "id": "phase618-contract",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/preregistration/contract_v1.json",
+      "sha256": "22c794870d8906a628ef20816890a57dcf80c5e75f9a99c6a86937d71b0b790d"
+    },
+    {
+      "id": "phase618-summary",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/output/homogeneous_covariant_connection_audit_summary.json",
+      "sha256": "10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79"
+    },
+    {
+      "id": "phase618-helper",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/HomogeneousConnection.cs",
+      "sha256": "76f2b9cceeeb83fe6cf9b31e590692b4ea2f814f5111b2e84d769665835187d8"
+    },
+    {
+      "id": "phase618-project",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj",
+      "sha256": "dc29f242b3a5c5e2829798acd8d61dd4e4b35ffd16f3e1bdf0c9e3bc2ee13890"
+    },
+    {
+      "id": "phase619-program",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Program.cs",
+      "sha256": "5e36b7456904ca8179eacfd64b9970252cfdb4eebdc9689ccd23b383b3583fd6"
+    },
+    {
+      "id": "phase619-study",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/STUDY.md",
+      "sha256": "512f58424685ce37f79b34f905cf32d90eb466107d237ffc76addbbc6ec6cb58"
+    },
+    {
+      "id": "phase619-contract",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/preregistration/contract_v1.json",
+      "sha256": "d0e9911d7b20ce655fb28db4e7dbbdb155c7575042667add6fddd5ccf5c9d39b"
+    },
+    {
+      "id": "phase619-summary",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/output/invariant_bivector_nonlinear_feedback_audit_summary.json",
+      "sha256": "b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c"
+    },
+    {
+      "id": "phase619-helper",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/BivectorFeedback.cs",
+      "sha256": "28ef3deb37c873e2bbf5d6cefc13c890d7be4ae6c4960c3d1d6249c509e0b6b4"
+    },
+    {
+      "id": "phase619-project",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj",
+      "sha256": "7c86c8c0eff486943247bbfa9613cc1f3eb4eea8c3c5b3792a7e4683ef064472"
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817"
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe"
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0"
+    }
+  ]
+}

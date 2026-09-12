@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "phase": 623,
+  "phaseId": "phase623-full-inverse-kappa-fifth-order-feedback-audit",
+  "contractId": "phase623-a64-full-inverse-kappa-fifth-order-feedback-v1",
+  "contractSha256": "ec266d4e9863206de35026b7e781b30bfb7886ae3bf3993a269b6e3ae33244fa",
+  "contractValid": true,
+  "exactBindingsValid": true,
+  "coreSourceTreeValid": true,
+  "compiledSourceClosureValid": true,
+  "compiledSourceCount": 7,
+  "compiledSources": [
+    "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+    "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+    "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+    "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+    "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/BivectorFeedback.cs",
+    "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/InverseFeedback.cs",
+    "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Program.cs"
+  ],
+  "coreFileCount": 726,
+  "bindingCount": 38,
+  "uniqueBindingIdCount": 38,
+  "uniqueBindingPathCount": 38,
+  "bindings": [
+    {
+      "id": "program",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Program.cs",
+      "sha256": "bc7724801c89b7023c536c9829b2b26a895eb11934ff035a02d181778046043d",
+      "hashMatches": true
+    },
+    {
+      "id": "project",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj",
+      "sha256": "fa7f971f5c3305ec65ba905c329b4349b4fa65272946a60132d36eb7e0f1ca46",
+      "hashMatches": true
+    },
+    {
+      "id": "study",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/STUDY.md",
+      "sha256": "5511c8b4959f71adb1336e3cbe072192417fc70a2af01b2ecceb5f1f9a705dd2",
+      "hashMatches": true
+    },
+    {
+      "id": "inverse-helper",
+      "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/InverseFeedback.cs",
+      "sha256": "afa9ec5132c60bbf1275fe56cba9aa51a0706ffa9c1e70faa5493381743fcc90",
+      "hashMatches": true
+    },
+    {
+      "id": "arithmetic-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/ExactArithmetic.cs",
+      "sha256": "43e4c103ef58602f0876994209762b4c5a2be833252e10fb1543f6237c514b9f",
+      "hashMatches": true
+    },
+    {
+      "id": "fourier-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/FourierTensor.cs",
+      "sha256": "200aa0145e6c7d5a08dae32b46825913ca1f75d9b4f9d757c3d148290339d97a",
+      "hashMatches": true
+    },
+    {
+      "id": "adjoint-helper",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs",
+      "sha256": "215ab9cd4153186ef00c286fb83c17cc265eb3f38d0ad4885a070ec14e3ecf78",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-program",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Program.cs",
+      "sha256": "c81502e6def2f75ab0abb6ec009689aa27369d0280f285f2278041312f292444",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-study",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/STUDY.md",
+      "sha256": "6e687cb54ae25a4771ba74cb4fdd7d3e9d9e7a737b9b285431ce1d8552fa6e9b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-contract",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/preregistration/contract_v1.json",
+      "sha256": "f288d88fdcda02b32605322fceb84600301e46de655aee6ce969d47b2b543357",
+      "hashMatches": true
+    },
+    {
+      "id": "phase600-summary",
+      "path": "studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/output/full_trace_adjoint_periodic_gradient_norm_audit_summary.json",
+      "sha256": "fc907ef3c371ab40fb7db375b7c4f6ff80eed5be08bfcd80ee2d98df8d408b7e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-program",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Program.cs",
+      "sha256": "1fa0d199f57c6ec2b397914245c532cca126238b5b52cde2f186c7b079e732c9",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-study",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/STUDY.md",
+      "sha256": "9cc8eb8f30e60d8ed97b4d323edfbbadb0d2e19b33db561c245125556165ae8e",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-contract",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/preregistration/contract_v1.json",
+      "sha256": "0729bae04d34648f987c3ae420c8adf09348540bf130a7642e5eeba232e86bfa",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-summary",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/output/untied_caa_response_joint_gauge_audit_summary.json",
+      "sha256": "b5454adcb3df285d1cc3c617ce44c95892445b2ff26b97e68d3dcb4f4510ca07",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-helper",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs",
+      "sha256": "d0ef27d6193068985fab95b1187e1ffa3d7a8f62f6b9ad5aa0f8b71150249d3d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase611-project",
+      "path": "studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj",
+      "sha256": "a7e269d3b8a9c1c2d8f915f74a0a112fad68c271b2ac6883a8253956e968c14b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-program",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Program.cs",
+      "sha256": "f9a515298d4d98a67df58157d56f716debc95978d292468f8b5408ef2a073d12",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-study",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/STUDY.md",
+      "sha256": "23a14987225373161af0f529536dff01860ee2c30e9725819cf88ad019769115",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-contract",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/preregistration/contract_v1.json",
+      "sha256": "61479fae80b4a57df1850e10633efd270ac0fce6d96ca125c993fb6cbc1f6df2",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-summary",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/output/nonparallel_projector_two_weight_gradient_audit_summary.json",
+      "sha256": "b41c563cc72b6d38cd1a8956122ae9b0b84b7ccbf527e68f480653e945d747cb",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-helper",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/ProjectorGradient.cs",
+      "sha256": "1747e96750264c2f5b5c1ce39caf0138c05789816550ade2d8f9efeab8d00e35",
+      "hashMatches": true
+    },
+    {
+      "id": "phase617-project",
+      "path": "studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj",
+      "sha256": "5d0ea1f1d6f4ca41370982a7780da57ded562f5c60aa29870b15d5e432499102",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-program",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Program.cs",
+      "sha256": "a5fe0b9c6ce18739f2effd6236021c7b60e3ab1dbd925359a6ad7c206736e102",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-study",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/STUDY.md",
+      "sha256": "ba7b30f9953dbd4eb674d1ffdccb6f15ea9913da9da96580fa17c6f510999c67",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-contract",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/preregistration/contract_v1.json",
+      "sha256": "22c794870d8906a628ef20816890a57dcf80c5e75f9a99c6a86937d71b0b790d",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-summary",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/output/homogeneous_covariant_connection_audit_summary.json",
+      "sha256": "10835f6fff5bad3a90a93b7ff6e8bab90978686cfc2e4c03f9fd5cf7dff09f79",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-helper",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/HomogeneousConnection.cs",
+      "sha256": "76f2b9cceeeb83fe6cf9b31e590692b4ea2f814f5111b2e84d769665835187d8",
+      "hashMatches": true
+    },
+    {
+      "id": "phase618-project",
+      "path": "studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj",
+      "sha256": "dc29f242b3a5c5e2829798acd8d61dd4e4b35ffd16f3e1bdf0c9e3bc2ee13890",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-program",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Program.cs",
+      "sha256": "5e36b7456904ca8179eacfd64b9970252cfdb4eebdc9689ccd23b383b3583fd6",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-study",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/STUDY.md",
+      "sha256": "512f58424685ce37f79b34f905cf32d90eb466107d237ffc76addbbc6ec6cb58",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-contract",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/preregistration/contract_v1.json",
+      "sha256": "d0e9911d7b20ce655fb28db4e7dbbdb155c7575042667add6fddd5ccf5c9d39b",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-summary",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/output/invariant_bivector_nonlinear_feedback_audit_summary.json",
+      "sha256": "b988b5fa3da05c968346b77b74b0f6b6ffabc74f9cc4b8d3acd7b0a81a779e1c",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-helper",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/BivectorFeedback.cs",
+      "sha256": "28ef3deb37c873e2bbf5d6cefc13c890d7be4ae6c4960c3d1d6249c509e0b6b4",
+      "hashMatches": true
+    },
+    {
+      "id": "phase619-project",
+      "path": "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj",
+      "sha256": "7c86c8c0eff486943247bbfa9613cc1f3eb4eea8c3c5b3792a7e4683ef064472",
+      "hashMatches": true
+    },
+    {
+      "id": "primary-source",
+      "path": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+      "sha256": "062d6c473d3fd65f0eb179f169c37d3683ee10e950acccbd9c8ed92bdc3fb817",
+      "hashMatches": true
+    },
+    {
+      "id": "core-source-manifest",
+      "path": "studies/phase599_source_registered_residual_kernel_audit_001/preregistration/core_source_manifest_v1.json",
+      "sha256": "938a4d1df01976b28b80a73354ea5f02d66a7601c4bf87fec1cae08503b482fe",
+      "hashMatches": true
+    },
+    {
+      "id": "build-props",
+      "path": "Directory.Build.props",
+      "sha256": "1dc5f0f19857b12f56615329d18528a3f149638389a93058e93091a432b3fab0",
+      "hashMatches": true
+    }
+  ],
+  "verdictKind": "full-inverse-kappa-fifth-order-controls-pass-grade-five-branch-required",
+  "terminalStatus": "full-inverse-kappa-fifth-order-controls-pass-grade-five-branch-required",
+  "auditPassed": true,
+  "evidence": {
+    "knownAnswerPassed": true,
+    "controlsPassed": true,
+    "inputPassed": true,
+    "kineticPassed": true,
+    "polarizationPassed": true,
+    "recursionPassed": true,
+    "actionPassed": true,
+    "decoysPassed": true,
+    "countsPassed": true,
+    "resourcesPassed": true,
+    "frequencyPassed": true,
+    "shardSetPassed": true,
+    "counts": {
+      "arithmeticControls": 4,
+      "wordCases": 507904,
+      "hodgeCases": 16384,
+      "domainBladeControls": 16384,
+      "reflectionHodgeControls": 16384,
+      "centralDomainControls": 2,
+      "contexts": 2,
+      "inputRows": 6,
+      "matrixMetricEntries": 5488,
+      "matrixSupportRows": 28,
+      "canonicalParallelRows": 56,
+      "omittedSlotDecoys": 16,
+      "carrierNormRows": 16,
+      "carrierOrthogonalityRows": 56,
+      "carrierIsotropyRows": 72,
+      "carrierReflectionRows": 12,
+      "canonicalReflectionRows": 4,
+      "cyclicCarrierRows": 2,
+      "signedMetricDecoys": 2,
+      "kineticRows": 12,
+      "derivativeComparisons": 168,
+      "reverseComparisons": 168,
+      "kineticStageComparisons": 96,
+      "kineticAdjointChecks": 12,
+      "kineticTypeRows": 12,
+      "feedbackRows": 16,
+      "feedbackProductComparisons": 16,
+      "feedbackAdjointChecks": 32,
+      "feedbackStageComparisons": 128,
+      "feedbackOracleChecks": 16,
+      "feedbackKReflectionChecks": 16,
+      "feedbackAdjointReflectionChecks": 32,
+      "mixedLiteralLegRows": 24,
+      "polarizationFactorDecoys": 6,
+      "seriesCoefficientRows": 30,
+      "seriesGradeRows": 30,
+      "convolutionOrderedTerms": 16,
+      "convolutionStageComparisons": 64,
+      "convolutionRows": 8,
+      "originalResidualCoefficients": 30,
+      "fullGradeFiveRows": 2,
+      "gammaEvaluationRows": 50,
+      "projectedFifthOrderDecoys": 8,
+      "actionStageComparisons": 2048,
+      "originalCubicDerivativeRows": 128,
+      "potentialTrilinearityRows": 128,
+      "transportCoefficientRows": 15,
+      "evidenceShards": 2,
+      "actionQuadraticComparisons": 256
+    },
+    "trackedCoefficientProducts": 140377,
+    "trackedSlotProducts": 24416,
+    "largestTensor": 614,
+    "shards": [
+      {
+        "point": 0,
+        "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point0.json",
+        "sha256": "227d799d90f38c579c069c553e4b4cdb4b532641c172aec7ad793225a873604b",
+        "bytes": 18483562
+      },
+      {
+        "point": 1,
+        "path": "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/points/point1.json",
+        "sha256": "ffab15eeac7e9f1584026ecd54ea45353f659616f502c44219dfdd3310196f12",
+        "bytes": 18483540
+      }
+    ],
+    "aggregateShardBytes": 36967102,
+    "maximumShardBytes": 18483562,
+    "storageSchema": "two-complete-expanded-point-shards-v1",
+    "scope": {
+      "fullS1ThroughS5Computed": true,
+      "fullOriginalResidualThroughLambdaFourComputed": true,
+      "fullNonlinearGradeFiveRetained": true,
+      "analyticBranchConsequenceConditional": true,
+      "sourceOperatorSelected": false,
+      "physicalCouplingSelected": false,
+      "physicalVacuumSelected": false,
+      "physicalSpectrumClaimed": false,
+      "pointwiseKineticSelfAdjointnessAssumed": false
+    }
+  },
+  "deterministic": true,
+  "authorityFirewalls": {
+    "authorIntentSelected": false,
+    "registeredTransformationBridgeEstablished": false,
+    "registeredActionChanged": false,
+    "registeredMeasureSelected": false,
+    "physicalHiggsIdentified": false,
+    "sourceContractApplicationAllowed": false,
+    "phase561Opened": false,
+    "o4Discharged": false,
+    "phase458Satisfied": false,
+    "phase481Changed": false,
+    "samplingPerformed": false,
+    "samplingAuthorized": false,
+    "productionAuthorized": false,
+    "gevClaimAllowed": false
+  },
+  "externalReviewPending": true,
+  "promotedPhysicalMassClaimCount": 0
+}

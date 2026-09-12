@@ -3863,3 +3863,125 @@ physicalmassclaims0. Joint local relative-action stationarity is a new
 conditional synthesis within the specified native boundary class, not a
 source-selected/global physical vacuum. Final shared validation/checkpoint
 still follows all integration and documentation edits.
+
+## A64 - Full homogeneous kinetic response and fifth-order feedback (2026-09-11)
+
+Continue on main from23291a3078d23191df4060da3ad3f57870ecc675,
+pushed and independently remote-matched; worktree clean before this tranche.
+A63 final report pass_2026-09-10T23-37-24-174Z.json finished
+2026-09-11T11:55:44.697Z: central build plus79 steps passed,402 skipped,
+401/3 checklist,O4coverage31/31,overturn94/94,integrity passed. Both new
+frozen outputs reproduced exactly and all35 final source snapshot hashes
+were unchanged. The preceding research turn was PROGRESS, not exhaustion.
+The new tests below have not executed.618-621 inputs remain immutable.
+
+Allocate622 to the FULL homogeneous kinetic operator
+H=(K D_B+D_B^dag K^dag)/2 on the actual induced connection. Reconstruct
+both covector and Clifford connection terms and all resulting grades before
+comparing with the invariant carrier. The complete invariant bivector
+one-form carrier is prospectively span{J,B,C}, not just span{J,L}, where
+L=-B+C. Independently justify completeness by Lorentz metric/epsilon
+contractions. Retain both kinetic legs separately: they need not agree on
+B,C or L. Full signed pairings, cyclic traces and nonzero omitted-connection
+controls must accompany any restricted matrix. Include the source-generated
+gamma=0 exact linear solution and rational residual controls. Its denominator
+is a homogeneous response determinant, not a momentum-space pole. gamma=0
+is a diagnostic specialization, never a selected source coupling.
+Root studies/phase622_full_homogeneous_kinetic_carrier_audit_001;
+project Phase622FullHomogeneousKineticCarrierAudit.csproj;
+contract phase622-a64-full-homogeneous-kinetic-carrier-v1;
+terminal full-homogeneous-kinetic-carrier-controls-pass-conditional-linear-branch.
+
+Allocate623 independently to the full equation
+A+H S+gamma N(S)+kappa S=0 and its inverse-kappa coefficients S1 through S5.
+Compute all covariant kinetic and quadratic feedback terms before inspecting
+grades or comparing invariant weights. In particular, test the full
+polarization Bcal(V,J), not just a scalar restriction, and retain every
+grade-five component of S5. Independently derive the proposed coefficients,
+complete invariant carrier and potential-only trace-axis reflection proof.
+The reflection argument is NOT a symmetry claim about the differential
+kinetic geometry. Require original cubic-action derivative and signed
+pairing controls for the polarization and nonlinear witness. A scalar
+restriction or isolated N(J) term must not replace complete feedback.
+Analytic parameter dependence is a new conditional deduction from618's
+polynomial contraction, not retroactively executed618 scope. Prove it
+explicitly before inferring that a nonzero Taylor coefficient persists on
+the actual small-lambda branch. No physical background, units or poles are
+selected by this deduction.
+Root studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001;
+project Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj;
+contract phase623-a64-full-inverse-kappa-fifth-order-feedback-v1;
+terminal full-inverse-kappa-fifth-order-controls-pass-grade-five-branch-required.
+
+Two builders own only their respective study root and unbound implementation
+note; the independent reviewer challenges both packs. MAIN owns shared
+wiring/docs and final FIRST-science approval. No unexecuted sibling artifact
+may be a dependency; use passed upstreams and independently owned new code.
+Before FIRST science, freeze complete code/helpers/project/STUDY/proof,
+full fixtures and independently derived coefficients/counts, tolerance0,
+resource ceilings and failure precedence. Require all unique exact bindings,
+compiled-source closure, live726 core path/hash/tree closure, single EOF,
+zero-warning Release build and independent plus MAIN approval. Build-only
+checks are allowed; no new coefficient execution, tuning or silent pilot.
+Preserve first failures and prohibit post-run bound-input repair. Retain
+full sparse evidence or prospectively specified lossless reconstruction.
+Register generator/traversal/101/202/verifier/all9 scanners(both207sites),
+registry/amendment/implementation/restart/journal/existing reference/ledger.
+Final incremental AFTER ALL edits precedes scoped commit/push on main and
+independent remote match. No core edits, sampling, fitting, author-intent
+selection, registered-action replacement or physical claims. All14flagsfalse;
+O4/externalreviewpending,Phase561closed,WZ15/H14deficits,physicalmassclaims0.
+624+free.
+
+A64 prospective clarification before any FIRST execution:622 must NOT
+impose pointwise self-adjointness on the homogeneous H matrix. The formal
+integrated adjoint has a nonzero Green-divergence correction for these
+noncompact invariant fields. Retain the original local kinetic variation,
+independently assembled full current and covariant divergence, with the
+hand-derived PHGamma/B mismatch4 as a control. Do not define the current
+by the observed mismatch. This does not change the algebraic cubic's
+third-derivative symmetry used in623.
+
+623 may store its fully expanded evidence in exactly two deterministic
+point shards, each at most64MiB and total at most128MiB, plus identical
+small full/summary manifests with exact paths, SHA256 and byte counts.
+All tensors remain expanded; there is no DAG or omitted-stage shortcut.
+Freeze serializer, exact path set, prewrite byte bounds and full resource/
+failure precedence before FIRST execution. Missing/extra/changed shards
+must fail verification. Preserve any first resource failure and already
+written shards; this is not permission for a post-run input repair or rerun.
+
+622 prospective linear-control clarification, still before freeze/science:
+include the independently hand-derived full-carrier Jordan control
+Z=(11J-27B+8C)/99, HZ=Gamma, HGamma=0, and the separate gamma=kappa=0
+family S*+aGamma with S*=(7/12)J-(9/44)B+(37/66)C and HS*=-A.
+Compute the full responses independently, with forecast counts/resources
+updated before execution. The latter family is classified only within the
+complete six-dimensional invariant vector+bivector carrier; it is not a
+full-Clifford classification or the kappa->0 continuation of the smaller
+five-carrier rational branch. No physical zero mode, pole or zero-coupling
+selection follows. These controls prevent treating a singular restricted
+response denominator as a general absence-of-solution result.
+
+A64 FIRST authorization: MAIN completed full final-pack reviews and
+independent preflight on622 contract5ab07e7c6798b2550106f06421820f8e13a28ca1b03c3a68ff31bdf02ac1009f
+and623 contractec266d4e9863206de35026b7e781b30bfb7886ae3bf3993a269b6e3ae33244fa.
+Independent final approvals match those hashes.45/38 unique bindings,
+10/7 compiled files,46/49 counters, whole fixtures/live726/14false/EOF and
+output absence passed; both exact Release builds have0 warnings/errors.
+MAIN explicitly authorizes the FIRST unchanged scientific runs of both.
+The shared verifier is being implemented in parallel and must be reviewed
+and passed, with ordered101/202 and final incremental, before checkpoint.
+No first-failure repair, new menu or output-dependent premise is authorized.
+
+A64 FIRST results:622 and623 both PASSED unchanged, terminal exit0 in
+sessions66715 and84217.622 full/summary SHA256
+8a580308683806b8b5a4d9cb6fc343292a2555e54dd4e4ae5bcec2dd1b2fa9d9,
+12414943bytes each;623 full/summary
+3fff1e142d8a11ee25b6b5c429d2f5381a089465bbf21174cdf35a41c19e7350,
+15279bytes each, with two full expanded shards total36967102bytes.
+All46/49 frozen counts match. MAIN checked379846 retained canonical
+coefficient records and the complete kinetic/linear/Green/polarization/
+fifth-order/cubic evidence relations. Approved623 read-only evidence
+verification session13581 finished exit0. No bound scientific files were
+edited. These are targeted results, not a substitute for final validation.

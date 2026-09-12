@@ -476,6 +476,8 @@
     <PhaseProject Include="../studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj" />
     <PhaseProject Include="../studies/phase620_curved_caa_action_descent_ward_audit_001/Phase620CurvedCaaActionDescentWardAudit.csproj" />
     <PhaseProject Include="../studies/phase621_induced_metric_full_variation_scope_audit_001/Phase621InducedMetricFullVariationScopeAudit.csproj" />
+    <PhaseProject Include="../studies/phase622_full_homogeneous_kinetic_carrier_audit_001/Phase622FullHomogeneousKineticCarrierAudit.csproj" />
+    <PhaseProject Include="../studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

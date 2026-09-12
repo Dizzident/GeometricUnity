@@ -45,6 +45,115 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+WORK IN PROGRESS (2026-09-11 UTC,A64;622-623allocated,624+free):
+RECOVERY UPDATE(2026-09-12): the final report
+scripts/incremental/skip_reports/pass_2026-09-11T13-10-41-001Z.json
+survived the workspace reload and proves successful completion at
+2026-09-11T13:14:54.548Z: central build+77 steps passed,406 skipped,
+including622/623 runs and final integrity. No running handle remains.
+The /tmp before-image archive/extraction/helpers and in-memory source
+snapshot did NOT survive. Do not claim those files remain available or
+that an exhaustive final ignored-output before/after comparison occurred.
+MAIN recovered HEAD's old manifest:2552 of2574 old outputs are canonically
+unchanged;22 differ across101,146,202,205,208,253,289,294,295,296,394.
+All34 tracked historical output diffs are only generatedAt/runtimeSeconds.
+New scientific contracts and verifier match their independently approved
+hashes. A current-state recovery pass must follow these documentation
+corrections, with a source snapshot retained under skip_reports rather
+than only /tmp; then scoped commit/push and remote verification. No new
+scientific premise, allocation, first-run repair or mass claim is involved.
+The remaining A64 text is chronological history; later statements supersede
+earlier pending-status and temporary-file availability statements.
+LATEST:622/623 FIRST frozen Release runs PASSED unchanged after independent
+and MAIN full reviews/approval; sessions66715/84217 are terminal exit0.
+Do not restart those first-run handles.622 contract
+5ab07e7c6798b2550106f06421820f8e13a28ca1b03c3a68ff31bdf02ac1009f;
+623 contractec266d4e9863206de35026b7e781b30bfb7886ae3bf3993a269b6e3ae33244fa.
+Full/summary hashes:622=8a580308683806b8b5a4d9cb6fc343292a2555e54dd4e4ae5bcec2dd1b2fa9d9
+(12414943bytes each);623=3fff1e142d8a11ee25b6b5c429d2f5381a089465bbf21174cdf35a41c19e7350
+(15279bytes each).623two expanded shards total36967102bytes,max18483562.
+MAIN preflight45/38bindings,10/7compiled,46/49counts,fullfixture/live726/
+EOF/outputabsence and exact Release0warning builds passed. All bound
+scientific files and outputs now immutable. MAIN retained-output checks
+passed379846 canonical coefficient records,38+12 kinetic results,128 cubic
+derivatives, complete600-term grade5 and linear/Green/Jordan controls.
+623read-only evidence verification session13581 finished exit0; no DAG or
+fresh operator recomputation is claimed. Independent output reviews passed,
+including all98 reconstructed Green currents and2292 signed pairings.
+Ordered101/202 passed403/3;O4coverage31/31,overturn94/94. Shared verifier
+5e2a299fc01541c751e8fe6f4a886bbe28b2a3a232aa7503d36657de56c692d0
+passed independent/MAIN full review; fullintegrity session72056 exit0.
+Prior session6923 failed only the obsolete401-pass aggregate expectation;
+the integration fix adds both new checks and preserves every old conjunct.
+StrictJSON/JCS/Ed25519 passed. Finalincremental remains pending and must
+follow this completed source edit set; record its result in the checkpoint
+commit/handoff, not by editing sources after the final validation.
+Before-image archive is also extracted at /tmp/gu-a64-before-extracted.Z7aQ8M.
+MAIN local read-only helpers /tmp/gu-a64-main-postflight.cjs and
+/tmp/gu-a64-old-output-drift.cjs check the new tensors and all2574 old
+output preimages respectively. Before final,2571 old outputs were byte-
+identical and only101package plus202full/summary changed: the two added
+mirrors/checklist rows, count401->403, and timestamps. No old checklist
+row changed when matched by its unique id. Repeat the comparison AFTER
+final; the archive is local forensic material, not a scientific input.
+The pipeline must finish AFTER all edits before scoped commit/push/remote
+match. A64 is not checkpointed yet. Previous research turn PROGRESS.
+A concrete later hand-only lead is a pure BC nonlinear stationary candidate
+at kappa0 and one positive algebraic diagnostic gamma, defined by the unique
+root of693r^3-511r^2-64r-17 in(3/4,7/8). MAIN and two reviewers checked the
+elimination and full-grade closure by hand. The existing reference describes
+an exact algebraic-field full-equation test;624+remain free, no execution.
+Read the following A64 planning history in light of this latest update:
+Authoritative completed checkpoint23291a3078d23191df4060da3ad3f57870ecc675
+is on main,pushed and independently remote-matched. Clean before A64.
+A63 final report pass_2026-09-10T23-37-24-174Z.json finished
+2026-09-11T11:55:44.697Z: central build and79 steps passed,402 skipped,
+401/3 checklist,O4coverage31/31,overturn94/94,integrity passed. Both620/621
+outputs reproduced exactly; all frozen inputs and35-file final source
+snapshot unchanged. All34 tracked old-output changes were timestamps/runtime.
+All312 individually pinned394 mode records and their aggregate copies were
+unchanged. Ignored old scanner/aggregate preimages were unavailable; the
+commit records that comparison limitation rather than claiming all drift
+was volatile. Previous research turn PROGRESS; concrete next tests remain.
+622 now prospectively audits full homogeneous kinetic H on all three vector
+and three invariant bivector carriers, both adjoint legs separately, and
+the exact gamma0 linear diagnostic.623 independently audits full S1-S5
+inverse-kappa feedback, including every nonlinear grade and original-action
+polarization controls. NO new science has executed in either phase.
+Builders own disjoint study roots; independent reviewer challenges both;
+MAIN owns shared integration and final FIRST-science approval. No unexecuted
+sibling dependency, no core edits, no post-run retuning. Complete code/proof/
+fixtures/counts/resources/compiled bindings must freeze before execution.
+The full invariant bivector carrier is prospectively span{J,B,C}; L=-B+C
+is only the source-generated combination. Potential-only trace reflection
+and full-grade arguments predict Bcal(V,J)=-(4a+22b+2c)J/3. Independently
+hand-checked full S5 weights and grade5 witness-3gamma/4 are recorded in
+the existing stationary-background reference, not executed evidence.
+Independent review also confirms the Green current j=-4t,div t=-1:
+the homogeneous H matrix is not pointwise symmetric.622 must retain the
+full current/divergence and original local kinetic variation.623 will use
+exactly two fully expanded point-evidence shards (64MiB each/128MiB total),
+with frozen prewrite bounds and exact path/hash/byte manifest verification.
+A separately reviewed later lead is the leading formal curvature-square
+density from large-kappa substitution. It is not a full reduced action:
+native-field boundary changes and differential-inverse existence remain.
+No624 allocation or execution; details are in the existing reference.
+622 also has prospectively approved full-carrier zero Jordan and separate
+gamma=kappa=0 affine-family controls, not a physical zero-mode claim or a
+limit of the smaller five-carrier rational branch. All shared101/202 and
+9-scanner builds pass Release0warnings; shared wiring independently reviewed;
+incremental tooling tests50/50pass. The full verifier awaits final packs.
+For A64 postflight, all2574 old manifest-listed outputs and the old manifest
+are archived at /tmp/gu-a64-beforeimages.HZ3I1f/outputs-before-a64.tar.gz,
+SHA1bf40747d005c2712326147a5885e70388fa3664111e06d2400dfb488c77a66b.
+Tar compare and2575-entry census passed before any scientific run. This is
+a local untracked before-image, not a committed scientific dependency.
+618-621 inputs remain immutable. Joint local relative-action stationarity
+is conditional on the declared model and native-field boundary class;
+it neither removes mixed Hessian terms nor selects a physical vacuum.
+All14flagsfalse,O4/externalreviewpending,Phase561closed,physicalclaims0.
+See A64; older free-number and pre-checkpoint text below is historical.
+
 WORK IN PROGRESS (2026-09-10 UTC,A63;620-621allocated,622+free):
 Authoritative completed checkpoint571d79a9c25a21a55c2d22b4b77d99f84ba42bc6
 is on main,pushed and independently remote-matched. Final A62 report

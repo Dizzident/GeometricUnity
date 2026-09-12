@@ -365,6 +365,8 @@ const string Phase618Path = "studies/phase618_homogeneous_covariant_connection_a
 const string Phase619Path = "studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/output/invariant_bivector_nonlinear_feedback_audit_summary.json";
 const string Phase620Path = "studies/phase620_curved_caa_action_descent_ward_audit_001/output/curved_caa_action_descent_ward_audit_summary.json";
 const string Phase621Path = "studies/phase621_induced_metric_full_variation_scope_audit_001/output/induced_metric_full_variation_scope_audit_summary.json";
+const string Phase622Path = "studies/phase622_full_homogeneous_kinetic_carrier_audit_001/output/full_homogeneous_kinetic_carrier_audit_summary.json";
+const string Phase623Path = "studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/output/full_inverse_kappa_fifth_order_feedback_audit_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -781,6 +783,8 @@ using var phase618 = File.Exists(Phase618Path) ? JsonDocument.Parse(File.ReadAll
 using var phase619 = File.Exists(Phase619Path) ? JsonDocument.Parse(File.ReadAllText(Phase619Path)) : null;
 using var phase620 = File.Exists(Phase620Path) ? JsonDocument.Parse(File.ReadAllText(Phase620Path)) : null;
 using var phase621 = File.Exists(Phase621Path) ? JsonDocument.Parse(File.ReadAllText(Phase621Path)) : null;
+using var phase622 = File.Exists(Phase622Path) ? JsonDocument.Parse(File.ReadAllText(Phase622Path)) : null;
+using var phase623 = File.Exists(Phase623Path) ? JsonDocument.Parse(File.ReadAllText(Phase623Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -9968,6 +9972,42 @@ var inducedMetricFullVariationScopeAuditPassed = phase621 is not null
     && p621Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
     && JsonBool(phase621.RootElement, "externalReviewPending") is true
     && JsonInt(phase621.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var fullHomogeneousKineticCarrierAuditPassed = phase622 is not null
+    && JsonInt(phase622.RootElement, "schemaVersion") == 1
+    && JsonInt(phase622.RootElement, "phase") == 622
+    && JsonString(phase622.RootElement, "contractId") == "phase622-a64-full-homogeneous-kinetic-carrier-v1"
+    && JsonString(phase622.RootElement, "verdictKind") == "full-homogeneous-kinetic-carrier-controls-pass-conditional-linear-branch"
+    && JsonBool(phase622.RootElement, "auditPassed") is true
+    && JsonBool(phase622.RootElement, "contractValid") is true
+    && JsonBool(phase622.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase622.RootElement, "coreSourceTreeValid") is true
+    && phase622.RootElement.TryGetProperty("evidence", out var p622Evidence)
+    && JsonBool(p622Evidence, "knownAnswerPassed") is true
+    && JsonBool(p622Evidence, "controlsPassed") is true
+    && phase622.RootElement.TryGetProperty("authorityFirewalls", out var p622Firewalls)
+    && p622Firewalls.EnumerateObject().Count() == 14
+    && new[] { "authorIntentSelected", "registeredTransformationBridgeEstablished", "registeredActionChanged", "registeredMeasureSelected", "physicalHiggsIdentified", "sourceContractApplicationAllowed", "phase561Opened", "o4Discharged", "phase458Satisfied", "phase481Changed", "samplingPerformed", "samplingAuthorized", "productionAuthorized", "gevClaimAllowed" }.All(name => JsonBool(p622Firewalls, name) is false)
+    && p622Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase622.RootElement, "externalReviewPending") is true
+    && JsonInt(phase622.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var fullInverseKappaFifthOrderFeedbackAuditPassed = phase623 is not null
+    && JsonInt(phase623.RootElement, "schemaVersion") == 1
+    && JsonInt(phase623.RootElement, "phase") == 623
+    && JsonString(phase623.RootElement, "contractId") == "phase623-a64-full-inverse-kappa-fifth-order-feedback-v1"
+    && JsonString(phase623.RootElement, "verdictKind") == "full-inverse-kappa-fifth-order-controls-pass-grade-five-branch-required"
+    && JsonBool(phase623.RootElement, "auditPassed") is true
+    && JsonBool(phase623.RootElement, "contractValid") is true
+    && JsonBool(phase623.RootElement, "exactBindingsValid") is true
+    && JsonBool(phase623.RootElement, "coreSourceTreeValid") is true
+    && phase623.RootElement.TryGetProperty("evidence", out var p623Evidence)
+    && JsonBool(p623Evidence, "knownAnswerPassed") is true
+    && JsonBool(p623Evidence, "controlsPassed") is true
+    && phase623.RootElement.TryGetProperty("authorityFirewalls", out var p623Firewalls)
+    && p623Firewalls.EnumerateObject().Count() == 14
+    && new[] { "authorIntentSelected", "registeredTransformationBridgeEstablished", "registeredActionChanged", "registeredMeasureSelected", "physicalHiggsIdentified", "sourceContractApplicationAllowed", "phase561Opened", "o4Discharged", "phase458Satisfied", "phase481Changed", "samplingPerformed", "samplingAuthorized", "productionAuthorized", "gevClaimAllowed" }.All(name => JsonBool(p623Firewalls, name) is false)
+    && p623Firewalls.EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.False)
+    && JsonBool(phase623.RootElement, "externalReviewPending") is true
+    && JsonInt(phase623.RootElement, "promotedPhysicalMassClaimCount") == 0;
 
 var externalReviewPacketAssemblyPassed = phase580 is not null
     && JsonInt(phase580.RootElement, "schemaVersion") == 1
@@ -13462,6 +13502,18 @@ var checklist = new[]
         inducedMetricFullVariationScopeAuditPassed ? "passed" : "failed",
         phase621 is null ? "Phase621 artifact not materialized" : $"verdictKind={JsonString(phase621.RootElement, "verdictKind")}; auditPassed={JsonBool(phase621.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase621.RootElement, "promotedPhysicalMassClaimCount")}",
         Phase621Path),
+    new ObjectiveChecklistItem(
+        "full-homogeneous-kinetic-carrier-audit",
+        "Audit all covariant kinetic legs, full invariant carriers and Green divergence before testing a conditional exact linear background.",
+        fullHomogeneousKineticCarrierAuditPassed ? "passed" : "failed",
+        phase622 is null ? "Phase622 artifact not materialized" : $"verdictKind={JsonString(phase622.RootElement, "verdictKind")}; auditPassed={JsonBool(phase622.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase622.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase622Path),
+    new ObjectiveChecklistItem(
+        "full-inverse-kappa-fifth-order-feedback-audit",
+        "Verify complete fifth-order stationary-branch feedback and original-action nonlinear controls without a Clifford projection or physical-spectrum claim.",
+        fullInverseKappaFifthOrderFeedbackAuditPassed ? "passed" : "failed",
+        phase623 is null ? "Phase623 artifact not materialized" : $"verdictKind={JsonString(phase623.RootElement, "verdictKind")}; auditPassed={JsonBool(phase623.RootElement, "auditPassed")}; promotedPhysicalMassClaimCount={JsonInt(phase623.RootElement, "promotedPhysicalMassClaimCount")}",
+        Phase623Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

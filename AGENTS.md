@@ -5,8 +5,10 @@
 - Work directly on `main` unless the user requests another branch.
 - For authorized Git operations, use the explicit repository prefix:
   `git -C /home/josh/Documents/GitHub/GeometricUnity <command>`.
-  The saved approval rule covers `diff`, `add`, `commit`, `merge`, and
-  `push` with this prefix; bare `git` invocations do not match that rule.
+  Reuse active saved approvals for repository-scoped commands such as
+  `diff`, `add`, `commit`, `merge`, and `push` when they match. Do not assume
+  these approvals exist in every session; bare `git` invocations do not
+  match rules that require the explicit repository prefix.
 - Reuse these saved approvals for in-scope Git operations without asking
   for redundant conversational confirmation. Request execution escalation
   when required by the sandbox; the runtime decides whether a saved rule

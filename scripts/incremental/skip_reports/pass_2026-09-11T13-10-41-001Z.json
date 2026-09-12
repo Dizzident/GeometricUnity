@@ -1,0 +1,3477 @@
+{
+  "startedAt": "2026-09-11T13:10:41.001Z",
+  "mode": "incremental",
+  "dryRun": false,
+  "script": "scripts/generate_validated_boson_predictions.sh",
+  "manifest": "scripts/boson_incremental_manifest.json",
+  "manifestCorrupt": null,
+  "steps": [
+    {
+      "kind": "build",
+      "invocation": "dotnet msbuild scripts/BosonPhasesTraversal.proj -t:Build -m -v:m -nologo",
+      "decision": "run",
+      "reason": "build always runs",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 138,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase138_repaired_row_coupling_transition_graph_001/Phase138RepairedRowCouplingTransitionGraph.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 139,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase139_fermion_sector_label_route_closure_001/Phase139FermionSectorLabelRouteClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 140,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase140_fermion_sector_artifact_intake_contract_001/Phase140FermionSectorArtifactIntakeContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 159,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase159_mode_branch_projector_derivation_experiment_001/Phase159ModeBranchProjectorDerivationExperiment.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 160,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase160_phase_sensitive_transition_rule_materialization_001/Phase160PhaseSensitiveTransitionRuleMaterialization.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 140,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase140_fermion_sector_artifact_intake_contract_001/Phase140FermionSectorArtifactIntakeContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 141,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase141_fermion_sector_intake_application_gate_001/Phase141FermionSectorIntakeApplicationGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 135,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase135_corrected_wz_sweep_readiness_gate_001/Phase135CorrectedWzSweepReadinessGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 142,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase142_post_intake_rerun_plan_gate_001/Phase142PostIntakeRerunPlanGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 143,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase143_fermion_sector_evidence_request_package_001/Phase143FermionSectorEvidenceRequestPackage.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 144,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase144_fermion_sector_intake_persistence_gate_001/Phase144FermionSectorIntakePersistenceGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 145,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase145_fermion_sector_intake_unlock_fixture_001/Phase145FermionSectorIntakeUnlockFixture.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 146,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase146_fermion_sector_evidence_census_001/Phase146FermionSectorEvidenceCensus.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 174,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase174_protected_massless_subspace_audit_001/Phase174ProtectedMasslessSubspaceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 177,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase177_massless_benchmark_contracts_001/Phase177MasslessBenchmarkContracts.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 183,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase183_massless_sector_invariant_prediction_001/Phase183MasslessSectorInvariantPrediction.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 147,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase147_boson_prediction_completion_attempt_001/Phase147BosonPredictionCompletionAttempt.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 148,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase148_all_known_boson_prediction_comparison_001/Phase148AllKnownBosonPredictionComparison.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 149,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase149_known_boson_predictability_contracts_001/Phase149KnownBosonPredictabilityContracts.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 150,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase150_all_boson_prediction_prerequisite_execution_001/Phase150AllBosonPredictionPrerequisiteExecution.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 151,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase151_validated_boson_prediction_generator_001/Phase151ValidatedBosonPredictionGenerator.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 161,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase161_post_rule_boson_prediction_attempt_001/Phase161PostRuleBosonPredictionAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 162,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase162_phase_sensitive_wz_bridge_projection_attempt_001/Phase162PhaseSensitiveWzBridgeProjectionAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 163,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase163_source_to_repaired_bridge_transfer_audit_001/Phase163SourceToRepairedBridgeTransferAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 164,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase164_source_level_wz_bridge_candidate_census_001/Phase164SourceLevelWzBridgeCandidateCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 165,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase165_boson_unblocker_option_selection_001/Phase165BosonUnblockerOptionSelection.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 166,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase166_source_normalized_wz_prediction_attempt_001/Phase166SourceNormalizedWzPredictionAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 167,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase167_source_shape_normalized_wz_attempt_001/Phase167SourceShapeNormalizedWzAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 168,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase168_source_shape_scalar_relation_closure_audit_001/Phase168SourceShapeScalarRelationClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 169,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase169_source_shape_law_stability_experiment_001/Phase169SourceShapeLawStabilityExperiment.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 170,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase170_stable_source_shape_prediction_attempt_001/Phase170StableSourceShapePredictionAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 185,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase185_wz_operator_unit_scale_materialization_001/Phase185WzOperatorUnitScaleMaterialization.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 186,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase186_wz_source_shape_law_closure_001/Phase186WzSourceShapeLawClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 171,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase171_branch_stable_bridge_pair_census_001/Phase171BranchStableBridgePairCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 172,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase172_variation_subspace_bridge_norm_census_001/Phase172VariationSubspaceBridgeNormCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 182,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase182_wz_operator_algebra_bridge_source_001/Phase182WzOperatorAlgebraBridgeSource.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 188,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase188_wz_direct_geometric_bridge_source_readiness_001/Phase188WzDirectGeometricBridgeSourceReadiness.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 190,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase190_wz_direct_target_independent_geometric_bridge_source_law_001/Phase190WzDirectTargetIndependentGeometricBridgeSourceLaw.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 191,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase191_wz_direct_bridge_prediction_decision_001/Phase191WzDirectBridgePredictionDecision.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 206,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase206_direct_bridge_normalization_closure_001/Phase206DirectBridgeNormalizationClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 174,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase174_protected_massless_subspace_audit_001/Phase174ProtectedMasslessSubspaceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 177,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase177_massless_benchmark_contracts_001/Phase177MasslessBenchmarkContracts.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 175,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase175_massless_gauge_identity_split_feasibility_001/Phase175MasslessGaugeIdentitySplitFeasibility.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 176,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase176_massless_cartan_line_stability_001/Phase176MasslessCartanLineStability.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 177,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase177_massless_benchmark_contracts_001/Phase177MasslessBenchmarkContracts.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 183,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase183_massless_sector_invariant_prediction_001/Phase183MasslessSectorInvariantPrediction.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 178,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase178_protected_massless_subspace_transport_001/Phase178ProtectedMasslessSubspaceTransport.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 179,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase179_gauge_frame_aligned_subspace_transport_001/Phase179GaugeFrameAlignedSubspaceTransport.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 173,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase173_next_prediction_route_selection_001/Phase173NextPredictionRouteSelection.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 152,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase152_boson_blocker_resolution_plan_001/Phase152BosonBlockerResolutionPlan.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 153,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase153_wz_absolute_scale_closure_001/Phase153WzAbsoluteScaleClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 154,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase154_wz_transition_bridge_root_cause_audit_001/Phase154WzTransitionBridgeRootCauseAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 155,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase155_fermion_sector_transition_evidence_derivation_001/Phase155FermionSectorTransitionEvidenceDerivation.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 156,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase156_boson_generation_execution_package_001/Phase156BosonGenerationExecutionPackage.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 157,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase157_scientific_defensibility_boundary_001/Phase157ScientificDefensibilityBoundary.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 180,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase180_prediction_blocker_root_cause_procedure_001/Phase180PredictionBlockerRootCauseProcedure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 181,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase181_required_prediction_artifact_validation_001/Phase181RequiredPredictionArtifactValidation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 184,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase184_massive_boson_prediction_closure_001/Phase184MassiveBosonPredictionClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 187,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase187_higgs_scalar_source_identity_scaffold_001/Phase187HiggsScalarSourceIdentityScaffold.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 189,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase189_higgs_scalar_source_operator_census_001/Phase189HiggsScalarSourceOperatorCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 196,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase196_higgs_potential_self_coupling_closure_audit_001/Phase196HiggsPotentialSelfCouplingClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 199,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase199_higgs_scalar_source_lineage_closure_audit_001/Phase199HiggsScalarSourceLineageClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 184,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase184_massive_boson_prediction_closure_001/Phase184MassiveBosonPredictionClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 195,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase195_electroweak_vev_wz_absolute_closure_audit_001/Phase195ElectroweakVevWzAbsoluteClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 197,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase197_electroweak_weak_coupling_wz_mass_closure_audit_001/Phase197ElectroweakWeakCouplingWzMassClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 221,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase221_su2_casimir_wz_normalization_probe_001/Phase221Su2CasimirWzNormalizationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 222,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase222_wz_raw_amplitude_source_obstruction_audit_001/Phase222WzRawAmplitudeSourceObstructionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 198,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase198_weak_coupling_source_lineage_closure_audit_001/Phase198WeakCouplingSourceLineageClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 192,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase192_boson_scientific_defensibility_ledger_001/Phase192BosonScientificDefensibilityLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 101,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 194,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase194_draft_boson_source_evidence_audit_001/Phase194DraftBosonSourceEvidenceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 218,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase218_official_gu_public_source_audit_001/Phase218OfficialGuPublicSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 207,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 193,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase193_boson_prediction_completion_audit_001/Phase193BosonPredictionCompletionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 200,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase200_boson_prediction_root_cause_closure_001/Phase200BosonPredictionRootCauseClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 201,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase201_boson_source_lineage_intake_contract_001/Phase201BosonSourceLineageIntakeContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 203,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase203_defensible_boson_value_manifest_001/Phase203DefensibleBosonValueManifest.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 204,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 205,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 208,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase208_boson_local_route_exhaustion_certificate_001/Phase208BosonLocalRouteExhaustionCertificate.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 209,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase209_boson_source_lineage_evidence_request_package_001/Phase209BosonSourceLineageEvidenceRequestPackage.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 210,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase210_boson_source_lineage_evidence_application_gate_001/Phase210BosonSourceLineageEvidenceApplicationGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 213,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase213_boson_source_lineage_blocker_matrix_001/Phase213BosonSourceLineageBlockerMatrix.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 214,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase214_external_electroweak_input_loophole_audit_001/Phase214ExternalElectroweakInputLoopholeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 215,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase215_higgs_target_implied_self_coupling_loophole_audit_001/Phase215HiggsTargetImpliedSelfCouplingLoopholeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 223,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase223_higgs_casimir_quartic_numerical_probe_001/Phase223HiggsCasimirQuarticNumericalProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 224,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase224_electroweak_parameter_dependency_audit_001/Phase224ElectroweakParameterDependencyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 225,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase225_su2_normalization_representation_compatibility_audit_001/Phase225Su2NormalizationRepresentationCompatibilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 226,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase226_official_gu_higgs_potential_notation_audit_001/Phase226OfficialGuHiggsPotentialNotationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 227,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase227_official_gu_shiab_upsilon_extraction_obstruction_audit_001/Phase227OfficialGuShiabUpsilonExtractionObstructionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 228,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase228_boson_mass_matrix_extraction_obstruction_audit_001/Phase228BosonMassMatrixExtractionObstructionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 229,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase229_electroweak_vev_source_lineage_obstruction_audit_001/Phase229ElectroweakVevSourceLineageObstructionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 230,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase230_native_gu_vacuum_hessian_candidate_audit_001/Phase230NativeGuVacuumHessianCandidateAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 231,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase231_external_cox_gu_paper_i_source_intake_audit_001/Phase231ExternalCoxGuPaperISourceIntakeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 232,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase232_external_cox_gu_paper_ii_source_intake_audit_001/Phase232ExternalCoxGuPaperIISourceIntakeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 233,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase233_external_cox_gu_papers_iii_iv_source_intake_audit_001/Phase233ExternalCoxGuPapersIiiIvSourceIntakeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 234,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase234_cox_ii_electroweak_formula_dependency_audit_001/Phase234CoxIiElectroweakFormulaDependencyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 235,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase235_pati_salam_weak_mixing_normalization_audit_001/Phase235PatiSalamWeakMixingNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 236,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase236_low_energy_rg_transport_source_audit_001/Phase236LowEnergyRgTransportSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 237,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase237_cox_ii_higgs_yukawa_texture_dependency_audit_001/Phase237CoxIiHiggsYukawaTextureDependencyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 238,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase238_cox_ii_ready_to_fit_formula_dependency_audit_001/Phase238CoxIiReadyToFitFormulaDependencyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 239,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase239_cox_iv_gubc_single_parameter_boson_relevance_audit_001/Phase239CoxIvGubcSingleParameterBosonRelevanceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 240,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase240_cox_iii_axial_contact_rg_boson_parameter_audit_001/Phase240CoxIiiAxialContactRgBosonParameterAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 241,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase241_cox_iv_quartic_gauge_sign_falsifier_boson_mass_audit_001/Phase241CoxIvQuarticGaugeSignFalsifierBosonMassAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 242,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase242_post_p241_external_lead_consolidation_audit_001/Phase242PostP241ExternalLeadConsolidationAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 243,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase243_public_web_source_delta_audit_001/Phase243PublicWebSourceDeltaAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 244,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase244_electroweak_identifiability_rank_audit_001/Phase244ElectroweakIdentifiabilityRankAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 245,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase245_rank_deficit_minimal_unlock_contract_001/Phase245RankDeficitMinimalUnlockContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 246,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase246_minimal_unlock_candidate_inventory_001/Phase246MinimalUnlockCandidateInventory.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 247,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase247_direct_bridge_repairability_audit_001/Phase247DirectBridgeRepairabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 248,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase248_higgs_scalar_repairability_audit_001/Phase248HiggsScalarRepairabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 249,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase249_invariant_origin_search_for_near_miss_constants_001/Phase249InvariantOriginSearchForNearMissConstants.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 250,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase250_phase46_electroweak_feature_source_lineage_audit_001/Phase250Phase46ElectroweakFeatureSourceLineageAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 251,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase251_upstream_wz_identity_rule_source_chain_audit_001/Phase251UpstreamWzIdentityRuleSourceChainAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 252,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase252_wz_normalization_closure_source_contract_audit_001/Phase252WzNormalizationClosureSourceContractAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 253,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase253_global_observed_sector_vacuum_scan_001/Phase253GlobalObservedSectorVacuumScan.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 254,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase254_local_completion_revision_boson_source_scan_001/Phase254LocalCompletionRevisionBosonSourceScan.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 255,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase255_observed_field_extraction_no_go_audit_001/Phase255ObservedFieldExtractionNoGoAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 256,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase256_observed_field_extraction_intake_contract_001/Phase256ObservedFieldExtractionIntakeContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 257,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase257_observation_pipeline_physical_boson_capability_audit_001/Phase257ObservationPipelinePhysicalBosonCapabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 258,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase258_recent_electroweak_relation_source_audit_001/Phase258RecentElectroweakRelationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 259,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase259_recent_target_value_sensitivity_audit_001/Phase259RecentTargetValueSensitivityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 260,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase260_mass_definition_convention_sensitivity_audit_001/Phase260MassDefinitionConventionSensitivityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 261,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase261_electroweak_scheme_radiative_source_audit_001/Phase261ElectroweakSchemeRadiativeSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 262,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase262_higgs_top_empirical_relation_source_audit_001/Phase262HiggsTopEmpiricalRelationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 263,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase263_top_yukawa_unity_higgs_closure_audit_001/Phase263TopYukawaUnityHiggsClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 264,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase264_higgs_vacuum_criticality_source_audit_001/Phase264HiggsVacuumCriticalitySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 265,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase265_gauge_higgs_boundary_source_audit_001/Phase265GaugeHiggsBoundarySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 266,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase266_veltman_naturalness_source_audit_001/Phase266VeltmanNaturalnessSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 267,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase267_completion_revision_direct_bridge_source_audit_001/Phase267CompletionRevisionDirectBridgeSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 268,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase268_spectral_action_boson_source_audit_001/Phase268SpectralActionBosonSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 269,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase269_coleman_weinberg_scale_source_audit_001/Phase269ColemanWeinbergScaleSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 270,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase270_composite_higgs_pngb_source_audit_001/Phase270CompositeHiggsPngbSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 271,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase271_asymptotic_safety_higgs_source_audit_001/Phase271AsymptoticSafetyHiggsSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 272,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase272_supersymmetric_higgs_boundary_source_audit_001/Phase272SupersymmetricHiggsBoundarySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 273,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase273_boson_fermion_coupling_proxy_source_audit_001/Phase273BosonFermionCouplingProxySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 274,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase274_neutrino_option_electroweak_scale_source_audit_001/Phase274NeutrinoOptionElectroweakScaleSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 275,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase275_multiple_point_principle_source_audit_001/Phase275MultiplePointPrincipleSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 276,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase276_top_condensation_source_audit_001/Phase276TopCondensationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 211,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase211_boson_prediction_promotion_readiness_gate_001/Phase211BosonPredictionPromotionReadinessGate.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 220,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase220_boson_dimensional_scale_obstruction_audit_001/Phase220BosonDimensionalScaleObstructionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 277,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase277_finite_unified_gauge_yukawa_source_audit_001/Phase277FiniteUnifiedGaugeYukawaSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 278,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase278_relaxion_electroweak_scale_source_audit_001/Phase278RelaxionElectroweakScaleSourceAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 279,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/Phase279TechnicolorWalkingElectroweakScaleSourceAudit.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 280,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/Phase280DirectBridgeAnalyticVariationUpgradeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 281,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase281_geometric_refractive_unification_source_audit_001/Phase281GeometricRefractiveUnificationSourceAudit.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 312,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase312_current_public_gu_rvg_revision_delta_audit_001/Phase312CurrentPublicGuRvgRevisionDeltaAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 282,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase282_branch_local_direct_invariant_census_001/Phase282BranchLocalDirectInvariantCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 283,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/Phase283LegacyElectroweakBridgeSourceSurvivabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 284,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/Phase284PredictedRatioAlphaGfExternalClosureDiagnostic.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 285,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase285_recent_qtp_weak_geometry_source_audit_001/Phase285RecentQtpWeakGeometrySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 286,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase286_alpha_running_threshold_source_viability_audit_001/Phase286AlphaRunningThresholdSourceViabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 287,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase287_official_draft_parameter_source_gap_audit_001/Phase287OfficialDraftParameterSourceGapAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 288,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase288_parameter_source_contract_candidate_scan_001/Phase288ParameterSourceContractCandidateScan.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 289,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase289_phase288_coverage_false_negative_audit_001/Phase289Phase288CoverageFalseNegativeAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: root",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 290,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase290_charged_lepton_threshold_source_replacement_audit_001/Phase290ChargedLeptonThresholdSourceReplacementAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 291,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase291_koide_charged_lepton_threshold_source_audit_001/Phase291KoideChargedLeptonThresholdSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 292,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase292_electromagnetic_alpha_source_audit_001/Phase292ElectromagneticAlphaSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 293,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase293_fermi_vev_source_audit_001/Phase293FermiVevSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 294,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase294_rg_scheme_transport_source_audit_001/Phase294RgSchemeTransportSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 295,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase295_observed_field_extraction_contract_candidate_scan_001/Phase295ObservedFieldExtractionContractCandidateScan.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 296,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 297,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 298,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase298_production_analytic_wz_source_row_replay_attempt_001/Phase298ProductionAnalyticWzSourceRowReplayAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 299,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase299_identity_split_production_wz_replay_attempt_001/Phase299IdentitySplitProductionWzReplayAttempt.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 300,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase300_identity_split_common_normalization_audit_001/Phase300IdentitySplitCommonNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 301,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase301_identity_split_production_transition_sweep_001/Phase301IdentitySplitProductionTransitionSweep.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 302,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase302_identity_split_particle_normalization_audit_001/Phase302IdentitySplitParticleNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 303,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase303_identity_split_branch_source_normalization_audit_001/Phase303IdentitySplitBranchSourceNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 304,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase304_phase27_sector_aggregate_wz_source_audit_001/Phase304Phase27SectorAggregateWzSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 305,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase305_phase27_charged_ladder_operator_wz_source_audit_001/Phase305Phase27ChargedLadderOperatorWzSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 306,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase306_decoupled_charged_ladder_wz_row_source_audit_001/Phase306DecoupledChargedLadderWzRowSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 307,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/Phase307TargetIndependentDecoupledWzRowSelectionLawAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 308,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/Phase308Phase302ScaleTransferToDecoupledChargedLadderAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 309,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase309_source_mode_vector_length_measure_normalization_audit_001/Phase309SourceModeVectorLengthMeasureNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 310,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/Phase310CompletionVariationalBranchToWzNormalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 311,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase311_completion_observed_sector_wz_row_selector_audit_001/Phase311CompletionObservedSectorWzRowSelectorAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 313,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase313_official_draft_electroweak_projection_map_audit_001/Phase313OfficialDraftElectroweakProjectionMapAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 314,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase314_dimension_casimir_wz_source_law_audit_001/Phase314DimensionCasimirWzSourceLawAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 315,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase315_ucsd_dark_geometric_energy_source_audit_001/Phase315UcsdDarkGeometricEnergySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 316,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase316_ucsd_transcript_source_strength_audit_001/Phase316UcsdTranscriptSourceStrengthAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 317,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/Phase317ElectroweakMassMatrixBridgeSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 318,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase318_deferred_implementation_gap_repairability_audit_001/Phase318DeferredImplementationGapRepairabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 319,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase319_legacy_selector_spectrum_source_law_audit_001/Phase319LegacySelectorSpectrumSourceLawAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 320,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/Phase320StandardElectroweakLadderNormalizationBoundaryAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 321,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase321_neutral_electroweak_mixing_source_audit_001/Phase321NeutralElectroweakMixingSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 322,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/Phase322HiggsUpsilonScalarSourceBoundaryAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 323,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/Phase323CoupledYangMillsHiggsMassExtractionAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 324,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase324_custodial_rho_parameter_source_audit_001/Phase324CustodialRhoParameterSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 325,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase325_electroweak_unitarity_scattering_source_audit_001/Phase325ElectroweakUnitarityScatteringSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 326,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase326_anomaly_hypercharge_source_audit_001/Phase326AnomalyHyperchargeSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 327,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase327_oblique_precision_electroweak_source_audit_001/Phase327ObliquePrecisionElectroweakSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 328,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase328_superphysics_draft_energy_scale_source_audit_001/Phase328SuperphysicsDraftEnergyScaleSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 329,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/Phase329SeibergWittenMonopoleElectroweakSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 330,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase330_weyl_geometric_mass_generation_source_audit_001/Phase330WeylGeometricMassGenerationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 331,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/Phase331ThetaOmegaInhomogeneousGaugeSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 332,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase332_string_m_theory_compactification_source_audit_001/Phase332StringMTheoryCompactificationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 333,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/Phase333KaluzaKleinInternalSymmetrySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 334,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase334_su21_superconnection_source_audit_001/Phase334Su21SuperconnectionSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 335,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase335_graviweak_plebanski_source_audit_001/Phase335GraviweakPlebanskiSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 336,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase336_heft_scalar_geometry_source_law_audit_001/Phase336HeftScalarGeometrySourceLawAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 337,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase337_octonion_clifford_internal_space_source_audit_001/Phase337OctonionCliffordInternalSpaceSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 338,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase338_metric_affine_torsion_source_audit_001/Phase338MetricAffineTorsionSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 339,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/Phase339MacDowellMansouriCartanBreakingSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 340,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase340_bf_topological_mass_source_audit_001/Phase340BfTopologicalMassSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 341,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/Phase341ScherkSchwarzTwistedCompactificationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 342,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase342_higgsless_boundary_condition_source_audit_001/Phase342HiggslessBoundaryConditionSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 343,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase343_stueckelberg_vector_mass_source_audit_001/Phase343StueckelbergVectorMassSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 344,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/Phase344FmsGaugeInvariantSpectrumSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 345,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase345_fradkin_shenker_complementarity_source_audit_001/Phase345FradkinShenkerComplementaritySourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 346,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/Phase346NielsenPoleMassGaugeIndependenceSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 347,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase347_dispersive_electroweak_scale_mass_source_audit_001/Phase347DispersiveElectroweakScaleMassSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 348,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase348_right_handed_weak_coupling_source_audit_001/Phase348RightHandedWeakCouplingSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 349,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase349_spin_exchange_preon_boson_mass_source_audit_001/Phase349SpinExchangePreonBosonMassSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 350,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase350_spin_charge_family_boson_source_audit_001/Phase350SpinChargeFamilyBosonSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 351,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase351_weak_hypercharge_superselection_source_audit_001/Phase351WeakHyperchargeSuperselectionSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 352,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase352_higgs_top_z_nnlo_matching_source_audit_001/Phase352HiggsTopZNnloMatchingSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 353,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase353_gauge_higgs_unification_source_audit_001/Phase353GaugeHiggsUnificationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 354,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase354_multiplicative_higgs_lagrangian_source_audit_001/Phase354MultiplicativeHiggsLagrangianSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 355,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001/Phase355DiracLichnerowiczYangMillsHiggsSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 356,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase356_eguchi_hanson_substandard_higgs_source_audit_001/Phase356EguchiHansonSubstandardHiggsSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 357,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase357_causal_fermion_systems_boson_source_audit_001/Phase357CausalFermionSystemsBosonSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 358,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase358_exceptional_e8_boson_source_audit_001/Phase358ExceptionalE8BosonSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 359,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase359_finite_ncg_discrete_higgs_source_audit_001/Phase359FiniteNcgDiscreteHiggsSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 360,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase360_exceptional_jordan_magic_square_source_audit_001/Phase360ExceptionalJordanMagicSquareSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 361,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase361_matrix_model_higgs_geometry_source_audit_001/Phase361MatrixModelHiggsGeometrySourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 362,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase362_framed_standard_model_source_audit_001/Phase362FramedStandardModelSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 363,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase363_hitchin_higgs_bundle_source_audit_001/Phase363HitchinHiggsBundleSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 364,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase364_moment_map_symplectic_reduction_source_audit_001/Phase364MomentMapSymplecticReductionSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 365,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase365_dressing_field_electroweak_observed_variables_audit_001/Phase365DressingFieldElectroweakObservedVariablesAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 366,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/Phase366BostConnesArithmeticGaugeCouplingSourceAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 367,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase367_theta_omega_source_equation_availability_audit_001/Phase367ThetaOmegaSourceEquationAvailabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 368,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/Phase368OxfordInhomogeneousGaugeEquationBridgeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 369,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/Phase369WeylConformalSmStueckelbergSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 370,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/Phase370CompletionFermionicYukawaHiggsMixedLinearizationSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 371,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/Phase371DiscreteConnectionDiracFirstVariationCoverageAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: fermionDir",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 372,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/Phase372DiscreteFermionicBilinearReciprocalMixedBlockAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: fermionDir",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 373,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/Phase373MassPsiStiffnessOperatorConventionRepairAudit.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: fermionDir",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 374,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase374_shared_weighted_fermion_spectral_solver_repair_audit_001/Phase374SharedWeightedFermionSpectralSolverRepairAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 375,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001/Phase375WeightedReciprocalMixedBlockReplayAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 376,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/Phase376PersistedNonzeroShellReciprocalReplayAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 377,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase377_selected_source_mode_shell_response_gram_audit_001/Phase377SelectedSourceModeShellResponseGramAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 378,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase378_full_connection_carrier_shell_response_gram_audit_001/Phase378FullConnectionCarrierShellResponseGramAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 379,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase379_response_image_carrier_axis_characterization_001/Phase379ResponseImageCarrierAxisCharacterization.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 380,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase380_response_image_wz_contract_application_audit_001/Phase380ResponseImageWzContractApplicationAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 381,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/Phase381Phase302307ResponseImageSelectorCompatibilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 382,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase382_response_image_observed_projection_requirement_audit_001/Phase382ResponseImageObservedProjectionRequirementAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 383,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/Phase383Phase307SuppressedAxisCounterfactualSelectorAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 384,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/Phase384Phase307BasisEnergyResponseImageProxyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 385,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase385_observed_electroweak_namespace_map_intake_audit_001/Phase385ObservedElectroweakNamespaceMapIntakeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 386,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase386_current_cox_first_principles_i_source_delta_audit_001/Phase386CurrentCoxFirstPrinciplesISourceDeltaAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 387,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/Phase387CurrentCoxFirstPrinciplesIFullTextContractAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 388,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/Phase388Vo7ObservedElectroweakNamespaceSourceTheoremProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 389,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/Phase389Vo7MixedLinearizationGaugeCompatibilityIdentityProbe.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: fermionDir",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 390,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase390_converged_control_branch_fermion_mode_rebuild_001/Phase390ConvergedControlBranchFermionModeRebuild.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: fermionDir",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 391,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase391_dense_converged_shell_response_replay_audit_001/Phase391DenseConvergedShellResponseReplayAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 392,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/Phase392CoupledMixedHessianFermionInducedResponseAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 393,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/Phase393CoupledStationarityFermionicSourceResidualProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 394,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/Phase394PositiveBosonicSpectrumBackreactionConstruction.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: Path.Combine(workDir, \"background_records\")",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 395,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/Phase395SourceCurrentAxisStructureGaugeCovarianceProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 396,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/Phase396GaugeInvariantNeutralChargedSectorSeparationProbe.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 397,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/Phase397ParametrizedU1ExtensionNeutralMixingUnderdeterminationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 398,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/Phase398Vo6Vo7ControlBranchCompletionLedgerAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 399,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase399_quadratic_model_coupled_critical_point_solve_001/Phase399QuadraticModelCoupledCriticalPointSolve.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 400,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/Phase400FullBosonicActionFlatDirectionLiftProbe.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 401,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase401_full_quartic_action_coupled_critical_point_construction_001/Phase401FullQuarticActionCoupledCriticalPointConstruction.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 402,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase402_gu_draft_scalar_route_dictionary_audit_001/Phase402GuDraftScalarRouteDictionaryAudit.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 403,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase403_adjoint_doublet_substructure_branching_probe_001/Phase403AdjointDoubletSubstructureBranchingProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 404,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/Phase404GuEmbeddingChainCouplingRatioEnumeration.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 405,
+      "invocation": "LD_LIBRARY_PATH=native/build dotnet run --no-build -c Release --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 406,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase406_choice_space_falsification_sweep_001/Phase406ChoiceSpaceFalsificationSweep.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 407,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase407_chimeric_adjoint_sm_content_probe_001/Phase407ChimericAdjointSmContentProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 408,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/Phase408VerticalSpinZeroExtractionObstructionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 409,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/Phase409InvariantPairingMenuSpinZeroExtractionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 410,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase410_curvature_coupled_vev_selection_probe_001/Phase410CurvatureCoupledVevSelectionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 411,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/Phase411QuarticDiracSquaredSpinorCompositeProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 412,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase412_quartic_sm_doublet_intersection_analysis_001/Phase412QuarticSmDoubletIntersectionAnalysis.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 413,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase413_noncompact_real_form_transfer_probe_001/Phase413NoncompactRealFormTransferProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 414,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/Phase414GeneralShiabEpsilonOperatorAnsatzProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 415,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/Phase415FermionicCohomologySquareRootAnsatzProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 416,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase416_unobserved_phase_carrier_census_001/Phase416UnobservedPhaseCarrierCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 417,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase417_vector_spinor_144_decomposition_probe_001/Phase417VectorSpinor144DecompositionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 418,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/Phase418DirectionDependentCurvatureVevCouplingScan.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 419,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase419_observed_field_symbolic_extraction_template_001/Phase419ObservedFieldSymbolicExtractionTemplate.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 420,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase420_naive_curvature_mass_scale_sanity_check_001/Phase420NaiveCurvatureMassScaleSanityCheck.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 421,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/Phase421CoxGuIvV2LcdmRigBosonContractAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 422,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/Phase422VectorSpinor144BilinearScalarCapacityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 423,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 424,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 425,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/Phase425CrossCarrierBilinearSmDoubletCompletionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 426,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase426_cox_gu_series_boson_contract_audit_001/Phase426CoxGuSeriesBosonContractAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 427,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/Phase427HofsethGuRvgSuperluminalSourceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 428,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase428_fermion_loop_block_selection_no_go_probe_001/Phase428FermionLoopBlockSelectionNoGoProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 429,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase429_target_blind_dimensionless_ratio_ledger_001/Phase429TargetBlindDimensionlessRatioLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 430,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase430_net_one_loop_direction_selection_probe_001/Phase430NetOneLoopDirectionSelectionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 431,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase431_lambda8_background_doublet_reopening_probe_001/Phase431Lambda8BackgroundDoubletReopeningProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 432,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase432_welded_fermion_loop_block_selection_probe_001/Phase432WeldedFermionLoopBlockSelectionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 433,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase433_blind_beta_coefficient_running_ledger_001/Phase433BlindBetaCoefficientRunningLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 434,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase434_conditional_observed_field_extraction_row_ledger_001/Phase434ConditionalObservedFieldExtractionRowLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 435,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase435_two_condensate_scale_gap_probe_001/Phase435TwoCondensateScaleGapProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 436,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase436_exact_hessian_saturation_no_go_probe_001/Phase436ExactHessianSaturationNoGoProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 437,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase437_four_dimensional_transmutation_scaling_probe_001/Phase437FourDimensionalTransmutationScalingProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 438,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase438_self_consistent_condensate_gap_equation_probe_001/Phase438SelfConsistentCondensateGapEquationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 439,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/Phase439GapEquationLambda8BackgroundChannelSteeringProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 440,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase440_coupled_background_condensate_fixed_point_probe_001/Phase440CoupledBackgroundCondensateFixedPointProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 441,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase441_toy_branch_family_universality_sweep_001/Phase441ToyBranchFamilyUniversalitySweep.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 442,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase442_joint_omega_theta_hessian_degree_probe_001/Phase442JointOmegaThetaHessianDegreeProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 443,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase443_joint_effective_potential_saturation_probe_001/Phase443JointEffectivePotentialSaturationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 444,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase444_mode_volume_scaled_saturation_probe_001/Phase444ModeVolumeScaledSaturationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 445,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase445_rg_improved_joint_potential_probe_001/Phase445RgImprovedJointPotentialProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 446,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase446_rg_scheme_dependence_resolution_probe_001/Phase446RgSchemeDependenceResolutionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 447,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase447_two_loop_saturation_probe_001/Phase447TwoLoopSaturationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 448,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase448_torus_mode_volume_saturation_probe_001/Phase448TorusModeVolumeSaturationProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 449,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase449_variational_gaussian_effective_potential_probe_001/Phase449VariationalGaussianEffectivePotentialProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 450,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase450_constraint_effective_potential_hmc_probe_001/Phase450ConstraintEffectivePotentialHmcProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 451,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 452,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 453,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 454,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase454_beyond_ray_quadratic_certificate_probe_001/Phase454BeyondRayQuadraticCertificateProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 455,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase455_exact_fermionic_backreaction_probe_001/Phase455ExactFermionicBackreactionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 456,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase456_consolidated_n4_launch_001/Phase456ConsolidatedN4Launch.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 457,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase457_upsilon_portal_stage_a_001/Phase457UpsilonPortalStageA.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 458,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase458_binder_go_no_go_gate_001/Phase458BinderGoNoGoGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 459,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase459_spectroscopy_record_attestation_001/Phase459SpectroscopyRecordAttestation.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 460,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase460_source_corpus_units_equivariance_kernel_001/Phase460SourceCorpusUnitsEquivarianceKernel.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 461,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase461_dimensional_transmutation_reading_menu_001/Phase461DimensionalTransmutationReadingMenu.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 462,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase462_blocking_set_resolution_001/Phase462BlockingSetResolution.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 463,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase463_transport_structure_theorems_001/Phase463TransportStructureTheorems.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 464,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase464_anchor_adjudication_contract_001/Phase464AnchorAdjudicationContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 465,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase465_anomaly_consistency_variety_kernel_001/Phase465AnomalyConsistencyVarietyKernel.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 466,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase466_ws3_vev_completion_contract_001/Phase466Ws3VevCompletionContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 467,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase467_derived_operator_stabilizer_ray_census_001/Phase467DerivedOperatorStabilizerRayCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 468,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase468_two_loop_content_row_closure_filter_001/Phase468TwoLoopContentRowClosureFilter.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 469,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase469_c_lift_representation_bookkeeping_gate_001/Phase469CLiftRepresentationBookkeepingGate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 470,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase470_c_permanence_five_limb_ledger_001/Phase470CPermanenceFiveLimbLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 471,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase471_b2_closure_ledger_001/Phase471B2ClosureLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 477,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase477_o4_adjudication_infrastructure_001/Phase477O4AdjudicationInfrastructure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 478,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase478_phase458_gate_specification_closure_001/Phase478Phase458GateSpecificationClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 479,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase479_phase457_post_ruling_readiness_001/Phase479Phase457PostRulingReadiness.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 480,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase480_o4_physicist_adjudication_intake_001/Phase480O4PhysicistAdjudicationIntake.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 481,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase481_phase456_prospective_repair_preregistration_001/Phase481Phase456ProspectiveRepairPreregistration.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 482,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase482_a5_theorem_scout_001/Phase482A5TheoremScout.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 483,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase483_source_defined_reopening_intake_001/Phase483SourceDefinedReopeningIntake.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 484,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase484_exploratory_lane_governance_firewall_001/Phase484ExploratoryLaneGovernanceFirewall.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 485,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase485_o4_assumption_falsifier_census_001/Phase485O4AssumptionFalsifierCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 486,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase486_committed_evidence_sensitivity_triage_001/Phase486CommittedEvidenceSensitivityTriage.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 487,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase487_independent_so3_haar_measure_control_001/Phase487IndependentSo3HaarMeasureControl.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 488,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase488_haar_proposal_invariance_control_001/Phase488HaarProposalInvarianceControl.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 489,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase489_reduced_sampler_restart_equivalence_001/Phase489ReducedSamplerRestartEquivalence.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 490,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase490_zero_mode_quotient_audit_001/Phase490ZeroModeQuotientAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 491,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase491_committed_bosonic_model_family_sensitivity_001/Phase491CommittedBosonicModelFamilySensitivity.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 492,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase492_phase455_combined_robustness_adjudicator_001/Phase492Phase455CombinedRobustnessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 493,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase493_phase456_stored_artifact_failure_decomposition_001/Phase493Phase456StoredArtifactFailureDecomposition.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 494,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase494_phase456_estimator_oracle_battery_001/Phase494Phase456EstimatorOracleBattery.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 495,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/Phase495Phase456ProspectiveRepairReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 496,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase496_phase456_retained_data_information_census_001/Phase496Phase456RetainedDataInformationCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 497,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/Phase497Phase456ProspectiveEstimatorAcquisitionOracle.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 498,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/Phase498Phase456AcquisitionRepairReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 499,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase499_phase456_retained_empirical_noise_information_audit_001/Phase499Phase456RetainedEmpiricalNoiseInformationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 500,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase500_phase456_adversarial_prospective_acquisition_stress_test_001/Phase500Phase456AdversarialProspectiveAcquisitionStressTest.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 501,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase501_phase456_robust_sampling_readiness_adjudicator_001/Phase501Phase456RobustSamplingReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 502,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase502_phase456_adaptive_calibration_protocol_specification_001/Phase502Phase456AdaptiveCalibrationProtocolSpecification.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 503,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase503_phase456_adaptive_calibration_protocol_validation_001/Phase503Phase456AdaptiveCalibrationProtocolValidation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 504,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/Phase504Phase456CalibrationRepairPackReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 505,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase505_phase503_frozen_failure_localization_001/Phase505Phase503FrozenFailureLocalization.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 506,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase506_phase456_selective_inference_protocol_validation_001/Phase506Phase456SelectiveInferenceProtocolValidation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 507,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/Phase507Phase456SelectiveInferencePackReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 508,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase508_phase481_acquisition_geometry_closure_001/Phase508Phase481AcquisitionGeometryClosure.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 509,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase509_phase481_anisotropic_cpu_reference_feasibility_001/Phase509Phase481AnisotropicCpuReferenceFeasibility.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 510,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase510_phase481_execution_readiness_adjudicator_001/Phase510Phase481ExecutionReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 511,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase511_phase481_throughput_benchmark_eligibility_audit_001/Phase511Phase481ThroughputBenchmarkEligibilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 514,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase514_a5_registered_reflection_foundation_audit_001/Phase514A5RegisteredReflectionFoundationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 517,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase517_a5_dual_reflection_candidate_foundation_001/Phase517A5DualReflectionCandidateFoundation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 518,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase518_a5_dual_reflection_exact_consistency_001/Phase518A5DualReflectionExactConsistency.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 519,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase519_a5_candidate_foundation_readiness_001/Phase519A5CandidateFoundationReadiness.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 520,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase520_a5_action_subject_lineage_parity_audit_001/Phase520A5ActionSubjectLineageParityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 521,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase521_a5_frozen_reflection_compatible_triangulation_census_001/Phase521A5FrozenReflectionCompatibleTriangulationCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 522,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase522_a5_foundation_candidate_reduction_001/Phase522A5FoundationCandidateReduction.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 523,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase523_a5_action_member_universalization_audit_001/Phase523A5ActionMemberUniversalizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 524,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase524_a5_exact_omega_parity_decomposition_001/Phase524A5ExactOmegaParityDecomposition.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 525,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase525_a5_survivor_reflection_pullback_boundary_audit_001/Phase525A5SurvivorReflectionPullbackBoundaryAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 526,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase526_a5_certificate_reducer_001/Phase526A5CertificateReducer.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 527,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase527_a5_sd2_theta_zero_exact_parity_audit_001/Phase527A5Sd2ThetaZeroExactParityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 528,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase528_a5_even_sector_premise_applicability_audit_001/Phase528A5EvenSectorPremiseApplicabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 529,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase529_a5_action_premise_route_adjudicator_001/Phase529A5ActionPremiseRouteAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 530,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase530_o4_g4_authentication_admissibility_audit_001/Phase530O4G4AuthenticationAdmissibilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 531,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase531_o4_g4_disposition_resolution_semantics_001/Phase531O4G4DispositionResolutionSemantics.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 532,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase532_phase458_g4_consumer_correction_adjudicator_001/Phase532Phase458G4ConsumerCorrectionAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 533,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase533_nested_validation_contract_001/Phase533NestedValidationContract.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 534,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase534_nested_control_battery_001/Phase534NestedControlBattery.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 535,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase535_bounded_registered_operator_pilot_adjudicator_001/Phase535BoundedRegisteredOperatorPilotAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 536,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase536_trajectory_forensics_replay_001/Phase536TrajectoryForensicsReplay.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 537,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase537_deterministic_leapfrog_correctness_stability_audit_001/Phase537DeterministicLeapfrogCorrectnessStabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 538,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase538_fixed_grid_interacting_hmc_retuning_001/Phase538FixedGridInteractingHmcRetuning.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 539,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase539_independent_reduced_target_row_confirmation_001/Phase539IndependentReducedTargetRowConfirmation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 540,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase540_reduced_to_complete_lattice_transfer_readiness_001/Phase540ReducedToCompleteLatticeTransferReadiness.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 541,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase541_complete_lattice_integrator_transfer_control_001/Phase541CompleteLatticeIntegratorTransferControl.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 542,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase542_metric_normalized_force_closure_census_001/Phase542MetricNormalizedForceClosureCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 543,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase543_complete_lattice_multistate_stability_grid_001/Phase543CompleteLatticeMultistateStabilityGrid.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 544,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase544_bounded_complete_lattice_pilot_readiness_adjudicator_001/Phase544BoundedCompleteLatticePilotReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 545,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase545_injectable_deterministic_hmc_kernel_001/Phase545InjectableDeterministicHmcKernel.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 546,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase546_pilot_diagnostics_checkpoint_resource_pack_001/Phase546PilotDiagnosticsCheckpointResourcePack.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 547,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase547_bounded_pilot_pack_readiness_adjudicator_001/Phase547BoundedPilotPackReadinessAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 548,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase548_bounded_complete_lattice_pilot_execution_001/Phase548BoundedCompleteLatticePilotExecution.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 549,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase549_bounded_pilot_independent_result_adjudicator_001/Phase549BoundedPilotIndependentResultAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 550,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase550_complete_lattice_flat_sector_census_001/Phase550CompleteLatticeFlatSectorCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 551,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase551_flat_sector_independent_spectral_adjudicator_001/Phase551FlatSectorIndependentSpectralAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 552,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase552_committed_chain_stationarity_reanalysis_001/Phase552CommittedChainStationarityReanalysis.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 555,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase555_flat_sector_external_review_escalation_packet_001/Phase555FlatSectorExternalReviewEscalationPacket.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 556,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase556_registered_action_transformation_map_applicability_audit_001/Phase556RegisteredActionTransformationMapApplicabilityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 558,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase558_registered_action_transformation_identity_independent_adjudicator_001/Phase558RegisteredActionTransformationIdentityIndependentAdjudicator.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 559,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase559_bounded_transformation_law_source_census_001/Phase559BoundedTransformationLawSourceCensus.csproj",
+      "decision": "run",
+      "reason": "fail-closed: unresolvable scanner root: corpusRoot",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 560,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase560_transformation_law_source_census_independent_adjudicator_001/Phase560TransformationLawSourceCensusIndependentAdjudicator.csproj",
+      "decision": "run",
+      "reason": "inputFingerprint mismatch",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 562,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase562_discrete_transformation_candidate_covariance_ward_census_001/Phase562DiscreteTransformationCandidateCovarianceWardCensus.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 563,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase563_discrete_transformation_candidate_census_independent_adjudicator_001/Phase563DiscreteTransformationCandidateCensusIndependentAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 564,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase564_additive_curvature_residual_power_decomposition_001/Phase564AdditiveCurvatureResidualPowerDecomposition.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 565,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase565_registered_finite_transport_bch_control_001/Phase565RegisteredFiniteTransportBchControl.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 566,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase566_independent_finite_transport_adjudicator_001/Phase566IndependentFiniteTransportAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 567,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase567_path_ordered_curvature_candidate_001/Phase567PathOrderedCurvatureCandidate.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 568,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase568_path_ordered_curvature_downstream_counterfactual_audit_001/Phase568PathOrderedCurvatureDownstreamCounterfactualAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 569,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase569_independent_path_ordered_counterfactual_adjudicator_001/Phase569IndependentPathOrderedCounterfactualAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 570,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase570_registered_target_directional_resolution_replay_001/Phase570RegisteredTargetDirectionalResolutionReplay.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 571,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase571_bounded_reset_checkpoint_transition_probe_001/Phase571BoundedResetCheckpointTransitionProbe.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 572,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase572_independent_directional_transition_adjudicator_001/Phase572IndependentDirectionalTransitionAdjudicator.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 573,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase573_directional_estimator_parity_audit_001/Phase573DirectionalEstimatorParityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 574,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase574_directional_raw_trace_fold_order_localization_001/Phase574DirectionalRawTraceFoldOrderLocalization.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 575,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase575_registered_fold_convention_readjudication_001/Phase575RegisteredFoldConventionReadjudication.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 576,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase576_disjoint_seed_chain_pack_design_001/Phase576DisjointSeedChainPackDesign.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 577,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase577_chain_pack_execution_001/Phase577ChainPackExecution.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 578,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase578_consolidated_conditional_electroweak_sector_ledger_001/Phase578ConsolidatedConditionalElectroweakSectorLedger.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 579,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase579_collective_coordinate_jacobian_self_check_001/Phase579CollectiveCoordinateJacobianSelfCheck.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 580,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase580_external_review_packet_assembly_001/Phase580ExternalReviewPacketAssembly.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 581,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase581_collective_coordinate_assumption_audit_001/Phase581CollectiveCoordinateAssumptionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 582,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase582_relative_transport_observable_control_001/Phase582RelativeTransportObservableControl.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 583,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase583_biconnection_convention_reconciliation_001/Phase583BiconnectionConventionReconciliation.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 584,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase584_signed_spatial_curvature_consistency_001/Phase584SignedSpatialCurvatureConsistency.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 585,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase585_quotient_section_measure_controls_001/Phase585QuotientSectionMeasureControls.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 586,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase586_action_restriction_pairing_controls_001/Phase586ActionRestrictionPairingControls.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 587,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase587_exact_residual_factorization_audit_001/Phase587ExactResidualFactorizationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 588,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase588_fixed_domain_action_force_consistency_001/Phase588FixedDomainActionForceConsistency.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 589,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase589_section_density_joint_lift_audit_001/Phase589SectionDensityJointLiftAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 590,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase590_source_clifford_tensor_controls_001/Phase590SourceCliffordTensorControls.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 591,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase591_source_hodge_curvature_branch_audit_001/Phase591SourceHodgeCurvatureBranchAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 592,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase592_companion_tensor_chirality_audit_001/Phase592CompanionTensorChiralityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 593,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase593_companion_action_first_variation_audit_001/Phase593CompanionActionFirstVariationAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 594,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase594_actual_gradient_reciprocity_audit_001/Phase594ActualGradientReciprocityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 595,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase595_invariant_tensor_dimension_audit_001/Phase595InvariantTensorDimensionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 596,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase596_fixed_operator_helmholtz_audit_001/Phase596FixedOperatorHelmholtzAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 597,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase597_actual_quadratic_joint_null_audit_001/Phase597ActualQuadraticJointNullAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 598,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase598_continuum_action_descent_ward_audit_001/Phase598ContinuumActionDescentWardAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 599,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase599_source_registered_residual_kernel_audit_001/Phase599SourceRegisteredResidualKernelAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 600,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/Phase600FullTraceAdjointPeriodicGradientNormAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 601,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase601_full_hessian_cyclic_closure_audit_001/Phase601FullHessianCyclicClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 602,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase602_stationary_odd_background_closure_audit_001/Phase602StationaryOddBackgroundClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 603,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase603_homogeneous_invariant_stationary_family_audit_001/Phase603HomogeneousInvariantStationaryFamilyAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 604,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase604_squared_action_stationary_equivalence_audit_001/Phase604SquaredActionStationaryEquivalenceAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 605,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase605_stationary_background_fourier_closure_audit_001/Phase605StationaryBackgroundFourierClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 606,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase606_general_companion_stationary_fourier_closure_audit_001/Phase606GeneralCompanionStationaryFourierClosureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 607,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase607_source_induced_vertical_curvature_audit_001/Phase607SourceInducedVerticalCurvatureAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 608,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase608_source_induced_ambient_ricci_audit_001/Phase608SourceInducedAmbientRicciAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 609,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase609_chiral_null_branch_stationarity_audit_001/Phase609ChiralNullBranchStationarityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 610,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase610_induced_spin_curvature_contraction_audit_001/Phase610InducedSpinCurvatureContractionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 611,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase611_untied_caa_response_joint_gauge_audit_001/Phase611UntiedCaaResponseJointGaugeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 612,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase612_covariant_caa_symbol_null_audit_001/Phase612CovariantCaaSymbolNullAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 613,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase613_canonical_isotropic_stationarity_potential_hessian_audit_001/Phase613CanonicalIsotropicStationarityPotentialHessianAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 614,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase614_conditional_metric_homothety_stationarity_audit_001/Phase614ConditionalMetricHomothetyStationarityAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 615,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase615_source_induced_splitting_volume_scope_audit_001/Phase615SourceInducedSplittingVolumeScopeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 616,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase616_curved_canonical_isotropic_gradient_audit_001/Phase616CurvedCanonicalIsotropicGradientAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 617,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase617_nonparallel_projector_two_weight_gradient_audit_001/Phase617NonparallelProjectorTwoWeightGradientAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 618,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase618_homogeneous_covariant_connection_audit_001/Phase618HomogeneousCovariantConnectionAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 619,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/Phase619InvariantBivectorNonlinearFeedbackAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 620,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase620_curved_caa_action_descent_ward_audit_001/Phase620CurvedCaaActionDescentWardAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 621,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase621_induced_metric_full_variation_scope_audit_001/Phase621InducedMetricFullVariationScopeAudit.csproj",
+      "decision": "skip",
+      "reason": "fingerprint, outputs, and recorded inputs all match"
+    },
+    {
+      "kind": "phase",
+      "phase": 622,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase622_full_homogeneous_kinetic_carrier_audit_001/Phase622FullHomogeneousKineticCarrierAudit.csproj",
+      "decision": "run",
+      "reason": "no manifest entry",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 623,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj",
+      "decision": "run",
+      "reason": "no manifest entry",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 101,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 202,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 212,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase212_boson_scientific_claim_boundary_certificate_001/Phase212BosonScientificClaimBoundaryCertificate.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 216,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase216_boson_nonclaim_firewall_001/Phase216BosonNonclaimFirewall.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 217,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase217_boson_independent_source_review_001/Phase217BosonIndependentSourceReview.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 158,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase158_external_gu_source_unblocker_audit_001/Phase158ExternalGuSourceUnblockerAudit.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "phase",
+      "phase": 219,
+      "invocation": "dotnet run --no-build -c Release --project studies/phase219_boson_source_lineage_regression_audit_001/Phase219BosonSourceLineageRegressionAudit.csproj",
+      "decision": "run",
+      "reason": "always-run set",
+      "exitCode": 0
+    },
+    {
+      "kind": "integrity",
+      "phase": null,
+      "invocation": "./scripts/verify_boson_claim_integrity.sh",
+      "decision": "run",
+      "reason": "non-phase step always runs",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-09-11T13:14:54.548Z",
+  "result": "ok (77 step(s) ran, 406 skipped)"
+}
