@@ -4147,3 +4147,85 @@ Full residuals vanish through degree3 and leave600 grade5 terms at degree4;
 all coefficients through8 and original-action controls are retained.
 Ordered101/202/integrity passed405/3 with all physical deficits unchanged.
 Final source-freeze validation and scoped checkpoint remain required.
+
+## A67 - Fixed-cubic full stationary-residual certificate (2026-09-12)
+
+Continue on main from f17420546b8d5e41b79648faf1278460cb1e871b,
+pushed and remote-matched. A66 final Release build plus76 steps passed,
+409 skipped; independent and MAIN checks verified27 source hashes,
+68 frozen bindings,10 FIRST outputs and all2594 current manifest outputs.
+Checklist405/3 and physicalclaims0; no physical blocker was discharged.
+
+Allocate626, root
+studies/phase626_fixed_cubic_full_stationary_residual_certificate_001,
+project Phase626FixedCubicFullStationaryResidualCertificate.csproj,
+contract phase626-a67-fixed-cubic-full-stationary-residual-certificate-v1,
+success terminal fixed-cubic-full-residual-certified-conditional-stationary-branch.
+
+Printed9.4 supplies relative source/kinetic/cubic coefficients1,1/2,1/3,
+not an independently adjustable cubic gamma. Keep conditional canonical
+CAA and bracket conventions explicit; set gamma=1 without claiming those
+conventions or a physical coupling have been source-selected. The compact
+and expanded quadratic kappa1 terms differ by a factor two. Our exact
+Euler parameter kappa0=907712 is diagnostic, not a selected physical scale.
+
+Use the immutable passed623 actual full coefficient tensors to construct
+P5(lambda)=sum_(n=1)^5 lambda^n S_n(gamma=1), at both passed618 frames.
+The fixed positive lambda0=1/907712 is delta/4 with delta=1/226928,
+chosen from the existing full-domain contraction proof, not measured
+residuals. Compute all five full covariant kinetic responses, especially
+the previously unexecuted H S5, and all ordered nonlinear contributions.
+Retain every coefficient G0 through G10 of the ORIGINAL equation
+A+H P5+N(P5)+P5/lambda, plus the complete scaled-defect slots0 through11.
+Do not drop a grade, project a response, or truncate at the known zeros.
+Independently evaluate the original literal equation at X=P5(lambda0)
+and compare with evaluation of the retained full polynomial residual.
+
+The auxiliary coefficient-l1 norm is abs(real)+abs(imaginary), not the
+signed action pairing or a physical norm. With a=60,h=51520,cN=2576,
+R=120lambda0 and L0=lambda0*h+2lambda0*cN*R, explicitly verify
+ball membership, the contraction inequalities, and the measured defect.
+The existing holomorphic-branch proof gives prospective Taylor error
+<=R/768 and fixed-point defect<=R/512. Compute the actual a posteriori
+certificate lambda0*||G(X)||/(1-L0), with its hypotheses checked exactly,
+and compare it with the Taylor bound rather than assuming it is tighter.
+This is a certified approximation to a conditional full stationary branch,
+not an exact polynomial root or a physical vacuum/pole/mass prediction.
+
+Freeze complete code/helpers/project/STUDY/contract, all exact menus and
+counts, original-action derivative/Green controls, negative controls,
+failure precedence, evidence layout, bound compiled closure and live726
+core hashes before FIRST. Independent and MAIN full reviews and a clean
+Release build precede explicit execution approval. No pilot, adaptive
+lambda/order selection, coefficient fitting or post-run repair. Expanded
+evidence and resource guards must cover the FULL higher-grade products;
+do not reuse625's small support limits or omit transpose loops from cost.
+The implementation-specific rational-height, maximum-live-memory and
+prewrite byte proofs remain required before the pack can be approved.
+
+Builder owns only626; independent reviewer challenges the complete pack;
+MAIN owns shared integration and FIRST authorization. Register generator,
+traversal,101/202/verifier/all9 scanners including both207 sites, and all
+new implementation documentation. Preserve all2594 old output beforeimages.
+After all source edits, run final incremental validation, review exhaustive
+output drift, commit/push scoped main changes and verify the remote hash.
+
+All14 authority flags remain false, O4/externalreview pending, Phase561
+closed, WZ15/H14 deficits and physicalclaims0 unchanged. No source/core,
+registered action, observed field, boundary condition, unit, production
+or sampling authority is added.627+ remain unallocated. Parallel hand-only
+design may study the complete mixed metric-native-field fluctuation block;
+that is neither an authorized new calculation nor a replacement for626.
+
+A67 execution update: frozen FIRST626 session38048 passed Release exit0.
+Contract882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308;
+identical full/summaryb19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09.
+Complete original G0..4 vanish; G5..10 have2065,614,1653,614,2193,2080
+terms at each point, including grade9 at order10. The exact auxiliary-l1
+error certificate is approximately1.797679e-29. All3914 chunks and2 contexts
+remain bound; no polynomial-root, physical coupling, pole or unit claim.
+Independent retained replay38507 passed11176773 checks; full integrity1639
+and ordered101/202 passed406/3. Initial replay3812 failed solely because a
+new verifier local shadowed its kinetic helper; the verifier-only rename
+preserved all frozen science and expected values. Final incremental
+validation and exhaustive A67-beforeimage drift review precede commit/push.

@@ -8477,6 +8477,229 @@ if (sourceLineageMissing) {
     "870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f",
     "e89d845f06827fa527b705a97259bf1e56712f6a796b37aec97b48323736011b");
   const p625 = p625Retained.pack.p;
+  // Begin A67 retained-evidence core. The frozen manifest boundary and actual
+  // FIRST pins were reviewed before activating the retained-evidence replay.
+  // No scientific product, CAA operator, or new direction is evaluated here.
+  // Chunk streaming does not imply constant memory: one point's14 response
+  // caches,9 polynomial K/N pairs and11 residuals coexist with prior retained
+  // evidence. The scientific8GiB sampled-managed-memory guard is not a Node
+  // heap/RSS guarantee, nor a promise that every dense permitted output fits.
+  const verifyA67RetainedCore = (contexts, pins, frozenPlan) => {
+    const root="studies/phase626_fixed_cubic_full_stationary_residual_certificate_001", directory=root+"/output/chunks";
+    const need=(ok,label)=>{assert(ok,"Phase626 "+label);if(!ok)throw new Error("Phase626 malformed retained evidence: "+label);};
+    const eq=a61Equal,add=a64AddText,mul=a64MulText,plus=a62Tensor,scale=a64Scale;
+    const sum=xs=>xs.reduce(add,"0"),sumT=xs=>xs.reduce((a,b)=>plus(a,b),[]);
+    const abs=x=>x.startsWith("-")?x.slice(1):x,le=(a,b)=>a62Le(a62Rat(a),a62Rat(b));
+    const div=(a,b)=>{const z=a62Rat(b);need(z[0]!==0n,"zero rational divisor.");return mul(a,a62Text([z[1],z[0]]));};
+    const norm=t=>sum(t.flatMap(z=>[abs(z.real),abs(z.imaginary)]));
+    const fingerprint=t=>crypto.createHash("sha256").update(JSON.stringify(t)).digest("hex");
+    const tensor=(t,d,real=true)=>need(a64Tensor(t,d,256)&&(!real||a64HAnti(t)),"canonical full rational tensor/real domain drifted.");
+    const fields=["S1","S2","S3","S4","S5","X","PHGamma","PTGamma","PtrGamma","J","B","C","W5","central"];
+    const active=[0,7,8,9],stageDegrees=[2,12,13,14,0,1,13,1],plan=[];
+    const split=(collection,degree,group,ids)=>{
+      const forms=Array.from({length:16384},(_,i)=>i).filter(i=>a62Degree(i)===degree);
+      for(let offset=0,index=0;offset<forms.length;offset+=group,index++)plan.push({Path:directory+"/"+collection+"_g"+String(index).padStart(3,"0")+".json",Collection:collection,Degree:degree,Forms:forms.slice(offset,offset+group),TensorIds:ids});
+    };
+    const planStages=(name,kinetic)=>stageDegrees.forEach((d,s)=>split(name+"_stage"+s,d,(kinetic?[91,91,14,1,1,7,7,7]:[8,8,7,1,1,7,7,7])[s],["actual","oracle"]));
+    const planKinetic=name=>{
+      split(name+"_inputs",1,14,["input",...Array.from({length:14},(_,a)=>"derivative"+a),...Array.from({length:14},(_,a)=>"oracle"+a)]);
+      split(name+"_exterior",2,91,["actual","oracle"]);planStages(name,true);
+      split(name+"_adjointLegs",2,91,["first","second"]);split(name+"_adjoint",2,16,["actual","simplified"]);
+      active.forEach(a=>split(name+"_reverse"+a,2,10,["actual","parallel","simplified"]));
+      split(name+"_reverseZero",2,91,Array.from({length:14},(_,a)=>a).filter(a=>!active.includes(a)).flatMap(a=>["actual"+a,"parallel"+a,"simplified"+a]));
+      split(name+"_result",1,4,["reverse","reverseOracle","full"]);
+    };
+    const planFeedback=(name,residual)=>{planStages(name,false);split(name+"_transpose",1,7,["actual","word"]);split(name+"_result",1,residual?4:7,residual?["nonlinear","residual","scaledDefect"]:["nonlinear","oracle"]);};
+    for(let point=0;point<2;point++){
+      const p="p"+point;fields.forEach(f=>planKinetic(p+"_kinetic_"+f));
+      for(let n=2;n<=10;n++)planFeedback(p+"_polynomial"+n,true);
+      planFeedback(p+"_direct",true);fields.slice(6).forEach(f=>{planFeedback(p+"_self_"+f,false);planFeedback(p+"_cross_"+f,false);});
+      planFeedback(p+"_offRoot",false);split(p+"_lowResidual",1,14,["G0","G1","defect0","defect1","defect2"]);
+    }
+    need(plan.length===3914&&eq(frozenPlan,{schemaVersion:1,phase:626,encoding:"expanded-rational-tensor-chunks-v1",chunkCount:3914,chunks:plan}),"complete independently generated frozen chunk plan drifted.");
+    need(Array.isArray(pins)&&pins.length===plan.length&&new Set(pins.map(p=>p.path)).size===plan.length&&eq(pins.map(p=>p.path).sort(),plan.map(p=>p.Path).sort())&&eq(a64Files(directory),plan.map(p=>p.Path).sort()),"exact3914 chunk pin/path/file bijection drifted.");
+    const pinMap=new Map(pins.map(p=>[p.path,p])),groups=new Map();for(const p of plan){if(!groups.has(p.Collection))groups.set(p.Collection,[]);groups.get(p.Collection).push(p);}
+    const seen=new Set(),stats={chunks:0,bytes:0,records:0,largestChunkBytes:0,largestTensor:0,maximumTensorRationalCharacters:0,kinetic:0,stages:0,nonlinear:0,derivatives:0,reverseComparisons:0,residuals:0,defects:0,action:0,cubic:0,cubicDerivative:0,green:0,offRoot:0,transport:0};
+    // Intermediate stage arrays are validated and hashed one fixed chunk at a
+    // time. Only explicitly requested complete tensors survive a collection.
+    const read=(name,metadata,retain,real=true)=>{
+      const parts=groups.get(name);need(Array.isArray(parts)&&parts.length>0,"unknown fixed collection: "+name);
+      const ids=parts[0].TensorIds,keep=new Set(retain===undefined?ids:retain),out={},hashes={},lengths={},grades={};
+      need([...keep].every(id=>ids.includes(id)),"unknown requested tensor ID.");
+      ids.forEach(id=>{if(keep.has(id))out[id]=[];hashes[id]=crypto.createHash("sha256").update("[");lengths[id]=0;grades[id]=new Set();});
+      for(const p of parts){
+        need(!seen.has(p.Path),"collection read twice: "+name);seen.add(p.Path);
+        const pin=pinMap.get(p.Path);need(pin&&eq(Object.keys(pin),["path","sha256","bytes","records","collection","degree","forms","tensorIds"])&&pin.path===p.Path&&pin.collection===name&&pin.degree===p.Degree&&eq(pin.forms,p.Forms)&&eq(pin.tensorIds,ids)&&/^[0-9a-f]{64}$/.test(pin.sha256)&&Number.isSafeInteger(pin.bytes)&&pin.bytes>0&&pin.bytes<=67108864&&Number.isSafeInteger(pin.records)&&pin.records>=0&&pin.records<=100000,"fixed chunk metadata/caps drifted.");
+        const {bytes,value:v}=a64Read(p.Path,undefined,67108864);
+        need(bytes.length===pin.bytes&&sha256File(p.Path)===pin.sha256&&eq(Object.keys(v),["schemaVersion","phase","encoding","collection","degree","forms","metadata","tensors"])&&v.schemaVersion===1&&v.phase===626&&v.encoding==="expanded-rational-tensor-chunks-v1"&&v.collection===name&&v.degree===p.Degree&&eq(v.forms,p.Forms)&&eq(v.metadata,metadata)&&Buffer.byteLength(JSON.stringify(v.metadata))<=1048576&&v.tensors&&eq(Object.keys(v.tensors),ids),"complete canonical chunk/header/hash drifted.");
+        let records=0;const forms=new Set(p.Forms);
+        for(const id of ids){const t=v.tensors[id];tensor(t,p.Degree,real);need(t.every(z=>forms.has(z.form)),"tensor escaped fixed form partition.");records+=t.length;
+          for(const z of t){if(lengths[id]++)hashes[id].update(",");hashes[id].update(JSON.stringify(z));grades[id].add(a62Degree(z.blade));stats.maximumTensorRationalCharacters=Math.max(stats.maximumTensorRationalCharacters,z.real.length,z.imaginary.length);}
+          if(keep.has(id))for(const z of t)out[id].push(z);
+        }
+        need(records===pin.records&&records<=100000,"exact retained sparse-record count drifted.");
+        // Each oracle uses the same partition, so this is a full comparison,
+        // including every zero and every higher Clifford grade, not a sample.
+        if(ids.includes("actual"))for(const oracle of ["oracle","word","parallel","simplified"])if(ids.includes(oracle))need(eq(v.tensors.actual,v.tensors[oracle]),"literal/independent retained chunk mismatch: "+name);
+        stats.chunks++;stats.bytes+=bytes.length;stats.records+=records;stats.largestChunkBytes=Math.max(stats.largestChunkBytes,bytes.length);
+        need(stats.bytes<=2147483648,"aggregate chunk byte ceiling exceeded.");
+      }
+      ids.forEach(id=>{hashes[id]=hashes[id].update("]").digest("hex");stats.largestTensor=Math.max(stats.largestTensor,lengths[id]);need(lengths[id]<=600000,"full tensor support ceiling exceeded.");});
+      return {tensors:out,hashes,lengths,grades};
+    };
+    const stages=(name,metadata,retainQ=true)=>{
+      let q,k,inputGrades;const fps=[];
+      for(let s=0;s<8;s++){
+        const row=read(name+"_stage"+s,metadata,s===0&&retainQ||s===7?["actual"]:[],false);stats.stages++;
+        need(row.hashes.actual===row.hashes.oracle,"full stage fingerprint mismatch.");fps.push(row.hashes.actual);
+        if(s===0){q=row.tensors.actual;inputGrades=[...row.grades.actual];}
+        const first=inputGrades.map(g=>g%2===0?g-1:g+1).filter(g=>g>=0&&g<=14),inner=inputGrades.flatMap(g=>[g-2,g+2]).filter(g=>g>=0&&g<=14),outer=inner.map(g=>g%2===0?g+1:g-1).filter(g=>g>=0&&g<=14);
+        const allowed=[inputGrades,inputGrades,first,inner,inner,outer,[...first,...outer],[...first,...outer]][s];
+        need([...row.grades.actual,...row.grades.oracle].every(g=>allowed.includes(g)),"unprojected full stage grade envelope drifted.");
+        if(s===7)k=row.tensors.actual;
+      }
+      tensor(k,1);if(q)tensor(q,2);return {q,k,fingerprints:fps};
+    };
+    const kinetic=(name,metadata,expected)=>{
+      stats.kinetic++;const input=read(name+"_inputs",metadata).tensors;need(eq(input.input,expected),"actual coefficient/probe kinetic input drifted.");
+      const f=fields.indexOf(metadata.field),inputGrades=[[1],[2],[1],[2],[1,5],[1,2,5],[1],[1],[1],[2],[2],[2],[5],[0]][f],adjointGrades=[[2],[1],[2],[1],[2,6],[1,2,6],[2],[2],[2],[1],[1],[1],[2,6],[3]][f];
+      const inGrade=t=>t.every(z=>inputGrades.includes(a62Degree(z.blade))),adjGrade=t=>t.every(z=>adjointGrades.includes(a62Degree(z.blade)));
+      let exterior=[];
+      for(let a=0;a<14;a++){
+        stats.derivatives++;need(eq(input["derivative"+a],input["oracle"+a])&&inGrade(input["derivative"+a])&&inGrade(input["oracle"+a])&&(active.includes(a)||input["derivative"+a].length===0),"full covariant derivative/oracle grade or inactive zero drifted.");
+        const terms=[];for(const z of input["derivative"+a])if(!(z.form&(1<<a))){const sign=a62Degree(z.form&((1<<a)-1))%2?"-1":"1";terms.push({...z,form:z.form|(1<<a),real:mul(z.real,sign),imaginary:mul(z.imaginary,sign)});}exterior=plus(exterior,terms);
+      }
+      const ex=read(name+"_exterior",metadata,["actual"]);need(eq(ex.tensors.actual,exterior)&&inGrade(exterior),"complete exterior derivative/grade reconstruction drifted.");
+      const stage=stages(name,metadata,false);need(stage.fingerprints[0]===ex.hashes.actual,"CAA input/exterior identity drifted.");
+      const legs=read(name+"_adjointLegs",metadata).tensors,adj=read(name+"_adjoint",metadata,["actual"]).tensors.actual;
+      need(eq(adj,plus(legs.first,legs.second))&&adjGrade(adj),"both full trace-adjoint legs or full adjoint grade drifted.");
+      let reverse=[];
+      for(const a of active){const rd=read(name+"_reverse"+a,metadata,["actual"]);need([...rd.grades.actual,...rd.grades.parallel,...rd.grades.simplified].every(g=>adjointGrades.includes(g)),"all full/parallel/simplified reverse grades drifted.");stats.reverseComparisons+=2;reverse=plus(reverse,scale(a64Contract(rd.tensors.actual,a),a>=7?"1":"-1"));}
+      const zero=read(name+"_reverseZero",metadata,[]);need(Object.values(zero.lengths).every(n=>n===0),"inactive covariant reverse slots are nonzero.");stats.reverseComparisons+=20;
+      const result=read(name+"_result",metadata).tensors;
+      need(eq(result.reverse,reverse)&&eq(result.reverseOracle,reverse)&&eq(result.full,plus(stage.k,reverse,"1/2","1/2"))&&adjGrade(result.full),"full codifferential/kinetic mean or response grade drifted.");
+      return {input:expected,forward:stage.k,adjoint:adj,full:result.full};
+    };
+    const feedback=(name,metadata,linear,evaluated=false)=>{
+      stats.nonlinear++;const stage=stages(name,metadata),transpose=read(name+"_transpose",metadata,["actual"]).tensors.actual,result=read(name+"_result",metadata).tensors;
+      const grades=metadata.probe==="central"?[3,4,8]:[1,2,5,6,9,13];
+      need(stage.q.every(z=>[1,2,5,6,10].includes(a62Degree(z.blade)))&&result.nonlinear.every(z=>grades.includes(a62Degree(z.blade)))&&eq(result.nonlinear,plus(stage.k,transpose,"1/3","1/3")),"full Q/gradient grade or KQ plus transpose gradient drifted.");
+      if(linear===undefined)need(eq(result.nonlinear,result.oracle),"full nonlinear oracle drifted.");
+      else need(eq(result.residual,plus(linear,result.nonlinear))&&eq(result.scaledDefect,scale(result.residual,evaluated?"1/907712":"1")),"original full residual/coefficient-shift versus evaluated defect drifted.");
+      return {q:stage.q,k:stage.k,dq:transpose,n:result.nonlinear,residual:result.residual,defect:result.scaledDefect};
+    };
+    const current=(adj,u)=>Array.from({length:14},(_,a)=>mul(a64Pair(a64Contract(adj,a),u),a>=7?"-1":"1"));
+    const divergence=(connection,j)=>sum(connection.flatMap((m,a)=>m[a].map((v,b)=>mul(v,j[b]))));
+    const lambda="1/907712",radius=mul("120",lambda),powers=Array(12).fill("1");for(let n=1;n<12;n++)powers[n]=mul(powers[n-1],lambda);
+    need(Array.isArray(contexts)&&contexts.length===2,"exact two full point contexts missing.");
+    const transports=[];
+    for(let point=0;point<2;point++){
+      const ctx=contexts[point],old=a64Points623[point],connection=p618.evidence.rows[point].frameNomizu,p="p"+point;
+      need(ctx.schemaVersion===1&&ctx.phase===626&&ctx.point===point&&ctx.gamma===1&&ctx.kappa===907712&&ctx.lambda===lambda&&eq(ctx.frame,old.frame)&&eq(ctx.source,old.source),"full context/source/frame/parameter lineage drifted.");tensor(ctx.source,1);
+      const coefficients=[[]];for(let n=1;n<=5;n++){
+        const rows=old.coefficientRows.filter(r=>r.order===n);need(rows.length===3&&eq(rows.map(r=>r.gammaPower),[0,1,2]),"upstream exact gamma menu drifted.");coefficients.push(sumT(rows.map(r=>r.actual)));
+        need(eq(coefficients[n],old.evaluationRows.find(r=>r.order===n&&r.gamma===1).tensor),"actual full gamma1 tensor reconstruction drifted.");
+      }
+      need(eq(ctx.coefficientRows,coefficients.slice(1).map((t,i)=>({order:i+1,norm:norm(t),terms:t.length}))),"full coefficient norm/term census drifted.");
+      const x=a64Linear(coefficients,powers.slice(0,6)),probes=[a64Diag(1,0,0),a64Diag(0,1,0),a64Diag(0,0,1),old.J,a64B,a64C,[a61Term(8,157,"1")],[{...a61Term(1,0,"0"),imaginary:"1"}]],all=[...coefficients.slice(1),x,...probes];
+      need(Array.isArray(ctx.isotropyRows)&&ctx.isotropyRows.length===36&&ctx.isotropyRows.every((r,i)=>r.field===fields[Math.floor(i/6)]&&r.generator===i%6&&eq(r.actual,[])&&eq(r.oracle,[])),"complete connected isotropy evidence drifted.");
+      all.slice(0,6).forEach(t=>need(t.every(z=>(a62Degree(z.form&897)+a62Degree(z.blade&897))%2===0),"disconnected invariant-field reflection drifted."));
+      const cyclicFields=[1,3,5,9,10,11];need(Array.isArray(ctx.cyclicRows)&&ctx.cyclicRows.length===6,"complete cyclic bivector control menu missing.");
+      cyclicFields.forEach((f,i)=>{
+        const terms=[];for(const z of a64Grade(all[f],2)){const a=Math.log2(z.form);if(!(z.blade&(1<<a))){const sign=((a>=7?1:0)+a62Degree(z.blade&((1<<a)-1)))%2?"-1":"1";terms.push({...z,form:0,blade:z.blade|(1<<a),real:mul(z.real,sign),imaginary:mul(z.imaginary,sign)});}}
+        const cyclic=sumT(terms.map(z=>[z]));need(cyclic.length===0&&eq(ctx.cyclicRows[i],{field:fields[f],cyclic}),"full signed cyclic bivector contraction drifted.");
+      });
+      const ks=all.map((t,i)=>kinetic(p+"_kinetic_"+fields[i],{point,field:fields[i]},t));
+      const inputGrades=[[1],[2],[1],[2],[1,5],[1,2,5],[1],[1],[1],[2],[2],[2],[5],[0]],responseGrades=[[2],[1],[2],[1],[2,6],[1,2,6],[2],[2],[2],[1],[1],[1],[2,6],[3]];
+      all.forEach((t,i)=>need(t.every(z=>inputGrades[i].includes(a62Degree(z.blade)))&&ks[i].full.every(z=>responseGrades[i].includes(a62Degree(z.blade)))&&ks[i].adjoint.every(z=>responseGrades[i].includes(a62Degree(z.blade))),"complete field/full-response/adjoint grade envelopes drifted."));
+      for(const key of ["full","forward","adjoint"])need(eq(ks[5][key],a64Linear(ks.slice(0,5).map(k=>k[key]),powers.slice(1,6))),"direct candidate/full coefficient kinetic linearity drifted.");
+      const low=read(p+"_lowResidual",{point,meaning:"unscaled coefficient shift: defect[n+1]=G[n]"}).tensors;
+      need(eq(low.G0,plus(ctx.source,coefficients[1]))&&eq(low.G1,plus(ks[0].full,coefficients[2]))&&low.defect0.length===0&&eq(low.defect1,low.G0)&&eq(low.defect2,low.G1),"original low residual/full shift0..2 drifted.");
+      const residuals=[low.G0,low.G1],polys=Array(11);let evaluatedQ=[],evaluatedDq=[],evaluatedK=[],evaluatedN=[];
+      const transport={};all.forEach((t,i)=>{transport["field_"+fields[i]]=fingerprint(t);transport["H_"+fields[i]]=fingerprint(ks[i].full);});
+      need(Array.isArray(ctx.polynomialRows)&&ctx.polynomialRows.length===9,"all polynomial orders2..10 missing.");
+      for(let n=2;n<=10;n++){
+        const pairs=[];for(let i=1;i<=5;i++)for(let j=1;j<=5;j++)if(i+j===n)pairs.push([i,j]);
+        const linear=sumT([n<=5?ks[n-1].full:[],n<5?coefficients[n+1]:[]]);
+        const row=feedback(p+"_polynomial"+n,{point,residualOrder:n,scaledDefectOrder:n+1,orderedPairs:pairs,meaning:"scaledDefect is the coefficient of lambda^(n+1) in lambda G(lambda), hence equals the full G_n coefficient without an extra lambda0 factor"},linear);
+        residuals.push(row.residual);polys[n]={k:row.k,n:row.n};
+        evaluatedQ=plus(evaluatedQ,row.q,"1",powers[n]);evaluatedDq=plus(evaluatedDq,row.dq,"1",powers[n]);evaluatedK=plus(evaluatedK,row.k,"1",powers[n]);evaluatedN=plus(evaluatedN,row.n,"1",powers[n]);
+        const grades=[...new Set(row.residual.map(z=>a62Degree(z.blade)))].sort((a,b)=>a-b);
+        need(eq(ctx.polynomialRows[n-2],{order:n,orderedPairs:pairs,norm:norm(row.residual),terms:row.residual.length,grades}),"full polynomial metadata/norm/grade census drifted.");
+        transport["KQ_"+n]=fingerprint(row.k);transport["N_"+n]=fingerprint(row.n);
+      }
+      const allowed=[[],[],[],[],[],[2,6],[1,5,9],[2,6],[1,5,9],[2,6],[1,5,9,13]];
+      residuals.forEach((r,n)=>{tensor(r,1);stats.residuals++;need(r.every(t=>allowed[n].includes(a62Degree(t.blade)))&&(n>=5||r.length===0),"complete original G0..10 grade/known-zero evidence drifted.");transport["G_"+n]=fingerprint(r);});
+      const direct=feedback(p+"_direct",{point,lambda,kappa:907712,meaning:"direct evaluated residual G(X); scaledDefect is lambda0 G(X), not a polynomial coefficient"},sumT([ctx.source,ks[5].full,scale(x,"907712")]),true);
+      const evaluatedG=a64Linear(residuals,powers.slice(0,11)),defects=[[],...residuals];stats.defects+=defects.length;
+      need(eq(direct.q,evaluatedQ)&&eq(direct.dq,evaluatedDq)&&eq(direct.k,evaluatedK)&&eq(direct.n,evaluatedN)&&eq(direct.residual,evaluatedG)&&eq(direct.defect,a64Linear(defects,powers)),"independent full direct Q/transpose/K/N/G/defect evaluations drifted.");
+      evaluatedQ=[];evaluatedDq=[];evaluatedK=[];evaluatedN=[];
+      transport.directKQ=fingerprint(direct.k);transport.directN=fingerprint(direct.n);transport.directG=fingerprint(direct.residual);
+      need(Object.keys(transport).length===60&&eq(ctx.transportFingerprints,transport),"all60 full-tensor transport fingerprints drifted.");transports.push(transport);
+      const lipschitz=add(mul(lambda,"51520"),mul(mul(lambda,"5152"),radius)),selfMap=mul(lambda,sum(["60",mul("51520",radius),mul("2576",mul(radius,radius))])),denominator=add("1",mul("-1",lipschitz));
+      need(le("0",denominator)&&denominator!=="0","nonpositive contraction denominator.");
+      const normG=norm(direct.residual),normDefect=norm(direct.defect),error=div(mul(lambda,normG),denominator),taylor=mul(radius,"1/768");
+      need(eq(ctx.certificate,{radius,candidateNorm:norm(x),residualNorm:normG,defectNorm:normDefect,selfMapBound:selfMap,lipschitz,posterioriError:error,taylorError:taylor,certifiedError:le(error,taylor)?error:taylor})&&le(norm(x),radius)&&le(selfMap,mul(radius,"7/8"))&&le(lipschitz,"1/2")&&normDefect===mul(lambda,normG)&&le(normDefect,mul(radius,"1/512"))&&le("0",error),"exact full l1 ball/self-map/Lipschitz/defect/error certificate drifted.");
+      const missing=a64Grade(coefficients[5],5),truncated=plus(residuals[4],missing,"1","-1");
+      need(missing.length===600&&truncated.length===600&&a61Coefficient(truncated,8,157)==="3/4"&&eq(ctx.truncationDecoy,{omittedGrade:5,terms:600,witness:"3/4"}),"nonzero grade5 truncation decoy drifted.");
+      const self=probes.map((u,v)=>feedback(p+"_self_"+fields[v+6],{point,probe:fields[v+6]}));
+      need(Array.isArray(ctx.actionRows)&&ctx.actionRows.length===8,"full original-action direction menu missing.");
+      for(let v=0;v<8;v++){
+        stats.action++;const u=probes[v],cross=feedback(p+"_cross_"+fields[v+6],{point,probe:fields[v+6]}),own=self[v],pair=a64Pair;
+        const original=[pair(x,direct.k),add(pair(u,direct.k),pair(x,cross.k)),add(pair(u,cross.k),pair(x,own.k)),pair(u,own.k)].map(z=>mul(z,"1/3"));
+        const gradients=[pair(u,direct.n),pair(u,cross.n),pair(u,own.n)];stats.cubic+=4;stats.cubicDerivative+=3;
+        need(gradients.every((z,i)=>z===mul(String(i+1),original[i+1]))&&original[3]===["-16","-336","0","0","0","0","0","0"][v]&&pair(u,u)===["-4","-9","-1","9","-1","-9","1","1"][v],"all original cubic coefficients/full derivative/signed probe controls drifted.");
+        const source=pair(u,ctx.source),kinetic=mul(add(pair(u,ks[5].forward),pair(x,ks[v+6].forward)),"1/2"),mass=mul("907712",pair(u,x)),j=current(ks[5].adjoint,u),d=divergence(connection,j),local=sum([source,kinetic,original[1],mass]),euler=pair(u,direct.residual);stats.green++;
+        need(eq(ctx.actionRows[v],{probe:fields[v+6],signedNorm:pair(u,u),originalCubic:original,derivativePairings:gradients,source,kinetic,cubic:original[1],mass,localTotal:local,eulerPairing:euler,current:j,divergence:d})&&local===add(euler,mul(d,"1/2")),"full original first variation/current/divergence/Green evidence drifted.");
+      }
+      const off=feedback(p+"_offRoot",{point,field:"B",probe:"PHGamma",gamma:1,kappa:0}),pair=a64Pair,b=probes[4],u=probes[0],offG=sumT([ctx.source,ks[10].full,self[4].n]);
+      const source=pair(u,ctx.source),offKinetic=mul(add(pair(u,ks[10].forward),pair(b,ks[6].forward)),"1/2"),cubic=mul(add(pair(u,self[4].k),pair(b,off.k)),"1/3"),j=current(ks[10].adjoint,u),d=divergence(connection,j),restricted=[pair(b,ctx.source),mul(pair(b,ks[10].forward),"1/2"),mul(pair(b,self[4].k),"1/3")];stats.offRoot++;
+      need(source==="21"&&offKinetic==="5"&&cubic==="-4"&&pair(u,offG)==="20"&&d==="4"&&offG.length>0&&restricted.every(z=>z==="0")&&eq(ctx.offRoot,{source,kinetic:offKinetic,cubic,localTotal:"22",eulerPairing:"20",current:j,divergence:d,restricted}),"off-root original22/Euler20/divergence4 versus restricted zero drifted.");
+    }
+    need(eq(transports[0],transports[1]),"all60 complete transported tensors drifted.");stats.transport=60;
+    need(seen.size===plan.length&&stats.chunks===3914&&stats.kinetic===28&&stats.stages===656&&stats.nonlinear===54&&stats.derivatives===392&&stats.reverseComparisons===784&&stats.residuals===22&&stats.defects===24&&stats.action===16&&stats.cubic===64&&stats.cubicDerivative===48&&stats.green===16&&stats.offRoot===2,"complete retained reconstruction census drifted.");
+    return {stats,paths:plan.map(p=>p.Path),transportFingerprints:transports};
+  };
+  const verifyA67RetainedEvidence = (contractHash, firstOutputHash) => {
+    const root="studies/phase626_fixed_cubic_full_stationary_residual_certificate_001";
+    const need=(ok,label)=>{assert(ok,"Phase626 "+label);if(!ok)throw new Error("Phase626 malformed frozen boundary: "+label);};
+    need(/^[0-9a-f]{64}$/.test(contractHash)&&/^[0-9a-f]{64}$/.test(firstOutputHash),"requires actual reviewed contract and FIRST output hashes.");
+    const pack=a64Common(626,root,"fixed_cubic_full_stationary_residual_certificate","Phase626FixedCubicFullStationaryResidualCertificate.csproj",contractHash,67,9,46,undefined);
+    const p=pack.p,e=p.evidence,fx=pack.contract.fixtures,eq=a61Equal;
+    need([pack.fullPath,pack.summaryPath].every(path=>sha256File(path)===firstOutputHash)&&pack.bytes.length<=16777216,"immutable FIRST full/summary pins or16MiB ceiling drifted.");
+    need(p.phaseId==="phase626-fixed-cubic-full-stationary-residual-certificate"&&p.contractId==="phase626-a67-fixed-cubic-full-stationary-residual-certificate-v1"&&p.verdictKind==="fixed-cubic-full-residual-certified-conditional-stationary-branch"&&e.resourceFailure===null&&["knownAnswerPassed","geometryPassed","operatorPassed","polynomialPassed","certificatePassed","actionPassed","domainPassed","controlsPassed","countsPassed","resourcesPassed","shardSetPassed"].every(k=>e[k]===true),"identity/full controls or preserved failure status drifted.");
+    need(eq(p.authorityFirewalls,p624.authorityFirewalls)&&eq(pack.contract.authorityFirewalls,p624Retained.pack.contract.authorityFirewalls)&&Object.keys(e.scope).length===16&&Object.values(e.scope).every(v=>v===false)&&eq(e.scope,fx.scope),"all14 exact false flags/zero promotion/conditional scope drifted.");
+    // The preceding A65 verifier enumerates and hashes the actual726 live core
+    // files; A67 must bind that identical manifest, not merely repeat a flag.
+    need(p624.coreSourceTreeValid===true&&p624.coreFileCount===726&&fx.coreFileCount===726&&fx.exactTolerance===0&&fx.bindingCount===67&&fx.compiledFileCount===9&&fx.dimension===14&&fx.fullDiracModuleDimension===128&&fx.chiralHalfDimension===64&&fx.normalizedTraceDenominator===128&&eq(fx.signature,Array.from({length:14},(_,i)=>i<7?1:-1))&&eq(fx.points,[0,1]),"complete real-domain/core/compiled schema drifted.");
+    const fields=["S1","S2","S3","S4","S5","X","PHGamma","PTGamma","PtrGamma","J","B","C","W5","central"];
+    need(eq(fx.fields,fields)&&eq(fx.probeNorms,["-4","-9","-1","9","-1","-9","1","1"])&&eq(fx.cubicZ3,["-16","-336","0","0","0","0","0","0"])&&eq(fx.residualOrders,Array.from({length:11},(_,n)=>n))&&eq(fx.scaledDefectOrders,Array.from({length:12},(_,n)=>n))&&eq(fx.zeroResidualOrders,[0,1,2,3,4]),"full field/probe/residual/defect menus drifted.");
+    need(fx.parameters.gamma===1&&fx.parameters.kappa===907712&&fx.parameters.lambda==="1/907712"&&fx.parameters.analyticDisk==="1/226928"&&fx.parameters.sourceNorm===60&&fx.parameters.hBound===51520&&fx.parameters.nonlinearBound===2576&&a62Text(a62Rat(fx.parameters.radius))===a64MulText("120","1/907712"),"source-fixed cubic/diagnostic parameter and universal majorants drifted.");
+    const counts={arithmeticControls:4,wordCases:507904,hodgeCases:16384,fullRealDomainMasks:16384,centralDomainControls:2,tensorChecks:2452,gradeEnvelopeChecks:3572,signedPairings:510,transportFingerprints:120,forwardStageEqualities:656,covariantDerivativeEqualities:392,parallelAdjointEqualities:784,nonlinearRows:54,selfProducts:18,selfTransposes:18,crossProducts:36,crossTransposes:36,greenConnectionSlots:3528,points:2,connectionEntries:5488,sourceLineageChecks:2,upstreamCoefficientRows:30,gammaOneReconstructionChecks:10,reflectionMatrixEntries:392,isotropyFieldChecks:72,disconnectedFieldChecks:12,kineticRows:28,orderedPolynomialProducts:50,orderedPolynomialTransposes:50,residualCoefficients:22,zeroResidualCoefficients:10,directEvaluationEqualities:8,defectCoefficientShifts:22,directDefectEquality:2,certificateRows:2,gradeFiveTruncationDecoys:2,originalCubicCoefficients:64,originalCubicDerivativeEqualities:48,probeNormControls:16,cubicThirdOrderControls:16,originalFirstVariationGreenEqualities:16,offRootDecoys:2,pointContexts:2,transportComparisons:60,evidenceChunks:3914,cyclicBivectorChecks:12};
+    need(Object.keys(counts).length===46&&Object.keys(e.counts).length===46&&Object.keys(fx.expectedCounts).length===46&&Object.entries(counts).every(([k,v])=>e.counts[k]===v&&fx.expectedCounts[k]===v),"independently derived46-field exact census drifted.");
+    const calls={kineticCalls:28,derivativeSlots:392,forwardCalls:164,adjointCalls:420,transposeCalls:2624,wordTransposeCalls:104,naiveProductCalls:350};
+    need(Object.keys(fx.resourceCounts).length===7&&Object.entries(calls).every(([k,v])=>e[k]===v&&fx.resourceCounts[k]===v),"all seven literal operator-call/loop censuses drifted.");
+    const resources={maximumCoefficientProducts:500000000,maximumSlotProducts:200000000,maximumTransposePairVisits:300000000,maximumWordTransposePairVisits:250000000,maximumNaiveProductPairVisits:300000000,maximumTensorSupport:600000,maximumTensorRationalCharacters:256,maximumScalarRationalCharacters:512,maximumMeasuredManagedBytes:8589934592};
+    need(eq(fx.resources,resources),"prospective operation/support/rational/measured-memory caps drifted.");
+    for(const [name,cap] of [["trackedCoefficientProducts",resources.maximumCoefficientProducts],["trackedSlotProducts",resources.maximumSlotProducts],["trackedTransposePairVisits",resources.maximumTransposePairVisits],["trackedWordTransposePairVisits",resources.maximumWordTransposePairVisits],["trackedNaiveProductPairVisits",resources.maximumNaiveProductPairVisits],["largestTensor",resources.maximumTensorSupport],["largestRetainedTensor",resources.maximumTensorSupport]])need(Number.isSafeInteger(e[name])&&e[name]>0&&e[name]<=cap,"retained operation/support ceiling drifted: "+name);
+    need(e.managedMemoryGuardPassed===true&&e.managedMemoryCeilingBytes===resources.maximumMeasuredManagedBytes&&!Object.hasOwn(e,"maximumMeasuredManagedBytes"),"deterministic memory-guard status/cap or forbidden sampled telemetry drifted.");
+    const contextPaths=[0,1].map(point=>root+"/output/point"+point+"_context.json"),storage={schema:"expanded-rational-tensor-chunks-v1",planBinding:"chunk-plan",chunks:3914,pointContexts:contextPaths,maximumRecordsPerChunk:100000,maximumMetadataBytes:1048576,maximumChunkBytes:67108864,maximumAggregateChunkBytes:2147483648,maximumContextBytes:1048576,maximumManifestBytes:16777216,aggregateGuardGuaranteesSuccess:false};
+    need(eq(fx.storage,storage)&&Array.isArray(e.contexts)&&e.contexts.length===2&&Array.isArray(e.pointSummaries)&&e.pointSummaries.length===2,"complete fixed context/storage schema drifted.");
+    let maximumScalar=1;const scalarScan=value=>{if(typeof value==="string"&&/^-?\d+(\/\d+)?$/.test(value)){need(a64Rat(value,512),"noncanonical or oversized context scalar rational.");maximumScalar=Math.max(maximumScalar,value.length);}else if(Array.isArray(value))value.forEach(scalarScan);else if(value&&typeof value==="object")Object.values(value).forEach(scalarScan);};
+    const contexts=e.contexts.map((pin,point)=>{
+      need(eq(Object.keys(pin),["point","path","sha256","bytes"])&&pin.point===point&&pin.path===contextPaths[point]&&/^[0-9a-f]{64}$/.test(pin.sha256)&&Number.isSafeInteger(pin.bytes)&&pin.bytes>0&&pin.bytes<=1048576,"exact context pin/order/byte cap drifted.");
+      const {bytes,value}=a64Read(pin.path,undefined,1048576);need(bytes.length===pin.bytes&&sha256File(pin.path)===pin.sha256&&eq(value,e.pointSummaries[point]),"complete context hash/bytes/manifest mirror drifted.");scalarScan(value);return value;
+    });
+    const planPath=root+"/preregistration/chunk_plan_v1.json";
+    need(pack.contract.exactBindings.filter(b=>b.id==="chunk-plan"&&b.path===planPath&&b.sha256===sha256File(planPath)).length===1,"frozen whole chunk-plan binding drifted.");
+    const plan=a64Read(planPath,undefined,16777216).value,result=verifyA67RetainedCore(contexts,e.shards,plan),s=result.stats;
+    need(eq(a64Files(root+"/output"),[pack.fullPath,pack.summaryPath,...contextPaths,...result.paths].sort()),"full3918-file output set or extraneous path drifted.");
+    need(e.totalShardBytes===s.bytes&&e.maximumShardBytes===s.largestChunkBytes&&e.retainedRecords===s.records&&e.largestRetainedTensor===s.largestTensor&&e.maximumTensorRationalCharacters===s.maximumTensorRationalCharacters&&e.maximumScalarRationalCharacters===maximumScalar&&s.maximumTensorRationalCharacters<=256&&maximumScalar<=512,"actual full retained byte/support/rational accounting drifted.");
+    return {pack,retained:result,maximumScalarRationalCharacters:maximumScalar};
+  };
+  // End A67 retained-evidence core.
+  const p626Retained = verifyA67RetainedEvidence("882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308", "b19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09");
+  const p626 = p626Retained.pack.p;
   const a46CoreManifest = requireFile(`${p586Root}/preregistration/core_source_manifest_v1.json`);
   const a46CorePaths = [];
   const a46WalkCore = dir => {
@@ -8684,6 +8907,9 @@ if (sourceLineageMissing) {
   assert(p101a23?.fullAlgebraicKappaJetObstructionAudit?.status === p625.verdictKind && ["auditPassed","contractValid","exactBindingsValid","coreSourceTreeValid","knownAnswerPassed","controlsPassed"].every(k => p101a23.fullAlgebraicKappaJetObstructionAudit[k] === true) && p101a23.fullAlgebraicKappaJetObstructionAudit.promotedPhysicalMassClaimCount === 0, "Phase101 Phase625 mirror drifted.");
   const a66ChecklistRows = phase202.checklist.filter(row => row.id === "full-algebraic-kappa-jet-obstruction-audit");
   assert(a66ChecklistRows.length === 1 && new Set(a66ChecklistRows.map(row => row.id)).size === 1 && a66ChecklistRows.every(row => row.status === "passed"), "Phase202 A66 unique passed checklist row drifted.");
+  assert(p101a23?.fixedCubicFullStationaryResidualCertificate?.status === p626.verdictKind && ["auditPassed","contractValid","exactBindingsValid","coreSourceTreeValid","knownAnswerPassed","controlsPassed"].every(k => p101a23.fixedCubicFullStationaryResidualCertificate[k] === true) && p101a23.fixedCubicFullStationaryResidualCertificate.promotedPhysicalMassClaimCount === 0, "Phase101 Phase626 mirror drifted.");
+  const a67ChecklistRows = phase202.checklist.filter(row => row.id === "fixed-cubic-full-stationary-residual-certificate");
+  assert(a67ChecklistRows.length === 1 && new Set(a67ChecklistRows.map(row => row.id)).size === 1 && a67ChecklistRows.every(row => row.status === "passed"), "Phase202 A67 unique passed checklist row drifted.");
   const a63ChecklistRows = phase202.checklist.filter(row => a63ChecklistIds.has(row.id));
   assert(a63ChecklistRows.length === 2 && new Set(a63ChecklistRows.map(row => row.id)).size === 2 && a63ChecklistRows.every(row => row.status === "passed"), "Phase202 A63 complete two-row checklist drifted.");
   const a62ChecklistIds = new Set(["homogeneous-covariant-connection-audit","invariant-bivector-nonlinear-feedback-audit"]);
@@ -8716,7 +8942,7 @@ if (sourceLineageMissing) {
   const a52a53ChecklistIds = new Set(["continuum-action-descent-ward-audit", "source-registered-residual-kernel-audit"]);
   const a52a53ChecklistRows = (phase202.checklist ?? []).filter(row => a52a53ChecklistIds.has(row.id));
   assert(a52a53ChecklistRows.length === 2 && a52a53ChecklistRows.every(row => row.status === "passed"), "Phase202 A52-A53 checklist drifted.");
-  assert(phase202.terminalStatus === "boson-objective-completion-audit-incomplete" && phase202.objectiveAchieved === false && phase202.checklistPassedCount === 405 && phase202.checklistFailedCount === 3 && a17ChecklistRows.length === 3 && a17ChecklistRows.every(row => row.status === "passed") && a18ChecklistRows.length === 3 && a18ChecklistRows.every(row => row.status === "passed") && a19ChecklistRows.length === 4 && a19ChecklistRows.every(row => row.status === "passed") && a20ChecklistRows.length === 3 && a20ChecklistRows.every(row => row.status === "passed") && a21ChecklistRows.length === 3 && a21ChecklistRows.every(row => row.status === "passed") && a22ChecklistRows.length === 3 && a22ChecklistRows.every(row => row.status === "passed") && a23ChecklistRows.length === 3 && a23ChecklistRows.every(row => row.status === "passed") && a24ChecklistRows.length === 1 && a24ChecklistRows.every(row => row.status === "passed") && a25ChecklistRows.length === 1 && a25ChecklistRows.every(row => row.status === "passed") && a26ChecklistRows.length === 1 && a26ChecklistRows.every(row => row.status === "passed") && a27ChecklistRows.length === 3 && a27ChecklistRows.every(row => row.status === "passed") && a28ChecklistRows.length === 3 && a28ChecklistRows.every(row => row.status === "passed") && a29ChecklistRows.length === 2 && a29ChecklistRows.every(row => row.status === "passed") && a30ChecklistRows.length === 4 && a30ChecklistRows.every(row => row.status === "passed") && a31ChecklistRows.length === 2 && a31ChecklistRows.every(row => row.status === "passed") && a32ChecklistRows.length === 2 && a32ChecklistRows.every(row => row.status === "passed") && a33ChecklistRows.length === 2 && a33ChecklistRows.every(row => row.status === "passed") && a34ChecklistRows.length === 3 && a34ChecklistRows.every(row => row.status === "passed") && a35ChecklistRows.length === 3 && a35ChecklistRows.every(row => row.status === "passed") && a36ChecklistRows.length === 3 && a36ChecklistRows.every(row => row.status === "passed") && a37ChecklistRows.length === 1 && a37ChecklistRows.every(row => row.status === "passed") && a38ChecklistRows.length === 1 && a38ChecklistRows.every(row => row.status === "passed") && a39ChecklistRows.length === 1 && a39ChecklistRows.every(row => row.status === "passed") && a40ChecklistRows.length === 1 && a40ChecklistRows.every(row => row.status === "passed") && a41ChecklistRows.length === 1 && a41ChecklistRows.every(row => row.status === "passed") && a42ChecklistRows.length === 3 && a42ChecklistRows.every(row => row.status === "passed") && a60ChecklistRows.length === 3 && a60ChecklistRows.every(row => row.status === "passed") && a61ChecklistRows.length === 2 && a61ChecklistRows.every(row => row.status === "passed") && a62ChecklistRows.length === 2 && a62ChecklistRows.every(row => row.status === "passed") && a63ChecklistRows.length === 2 && a63ChecklistRows.every(row => row.status === "passed") && a64ChecklistRows.length === 2 && new Set(a64ChecklistRows.map(row => row.id)).size === 2 && a64ChecklistRows.every(row => row.status === "passed") && a65ChecklistRows.length === 1 && new Set(a65ChecklistRows.map(row => row.id)).size === 1 && a65ChecklistRows.every(row => row.status === "passed") && a66ChecklistRows.length === 1 && new Set(a66ChecklistRows.map(row => row.id)).size === 1 && a66ChecklistRows.every(row => row.status === "passed"), "Phase202 A17-A66 checklist or 405/3 state drifted.");
+  assert(phase202.terminalStatus === "boson-objective-completion-audit-incomplete" && phase202.objectiveAchieved === false && phase202.checklistPassedCount === 406 && phase202.checklistFailedCount === 3 && a17ChecklistRows.length === 3 && a17ChecklistRows.every(row => row.status === "passed") && a18ChecklistRows.length === 3 && a18ChecklistRows.every(row => row.status === "passed") && a19ChecklistRows.length === 4 && a19ChecklistRows.every(row => row.status === "passed") && a20ChecklistRows.length === 3 && a20ChecklistRows.every(row => row.status === "passed") && a21ChecklistRows.length === 3 && a21ChecklistRows.every(row => row.status === "passed") && a22ChecklistRows.length === 3 && a22ChecklistRows.every(row => row.status === "passed") && a23ChecklistRows.length === 3 && a23ChecklistRows.every(row => row.status === "passed") && a24ChecklistRows.length === 1 && a24ChecklistRows.every(row => row.status === "passed") && a25ChecklistRows.length === 1 && a25ChecklistRows.every(row => row.status === "passed") && a26ChecklistRows.length === 1 && a26ChecklistRows.every(row => row.status === "passed") && a27ChecklistRows.length === 3 && a27ChecklistRows.every(row => row.status === "passed") && a28ChecklistRows.length === 3 && a28ChecklistRows.every(row => row.status === "passed") && a29ChecklistRows.length === 2 && a29ChecklistRows.every(row => row.status === "passed") && a30ChecklistRows.length === 4 && a30ChecklistRows.every(row => row.status === "passed") && a31ChecklistRows.length === 2 && a31ChecklistRows.every(row => row.status === "passed") && a32ChecklistRows.length === 2 && a32ChecklistRows.every(row => row.status === "passed") && a33ChecklistRows.length === 2 && a33ChecklistRows.every(row => row.status === "passed") && a34ChecklistRows.length === 3 && a34ChecklistRows.every(row => row.status === "passed") && a35ChecklistRows.length === 3 && a35ChecklistRows.every(row => row.status === "passed") && a36ChecklistRows.length === 3 && a36ChecklistRows.every(row => row.status === "passed") && a37ChecklistRows.length === 1 && a37ChecklistRows.every(row => row.status === "passed") && a38ChecklistRows.length === 1 && a38ChecklistRows.every(row => row.status === "passed") && a39ChecklistRows.length === 1 && a39ChecklistRows.every(row => row.status === "passed") && a40ChecklistRows.length === 1 && a40ChecklistRows.every(row => row.status === "passed") && a41ChecklistRows.length === 1 && a41ChecklistRows.every(row => row.status === "passed") && a42ChecklistRows.length === 3 && a42ChecklistRows.every(row => row.status === "passed") && a60ChecklistRows.length === 3 && a60ChecklistRows.every(row => row.status === "passed") && a61ChecklistRows.length === 2 && a61ChecklistRows.every(row => row.status === "passed") && a62ChecklistRows.length === 2 && a62ChecklistRows.every(row => row.status === "passed") && a63ChecklistRows.length === 2 && a63ChecklistRows.every(row => row.status === "passed") && a64ChecklistRows.length === 2 && new Set(a64ChecklistRows.map(row => row.id)).size === 2 && a64ChecklistRows.every(row => row.status === "passed") && a65ChecklistRows.length === 1 && new Set(a65ChecklistRows.map(row => row.id)).size === 1 && a65ChecklistRows.every(row => row.status === "passed") && a66ChecklistRows.length === 1 && new Set(a66ChecklistRows.map(row => row.id)).size === 1 && a66ChecklistRows.every(row => row.status === "passed") && a67ChecklistRows.length === 1 && new Set(a67ChecklistRows.map(row => row.id)).size === 1 && a67ChecklistRows.every(row => row.status === "passed"), "Phase202 A17-A67 checklist or 406/3 state drifted.");
   for (const phase of [phase508, phase509, phase510]) {
     assert(phase.a14BoundaryHeld === true && phase.targetBlindConstruction === true && phase.phase481PackCreated === false && phase.phase481PackMutated === false && phase.samplingOrReprocessingRun === false && phase.hmcRun === false && phase.benchmarkRun === false, "A14 phase execution or pack firewall drifted.");
     assert(phase.productionAuthorized === false && phase.phase480Satisfied === false && phase.phase458G3Satisfied === false && phase.phase458G5Satisfied === false && phase.o4Discharged === false && phase.sourceContractApplicationAllowed === false && phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false && phase.promotedPhysicalMassClaimCount === 0, "A14 phase authority or zero-claim invariant drifted.");

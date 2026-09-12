@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p1_kinetic_PTGamma_stage5","degree":1,"forms":[128,256,512,1024,2048,4096,8192],"metadata":{"point":1,"field":"PTGamma"},"tensors":{"actual":[],"oracle":[]}}

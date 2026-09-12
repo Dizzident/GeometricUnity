@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p0_kinetic_W5_stage3","degree":14,"forms":[16383],"metadata":{"point":0,"field":"W5"},"tensors":{"actual":[{"form":16383,"blade":261,"k0":0,"k1":0,"real":"0","imaginary":"-3/4"}],"oracle":[{"form":16383,"blade":261,"k0":0,"k1":0,"real":"0","imaginary":"-3/4"}]}}

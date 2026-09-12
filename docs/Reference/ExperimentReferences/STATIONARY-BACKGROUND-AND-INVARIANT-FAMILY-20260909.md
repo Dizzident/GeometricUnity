@@ -3058,3 +3058,280 @@ Euler kappa=kappa1 or2kappa1 respectively; the source-normalization issue
 must remain explicit. Canonical CAA selection, observed fields, boundary
 conditions, poles and GeV units are also unresolved. A successful residual
 certificate cannot silently discharge any of those source-lineage gaps.
+
+### A67 prospective full residual and downstream fluctuation relevance
+
+A66 is checkpointed at f17420546b8d5e41b79648faf1278460cb1e871b with
+final Release/integrity validation and unchanged FIRST evidence. A67/626
+is now allocated to the fixed-cubic full-residual certificate above; no
+new coefficient, norm or original-equation calculation has executed.
+
+The Cauchy argument uses a genuine COMPLEX norm after complexifying the
+real H-antiHermitian basis: sum_I |z_I|, where z_I is the complex scalar
+coefficient of that real basis vector. It is not the non-complex-homogeneous
+quantity sum_I(|Re z_I|+|Im z_I|). On the physical real slice each Clifford
+blade has its fixed real or imaginary H-antiHermitian phase; the executable
+sum of absolute stored real and imaginary components therefore equals the
+real restriction of this complex norm. The same primitive absolute-value
+majorants apply to the complexified maps. This identification makes the
+Cauchy tail R/768 and defect R/512 consistent without an invented norm
+conversion factor. Use circles of radius delta'<delta and take the limit
+to justify the boundary coefficient estimate if needed.
+
+Implementation must read the actual fifteen(order,gammaPower) coefficient
+tensors from623 at each point and sum each order's gamma powers at gamma1.
+Expected forecast rows are not a replacement for those tensors. Retain
+the complete original G0..10, scaled defect0..11, and an independent direct
+literal G(X) evaluation. Raw products and reverse-transpose loops have
+larger envelopes than625. Generic adjoint-pair work is not counted by the
+existing Fourier.CoefficientProducts field, so the prospective resource
+proof must account for that work explicitly. Fixed per-stage or per-form
+expanded shards and streamed live intermediates are legitimate pre-run
+designs; adaptive splitting after observing an output is not.
+
+The exact nearby branch already has conditional joint-stationarity
+consequences:618 supplies its full connection equation,620 supplies
+epsilon descent for compact-interior variations, and621's analytical
+fixed-domain theorem covers every smooth x-independent native T(y),
+including its generally nonzero dT. Repeating that theorem as another
+metric Euler audit would not resolve a new question. Those premises do
+NOT cover a moving observer, an h-dependent fibre cutoff, unrestricted
+upstairs metric variations, or unspecified global boundary conditions.
+
+A meaningful subsequent calculation is the COMPLETE mixed metric-native-
+field second variation at this fixed-cubic background. A prospective
+design would use621's700 metric germs and retain full tensors multiplying
+a native variation U and its14 coordinate first derivatives. It must
+include the actual homogeneous dP5(y), the nonzero kappa0 mass term and
+all Clifford grades, comparing both differentiation orders plus their
+Green identity. The constant-coordinate-field helper from621 is not
+directly the general native-field calculation. Nor can one import the
+kappa0=0 even-BC parity zeros: the new background has both parities and
+kappa0=907712. This successor remains HAND-ONLY and unallocated.
+
+The source's highest-derivative witness supplies a particularly useful
+control independent of the background approximation. At621's noncoincident
+point, the h00=x1^3/6 germ paired with native U=dy01 gamma0 has original
+source-action coefficient+3/16. This is a term of total differential order3
+in the mixed block. Kinetic terms have total order at most2 and the cubic
+and mass terms at most1, so they cannot cancel that principal coefficient.
+An actual future implementation must reconstruct it with the complete
+metric/spin/CAA variation, not substitute the hand number. A nonzero mixed
+block tests whether a connection-only fluctuation analysis omits metric
+constraints; it is not by itself a propagator pole or a boson mass.
+
+There is also a rigorous hand error-transfer bound. If the residual
+certificate gives ||S*-P5||<=epsilon in the auxiliary norm, then at gamma1
+
+    ||(DG_S* - DG_P5)U|| <=2cN epsilon ||U|| =5152epsilon||U||.
+
+Only the local nonlinear term changes; H and kappa I are identical.
+The a priori epsilon<=R/768 gives5152epsilon<=805/907712. This does not
+bound the unbounded differential H itself or select a physical Hilbert
+norm. For a mixed-block certificate, additionally bound the finite metric-
+jet maps and the homogeneous first-jet error
+nabla(S*-P5)=rho(Lambda)(S*-P5). A field error is not a generic PDE
+derivative estimate. At the nonstationary polynomial, Ward identities must
+retain the gradient times field-dependent Ward acceleration. Contraction
+already guarantees invertibility of the FULL invariant linearization at
+this large kappa; another invariant zero-mode search would add little.
+Physical poles still require an operator domain, observer/time and
+boundary specification, as well as the unresolved source normalization.
+
+### A67 hand-only stabilizer challenge: three different symmetry questions
+
+The following are deductions from the passed618 contraction and623 leading
+coefficients, independently hand-reviewed before626 FIRST. They are not a
+new phase result, an observed-field extraction, or a gauge-boson mass claim.
+Keep separate the full14-direction pointwise internal commutant, its
+four-direction observer pullback, and the source's compensated differential
+gauge transformations. Neither algebraic commutant is automatically the
+physical unbroken gauge group.
+
+First, the conditional full stationary branch at lambda=1/q, q=907712,
+has only scalar pointwise internal commutant when ALL14 covector slots are
+retained. Write S*=lambda S1+E, where S1_a=v_a gamma_a and the weights are
+21/4 on H and the trace direction,15/4 on the nine traceless directions.
+For a Clifford element X remove its scalar part to obtain Xnc. In the
+auxiliary coefficient l1 norm,
+
+    sum_a ||[v_a gamma_a,Xnc]|| >=2 min_a(v_a) ||Xnc||.
+
+For each fixed a, multiplication by gamma_a is a signed permutation of
+blade coefficients. Every nonempty blade anticommutes with at least one
+of the14 gamma_a, including the top blade because14 is even. Thus no
+cross-blade cancellation invalidates this lower bound. The perturbation
+contributes at most2||E||||Xnc||. With a=60,h=51520,c=2576 and
+
+    s=h/q+120c/q^2,
+    ||S*|| <=60lambda/(1-s),
+    ||E||/lambda <=60s/(1-s),
+
+the sufficient strict inequality ||E||/lambda<15/4 is exactly17s<1.
+It follows without an uncomputed norm: q-17h=31872 and
+17*120c <31872q. Therefore [S*_a,X]=0 for every a forces Xnc=0.
+On the real H-antiHermitian domain the remaining scalar line is iI.
+This proves only fixed-frame pointwise internal irreducibility under the
+conditional action/contraction premises, not loss of gauge redundancy.
+
+Second, the fixed flat observer pullback retains only the four horizontal
+slots. All45 bivectors of N=E directsum Rt commute with its LEADING
+coefficient S1_u=(21/4)gamma(u), so the preceding14-slot theorem cannot
+simply be reused after pullback. However those normal rotations do not
+admit a formal internal commutant deformation with nonzero leading
+normal-bivector generator. Allow an ARBITRARY full-Clifford correction
+X(lambda)=X0+lambda X1+..., with X0 a normal bivector and
+S2_u=(3/2)J_u. The order-lambda^2 equation is
+
+    [(21/4)gamma(u),X1]+(3/2)[J_u,X0]=0  for every horizontal u.
+
+The second term is grade2 in H wedge N. A vector commutator maps even
+grade k to k-1 and odd grade k to k+1; hence only the grade1 part of X1
+can cancel it. Its horizontal component must vanish, leaving one common
+normal vector w. All other Clifford grades are allowed but cannot help
+this grade2 equation. Let Lambda=rho(X0) be the metric-skew endomorphism
+of N. Using623's J_u=-4 Spin(U_u), rho(Spin M)=M, and
+
+    C0(u,v)=-(u tensor vflat+v tensor uflat)/4+gH(u,v)I/8,
+    U_u v=C0(u,v), U_u A=Au/2, U_u t=0,
+
+the H-to-N matrix block of that equation becomes
+
+    -21 gH(u,v)w+6 Lambda C0(u,v)=0.
+
+Indeed rho(gamma(u) wedgeCl gamma(w))v=-2gH(u,v)w for v in H.
+Taking the signature-weighted horizontal trace gives w=0, since
+sum_u sigma_u C0(u,u)=0 but sum_u sigma_u gH(u,u)=4.
+The C0(u,v) span the full nondegenerate nine-dimensional E, so Lambda
+annihilates E. Metric skewness on N=E orthogonal-directsum Rt then gives
+Lambda t in Rt and gN(Lambda t,t)=0; the trace line is nonnull, forcing
+Lambda t=0. Thus Lambda=0 and X0=0, a contradiction to the proposed
+nonzero leading normal rotation. This is a FORMAL fixed-observer internal
+commutant obstruction, not a measured exact kernel at finite lambda.
+It also does not classify leading generators that mix normal bivectors
+with other Clifford grades.
+
+The distinction is source-relevant. Local primary GU-DRAFT-2021-TEXT.txt
+lines1824-1844, equations6.6-6.9, use an inhomogeneously compensated
+stabilizer; lines2428-2455, equations10.6-10.7, include both epsilon and
+the covariant derivative of the gauge parameter. Lines2805-2861,
+section11.4 and equations11.7-11.10, define tangent/normal decomposition
+AFTER observer pullback. They identify the horizontal vector-valued
+channel with cosmological/Dirac-mass structure, not a selected Higgs
+vacuum. These statements do not identify a simple [S,X]=0 kernel with
+the photon/color sector. The draft itself warns about conventions before
+section6.2;620's audited descent fixes the conventions used in our work.
+
+A useful future falsifier would independently reconstruct the pulled-back
+coefficient equation allowing all grades of X1, then test the actual
+compensated Ward map or differential stabilizer D_A eta=0 and its curvature
+integrability. It must keep epsilon, frame/observer transformations and
+boundary conditions explicit. This is a hand-only lead, not permission to
+allocate627 or execute another kernel/eigenspectrum calculation.626's full
+fixed-cubic residual certificate remains the immediate priority.
+
+### A67 executed full-residual certificate and next mixed-block test
+
+Unchanged frozen FIRST626 Release session38048 passed. Contract SHA
+882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308;
+full/summary SHA
+b19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09.
+Independent full retained replay38507 passed11176773 assertions over all
+3914 chunks and two contexts; all67 inputs and726 live core files match.
+Initial replay3812 exposed only a JavaScript helper-shadowing error, fixed
+in the verifier without editing any scientific input, code or output.
+
+The complete original residual G0..4 is zero; G5..10 term counts at both
+points are2065,614,1653,614,2193,2080, with grade unions[2,6],[1,5],
+[2,6],[1,5],[2,6],[1,5,9]. All higher grades were retained and independently
+compared. Absence of the permitted grade13 here is not a grade13 theorem.
+The direct literal and full polynomial residual agree exactly. The checked
+ball and contraction hypotheses certify
+
+    ||S*-P5|| <=
+    187031043155169336808079187600453282921 /
+    10404029315299191495351705759193144686118652855489848424722539216896
+    approximately1.7976789327202202e-29.
+
+This is much smaller than the prospective Taylor5/29046784, but remains
+an auxiliary coefficient-l1 error for the conditional fixed-cubic branch.
+It neither makes P5 an exact root nor selects a physical vacuum, coupling,
+observer, operator domain, pole or unit. The hand bound5152epsilon for
+linearization-error transfer applies with this certified epsilon; it is
+not a bound on the differential operator H in a physical Hilbert norm.
+
+MAIN's follow-up hand challenge of621's MetricVariation/ActionVariation
+confirms why the proposed mixed-block test is substantive. At the pure
+third germ h00=x1^3/6 evaluated at x=0, the shear, metric and first metric
+variation jets, connection variation, frame/solder/Hodge variations and
+spin-reference variation vanish. The CURVATURE variation does not vanish;
+it supplies the source term. Thus the complete mixed density with native
+U=dy01 gamma0 at point1 has coefficient+3/16 regardless of the background
+P5 or S*: kinetic, cubic and mass contributions vanish at that germ.
+This follows from the existing exact621 source anchor plus derivative
+order, not a new phase execution. A future full calculation must still
+reconstruct the coefficient rather than insert it as computed evidence.
+
+Base integration by parts cannot erase that operator for arbitrary native
+field variations. The principal term proportional to integral g f''' is
+equivalently minus integral f g''' for compact variations; it is not zero
+for arbitrary g. Restricting g to be base-constant hides the coupling and
+recovers the narrower621 stationarity theorem, not a general fluctuation
+identity. Kinetic terms have total differential order at most2, cubic and
+mass at most1, so none cancels this order3 mixed principal coefficient.
+Do not confuse this mixed Euler operator with a gauge-fixed physical pole.
+The complete native first-jet and Ward/error-transfer design above remains
+the next HAND-ONLY lead;627 is not allocated or authorized to execute.
+
+Independent hand review sharpens both completeness and cost. The raw mixed
+density depends on arbitrary native U and its exterior derivative dU,
+not the symmetric part of its coordinate first jet. One may retain full
+Clifford-valued one-form and two-form dual coefficient tensors for all700
+metric germs instead of15 redundant derivative-slot coefficient tensors.
+This is exact only if the independent reconstruction verifies every196
+coordinate derivative slot: W_ab=J_ab-J_ba, with14 diagonal and91 symmetric
+null combinations. Conversely every two-form W is realized by J_ab=W_ab/2
+and J_ba=-W_ab/2. Preserve ALL16384 real H-antiHermitian Clifford blade
+directions, including central iI; finite probe controls are not a complete
+dual basis. A transpose/independent-word coefficient construction can
+avoid billions of separate basis-column solves without restricting U.
+
+The dU coefficient has metric-jet order at most1, so its one integration
+by parts contributes at most order2 to the field Euler block. This proves
+that the source order3 coefficient survives the COMPLETE Euler conversion,
+not merely the illustrative integral identity above. At P5, retain the
+variation of the pairing against G(P5), the differentiated Green current
+and gradient times Ward acceleration; the residual is small but nonzero.
+The exact branch has a rigorous conditional approximation, not permission
+to set the polynomial residual to zero in a Ward identity.
+
+Two lower-order hand controls were independently checked against621's
+native-field identification. At point0 write a_X for the horizontal vector
+coefficient of X=P5. The associated coframe has theta0=sqrt(-y00)dx0,
+so partial_y00 X_(dx0),gamma0=-a_X/2; the dx0 wedge dy00 component of dX
+is+a_X/2. For delta h00=x0, the shear gives delta G^(0,y00)=1. With
+U=(dx0+dy00)gamma0 the isolated mass mixed term is-kappa*a_X, not zero.
+These are component/piece controls, not the full lower-order mixed answer.
+Other Clifford grades cannot contribute to that grade1 component.
+They require no new coefficient evaluation: theta=lambda*h+lambda*cN*R
+is below1/15, hence ||S*+lambda A||<30lambda/7 and
+||P5-S*||<=5lambda/32 imply
+a_X>(21/4-30/7-5/32)lambda=181lambda/224>0.
+
+For the future complete audit, reconstruct every native first derivative
+from the retained homogeneous covariant derivatives and the SAME621
+connection/frame identification:
+
+    partial_mu X_nu = nabla_mu X_nu + Gamma^rho_(mu nu) X_rho
+                      - [B_mu,X_nu].
+
+Independently differentiate the associated coframe transport and check
+dX=D_B X-[B,X]. Do not reuse621's constant-coordinate-field shortcut,
+reselect X(h) during a variation, or freeze dU in an adapted moving frame.
+At fixed native coordinates delta_h(dU)=0; the adapted route must transform
+the complete two-form. Include source/kinetic/cubic/mass separately, actual
+nonzero kappa, both differentiation orders and full Phi/Hodge/volume motion.
+For compensated epsilon variations, include the mixed acceleration
+[delta B,eta] and field-dependent Ward terms. A future pack still needs
+complete prospective identities, counts, resource/retention bounds and
+independent plus MAIN review before FIRST. No new phase is allocated here.

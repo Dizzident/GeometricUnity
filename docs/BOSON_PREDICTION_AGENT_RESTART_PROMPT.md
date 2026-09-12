@@ -45,6 +45,122 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Current Scientific Status
 
+LATEST A67 execution: unchanged FIRST626 Release session38048 is terminal
+exit0; do not restart FIRST. Contract882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308;
+full/summary each1543546bytes, SHA
+b19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09.
+All67 bound inputs and3916 context/chunk pins remained unchanged. The3914
+chunks total148081254bytes, largest1097699; two contexts total38526bytes.
+Both points have full G0..4 zero, but G5..10 nonzero; retained grades reach9.
+The exact a posteriori auxiliary-l1 error is approximately1.797679e-29,
+not a physical norm, mass, exact polynomial root or unit selection.
+Ordered101/202 passed406/3. Independent retained replay3812 failed on a
+verifier-only JavaScript temporal-dead-zone bug: off-root scalar `kinetic`
+shadowed the reconstruction helper. Only that local was renamed offKinetic;
+no frozen scientific file or result was edited. The activated verifier is
+e7041df32031cc42757ae9aea5b78c6933df81775a08bfa13d247dd626321302.
+Independent complete retained replay38507 passed exit0:11176773 assertions,
+28 kinetics,656 stages,392 derivatives,784 reverse comparisons,54 nonlinear
+rows,22 residuals,24 defects,64 cubic coefficients,48 cubic derivative
+checks,16 Green identities,2 off-root controls and60 full transports.
+All726 live core files,67 bindings and3918 FIRST output files are unchanged.
+Full integrity1639 passed exit0: O4coverage31/31,overturn94/94,strict
+JSON/JCS/Ed25519,WZ15/H14missing,physicalclaims0. Incremental-tooling tests
+passed50/50. Final source freeze/incremental validation, exhaustive A67-
+beforeimage review and scoped main commit/push remain pending.
+The preceding research goal turn was PROGRESS; the intervening AGENTS-only
+request changed workflow wording, not scientific state.627+ are unallocated.
+Earlier pending-FIRST statements below are chronological history.
+
+NEXT research lead after the A67 validated checkpoint: full mixed metric-
+native-field second variation, not another invariant eigensolve. Independent
+hand checks confirm the source order3 mixed Euler coefficient+3/16 survives
+Green integration by parts; limiting U to base-constant fields hides it.
+The latest stationary-background reference gives the complete700-germ
+design, exact U/dU dual-tensor compression preserving all real Clifford
+directions and all196 coordinate jets, actual dP5 reconstruction, nonzero
+kappa mass control and off-shell Ward/error-transfer requirements. Lower
+hand anchors partial_y00 X_dx0,gamma0=-a_X/2 and mass-piece-kappa*a_X
+have independent checks; a_X>181lambda/224. Read that full latest section
+before any allocation. No627 pack, new compute or physical spectrum exists.
+
+A67 final-freeze handoff: all source edits must precede the final incremental
+pass. Its source snapshot is
+scripts/incremental/skip_reports/a67_final_source_snapshot.json. Record the
+terminal report/hash and exhaustive2594-beforeimage audit in the checkpoint
+commit; do not edit frozen sources merely to insert a report timestamp.
+On resume inspect that commit and report before assuming the pending final
+cadence above is still pending. Preserve the original3918 FIRST files and
+the A67 archive/extraction; no physical promotion is authorized.
+
+LATEST A67 planning (2026-09-12): A66 checkpoint
+f17420546b8d5e41b79648faf1278460cb1e871b is on main, pushed and
+remote-matched, with a clean worktree before this tranche. Final report
+pass_2026-09-12T22-07-18-634Z.json finished22:15:24.035Z: Release build
+plus76 steps passed,409 skipped. MAIN and independent review verified27
+source hashes,68 frozen inputs,10 FIRST outputs and all2594 manifest hashes.
+All2584 old outputs were compared:2486 byte-identical,74 volatile-only JSON,
+22 scanner/integration/timestamped-identifier JSON changes and2 logs with
+timestamped bundle IDs only. All312 mode files and both aggregate numerical
+spectra are unchanged;33 staged historical output diffs were timestamps/
+runtime only. Checklist405/3,physicalclaims0. Previous goal turn PROGRESS.
+
+Allocate626 under A67 to the fixed-cubic full stationary-residual certificate.
+Use passed623 actual P5 coefficient tensors at conditionalgamma1 and fixed
+lambda0=1/907712; compute the COMPLETE original residual through degree10,
+including H S5 and all higher nonlinear grades, plus independent direct
+evaluation and rigorous full-domain residual-to-solution error bounds.
+Do not substitute another low-order cancellation or invariant eigensolve.
+Builder owns626, independent reviewer challenges the complete prospective
+pack, MAIN owns shared integration and FIRST approval. No626 execution yet.
+Full code/proof/menu/count/resource/retention/binding freeze and independent
+plus MAIN review precede FIRST. New support/cost bounds must include raw
+higher-grade products and transpose loops.627+ remain unallocated.
+The printed quadratic factor-two and canonical-CAA selection caveats remain;
+no physical coupling, vacuum, observed field, pole or GeV unit is selected.
+The older A66 pending statuses below are chronological history.
+
+A67 pre-run integration: generator/traversal/101/202/all9 scanners and
+IMPLEMENTATION_P626 are registered; all11 shared Release builds passed
+0warnings/errors. Incremental-tooling regression tests passed50/50.
+The full626 prospective pack and retained-evidence verifier are pending;
+do not run the generator or626 science before full FIRST approval.
+All2594 old outputs plus the manifest are preserved and safely extracted
+under scripts/incremental/skip_reports/a67_beforeimages_extracted/.
+Archive a67_beforeimages.tar.gz SHA
+4b11af00f4b8ae1aa0ad610799d3f9fbdd41540618b25fb5a74c57d75b3136da;
+2595unique safe paths,555333023 output bytes and all2594 canonical hashes
+were checked against the pre-run state. The existing reference records
+the exact Cauchy norm identification and hand-only mixed-fluctuation lead.
+Actual full626 support/operation/height/retention proof is still being built;
+the earlier625 resource ceilings are not automatically applicable.
+
+A67 hand-only symmetry challenge is now recorded in the existing stationary-
+background reference. Full14-slot pointwise internal commutant is scalar
+under the conditional contraction bound; the four-slot observer pullback
+has45 leading normal rotations but a second-order formal commutant
+deformation obstruction, allowing all Clifford correction grades. Neither
+statement removes compensated gauge redundancy or predicts a boson mass.
+The source's epsilon/differential Ward map, frame and observer reductions
+must be kept distinct.626's full-residual certificate remains the priority;
+the new lead does not allocate627. The prospective626 code now includes
+full grade/covariance checks and3914 fixed evidence chunks. Its2GiB total
+evidence ceiling is a preservation guard, not proved sufficient storage.
+Complete proof, gate, retained verifier and FIRST approval remain pending.
+
+A67 FIRST readiness supersedes the preceding pending statuses. MAIN and
+independent full-pack review approve626 contract
+882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308.
+All67bindings/9actualcompiled/46counts/live726core/3914planentries and
+14authority+16scope false flags are verified; final Release build0/0.
+The new verifier9ea4516b396860b8263790d16ecf7f234c49361555df2a01202d193ccd2056d1
+is reviewed, syntax-valid and still uncalled; old verifier bytes are intact.
+MAIN has explicitly authorized unchanged FIRST626; consult live session
+state before starting or restarting anything. No scientific result is yet
+claimed here. Sampled managed-memory bytes are unpinned stderr telemetry;
+the scientific JSON keeps the enforced guard status/cap and exact FIRST
+byte reproducibility. Preserve all bound files and partial/failed evidence.
+
 LATEST A66 (2026-09-12):625 FIRST unchanged Release run PASSED in terminal
 session69397(exit0); do not restart. Approved contract
 870e09b69c6b5a0e6a53efe1ee68d8c793c15d11a64fa5e9d512afcc5a60a38f;

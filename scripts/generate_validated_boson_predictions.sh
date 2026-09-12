@@ -494,6 +494,7 @@ dotnet run --no-build -c Release --project studies/phase622_full_homogeneous_kin
 dotnet run --no-build -c Release --project studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj
 dotnet run --no-build -c Release --project studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj
 dotnet run --no-build -c Release --project studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/Phase625FullAlgebraicKappaJetObstructionAudit.csproj
+dotnet run --no-build -c Release --project studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/Phase626FixedCubicFullStationaryResidualCertificate.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

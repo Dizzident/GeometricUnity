@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p1_lowResidual","degree":1,"forms":[1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192],"metadata":{"point":1,"meaning":"unscaled coefficient shift: defect[n+1]=G[n]"},"tensors":{"G0":[],"G1":[],"defect0":[],"defect1":[],"defect2":[]}}

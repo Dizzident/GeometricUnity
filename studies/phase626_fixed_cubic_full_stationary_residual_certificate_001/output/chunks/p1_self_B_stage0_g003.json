@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p1_self_B_stage0","degree":2,"forms":[136,144,160,192,257,258,260,264],"metadata":{"point":1,"probe":"B"},"tensors":{"actual":[{"form":257,"blade":257,"k0":0,"k1":0,"real":"1/2","imaginary":"0"}],"oracle":[{"form":257,"blade":257,"k0":0,"k1":0,"real":"1/2","imaginary":"0"}]}}

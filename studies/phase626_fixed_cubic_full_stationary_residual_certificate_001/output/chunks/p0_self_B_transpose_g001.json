@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p0_self_B_transpose","degree":1,"forms":[128,256,512,1024,2048,4096,8192],"metadata":{"point":0,"probe":"B"},"tensors":{"actual":[{"form":1024,"blade":1024,"k0":0,"k1":0,"real":"-4","imaginary":"0"}],"word":[{"form":1024,"blade":1024,"k0":0,"k1":0,"real":"-4","imaginary":"0"}]}}

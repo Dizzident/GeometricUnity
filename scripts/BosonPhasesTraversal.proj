@@ -480,6 +480,7 @@
     <PhaseProject Include="../studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/Phase623FullInverseKappaFifthOrderFeedbackAudit.csproj" />
     <PhaseProject Include="../studies/phase624_exact_algebraic_bc_stationary_background_audit_001/Phase624ExactAlgebraicBcStationaryBackgroundAudit.csproj" />
     <PhaseProject Include="../studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/Phase625FullAlgebraicKappaJetObstructionAudit.csproj" />
+    <PhaseProject Include="../studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/Phase626FixedCubicFullStationaryResidualCertificate.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

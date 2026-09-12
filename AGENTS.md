@@ -2,7 +2,8 @@
 
 ## Git workflow
 
-- Work directly on `main` unless the user requests another branch.
+- Work directly on `main` unless the user requests another branch; do not
+  create a branch or ask the user to reconfirm this preference for routine work.
 - For authorized Git operations, use the explicit repository prefix:
   `git -C /home/josh/Documents/GitHub/GeometricUnity <command>`.
   Reuse active saved approvals for repository-scoped commands such as
@@ -18,6 +19,10 @@
   request an operation-specific prefix such as
   `["git", "-C", "/home/josh/Documents/GitHub/GeometricUnity", "push"]`
   through the runtime approval mechanism, not a separate chat question.
+- Apply the user's preference to avoid repeated Git prompts by reusing
+  matching saved approvals, not by granting yourself access. When requesting
+  a necessary new approval, offer the repository-and-operation-specific
+  prefix for reuse on later authorized operations.
 - Treat the active runtime approval rules as authoritative; this file records
   the workflow but does not grant permissions. If an authorized operation
   needs a new approval, request a narrowly scoped, repository-specific command

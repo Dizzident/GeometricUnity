@@ -25007,3 +25007,257 @@ All source edits precede the final incremental checkpoint pass. Retain a
 durable source snapshot/report, compare all2584 old beforeimages, then
 commit/push on main with remote verification. No source edits after that
 final validation; put its result and exact checkpoint in commit/handoff.
+
+## 2026-09-12 - A66 checkpoint complete; A67 fixed-cubic full residual
+
+A66 checkpoint f17420546b8d5e41b79648faf1278460cb1e871b is on main,
+pushed and remote-matched; the worktree was clean before this tranche.
+Final report pass_2026-09-12T22-07-18-634Z.json finished22:15:24.035Z,
+SHAfc4972175848c0b366df97ef111c4d16cb990aaaa717ca40cf902482a989d570:
+Release build plus76 steps passed,409 skipped. Snapshot27 SHA
+1eca9d6a68524bc5187e058cb3d88e861c750162a7d03cf0723a22b61e36af31,
+all68 bindings and10 FIRST outputs remain unchanged. Independent and MAIN
+verified all2594 current manifest output hashes. Checklist405/3, O4coverage
+31/31, overturn94/94, strictJSON/JCS/Ed25519 passed; physicalclaims0.
+
+Exhaustive2584-beforeimage comparison found2486 byte-identical files,
+74 volatile-only JSON,22 reviewed scanner/integration/timestamped-identifier
+JSON changes and2 logs with only timestamped bundle IDs changed. All312
+individual spectrum modes and both aggregate numerical spectra are unchanged.
+All33 committed historical output diffs are timestamp/runtime only. The73
+checkpoint files contain27 sources,33 historical outputs,10 new scientific
+outputs, the manifest and2 validation records. No source edit followed the
+final validation. Previous goal turn PROGRESS, not a blocker resolution.
+
+A67 allocates626 to the next source-directed calculation: complete original
+residual of passed623 P5 at conditionalgamma1 and lambda0=1/907712. This
+includes H S5 and every nonlinear grade through original lambda order10,
+independent direct evaluation and a rigorous residual-based approximation
+certificate. It removes the extra cubic-parameter freedom of the BC
+diagnostic but does not choose the CAA operator or physical kappa/units.
+Builder owns626; independent full review and MAIN approval precede FIRST.
+No new coefficient, residual, norm, spectrum or field solve has executed.
+The existing source-priority reference contains the hand error bounds;
+fresh implementation-specific resource and retention proofs are required.
+
+Parallel read-only design found concrete implementation pitfalls: the
+623 coefficient tensors must be summed at gamma1 rather than replaced by
+expected forecasts; raw higher-grade products can exceed625's support cap;
+transpose pair loops are not included in Fourier.CoefficientProducts and
+need explicit cost accounting. Do not compile the conflicting global
+Kinetic types from622 and623 together. The full mixed metric-native-field
+fluctuation block remains a separate hand-only follow-up, not a second
+authorized experiment.627+ are free, all physical claim boundaries persist.
+
+A67 pre-run shared wiring now covers generator/traversal/101/202 and all9
+scanners, including both207 sites. All11 shared C# Release builds passed
+with0warnings/errors; no626 scientific run. Mirror
+fixedCubicFullStationaryResidualCertificate and unique checklist id
+fixed-cubic-full-stationary-residual-certificate are additive;406/3 is the
+prospective post-pass count, not the current measured checklist state.
+
+Before new science, MAIN archived all2594 old outputs plus the manifest at
+scripts/incremental/skip_reports/a67_beforeimages.tar.gz,
+SHA4b11af00f4b8ae1aa0ad610799d3f9fbdd41540618b25fb5a74c57d75b3136da.
+Archive comparison,2595 unique safe regular paths and extraction into the
+previously absent a67_beforeimages_extracted directory passed. MAIN checked
+all555333023 extracted output bytes against current files, every canonical
+manifest hash and the byte-identical manifest. Preserve this baseline.
+
+The existing reference now distinguishes the complex Cauchy norm from the
+executable real-slice norm, records the already-proved narrow joint-
+stationarity consequence, and specifies a hand-only full mixed metric-
+native-field follow-up. Its highest-order source witness is independent
+of the background; the field-linearization error is bounded by5152 times
+the new residual certificate error. No new mixed Hessian was computed.
+
+Incremental-tooling regression tests passed50/50 using the six explicit
+test files and required subprocess escalation. MAIN read the first626
+operator-wrapper/project draft; full pack review is still pending. The
+new wrappers count transpose visits before sparsity pruning and preserve
+the actual CAA outer anticommutator. No FIRST approval or scientific run.
+
+Independent A67 shared-integration review passed: all prior predicates,
+scanner exclusions and false-flag restrictions are preserved, with matching
+paths/IDs/terminal. A second independent read approved the complete new
+reference tail, including the complex Cauchy norm identification and mixed
+principal-order argument counting derivatives of both metric and native
+field. Neither review is complete626-pack approval. The retained-verifier
+author is preparing an additive, uncalled function; its exact schema must
+follow the completed prospective serialization. Old verifier state/counters
+must remain unchanged. Full626 code, resource proofs and FIRST review remain
+in progress, with no scientific execution.
+
+MAIN challenged whether the eight original-action directions cover the new
+grade9/13 residual components. The prospective design instead checks EVERY
+high-grade output via complete literal/word transpose and actual/naive CAA
+stage identities; the eight signed action/Green directions are additional
+finite controls, not a claimed complete dual basis. MAIN also clarified
+before freeze that the actual a posteriori error must be compared with the
+Taylor bound, not presumed to be tighter. No expectation was retuned after
+execution;626 has not run.
+
+A67 continuation: the preceding goal turn made a scoped AGENTS.md workflow
+clarification, not new scientific progress. Current work resumed from the
+live incomplete626 pack; its Main entry gate remains closed. The builder
+has added full grade-envelope, six-generator/disconnected invariance and
+transport checks, and the prospective3914-path chunk plan. Independent
+review confirms those formulae and is checking the final operation census.
+The2GiB aggregate ceiling is a preservation guard, NOT a proved sufficient
+storage bound. MAIN requested rejection of explicit zero input rows and
+positive certificate-denominator validation before inversion, both before
+freeze. No scientific inputs or outputs have been tuned after a run.
+
+The existing stationary-background reference now records two independently
+hand-reviewed deductions from618/623, with MAIN checking the original
+source's distinct notions of symmetry. The full14-slot conditional branch
+has scalar pointwise internal commutant by a strict l1 perturbation bound.
+The four-slot observer pullback has45 leading normal rotations, but none
+has a formal internal commutant deformation with nonzero leading normal
+bivector: the order2 grade2 equation, allowing arbitrary Clifford X1,
+reduces to a tracefree completeness identity that forces that rotation
+to vanish. This does not obstruct compensated epsilon/frame symmetries
+or differential stabilizers and establishes no boson-mass conclusion.
+It identifies a concrete next assumption to test in future observed-field/
+Ward work, without allocating627 or diverting626's FIRST review.
+
+MAIN found a specific missing premise in the prospective per-file proof:
+generic bivector input can generate grade5 in Kdag. Both reviewers resolved
+it for this exact field menu using619/623's cyclic identity W3(J)=0 and
+the repeated-index W3(B)=W3(C)=0. Thus the even pieces S2/S4 and X's
+even component have purely vector Kdag; its odd components give grades2/6.
+The resulting3108-blade bound makes16-form paired adjoints99456 records
+and10-form triple reverse rows93240, below100000. Without cyclicity the
+generic5110-blade counts163520/153300 would invalidate that proof.
+Builder will add explicit cyclic and every complete adjoint/reverse grade
+check before serialization, preserving full tensors and individual legs.
+This is a genuine pre-run proof/control improvement, not a post-run repair.
+The independently reviewed hand stabilizer section also explicitly leaves
+mixed-grade leading generators and finite-lambda observer kernels open.
+
+MAIN subsequently read the entire expanded626 Program/fixture/preflight/
+manifest code and all operative arithmetic/CAA/adjoint helpers. Independent
+and MAIN hand censuses agree on2452 tensor checks,3572 grade-envelope
+checks,510 signed pairings and all wrapper call counts. Cyclic and complete
+adjoint/reverse checks are now implemented; the67-binding,9-compiled-file
+gate and3914-chunk manifest schema are available for verifier construction.
+Full STUDY/resource proof and frozen contract are still absent; no FIRST.
+
+Independent gate review found that manifest-size rejection downgraded only
+Emit's local terminal, allowing Main to return0 with a failed manifest.
+Builder has been asked to propagate the emitted result to the exit status
+before freeze. Memory reporting must remain explicitly sampled managed
+memory, not a hard process-memory guarantee; MAIN also requested that the
+proof cover unreduced BigInteger products before GCD, input JSON DOMs and
+serialization/fingerprint buffers. Final full-pack reviews, unchanged FIRST,
+retained replay and final incremental checkpoint/commit/push remain pending.
+
+A67 complete prospective review: MAIN and independent reviewer approve
+contract882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308.
+Both read the complete Program/helpers/project/STUDY/contract and verified67
+live bindings,9 actual MSBuild compile inputs,46 ordered fixture counts,
+726 core files/tree,3914 independently regenerated plan entries,14 false
+authority flags,16 false scope flags, single EOF and output absence. MAIN's
+final Release build passed0warnings/errors. Program hash
+8a5157b74c57adaddacbdcec67582cc80192ccc805adf8ec6dc953b3d1e4fb45;
+STUDY eb43f72030349ba0e8a1e5ba9112bac1993cd5d069e25cb4563a9e6fbe2230e1.
+
+Before freeze, review corrected the full diagonal nonlinear gradient's
+previously omitted complementary components; the cubic scalar controls are
+unchanged. It also corrected119/247-character upper-bound wording, supplied
+the self-contained complex-contraction/Cauchy deduction, aligned JSON wire
+encoding, and made Emit's final verdict govern process exit status. MAIN
+found that sampled GC bytes in pinned JSON would defeat deterministic FIRST
+replay. The guard remains enforced; actual bytes now appear only on stderr,
+while scientific JSON retains a deterministic guard-pass boolean and cap.
+No correction followed a scientific run. The previous goal turn was PROGRESS.
+
+The additive UNCALLED retained verifier
+9ea4516b396860b8263790d16ecf7f234c49361555df2a01202d193ccd2056d1
+passed MAIN's complete review and Bash/inline-JS syntax checks. Removing only
+its marked A67 block reproduces prior verifier
+f7b9eb0d7c9ee93623c4f5b8f1132a1591114589472ec916e1af6866bf893254
+exactly. It preserves full derivative/reverse grades, polynomial/defect/direct
+identities, signed action/Green controls and all expanded retained evidence.
+Actual FIRST hashes must precede activation; no invented pins are present.
+
+MAIN explicitly authorizes one unchanged FIRST626 Release execution now.
+Preserve any partial or failed evidence; no bound pack repair, adaptive
+parameter/layout change or result promotion is authorized by that run.
+
+A67 FIRST626 Release session38048 completed exit0 with the frozen success
+terminal. Both full/summary are1543546bytes, SHA
+b19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09.
+MAIN and independent raw-byte checks verified all67 unchanged bindings,
+3914 chunk hashes/byte counts and two context pins. Chunks total148081254
+bytes, largest1097699; contexts total38526bytes. Operator/support maxima
+are29770 terms,118 tensor-rational characters and175 scalar characters;
+retained tensors max22095 terms and1587524 records across all chunks.
+Sampled managed bytes358300776 were stderr-only telemetry, not a hard RSS
+measurement or a pinned scientific datum.
+
+Both points have original G0..4 exactly zero and G5..10 term counts
+2065,614,1653,614,2193,2080. Their grade unions are respectively[2,6],
+[1,5],[2,6],[1,5],[2,6],[1,5,9]. No residual grade was projected away;
+the permitted but absent grade13 is not a universal grade13 no-go.
+At lambda1/907712 and conditional gamma1 the exact certified l1 error is
+187031043155169336808079187600453282921/
+10404029315299191495351705759193144686118652855489848424722539216896,
+approximately1.7976789327202202e-29, versus Taylor5/29046784. This is a
+conditional approximation bound, not a physical vacuum or mass prediction.
+
+Independent complete retained replay3812 exited1 before reconstructing the
+kinetics: JavaScript's temporal dead zone exposed an off-root scalar named
+kinetic shadowing the outer helper. MAIN renamed only that local offKinetic,
+preserving the serialized comparison key kinetic and all expected numbers.
+No frozen code, parameter, evidence or scientific verdict was changed.
+The actual FIRST pins, unique626 row and additive406/3 aggregate are now
+activated in shared verifier
+e7041df32031cc42757ae9aea5b78c6933df81775a08bfa13d247dd626321302.
+Ordered101 session39724 and202 session96452 passed,406/3. Complete retained
+replay and full integrity1639 are pending; preserve failed3812 in history.
+
+The corrected independent full retained replay38507 PASSED exit0 with
+11176773 assertions, all3914 chunks and exact3918 output files. It checked
+28 kinetics,656 stages,392 derivatives,784 reverse comparisons,54 nonlinear
+rows,22 residuals,24 defects,64 cubic coefficients,48 cubic derivative
+checks,16 Green identities,2 off-root controls and60 full transports.
+All726 live core files,67 bound inputs and FIRST full/summary hashes stayed
+unchanged. An intermediate transient harness extraction stopped before
+replay because activation renamed comment markers; only its in-memory
+extraction boundaries changed. This was not another scientific run.
+MAIN full integrity1639 also PASSED exit0, O4coverage31/31,overturn94/94,
+strict JSON/JCS/Ed25519,WZ15/H14missing and physicalclaims0. The six explicit
+incremental-tooling test files pass50/50. Final source freeze, incremental
+cadence, exhaustive2594-beforeimage audit and scoped commit/push remain.
+
+Independent final integration review approved verifiere7041df3. Removing
+only A67's new core/activation/mirror/checklist additions and restoring the
+old aggregate count/message reproduces old verifierf7b9eb0d exactly; every
+older predicate is preserved. MAIN reviewed the complete new retained core
+and the narrow shadowing fix. The actual corrected retained replay passed,
+so the static review and dynamic verification now agree.
+
+Parallel hand research, challenged independently and by MAIN against621's
+actual metric/action helpers, confirms an order3 mixed metric-native-field
+Euler coefficient that base integration by parts cannot remove. The pure
+third germ has nonzero curvature variation but zero lower metric/frame/
+spin-reference variations; its complete source coefficient is+3/16. The
+dU coefficient is at most metric order1, so its Euler conversion reaches
+only order2. Restricting U to be base-constant would hide this coupling.
+Lower controls partial_y00 X_dx0,gamma0=-a_X/2 and mass-piece-kappa*a_X
+were independently checked, with a_X>181lambda/224 from existing bounds.
+The reference now records a complete and less redundant U,dU dual-tensor
+design: every real Clifford blade, all700 metric germs, every196 coordinate
+jet reconstructed and all symmetric first-jet directions checked zero.
+This changes representation, not the arbitrary native-field scope. Actual
+dP5, both differentiation orders and off-shell Green/Ward terms are required.
+These are hand-only leads;627 remains unallocated and no pole is selected.
+
+A67 final source-freeze preparation: snapshot all29 changed/new source
+artifacts in scripts/incremental/skip_reports/a67_final_source_snapshot.json
+after the last source edit. Run one final incremental Release pass, verify
+every source/FIRST pin and current manifest output, and compare all2594 old
+outputs with the preserved A67 beforeimages. Place the final report/hash
+and drift census in the scoped main checkpoint commit, then push and verify
+the remote hash. Do not mutate frozen docs after the pass just to stamp it.

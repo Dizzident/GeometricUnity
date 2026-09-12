@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "amendment": "A67",
+  "phase": 626,
+  "baseCheckpoint": "f17420546b8d5e41b79648faf1278460cb1e871b",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "8048ab7b721e23a31adc1f913b8602d3d2fda1f91d8665bf3c38a8ddb43ff4f0"
+    },
+    {
+      "path": "ExperimentReferences.md",
+      "sha256": "1cfc5de99641075ca398e51be352239bff08c69f28e5e836fa080f28643a3341"
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md",
+      "sha256": "288cb4fcbd63ddcdb6a452824f16b1753d224e70633e8d000ba188f6f2c25ca6"
+    },
+    {
+      "path": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md",
+      "sha256": "05ea4b02af6fc042bed01bac6b08672f63f34a6c4c1819adf1950f2664116a51"
+    },
+    {
+      "path": "docs/Phases/Implementation/IMPLEMENTATION_P626.md",
+      "sha256": "fb5e275370ae286edd201f35ddda77855dc86390b394f397a84c97c7a6f01cd2"
+    },
+    {
+      "path": "docs/Phases/PHASE_NUMBER_REGISTRY.md",
+      "sha256": "2ce910656375c25f191358e6633543208fdbec7ae02321bf37f8b64f21df4d1e"
+    },
+    {
+      "path": "docs/Phases/WAVE2_AMENDMENTS_2026-07-12.md",
+      "sha256": "e470d195ed8c322e0569bc521446ea71a15459d8341d03d2496c92a79af167c0"
+    },
+    {
+      "path": "docs/Reference/ExperimentReferences/STATIONARY-BACKGROUND-AND-INVARIANT-FAMILY-20260909.md",
+      "sha256": "2dbe762209eeeb4ef93e6078a53f7dde656faf8b19e4612097e4d1a423049ae5"
+    },
+    {
+      "path": "scripts/BosonPhasesTraversal.proj",
+      "sha256": "68d73991849a6276191af390e0451a996d6762f26cabf73c91070481bcfc4391"
+    },
+    {
+      "path": "scripts/generate_validated_boson_predictions.sh",
+      "sha256": "6a95b71854063cda3275d8dbe623ae22463779414b16f241388b19c56e7774b6"
+    },
+    {
+      "path": "scripts/verify_boson_claim_integrity.sh",
+      "sha256": "e7041df32031cc42757ae9aea5b78c6933df81775a08bfa13d247dd626321302"
+    },
+    {
+      "path": "studies/phase101_boson_prediction_package_001/Program.cs",
+      "sha256": "d3f9237ee55bb826b12147920c929849bdfc6a103d798cf55c34c635924fcecc"
+    },
+    {
+      "path": "studies/phase202_boson_objective_completion_audit_001/Program.cs",
+      "sha256": "8ec9ec42c99f55ee71c8b49ac7aedd75e7dee2171363d28bbf2f6cb6769759bf"
+    },
+    {
+      "path": "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs",
+      "sha256": "6c76338be9deb214e69e575263512b0ed92ff8a282cf6e69e771e186042ba1d6"
+    },
+    {
+      "path": "studies/phase205_boson_source_lineage_text_evidence_scan_001/Program.cs",
+      "sha256": "fb77ddc5b121f3fc078b4d079709fbd17498d882ba07639eca1e5bf9324b1204"
+    },
+    {
+      "path": "studies/phase207_higgs_quartic_self_coupling_source_scan_001/Program.cs",
+      "sha256": "d6c7bed08c1fe36d8d69ead79a65749486ef63671466f6f78779acd8460c05f3"
+    },
+    {
+      "path": "studies/phase253_global_observed_sector_vacuum_scan_001/Program.cs",
+      "sha256": "a8c368d39a7a8b164352bf818cde29500bd73be6b730670cd8a14092b44169cd"
+    },
+    {
+      "path": "studies/phase278_relaxion_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "afe4d457aa2b832b8a135ae5fc942bbf827de723f33d41a2103b20564c5670b0"
+    },
+    {
+      "path": "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/Program.cs",
+      "sha256": "0279a1b1048a7c4e74be565f89058db0ec436202ae097a36a0f7d85dbc79ba50"
+    },
+    {
+      "path": "studies/phase281_geometric_refractive_unification_source_audit_001/Program.cs",
+      "sha256": "14c613ee6211f1646f30189a8bf2c23f1ffea2e21eb62c63aff037b7a2fa712c"
+    },
+    {
+      "path": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/Program.cs",
+      "sha256": "572cc07ade9dd928aad4c39ab1d20ce2399fbf32c47eb200036b8f0e47997cb3"
+    },
+    {
+      "path": "studies/phase296_source_lineage_contract_field_candidate_scan_001/Program.cs",
+      "sha256": "be42d697c5e42a44f1e870cefda7e0784dec4c646190e709e5ee0decf01eb9ca"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/CertifiedOperators.cs",
+      "sha256": "893cc1ac32a48505de1040fb312ee0d58b2e899b3be708a2ca6573325e3c9be0"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/Phase626FixedCubicFullStationaryResidualCertificate.csproj",
+      "sha256": "726484ff6e3e2faf8ed80e064951fa605f49eed3a1d9e334d55ccbd173656203"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/Program.cs",
+      "sha256": "8a5157b74c57adaddacbdcec67582cc80192ccc805adf8ec6dc953b3d1e4fb45"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/STUDY.md",
+      "sha256": "eb43f72030349ba0e8a1e5ba9112bac1993cd5d069e25cb4563a9e6fbe2230e1"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/StreamingEvidence.cs",
+      "sha256": "8cfa12d458cb4b327ec0eefb546bc9ab7c9617a9f5e3ed76ee2456432d050c1e"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/preregistration/chunk_plan_v1.json",
+      "sha256": "05a704c66edb5cf9caea277625d2fde20344c5c4341cff24236641cf6da8caf9"
+    },
+    {
+      "path": "studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/preregistration/contract_v1.json",
+      "sha256": "882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308"
+    }
+  ]
+}

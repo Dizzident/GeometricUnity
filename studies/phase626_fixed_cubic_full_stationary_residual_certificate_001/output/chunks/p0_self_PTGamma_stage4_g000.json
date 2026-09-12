@@ -1,0 +1,1 @@
+{"schemaVersion":1,"phase":626,"encoding":"expanded-rational-tensor-chunks-v1","collection":"p0_self_PTGamma_stage4","degree":0,"forms":[0],"metadata":{"point":0,"probe":"PTGamma"},"tensors":{"actual":[{"form":0,"blade":0,"k0":0,"k1":0,"real":"0","imaginary":"144"}],"oracle":[{"form":0,"blade":0,"k0":0,"k1":0,"real":"0","imaginary":"144"}]}}
