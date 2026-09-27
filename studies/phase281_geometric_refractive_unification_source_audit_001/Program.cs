@@ -828,6 +828,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P624.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P625.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P626.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P627.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/COLLECTIVE-COORDINATE-ASSUMPTIONS-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/RELATIVE-TRANSPORT-OBSERVABLE-20260908.md"
     || normalizedPath == "docs/Reference/ExperimentReferences/BICONNECTION-CONVENTIONS-20260908.md"
@@ -889,6 +890,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase624_exact_algebraic_bc_stationary_background_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase625_full_algebraic_kappa_jet_obstruction_audit_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase626_fixed_cubic_full_stationary_residual_certificate_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase627_full_mixed_metric_native_field_variation_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Adjudication/O4_INTERNAL_ASSESSMENT_2026-09-02.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"

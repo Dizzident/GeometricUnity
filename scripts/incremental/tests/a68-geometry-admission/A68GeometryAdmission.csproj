@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+  <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+  <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  <DefineConstants>$(DefineConstants);A68_GUARDED_EXACT_ARITHMETIC;A68_GUARDED_FOURIER_TENSOR;A68_GUARDED_VERTICAL_GEOMETRY</DefineConstants>
+ </PropertyGroup>
+ <ItemGroup>
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/GuardedExactArithmetic.cs" Link="GuardedExactArithmetic.cs" />
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/GuardedFourierTensor.cs" Link="GuardedFourierTensor.cs" />
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/GuardedVerticalGeometry.cs" Link="GuardedVerticalGeometry.cs" />
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/MixedProducerAdmission.cs" Link="MixedProducerAdmission.cs" />
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/MixedProducerStages.cs" Link="MixedProducerStages.cs" />
+  <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/MixedGeometryAdmission.cs" Link="MixedGeometryAdmission.cs" />
+  <Compile Include="../../../../studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs" Link="AmbientGeometry.cs" />
+  <Compile Include="../../../../studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs" Link="SpinGeometry.cs" />
+  <Compile Include="../../../../studies/phase621_induced_metric_full_variation_scope_audit_001/MetricVariation.cs" Link="MetricVariation.cs" />
+ </ItemGroup>
+</Project>

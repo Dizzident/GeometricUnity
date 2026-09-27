@@ -3335,3 +3335,702 @@ For compensated epsilon variations, include the mixed acceleration
 [delta B,eta] and field-dependent Ward terms. A future pack still needs
 complete prospective identities, counts, resource/retention bounds and
 independent plus MAIN review before FIRST. No new phase is allocated here.
+
+### A68 prospective complete mixed duals, Euler conversion and error control
+
+A67 checkpoint1400b5dd is fully validated, pushed and remote-matched.
+A68 allocates627 to the complete mixed variation above. Nothing in this
+section is a new scientific execution. The following algebra was derived
+by MAIN and independently challenged before construction of the new pack.
+Keep621's fixed native-field identification and baseline degree-wise signed
+real-trace pairings, not a selected positive physical adjoint.
+
+Write dot<Y,Z>_r=<Y,V_r Z>_r, including the final Hodge/density variation.
+The derivative of a symmetric pairing makes V_r self-adjoint for the
+fixed baseline pairing. Define
+
+    C=dotK+V1 K,  A_B U=[B,U] (exterior bracket),
+    D_B X=dX+A_B X,  Q_X U=XU+UX.
+
+For the original density
+
+    L=<X,KF>+(1/2)<X,K D_BX>+(1/3)<X,K X²>+(kappa/2)<X,X>,
+
+the raw mixed variation at fixed native X,dX,U,dU is
+<U,M0>_1+<dU,M2>_2, with full duals
+
+    M2=(1/2)C†X,
+    M0=C F+K dotF
+       +(1/2)(C D_BX+K A_dotB X+A_B† C†X+A_dotB† K†X)
+       +(1/3)(C X²+Q_X† C†X)+kappa V1 X.
+
+Every dagger in these formulas is a FIXED-baseline algebraic adjoint.
+In particular C†=(dotK)†_fixed+K†V1, whereas the differentiated MOVING
+adjoint identity gives
+
+    C†=delta(K†_moving)+V2 K†.
+
+Omitting V2 K† or counting pairing motion twice is a concrete possible
+implementation error. The kinetic product rule before transposition is
+one half of
+
+    <U,C D_BX>+<X,C(dU+A_B U)>
+    +<U,K A_dotB X>+<X,K A_dotB U>.
+
+This accounts for both spin-reference variation terms and every factor.
+For621's trace-free shear a, let T_r(a) be its action on r-form slots,
+distinct from the mixed dual M2. Naturality gives independent identities
+
+    V_r=T_r+T_r†,
+    dotK=K T2-T1 K,
+    C=K T2+T1†K,  C†=T2†K†+K†T1.
+
+These are checks against literal differentiated Phi/Hodge chains, not
+permission to replace both independent routes by the same formula.
+
+The raw dual M0 is not the full field-Euler coefficient. If P1/P2 denote
+the native density/pairing/frame maps and Z=P2 M2 is extended
+antisymmetrically, the native coefficient is
+
+    E_b=(P1 M0)_b-sum_a partial_a Z_ab.
+
+All derivatives of P2, frame conversion and M2 belong in this equation.
+Equivalently, using baseline formal differential adjoints only at this
+Green-conversion stage,
+
+    E_frame=M0+(D_B†-A_B†)M2=dotG_fixed(X)+V1 G(X).
+
+Here dotG_fixed differentiates the gradient in the fixed native-field
+identification, expressed in the baseline frame. The adapted-frame derivative
+instead satisfies dotG_adapted=dotG_fixed+T1 G. For the declared trace-free
+shear this gives the independently equivalent form
+
+    E_frame=dotG_adapted(X)+T1† G(X).
+
+Adding V1 G to an already adapted derivative would double-count T1 G.
+
+Retain the differentiated boundary current before imposing compact-interior
+support. Do not silently drop fibre flux or infer a global operator domain.
+At X=P5, G(X) is small but nonzero, so V1 G(X) must not be deleted.
+No fourth base metric jet is needed: M2 has metric order at most1, and
+its first derivative reaches only order2. The source K dotF alone reaches
+order3 in the fixed-native mixed Euler coefficient.
+
+Finite full-carrier error transfer can be proved without a new approximate
+background. At each of the two points let epsilon be626's exact bound,
+||X||,||S*||<=R=120/907712, k=2576, m=sum_ij|a_ij|,
+m_z=sum_ij|(nabla_z a)_ij|, beta=||dotB|| and b=||B||=5 in the SAME
+associated orthonormal/spin frame. Each elementary form replacement and
+its signed transpose is a partial signed permutation, so
+||T_r||,||T_r†||<=m on every form/Clifford grade. Consequently
+||V_r||<=2m and both ||C|| and ||C†|| are at most2km.
+This explicit primitive proof matters: arbitrary induced l1 operator norms
+need not equal their transpose norms.
+
+The complete homogeneous background difference has sum_z||nabla_z Delta||
+at most20||Delta|| by618's four plane-sum5/2 connections and its full
+covector-plus-Clifford representation bound. Thus
+
+    ||M2(S*)-M2(X)|| <= k m epsilon,
+    ||M0(S*)-M0(X)|| <=
+      {k[(20+2b)m+2beta+4mR]+2|kappa|m}epsilon,
+    ||E_frame(S*)-E_frame(X)|| <=
+      {k[sum_z m_z+60m+2beta+4mR]+2|kappa|m}epsilon.
+
+The final bound includes the ordinary d† conversion, its spin-reference
+term and the derivative of C†; it does not treat metric germs as invariant
+fields. Source terms cancel from these approximation-error differences.
+At the pure third germ, m=m_z=beta=0, so the source coefficient+3/16
+has exactly zero background-approximation error. Actual numerical majorants
+must be reconstructed and retained in the prospective full pack.
+Native-coordinate errors additionally require explicit norms of P1/P2,
+their derivatives and frame maps; a pointwise frame-l1 estimate cannot
+be relabeled as a coordinate or physical norm. Neither these two-point
+bounds nor their homogeneous premise supplies a uniform fibre-domain bound.
+
+Off-shell compensated Ward identities answer a DIFFERENT order question.
+The primary10.6-10.7 and620's complete epsilon descent give at epsilon=I
+the tangent W_eta=(eta,D_(B+X)eta). For a metric direction v,
+D_v W_eta=(0,[dotB,eta]); for a native direction U it is(0,[U,eta]).
+The exact pointwise identity is
+
+    D²L(v,W_eta)+DL(D_v W_eta)=0.
+
+Here DL of the acceleration is the ORIGINAL first variation, with its
+derivative jets and Green current, not merely an Euler pairing. After
+compact-interior integration it yields the corresponding Hessian identity
+with the gradient-acceleration pairing. Reconstruct the constrained jets
+
+    D_B(D_(B+X)eta)=[F_B,eta]+[D_BX,eta]-{X,D_Beta}.
+
+They are not arbitrary independent second derivatives, nor identically
+zero. The acceleration [dotB,eta] has metric order2 and its derivative
+can have order3. It can therefore participate in compensated Ward
+cancellation even though the kinetic mixed block for INDEPENDENT U has
+total order at most2. The nonzero mixed source symbol is not a physical
+gauge obstruction, mass, instability or no-go theorem.
+
+A second prospective diagnostic detects OMITTED Ward acceleration without
+depending on an uncomputed P5 coefficient. At point1 take
+delta h00=x1²/2, eta=gamma4 and diagnostic X=theta7 gamma0. MAIN and
+independent review derive the horizontal shear curl directly from the
+downstairs Koszul formula: partial1 C0 has entries(0,1),(1,0)=-1/2,
+so partial1 N0-partial0 N1=-3 V01/2. At the germ's zero shear value,
+delta Omega_coordinate1 acting on partial0 is-3 V01/4. Using
+E_(1,7)=1/2 and E^-1 V01=-gamma4/4+3gamma11/4 yields
+
+    delta Omega7 gamma0=3gamma4/32-9gamma11/32,
+    [dotB7,gamma4]=-3gamma0/32.
+
+The spin coefficient of Gamma_(0,4) is-3/64; its commutator with gamma4
+gives the latter sign. Since <theta7 gamma0,theta7 gamma0>=+1, the
+ORIGINAL MASS first-variation piece of the compensated acceleration is
+
+    kappa <X,[dotB,eta]>=-3kappa/32=-85098.
+
+The initial forecast covered a nonzero action PIECE only. The subsequent
+independent hand derivation below establishes the complete diagnostic tuple;
+it does not derive that tuple merely from the mass anchor.
+Freeze the diagnostic's actual native first jet and all acceleration
+derivative/current terms; setting d[dotB,eta]=0 is not justified. The
+epsilon-only direction has the opposite acceleration sign. This is an
+additional prospective control, not a new scientific run or physical scale.
+
+September21 independent completion of this hand control: write V01 for the
+symmetric vertical coordinate matrix. The downstairs connection variations
+have C0 entries(0,1),(1,0)=-x1/2 and C1(0,0)=-x1/2. At point1 they induce
+N0=-3x1 V01/2 and N1=x1 E00. At the origin N=0; put
+A0=partial1 N0=-3V01/2 and A1=partial1 N1=E00. Koszul differentiation
+and the moving-frame correction give the horizontal-to-vertical block
+deltaOmega_j(partial_k)=(delta_j1 A_k-delta_k1 A_j)/2.
+Consequently deltaOmega0 gamma7=3V01/8 and
+deltaOmega7 gamma0=-3V01/8. The signed skew-adjoint relation and
+E^-1 V01=-gamma4/4+3gamma11/4 give
+deltaOmega0 gamma4=-3gamma7/32 and
+deltaOmega7 gamma4=-3gamma0/32. Vertical-direction deltaOmega rotates
+only the horizontal(0,7) plane and annihilates gamma4. Thus the FULL
+acceleration, rather than one selected component, is
+
+    W=[dotB,gamma4]=-3(theta0 gamma7+theta7 gamma0)/32.
+
+The source K(F) is the already derived diagonal vector one-form
+-21Gamma1/4+3P_T Gamma1/2, so its pairing with off-diagonal W vanishes.
+X, W and their actual first jets have Clifford grade1; K maps a grade1
+two-form to grade2. Both original kinetic pairings therefore vanish without
+setting dW to zero. K-dagger X and its covariant derivative have grade2,
+so the grade1 acceleration also has zero Green-current pairings and zero
+current divergence. X squared is zero, while
+Q'_X W=3theta07 Gamma07/16. For this plane-bivector input, the first C
+leg of K gives only theta7 gamma7 and theta0 gamma0; the inner A leg
+selects Phi2_07, gives a scalar, and the outer A gives diagonal Gamma1.
+Its pairing with X=theta7 gamma0 is zero. The complete ORIGINAL four-piece
+first-variation forecast is therefore(0,0,0,-85098), independently of
+the unexecuted diagnostic routine. Both routes must still retain and check
+the actual acceleration jets, Green current and scalar pieces.
+
+Another independent principal-symbol control uses existing rows, without
+adding metric germs. At either point choose an axis a and one of the four
+components h_aj, with divided third germ x_a^3/6. For xi=dx_a this is a
+pure base-diffeomorphism symbol h_ij=xi_i zeta_j+xi_j zeta_i (zeta_a=1/2
+for the diagonal case, zeta_j=1 for the off-diagonal case). The principal
+connection variation is deltaGamma_i^k_j=xi_i xi_j zeta^k, giving
+N_i=xi_i v and hence zero curl. Its full induced curvature and mixed-source
+principal tensors vanish. This yields2*4*4=32 hand-predicted zero controls
+inside the700-row menu. It does not assert that lower-order responses or
+the full fixed-native-field metric variation vanish. The h00,x1^3 anchor
+is not in this pure-gauge menu and remains independently nonzero.
+
+The prospective retention direction expands every final piecewise raw,
+native, Euler and current tensor on both independent routes. Common exact
+baseline tensors may be shared once per point. Fixed typed recipes for
+derived intermediates are permitted only with a frozen complete DAG and
+mandatory independent FULL retained reconstruction; hashes alone are not
+tensor evidence. Do not assume626's special cyclic or grade cancellations
+persist after an arbitrary metric variation: possible grade10 mixed
+feedback must be included until an actual full algebraic proof excludes it.
+One separate prospective diagnostic now has an independent original-action
+hand forecast. At point0 take a[1,0]=1, realized by the fixed first-germ
+combination delta h=x0 diag(-1,1,-1,-1)/2, and
+
+    Xdiag=theta1 Gamma_(1,10)+theta3 Gamma_(5,6,7,8,9),
+    Udiag=theta4 Gamma_(0,1,3,4,5,6,7,8,9,10).
+
+In the retained signed convention <Udiag,Udiag>=+1, Xdiag²=0,
+Q_Xdiag Udiag=-2 theta_(3,4) Gamma_(0,1,3,4,10),
+T2(a)Q_Xdiag Udiag=0 and T1(a)Xdiag=theta0 Gamma_(1,10).
+The matching literal K† coefficient is-2, giving the original cubic
+mixed scalar+4/3. This checks a grade10 coefficient that a narrower
+grade cutoff would erase. It is a separate diagnostic background, not
+one of the700 actual-P5 rows and not a forecast of P5's grade10 support.
+Its exact germ combination and both coefficient constructions must be
+frozen and independently reviewed before execution.
+An additional independent hand check traces the sign through the original
+forward chain. For Fdiag=theta_(3,4) Gamma_(0,1,3,4,10), the inner
+anticommutator is-2i theta_top Gamma_(0,1,10); its Hodge is
++2i Gamma_(0,1,10), and the outer theta0 term is-4 theta0 Gamma_(1,10).
+The original-1/2 leg and final Hodges give K(Fdiag)'s matching coefficient
++2. Its one-form pairing norm is-1, while Fdiag's norm is+1, yielding
+the stated reverse coefficient-2. Thus the forecast is not inferred from
+the reverse routine being tested. To assert+4/3 for the FULL mixed grade10
+coefficient, additionally freeze a diagnostic native first jet with only
+grades2/5 (the associated-coframe extension suffices). Source grades1/5,
+kinetic/reverse grades1/2/5/6 and grade-preserving frame/spin/Euler motion
+then cannot contribute grade10. A point value Xdiag alone does not exclude
+a higher-grade kinetic contribution from an arbitrary first jet.
+Complete code, original controls, counters, input closure, resource/height/
+memory/retention proofs and independent plus MAIN reviews remain required
+before FIRST. No627 scientific output or physical spectrum exists yet.
+
+### A68 parallel hand lead: coupled principal orders, not a spurious pole
+
+MAIN rechecked the bound primary text rather than assuming that an arbitrary
+upstairs metric may be varied. Equation9.1 (line2117) explicitly includes
+MET(X) in the action domain, but lines1060-1065 restrict the upstairs
+metrics to the downstairs-Levi-Civita-induced family. This supports asking
+for the remaining downstairs h-h variation, not adding all independent
+components of a14-dimensional metric. Section11 (lines2513-2521) also
+requires pulling back field jets to interpret upstairs equations; a
+zeroth-order field restriction alone cannot define the observed spectrum.
+These source statements do not resolve621's fixed-Y versus moving-observer
+identification ambiguity or provide an operator domain.
+
+While627 is still prospective, independent hand analysis identifies a
+concrete successor question without allocating628. The complete h-X block
+has maximum total base derivative order3 (source3, kinetic2, cubic/mass1).
+The h-h Hessian has conservative upper orders4 for source,3 for kinetic
+and2 for cubic/mass: the induced metric depends on downstairs Gamma(h),
+and its second variation can already contain two first metric derivatives.
+Curvature adds two more derivatives. These are upper bounds, not proof
+that a leading coefficient is nonzero; Green and gauge identities may
+cancel terms and must be checked in the full original action.
+
+The arbitrary-field X-X block is kappa I plus a FIRST-order differential
+operator and a zero-order nonlinear derivative, not an algebraic mass
+matrix. A formal kappa-dominated Schur expansion can give a leading
+correction-kappa^-1 C_hX C_Xh of order6. Extrapolating that truncation to
+arbitrarily high frequency would be a mistake: the Neumann expansion
+requires the differential part to remain small relative to kappa. The
+618/626 invariant-background contraction gives no inverse or domain theorem
+for this arbitrary-field differential block. A triangular derivative field
+shift moves the same term between blocks, subject to boundary/domain
+admissibility; its appearance alone supplies no physical pole or ghost.
+
+The concrete prospective falsifier after627 would therefore reconstruct
+the FULL original h-h principal block through total order4, combine it
+with the full mixed and first-order X-X blocks, and test joint Ward and
+constraint identities before any inverse or truncation. At the existing
+point1 anchor and base covector xi=dx1, h00 is not a pure base-diffeomorphism
+metric symbol: delta h00=2 xi0 zeta0=0 for every zeta. That does not prove
+propagation; the component could still couple to a constraint. Epsilon
+redundancy alone leaves h fixed and cannot declare this metric direction
+pure gauge. Reconstruct the native/epsilon compensation, observer/fibre
+domain and P5 residual-acceleration terms before quotienting any joint
+symbol. This is a hand-only research lead, not a new phase, computation,
+operator-domain selection or spectrum claim.627 remains the priority.
+
+### A68 independent-geometry gap and constructive route (2026-09-21)
+
+Source inspection distinguishes retained provenance from mathematical
+reconstruction. Phase621 EvidenceStore.Verify independently reconstructs
+action stages, but accepts the retained frame motion and spin variations
+as geometric leaves after shape/pin checks. Its shared integrity-verifier
+section likewise checks geometry shapes, hashes and named anchors rather
+than every geometry identity. Therefore neither is a complete independent
+geometry oracle for627. This is a verification gap, not evidence that the
+retained geometry or underlying theory is wrong.
+
+A concrete independent route starts from615 Splitting.Metric,621 STUDY
+sections2–4,608's typed connection laws and618's bound frame convention.
+Do not accept retained621 metric derivatives as premises. At BOTH points
+fix h0=diag(-1,1,1,1); only y differs. Use the ordered symmetric basis
+00,11,22,33,01,02,03,12,13,23 with both off-diagonal entries1 and all35
+factorial-normalized variations delta h=M*x^I/I! about h0. Write P=y^-1 and
+
+    G0=diag(-y,V),
+    V(A,B)=tr(P A P B)-tr(P A)tr(P B)/2,
+    P_z=-P A_z P,
+    P_zw=P A_z P A_w P+P A_w P A_z P.
+
+These recover baseline vertical metric jets; derivatives in horizontal
+coordinate directions vanish. Vertical derivatives of the horizontal
+block-y are nonzero and must be retained. Rebuild the downstairs linearized Christoffel c from the germ and
+h0 inverse. The vertical-horizontal shear column is
+N_i=coordinates(c_i^T*y+y*c_i). Horizontal differentiation differentiates
+c; one vertical derivative replaces y by A_z; two vertical derivatives
+vanish. Independently differentiate k=-N^T G0-G0 N through second order
+using the ordinary product rule. This uses at most third downstairs jets.
+
+For baseline connection, a route separate from627's dual Koszul loops is
+the608 typed block law:
+
+    Gamma(A,B)=-(A P B+B P A)/2,
+    Gamma(A,u)=P A u/2,
+    Gamma(u,v)=W(u,v)/2,
+    W=y sym(u,v)y-y*(u^T y v)/2.
+
+Here sym(u,v)=(u v^T+v u^T)/2 and the last output is vertical. Ordinary
+vertical differentiation gives Gamma derivatives. Check full torsion and
+metric compatibility, including their differentiated forms, against the
+independently rebuilt metric jets. For the variation use the covariant
+metric identity rather than copying either C# inverse-variation routine:
+
+    Q_a=k_a-Gamma_a^T k-k Gamma_a,
+    C_a^c_b=(G0^-1)^cl*(Q_a,bl+Q_b,al-Q_l,ab)/2,
+    delta R_ab=partial_a C_b-partial_b C_a
+               +[Gamma_a,C_b]-[Gamma_b,C_a].
+
+Differentiate Q and C with the rebuilt k_ab and Gamma derivatives,
+including partial(G0^-1). Compare complete arrays against bound621
+geometry only after reconstruction. Its old fieldRows never enter.
+
+The frame and its first jet are additional identification/gauge data:
+E^T G0 E=eta alone does not select them. Bind the precise618 frame
+template and reductive first-jet convention. With Ei=E^-1, set
+L_mu=rho(-P A_(mu-4)/2) vertically and0 horizontally, where
+rho(z)=diag(z,A maps to -z^T A-A z). Then
+
+    FramePartial_mu=L_mu E; InversePartial_mu=-Ei L_mu;
+    Omega_mu=Ei*(Gamma_mu+L_mu)*E;
+    a=Ei N E; delta E=N E;
+    partial_mu a=Ei*(N_mu+[N,L_mu])*E;
+    nabla_(e_r) a=sum_mu E_mu,r Ei*(N_mu+[Gamma_mu,N])*E (r=0..13);
+    Z_mu=C_mu+N_mu+[Gamma_mu,N]; delta Omega_mu=Ei Z_mu E;
+    partial_nu(delta Omega_mu)=Ei*(C_nu,mu+N_nu,mu
+      +[Gamma_nu,mu,N]+[Gamma_mu,N_nu]+[Z_mu,L_nu])*E.
+
+The derivative-spin array ordering is[nu][mu]. Only first baseline frame
+jets enter the last expression: do not introduce a fictitious globally
+integrable preferred frame or infer its Hessian from these pointwise lifts.
+Constant associated-frame X has nonconstant native components. In
+particular Pullback(-Ei L_mu,X) differentiates Pullback(Ei,X) ONLY for a
+one-form X. For a higher form, that pullback replaces EVERY coframe factor
+by the derivative, whereas the correct derivative sums over slots with
+exactly ONE differentiated factor and all remaining factors unchanged.
+Applying the shortcut to K-dagger X would therefore be wrong. Actual P5 requires
+the independently established homogeneous-equivariance premise; separate
+diagnostic fields instead declare their own local first-jet extension.
+
+Preserve the source's spin signs and indexing when lifting curvature:
+R_ab^d_c=partial_a Gamma_b^d_c-partial_b Gamma_a^d_c+[Gamma_a,Gamma_b]^d_c,
+and L_abcd=sum_e G_de R_ab^e_c. In the associated frame, sigma has seven
+positive then seven negative entries. The stored a<b,c<d coefficient is
+F_(ab),(cd)=-sigma_c*sigma_d*L_abcd/2, with no additional exterior half
+factor or c,d swap. The connection lift is
+spin(Omega)_(cd)=-sigma_c*Omega^d_c/2. Check their actions on gamma_c
+against the complete endomorphism entries. The independently lowered
+curvature variation uses G0*delta R+k*R and ALL FOUR varied frame slots.
+The retained621 spinCurvatureVariation is adapted delta F; the fixed
+coordinate version also subtracts T2(a)F. Keep separate runtime leaf IDs
+even if the two independent reconstructions agree coefficientwise.
+
+This route is prospective code/proof work, not a new geometric execution.
+It gives concrete next steps without an external physics ruling and does
+not resolve observer choice, global boundary conditions or physical units.
+
+### A68 complete comparison map and replay lifetime correction (2026-09-21)
+
+The source construction above is now implemented independently in JavaScript,
+but has NOT been evaluated at a GU source point. Manufactured geometries
+exercise connection derivatives, noncommuting curvature cancellations and
+all four independently varied covariant slots. Connection uniqueness requires
+a nondegenerate symmetric metric, full torsion/compatibility and their
+ordinary derivatives; merely checking a selected component is insufficient.
+The full linearized differentiated compatibility has eight product-rule
+terms. Complete eta-skew and both lowered-curvature antisymmetries must be
+verified before bivector packing discards the complementary triangles.
+
+The geometry comparison map is fixed before any scientific evaluation:
+
+| Retained621 field | Independent source value |
+| --- | --- |
+| frameMotion, shearVariation | Ei N E, N |
+| metricVariation, inverseVariation | k, -G^-1 k G^-1 |
+| metricFirstJets[z,i,j], metricSecondJets[z,w,i,j] | k_z[i,j], k_zw[i,j] |
+| connectionVariation[z,i,j] | C_z[i,j] |
+| connectionDerivative[z,w,i,j] | partial_z C_w[i,j] |
+| curvatureVariation[a,b,c,d] | deltaR[a][b][d,c], output/input reversed |
+| spinConnectionVariation, spinCurvatureVariation | deltaB, adapted deltaF |
+
+All sparse implicit zeros are compared, not just retained nonzero entries:
+four dense matrices, two rank3 arrays and three rank4 arrays give121520
+rational coordinates per germ,85064000 across700, before spin tensors.
+Baseline h0,Y,E comparisons have228 coordinates. The old action fieldRows
+remain excluded. Retained621 does not supply all new627 derivatives, so
+named recipe binding separately includes73 background and240 germ matrix
+slots, including every zero matrix and all196 ordered deltaOmega derivatives.
+Full C# metadata is compared independently:41356 entries per metric jet,
+79576 per connection jet; totals129556 per baseline and330260 per germ.
+Both runtime metric derivations and both connection derivations must match
+the source construction; their equality booleans cannot replace comparison.
+
+A useful density cross-check distinguishes two frequently conflated traces.
+On Sym^2(R4), A maps to -z^T A-Az has trace -5tr(z), hence tr(rho(z))=-4tr(z).
+With z=-PA/2, tr(L_A)=2tr(PA). The source block metric has
+det(G0) proportional to(det Y)^-4, giving
+partial_A log(sqrt(abs(det G0)))=-2tr(PA)=-tr(L_A).
+This baseline volume derivative is generally NONZERO even though the metric
+germ's shear variation has tr(N)=0. Thus the native Green-current density
+term -tr(L_mu)C^mu cannot be discarded by citing the trace-free variation.
+This is an algebraic hand check, not a new source-point calculation.
+
+Replay must retain a tensor until its last scalar consumer as well as its
+last tensor consumer. A late Pair involving an early otherwise-unused node
+exposes a leak/use-after-release if release considers only the current node's
+inputs. The independent schedule now uses global release buckets and compares
+each scalar root as soon as ready. Pair uses the signed real Clifford trace
+WITHOUT complex conjugation, and tests cancellation of the complete imaginary
+sum. Top tests only its selected scalar coefficient's imaginary part while
+retaining all other top-form coefficients. Exact scalar work/storage bounds
+must include two permanent arithmetic constants and complex accumulators,
+not only the final real result. Whole-process memory remains an open proof.
+
+Static resource review identified repeated Koszul-numerator work, without
+evaluating any source coefficient. Define
+S_mu[l,b]=Q_mu[b,l]+Q_b[mu,l]-Q_l[mu,b]. Then C_mu=G^-1 S_mu/2 and
+partial_nu C_mu=((partial_nu G^-1)S_mu+G^-1 partial_nu S_mu)/2.
+The implementation now materializes S once per mu, and its derivative once
+per nu,mu, rather than recalculating it for every inverse-contraction row.
+This preserves every output entry and full n^3 matrix-product visit charges.
+Known exact zero factors may skip BigInt arithmetic, not coordinates.
+
+Counting GeometryAlgebra scalar operations (subtract=2; sum starts at zero),
+the old C/DC contractions cost5n^4+n^3 and11n^5+n^4 respectively. The factored
+versions have bounds2n^4+4n^3 and4n^5+6n^4. At n=14 their combined per-germ
+bound is2469600 instead of6149304, before other geometry work. Across700
+germs that is1728720000 versus4304512800. These are fixed-loop analytic
+counts, NOT observed runtime or a complete resource bound. Manufactured
+dense-inverse tests independently check the unchanged contraction indices.
+Caching the three repeated baseline inversions per germ and using the
+divided-monomial order zeros are further unimplemented leads. Order3 has
+N=partial N=0 but generally nonzero partial^2 N: dropping its differentiated
+connection or curvature would destroy the very source-principal test.
+
+### Complete polynomial and outer-check lineage (2026-09-21)
+
+Source review of626 Program and Certified.Evaluate fixes
+X=sum(n=1..5)lambda^n S_n, lambda=1/907712. S_n already sums623's
+gammaPower0,1,2 coefficients at gamma=1. No additional factorial, minus
+sign, Clifford-grade multiplier or frame conversion is present. Retained
+supports at each point are14,36,14,49,614 forS1..5 and663 forX; these are
+read-only prior evidence, not new calculations. The600 grade5 terms inS5
+remain essential to the complete polynomial. The helper now reconstructs
+the full sum and norm behind private same-point source identities; its
+positive GU path remains unexecuted. Full623/626 recurrence and certificate
+replay remains a separate prerequisite.
+
+H-adjoint blade sign is(-1)^(g(g+1)/2), independent of exterior signature.
+At zero Fourier mode, H-anti coefficients are real for sign-1 and imaginary
+for sign+1. In particular central iI is allowed; a blanket real-coefficient
+check would incorrectly shrink the real H-anti carrier. The polynomial
+helper's tests sample each grade and include a central imaginary term and
+grade5 term. The norm is sum(|Re|+|Im|), not the indefinite signed Pair.
+
+Full outer recipe review agrees on376 marks and951 ordinary germ checks,
+with additional branch-specific controls. The nineteen error formulas agree
+with MixedError: native coefficient dual conversion uses maxColumnL1(Frame),
+native field conversion maxRowL1(InverseFrame), and each native first-jet
+bound maxRowL1(InverseFrame*FrameLift[mu]). Later formulas must use the SAME
+immutable source descriptors as the tensor construction; a discovered
+callback-mutation hole is fixed and regression-tested.
+
+Full coefficient checks are independent tensor consumers, not just Boolean
+metadata to trust. Equality with a late tensor must retain its earlier
+operand; scalar-root/coefficient anchors need both root caching and tensor
+retention; error norms consume B and deltaB. The new metadata consumer
+compiler captures these dependencies, but exact predicate/error evaluation,
+combined live storage and integration remain pending. None of these tests
+is a mixed-operator result or a physical pole prediction.
+
+### Exact consumers and ordinary second jets (2026-09-21 continuation)
+
+The formerly pending predicate/error evaluation and uncalled verifier
+integration are now implemented. Checks compare complete complex tensors;
+H-anti membership is enforced only for explicitly declared domain checks.
+An intermediate algebraic product need not itself lie in the H-anti carrier.
+Tensor norms sum absolute real and imaginary coefficients. Geometry products
+are formed with signs before applying entry/column/row absolute norms;
+replacing a product by products of entrywise absolute matrices would change
+the exact recorded formula. Geometry equality checks all14^4 coordinates,
+not just the packed antisymmetric entries or agreement between two outputs.
+Combined resource bounds and authenticated source-driver closure remain open.
+
+For a fixed holonomic chart and a C2 field (or formal polynomial jet), every
+ordinary symmetric second jet is realized by
+eta(x)=eta0+sum_mu eta_mu x_mu+1/2 sum_mu,nu eta_mu,nu x_mu x_nu,
+where eta_mu,nu=eta_nu,mu. In characteristic zero, diagonal wedge terms
+vanish and opposite ordered wedges multiply the SAME coefficient. Therefore
+d squared eta=0 for arbitrary coefficients in the associative algebra,
+including central iI; commutativity of the coefficient algebra is not needed.
+This does NOT say that covariant second derivatives commute:
+D_B squared eta=[dB+B wedge B,eta]=[F,eta]. A nonholonomic frame requires
+its frame-commutator terms. Neither term may be discarded by invoking an
+ordinary-coordinate symmetric-jet cancellation.
+
+The3502-node metadata recipe preserves both routes for2 coefficient choices
+and105 symmetric jet slots:420 full tensor checks and420 explicit domain
+obligations. This finite menu tests the implementation, not universality by
+enumeration or the entire Ward identity. A local zero-Fourier coefficient
+tensor also does not imply a globally constant gauge parameter. No new GU
+coefficient calculation or physical prediction is claimed here.
+
+### Arbitrary-parameter Ward proof, conditional on the complete descent law
+
+MAIN and independent review can close the universal LOCAL hand identity
+without enumerating Clifford directions. This is an algebraic theorem for
+the declared action, not independent authentication of its source premises
+or a successful627 coefficient replay. Work in one fixed holonomic native
+chart and fixed coefficient-algebra identification. Let eta be an arbitrary
+smooth H-anti zero-form, held fixed in the metric parameter h. Hodge acts
+on exterior slots, i is central, and the full normalized Clifford scalar
+trace is cyclic; no Clifford-grade projection is allowed.
+
+For an invertible zero-form epsilon, put Q=epsilon^-1 D_B epsilon and
+t=varpi-Q. The full curvature identity D_B^2 epsilon=F epsilon-epsilon F
+implies
+
+    F+D_B Q+Q^2=epsilon^-1 F epsilon,
+    D_B(epsilon t epsilon^-1)
+      =epsilon (D_B t+[Q,t]_graded) epsilon^-1.
+
+The minus sign on the differentiated right inverse in the exterior product
+rule is essential because t has degree1. Conjugate ALL THREE Phi insertions
+and use the exterior-only Hodge and cyclic scalar trace. Each complete
+source/kinetic/cubic/mass density then descends to the base density L_h(T),
+where T=epsilon varpi epsilon^-1-(D_B epsilon)epsilon^-1. This includes
+the moving Hodge/Phi/frame/volume factors inside L_h; it does not freeze them.
+
+Take epsilon=1+u eta, varpi=X+u V, B(h)=B0+h dotB, modulo h^2,u^2.
+This is a formal first jet: exp(u eta) realizes the H-unitary path for real
+u; the finite affine expression need not itself be exactly H-unitary.
+X and the LOCAL FIELD V, including its ordinary exterior first jet, are
+fixed in h. Set V0=D_(B0+X)eta and W=[dotB,eta]. Then
+
+    T=X+u(V-V0)-hu W,
+    [hu]L_h(T)=partial_h(D_X L_h)[V-V0]-D_X L_0[W].
+
+For compensated V=V0 this gives MixedCompensated+D_X L_0[W]=0.
+For epsilon-only V=0 it gives
+MixedEpsilon+OriginalMixed(V0)+D_X L_0[W]=0, piece by piece. No exact-root,
+stationarity, small-residual or error-suppression premise is used. Following
+V(h)=D_(B(h)+X)eta instead would cancel the mixed acceleration and turn the
+test into a different, tautological path. The implementation's varpi.HU=0
+and fixed native tangent/first jet are therefore necessary.
+
+The actual first jets are part of the theorem:
+
+    D_B V0=[F,eta]+[D_B X,eta]-[X,D_B eta]_graded,
+    dW=[d dotB,eta]-[dotB,deta]_graded,
+    D_B W=dW+[B,W]_graded.
+
+Thus D_X L_0[W] is the ORIGINAL unintegrated first variation, with these
+derivatives and XW+WX. Replacing it pointwise by an Euler pairing omits the
+kinetic current divergence. No boundary condition or global flux conclusion
+is implied by the local Green identity.
+
+Arbitrary eta0, all14 ordinary first jets and105 symmetric ordinary second
+jets in the full real H-anti carrier are realized by the quadratic polynomial
+above, optionally multiplied by a smooth bump equal to1 near the point.
+The symmetric Hessian cancels only under exterior antisymmetrization; the
+covariant square remains [F,eta]. This proves the local arbitrary-parameter
+identity rather than inferring it from the finite two-coefficient controls.
+
+Remaining premises must still be established by source-bound replay:
+F=dB+B^2 and dotF=d dotB+[B,dotB]_graded, the full moving action/descent,
+the native field/jet identifications and retained coefficients/current.
+Agreement of Ward outputs cannot be used to establish those same premises.
+This conditional hand proof closes the algebraic universality argument only;
+scientific/source/global/operator/resource validation remains outstanding.
+
+## A68 metadata initialization runtime boundary (2026-09-26)
+
+Engineering reference, not physics evidence: [Node.js v24.3.0 worker threads](https://nodejs.org/download/release/v24.3.0/docs/api/worker_threads.html),
+sections `new Worker`, `worker.resourceLimits`, `worker.terminate` and stdio notes,
+reviewed2026-09-26. Worker resource limits constrain the JavaScript engine, not
+external buffers or total process memory; global out-of-memory can still abort
+the process. Termination is asynchronous and resolves on worker exit. Stdio uses
+message passing and can be delayed by a blocked parent event loop.
+
+Local engineering inference: reviewed metadata initialization may use explicitly
+checked engine limits plus exact retained-source/read quotas as a scoped runtime
+envelope. It is NOT a whole-process memory or hard wall-time/CPU proof. Current
+bootstrap file hashes and Node/V8/platform/architecture identifiers are finite
+trust commitments, not proof of prior compiler consumption or native identity.
+The policy itself, builtin/native behavior, allocator and eventual termination
+remain trusted. No recursive self-authentication is claimed. This permits only
+the reviewed metadata experiment after MAIN acceptance; it does not discharge
+the scientific resources/source-closure rows or authorize FIRST.
+
+Local continuation2026-09-27: the reviewed metadata-only entry now includes the
+catalog-to-dispatch configuration wrapper:23modules/66imports,256364sourcebytes,
+256387readbytes. Source-semantic initialization counts1138arrays/6365slots,
+87records/401properties,5sets/2127entries and3 explicit empty WeakMaps. The actual
+engine-limited same-byte initialization probe passes, but calls only the profile
+commitment factory. It does not run scientific dispatch or prove later-factory
+resource sufficiency. Private brands belong to one loaded module instance; the
+probe establishes no handoff to an ambient or future scientific module graph.
+These are local engineering results, not new external physics evidence.
+
+Further local continuation2026-09-27: adding full producer-template/profile/capture
+commitments changes deferred catalog factory code only. Reviewed closure remains
+23modules/66imports, now257377source/257400read bytes; all initialization counts above
+remain unchanged. Explicit source pins and probe/bootstrap pins were reviewed and
+updated. The42 focused loader/initialization tests pass. The probe does not exercise
+new full-profile copying or705-template hashing; separate metadata tests cover that
+behavior, without claiming whole-run resource sufficiency or live producer identity.
+
+Further local continuation2026-09-27: the sink's same-thread read-only completion
+guard changed its reviewed source commitment, hence topology-module/manifest/
+bootstrap pins were re-reviewed. Metadata closure byte totals/imports/initialization
+counts remain unchanged. The new source-preparation service is outside that closure;
+its stream deadline cannot interrupt synchronous scientific computation and proves
+neither hard CPU bounds nor scientific process ownership. No new external physics
+evidence is claimed by the client/service/coordinator transport tests.
+
+Further local continuation2026-09-27: actual bound-plan validation now binds every
+field to the independently accepted template/leaf ACK and exact catalog result.
+This is a local provenance/engineering check, not new external physics evidence.
+The23-module JS metadata closure and its reviewed pins are unchanged. New plan
+serialization budgets cover writes only; callback-copy/hash/native scratch and weak
+identity wrapper costs remain part of the full resource obligation.
+Static review of the local618/626 majorants and627 moving-Euler/error formulas found
+the nonzero G(P5) correction intact. Their invariant-ball inverse bound
+1/(q-51520-618240/q), q=907712, is not a noninvariant PDE resolvent, differential
+Schur-elimination license or physical pole. No external-reference claim is added.
+
+Further local continuation2026-09-27: admitted live leaf fingerprinting now uses
+actual logical primitive scope admission in both build variants, with independent
+source hashes and complete import census. Reviewed MixedEvidence/topology/manifest/
+bootstrap pins changed; JS metadata module byte totals/imports/initialization are
+unchanged. Native/provider/runtime/whole-process resource claims remain unproved.
+The manufactured off-shell mass control's independent mixed coefficient21 is
+reproduced by both algebra routes; omission gives3 and double-counting gives24.
+This supports the existing residual correction, not a GU scientific execution,
+physical propagation theorem or mass prediction. No new external source is used.
+
+Further local continuation2026-09-27: full DiagnosticMenu admission now compares all11
+ordered fields with an independent JS definition before diagnostic preparation. Actual
+C# metadata matches, including the previously unbound VariationRows count. This closes
+a metadata-contract gap, not a physics claim. Reviewed23-module/66-import closure now
+has261049source/261072read bytes and402initialized properties; other initialization
+counts unchanged. No scientific sink/GU execution or new external source evidence.
+Immediate full geometry validation remains distinct from late checkpoint replay; its
+one-shot comparison lifecycle needs an explicit handoff, not assumed reuse.
+
+Further local continuation2026-09-27: separate live geometry prechecks and recorded
+commitment binding are implemented at the adapter layer without replacing the full
+checkpoint source comparison. Manufactured full14 tests exercise the actual exact
+arithmetic/comparator while explicitly doubling source authentication; they are NOT
+GU geometry evidence. Source inspection exposes mutable parent Matrix.Data/arrays,
+so future C# germ callbacks need full parent re-fingerprinting as well as identity.
+Independent zero-filled wire census confirms129556/330260 geometry coordinates and
+538291/1372170 minimum body bytes, not production ceilings. No external physics claim
+or scientific validation is added. Metadata-only initialization closure/pins unchanged.
+
+Further local continuation2026-09-27: C# now has a uniformly admitted fixed-schema
+geometry writer with flat rational capture and immutable canonical JSON+LF output.
+Independent JS full14 zero-schema/byte/hash comparison and both ordinary/guarded
+manufactured suites pass. This checks wire representation, not geometry coefficients
+or a boson prediction. Fixed destination bytes do not bound Utf8JsonWriter's potential
+whole-body internal buffer; runtime/provider memory and exclusive producer ownership
+remain separate obligations. Mandatory live production wiring/parent rechecks remain
+unimplemented. No new external source or scientific validation is claimed.

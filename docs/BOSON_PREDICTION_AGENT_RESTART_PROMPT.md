@@ -13,6 +13,11 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
 
 ### Operating Rules
 
+- USER CHECKPOINT EXCEPTION (2026-09-27, latest instruction): commit and push the
+  current incomplete changes to main as an explicitly NOT scientifically validated
+  checkpoint. This supersedes the earlier no-checkpoint instruction for this commit
+  only; it does not open FIRST/phase627, authorize scientific execution, waive any
+  scientific gate, or certify the work. Older no-Git statements below are historical.
 - Use `rg`/`rg --files` first for searches.
 - Use `apply_patch` for manual edits.
 - Do not revert user or unrelated work. The worktree may be dirty.
@@ -21,6 +26,11 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
   available, launch a read-only explorer/subagent and incorporate its findings.
 - Keep a running diagnosis journal in
   `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
+- A68 build scheduling: the reader and template-catalog harnesses reference the
+  same phase627 project. Build phase627, then run those harnesses sequentially;
+  do not overlap their builds with each other or another phase627 build. Keep
+  compiler-capture/process integration tests serial after all builds finish.
+  Independent JS tests and unrelated build targets can still run in parallel.
 - Track references through `ExperimentReferences.md` plus detailed notes under
   `docs/Reference/ExperimentReferences/`.
 - Before treating any source as promotion evidence, require exact source
@@ -44,6 +54,2201 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
   designed; register docs deliberately, never weaken the scanners.
 
 ### Current Scientific Status
+
+LATEST A68 continuation (2026-09-27, admitted C# geometry writer):
+MixedGeometryWire now captures the full fixed background/germ schema in an admitted
+flat Rational[] and an owned fixed-capacity byte buffer. Mandatory same-thread healthy
+scope and external admission apply in BOTH builds, before full scans/large allocations.
+Complete dimensions/nulls, exact35-jet identity, positive denominators, bit heights and
+aggregate formatting are checked; the copied data is checked again. Formatting is
+charged once. Counts/bytes accumulate, failures poison, and output is detached from
+later caller mutation. SHA covers canonical JSON+LF; WriteTo embeds body only under
+a healthy scope. No raw-buffer/digest constructor or mutable export is available.
+
+IMPORTANT LIMIT: fixed destination capacity is NOT a complete serializer memory bound.
+Utf8JsonWriter can buffer the entire body until disposal flush; its library buffers,
+crypto/provider/runtime costs and later sink LINQ DTOs remain separately unadmitted.
+The copy is also not an atomic snapshot against arbitrary concurrent source mutation;
+the eventual producer owner must enforce exclusive synchronous access. Do not infer
+those guarantees from the writer's logical counters or manufactured passing tests.
+
+NEXT: mandatory live geometry protocol integration in driver/service/client/coordinator.
+Current protocol still2123requests; planned2832/finish2831 is NOT yet implemented.
+Retain accepted parent identity+digest through its children, fully re-fingerprint it
+before each germ, and retire at point final/failure. Preserve diagnostic geometry/leaf
+interleaving and full late source comparison. Require complete live census BEFORE any
+dispatcher file reads. ValidateBackground,ValidateGeometry,ValidateParameter,
+CheckResources and broader process/certificate/resource/runtime/retained-run/review
+gates remain. FIRST CLOSED;626 last scientifically validated;physicalclaims0/O4pending.
+The latest user-authorized incomplete checkpoint exception above applies; saving it
+does not claim full scientific or incremental validation.
+
+LATEST A68 continuation (2026-09-27, separate live geometry handoff foundation):
+New a68-live-geometry.js supplies ordered one-shot source prechecks and later recorded
+metadata binding. It snapshots full data, compares against genuine private bindings,
+and retains only canonical JSON+LF SHA/bytes per fixed path. Exact wire bytes are
+counted BEFORE stringify/hash; snapshots/comparison/wire quotas accumulate across
+slots and both observation phases. Finish/abort clear bindings/commitments; late
+source-algebra failure still revokes health. This is not a geometry certificate or
+whole-process memory proof.
+
+Point/germ/diagnostic adapters now expose configureLiveGeometry(limits) after recipe
+construction and precheckGeometry(path,observed). Configuration commits to the full
+live route: all slots are required before replay, recorded payloads must match, and
+existing FULL pinned source comparison/numerical/artifact replay remains intact.
+Live prechecks do not consume compared or private prepared state. Standalone old
+comparison is forbidden after configuration; unconfigured lower-level legacy route
+remains. This is NOT yet wired into production driver/service/client/coordinator.
+Actual protocol remains2123requests; ValidateBackground/ValidateGeometry still absent.
+
+Retained health uses a detached module-level holder, not adapter-local closures that
+could retain child bindings/graphs. Completed helper retains bounded slot/counter/
+limit metadata and source-algebra health (weak matrix/rational ownership), not observed
+geometry. Account for these extra per-child retained objects in the full resource pack.
+12 helper tests include REAL GeometryComparison/GeometryAlgebra at full14 dimensions
+with only source authentication doubled; last-coordinate corruption and one-short
+budgets fail.9 new adapter tests include real empty-secondJets and explicitly mocked
+point/germ control-flow.348C# and both Release builds pass;716JS/57files pass cleanly
+(684direct21cbf2+32serial3728f8). No retries or scientific execution this round.
+
+NEXT: uniformly admitted C# full geometry writer, then mandatory protocol wiring.
+Use complete shape/bit/format pre-scan, admitted flat Rational[] capture and imperative
+canonical writer, not unadmitted LINQ jagged DTOs. Capture ThreadStatic scope and do
+all scoped work synchronously before async transport; poison on every failure.
+Parent ReferenceEquals is NOT enough: Matrix.Data/arrays are mutable. Cache exact
+accepted background identity+JSON/LF digest through350 children, re-fingerprint full
+actual parent before EACH germ, retire at point final/failure. Diagnostics have their
+own parent and interleave geometry with leaves; do not demand all diagnostic leaves
+at the first background callback. Baseline/germ bodies have129556/330260 rationals;
+709 live messages add233351524 coordinate occurrences;705 parent re-fingerprints add
+91336980 locally. Planned total2832messages/finish2831 is NOT implemented yet.
+Driver must gate full live census BEFORE dispatcher file reads, not merely inside
+adapter replay. Existing late sink copies/formatting remain separately unadmitted.
+Four mandatory methods and broader process/certificate/resource/runtime/retained-run/
+review gates remain. FIRST CLOSED;626 last scientifically validated;physicalclaims0/
+O4pending. Outputs/manifest/closed hashes preserved;627output absent;no Git writes.
+Full scientific AND incremental validation/drift review still precedes staging/commit/push.
+
+LATEST A68 continuation (2026-09-27, full independent diagnostic-menu admission):
+ValidateDiagnosticMenu now precedes diagnostic factory admission and prepare in the
+C# coordinator/client and JS service/driver. Each of the three ordered menus needs
+an exact-request-bound ACK; missing, repeated, stale, wrong-context or pending-context
+submissions fail closed. A mandatory synchronous admission precedes independent menu
+construction/snapshot/hash work; both expected and submitted snapshots consume the
+driver's cumulative quotas. Acceptance retains only context identity, not caller
+arrays. Protocol now has2123 requests, finish sequence2122, and unchanged707 checkpoints.
+
+Independent JS diagnosticMenu explicitly covers all11 fields and declared array
+orders, including VariationRows. The actual C# metadata-only comparison passes for
+all three complete menus; derivative callback name sets/counters also agree. Menu
+construction is lazy, with zero calls during module initialization. Reviewed closure
+remains23modules/66imports, now261049source/261072read bytes and402 property slots;
+all other initialization counts unchanged. Pins/census/probe/bootstrap re-reviewed.
+
+348C# tests and both Release builds pass. The32 serial compiler/cross-language/process
+tests pass; actual C#/JS prefix still stops at FIRST source admission. The663 direct
+JS cases initially had662passes and one test-only quota assertion defect: it compared
+an extra helper counter absent from the driver. Corrected to the driver's three
+cumulative counters; focused rerun e7a769 passes1, giving passing evidence for all695JS
+cases(663direct+32serial), not a claim of one clean aggregate run. The C# quota
+fixture also needed its full setup-frame maximum measured before testing menu overflow.
+Neither correction weakened production limits. No GU geometry, scientific sink,
+phase627 Program, generator or incremental scientific run occurred.
+
+NEXT: immediate ValidateBackground/ValidateGeometry with bounded full-data handoff
+to the independently prepared source. Existing adapter geometry comparisons are
+one-use and later invoked during checkpoint replay: do not consume them early and
+then either duplicate or skip the checkpoint obligation. Review an explicit immediate
+comparison/late evidence-binding lifecycle first, including all diagnostic prefixes.
+ValidateParameter and CheckResources also remain. These four mandatory methods plus
+process/shared-module/certificate/runtime/retained-run/review obligations block FIRST.
+All6512 prior outputs/706541609bytes, manifest and closed entry hashes preserved;
+627output absent; main/HEAD/index unchanged. FIRST CLOSED;626 last scientifically
+validated;physicalclaims0/O4pending. User reaffirmed: no staging, commit or push until
+full scientific AND incremental validation/drift review, with no code-only exception.
+
+LATEST A68 continuation (2026-09-27, admitted live leaf validation/off-shell regression):
+Coordinator ValidateLeaf now checks the exact pending validated plan, independently
+ACK-bound four-field leaf spec, canonical role and one-time leaf ID. Complete import
+census is mandatory before background/context replay. The sole GradientPieces[0]
+alias is rejected as an import; equal hashes under different IDs remain distinct.
+Current specs/roles/trace limits/bitmap retire at checkpoint acceptance, failure or
+disposal; no FT retained. Explicit binding/fingerprint admission plus cumulative
+fingerprint-count/serialized-byte caps are mandatory and never reset per context.
+
+New MixedTrace.FingerprintAdmitted requires an actual healthy producer scope in BOTH
+ordinary and guarded builds. Shared primitive reservation admits record array/sort/
+known hash wrappers; full input domain/bit/aggregate-format scan precedes copying and
+formatting. Ordinary code explicitly charges formatting; guarded ToString charges
+it once. Byte callback runs before hash append with before/after scope checks; all
+errors poison scope. Canonical '-' sign is required for this new path; historical
+Fingerprint behavior is preserved. Logical accounting does NOT prove native writer/
+crypto/VM buffers or whole-process memory. Count three fingerprints/import and the
+new bindings scans L*R (29*30 for ordinary germs),705 bitmaps/20316 slots.
+
+Validated:689JS/56files (658direct+31serial),339C# (169 arithmetic,93catalog,77other)
+and both Release builds. Direct metadata child-process test hit sandbox EPERM; its
+authorized rerun d74727 passes7. All other direct suites passed; serial a7570e passes31.
+Real C#/JS prefix remains denied at FIRST source admission, before plan/leaf admission.
+New12 coordinator groups cover lineage/support/census/alias/lifetime/quotas/reentry;
+new6 primitive groups cover both ordinary integration and guarded logical accounting.
+No scientific sink or GU geometry/coefficient evaluation. Prior6512outputs/706541609
+bytes and manifest preservede6790c; closed entry hashes unchanged;627output absent.
+
+Manufactured off-shell mass regression PASSED both literal and ordered-word routes:
+independent bivariate action gives mixed coefficient21; dropping T1-adjoint G gives3;
+double-counting with V1G on an already adapted derivative gives24. The gradient is
+nonzero. This tests the correction mechanism, not actual phase627 MovingEuler with
+GU geometry, a physical Hessian, propagation or a boson mass. It supports retaining
+the existing P5 residual term rather than treating P5 as an exact stationary root.
+
+NEXT: genuine ValidateDiagnosticMenu BEFORE Open/prepare. Include all11 record fields:
+Id,7 name arrays,Backgrounds,Germs,VariationRows. Source rows are(1,4,4)grade10,
+(1,1,0)acceleration,(0,0,0)secondJets. Current sorted callback/template commitments
+do NOT encode VariationRows and do not provide exact DiagnosticMenu array ordering;
+C# declaration order differs from JS execution-mark/check-menu order. Define/review
+the independent full menu explicitly, do not silently sort away an order obligation.
+A bounded request-bound metadata check before each diagnostic preparation can use
+the genuine service/driver's reviewed independent source; enforce missing/duplicate/
+wrong-context rejection and prospective quotas. No source adapter/geometry required.
+Then immediate background/germ geometry, source-derived parameter schedule and
+whole-resource CheckResources remain. Five mandatory methods plus process/shared
+module/certificate/runtime/retained-run/review obligations still block FIRST.
+Updated reviewed MixedEvidence/topology/manifest/bootstrap pins; metadata closure
+remains23modules/66imports/257377source/257400read bytes, initialization unchanged.
+FIRST CLOSED;626 last scientifically validated;physicalclaims0/O4pending. No staging,
+commit or push until full scientific AND incremental validation/drift review; goal active.
+
+LATEST A68 continuation (2026-09-27, actual bound-context plan validation):
+MixedSourcePreparationCoordinator now implements ValidateContextPlan. Expected
+full-plan SHA+byte count is formed INSIDE the exact catalog materialization callback
+from its accepted template and the client's independently returned ordered leaf ACK.
+The catalog retains only a weak identity for its actual latest bound plan; a matching
+surrogate cannot substitute. Actual validation compares every field, once, after
+Materialize completes. Both checkpoint routes require successful plan validation.
+Digest/state clears on acceptance/failure/disposal; no705 full plans retained.
+Explicit per-plan/cumulative serialization limits and mandatory expected/actual
+admission precede callback-array copying and hashing. These are NOT whole-memory
+proofs. Added work:1410 callback copies/wrappers/projections/hashes and705 cumulative
+weak-reference wrappers/GC handles, plus serializer/native scratch still to budget.
+
+Validation:689JS/56files (658direct+31serial),320C# including81 catalog tests, and
+both Release builds pass. The new10 manufactured groups cover all fields/9trace
+limits/order/census, surrogate/stale/null/duplicate/early calls, skipped validation,
+budgets, reentry and a binder substituting a valid SHA AFTER the genuine ACK.
+The last regression reaches actual Materialize and fails its expected digest.
+Real C#/JS source prefix still stops at FIRST retained-input admission, before
+any bound-plan projection or source constructor. No scientific sink or GU evaluation.
+Preservation9fb480:6512outputs/706541609bytes and manifest unchanged;627output absent;
+closed entry hashes/main/index unchanged. No scientific/incremental run or Git writes.
+
+NEXT: genuine ValidateLeaf with privately bound current leaf specs/roles/trace limits
+and complete canonical import census. There are20316 imports:2perpoint,29perordinary
+germ,9grade10,3acceleration,0secondJets. The30 germ roles include the skipped
+GradientPieces[0] alias of KInputs[0]; reject alias-as-new-import and duplicate IDs,
+not equal hashes under distinct IDs. Retire point leaf authority at background ACK;
+each child gets fresh independent bindings. Parent resource descriptors separately
+survive until pointfinal because EndGerm reactivates the sealed parent.
+IMPORTANT: ordinary production lacks A68_GUARDED_FOURIER_TENSOR; Fingerprint's
+prospective allocation/format guards currently compile only in the guarded build.
+Require a uniformly admitted/bit-bounded path in both builds, or fail closed for
+unguarded use. A void callback or TraceLimits alone is not that proof. New validation
+adds a THIRD fingerprint/import (existing RegisterLeaf+Append already hash twice).
+No expected SHA may be derived from the actual producer tensor.
+
+Parallel static physics review found no exact-root substitution: MovingEuler retains
+T1-adjoint G(P5), and the Euler error coefficient has the correct60m at b=5. The
+618/626 invariant-ball majorants imply inverse bound
+1/(q-51520-618240/q), q=907712, ONLY in the invariant finite-dimensional sector.
+It cannot authorize noninvariant differential elimination or supply a pole/boundary
+theory. A safe parallel next regression is a manufactured off-shell moving-pairing
+mass example: omit T1-adjoint G or double-count it as V1G and require disagreement.
+No new physical result or boson prediction is claimed. Six live prerequisite methods
+remain, plus process/shared-module/resource/certificate/runtime/retained-run/review
+obligations. FIRST CLOSED;626 last scientifically validated;physicalclaims0/O4pending.
+Full scientific AND incremental validation/drift review precedes staging/commit/push.
+
+LATEST A68 continuation (2026-09-27, actual producer callback/transport connection):
+New MixedSourcePreparationClient/Coordinator and a68-source-preparation-service
+connect the second producer's actual catalog callbacks to the privately owned JS
+driver. Full2120 protocol: begin,705 validate,freeze,705 prepare,705 checkpoint,
+2 pointfinal,finish. Freeze is a phase ACK, not EOF; final ACK requires clean input
+EOF and service success requires output drain. The second producer's own705 prepass
+checks full commitments; it is not skipped because an earlier process passed.
+New catalog RequireCurrentMaterialization binds the EXACT regenerated object after
+fingerprint equality, before/after the leaf exchange, and clears it in finally.
+Coordinator routes existing background/context/final callbacks with strict order.
+
+Terminal coordinator Complete(sink) synchronously checks the actual completed sink
+and exact catalog before/after async client I/O, preserving thread-affine ownership.
+No successful actual sink completion was executed. This is NOT a complete
+IMixedAuditSinkPrerequisites implementation: seven mandatory live checks remain.
+The stream-only service/client do NOT own a scientific process or prove hard CPU,
+whole-memory, executable/source/runtime identity or scientific authorization.
+Setup-failure cleanup now destroys both streams and preserves original errors;
+regressions cover queued error events after stream.closed becomes true.
+
+Validation:658directJS/53files +31serial =689JS/56files;310C# manufactured/metadata
+tests and both Release builds pass. Compiler capture confirms250 arguments/223inputs/
+45Compile (two new C#files), unchanged other categories. Real C# second-producer
+catalog/client/coordinator + real JS service/driver completes707 metadata ACKs then
+is deliberately denied at FIRST retained-input admission, before any reader/source
+constructor. No scientific sink/geometry/coefficients/phase627 Program executed.
+Full2120 positives remain manufactured, not scientific acceptance. Independent
+reviews passed. Updated sink source commitment/topology/manifest/bootstrap pins;
+metadata closure stays23modules/66imports/257377source/257400read bytes and unchanged
+initialization census. All6512outputs/706541609bytes and manifest preservedb24dde,
+627output absent; closed entry hashes/main HEAD1400b5dd/index unchanged. No Git writes.
+
+NEXT: implement genuine ValidateContextPlan from the exact accepted materialization
+template and privately retained ordered prepare-ACK leaf bindings; test all plan
+fields and substitutions with manufactured metadata. Then ValidateLeaf can compare
+actual FT against independently returned SHA with real prospective fingerprint
+admission. Other mandatory methods remain ValidateDiagnosticMenu (called BEFORE
+Open, including VariationRows), ValidateBackground, ValidateGeometry,
+ValidateParameter and CheckResources. Background/germ need full bounded immediate
+geometry handoff; parameters need a source-derived schedule, not producer allowlists.
+Deferred checkpoint replay is not a substitute. Scientific process ownership,
+shared reviewed module identity, full resources/upstream certificate/source-binary-
+runtime/retained-run/review obligations remain. FIRST CLOSED;626 last scientifically
+validated; physicalclaims0/O4pending. Full scientific AND incremental validation/
+drift review precedes staging/commit/push; goal active, no boson prediction promoted.
+
+LATEST A68 continuation (2026-09-27, full regenerated producer metadata binding):
+The private catalog identity now additionally carries full profile/capture hashes
+and705 full-template hashes from the SAME accepted candidates. No callback order
+normalization or second validation pass. The configured service/host preserves this
+identity through clean completion. Compact checkpoint configuration is unchanged.
+The preparation owner requires beginProducer(profile,capture), then checks each full
+regenerated template plus its compact projection BEFORE any source admission. Its
+leaf export checks exact ordered id/degree/source triples and canonical hashes.
+Copies share cumulative quotas; no full705-template set is retained. This proves
+declared metadata matching, NOT actual producer process/owner identity.
+
+Validation:641 directJS/52files +31 serial =672JS/55files;289C# and both Release
+builds pass. Separate C# metadata process regenerated all705 exact full-template
+hashes against a genuine clean configured-host receipt. Five substitutions invisible
+to compact declarations reject at zero source stages; matching point0 reaches a
+deliberately rejecting FIRST admission, before any retained reader or source
+constructor. Driver23 tests still use manufactured source objects; no GU-positive
+scientific preparation/replay executed. Independent source/init reviews found no
+blocking defect. Reviewed metadata closure remains23modules/66imports; updated
+257377source/257400read bytes, unchanged initialization census and no eager science.
+All6512 outputs/706541609bytes and manifest preservedc3f8be;627output absent,
+closed entry hashes/main HEAD1400b5dd/index unchanged. No full scientific/incremental
+run or Git writes. User requires full scientific+incremental validation/drift review
+before staging/commit/push. FIRST CLOSED;626 last scientifically validated.
+
+NEXT: implement the real C# prerequisite/producer protocol connection, not a parallel
+placeholder owner. Existing MixedAuditSink.Open calls catalog.Materialize then
+IMixedAuditSinkPrerequisites.BindContextLeaves with the exact fingerprint-checked
+template. Forward that callback's full Wire() to the privately owned preparation
+driver and return its ordered leaf bindings. Connect existing ValidatePointBackground,
+ValidateContextEvidence and ValidatePointCompletion to checkpoint acceptance/final.
+Actual process/source/binary/runtime linkage, one reviewed module identity and all
+resource/certificate/retained-run/review obligations remain open. Full-template
+hash agreement must not be promoted to live producer identity or physics evidence.
+No boson prediction promoted; physicalclaims0/O4pending; goal active.
+
+LATEST A68 continuation (2026-09-27, sequential source preparation; preflight only):
+New a68-source-preparation-driver privately owns the authentic dispatcher and the
+prospective retained-input/geometry/polynomial/adapter/recipe construction path.
+Its constructor is metadata-only. Exact committed declarations are checked before
+source work; policy and limits are detached before callbacks. Mandatory synchronous
+stage admission covers construction, retention, leaf export, checkpoint replay and
+point completion. Each ordinary point shares ONE arithmetic budget across350 germs;
+point final releases its owner. Diagnostics use two fresh baseline owners and five
+germs; secondJets needs no geometry. Leaf declarations retain original source order.
+Sticky abort now also releases the dispatcher's private active point.
+
+Validation:632 direct JS/52files plus31 serial integration =663JS/55files; both
+Release builds and289 C# manufactured/metadata tests pass. New15-test driver suite
+uses the actual driver/dispatcher and real readers with MANUFACTURED source objects,
+not GU geometry or numerical replay. Genuine configured C# integration constructs
+the owner metadata-only and rejects a changed declaration before any source stage.
+All6512 prior outputs/706541609bytes and incremental manifest are unchanged;
+closed entry hashes/main HEAD1400b5dd unchanged,627output absent, index empty.
+No full scientific/incremental run and no staging/commit/push. Latest user directive
+reaffirms: wait for full scientific AND incremental validation/drift review.
+
+NEXT: full producer-template/profile binding and real prerequisite/protocol owner.
+Compact event commitments cover paths/marks, NOT the full producing template's
+resources, checkpoint sizes, ordered leaves, leaf roles, callbacks or capture/profile
+identity. The C# live catalog fingerprints full Wire() before binding, but the
+metadata child exits. Preserve the SAME live catalog/coordinator or authenticate
+full regenerated templates and profile across the new producer; compact declarations
+alone cannot do this. Add negative cases changing omitted fields while preserving
+compact commitments. Existing leaf order/27-export alias is consistent: do not sort
+or add an extra alias leaf. Single reviewed module identity, full resource sufficiency,
+upstream recurrence/certificate, compiler/runtime linkage, retained-run verification
+and independent/MAIN review remain open. The source preparation positive path is
+UNCALLED on scientific inputs and is NOT a full IMixedAuditSinkPrerequisites owner.
+FIRST CLOSED;626 last scientifically validated; physicalclaims0/O4pending. No boson
+prediction promoted. Further details are in the latest diagnosis journal entry.
+
+LATEST A68 continuation (2026-09-27, actual catalog-to-dispatch configuration binding):
+New a68-checkpoint-catalog owns the actual source-structure validator. The configured
+transport uses it for the SAME705 template pass, not a second validation pass. Each
+accepted exact candidate supplies its compact declaration commitment; original
+caller mutation cannot alter it. Point finals land at event351/703. Independent
+profile and retention checks remain those of the existing source validator.
+Policy/limits are frozen before callbacks, and only compact events/profiles survive.
+
+Catalog tokens are private and live-health checked; the service releases its private
+configuration only after clean EOF/final ACK/output drain. The configured process
+host adds its own brand only after clean zero exit, empty diagnostics and process
+group cleanup. Dispatcher now requires that host result; raw configurations, copied
+reports, service-only results and fabricated adapters cannot substitute. Legacy
+metadata-only host results intentionally cannot create a source dispatcher.
+
+Actual C#705 catalog integration passes with707 committed events and zero scientific
+replays. Bad exit/stdout/lingering-child tests also cover the configured path.
+616directJS/51files plus31serialbd2f48 =647JS/54files;289C# and both Release builds
+pass. Initial ambient closure allowlist lacked the new catalog: reviewed addition,
+rerun28d783 all7pass. New catalog8tests, dispatcher16, service14 and host12.
+The metadata closure was independently re-reviewed and pinned:23modules/66imports,
+256364 source/256387 read bytes,1138arrays/6365slots,87records/401fields,
+5Sets/2127entries and3 explicit empty WeakMaps. No eager coefficient evaluation.
+Initialization probe succeeds; this is NOT whole-process or scientific admission.
+
+NEXT: connect sequential authentic adapter preparation and real prerequisite
+ownership, preserving a SINGLE reviewed module identity across metadata host and
+scientific dispatcher. A private-loader host receipt rejects in an ambient host
+copy: no cross-loader handoff is proved. Also, the metadata child has exited; the
+future scientific producer must rebind regenerated declarations to these exact
+commitments, not claim to reuse that dead process's live catalog. Full source/
+binary/runtime/protocol linkage, resource sufficiency for preparation/replay/readers/
+retained exports, source recurrence/certificate, retained-run verification and
+independent/MAIN review remain. Caller quota profiles are not scientific defaults.
+Preservation9cde2c:6512outputs/706541609bytes and manifest unchanged;627output absent.
+Closed entry hashes/main HEAD1400b5dd unchanged, index empty, no Git writes or full
+scientific/incremental runs. FIRST CLOSED;626 last scientifically validated;
+physicalclaims0/O4pending. Full scientific+incremental validation/drift review still
+precedes staging/commit/push. Goal active; no boson prediction promoted.
+
+LATEST A68 continuation (2026-09-27, concrete source checkpoint dispatcher):
+New a68-source-checkpoint-dispatcher.js routes707 fixed events: point0 background,
+350 children, final; point1 background,350 children, final;3 diagnostics. It calls
+the actual pinned readers and authentic adapter methods, never accepts plain
+success reports, and verifies private live replay/completion transitions. Separate
+source/diagnostic identity accessors expose immutable opaque identity tokens and
+small health capabilities, not private source state or ledger mutation methods.
+Germs must have the EXACT active point parent. All later health failures invalidate
+acceptance. Only one point adapter is retained; after final only compact health
+capabilities remain. This is a reference-structure result, NOT a GC/RSS bound.
+
+Configuration freezes707 compact declaration commitments and shared quota profiles;
+only the current mark menu is copied. Declarations hash canonical JSON plus LF.
+These supplied commitments establish consistency, NOT independent provenance.
+Independent review caught configuration copying before cumulative admission; fixed
+by intersecting configuration/total limits BEFORE copying, including depth. New
+regressions prove all4 quota dimensions reject before visiting event records.
+
+Validation:605 direct JS/50files (final15 dispatcher +4identity tests),28 serial
+integration0d4172 =633JS/53files;289C# and both Release builds pass. The dispatcher
+test runs its exact source with VM-only manufactured adapter identities and REAL
+readers; no production injection option/brand minting hook exists. It establishes
+routing, NOT authentic scientific replay. Genuine source-positive paths remain
+UNCALLED, no production orchestrator yet invokes this dispatcher, FIRST CLOSED.
+Preservation14b7ee:6512outputs/706541609bytes and manifest unchanged;627output absent.
+Closed entry hashes, existing static22-module preflight manifest and main HEAD
+1400b5dd unchanged. Index empty, no staging/commit/push or full scientific gates.
+
+NEXT: bind compact event commitments and quota profiles to the independently
+validated frozen catalog/retention policy, then implement sequential production
+adapter preparation/dispatch and the real prerequisite owner. Do not substitute
+caller hashes or manufacturing fixtures for authentic configuration/source proof.
+The narrow22-module initialization proof does NOT cover the new scientific
+dispatcher closure. Full preparation/replay/reader/retained-export resource proof,
+upstream recurrence/certificate, compiler/runtime closure, retained-run verifier
+and independent/MAIN review remain.626 last scientifically validated;
+physicalclaims0/O4pending. Full scientific AND incremental validation/drift review
+remain mandatory before Git writes. Goal active; no boson prediction promoted.
+
+LATEST A68 continuation (2026-09-27, point-final prerequisite implementation):
+The missing point-final producer path is now implemented, NOT scientifically run.
+MixedPointEvidenceSeal writes a producer-only final envelope, then requires new
+IMixedAuditSinkPrerequisites.ValidatePointCompletion before sink completion. Same
+envelope helper handles prospective sizing; failure preserves evidence/no retry.
+a68-point-completion.js read-pins background-checkpoint and final metadata, checks
+exact linkage and unchanged metadata, and deliberately does NOT redo the DAG replay.
+Generic reader/compact ledger make no source or numerical-acceptance claim.
+
+Actual source adapters now own the acceptance path privately: only successful point
+replay creates its ledger; only successful same-parent germ geometry/numerical/expanded
+replay registers a child. No public caller-supplied success flags/receipt arrays.
+Point acceptPointCompletion requires its private read token, same accepted root/pins,
+all350 ordered children and healthy parent/child guards. Retain compact descriptors
+and standalone health functions, not350 graphs/adapters. Later failures invalidate
+live snapshot acceptance. Returned reports alone are not revocable source receipts.
+These genuine source branches are source-reviewed but UNCALLED on scientific inputs;
+manufactured ledger registrations are not evidence of350 actual scientific replays.
+
+Validation:586 direct JS/48files +28serial0340a2 =614JS/51files;289C# including50
+catalog tests, both Release builds pass.11 new JS file/ledger tests,6C# seal tests
+and1cross-language envelope test. Initial reviewed-sink hash failures triggered
+independent re-audit: no added DAG nodes/marks/captures;705 normal captures unchanged.
+Scoped static pins updated sink->topology->22manifest->bootstrap, unchanged source
+byte/init counts. Compiler908521:248args,221inputs,43Compile (new point seal).
+Preservatione43d69:6512 outputs/706541609bytes and manifest unchanged;627output absent.
+Closed Program/project/verifier/manifest hashes and main HEAD1400b5dd unchanged;
+index empty, no Git writes. Scientific validation remains incomplete.
+
+NEXT: implement the concrete frozen source checkpoint dispatcher that calls these
+actual adapters/readers for2 background seals,703 nonpoint checkpoints and2 point
+endings. Do not accept duck-typed adapter reports; preserve/authenticate private
+source identities, including diagnostic completion provenance. No real prerequisite
+implementation or source-positive execution exists yet. Add complete admission for
+new metadata/health/ledger/serialization costs alongside existing full scientific
+resource/provenance/retained-run obligations. FIRST CLOSED;626 last scientifically
+validated, physicalclaims0/O4pending. No commit/push until full scientific AND
+incremental validation plus drift review. Goal active.
+
+LATEST A68 continuation (2026-09-26, actual705 catalog/client callback integration):
+New MixedTemplatePreflightCoordinator composes the accepted capture handshake,
+ordered per-factory construction admission, exact catalog template validation and
+terminal707-exchange/EOF acceptance. It exposes callbacks; the owner still performs
+the SOLE catalog.Freeze, preserving sink compatibility. One ordered second admission
+per context supports later Materialize/fingerprint checks without new wire validation
+or scientific leaf authentication. Completed is false while a binding is pending.
+
+Independent review found and MAIN fixed a real identity gap: matching IDs/counters
+could allow a factory to validate a different object from the one catalog freezes.
+Catalog now owns a transient exact-object validation phase, checked before/after
+ACK and cleared in finally. Manufactured factory-self-validation and same-ID
+substitution regressions reject before any template ACK. The real C# client fixture
+now traverses all705 actual templates through catalog.Freeze/coordinator and the
+independent production JS validator; frozen705,707exchanges,BoundContexts0 required.
+
+Validation:13 new C# lifecycle tests,44 catalog-suite tests; total283 C# tests.
+575 direct JS/47files plus27 serial integration08b0bc =602JS/50files. Both Release
+builds and independent review pass. Actual compiler capturebe5eef now has247 args,
+220 inputs and42 Compile items (the coordinator is the one added file),3generated;
+other category counts unchanged. The11-C#/12-JS reviewed topology subset is still
+NOT complete source/binary proof. Preservationdd6875:6512 prior outputs/706541609bytes
+and manifest unchanged;627output absent. Closed fingerprints/main HEAD/index unchanged.
+
+NEXT: close a newly confirmed POINT-FINAL acceptance hole before claiming a full
+checkpoint dispatcher. MixedAuditSink.Close's point branch writes final metadata
+and returns WITHOUT ValidateContextEvidence. Existing readContextCheckpoint accepts
+only703 germ/diagnostic contexts; readPointCheckpoint accepts the earlier background
+seal, explicitly NOT point traversal completion. Add an independent terminal path
+for each point's exact final metadata/background-checkpoint binding and all350
+accepted child germs. Then connect2 source-bound background replays +703 nonpoint
+checkpoint replays +2 point-final acceptances through a concrete frozen dispatcher.
+Source adapters already perform numerical replay but no full prerequisite driver
+exists; preserve private source identities, not caller success flags. Actual source
+factories remain uncalled until complete resource/source/scientific review. FIRST
+CLOSED;626 last scientifically validated, physicalclaims0/O4pending. No Git writes
+before full scientific/incremental validation and drift review. Goal active.
+
+LATEST A68 continuation (2026-09-26, scoped actual metadata initialization):
+The actual22-module aggregate HAS NOW been evaluated from the loader's verified
+retained bytes, after independent and MAIN acceptance of engineering-only worker
+admission. Five static bootstrap pins and expected Node24.3.0/V813.6/linux/x64
+identifiers are checked before loading. Runtime/native/bootstrap/termination
+behavior remains an explicit trust boundary, not proven executable closure.
+Checked worker engine caps are64/16/32/4MB (old/young/code/stack); source reservations
+remain245451bytes/245473reads/22modules/59requires. These caps are TEST-ONLY, not a
+scientific resource policy or total-process memory/CPU/wall-time proof.
+
+Actual receipt.exports.profileCommitment is used and independently hash-checked;
+host/source-admission factories are present but NOT invoked by the new probe.
+Success requires clean worker exit and drained empty stdio. Eleven tests cover
+actual loading, immutable options, malformed data, limits, deadline/termination,
+reply quota, changed/missing/symlink source, plus manufactured negative ambient
+host/admission imports (including cached targets), runtime and bootstrap failures.
+Manufactured boundary injections are NOT evidence of actual runtime enforcement.
+No scientific coefficients/source-positive geometry/sink/phase entrypoint ran.
+
+Validation:575 direct JS/47files plus27 serial integration tests93a68e, total602
+JS/50files;270 C# tests and both Release builds pass. Final cached-target negative
+addition passed the11-test targeted rerun76120b after the direct batch. Preservation
+f54ca2 confirms6512 prior outputs/706541609bytes and manifest unchanged;627output
+absent. Closed Program/project/verifier/manifest hashes and main HEAD1400b5dd
+unchanged; index empty. These are engineering checks, NOT full scientific validation.
+
+NEXT substantive integration: connect MixedContextTemplateCatalog.Freeze with
+MixedTemplatePreflightClient through a narrowly named metadata coordinator.
+Existing client fixture loops SourceFactory.Create directly, bypassing the catalog;
+existing full catalog fixture uses no-op validation. Join the actual705-template
+admission/freeze/validation/terminal sequence with BoundContexts==0, before adding
+authenticated leaf/geometry/point-receipt/retained-replay scientific composition.
+Do not manufacture a full IMixedAuditSinkPrerequisites implementation with no-op
+scientific methods. Actual host/admission downstream receipt factories, complete
+compiler consumption, resource closure and full independent/MAIN scientific review
+remain unfinished. FIRST CLOSED;626 last scientifically validated, physicalclaims0.
+No staging/commit/push until full scientific/incremental validation and drift review.
+
+LATEST A68 continuation (2026-09-26, reviewed preflight manifest/content census):
+PROGRESS: new a68-preflight-entry.js unifies host/source-admission/service exports;
+a68-preflight-module-manifest.js pins22 modules/245451 ASCII bytes,48 local import
+edges and11 builtin requests (six builtins). Expected hashes are STATIC reviewed
+data, never derived from current files at runtime. Independent source-only review
+confirmed every hash/size/edge and full local entry reachability. No dynamic/late
+require sites or loader escapes found in these fixed sources; runtime/native/global
+closure is not inferred. Actual capture-only test verifies all22/245473 read bytes
+without invoking vm.compileFunction or adding ambient production module imports.
+The trusted loader has STILL NOT evaluated this actual aggregate entry.
+
+New a68-preflight-initialization-census.js binds source-semantic content counts to
+those22 commitments:1138 explicit arrays/6365 slots,86 ordinary records/394 property
+slots,5 Sets/2127 entries. Exact eager calls:multiindices5,WardMenu2,sourceContextIds2,
+branchEnvelope1,sourceContextMenu0. Includes validator's705-ID copy/Set and recursive
+freeze reflection arrays, not only menu/envelope work. Two offsetting draft row
+errors were corrected: validator scope6 fields, exports81 fields. Total-only checks
+would miss them; row-level source checks now cover both. Counts are NOT complete
+allocation/heap/resource admission: function/class/iterator/compiler/regex/runtime/
+allocator/GC/lifetime and later planner/factory work remain explicit omissions.
+
+Validation:12 new tests;564 direct JS/46files plus27 serial integrations f8b8d3,
+total591 JS/49files;270 C# tests and both Release builds pass. Initial full direct
+batch563 passed; final added record-row check and changed census pass in12-test
+targeted rerun dbd328. Both independent source reviews agree on recorded counts.
+Preservation21b456:6512 outputs/706541609bytes and manifest unchanged;627output
+absent. Closed hashes/main HEAD1400b5dd unchanged; index empty; no Git writes.
+
+NEXT: complete a reviewed initialization ADMISSION contract, covering or explicitly
+justifying the remaining function/class/iterator/compile/runtime/retention costs;
+the content census must not be renamed a total-memory proof. Bind frozen source
+manifest+census and actual loader reservations through a fail-closed bootstrap
+before evaluating the aggregate. Bootstrap/loader/canonical-metadata/manifest/census
+code and builtin/native/runtime identities require separate trusted commitments.
+Then test metadata-only actual loading with negative ambient-host/admission imports
+and downstream use of private receipt-exported factories, not verified unused
+copies. Keep loader identity healthy at relevant boundaries; exported functions
+are not revocable. No actual aggregate evaluation or science authorized yet.
+Compiler consumption/source-binary proof and scientific prerequisite/scope/full705
+dispatch/replay/review remain separate. FIRST CLOSED;626 last scientifically
+validated, physicalclaims0/O4pending. Full scientific/incremental validation and
+drift review precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, same-byte trusted-module primitive):
+PROGRESS: new a68-trusted-module-loader.js implements capture THEN load with an
+independent explicit module/path/size/hash/import-edge/builtin manifest. A mandatory
+sync-void hook sees source/decode/read/module/edge/compile/init/require reservations
+before source retention or evaluation. Bootstrap metadata is separately disclosed.
+Capture retains every declared file privately, checks exact bytes/EOF/stable identity
+and ASCII source domain, THEN permits execution. vm.compileFunction receives those
+same retained bytes, never a reopened pathname. Explicit private require/cache
+supports cycles and late imports; no package/extension/ambient resolver fallback.
+Errors/reentry/swallowed import failures poison private load-receipt health.
+
+This primitive has ONLY loaded manufactured test modules; it is NOT connected to
+production preflight or topology admission. Actual receipt exports have a private
+identity, but exported objects/functions are not immutable/revocable capabilities.
+Trusted code/globals/builtins/async effects, runtime/native/bootstrap identity and
+resource feasibility remain assumptions; this is NOT a hostile-code sandbox or a
+proof that an external resource callback justified initialization costs. UTF8 beyond
+ASCII, BOM/shebang transformations and JSON/native module semantics are unsupported.
+
+Validation:18 new tests;552 direct JS/44files plus27 serial integrations bf499b,
+total579 JS/47files;270 C# tests and both Release builds pass. Independent review
+and separate18-test run found no blocking defect. Preservation c9d1d0:6512 outputs/
+706541609bytes and manifest unchanged;627output absent. Closed hashes/main HEAD
+1400b5dd unchanged; index empty; no scientific execution or Git writes.
+
+NEXT: before actual metadata loading, review a complete exact edge/byte manifest
+and module-initialization cost ledger. Observed21-file startup has TWO roots (host
+and source-admission); a reviewed aggregate single entry would add a22nd module.
+Bootstrap must import only loader/data manifest, not ambient host/admission first.
+Actual downstream factories MUST come from receipt.exports, with private identity
+checked at relevant boundaries, not separately loaded copies or caller booleans.
+Account for eager source-context-menu multiindices/Ward/705-ID construction and
+context-topology-envelope IDs/Ward/branch/ledger/hash metadata before evaluation.
+All observed21 source files satisfy the current ASCII subset, but static/dynamic
+dependency review is still required. Test negative ambient loading and actual
+factory identity before promoting source-binding claims. Compiler consumption,
+Node/native/runtime closure and total resource proof remain separate. Scientific
+prerequisite/scope/full705 dispatch/replay/review still outstanding. FIRST CLOSED;
+626 last scientifically validated, physicalclaims0/O4pending. Full scientific AND
+incremental validation plus drift review precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, metadata snapshot dependency isolation):
+PROGRESS: extracted snapshotCanonicalMetadata and its exact helpers into new
+dependency-free a68-canonical-metadata.js. Function/helper text matches the
+pre-edit baseline; historical error prefix/quotas/own-data semantics preserved.
+All11 snapshot-only consumers now import it directly; source-orchestration
+reexports the identical function. Mixed leaf/snapshot consumers retain orchestration.
+Actual compiler integration's19-file declared replay subset replaces orchestration
+with canonical-metadata; it still does NOT claim complete dependency closure.
+
+Fresh Node startup for host+source-admission now loads21 local modules versus31
+before. A negative load hook rejects excluded geometry/polynomial/orchestration
+modules BEFORE evaluation on this tested path. This is observed startup behavior,
+NOT static closure, loader provenance or a security sandbox. Symbolic recipe
+implementations remain via menu imports. Source-context-menu eagerly constructs
+multiindices/Ward sets/705 IDs and context-topology-envelope eagerly constructs
+IDs/Ward/branch metadata before admitTopology; initialization admission remains OPEN.
+
+Validation:527 existing direct JS tests plus7 new snapshot/load tests and27 serial
+integrations6c5cd2 =561 JS/46files;270 C# tests, both Release builds pass. The new
+subprocess test encountered sandbox EPERM in the parallel direct batch; unchanged
+tests passed with approved escalation (e0068b), not a skipped check. Independent
+review found no blocking extraction defect. Preservation5a207d:6512 outputs/
+706541609bytes and manifest unchanged;627output absent. All23 reviewed commitments
+unchanged; main HEAD1400b5dd/closed hashes unchanged; index empty. No Git writes.
+
+NEXT: implement bounded SAME-BYTE TRUSTED-MODULE loading, initially manufactured
+modules only. Independently declared manifest must list canonical IDs, exact
+bytes/hashes, explicit import edges and explicit builtins. Admit retained source
+buffers/decoding/module records and initialization BEFORE evaluating modules;
+verify and compile the same retained bytes, with private cache and no ambient
+file/package/extension resolution fallback. Reject undeclared imports, failure,
+reentry and quota exhaustion. Test changed disk bytes after capture, stale ambient
+cache, dependency omission, cycles, init errors and callback failures. Return
+actual exports/private load identity, not caller-supplied proof booleans. This is
+trusted-code input binding, NOT a hostile-code sandbox; globals/builtin capability,
+loader bootstrap/Node/native/runtime closure remain explicit assumptions. Compiler
+consumption/source-binary proof stays separate. Planner/module/serializer/library/
+scalar/parameter/retained-lifetime feasibility and scientific prerequisite/scope/
+full705 dispatch/replay/review remain. FIRST CLOSED;626 last scientifically
+validated, physicalclaims0/O4pending. Full scientific/incremental validation and
+drift review must precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, declared source-input byte binding):
+PROGRESS: new a68-topology-source-admission.js couples compiler-input census,
+explicit replay manifest and complete launch-file pins before topology admission.
+All11 reviewed C# files must be Compile inputs; all12 reviewed JS files must be
+declared replay inputs; all23 fixed hashes must match pins. Every declared compiler
+input, compiler output and replay input requires a pin. Delegated raw-file reads
+verify bytes before the exact profile/version/context/source descriptor reaches
+the synchronous planning hook. Configuration, launch and topology snapshots share
+cumulative quotas; ordering/reentry/errors permanently poison the private state.
+
+This proves declared-input membership and byte checks at launch admission ONLY.
+It explicitly denies compiler consumption, loaded-module identity, source/binary
+correspondence, complete dependency closure, immutable build/load, total resource
+proof and scientific authorization. The adapter does not launch a process.
+The real nonshared Release capture test covers219 declared compiler inputs and
+all declared outputs/replay files; its19-file replay manifest is NOT full closure.
+
+Validation:527 direct JS tests/42files plus27 serial compiler/process integrations
+(d1e772), total554 JS/45files;270 C# tests and both Release builds pass. Read-only
+review found no blocking adapter defect. Preservation a4b67c:6512 prior outputs,
+706541609 bytes and manifest unchanged;627output absent. Closed hashes/main HEAD
+1400b5dd unchanged; index empty. No staging, commit or push.
+
+NEXT: establish actual admitted/immutable build and replay-load boundaries, not
+just declarations. Audit the metadata-only CommonJS dependency closure: current
+snapshotCanonicalMetadata imports via source-orchestration bring broad scientific
+dependencies into preflight. Consider a separately reviewed minimal snapshot
+module before implementing admitted same-byte loading; do not treat a require
+text scan as complete closure or loaded identity. Compiler consumption/toolchain
+closure remains separate. Planner/module/serializer/library/scalar/parameter/
+retained-lifetime/resource feasibility and actual scientific prerequisites,
+scope/full705 dispatch/replay/review remain. FIRST CLOSED;626 last scientifically
+validated, physicalclaims0/O4pending. User reconfirmed: full scientific AND
+incremental validation plus drift review precede all Git writes; no code-only or
+preflight-only checkpoints. Goal active.
+
+LATEST A68 continuation (2026-09-26, topology ceilings enforced before Begin ACK):
+PROGRESS: createSourceTemplateValidator now requires a fourth synchronous void
+admitTopology callback; service and process host forward it. Capture binding
+snapshots/compares the actual declaration, invokes this hook with frozen profile,
+operation/version,705 count and23 reviewed source commitments, THEN derives the
+envelope and checks every context's trace.nodes/marks and all15 copy-lane caps.
+Its retained report consumes cumulative snapshot quotas. Failure permanently
+poisons binding, and Begin cannot ACK. Constructors do not consume the hook
+(host/service construct separately). Scope/report schemas remain non-scientific.
+
+Positive JS/C# fixtures now EXPLICITLY use topology-covering TEST-ONLY values:
+trace.nodes3000000 and the previously derived normal/failure copy limits. Old
+100000-node/100000000-normal-copy/200000-failure-copy fixtures are insufficient.
+No production cap was silently changed; covering topology is NOT host feasibility
+or full resource proof. The actual C# client receives no Begin ACK with matching
+capture values and an undersized grade10 trace budget. Reviewed source binding
+is still an external obligation, not established by a callback returning void.
+
+Nine new tests pass:517 direct JS/41files plus26 serial integrations94964f,
+total543 JS/44files;270 C#, both Release builds. Review found no blocking gate
+defect. Preservation5f56df confirms6512 outputs/706541609bytes and manifest
+unchanged;627output absent. Closed hashes/main HEAD1400b5dd unchanged; index empty.
+
+NEXT: implement bounded reviewed-source INPUT MEMBERSHIP and byte-pin binding.
+Use auditCompilerInputs on captured nonshared Release metadata; require all11
+reviewed C# paths in Compile and all12 reviewed JS paths in an explicit replay
+manifest. Require matching23 source hashes in the same complete launch pins and
+delegate raw reads to createLaunchFileAdmission (pinned-artifacts parses JSON,
+so is unsuitable for raw source). Keep other compiler/runtime dependencies visible.
+Do NOT call this source-to-binary or loaded-module proof: already-loaded Node
+code and the actual compiler consumption still need an immutable/admitted load/
+build boundary, including the new topology module and its dependency closure.
+Planner temporaries/module initialization and serializer/library/scalar/parameter/
+retained-lifetime/resource feasibility remain. Actual scientific prerequisites,
+scope/full705 dispatch/replay/review remain. FIRST CLOSED;626 last validated,
+physicalclaims0/O4pending. Full scientific/incremental validation and drift
+review precede all Git writes; no preflight-only commits. Goal active.
+
+LATEST A68 continuation (2026-09-26, complete prospective tensor topology):
+PROGRESS: a68-context-topology-envelope.js now composes source-derived fixed
+operation ledgers, finite branch maxima, caller-owned lazy-zero allowances and
+one Phi initialization per relevant session into all705 context graph bounds.
+Includes selected Ward tails, both action diagnostics and the fixed3502-node/
+3864-edge secondJets diagnostic. No source geometry or coefficient evaluation.
+Three read-only audits derived/reviewed fixed costs and composition. Review
+corrected acceleration wrapper20N/20E and grade10 wrapper1879N/2183E. All lazy
+handles are conservatively charged at creation, including unconsumed diagonals;
+branch seed allowances are NOT added a second time.
+
+With explicit zero inspection policy, normal lane bounds are705 graphs,
+422622614 node objects,422624729 arrays and999971128 slots/element copies.
+Failure component maxima are2 graphs,2399809 node objects,2399812 arrays and
+5681242 slots/copies, covering point+child and lone diagnostics. These are
+CUMULATIVE LOGICAL COPY COUNTS, not RSS, runtime, or proof those caps fit the host.
+The module pins23 reviewed JS/C# revisions in tests, including sink lifecycle
+and structured marks; it explicitly denies production source-revision binding,
+full runtime proof, profile admission and scientific authorization.
+
+Ten new tests pass;509 direct JS/41files +25 serial integrations47507e =534 JS/
+44files,270 C#, both Release builds. Complete manufactured context edge totals
+match the static ledgers; node counts fit owned-zero intervals. Preservation
+67647b confirms6512 prior outputs/706541609bytes and manifest unchanged;627output
+absent. Closed hashes/main HEAD1400b5dd unchanged. No staging/commit/push.
+
+NEXT: bind the reviewed source commitments to admitted compiler/replay inputs
+and compare derived requirements with the actual frozen profile BEFORE ACK.
+Current createSourceTemplateValidator only checks declaration agreement, not
+topology sufficiency: per-context trace.nodes/marks and all15 lane dimensions
+must cover the reviewed envelope (or a separately justified tighter bound).
+Do not silently inflate resource caps or equate large safe integers with feasible
+resources. Admit the envelope planner's own metadata/temporary work and retain
+serializer/library/parameter/scalar/replay/retained-lifetime obligations.
+Actual prerequisite/scope/full705 scientific dispatch/replay/review remain.
+FIRST CLOSED;626 last scientifically validated, physicalclaims0/O4pending.
+Full scientific/incremental validation and drift review precede staging/commit/
+push; no preflight-only checkpoints. Goal active.
+
+LATEST A68 continuation (2026-09-26, prospective branch topology contributions):
+PROGRESS: a68-branch-topology-envelope.js derives bounded per-invocation tensor
+node/input-edge contributions for all audited geometry-dependent branches.
+Frame and DeltaFrame supports are independently bounded by196, total FramePartial
+support by2744, and EACH native predicate by35672 (orientation excludes i==j).
+Germ exterior keeps f squared ordered pairs, including numerical zero wedges.
+Lazy accumulator seeds have explicit separate allowances. No source geometry ran.
+
+ASSUMPTION DISPROVED: equal sparsity does not fix native graph size. Manufactured
+identity Frame with DeltaFrame diagonal(+1,+1) versus(+1,-1) has identical supports
+but50 versus48 metricChanged events, hence4 fewer nodes/6 fewer input references.
+The coefficient/changed/metricChanged conditions must be bounded separately.
+Tests cover every wedge support0..196, germ pairs up to196 squared, lazy seeds,
+declaration rejection and acceleration's4-node/5-edge partial-entry increment.
+Independent read-only review agrees with JS/C# branch formulas and scope.
+
+Validation:499 direct JS/40files plus25 serial integration tests (829d20), total
+524 JS/43files;270 C# and both Release builds pass. Preservationed1a14 confirms
+6512 prior outputs/706541609bytes and manifest unchanged;627output absent.
+Closed Program/project/verifier/main HEAD1400b5dd unchanged; index empty.
+
+NEXT: finish the prospective context envelope, not a dense-fixture extrapolation.
+Add unconditional work, imports, marks forcing lazy zeros, and context-local Phi
+initialization. Avoid counting WedgeCoordinate twice inside backgroundBAndDX.
+Compose2 point contexts,700 germ contexts and6 selected Ward germs with4
+acceleration calls each; diagnostics add2 backgrounds,5 germs,4 variations and2
+accelerations. The secondJets diagnostic is fixed work, not a geometry branch.
+Add movingEuler/covariantWY integration checks for sparse column distributions.
+Then connect complete independently justified L/N/M/E caps to capture requirements
+and the frozen profile. Current module deliberately denies complete-context and
+production sufficiency; scalar/parameter/library/serializer/retained-lifetime
+resource proof, source authentication and actual prerequisite/full dispatch/
+replay/review remain. FIRST CLOSED;626 last validated, physicalclaims0/O4pending.
+Latest user reaffirmed: full scientific/incremental validation and drift review
+before ANY staging/commit/push; preflight-only passes do not qualify. Goal active.
+
+LATEST A68 continuation (2026-09-26, capture declaration bound through v2 preflight):
+PROGRESS: independent profile now requires capture={limits,inspectionPolicy}.
+Immutable C# MixedCaptureDeclaration carries the three lanes and exact ordered705
+policy. Protocol request/reply schemas are v2; Begin sends the actual declaration
+in template, not null. JS snapshots/compares it against the independent profile
+before ACK and refuses templates until binding succeeds. Old/absent declarations
+and matching-hash/different-value attempts fail closed. Still707 exchanges.
+
+MixedAuditSinkPlan retains the same declaration; constructor calls mandatory
+ValidateCaptureDeclaration before template work. Client.RequireCaptureDeclaration
+requires an accepted healthy handshake and exact agreement. Sink sessions enforce
+their own inspection counts before spending the shared copy budget; failure
+reserve remains independent. This is agreement/enforcement, NOT cap sufficiency.
+Real prerequisite implementation/review is still required; no scientific sink ran.
+
+Seven new JS and four C# tests pass:492 direct JS/39files,270 C#, both Release
+builds; serial integration199116 passes25, total517 JS/42files. The actual C#
+client rejects a changed independent declaration despite receiving its matching
+profile hash. Preservation7556f0 confirms6512 prior outputs/706541609bytes and
+manifest unchanged;627output absent. Closed Program/project/verifier/main
+HEAD1400b5dd unchanged. No staging/commit/push or scientific execution.
+
+NEXT: production sufficiency is NOT established by profile agreement. Connect
+conditional capture requirements to authenticated source topology or prove a
+prospective branch envelope without executing closed source geometry. Concrete
+lead: a68-background-recipe B/WedgeCoordinate/DeltaB loop over Frame nonzeros;
+DeltaBExterior loops over pairs of nonzero Frame entries. Audit these and ALL
+other topology-dependent branches, including FreshZero lazy registration, before
+using a dense/sparse upper envelope. Do not promote manufactured identity/dense
+fixtures or positive fake geometry validators as source proof. Source-closure,
+copy-plan provenance, library/serializer/retained-lifetime/resource proof, actual
+prerequisites/scope/full705 dispatch/replay and independent review remain.
+Keep all builds/compiler integrations serial as documented. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation plus drift
+review still precede Git writes. Goal active.
+
+LATEST A68 continuation (2026-09-26, conditional symbolic copy requirements):
+PROGRESS: added a68-capture-requirements.js. It snapshots/counts complete symbolic
+plans under cumulative metadata quotas, rejects producer evidence, counts ordered
+input multiplicity, and aggregates all705 normal completions, explicit per-context
+inspection counts and componentwise terminal point-plus-child/diagnostic maxima.
+Undersized caps, unsafe integer totals, missing/reordered contexts and swallowed
+reentry fail closed. Its scope explicitly denies source/primitive-semantic
+authentication, production sufficiency, RSS proof and scientific authorization.
+
+IMPORTANT assumption check: independent recipes branch on Frame sparsity
+(background B and WedgeCoordinate, also germ construction). A new manufactured
+nonidentity-frame test changes point node/input/copy counts while mark count
+stays fixed. Do NOT promote identity/zero fixture counts or source mark menus
+into full graph-resource requirements. Genuine source geometry/topology must
+still be bound; metadata resemblance alone does not suffice.
+
+Fifteen new JS tests pass:486 direct JS/39files,266 C#, both Release builds;
+serial integration33d36f adds24, total510 JS/42files. Preservation13d2e0 confirms
+6512 old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier/main HEAD1400b5dd unchanged. No scientific or Git write.
+
+NEXT: profile and transport binding remains incomplete. The JS template profile
+still has only retention/budgets; C# Begin sends only an opaque profile hash and
+template=null. Bind an explicit immutable capture declaration (three lane caps
+and full705 inspection policy) to the independent profile, outgoing handshake,
+and actual sink plan, with mutation/mismatch/old-absent-field tests. Do not treat
+matching hashes as semantic agreement unless the actual declaration is checked.
+Preserve request-byte acknowledgements, bounded framing and707-frame completion.
+Then connect the conditional counter to genuinely source-bound independent plans
+or a reviewed prospective branch envelope; tiny manufactured plans over705 IDs
+in tests are NOT that source proof. Compiler-inputs/process integrations stay
+serial. Include new a68-capture-requirements.test.js in direct regressions.
+Resource/library/serializer/lifetime proof and actual scientific prerequisite/
+scope/full dispatch/replay/provenance/review remain. FIRST CLOSED; physicalclaims0/
+O4pending. Full scientific/incremental validation and drift review precede staging,
+commit and push. Goal active.
+
+LATEST A68 continuation (2026-09-26, bounded graph capture lanes):
+PROGRESS: CaptureGraph now admits its complete copy shape in O(1) before array/
+node allocation. Committed input slots are tracked at append, avoiding an
+unadmitted pre-scan. Mandatory frozen CaptureLimits provide separate cumulative
+normal, inspection and failure lanes; all sink sessions share one budget.
+No refunds or fresh allowances after failure. Inspection cannot spend the
+failure reserve; capability-only failure snapshots are allowed after arithmetic
+poisoning/disposal and permanently fail ownership. Arrays stay detached.
+MixedAuditSinkPlan now requires the limits; no production values were chosen.
+
+Twelve new manufactured tests pass: primitive160/aggregate266 C#,471 direct JS,
+both Release builds; serial integration4473ea adds24, total495 JS/41files.
+Preservation121a61:6512 prior outputs/706541609bytes and manifest unchanged;
+627output absent. Closed Program/project/verifier/main HEAD1400b5dd unchanged.
+No scientific sink execution, staging, commit or push.
+
+NEXT: derive prospective copy requirements from independently constructed
+context recipes and bind them into the validated preflight profile. Current JS
+profile only contains retention/budgets, NOT the new run-wide CaptureLimits.
+Do not treat valid counters or caller-supplied caps as proof of sufficient
+production resources. Normal lane covers all705 completions; terminal failure
+may require simultaneous point/child copies; inspection policy must be explicit.
+For L leaves, N nodes, M marks and E ordered input references, each copy charges
+(Graphs,NodeObjects,Arrays,Slots,ElementCopies)=(1,N,N+3,L+N+M+E,L+N+M+E).
+Derive from source metadata, never producer-observed graphs. Preserve safe-integer
+cross-runtime bounds and allow no topology/alias/pruning shortcuts. Copy counters
+bound cumulative logical allocations, not RSS: record-field/header/allocator/
+serializer/lock/closure costs and shared retained payload lifetimes remain.
+Scientific prerequisites, scope/source ordering, full705 dispatch/replay,
+provenance and independent review remain. FIRST CLOSED; physicalclaims0/O4pending.
+Full scientific/incremental validation and drift review still precede Git writes.
+Goal active.
+
+LATEST A68 continuation (2026-09-26, sink lifetime trace capability):
+PROGRESS: MixedAuditSink now retains an exclusive thread-affine trace capability
+from construction until disposal. Public Active assignments/session disposal and
+unauthorized session construction cannot bypass it between Session mutations.
+Every prerequisite is fenced, including entire template Freeze/Materialize calls
+so caller factories and returned collection accessors cannot evade the boundary.
+Swallowed interference fails the owner; callback dispatch rejects even when
+Active is null. Authorized Open/child/sealed-point transitions and scope-free
+failure cleanup remain available. Constructor failure releases ownership.
+
+Twelve new manufactured tests pass (primitive148; aggregate254 C#),471 direct
+JS/38files and both Release builds pass. Serial integration78b14a adds24, total
+495 JS/41files. Preservationc1e881 confirms6512 prior outputs/706541609bytes and
+manifest unchanged;627output absent. Closed Program/project/verifier and main
+HEAD1400b5dd unchanged. Sink wiring is compiled/audited, NOT scientifically run.
+No staging/commit/push: latest user directive still requires full scientific and
+incremental validation plus drift review, not preflight-only checkpoints.
+
+NEXT: admit CaptureGraph normal/failure copies before allocation. Its current
+Snapshot remains unmetered and repeatable even after arithmetic poisoning.
+Reserve a separate finite diagnostic allowance before work, with explicit
+copy-count/array-slot/node-object/access bounds; do not create a fresh allowance
+after failure or silently charge a poisoned arithmetic scope. Preserve detached
+input arrays and incomplete diagnostics; include simultaneous point/child and
+successful/failure graph retention. Existing FailureGraphBytes bounds FILE bytes,
+not these allocations. Owned token/closure/lock allocations, Session retention/
+serialization and library/runtime/full-lifetime proof remain open. Audit scope
+policy and source ordering before real prerequisite/full705 dispatch integration;
+API ownership is not hostile-code isolation or a full concurrency proof.
+Scientific prerequisites, upstream replay/provenance and independent review
+remain. FIRST CLOSED; physicalclaims0/O4pending. Goal active.
+
+LATEST A68 continuation (2026-09-26, session trace/thread/scope ownership):
+PROGRESS: reproduced a callback clearing Active then completing its outer node.
+Active now rejects assignments during any session mutation, including direct
+inactive-session calls; cross-session mutation/disposal is refused. A shared
+ownership gate protects state/commits but does not span external callbacks.
+Sessions require their creating thread and, in guarded builds, their first
+arithmetic scope. Healthy finished points remain restorable computation tripwires;
+failed/disposed targets cannot be activated. Owner-thread cleanup needs no scope.
+
+Twelve new tests pass, including pointer/cross-session/thread/scope refusals and
+manufactured point/child restoration. Expected old-code regression edde28 failed
+before implementation. Final:471 direct JS/242 C#, both Release builds, plus24
+serial integrations6cfe15, total495 JS/41files. Preservation2d3509 confirms6512
+old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier and main HEAD1400b5dd unchanged. No science/Git write.
+
+NEXT: this boundary covers SESSION mutation windows, not the complete sink
+lifetime. ValidatePointBackground/ValidateContextPlan and other sink callbacks
+run outside those windows and can still clear/restore Active or dispose a session.
+Introduce explicit sink ownership with authorized transition/cleanup operations;
+reject temporary callback pointer changes at entry, not merely after return.
+Audit Open, sealed-point restoration, Close and failure paths; preserve healthy
+sealed point behavior and diagnostic access. Separately admit CaptureGraph's
+normal/failure copies with pre-reserved diagnostic resources that remain usable
+after arithmetic poisoning. Library/lifetime proof, real scientific prerequisites/
+full705 dispatch, replay/provenance and independent review remain. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation and drift review
+still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, session mutation/failure boundary):
+PROGRESS: a regression reproduced accepted nested validator mutation. Session
+now guards its public mutators, latches failures/reentry, checks after getters/
+callbacks, and refuses Finish after failed mutation. Guarded builds also check
+scope health, catching swallowed primitive failures. Snapshot and cleanup remain
+available; snapshots and returned graphs detach mutable node-input arrays.
+Partial prior nodes/effects are NOT rolled back or promoted. This is a local
+synchronous guard, not global active-pointer ownership or thread-safety proof.
+
+Eleven new tests pass, including15 callback/mutator combinations. Old-code
+failure3e20e3 demonstrated the regression. A shared reference-DLL build collision
+was resolved by sequential phase627/reader/catalog reruns. Final:471 direct JS/
+230 C#, both Release builds, plus24 serial integrations da8402, total495 JS/
+41files. Preservationa20f0c:6512 old outputs/706541609bytes and manifest unchanged;
+627output absent. Closed Program/project/verifier/main HEAD1400b5dd unchanged.
+
+NEXT: MixedTrace.Active is still a freely writable static pointer. Audit all
+sink transitions (Open, sealed-point restoration, Close, failure cleanup) and
+guard against callback null/replacement or cross-session mutation bypasses,
+without breaking the sealed-point tripwire. Define thread/scope ownership
+explicitly; local busy flags alone do not prove it. Separately admit CaptureGraph
+copies for BOTH successful finalization and diagnostics, including poisoned-scope
+failure paths. Session retention/serialization, library/lifetime proofs, actual
+scientific prerequisites/full705 dispatch, replay/provenance and independent
+review remain. FIRST CLOSED; physicalclaims0/O4pending. Full scientific/
+incremental validation and drift review still precede staging/commit/push.
+
+LATEST A68 continuation (2026-09-26, prospective recorder node capacity):
+PROGRESS: a new regression reproduced parameter getter/validator execution at a
+full node ceiling. Record now preflights the requested node plus distinct
+unrecorded empty operands before expanding any zero or serializing parameters.
+Reference aliases, first-occurrence node order and result aliases are preserved.
+Leaf registration checks capacity before registration/hash work; marks can still
+use known nodes at full capacity. Explicit source/degree arrays replace LINQ
+materialization; guards admit n(n+1)/2 scan touches plus7n array/index touches.
+
+Ten new tests pass after the expected old-code failure3f48ea. Final regression:
+471 direct JS/219 C#, both Release builds, plus24 serial integration tests3d7a9a,
+total495 JS/41files. Preservation05b6fa:6512 old outputs/706541609bytes and manifest
+unchanged;627output absent. Closed Program/project/verifier and main HEAD1400b5dd
+unchanged. No science or Git write.
+
+NEXT: the early check is NOT a transaction across callbacks. Session has no
+local reentry/failed-state guard: parameter getters/validators or expanded sinks
+can call its public mutators directly, bypassing the outer sink's busy flag.
+Add/test session-local mutation guards and swallowed-reentry detection; prevent
+Finish after failed mutation while retaining Snapshot/diagnostic cleanup. Cover
+Record/RegisterLeaf/Mark/Finish/Dispose and legitimate read-only inspection.
+Keep failure artifacts labelled incomplete; do not claim rollback of prior work.
+Session retention/serialization, expanded-writer setup, full resource/lifetime,
+scientific prerequisites/full705 dispatch, upstream replay, provenance and full
+independent review remain. FIRST CLOSED; physicalclaims0/O4pending. Full
+scientific/incremental validation and drift review precede staging/commit/push.
+
+LATEST A68 continuation (2026-09-26, explicit fingerprint preparation):
+PROGRESS: WriteTensor/Fingerprint use one explicit record array and iterative
+heap sort instead of OrderBy. The complete input/format allowance is checked
+before sort allocation and owned writer setup. Canonical wire/hash equality
+passes across all15 grades and insertion orders; exact decimal limits retain
+their original domain. Guarded preparation admits logical sort comparisons/
+array touches and the known fingerprint wrappers/digest/hex results, NOT writer,
+crypto-provider, dictionary, formatting-library internals or RSS/full lifetime.
+
+Ten new tests pass. Regression:471 direct JS/209 C#, both Release builds, plus24
+serial integration tests (f846af), total495 JS/41files. Preservation13a262:
+6512 old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier and main HEAD1400b5dd unchanged. No science or Git write.
+
+NEXT: Session.Record checks node capacity only in Append, AFTER operand
+traversal, parameter serialization and its validator. Move prospective capacity
+checks before these actions, including the requested node and distinct implicit
+zero operands; preserve repeated-empty aliases and original node order. Cover
+RegisterLeaf/Mark as appropriate, admit known input/degree arrays, and test that
+full/one-short capacity cannot invoke getters/callbacks or append partial zeros.
+Session list/weak-table/parameter retention and serialization, borrowed expanded
+writer setup, all library/runtime/lifetime proofs, scientific prerequisites/
+full705 dispatch, upstream replay, provenance and independent review remain.
+FIRST CLOSED; physicalclaims0/O4pending. Full scientific/incremental validation
+and drift review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, bounded recorder matrix metadata):
+PROGRESS: MatrixArg now uses a fixed196-entry buffer and exact-sized final array,
+preserving sparse row-major wire entries and formatting order. Guarded admission
+reserves392 reference slots/two arrays,197 metadata headers and1568 logical
+touches including the full borrowed-input scan before builder allocation.
+It still runs with Active=null; no trace semantics or matrix domain was narrowed.
+These counts exclude serializer/string headers, library internals and retention.
+
+Eight new manufactured/refusal tests pass. Intermediate compile failures from a
+test constructor overload and a shared-helper dependency were fixed before final
+regression:471 direct JS/199 C#, both Release builds, plus24 serial integration
+tests (7b90eb), total495 JS/41files. Preservation f51052 confirms6512 old outputs/
+706541609bytes and manifest unchanged;627output absent. Closed Program/project/
+verifier and main HEAD1400b5dd unchanged. No scientific calculation or Git write.
+
+NEXT: Fingerprint constructs hash/writer state before WriteTensor, which sorts
+records and formats both components before its post-format length checks.
+HashStream's byte cap acts on emitted data, not these preparatory allocations.
+Add explicit pre-sort/pre-writer admission and manufactured wire/hash/refusal
+tests; retain canonical tensor ordering. Do not assume generic TensorSort's
+logical slack proves LINQ internals or serializer/RSS costs. Session parameter
+serialization, list/weak-table retention, full lifetime, real prerequisites/
+full705 dispatch, upstream replay, provenance and independent review remain.
+FIRST CLOSED; physicalclaims0/O4pending. Full scientific/incremental validation
+and drift review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, Mixed call-site array/access reconciliation):
+PROGRESS: declared Arrays/Trace buffers now reserve zero initialization plus
+initial stores; Bits reserves its known final result. Motion budgets repeated
+matrix reads and full index membership scans; its oracle additionally reserves
+239 clone/index touches per possible replacement. MetricTranspose, WedgeCoordinate,
+Pullback rows and TwoFormSlices now have source-specific read/write/index bounds.
+SpinGenerator's valid91-entry read count is unchanged. Numerical/trace identities
+and full grade domains are preserved; library/recorder internals remain separate.
+
+Eight new manufactured/refusal tests pass. An intermediate Pullback brace edit
+failed compilation and was corrected before final regressions. Cell65:471 direct
+JS/191 C# and both Release builds pass. Integration dcd25f adds24, total495 JS/
+41files. Preservation2384b0 confirms6512 old outputs/706541609bytes and manifest
+unchanged;627output absent. Closed Program/project/verifier and main HEAD1400b5dd
+unchanged. No source-positive scientific calculation or Git write.
+
+NEXT: MixedTrace.MatrixArg unconditionally scans/builds/formats metadata even
+when Active is null; those accesses/list growth are not covered by current body
+tests. Replace its growable List with an explicitly bounded fixed-capacity
+builder, preserving sparse row-major wire entries, then admit scan/arrays/objects
+before construction and test empty/sparse/full matrices plus quota refusals.
+Complete recorder/serializer/string/retention and remaining call-site/lifetime
+proofs; do not treat current logical counts as actual RSS. Real prerequisites/
+full705 dispatch, upstream replay, provenance and independent review remain.
+FIRST CLOSED; physicalclaims0/O4pending. Full scientific/incremental validation
+and drift review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, guarded kernel access-model reconciliation):
+PROGRESS: reviewed guarded Matrix kernels and MetricJet now reserve logical
+element touches, not one unit per loop trip. Includes output zeroing, copy
+read/write, condition/operand rereads, comparisons, result arrays and swaps.
+MetricJet body admission is222100+6*basis.Length, plus11000 property-array
+zeroes; it still accepts extra basis entries. Matrix multiplication reserves
+5n^3+4n^2 including scans/result zeroing. Elimination uses a documented loose
+10n^3+8n^2+8n body envelope with nested helpers separately charged.
+
+This model is NOT actual VM/guard/library memory traffic or RSS. The shared
+counter's documentation explicitly warns that legacy callers still need audit;
+no uniform whole-producer interpretation is implied by a passing total.
+Six new tests cover tiny0..3 matrix envelopes and integer-only MetricJet census/
+refusal. Regression cell51:471 direct JS/183 C# and both Release builds pass.
+Integration cc54b8 adds24, total495 JS/41files. Preservation4ba24b confirms6512
+old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier and main HEAD1400b5dd unchanged. No Git write/science.
+
+NEXT: continue source-specific call-site reconciliation: MetricTranspose has
+one read+one write per cell; Motion/WedgeCoordinate/Pullback have conditional
+matrix rereads; TwoFormSlices needs complete initialization/index/store census.
+Do NOT blindly double every count: SpinGenerator reads each of91 selected
+entries ONCE and its existing matrix count is valid. Review raw-param/trace
+initialization, oracle arrays, remaining geometry/bootstrap/library/serialization
+and full lifetime. Real scientific prerequisites/full705 dispatch, upstream
+replay, provenance and independent review remain open. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation and drift
+review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, Ambient and baseline constructor admission):
+PROGRESS: MixedBackground now uses admitted Ambient/BaselineMetric factories.
+Ambient reserves both raw derivative arrays (41160 slots), their initialization,
+body copies and two known Ambient/MetricJet object headers before construction.
+Logical visits are63722 for the default branch and67322 for inverseHorizontal;
+fixed4+10 domain only. Baseline reserves123480 explicit copy accesses rather
+than the old41160 copied-cell count. Historical numerical expressions unchanged.
+
+Six new tests pass: branch/domain enumeration and pre-initializer refusal for
+array/header/visit budgets; the old baseline quota fails. Regression cell40:
+471 direct JS/177 C# and both Release builds pass. Integration dd329b adds24,
+total495 JS/41files. Preservation426bf0 confirms6512 old outputs/706541609bytes
+and manifest unchanged;627output absent. Closed Program/project/verifier and
+main HEAD1400b5dd unchanged. No positive scientific geometry or Git write.
+
+NEXT: reconcile the nested guard ledger's units before any aggregate resource
+proof. Guarded MetricJet currently charges22100+2*basis.Length LOOP counts;
+source-access census78eef6 instead gives210900 body accesses+11200 scratch
+initializations+6*basis.Length selector/result accesses, plus11000 property
+array initializations. For10 basis elements:233160 versus22120 are DIFFERENT
+models, not a measured runtime ratio. Primitive Matrix guards also use loop
+counts. Specify conversion or standardize coverage; do not label their sum an
+actual memory-access/RSS bound. Library/bootstrap/serializer/full-lifetime,
+scientific prerequisites/full705 dispatch, upstream replay, provenance and
+independent review remain open. FIRST CLOSED; physicalclaims0/O4pending. Full
+scientific/incremental validation and drift review precede staging/commit/push.
+
+LATEST A68 continuation (2026-09-26, nested ShearJets admission):
+PROGRESS: the ShearJets call site now reserves its result container and fixed
+4+10 body before entering linked code. New pure metadata costs compose all101
+Downstairs/111 Shear calls, Matches counts arrays, appended derivative results,
+nonempty params arrays, transpose copies, outer stores and logical comparisons.
+Additional body:477852 slots/155438 arrays/2086560 logical visits; result-container
+inclusive:478062/155440/2086980. Slots mix references and integers, NOT bytes.
+LINQ internal buffers/delegates/iterators and VM/RSS remain explicitly unproved.
+
+Six new tests pass: independent integer-loop census, fixed-domain rejection,
+pre-source quota refusal and cumulative one-germ exhaustion. No positive source
+geometry executes. Regression cell31:471 direct JS/171 C# pass; both Release
+builds pass. Integration4530d4 adds24 tests, total495 JS/41files. Preservation
+95933b confirms6512 old outputs/706541609bytes and manifest unchanged;627output
+absent. Closed Program/project/verifier and main HEAD1400b5dd unchanged. No Git write.
+
+NEXT: Ambient constructor body/initialization admission and MetricData.Baseline
+copy accounting. Read-only integer census aed597: Ambient's default noninverse
+body22562 visits plus41160 raw initializations; Baseline has123480 explicit
+accesses versus its current41160 copied-cell reservation. Reconcile the logical
+model and reserve before linked construction. Library internals, bootstrap,
+serialization/full lifetime, real scientific prerequisites/full705 dispatch,
+upstream replay, provenance and independent review remain open. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation and drift
+review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, linearized connection and metric-jet admission):
+PROGRESS: three more call sites now reserve their result containers and body
+array accesses before entering linked code. LinearizedConnection adds two known
+14-element result arrays and654962 logical visits. MetricJets reserves320110
+visits, including813 nested SpinGeometry.Transpose copies; these copies were
+NOT covered by the guarded Matrix kernels. MetricJetsBlocks reserves1721600
+visits across all400 mixed-block triples. Upstream expressions are unchanged.
+
+Six new metadata/refusal tests pass, including integer-only loop enumeration
+at dimensions1..14. No positive geometry executed. Final regression cell20:
+471 direct JS/165 C# tests and both Release builds pass; serial integration
+4d3e89 adds24 passing tests, total495 JS/41files. Preservation260cd5 confirms6512
+old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier and main HEAD1400b5dd unchanged. No Git write.
+
+NEXT: ShearJets fixed control flow has101 Downstairs calls (extra lengths0/1/2:
+1/84/16),111 Shear calls and100 zero second-derivative matrices. This implies
+77669 Matches calls and77568 appended derivative arrays per germ; integer-only
+census57d16f confirms these counts. Admit these nested temporaries/copy loops.
+LINQ-internal allocations remain UNPROVED, including in LinearizedConnection;
+known result-array accounting is not complete scratch or RSS coverage. Complete
+producer/lifetime admission, real scientific prerequisites/full705 dispatch,
+upstream replay, provenance and independent review remain open. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation and drift
+review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-26, dual-connection scratch admission):
+PROGRESS: both phase627 DualConnection call sites now use a wrapper reserving
+the two result containers AND all explicit dual-number scratch arrays before
+entering the linked algorithm. Previously only result containers were reserved.
+Additional scratch at dimension14:2746 arrays/41356 Dual slots, with a dense
+25445896 logical array-access envelope. Each Dual contains TWO Rational fields;
+these are not byte/RSS counts. Nested Matrix/Rational kernels remain separately
+guarded in the test build; production guarded integration remains pending.
+
+Integer-only loop enumeration agrees at every dimension1..14. Failure-only
+wrapper tests prove undersized scratch/visit budgets refuse before upstream
+constructors or arithmetic. No positive source-geometry call was made. Regression
+cell577:471 direct JS and159 C# tests pass; both Release builds pass. Resumed
+serial integration84af0c adds24 passing tests, for495 JS/41files. Preservation
+aa2a04 confirms6512 old outputs/706541609bytes and manifest unchanged;627output
+absent. Closed Program/project/verifier unchanged; main HEAD1400b5dd. No Git write.
+
+NEXT: finish linearized-connection and Downstairs/ShearJets scratch/loop admission,
+then remaining producer/bootstrap/serialization and whole-lifetime bounds; do
+not confuse these logical counts with actual resource sufficiency. Real reviewed
+scientific prerequisites/705-context driver, upstream replay, complete compiler/
+runtime provenance and independent full-pack review remain open. FIRST CLOSED;
+physicalclaims0/O4pending. Full scientific/incremental validation and drift review
+still precede staging/commit/push. Concrete work remains; goal active.
+
+LATEST A68 continuation (2026-09-25, actual compiler-input census):
+PROGRESS: a68-compiler-inputs.js checks captured nonshared deterministic Release
+Csc arguments against complete post-build source/reference/analyzer/additional/
+configuration item lists. It enumerates generated/embedded sources and SourceLink,
+rejects response files, wildcard/list indirection, aliases, missing/duplicate
+items and unreviewed switches, and refuses an empty incremental-build command
+as evidence of compiler execution. It reports input obligations, NOT trusted
+hashes, full toolchain closure or scientific authorization.
+
+Actual forced nonshared Release rebuild:246 arguments,219 distinct reported
+inputs =41 C# sources+167 references+8 analyzers/generators+2 configurations+1
+SourceLink file;3 embedded sources alias existing source inputs. DLL and PDB
+are byte-identical before/after rebuilding. This is local reproducibility, not
+proof of complete source-to-binary provenance. Shared compiler reuse was enabled
+by default; an up-to-date Build returned ZERO Csc arguments until forced rebuild.
+Guarded primitive symbols remain absent in production, intentionally pending.
+
+Final regression cell558:471 direct JS tests plus24 integration/process tests
+8b7a18 =495 JS/41files;155 C# tests and both Release builds pass. Final path
+hardening retests9e5788/56b66e pass8+2. Preservation109c84 confirms6512 old outputs/
+706541609bytes and manifest unchanged;627output absent. Closed Program/project/
+verifier unchanged; main HEAD1400b5dd. No scientific source-positive calculation,
+pilot, FIRST, generator/full incremental or Git write.
+
+NEXT: bind independently frozen input hashes to this actual compiler census;
+complete SDK/MSBuild import/toolchain and runtime dependency closure, capture or
+rule out in-memory generator outputs, establish source-to-binary and read-to-exec
+binding. Real scientific prerequisites/705-context dispatch, resource/retention/
+scratch/lifetime proofs, upstream replay and independent full-pack review remain.
+FIRST CLOSED; physicalclaims0/O4pending. Full scientific/incremental validation
+and drift review still precede staging/commit/push. Goal active.
+
+LATEST A68 continuation (2026-09-24, exact declared launch files and build inventory):
+PROGRESS: a68-launch-file-admission.js provides a concrete synchronous admission
+callback for the metadata host. It binds the exact independently supplied launch,
+profile and limits to an ordered declared file manifest, requires the executable
+and declared file-argument pins, and checks every file via bounded streaming SHA,
+exact sizes/EOF probes and before/after file identity. Snapshot/read quotas are
+cumulative; mutation, symlinks, read races, failure, reuse and reentry fail closed.
+Real C# host tests now use this callback for five explicit test artifacts rather
+than a no-op launch callback. These are manufactured fixture pins, NOT a frozen
+complete executable/runtime closure or source-to-binary proof.
+
+Concrete closure issue verified: initial Release MSBuild evaluation has38 C#
+items (26 owned,12 linked), but after the Build target it has41: generated global
+usings, framework attributes and assembly info are additional compiler inputs.
+Guarded primitive symbols remain absent from production; that integration is
+still deliberately pending. A project-text/list-only scan must not be called
+complete executable provenance. The retained core manifest SHA938a4d1d still
+matches all726 live source files/3235082bytes and its exact tree digest.
+
+Regression cell547:463 direct JS tests plus22 process/cross-language6ed67a =485
+JS/39files;155 C# tests and both Release builds pass. Preservation44d8e1 confirms
+6512 old outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier unchanged; main HEAD1400b5dd. No source-positive science,
+pilot, FIRST, generator/full incremental or Git write.
+
+NEXT: bind the full evaluated/generated compiler inputs, imports, toolchain and
+runtime/source dependency closure; prove source-to-binary correspondence and
+control read-to-exec mutation, not merely matching currently observed hashes.
+Connect real reviewed construction admission and concrete scientific prerequisites/
+705-context dispatch. Resource/retention/scratch/lifetime proofs, upstream replay
+and independent full-pack review remain required. FIRST CLOSED; physicalclaims0/
+O4pending. Full scientific/incremental validation and drift review still precede
+staging/commit/push. Goal active with concrete safe work remaining.
+
+LATEST A68 continuation (2026-09-24, owned metadata process host):
+PROGRESS: a68-template-process-host.js now owns an explicitly configured POSIX
+child and dedicated protocol pipes. It snapshots launch/profile/limits before
+mandatory synchronous launch admission, never inherits the environment, runs
+without a shell and requires BOTH all707 protocol exchanges and clean zero
+process exit with no undeclared stdout/stderr. Whole-process timeout remains
+active after protocol completion. Failures retain bounded diagnostic evidence,
+terminate only the newly owned process group and escalate after a bounded grace.
+Cleanup uncertainty cannot become success; no automatic retry exists.
+
+This is a metadata host, NOT the full scientific prerequisite implementation.
+Executable/source closure pinning remains the independent launch admission's
+obligation, not a property proven by this host. Manufactured tests use no-op
+admission with authority flags false. Owned-group checks do not establish
+containment of escaped descendants, hard CPU preemption, total RSS, source
+authenticity or scientific authorization. No default executable/profile is added.
+
+Nine process-host tests and four actual C# post-protocol tests pass. A completed
+protocol followed by exit7, stdout or a live process is rejected. Full regression
+cell534:453 direct JS tests plus21 process/cross-language fb1260 =474 JS/38files;
+155 C# tests and both Release builds pass. Preservation5d71ab confirms6512 old
+outputs/706541609bytes and manifest unchanged;627output absent. Closed Program/
+project/verifier unchanged; HEAD1400b5dd on main. No source-positive calculation,
+pilot, FIRST, generator/full incremental or Git write occurred.
+
+NEXT: connect reviewed executable/source closure and construction admission to
+the metadata host; implement the genuine scientific prerequisite/catalog/705
+context dispatch (ValidateContextEvidence still lacks a concrete implementation).
+Complete retention/resource/scratch/lifetime proofs, upstream recurrence/
+certificate replay, independent full-pack review and explicit FIRST approval.
+FIRST remains CLOSED; physicalclaims0/O4pending. Full scientific/incremental
+validation and drift review still gate staging/commit/push. Goal remains active.
+
+LATEST A68 continuation (2026-09-24, combined nonpoint numerical replay):
+PROGRESS: a68-context-replay.js connects a read-pinned germ/diagnostic checkpoint
+to the independently supplied tensor/scalar/consumer recipe, complete recorded
+scalar/check/error metadata, mandatory synchronous geometry comparison, and all
+retained tensor files. Every intermediate is numerically reconstructed; all
+root/consumer/mark/file lifecycles must finish. Expected data and callbacks are
+captured before replay. Each private checkpoint token permits one attempt;
+failure or swallowed reentry cannot be retried into acceptance. Generic success
+does NOT authenticate source recipes, geometry provenance or scientific claims.
+
+Germ and diagnostic source adapters now retain their own independent metadata
+plans and expose a combined checkpoint method with internal source resolvers.
+Standalone unpinned geometry comparison cannot authorize that method. Germ
+planning now precedes recorded geometry comparison, using only independently
+bound geometry and the point's verified exports. Germ metadata snapshot quotas
+are cumulative across retention and comparison. Genuine source-positive methods
+remain UNCALLED; their independent review and resource/lifetime proof are pending.
+
+Regression cell521:453 direct JS tests plus8 cross-language6b608b =461 JS/37files;
+155 C# tests and both Release builds pass. Preservation51a41d confirms6512 old
+outputs/706541609bytes and manifest unchanged;627output absent. Program/project/
+verifier hashes unchanged; HEAD1400b5dd on main. No scientific source positive,
+pilot, FIRST, generator/full incremental or Git write. Existing subagents remain
+terminal usage-limited, so no fresh independent review was obtained this turn.
+
+NEXT: reviewed real process/prerequisite/catalog driver (ValidateContextEvidence
+still has NO concrete implementation), explicit full705 source-bound context
+dispatch/retention, upstream recurrence/certificate replay, actual resource and
+scratch/whole-lifetime accounting including retained adapter plans, independent
+full-pack review and explicit FIRST authorization. Tiny manufactured replay does
+not meet these obligations. FIRST CLOSED; physicalclaims0/O4pending. User's
+full-scientific/incremental-validation and drift-review gate still forbids staging,
+commit or push; the persistent goal's routine-commit request does not override it.
+
+LATEST A68 continuation (2026-09-24, combined computational checkpoint lifecycle):
+PROGRESS: nonpoint MixedAuditSink.Close now records the graph, then metadata
+linked to its exact emitted pin, before invoking ValidateContextEvidence.
+The one-shot seal preserves failure evidence and rejects retry/reentry. Its
+new phase627-context-computational-evidence-v1 envelope explicitly records
+status=producer-complete and independentValidationComplete=false; acceptance
+never rewrites that artifact. Point checkpoint/completion behavior is unchanged.
+
+The shared a68-pinned-artifacts.js reader freezes declarations before I/O and
+applies cumulative snapshot/read quotas, exact size/hash checks on the parsed
+buffers, canonical wire validation and per-read filesystem checks. The point
+reader now uses it. New a68-context-checkpoint.js accepts only the fixed germ
+and diagnostic identities and the producer-only envelope. It rejects copied
+tokens and mismatched graph links. This proves byte identity only, NOT numerical,
+source, geometry, retained-tensor-file or scientific acceptance; the combined
+nonpoint numerical bridge and real prerequisite implementation remain missing.
+Per-read checks do not prove atomic parent containment or total process memory.
+
+Final regression cell506:436 direct JS tests plus8 cross-language ca5e17 =444
+JS/36files;155 C# tests and both Release builds pass. Preservation dcb76f:
+6512 outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier unchanged; HEAD1400b5dd on main. No source-positive
+calculation, pilot, FIRST, generator/full incremental or Git writes.
+
+NEXT: combine this pinned reader with the independent germ/diagnostic recipes,
+complete scalar/check comparison, source geometry and retained-tensor-file
+replay. Then finish reviewed process/prerequisite/catalog integration, actual
+resource/retention and scratch/lifetime proofs, upstream recurrence/certificate
+replay and independent full review. FIRST remains CLOSED; physicalclaims0 and
+O4pending. User explicitly reaffirmed: STILL WAIT FOR FULL SCIENTIFIC VALIDATION
+before staging/commit/push; tested code-only checkpoints are not authorized.
+Full scientific/incremental validation and drift review remain required.
+
+LATEST A68 continuation (2026-09-24, complete scalar/check metadata binding):
+PROGRESS: a68-context-metadata.js now binds independently recomputed scalar
+roots, error fields and predicates to the complete recorded C# metadata menu.
+It preserves literal slash-containing structured field names, exact scalar
+array lengths, independent route/control booleans, all19 error fields and all14
+native first-jet norms. It rejects missing/extra paths, orphan roots, incorrect
+callback descriptors, duplicates and false recomputed checks despite recorded
+true flags. Snapshots and result-character budgets are cumulative; failures,
+early completion and swallowed reentry permanently poison the comparator.
+
+Germ and diagnostic source adapters now return their independently constructed
+metadata plans; germ adapters also return a complete replay identity. Generic
+metadata comparison does NOT authenticate geometry/source or perform numerical
+evaluation itself. Actual tiny scalar/error/consumer replay drives the new
+comparison tests. Full ordinary/selected Ward and both diagnostic metadata
+plans also pass shape/coverage tests without numerical source evaluation.
+
+Concrete next integration issue found: MixedAuditSink.Close currently invokes
+ValidateGraph(context, graph) BEFORE writing the context metadata file. A full
+read-pinned graph+metadata validator cannot run at that hook. Resolve the output/
+validation lifecycle deliberately (preserve all failure evidence and distinguish
+producer completion from independent acceptance), then add the combined pinned
+germ/diagnostic reader and source replay. Do not simply trust in-memory flags or
+promote a producer's status=complete into independent scientific success.
+
+Final regression cell491:426 direct JS tests +7 cross-language d35773 =433 JS/
+35files;148 C# tests and both Release builds pass. Preservation36b8b8 confirms
+6512 outputs/706541609bytes and manifest unchanged;627output absent. Closed
+Program/project/verifier unchanged; HEAD1400b5dd on main. No scientific source
+positive, pilot, FIRST, generator/full incremental or Git writes.
+
+NEXT: the combined read-pinned lifecycle/reader above, mandatory geometry and
+retained-file verification in full germ/diagnostic replay, reviewed process/
+prerequisite/catalog wiring, real retention/resource and scratch/lifetime proofs,
+upstream recurrence/certificate replay and independent full review. FIRST stays
+CLOSED; physicalclaims0/O4pending. Full scientific/incremental validation and
+drift review still gate staging/commit/push. Goal active with concrete next work.
+
+LATEST A68 continuation (2026-09-24, diagnostic source adapter):
+PROGRESS: added a68-diagnostic-source-adapter.js for all three fixed diagnostic
+recipes. Grade10 requires authentic point0 baseline plus ordered m0..3/j4
+germs; acceleration requires point1 plus m0/j10. Every geometry binding must
+have the private reconstructed/retained identity, exact fixed source path and
+same baseline parent BEFORE any matrix/leaf export. Diagnostic X/probes remain
+traced recipe constructions, not external leaves. SecondJets accepts no geometry
+or coefficient-algebra input and constructs its complete symbolic control plan.
+
+The adapter binds9/3/0 curvature leaf declarations and1033/313/0 matrix slots.
+Full metadata comparison requires1450596/459816/0 coordinates respectively.
+Export and comparison budgets are cumulative across all component geometries,
+not reset per germ; metadata snapshots are cumulative too. Exact retention,
+one independent recipe before one geometry comparison, bounded leaf resolution
+and poison/reentry rules are enforced. Source geometry-positive constructor/
+comparison paths remain UNCALLED and still require full independent review.
+No diagnostic numerical replay or scientific execution has been established.
+
+Ten new tests cover all source declarations against separate menus, fixed
+geometry/resource censuses, forged identity rejection before algebra work,
+quota admission, own-data handling, reentry and the complete3502-node/420-check
+second-jet symbolic plan. Final regression cell474:415 direct JS tests plus7
+cross-language e612b7 =422 JS/35files,148 C# tests; both Release builds pass.
+Preservation df9197:6512 outputs/706541609bytes and manifest unchanged;
+627output absent, Program/project/verifier unchanged, HEAD1400b5dd on main.
+
+NEXT: full read-pinned germ/diagnostic orchestration, including independently
+bound scalar roots, checks, source geometry and retained tensor files; reviewed
+process/prerequisite/catalog wiring; actual resource/retention and whole-lifetime/
+scratch proofs; upstream recurrence/certificate replay and independent full-pack
+review before FIRST. Existing generic recipes/adapters are NOT run authorization.
+No source-positive assembly, pilot, FIRST, generator/full incremental or Git
+write occurred. Full scientific/incremental validation and drift review still
+must precede staging/commit/push. Physicalclaims0/O4pending; goal active.
+
+LATEST A68 continuation (2026-09-24, retained tensor FILE comparison):
+PROGRESS: a68-expanded-tensor-files.js now checks the full independently
+replayed canonical tensor against each declared retained file, not merely its
+producer hash. Frozen retention/path menus, reserved-file collisions, full
+support/rational validation, exact bytes including LF, regular nonsymlink
+components, short/growing/changing reads and cumulative work/read quotas fail
+closed. All declared marks, including DAG-only marks, must be compared before
+completion. No declared mark can retry after failure. These per-read checks do
+not prove atomic parent containment, future immutability or total RSS.
+
+Point checkpoint declarations now REQUIRE the frozen marks menu; replay limits
+REQUIRE expanded-file limits. readPointCheckpoint freezes that menu and root.
+The numerical bridge compares the menu with the independent recipe and checks
+expanded files during mark replay before returning exports. Removed the source
+adapter's unused raw acceptPointReplayReceipt entry point because it bypassed
+checkpoint/file checks. Its combined checkpoint/geometry/numerical/file path is
+now the only installer of source point exports. The generic numerical receipt
+binder remains numerical-only; no generic file report grants source authority.
+Genuine source-positive execution remains UNCALLED.
+
+Engineering checks:412 JS tests/34files (405 direct+7 cross-language),148 C#
+tests and both Release builds pass. New13 file tests plus3 point integration
+tests include correct graph/predicates with missing or changed retained files.
+Final direct regression, targeted57fd6a and cross-language60033d pass.
+Preservation5462f5:6512 outputs/706541609bytes and manifest byteidentical;
+627output absent, Program/project/verifier unchanged, HEAD1400b5dd on main.
+
+NEXT: reviewed production process/prerequisite/catalog wiring with the mandatory
+frozen retention menu; integrate the same file comparator into full germ and
+diagnostic orchestration, complete diagnostic source adapters and genuine
+source/receipt bindings; finish actual retention/resource profiles, all scratch
+and whole-lifetime proofs, upstream recurrence/certificate replay and independent
+full-pack review. Source calculations, pilot, FIRST and generator/full incremental
+remain CLOSED. User's full-scientific-validation checkpoint restriction remains
+in force: no staging, commit or push. Physicalclaims0/O4pending; goal active.
+
+LATEST A68 continuation (2026-09-24, metadata-only duplex preflight transport):
+PROGRESS: added stream-only JS preflight service and C# client. An independently
+supplied profile commitment, exact sequence and request-byte SHA bind the begin,
+all705 structural validations and finish acknowledgements. Both sides enforce
+canonical bounded frames, cumulative transport quotas and deadlines. Completion
+requires request EOF before final acknowledgement and reply EOF afterward;
+extra output, altered replies, incomplete scope and retries fail closed. The
+sink prerequisite contract now requires terminal full-set template validation
+before any context binding. No production process host or concrete source-bound
+prerequisite implementation has been supplied or scientifically exercised.
+
+Found/fixed two engineering assumptions: asynchronous construction admission
+was previously mistaken for completed synchronous admission; it now fails
+before expected-menu construction. The integration fixture's standard-output
+stream also had a runtime-retained descriptor alias, preventing EOF until child
+exit. Dedicated owned protocol pipes repair the fixture without weakening EOF
+or closing runtime-owned descriptors. All707 exchanges now complete, with
+negative integration tests for altered acknowledgements and trailing output.
+
+Final engineering checks:396 JS tests/33files (389 direct+7 cross-language),
+148 C# tests, both Release builds0warnings/errors. Cross-language7c6d78 and
+regression cell443 pass. Preservation681627:6512 outputs/706541609bytes and
+manifest byteidentical;627output absent. Closed Program/project/verifier hashes
+unchanged; HEAD1400b5dd on main. No scientific run or Git writes.
+
+NEXT: reviewed process ownership/termination/provenance and concrete C#
+prerequisites connecting this metadata transport to the frozen catalog; genuine
+independent source/point-receipt binding, diagnostic adapters and expanded-file
+checks; actual resource/retention profiles and whole-lifetime/scratch proofs;
+upstream recurrence/certificate replay and independent full-pack review. The
+manufactured test profile and synchronous no-op test admission are NOT actual
+resource proofs. FIRST stays CLOSED; physicalclaims0/O4pending.
+
+USER RESOLUTION (2026-09-24): "Still wait for full scientific validation."
+This supersedes earlier pending clarification entries. No code-only checkpoint
+exception: full scientific/incremental validation and drift review must precede
+staging, committing or pushing. Continue safe preflight without Git writes.
+
+LATEST A68 continuation (2026-09-23, production structural validator):
+PROGRESS: mechanically promoted the separate JS source menu definitions from
+tests into a68-source-context-menu.js, then added a68-source-template-validator.js.
+It snapshots a separately supplied complete705-budget/four-retention profile
+before callbacks, compares exact template schema/paths/resources/checkpoints,
+ordered leaves/aliases/marks and full typed callback censuses, and permanently
+fails on omissions, drift, duplicates or swallowed reentry. Candidate snapshots
+precede construction-admission callbacks. Snapshot quotas are cumulative across
+profile and candidates; expected-menu construction still requires a separate
+mandatory admission callback/resource proof. Callback order is a SET census,
+not an execution-order proof; the C# catalog separately pins original wire order.
+
+Completion requires705 contexts,291199 marks,20316 leaves and940365 callbacks.
+The report explicitly leaves numerical/source/resource/RSS/execution authority
+false. This is not the C# driver/service bridge or a source-geometry proof.
+The17 new validator tests and actual-wire integration cover full scope: the
+Release C# harness streams every real factory template through the production
+JS validator against an independently supplied MANUFACTURED resource profile.
+One canonical bounded line at a time; no scientific sink or phase output.
+This supplements, not replaces, independent full-pack implementation review.
+
+Final checks:383 JS tests/32files (379 direct regression+4 cross-language),143
+C# tests and both Release builds0warnings/errors. Final validator efa890 and
+actual-wire integration ed1973 pass after freezing940365 callbacks. Preservation
+6aa591:6512 outputs/706541609bytes and manifest unchanged;627output absent.
+Program/project/verifier hashes unchanged; HEAD1400b5dd on main. No source-positive
+numerical assembly, pilot, FIRST, generator/full incremental or Git write.
+
+NEXT: invoke the structural validator from the reviewed C# prerequisite/driver
+transport; bind genuine independently reconstructed leaves and accepted point
+receipts, including diagnostic source adapters and expanded-file checks. Close
+actual retention/resource profiles, source-menu construction and whole-lifetime
+proofs, remaining geometry/recorder/bootstrap/failure scratch, upstream proofs
+and independent review before explicit FIRST approval. FIRST remains CLOSED.
+Checkpoint-policy clarification is still pending; preserve the prior full
+scientific/incremental validation restriction until the user resolves it.
+
+LATEST A68 continuation (2026-09-23, complete source-menu factory):
+PROGRESS: MixedSourceContextFactory now builds the actual point/germ/diagnostic
+structural menus without geometry, coefficients or scientific operators. It
+requires all705 explicit immutable resource-budget records and four explicit
+optional-retention flags; it does not claim those budgets are sufficient.
+Mandatory expanded/DAG-only callback policies cannot be overridden. Sorted
+complete mark names give portable ordinal tensor filenames, unchanged when
+optional expansion changes. Leaf source paths follow the existing621/626 and
+verified-point-replay protocols; no coefficient hashes are fabricated. The
+diagnostic source adapters and source authentication remain separate work.
+
+Cross-language metadata checks regenerate all705 contexts and compare291199
+mark declarations,20316 leaf declarations/role maps and every callback census,
+including the six selected Ward germs and all three diagnostics. These are
+structural comparisons, NOT numerical or independently reviewed physics.
+The catalog harness now passes17 tests, including complete real-menu freeze/
+regeneration with explicitly manufactured late bindings. Existing30 JS files
+pass362 tests; three new cross-language tests make365 across31 files. C# total
+143:71 arithmetic,14 run menu,10 rational,15 geometry,16 wire,17 catalog/factory.
+Both Release builds pass0warnings/errors. Full scientific validation is pending.
+
+NEXT: production independent structural validator (the separate JS menu/check
+comparison currently lives in tests), reviewed retention/resource profiles and
+factory construction/lifetime admission; then authenticated driver transport,
+expanded-file verification, remaining geometry/recorder/bootstrap/failure
+scratch, upstream recurrence/certificate replay and independent full review.
+FIRST remains CLOSED. The factory freezes source declarations, not authentic
+source values, and its resource records/serialized caps are NOT total RSS proof.
+
+Preservation f0c36e:6512 outputs/706541609bytes and manifest unchanged;627output
+absent. Program/project and whole verifier SHA unchanged; HEAD1400b5dd on main.
+No scientific run, pilot, FIRST, generator/full incremental, staging or Git
+checkpoint. User now asks to commit/push after the next phase of work, following
+the earlier explicit full-scientific-validation requirement. Clarification was
+requested whether this authorizes a labelled preflight checkpoint; do not infer
+that engineering tests are scientific validation or bypass FIRST. Pending an
+answer, preserve the stricter no-checkpoint rule. Goal remains active.
+
+LATEST A68 continuation (2026-09-23, frozen structural catalog; preflight only):
+PROGRESS: the eager all705 concrete-plan API has been replaced by a structural
+template catalog. Before work, the sink validates and fingerprints all705
+context structures, including leaf declarations WITHOUT placeholder hashes,
+marks, callbacks, paths, retention and caps. Before each context opens, the
+catalog regenerates and compares that structure BEFORE calling the mandatory
+leaf binder; only actual leaf hashes are late-bound. Source authentication
+still requires the independent prerequisite implementation. Construction
+admission precedes every factory call; serialization has explicit per-template
+and cumulative byte limits. Failures/reentry poison the catalog. The sink
+rejects out-of-sequence catalog use and checks postconditions before marking
+completion. The catalog retains commitments, not all concrete mark menus.
+
+This is NOT the source-specific factory or a total-memory proof. Factory
+closures, construction/serializer scratch, global path bookkeeping and all
+live consumer/export/metadata storage still need resource/source-closure
+review. Eleven new manufactured catalog tests do NOT validate the actual
+291199-mark source menu. Full direct JS sweep:362 tests/30files passed;
+C# suites:71 arithmetic+14 menu+10 rational+15 geometry+16 wire+11 catalog=137
+passed. Both Release build configurations pass. No scientific execution.
+
+NEXT: implement the source-specific deterministic template factory and its
+independent structural validator, preserving the complete fixed menus and
+pre-construction admission. Then finish source-bound C# service/driver wiring,
+expanded tensor file verification, geometry/recorder/bootstrap/failure scratch,
+whole-lifetime accounting, upstream recurrence/certificate replay and full
+independent review. FIRST remains CLOSED. The preceding checkpoint reader and
+seal edits also still need independent review; prior agents are usage-limited.
+
+User explicitly reaffirmed: WAIT FOR FULL SCIENTIFIC VALIDATION. No code-only
+checkpoint exception. Full scientific/incremental validation and drift review
+must precede any staging, commit or push. HEAD remains1400b5dd on main;
+627output remains absent, checklist406/3, physicalclaims0, O4pending. No source
+positive, pilot, FIRST, generator/full incremental or Git checkpoint occurred.
+The older entries below describe historical states, including the now-replaced
+eager constructor; they do not override this latest status.
+
+LATEST A68 continuation (2026-09-23, pinned checkpoint reader/source bridge):
+PROGRESS: MAIN implemented a68-point-checkpoint.js and the source point
+adapter's replayPointCheckpoint method. Reader requires separately supplied
+frozen context/graph/checkpoint paths, exact observed bytes/SHA, positive
+per-file and combined read quotas, regular nonsymlink components and bounded
+strict canonical ASCII JSON. Both artifacts are hashed from the same buffers
+that are parsed. Duplicate keys, wrong graph links/status/traversal flag,
+missing/extra/false point checks and wrong context fail closed. The private
+read-pinned token alone is NOT a numerical/source proof or completed traversal.
+
+The generic numerical bridge compares the full independently supplied tensor
+recipe, exact15/18 point checks and domains; it rejects external geometry/scalar
+predicates and scalar roots for this point-only lane. Source adapter first
+compares complete independently reconstructed geometry, then replays and binds
+the exact27-export receipt before exposing germ imports. Genuine source-positive
+adapter execution remains UNCALLED. Expanded tensor FILE verification is NOT
+claimed by this bridge; it reconstructs full tensors from the DAG. C# driver
+transport/service wiring, all705 orchestration and independent review remain.
+
+Found/fixed another actual integration bug: C# JsonNamingPolicy.CamelCase emits
+point/metricBasis/jetIndex/multiindex/order, but JS geometry metadata expected
+Pascal-case names. Corrected both baseline/germ comparisons. A metadata-only
+C# test uses ACTUAL MixedTrace.JsonOptions; JS tests require the corresponding
+wire names. No scientific geometry constructor or14D operator was run.
+
+The canonical parser was mechanically extracted to a68-canonical-wire.js and
+the uncalled verifier delegates to it. Existing10 wire tests still pass.
+Full direct JS sweep361 passes362 tests/30files, including12 new checkpoint
+tests with actual tiny numerical replay and rejection of a producer true flag
+whose independent predicate is false. C# suites:71 algebra dfe737,14 menu
+201d74,10 parser3dd06b,15 geometry c884c7 and16 wire/serializer0b3611 =126
+tests (wire suite now included in these totals). Guarded library a30d20 and
+CLOSED-main fb4952 Release builds pass0warnings/errors.
+
+NEXT: frozen structural context templates and later independently authenticated
+leaf binding must replace the STILL EAGER all705 concrete-plan constructor.
+Keep exact marks/callbacks/paths/retention/cumulative caps fixed before work;
+never select them from observed producer outcomes or use fake source hashes.
+Also close geometry scratch/linked loops, recorder/MatrixArg/bootstrap/failure
+serialization, whole consumer/export/metadata lifetimes, upstream recurrence/
+certificate replay, source closure and explicit FIRST/read-only modes. The
+checkpoint reader's parsed DOM/copy/serializer storage and parent-path race
+protection are NOT total-memory or atomic-filesystem proofs. Both this round
+and prior sink-seal edits still need independent implementation review; prior
+agents are terminal at their usage limit. Safe local preflight remains possible.
+
+Preservation4c13c0:6512 outputs/706541609bytes plus manifest byteidentical,
+627output absent. Stripped pre-A68 verifier blob still
+40d2814c9d47a4a16fee4205c540a6bbcbdecd42; NEW whole verifier SHA
+19619e44794b0a31180baac7b0e7bdc2e844a7653b609aa79b52e16344082afa.
+HEAD remains1400b5dd on main; CLOSED Program/project hashes unchanged. No
+source-positive calculation, pilot, FIRST, generator/full incremental or Git
+checkpoint. User requires FULL scientific/incremental validation and drift
+review before commit/push. Actual checklist406/3, physicalclaims0, O4pending.
+
+LATEST A68 continuation (2026-09-23, point computation/traversal split):
+PROGRESS: independent read-only review found a real orchestration cycle.
+Old sink replayed the point only at EndPoint AFTER350 germs, but each germ's
+source recipe requires the27 point replay exports BEFORE it can be built.
+MAIN implemented a mandatory SealPointBackground callback after all point
+checks and before the first child, preserving every scientific calculation.
+Point0/1 callback totals are now373/370 (22/19 computational prefixes followed
+by350 Germ callbacks and EndPoint). Marks remain74 per point; context705 and
+germ700 counts are unchanged. The JS recipe includes the same seal callback.
+
+The uncalled sink finishes/writes the full point DAG once, writes a separately
+planned/bounded background-sealed checkpoint with pointTraversalComplete=false,
+and calls mandatory ValidatePointBackground with immutable path/bytes/SHA
+descriptors. That prerequisite MUST independently read pinned bytes, compare
+complete geometry/checks/domains, replay the point and accept its27-export
+receipt before returning. Its source-bound implementation is STILL PENDING.
+No mutable graph/metadata object is passed as checkpoint evidence. Point
+metadata/marks/leaves cannot append after seal; the finished recorder remains
+active as a tripwire between children. EndPoint still requires all350 children,
+writes final completion metadata, and never replays/rewrites the point graph.
+Failure preserves already-opened artifacts and distinguishes pending traversal.
+Recorder closed-state checks now precede operand/parameter work. Sink and run
+seal reject swallowed reentry. This code awaits independent implementation
+review and full retained-artifact integration tests; no scientific run occurred.
+
+MAIN checks:350 named JS tests/29 direct files (sweep346),71 guarded-algebra
+tests a74309,14 metadata-menu/lifecycle tests c4a469,10 parser8b14e4 and15
+geometry22d464 =110 C# tests. New tests cover mandatory seal order, failed/
+reentrant/no-retry seals, fake census flags, both full700-child manufactured
+lifecycles, and recorder refusal before post-seal serialization/callbacks.
+Guarded-library bec4a3 and CLOSED-main d549fe Release builds pass0warnings/errors.
+
+NEXT: reconcile the STILL EAGER all705-plan sink with frozen structural
+templates (IDs, marks/callbacks, retention, paths, caps and helper closure)
+and later independently authenticated source leaf hashes. Do not freeze fake
+zero SHA placeholders or derive menus/caps from observed producer outcomes.
+The seal resolves runtime ordering only; it does NOT yet make the complete
+driver executable. Add pinned checkpoint reader/source-adapter bridge and
+retain exact path/completion/lifetime accounting. Continue geometry scratch/
+linked-loop, recorder/MatrixArg, bootstrap/failure and cumulative resource work.
+The geometry worker hit the agent usage limit before landing its proposed next
+slice; MixedGeometryAdmission remains fecf3aebb0c2cbbf8fc4693c01780be4a59f3c0deac983f2be3668c26a50583e.
+All three agents are terminal due usage limits; MAIN can continue safe local
+preflight. Independent full-pack review remains mandatory before FIRST.
+
+Preservation e34224:6512 outputs/706541609bytes plus manifest byteidentical,
+627output absent, stripped verifier still pre-A68 blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42.
+Whole verifier SHA f53c9b770c015020828da73b829c447ad80dc6c382a6d541fd17270d4e6b07ef.
+HEAD1400b5dd on main; CLOSED Program/project hashes unchanged. No source-positive
+geometry/polynomial execution, pilot, FIRST, generator/full incremental or
+commit/push. FULL scientific/incremental validation and drift review remain
+required before commit/push. Checklist406/3, physicalclaims0, O4pending.
+
+LATEST A68 continuation (2026-09-21, authenticated replay-export preflight):
+This round made engineering PROGRESS, not scientific validation. MAIN passed
+350 named JavaScript tests across29 files (349 direct sweep317/1138bc/790cfa
+plus final typed-zero regression4bd2fa), and104 C# tests:70 guarded algebra
+750275,10 canonical parser4f1fc7,9 metadata menu e1c616,15 new geometry
+admission4bfb89 (including generic1D initialization regression).
+Guarded library fa7e19 and CLOSED production fe22ec Release
+builds pass0warnings/errors. No627 science, source-positive geometry or
+polynomial execution, pilot, FIRST, generator, full incremental, commit/push.
+
+The uncalled tensor verifier now delegates to standalone a68-tensor-replay.js.
+Its new private receipt retains canonical full tensor arrays ONLY after every
+tensor/scalar/consumer comparison and final release/census succeeds. Plan,
+roots, geometry, checks, domains and export requests are own-data snapshots
+before callbacks. Separate prospective export storage/work admission does not
+prove cumulative metadata or RSS. Generic receipt success is not source
+authentication, and external geometry/scalar resolvers need separate binding
+before future germ/diagnostic receipts can be used as source evidence.
+
+The point source adapter now builds its independent recipe BEFORE recorded
+metadata comparison, but accepts a receipt only AFTER comparison and exact
+eight-field replay identity matching. All27 canonical point exports can feed
+29-leaf germ recipes (27 baseline plus2 independent curvature routes), sharing
+immutable tensor arrays across children rather than copying350 times. Only
+KInputs[0]/GradientPieces[0] aliases. Genuine source-positive paths remain
+UNCALLED. This closes the implemented handoff, not the full705-context driver.
+
+Geometry-owned arrays, raw seeds, container constructors and complete linked
+curvature transforms now have conditional admission. Independent review found
+loop-iteration counts undercharged reads/writes; corrected conservative
+slot-access envelopes include compound assignments and raw initialization.
+Null curvature inputs poison admission. Historical formulas/production kernel
+selection and CLOSED Program/project hashes remain unchanged.
+
+NEXT bounded work: close DualConnection/LinearizedConnection/ShearJets scratch
+arrays and linked loops, then recorder/MatrixArg, bootstrap and failure-only
+serialization. In parallel reconcile prospective plan storage: a reviewed
+DESIGN LEAD is a frozen deterministic context-plan factory with an exact705-ID
+manifest and all menus/retention/cumulative caps frozen before work. It may
+materialize one context plan at a time while retaining its suspended point;
+no observed DAG/support/check results may select plans or caps. This is NOT
+implemented and does not yet replace the current all-plan sink contract.
+All291199 mark obligations and exact completion/path uniqueness must survive.
+Combined consumer/export/metadata lifetimes, independent upstream recurrence/
+certificate replay, frozen helper closure and explicit FIRST/read-only modes
+remain outstanding. Do not run source geometry to discover preflight caps.
+
+Final preservation fa9c70 confirms all6512 old outputs/706541609bytes and manifest
+byteidentical,627 output absent. Strip37cabc reproduces pre-A68 verifier blob
+40d2814c9d47a4a16fee4205c540a6bbcbdecd42; new whole verifier SHA
+f53c9b770c015020828da73b829c447ad80dc6c382a6d541fd17270d4e6b07ef.
+HEAD remains1400b5dd on main. Actual checklist406/3, physicalclaims0,
+O4pending. User explicitly requires FULL scientific/incremental validation
+and drift review before commit/push; NO code-only exception. No science job
+is running. Older continuation entries below are historical, not current gaps.
+
+LATEST A68 continuation (2026-09-21, call-site/source-adapter preflight):
+This turn made PROGRESS. MAIN passed338 named JavaScript tests across29
+files (323 full direct sweep cell287 plus15 new source-adapter tests c2c933),
+70 manufactured guarded C# tests d3e232,10 standalone canonical-parser tests
+934853 and9 metadata run-menu tests d38405. Guarded compile-only library
+Release d41e57 and final CLOSED main Release45c9ee pass0warnings/errors.
+Final preservation4ddb8d repeats all6512 unchanged output checks.
+No scientific627 calculation, source
+geometry/polynomial positive path, pilot, FIRST, generator or commit/push.
+
+MixedProducerStages now preadmits raw MixedAlgebra dictionaries/arrays,
+transpose Cartesian pairs, motion slots/oracle scratch, slices and pullback
+cache work. Independent review found/fixed oversized borrowed coefficients
+hidden by product form-overlap pruning and captured-loop metadata charges.
+Manufactured traced order remains unit,pullback,zero,sum. Guarded-only rational
+parsing now checks canonical ASCII without unadmitted BigInteger.Parse/Split
+or canonicality formatting; every decimal integer operation is preadmitted.
+All guards remain test-only. Production kernels and CLOSED entry unchanged.
+
+New source adapters require genuine private geometry/polynomial identities,
+bind all73/240 matrix roles, compare full observed C# geometry, and preserve
+distinct adapted/oracle curvature leaf identities. Review fixed descriptor/
+cap drift and swallowed reentrant failures. New dense source-field resolver
+covers845 exact germ paths/242060 coordinates, with correct curvature input/
+output reversal and explicit zeros. All positive tests use manufactured data;
+genuine source wrappers remain UNCALLED. Generic success cannot mint a source
+identity or upstream certificate proof.
+
+Critical NEXT driver work: current replay returns statistics after releasing
+nodes, but all350 child germs need27 authenticated POINT-replay tensor exports
+(28 roles, only KInputs[0]/GradientPieces[0] alias). Implement an independently
+replayed export receipt/cache with full lifetime accounting, not producer
+baseline hashes or caller success flags. The source adapter builds a point
+recipe AFTER recorded geometry comparison; it is a post-production validation
+slice, NOT a prospective all705-plan constructor. Resolve that ordering without
+running source geometry to discover preflight caps. All705 plans include291199
+mark descriptors, which sequential germ execution alone does not bound.
+
+Other concrete work: linked geometry/caller-array admission, pre-operation
+recorder/MatrixArg/metadata factories, decoded-input/bootstrap/failure-only
+serialization, combined consumer/live-storage bounds, complete source driver,
+upstream recurrence/certificate replay, frozen closure and explicit FIRST/
+read-only replay modes. Whole-process RSS and scientific validity are unproved.
+Preservation7ce41a confirms all6512 outputs/706541609bytes plus manifest
+byteidentical and627output absent. Stripc52bab reproduces pre-A68 verifier
+blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42. HEAD remains1400b5dd.
+Actual checklist406/3, physicalclaims0, O4pending. Bounded agents are terminal;
+no science job to restart. User requires FULL scientific/incremental validation
+and drift review before commit/push; NO code-only exception. Goal remains active.
+
+LATEST A68 continuation (2026-09-21, complete germ/diagnostic preflight):
+This goal turn made PROGRESS. MAIN now has313 named JavaScript tests across27
+files (full311 sweep a02598 plus final13-test second-jet delta e8993a),49
+manufactured C# guarded-kernel tests5cc04d and9 metadata-only C# run-menu
+tests89b83d. Final main Release f1f369 and separate guarded compile-only
+library72238e pass0warnings/errors. NO scientific627 calculation, geometry
+pilot, FIRST, generator/full incremental, commit or push occurred.
+
+The arbitrary Ward hook is removed. All six selected germ lifecycles now
+directly compose3976 marks,16 structured records,1348 scalar roots plus any
+anchor, and a sole final EndGerm. Review found/fixed148 missing repeated
+Ward/acceleration input-domain obligations, giving214 domains per selected
+germ. Policies/used options are own-data snapshots before validators; aliases
+cannot silently change scalar geometry. Both nonzero diagnostic recipes are
+complete and source-reviewed: grade10 has3948 marks/1019 checks; acceleration
+1883 marks/310 checks/74 input domains. Consumers now support16 predicate
+kinds, including full blade-grade scans and complex constant anchors.
+
+MAIN found the mandatory symmetric-second-jet controls had NO legal owner in
+the old704-context sink. Fixed with a dedicated diagnostic/secondJets context:
+705 total contexts =2 baselines+700 scientific germs+3 diagnostics. Its842
+callbacks retain the same3502-node recipe,420 tensors/checks and420 domains.
+The700 scientific rows and previous two diagnostics were not broadened.
+Old704 plans fail closed. This is metadata/recipe closure, not an executed run.
+
+MAIN and independent review also proved the conditional arbitrary-eta LOCAL
+Ward identity analytically from descent, including fixed native tangent/jet,
+full acceleration first variation and kinetic divergence. It needs no finite
+basis enumeration or stationarity. Source curvature/action/jet premises must
+still be independently authenticated; see the existing stationary reference.
+
+All three guarded C# kernel copies now exist and type-check with the remaining
+nine helpers, but remain disabled in production. Review fixed grouped-loop
+charges, oversized factors on empty paths, matrix input/domain guards and
+MetricJet scan reservations. Next edit set: MixedAlgebra+admission+owned stage
+reservations for raw dictionaries/arrays, transpose/motion/slices/pullbacks;
+then source/audit factories, pre-operation recorder/metadata factories, parser
+and bootstrap admission. Failure-only serialization needs its own pre-reserved
+permit, not reopening poisoned arithmetic. Combined consumer/live-storage
+bounds, source-bound orchestration, frozen closure and explicit FIRST/read-only
+replay modes remain unfinished. No kernel counter is a complete RSS proof.
+
+Final preservation457340: all6512 outputs/706541609bytes plus manifest remain
+byteidentical;627 output absent. Strip04c906 still reproduces pre-A68 verifier
+blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42, wholeSHA44dcfdb8f7ffe1e3493c1c0b2df6a7993c388d8ff3b9151d11a84090270e0822.
+HEAD remains1400b5dd6691e525ba78df8714e1911d7e82d7fd. Actual checklist406/3,
+physicalclaims0, O4pending. All bounded agents are terminal; no science job
+needs restarting. User requires FULL SCIENTIFIC/INCREMENTAL VALIDATION and
+drift review before commit/push; no code-only exception. Goal active.
+
+LATEST A68 continuation (2026-09-21, exact consumer replay preflight):
+MAIN passed292 named manufactured/read-only JavaScript tests across26 files,
+17 standalone guarded-arithmetic C# tests (Release, bd4ce3), and the CLOSED
+main project Release build c894e3 (0warnings/errors). These are engineering
+checks, NOT scientific validation. No627 scientific execution, source-point
+geometry calculation, coefficient pilot, FIRST or generator run occurred.
+
+The exact consumer runtime now evaluates all14 predicate kinds and19 error
+formulas, full complex tensor equality/domain checks, full rank-four geometry
+coordinates and separately cached scalar roots. The UNCALLED verifier compiles
+both schedules before callbacks and uses ONLY combined consumer release buckets.
+Its15 tiny-graph tests include late tensor checks and rejected false predicates.
+Review fixed admission after array enumeration and caches surviving failure.
+Current whole verifier SHA256 is
+44dcfdb8f7ffe1e3493c1c0b2df6a7993c388d8ff3b9151d11a84090270e0822;
+stripping only A68 reproduces unchanged pre-A68 blob
+40d2814c9d47a4a16fee4205c540a6bbcbdecd42 (c9607a).
+
+The symmetric second-jet recipe has3502 nodes,420 full tensor checks and420
+explicit domain obligations, with11 manufactured tests. Its hand proof uses
+arbitrary ordinary symmetric jets in a fixed holonomic chart; covariant
+D_B squared remains the curvature commutator, not zero. It does not alone
+prove the full Ward identity or close the enclosing lifecycle/diagnostics.
+
+A phase627-local guarded ExactArithmetic copy and admission scope pass17
+generic tests. The copy is enabled ONLY in its standalone harness; production
+still links the original arithmetic and Program.cs remains CLOSED. Fourier/
+matrix guards, stage reservations and the combined consumer resource proof
+remain unfinished. No logical counter is a whole-process RSS guarantee.
+
+Next: combine consumer arithmetic/storage bounds, compose Ward/non-Ward and
+diagnostic lifecycles, complete source-bound reconstruction/comparison driver
+and producer guards, then freeze closure/modes and review the complete pack.
+Preservation6d11df confirmed all6512 outputs/706541609bytes and manifest
+byteidentical, with627 output absent. Actual checklist406/3, physicalclaims0.
+USER DECISION: wait for FULL SCIENTIFIC AND INCREMENTAL VALIDATION and drift
+review before commit/push; NO code-only checkpoint exception. Goal remains
+active with concrete work available. Earlier continuation entries are history.
+
+LATEST A68 continuation (2026-09-21, polynomial/outer-consumer preflight):
+MAIN passed259 named manufactured/read-only tests across24 files and
+Release build34887a (0warnings/errors). No627 scientific execution,
+coefficient pilot or generator run; Program.cs remains CLOSED. The previous
+AGENTS-only turn made no scientific progress; this turn revalidated the
+worktree and made PROGRESS. All6512 old outputs/706541609bytes and manifest
+remain byteidentical (3a97e9); unchanged pre-A68 verifier blob rechecked9230be.
+
+The new privately branded polynomial helper implements the COMPLETE
+sum X=sum(n=1..5)(1/907712)^n S_n, full support/complex-domain comparison
+and unsigned norm. No extra factorial/sign/frame factor belongs here;
+S5's grade-five coefficients cannot be projected away. Positive GU wrapper
+is UNCALLED; upstream recurrence/certificate replay is a separate obligation.
+Non-Ward outer recipes now match all376 germ marks,951 ordinary checks and
+19 error formulas. Independent review found/fixed descriptor mutation:
+tensor construction and later error formulas now use the same snapshots.
+
+The new audit-consumer compiler includes tensor equality/domain checks,
+coefficient anchors and error norms in last-use, in addition to Pair/Top.
+It passes12 tiny metadata tests plus full manufactured non-Ward and Ward
+context integrations. It is NOT wired into numerical replay yet; using the old
+scalar-only release schedule for the full outer audit would be premature.
+Next: complete predicate/error evaluation and combined resource majorants,
+wire combined releases/root caches, compose Ward/non-Ward lifecycles and diagnostics,
+then source-bound driver, full producer guards, frozen closure and modes.
+The fixed Ward-controls recipe now covers48 Ward/24 acceleration/24 Original
+evaluations; all614 checks and1348 roots per selected germ compile through
+the combined consumer schedule. Symmetric second-jet/universal proof remains
+separate. Independent final review found no remaining reported defect.
+Runtime identified three phase627-local guarded kernel copies (209 source
+lines) plus call-site stage ledgers as a concrete route; not implemented.
+The C# producer guard must cover pre-BeginPoint input/domain work, linked
+Rational/Matrix/Fourier kernels, geometry constructors and metadata factories;
+post-result recording limits do not protect these computations.
+
+Static connectionVariation costs are now reviewed through validation,
+inverse/Q/DQ/Koszul/contractions/curvature: scalar bound12144568 per14D
+call,8501197600 for700. These are NOT measured work or whole-factory bounds.
+The local lineage adapter and complete numerical check driver are unfinished.
+USER DECISION: wait for full scientific validation before committing or
+pushing; NO code-only checkpoint exception. Actual checklist406/3,
+physicalclaims0; goal active, not complete or blocked. See latest journal.
+
+LATEST A68 continuation (2026-09-21, source geometry and scalar replay):
+the CLOSED627 entry point remains unchanged and no scientific geometry,
+coefficient pilot, FIRST or generator execution has occurred. Work remains
+on main. The preceding research turn made PROGRESS; the intervening
+AGENTS-only request confirmed existing workflow text, not scientific state.
+
+Source-only metric/shear/connection/curvature/frame reconstruction is now
+implemented, including full torsion/metric-compatibility identities and
+their linearizations. Complete spin packing checks both antisymmetric
+curvature pairs and full metric-skew connections before dropping redundant
+entries. Manufactured1D/2D tests pass; the actual14D factories are UNCALLED.
+The new privately branded geometry adapter compares every621 geometry
+coordinate, including implicit zeros and the curvature output/input-index
+reversal, then exports all73 baseline/240 germ recipe matrix roles. Germ
+exports require the exact independently compared baseline object. Separate
+metadata comparison covers both C# metric/connection derivations, not their
+equality flags. Successful source binding/export is still UNEXECUTED.
+
+Full Ward and acceleration expression recipes now exist. Scalar scheduling
+retains tensors needed by late Pair consumers and releases ALL expired
+nodes, not only current tensor inputs. Exact standalone scalar replay
+implements the no-conjugation real trace, complete imaginary cancellation,
+and selected TOP extraction. Analytic scalar bounds include complex scratch
+and combined tensor/scalar liveness. Integration into the UNCALLED verifier
+block now passes12 tiny-graph tests, including late scalar-only consumers,
+same-buffer leaf hash/import and frozen provenance. MAIN's final direct
+run plus final targeted regressions passed205 named tests across19 files. Stripping the A68 block still
+reproduces HEAD verifier blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42;
+current uncalled verifier SHA973f2c999c8703ea8dbaa6eacf9fcce70bc6ea520052d5640c1b8b4ae5ead82a.
+No helper/test substitutes for complete outer/diagnostic
+semantic closure, actual626 polynomial reconstruction, prospective full
+geometry/metadata/RSS budgets, before-loop C# guards, frozen source/contract
+closure, explicit read-only generator mode or full-pack FIRST review.
+
+MAIN Release build309c76 passed0warnings/errors. Preservationf12ce9 verified
+all6512 outputs/706541609bytes and the manifest byteidentical;627 output
+remains absent. Actual checklist406/3, physicalclaims0;628+unallocated.
+USER DECISION (2026-09-21): wait for FULL SCIENTIFIC VALIDATION before
+commit/push. Do not make code-only preflight checkpoints. This resolves
+the earlier pending question; keep the documented final-incremental and
+drift-review workflow, and continue concrete preflight work meanwhile.
+New performance lead already implemented: factor the repeated Koszul
+numerators before inverse contractions; the complete per-germ contraction
+bound falls6149304 to2469600 scalar operations, not a measured runtime.
+The resource audit also distinguishes complete acceptance from controlled
+refusal/abrupt termination: require full data/closure/replay for success,
+but do not promise a final failure record survives OS kill. Logical budgets
+plus externally enforced containment need prospective review; exact GC/RSS
+prediction is not a physics premise. No containment or gate was changed.
+
+LATEST A68 continuation (2026-09-21, after the AGENTS workflow update):
+phase627 is STILL UNEXECUTED; its10-line Program.cs remains CLOSED. MAIN
+Release build a19f49 passed0warnings/errors. Parallel review and new tests
+now cover the independent symbolic background/germ and complete
+MixedVariation expression recipes, including108 intermediate callbacks,
+all196 current/partial/Green slots and asymmetric rational frame signs.
+MAIN passed15 primitive,8 background,8 geometry-scalar and7 variation
+metadata tests, plus5 source-reader and5 read-only upstream integration
+tests. The latter bind all700 geometry shards,12 polynomial input chunks
+and2 certificates; they do NOT reconstruct new scientific coefficients.
+The original bivariate action recipe now passes9 metadata tests and
+independent source review; its scalar extraction descriptors bind exact
+already-recorded top nodes, with no hidden marks. Resource majorants pass
+18 tests including parameter heights and repeated fingerprint/expanded
+serialization costs. MAIN also repeated10 JavaScript and15 C# wire tests:
+100 tests total in this continuation. The standalone C# harness26291 is
+terminal0 and did not invoke the627 entry point.
+The full outer/Ward/diagnostic recipe, independent source geometry,
+runtime resource enforcement and frozen contract remain incomplete.
+
+Concrete new gap:621 retained replay independently checks its ACTION
+stages but treats geometric tensors as supplied leaves. Its hashes and
+shape checks do NOT independently reconstruct all metric/connection/
+curvature arithmetic. Before627, rebuild geometry from the induced metric
+and downstairs h germ; use621 geometry as bound comparison targets, never
+its obsolete constant-native-field action rows. The reference/journal
+record this distinction and the required independent construction.
+
+An uncalled CreateNew evidence sink now exists with complete structured
+content, exact emitted-stream pins, metadata admission and separately
+reserved failure snapshots. Those snapshots preserve recorded prefixes,
+not necessarily a tensor whose recording failed after computation.
+Mandatory concrete provenance/semantic/resource plans are still absent.
+Analytic resource majorants now cover full ambient support, common
+denominators/norms and replay/Pullback scratch; review fixed missing
+parameter heights for zero outputs. They are NOT a total RSS or walltime
+proof. Fingerprinting/sorting, outer live tensors, geometry metadata and
+before-loop admission remain distinct obligations. A future final-generator
+627 invocation must explicitly REPLAY existing FIRST evidence read-only;
+never overwrite/recreate it or choose behavior from whether files exist.
+No generator or627 execution is authorized by these engineering checks.
+Actual checklist406/3, physicalclaims0;628+remain unallocated. This is
+PROGRESS, not a completed scientific checkpoint. Continue from current
+worktree and latest journal; older pending-helper lists below are history.
+Final preservation check933cbb again confirms all6512 outputs/706541609bytes
+and the manifest unchanged;627 output is absent. Removing only the uncalled
+A68 verifier block reproduces HEAD blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42
+(c7d3bc); its initial read-only Git subprocess hit sandbox EPERM and the
+unchanged escalated comparison passed. No A68 commit/push yet: the required
+full scientific checkpoint validation is not complete.
+
+LATEST A68 continuation (2026-09-21): phase627 remains UNEXECUTED and
+Program.cs remains a CLOSED entry gate. The full700-germ orchestration,
+native196-slot/current/Euler checks, fixed12-context Ward controls and
+separate grade10/acceleration diagnostics now compile. MAIN Release
+build61420 passed0warnings/errors after correcting Ward solder tracing
+and removing support-dependent orphan nodes inside atomic Pullback.
+Independent hand review confirms the complete acceleration forecast
+(source,kinetic,cubic,mass)=(0,0,0,-85098); the reference now records the
+proof and32 pure-base-diffeomorphism third-symbol controls. Neither is a
+scientific result or physical mass. Actual checklist remains406/3.
+
+The uncalled C#/JavaScript DAG interpreters now include strict wire readers;
+generic arithmetic replay alone still cannot certify the intended action.
+Complete semantic recipe, leaf/mark/path census, enforced runtime resource
+bounds, exact bindings and final full-pack approval remain outstanding.
+JavaScript mark plans bind the exact node as well as name/degree/expansion.
+Imported baseline roles must preserve KInputs[0]=GradientPieces[0]:28
+semantic references are27 distinct tensor objects. Source-bound phase621
+geometry shards may supply geometric inputs after full provenance checks,
+but its constant-native-field action rows must NOT supply627 responses.
+All new verifier code remains inside the uncalled A68 block; removing it
+reproduces the prior committed verifier byte-for-byte, rechecked after the
+latest reader/hash edits (Git blob40d2814c9d47a4a16fee4205c540a6bbcbdecd42).
+Synthetic tests passed10/10 JavaScript wire,15/15 standalone C# reader and
+13/13 symbolic-recipe metadata; existing incremental tests passed50/50.
+MAIN recheck42379 confirms all6512 preserved outputs/706541609bytes and
+the manifest remain byteidentical. No627 or generator run is authorized.
+The metadata-only callback plan now enforces full structured child census
+and scalar-array lengths. The independent partial symbolic emitter at
+scripts/incremental/a68-mixed-recipe.js implements algebra macros and
+explicit midstream leaf registration; it does NOT yet implement complete
+background/germ/Ward recipes or a metadata-memory proof. Full writing sink,
+resource proof and frozen input closure are next concrete tasks. Last
+parallel helpers were a68_runtime (fixed callback plan), a68_evidence
+(readers/synthetic tests/partial recipe) and a68_review (independent review).
+Older builder616/617 ownership below is chronological history. Continue
+from current files; do not restart any old scientific session.
+
+LATEST A68 planning: A67 is checkpoint1400b5dd6691e525ba78df8714e1911d7e82d7fd
+on main, pushed and independently remote-matched, clean before this tranche.
+Final report pass_2026-09-12T23-26-58-125Z.json finished23:35:57.189Z:
+Release build plus76steps passed,410skipped; report SHA
+4fbdeac7c42d81b5be6cb54b990409f997c9ba18a91194d6fa3d76b9f6812d49.
+MAIN and independent audit verified29source hashes,67bindings,3918unchanged
+FIRST626files and6512manifest outputs. All2594 beforeimages were compared:
+2497byteidentical,75volatile-onlyJSON,20explainedmetadataJSON and2timestamp
+logs, with every old spectrum numeric byte preserved. Checklist406/3,
+physicalclaims0. Previous goal turn was PROGRESS, not blocked or complete.
+
+Allocate627 under A68 to the COMPLETE mixed metric-native-field variation
+audit: all700 metric germs; actual626P5/native dP5; all real-Clifford U/dU
+dual tensors; complete196coordinate-jet reconstruction; full differentiated
+Green/current/density/Euler conversion; nonzero kappa; off-shell Ward
+acceleration and explicit raw/Euler error transfer. Do not substitute
+finite probes, the third-order anchor alone or another invariant eigensolve.
+Read A68 amendment and the newest stationary-background reference. Builder
+owns627 only; independent reviewers challenge the complete prospective
+pack; MAIN owns shared integration and FIRST authorization. No627science
+has executed and its entry gate must remain closed until complete proof,
+code/menu/counts/resources/retention/bindings and independent plus MAIN
+review pass.628+remain unassigned. Earlier A67 pending statuses are history.
+
+A68 preflight progress: all11 shared Release builds passed0warnings/errors;
+the six incremental-tooling test files passed50/50. Independent shared
+integration review confirms additive registrations and preserved predicates.
+All6512 old outputs plus the manifest are safely preserved in
+scripts/incremental/skip_reports/a68_beforeimages_extracted/; archive
+a68_beforeimages.tar.gz SHA
+6527c60f6c998049d3ec54301d5e4708b1f7dfa4f997b9c04b9a3cfee769c051.
+MAIN recheck51086 passed:706541609 output bytes, every file byteidentical,
+every canonical hash matching, manifest SHA
+24c98e7c566f08b7d74b07354637c7db92c305557664df09b24af08e1330a3c6.
+The reference now distinguishes fixed and adapted gradient derivatives;
+adding V1G to an already adapted derivative would double-count T1G.
+Independent builder review caught a tautological field-first route, now
+corrected and reread by MAIN/617 using independent moving-adjoint
+differentiation. A separate prospective grade10 cubic diagnostic has hand
+forecast+4/3; it does not replace the700 actual-P5 rows. A nonzero Ward
+acceleration diagnostic has independently derived mass-piece-85098.
+Builder616 owns runtime/layout/wrapper hooks and the other627 helpers;
+617 owns ONLY MixedWard.cs and reviewer owns ONLY MixedEvidence.cs. MAIN
+must independently review both new helpers. The journal gives
+the approved12-context/48-evaluation finite Ward menu, additional diagnostic
+and full arbitrary-eta jet-proof requirements. Keep native Hessian tangents
+fixed; do not insert acceleration by following the h-dependent gauge path.
+Full pack/control/count/resource/retention review remains pending. The new
+STUDY is explicitly an unfrozen draft. Do not execute627 or the generator
+while its gate is closed. The coupled-principal-symbol investigation is a
+hand-only future lead;628 remains unallocated.
 
 LATEST A67 execution: unchanged FIRST626 Release session38048 is terminal
 exit0; do not restart FIRST. Contract882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308;

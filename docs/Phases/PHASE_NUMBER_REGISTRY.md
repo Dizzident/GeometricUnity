@@ -89,8 +89,9 @@ back, NO new phase directory may be created outside this table.
 | 623 | Shared full inverse-kappa branch-feedback extension (A64) | FIRST frozen run passed: full-grade recursion through fifth order, complete nonlinear polarization and original-action controls; retained-evidence verification passed; no physical spectrum or source selection. |
 | 624 | Exact algebraic BC stationary-background audit (A65) | FIRST frozen Release run passed: exact full connection residual zero at both transported points, both kinetic legs and original-action/Green controls verified. Conditional local background only; no physical vacuum, coupling or mass selected. |
 | 625 | Full algebraic kappa-jet and grade-five obstruction audit (A66) | FIRST frozen run passed: complete residuals vanish through order3 and retain600 grade5 terms at order4. Both response blocks and original-action controls pass; small-ansatz obstruction only, not a full-space no-go. |
-| 626 | Fixed-cubic full stationary-residual certificate (A67) | Frozen FIRST and independent full retained replay passed: complete original G0..10/direct residual at conditional gamma1/lambda1/907712, certified auxiliary-l1 error about1.797679e-29. Ordered101/202 and integrity pass406/3; final incremental pending. No physical coupling, vacuum, pole or unit selected. |
-| 627+ | Unassigned - extend this registry before use | - |
+| 626 | Fixed-cubic full stationary-residual certificate (A67) | Frozen FIRST, independent full retained replay and final incremental validation passed; checkpoint1400b5dd pushed and remote-matched. Complete original G0..10/direct residual at conditional gamma1/lambda1/907712, auxiliary-l1 error about1.797679e-29, checklist406/3. No physical coupling, vacuum, pole or unit selected. |
+| 627 | Full mixed metric-native-field variation audit (A68) | Prospective: complete700 metric germs, all real-Clifford U/dU duals, actual dP5, full density/Green/Euler conversion, nonzero kappa, off-shell Ward acceleration and explicit error transfer. No scientific execution or physical-spectrum selection. |
+| 628+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

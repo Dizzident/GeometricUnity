@@ -8698,6 +8698,37 @@ if (sourceLineageMissing) {
     return {pack,retained:result,maximumScalarRationalCharacters:maximumScalar};
   };
   // End A67 retained-evidence core.
+  // Begin A68 prospective DAG replay core. UNCALLED until the complete627
+  // contract, independently derived expression/parameter/leaf/mark plan and
+  // actual FIRST pins are reviewed. This reconstructs retained coefficients;
+  // it does not launch a study or authorize a new metric/field calculation.
+  // A self-consistent arbitrary DAG is NOT proof of the intended action:
+  // validateNode must bind inputs/order/parameters to an independent recipe.
+  const parseA68MixedDagWire = (bytes, limits) => require("./scripts/incremental/a68-canonical-wire").parseCanonicalWire(bytes, limits);
+  const readA68MixedDag = (file, limits, expectedSha256) => {
+    const need=(ok,label)=>{if(!ok)throw new Error("Phase627 DAG read: "+label);};
+    need(Number.isSafeInteger(limits.graphBytes)&&limits.graphBytes>0,"positive safe byte limit");
+    need(typeof expectedSha256==="string"&&/^[0-9a-f]{64}$/.test(expectedSha256),"required independently bound wire hash");
+    const descriptor=fs.openSync(file,fs.constants.O_RDONLY|fs.constants.O_NOFOLLOW|fs.constants.O_NONBLOCK);
+    try {
+      const before=fs.fstatSync(descriptor);
+      need(before.isFile()&&Number.isSafeInteger(before.size)&&before.size>1&&before.size<=limits.graphBytes,"regular file/pre-read byte ceiling");
+      // Never readFileSync an unchecked/growing file: allocation and each read
+      // are bounded by its checked size. The one-byte probe rejects growth.
+      const bytes=Buffer.alloc(before.size);let offset=0;
+      while(offset<bytes.length){const count=fs.readSync(descriptor,bytes,offset,bytes.length-offset,null);need(count>0,"file shortened during read");offset+=count;}
+      const extra=Buffer.alloc(1);need(fs.readSync(descriptor,extra,0,1,null)===0,"file grew during read");
+      const after=fs.fstatSync(descriptor);
+      need(before.size===after.size&&before.mtimeMs===after.mtimeMs&&before.ctimeMs===after.ctimeMs,"file changed during read");
+      // Bind precisely this buffer, not a separate path read. Metadata race
+      // checks are best-effort only. Parent-path containment is an additional
+      // outer contract obligation; O_NOFOLLOW protects the final component.
+      need(crypto.createHash("sha256").update(bytes).digest("hex")===expectedSha256,"bound wire hash mismatch");
+      return parseA68MixedDagWire(bytes,limits);
+    } finally {fs.closeSync(descriptor);}
+  };
+  const verifyA68MixedDag = (...args) => require("./scripts/incremental/a68-tensor-replay").verifyMixedDag(...args);
+  // End A68 prospective DAG replay core. There is deliberately no activation.
   const p626Retained = verifyA67RetainedEvidence("882c123d2d46a5fb7f1fc0b7bd1362a2cf7d43006a73e860e6f3d7c85f122308", "b19b56392ce3cf7880aacecc7bd85ea75fc189d326ee0ca8a5cd87958ad95d09");
   const p626 = p626Retained.pack.p;
   const a46CoreManifest = requireFile(`${p586Root}/preregistration/core_source_manifest_v1.json`);

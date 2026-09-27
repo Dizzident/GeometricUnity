@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Compile-only compatibility check. A library has no executable entry.
+       Production links and its CLOSED Program are not changed by this project.
+       This does NOT prove call-site admission or authorize scientific work. -->
+  <PropertyGroup>
+    <OutputType>Library</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>$(DefineConstants);A68_GUARDED_EXACT_ARITHMETIC;A68_GUARDED_FOURIER_TENSOR;A68_GUARDED_VERTICAL_GEOMETRY</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/*.cs" />
+    <Compile Include="../../../../studies/phase600_full_trace_adjoint_periodic_gradient_norm_audit_001/TraceAdjoint.cs" />
+    <Compile Include="../../../../studies/phase608_source_induced_ambient_ricci_audit_001/AmbientGeometry.cs" />
+    <Compile Include="../../../../studies/phase610_induced_spin_curvature_contraction_audit_001/SpinGeometry.cs" />
+    <Compile Include="../../../../studies/phase611_untied_caa_response_joint_gauge_audit_001/CaaOperator.cs" />
+    <Compile Include="../../../../studies/phase615_source_induced_splitting_volume_scope_audit_001/SplittingControls.cs" />
+    <Compile Include="../../../../studies/phase618_homogeneous_covariant_connection_audit_001/HomogeneousConnection.cs" />
+    <Compile Include="../../../../studies/phase619_invariant_bivector_nonlinear_feedback_audit_001/BivectorFeedback.cs" />
+    <Compile Include="../../../../studies/phase621_induced_metric_full_variation_scope_audit_001/MetricVariation.cs" />
+    <Compile Include="../../../../studies/phase623_full_inverse_kappa_fifth_order_feedback_audit_001/InverseFeedback.cs" />
+  </ItemGroup>
+</Project>

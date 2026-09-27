@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Metadata constructors only. Loading this assembly does NOT invoke its
+         closed Program, geometry constructors or scientific evaluator. -->
+    <ProjectReference Include="../../../../studies/phase627_full_mixed_metric_native_field_variation_audit_001/Phase627FullMixedMetricNativeFieldVariationAudit.csproj" />
+  </ItemGroup>
+</Project>

@@ -4229,3 +4229,95 @@ and ordered101/202 passed406/3. Initial replay3812 failed solely because a
 new verifier local shadowed its kinetic helper; the verifier-only rename
 preserved all frozen science and expected values. Final incremental
 validation and exhaustive A67-beforeimage drift review precede commit/push.
+
+## A68 - Full mixed metric-native-field variation (2026-09-12)
+
+Continue on main from1400b5dd6691e525ba78df8714e1911d7e82d7fd,
+pushed and independently remote-matched with a clean worktree. A67 final
+incremental report pass_2026-09-12T23-26-58-125Z.json finished23:35:57.189Z:
+Release build plus76steps passed,410skipped. All29sources,67bindings,
+3918FIRSTfiles and6512manifest outputs verified; checklist406/3 and
+physicalclaims0. All2594 beforeimages were compared exhaustively, including
+exact numeric lexemes:2497byteidentical,75volatile-onlyJSON,20explained
+metadataJSON and2timestamp-ID logs. Previous goal turn was PROGRESS.
+
+Allocate627, root studies/phase627_full_mixed_metric_native_field_variation_audit_001,
+project Phase627FullMixedMetricNativeFieldVariationAudit.csproj,
+contract phase627-a68-full-mixed-metric-native-field-variation-audit-v1,
+success terminal full-mixed-metric-native-field-variation-certified-conditional.
+
+The full fixed-cubic stationary branch now has a certified approximation,
+but a connection-only fluctuation calculation may omit metric coupling.
+Use the ACTUAL passed626 P5 at gamma1,kappa907712 and both618 frames.
+Keep the native field fixed under metric variation; do not solve for X(h)
+inside that derivative. Reconstruct its full native first jet independently
+from homogeneous covariant derivatives and associated coframe transport.
+The621 constant-coordinate-field helper is not the required dP5 calculation.
+
+Retain all2*10*35=700 metric germs through third base order. For each,
+construct the complete raw mixed coefficients of arbitrary native U and
+dU, separately for source, kinetic, cubic and mass pieces and their sum,
+with independently differentiated/transposed routes. All16384 real
+H-antiHermitian Clifford directions remain in scope. The196 coordinate
+first-jet slots must reconstruct exactly from91 antisymmetric combinations,
+with14 diagonal and91 symmetric null controls. Finite scalar probes are
+additional checks, never a replacement for these full dual tensors.
+
+Include the COMPLETE field-Euler conversion and differentiated Green
+current: density/frame/coordinate coefficient derivatives are not zero.
+The raw dual M0 is not itself the mixed Euler operator. Preserve fibre
+boundary terms until explicitly imposing compact-interior variations;
+do not infer a global boundary condition from621's narrower theorem.
+Keep V1 G(P5) and all off-shell Ward acceleration terms. The original
+pointwise first variation of an acceleration includes its Green current,
+not merely its Euler pairing. Both differentiation orders must use actual
+metric/spin/solder/Hodge/volume occurrences and the nonzero mass coefficient.
+
+If dot<Y,Z>_r=<Y,V_r Z>_r and C=dotK+V1 K, all daggers used in raw
+dual formulas are FIXED-baseline algebraic adjoints. In particular
+C-dagger=delta(K-dagger-moving)+V2 K-dagger. Independently reconstruct
+this pairing-motion identity; omitting or double-counting V2 is a named
+possible implementation error. Prove raw AND Euler error transfer with
+explicit native/frame norm conversions and first-jet coefficient bounds.
+The invariant618 derivative bound cannot be applied to a noninvariant
+metric germ as if it were another homogeneous background.
+
+The complete source third-germ coefficient+3/16, actual dX component
+-a_X/2 and isolated mass mixed component-kappa*a_X are hand-derived
+controls, not computed data. The full source principal order3 cannot be
+cancelled by the at-most-order2 kinetic Euler contribution; implement and
+retain the complete coefficient-order census instead of inserting that
+conclusion as a result. Negative controls must have independent nonzero
+forecasts before FIRST. No eigenvalue, Schur-complement or pole extraction
+is authorized by this prospective audit.
+
+Builder owns only627; independent reviewers challenge formulas, full
+control menus, error bounds and implementation. MAIN owns shared
+registration and explicit FIRST authorization. Freeze complete code,
+STUDY, exact fixtures/counts, input/compiled/core closure, resource and
+retention proofs and failure precedence before execution. No pilot or
+adaptive parameter, grade, menu, storage or evidence selection. Preserve
+all6512 old output beforeimages and the manifest before integration runs.
+Register generator/traversal/101/202/verifier and all9 scanners including
+both207 sites. Full independent and MAIN review plus clean Release build
+precede FIRST; final incremental validation follows all source edits before
+scoped main commit/push and independent remote match.628+remain free.
+
+Canonical CAA/bracket normalization, quadratic factor-two ambiguity,
+physical coupling, observer reduction, operator domain, global boundary,
+source-lineage poles and GeV units remain unresolved. All14 authority
+flags remain false, O4/externalreview pending, Phase561 closed and zero
+physical mass promotion. A nonzero mixed block is not a physical mass,
+instability or proof that the theory has no viable completion.
+
+A68 preflight correction (2026-09-21, before FIRST): the mandatory420
+symmetric-second-jet controls require a dedicated diagnostic/secondJets
+context. The initial704-context sink omitted their legal owner; the corrected
+plan has705 contexts (2 baselines, unchanged700 metric germs,3 diagnostics).
+Its independent menu includes Begin/End and420 SecondJet/Check pairs; no
+scientific scope, coefficients or authority flags are selected by this fix.
+The conditional local arbitrary-eta Ward hand proof is now recorded in the
+stationary-background reference; actual source/numerical validation remains
+required. All three guarded kernel copies remain test-only. User requires
+full scientific/incremental validation and drift review before commit/push;
+no code-only checkpoint exception is authorized.
